@@ -16,3 +16,9 @@ hframes = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_bdb12")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
