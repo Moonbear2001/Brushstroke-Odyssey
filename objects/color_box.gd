@@ -1,5 +1,10 @@
 extends StaticBody2D
 
+"""
+Interactable object built for testing the interaction system. Changes color 
+randomly when interacted with.
+"""
+
 @onready var interaction_area = $InteractionArea
 @onready var rng = RandomNumberGenerator.new()
 

@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+"""
+Main playable character.
+"""
+
 # Constants
 const SPEED = 300.0
 const JUMP_VELOCITY = 400.0
@@ -18,23 +22,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	# Switch gravity, change up direction, rotate character
-	if Input.is_action_just_pressed("gravity"):
-		gravity_orientation *= -1
-		"""
-		Option for the future: 'if you want all collisions to be reported as walls, 
-		consider using MOTION_MODE_FLOATING as motion_mode.' in CharacterBody2D docs
-		"""
-		if up_direction == Vector2.UP:
-			up_direction = Vector2.DOWN
-		else:
-			up_direction = Vector2.UP
-
-		if sprite.rotation_degrees == 0:
-			sprite.rotation_degrees = 180
-		else:
-			sprite.rotation_degrees = 0
- 
+	
 	# Add gravity
 	velocity.y += gravity * gravity_orientation * delta
 
@@ -54,7 +42,28 @@ func _physics_process(delta):
 # Handle input events, gets called before physics process
 func _input(input_event):
 	
-	# Testing camera rotation
+	# Testing camera rotation (C)
 	if Input.is_action_just_pressed("camera"):
 		camera.rotation_degrees += 90
+		
+	# Gravity control (G)
+	if Input.is_action_just_pressed("gravity"):
+		rotate_180()
+		
+# Switches gravity, rotates the character model and changes the up direction
+func rotate_180():
+	gravity_orientation *= -1
+	
+	# Option for the future: 'if you want all collisions to be reported as walls, 
+	# consider using MOTION_MODE_FLOATING as motion_mode.' in CharacterBody2D docs
+	
+	if up_direction == Vector2.UP:
+		up_direction = Vector2.DOWN
+	else:
+		up_direction = Vector2.UP
+
+	if sprite.rotation_degrees == 0:
+		sprite.rotation_degrees = 180
+	else:
+		sprite.rotation_degrees = 0
 
