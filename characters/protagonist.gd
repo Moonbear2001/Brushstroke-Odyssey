@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+# Constants
 const SPEED = 300.0
 const JUMP_VELOCITY = 400.0
 const GRAV_UP = -1
@@ -9,15 +10,19 @@ const GRAV_DOWN = 1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var gravity_orientation = GRAV_DOWN
 
+# Child nodes
 @onready var camera = $Camera2D
 @onready var sprite = $Sprite
+
+func _ready():
+	pass
 
 func _physics_process(delta):
 	# Switch gravity, change up direction, rotate character
 	if Input.is_action_just_pressed("gravity"):
 		gravity_orientation *= -1
 		"""
-		Option for the future, 'if you want all collisions to be reported as walls, 
+		Option for the future: 'if you want all collisions to be reported as walls, 
 		consider using MOTION_MODE_FLOATING as motion_mode.' in CharacterBody2D docs
 		"""
 		if up_direction == Vector2.UP:
@@ -51,9 +56,5 @@ func _input(input_event):
 	
 	# Testing camera rotation
 	if Input.is_action_just_pressed("camera"):
-		print("camera")
 		camera.rotation_degrees += 90
-		
-	# Interact button
-	if Input.is_action_just_pressed("interact"):
-		print("interact")
+

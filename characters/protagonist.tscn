@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqbvdpmlbbk1a"]
+[gd_scene load_steps=5 format=3 uid="uid://bqbvdpmlbbk1a"]
 
 [ext_resource type="Script" path="res://characters/protagonist.gd" id="1_1gqkp"]
 [ext_resource type="Texture2D" uid="uid://rvdvn1htpnru" path="res://art/scratch_artwork/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="1_m2rwh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdb12"]
-height = 46.0
+height = 44.0
 
-[node name="Protagonist" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqohp"]
+radius = 54.1479
+
+[node name="Protagonist" type="CharacterBody2D" groups=["protagonist"]]
 script = ExtResource("1_1gqkp")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -22,3 +25,13 @@ ignore_rotation = false
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
+
+[node name="InteractionComponents" type="Node2D" parent="."]
+
+[node name="ProtagInteractionArea" type="Area2D" parent="InteractionComponents"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponents/ProtagInteractionArea"]
+shape = SubResource("CircleShape2D_qqohp")
