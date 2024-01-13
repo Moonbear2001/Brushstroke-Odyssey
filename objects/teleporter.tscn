@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4fqp7c76fa8j"]
+
+[ext_resource type="Script" path="res://scenes/door1.gd" id="1_bm3pg"]
+[ext_resource type="Texture2D" uid="uid://5rt8fjp2jnew" path="res://art/door.png" id="2_bnq0s"]
+[ext_resource type="Script" path="res://scenes/door2.gd" id="3_kvu0j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5y2j"]
+size = Vector2(37.5, 73)
+
+[node name="Teleporter" type="Node2D"]
+
+[node name="Door1" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(421, 328)
+script = ExtResource("1_bm3pg")
+metadata/_edit_group_ = true
+
+[node name="Door" type="Sprite2D" parent="Door1"]
+position = Vector2(-3.05176e-05, 0)
+scale = Vector2(0.230556, 0.216667)
+texture = ExtResource("2_bnq0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
+shape = SubResource("RectangleShape2D_x5y2j")
+
+[node name="Door2" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(709, 326)
+script = ExtResource("3_kvu0j")
+metadata/_edit_group_ = true
+
+[node name="Door" type="Sprite2D" parent="Door2"]
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(0.230556, 0.216667)
+texture = ExtResource("2_bnq0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+shape = SubResource("RectangleShape2D_x5y2j")
+
+[connection signal="body_entered" from="Door1" to="Door1" method="_on_body_entered"]
+[connection signal="body_entered" from="Door2" to="Door2" method="_on_body_entered"]

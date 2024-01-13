@@ -49,9 +49,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_70hh4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
-position = Vector2(-376, -431)
+position = Vector2(-377, -431)
 polygon = PackedVector2Array(162, 389, 297, 389, 297, 353, 356, 353, 356, 328, 432, 328, 432, 354, 459, 354, 459, 413, 500, 413, 500, 441, 592, 441, 592, 536, 162, 536)
-metadata/_edit_group_ = true
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="."]
 position = Vector2(1730, 196)
@@ -89,7 +88,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_45pnc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
-position = Vector2(-490, -431)
+position = Vector2(-491, -431)
 polygon = PackedVector2Array(390, 413, 419, 413, 419, 387, 448, 387, 448, 350, 477, 350, 477, 328, 506, 328, 506, 350, 535, 350, 535, 387, 563, 387, 563, 412, 592, 412, 592, 536, 390, 536)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
