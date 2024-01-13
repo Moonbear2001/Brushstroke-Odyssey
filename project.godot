@@ -11,17 +11,13 @@ config_version=5
 [application]
 
 config/name="Brushstroke Odyssey"
-run/main_scene="res://scenes/scratch_2d_scene.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 InteractionManager="*res://interaction/InteractionManager.tscn"
-
-[display]
-
-window/stretch/scale=2.0
 
 [editor]
 
