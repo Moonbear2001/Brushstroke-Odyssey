@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bausrlni12gax"]
+
+[ext_resource type="Script" path="res://objects/color_box.gd" id="1_8rovd"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area/interaction_area.tscn" id="2_b5xep"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpixj"]
+radius = 189.003
+
+[node name="ColorBox" type="StaticBody2D"]
+script = ExtResource("1_8rovd")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-47, -45, -49, 55, 95, 52, 78, -57)
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_b5xep")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_qpixj")

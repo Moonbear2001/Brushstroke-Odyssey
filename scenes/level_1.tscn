@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dluonl8r5ctep"]
+
+[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_1e1gc"]
+[ext_resource type="PackedScene" uid="uid://d4fqp7c76fa8j" path="res://objects/teleporter.tscn" id="2_so88w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhkiq"]
+size = Vector2(1058.5, 91)
+
+[node name="Level1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(590, 412)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-119.75, 0)
+shape = SubResource("RectangleShape2D_bhkiq")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D"]
+offset_left = -409.0
+offset_top = -46.0
+offset_right = 408.0
+offset_bottom = 40.0
+
+[node name="Protagonist" parent="." instance=ExtResource("1_1e1gc")]
+position = Vector2(835, 295)
+
+[node name="Teleporter" parent="." instance=ExtResource("2_so88w")]
+position = Vector2(-86, -3)
