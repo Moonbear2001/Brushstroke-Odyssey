@@ -1,8 +1,12 @@
+class_name Protagonist
 extends CharacterBody2D
 
 """
 Main playable character.
 """
+
+# Export variables
+@export var input_enabled: bool = true
 
 # Constants
 const SPEED = 300.0
@@ -18,10 +22,16 @@ var gravity_orientation = GRAV_DOWN
 @onready var camera = $Camera2D
 @onready var sprite = $Sprite
 
+# Not using atm
+#var move_dir: Vector2
+
 func _ready():
 	pass
 
 func _physics_process(delta):
+	
+	if not input_enabled:
+		return
 	
 	# Add gravity
 	velocity.y += gravity * gravity_orientation * delta
@@ -41,6 +51,9 @@ func _physics_process(delta):
 
 # Handle input events, gets called before physics process
 func _input(input_event):
+	
+	if not input_enabled:
+		return
 	
 	# Testing camera rotation (C)
 	if Input.is_action_just_pressed("camera"):
@@ -67,3 +80,12 @@ func rotate_180():
 	else:
 		sprite.rotation_degrees = 0
 
+# Disable visibility and controls
+func disable():
+	input_enabled = false
+	visible = false
+
+# Enable visibility and controls
+func enable():
+	input_enabled = true
+	visible = true

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dupqdxwgkbegg"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_wwyhx"]
+[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="3_spkmr"]
+[ext_resource type="PackedScene" uid="uid://e26jjmik8l13" path="res://transitions/level_door.tscn" id="4_2pkhb"]
+[ext_resource type="PackedScene" uid="uid://m0pq7qn45q28" path="res://scratch_tile_map.tscn" id="4_aiof3"]
+
+[node name="Scratch2DLevel1" type="Node2D" node_paths=PackedStringArray("protagonist", "level_doors")]
+script = ExtResource("1_wwyhx")
+protagonist = NodePath("Protagonist")
+level_doors = [NodePath("Level1Exit")]
+
+[node name="Level1Exit" parent="." instance=ExtResource("4_2pkhb")]
+position = Vector2(474, 239)
+transition_type = "fade_to_black"
+path_to_new_scene = "res://levels/scratch_2d_level_2.tscn"
+entry_door_name = "Level2Entry"
+
+[node name="Label" type="Label" parent="Level1Exit"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "-> Level 2"
+
+[node name="Protagonist" parent="." instance=ExtResource("3_spkmr")]
+position = Vector2(287, 291)
+
+[node name="TileMap5" parent="." instance=ExtResource("4_aiof3")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 202.0
+offset_top = 110.0
+offset_right = 256.0
+offset_bottom = 133.0
+text = "Level 1"

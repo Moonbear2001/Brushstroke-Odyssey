@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cet4dtgf7vn2k"]
 
-[ext_resource type="Script" path="res://scenes/artist_interview.gd" id="1_y2xfk"]
+[ext_resource type="Script" path="res://levels/artist_interview.gd" id="1_y2xfk"]
 
 [node name="ArtistInterview" type="Control"]
 layout_mode = 3

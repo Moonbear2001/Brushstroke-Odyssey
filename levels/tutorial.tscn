@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d18su8bbdi6xg" path="res://art/L0/smol4.png" id="13_0wcih"]
 [ext_resource type="Texture2D" uid="uid://dw0hexe66s8nr" path="res://art/L0/smol5.png" id="14_bxrjg"]
 [ext_resource type="PackedScene" uid="uid://dfi4l4bfunx6e" path="res://objects/moving_platform.tscn" id="15_jukwu"]
-[ext_resource type="Script" path="res://scenes/Death.gd" id="15_rwrhg"]
+[ext_resource type="Script" path="res://levels/Death.gd" id="15_rwrhg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6r1d3"]
 size = Vector2(4757, 33)
