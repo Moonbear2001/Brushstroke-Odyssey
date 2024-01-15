@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwt2j438edhw5"]
+
+[ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
+[ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
+[ext_resource type="Texture2D" uid="uid://cs5so27i26tcr" path="res://art/Esher/wide_block.png" id="3_4o60w"]
+[ext_resource type="Texture2D" uid="uid://b7e5njflhljy4" path="res://art/Esher/short_block.png" id="4_t8kp2"]
+[ext_resource type="Texture2D" uid="uid://cdlg8wjv0ddyc" path="res://art/Esher/second_structure.png" id="5_yolr1"]
+[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
+[ext_resource type="Texture2D" uid="uid://dynmqoo6o0xpn" path="res://art/Esher/second_structure/foreground_second_structure.png" id="7_bc6mr"]
+[ext_resource type="Texture2D" uid="uid://dqb6hmrvdvs5l" path="res://art/Esher/front_arch.png" id="8_lmtet"]
+[ext_resource type="Texture2D" uid="uid://b6i8ndl40dbqs" path="res://art/Esher/overlay/smol_grain.png" id="9_0tm0a"]
+
+[node name="Escher" type="Node2D"]
+
+[node name="BackArch" type="Sprite2D" parent="."]
+position = Vector2(1220, 326)
+scale = Vector2(0.0914548, 0.0914548)
+texture = ExtResource("1_a1ib6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="FirstHouse" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(547, 355)
+scale = Vector2(0.0931967, 0.0931967)
+texture = ExtResource("2_12ntw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-16, 408, 184, 408, 184, 216, 296, 112, 408, 216, 408, 424, 527, 430, 527, 512, 472, 512, 472, 568, 584, 568, 584, 432, 640, 432, 640, 208, 656, 192, 672, 216, 672, 512, 776, 512, 776, 488, 808, 488, 808, 464, 832, 464, 832, 432, 864, 432, 864, 408, 896, 408, 896, 432, 976, 432, 976, 376, 1104, 376, 1112, 376, 1112, 400, 1088, 400, 1088, 432, 1056, 432, 1056, 456, 1032, 456, 1032, 488, 1000, 488, 1000, 512, 976, 512, 976, 544, 944, 544, 944, 648, -16, 648)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="WideBlock" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(1232, 400)
+scale = Vector2(0.09375, 0.09375)
+texture = ExtResource("3_4o60w")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+polygon = PackedVector2Array(1176, 376, 1176, 424, 1296, 424, 1288, 376)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="ShortBlock" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(1376, 368)
+scale = Vector2(0.0923332, 0.0923332)
+texture = ExtResource("4_t8kp2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PackedVector2Array(1352, 344, 1352, 392, 1408, 392, 1408, 344)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="SecondStructure" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(1720, 324)
+scale = Vector2(0.0931243, 0.0931243)
+texture = ExtResource("5_yolr1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(1476, 318, 1558, 317, 1558, 2, 1629, 1, 1631, 51, 1658, 51, 1657, 122, 1595, 123, 1601, 151, 1684, 151, 1686, 202, 1599, 202, 1601, 261, 1685, 261, 1687, 341, 1712, 344, 1714, 426, 1739, 431, 1743, 454, 1767, 458, 1770, 482, 1795, 487, 1798, 505, 1964, 512, 1966, 535, 1956, 563, 1565, 562, 1558, 535, 1560, 518, 1587, 513, 1589, 490, 1615, 486, 1617, 461, 1643, 456, 1644, 433, 1671, 431, 1672, 386, 1510, 386, 1509, 455, 1530, 454, 1532, 479, 1527, 648, 1474, 648)
+
+[node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
+position = Vector2(684, 487)
+
+[node name="ForegroundSecondStructure" type="Sprite2D" parent="."]
+position = Vector2(1583, 324)
+scale = Vector2(0.281724, 0.281724)
+texture = ExtResource("7_bc6mr")
+
+[node name="FrontArch" type="Sprite2D" parent="."]
+position = Vector2(1236, 333)
+scale = Vector2(0.0703969, 0.0703969)
+texture = ExtResource("8_lmtet")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+polygon = PackedVector2Array(1211, 265, 1244, 264, 1253, 274, 1221, 275)
+
+[node name="SmolGrain" type="Sprite2D" parent="."]
+position = Vector2(856, 548)
+scale = Vector2(99.5, 99.5)
+texture = ExtResource("9_0tm0a")
