@@ -16,14 +16,20 @@ signal player_entered_door(door: LevelDoor, transition_type: String)
 # The name of the door that this door leads to
 @export var entry_door_name: String
 
+# Ready
+#func _ready() -> void:
+	#label.set_text(door_label)
+
 # Called when a player enters a door
 func _on_body_entered(body: Node2D) -> void:
+	
+	print("Door detected body entering.")
 	
 	# If a body entered that is not the player, then ignore
 	if not body is Protagonist:
 		return
 		
-	# Tell the level scrip the player entered a door
+	# Tell the level script that the player entered a door
 	player_entered_door.emit(self)
 	
 	# Tell the SceneManager to load a new scene and play the transition
@@ -35,4 +41,3 @@ func _on_body_entered(body: Node2D) -> void:
 # Returns this doors position so that the player knows where to be when it exits
 func get_player_entry_position() -> Vector2:
 	return self.position
-

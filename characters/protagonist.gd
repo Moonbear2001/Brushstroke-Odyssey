@@ -23,7 +23,7 @@ var gravity_orientation = GRAV_DOWN
 @onready var sprite = $Sprite
 
 # Not using atm
-var move_dir: Vector2
+#var move_dir: Vector2
 
 func _ready():
 	pass

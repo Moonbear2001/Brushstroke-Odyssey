@@ -12,7 +12,4 @@ script = ExtResource("1_s6h8h")
 position = Vector2(42, 12)
 shape = SubResource("RectangleShape2D_rcw2q")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Level Door"
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

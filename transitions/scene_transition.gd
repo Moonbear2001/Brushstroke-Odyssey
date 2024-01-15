@@ -25,7 +25,7 @@ func start_transition(animation_name: String) -> void:
 func finish_transition() -> void:
 
 	# Construct second half of the transitation's animation name
-	var ending_animation_name:String = starting_animation_name.replace("to", "from")
+	var ending_animation_name: String = starting_animation_name.replace("to", "from")
 	
 	# Make sure the chosen animation exists, otherwise use default outro
 	if !anim_player.has_animation(ending_animation_name):
