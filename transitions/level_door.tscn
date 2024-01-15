@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://e26jjmik8l13"]
+
+[ext_resource type="Script" path="res://transitions/level_door.gd" id="1_s6h8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcw2q"]
+size = Vector2(104, 44)
+
+[node name="LevelDoor" type="Area2D"]
+script = ExtResource("1_s6h8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(42, 12)
+shape = SubResource("RectangleShape2D_rcw2q")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level Door"
