@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwt2j438edhw5"]
+[gd_scene load_steps=9 format=3 uid="uid://cwt2j438edhw5"]
 
 [ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
 [ext_resource type="Texture2D" uid="uid://dynmqoo6o0xpn" path="res://art/Esher/second_structure/foreground_second_structure.png" id="7_bc6mr"]
 [ext_resource type="Texture2D" uid="uid://dqb6hmrvdvs5l" path="res://art/Esher/front_arch.png" id="8_lmtet"]
-[ext_resource type="Texture2D" uid="uid://b6i8ndl40dbqs" path="res://art/Esher/overlay/smol_grain.png" id="9_0tm0a"]
 
 [node name="Escher" type="Node2D"]
 
@@ -58,7 +57,7 @@ texture = ExtResource("5_yolr1")
 polygon = PackedVector2Array(1476, 318, 1558, 317, 1558, 2, 1629, 1, 1631, 51, 1658, 51, 1657, 122, 1595, 123, 1601, 151, 1684, 151, 1686, 202, 1599, 202, 1601, 261, 1685, 261, 1687, 341, 1712, 344, 1714, 426, 1739, 431, 1743, 454, 1767, 458, 1770, 482, 1795, 487, 1798, 505, 1964, 512, 1966, 535, 1956, 563, 1565, 562, 1558, 535, 1560, 518, 1587, 513, 1589, 490, 1615, 486, 1617, 461, 1643, 456, 1644, 433, 1671, 431, 1672, 386, 1510, 386, 1509, 455, 1530, 454, 1532, 479, 1527, 648, 1474, 648)
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(684, 487)
+position = Vector2(32, 376)
 
 [node name="ForegroundSecondStructure" type="Sprite2D" parent="."]
 position = Vector2(1583, 324)
@@ -74,8 +73,3 @@ texture = ExtResource("8_lmtet")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
 polygon = PackedVector2Array(1211, 265, 1244, 264, 1253, 274, 1221, 275)
-
-[node name="SmolGrain" type="Sprite2D" parent="."]
-position = Vector2(856, 548)
-scale = Vector2(99.5, 99.5)
-texture = ExtResource("9_0tm0a")

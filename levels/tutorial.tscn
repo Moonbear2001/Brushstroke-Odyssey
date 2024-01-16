@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=18 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
+[ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="1_i64ge"]
 [ext_resource type="Texture2D" uid="uid://c2ow4nde88yi1" path="res://art/L0/big1.png" id="2_70hh4"]
 [ext_resource type="Texture2D" uid="uid://enibk78rxdld" path="res://art/L0/big2.png" id="3_45pnc"]
 [ext_resource type="Texture2D" uid="uid://mqqc3sad7fhe" path="res://art/L0/med4.png" id="4_6ouc6"]
@@ -22,22 +23,23 @@ size = Vector2(4757, 33)
 [node name="World" type="Node2D"]
 position = Vector2(9, 11)
 
-[node name="Panel" type="Panel" parent="."]
-clip_contents = true
-offset_left = -9.0
-offset_top = -11.0
-offset_right = 4780.0
-offset_bottom = 638.0
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Panel"]
-layout_mode = 0
-offset_left = -74.0
-offset_top = -6.0
-offset_right = 4823.0
-offset_bottom = 665.0
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.65098, 0.65098, 0.65098, 0.666667)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="BackgroundTransparent" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(300, 323)
+texture = ExtResource("1_i64ge")
+
+[node name="BackgroundTransparent2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(900, 323)
+texture = ExtResource("1_i64ge")
 
 [node name="Protagonist" parent="." instance=ExtResource("1_3wox7")]
-position = Vector2(223, 286)
+position = Vector2(173, 328)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(351, 421)
