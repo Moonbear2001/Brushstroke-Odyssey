@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d6jmadmfkj0e"
-path="res://.godot/imported/red_door.png-88684dbab43d38bf52accb34d001d756.ctex"
+uid="uid://bjks5hbx2fg3v"
+path="res://.godot/imported/1.png-76b64e59c731ed05035c5c9ccf0f2454.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Esher/red_door.png"
-dest_files=["res://.godot/imported/red_door.png-88684dbab43d38bf52accb34d001d756.ctex"]
+source_file="res://character/walk/1.png"
+dest_files=["res://.godot/imported/1.png-76b64e59c731ed05035c5c9ccf0f2454.ctex"]
 
 [params]
 

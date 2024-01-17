@@ -1,4 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwt2j438edhw5"]
+[gd_scene load_steps=18 format=3 uid="uid://cwt2j438edhw5"]
+
 
 [ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
@@ -6,8 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://b7e5njflhljy4" path="res://art/Esher/short_block.png" id="4_t8kp2"]
 [ext_resource type="Texture2D" uid="uid://cdlg8wjv0ddyc" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
-[ext_resource type="Texture2D" uid="uid://dynmqoo6o0xpn" path="res://art/Esher/second_structure/foreground_second_structure.png" id="7_bc6mr"]
+[ext_resource type="Texture2D" uid="uid://bh0abdl5ksrf5" path="res://art/Esher/second_structure/foreground_second_structure.png" id="7_bc6mr"]
 [ext_resource type="Texture2D" uid="uid://dqb6hmrvdvs5l" path="res://art/Esher/front_arch.png" id="8_lmtet"]
+[ext_resource type="Texture2D" uid="uid://db0cbwtfb21r1" path="res://art/Esher/overlay/smol_grain.png" id="9_0tm0a"]
+[ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/door.tscn" id="10_w7r7g"]
+[ext_resource type="Texture2D" uid="uid://d6jmadmfkj0e" path="res://art/Esher/red_doorL.png" id="11_pirte"]
+[ext_resource type="Texture2D" uid="uid://bg0gaa8dv32vv" path="res://art/Esher/red_doorR.png" id="12_w6qnx"]
+[ext_resource type="Texture2D" uid="uid://di5qmetf5556y" path="res://art/Esher/yellow_door.png" id="13_epech"]
+[ext_resource type="Texture2D" uid="uid://cemk3k5grrgxg" path="res://art/Esher/blue_dor.png" id="14_djktt"]
+[ext_resource type="Texture2D" uid="uid://d2y1838re0adw" path="res://art/Esher/blue_doorR.png" id="15_vaq3i"]
+[ext_resource type="Texture2D" uid="uid://baigiuvpaejfc" path="res://art/Esher/yellow_doorR.png" id="16_bbbc0"]
+[ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="17_npv7l"]
 
 [node name="Escher" type="Node2D"]
 
@@ -17,6 +27,7 @@ scale = Vector2(0.0914548, 0.0914548)
 texture = ExtResource("1_a1ib6")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="FirstHouse" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(547, 355)
@@ -27,6 +38,7 @@ texture = ExtResource("2_12ntw")
 polygon = PackedVector2Array(-16, 408, 184, 408, 184, 216, 296, 112, 408, 216, 408, 424, 527, 430, 527, 512, 472, 512, 472, 568, 584, 568, 584, 432, 640, 432, 640, 208, 656, 192, 672, 216, 672, 512, 776, 512, 776, 488, 808, 488, 808, 464, 832, 464, 832, 432, 864, 432, 864, 408, 896, 408, 896, 432, 976, 432, 976, 376, 1104, 376, 1112, 376, 1112, 400, 1088, 400, 1088, 432, 1056, 432, 1056, 456, 1032, 456, 1032, 488, 1000, 488, 1000, 512, 976, 512, 976, 544, 944, 544, 944, 648, -16, 648)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="WideBlock" type="Sprite2D" parent="StaticBody2D4"]
 position = Vector2(1232, 400)
@@ -37,6 +49,7 @@ texture = ExtResource("3_4o60w")
 polygon = PackedVector2Array(1176, 376, 1176, 424, 1296, 424, 1288, 376)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="ShortBlock" type="Sprite2D" parent="StaticBody2D3"]
 position = Vector2(1376, 368)
@@ -47,6 +60,7 @@ texture = ExtResource("4_t8kp2")
 polygon = PackedVector2Array(1352, 344, 1352, 392, 1408, 392, 1408, 344)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="SecondStructure" type="Sprite2D" parent="StaticBody2D2"]
 position = Vector2(1720, 324)
@@ -57,7 +71,7 @@ texture = ExtResource("5_yolr1")
 polygon = PackedVector2Array(1476, 318, 1558, 317, 1558, 2, 1629, 1, 1631, 51, 1658, 51, 1657, 122, 1595, 123, 1601, 151, 1684, 151, 1686, 202, 1599, 202, 1601, 261, 1685, 261, 1687, 341, 1712, 344, 1714, 426, 1739, 431, 1743, 454, 1767, 458, 1770, 482, 1795, 487, 1798, 505, 1964, 512, 1966, 535, 1956, 563, 1565, 562, 1558, 535, 1560, 518, 1587, 513, 1589, 490, 1615, 486, 1617, 461, 1643, 456, 1644, 433, 1671, 431, 1672, 386, 1510, 386, 1509, 455, 1530, 454, 1532, 479, 1527, 648, 1474, 648)
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(32, 376)
+position = Vector2(57, 376)
 
 [node name="ForegroundSecondStructure" type="Sprite2D" parent="."]
 position = Vector2(1583, 324)
@@ -73,3 +87,185 @@ texture = ExtResource("8_lmtet")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
 polygon = PackedVector2Array(1211, 265, 1244, 264, 1253, 274, 1221, 275)
+
+[node name="SmolGrain" type="Sprite2D" parent="."]
+position = Vector2(856, 548)
+scale = Vector2(99.5, 99.5)
+texture = ExtResource("9_0tm0a")
+
+[node name="RedDoor0" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(185, 376)
+id = 0
+exit_id = 1
+x_offset = -50
+metadata/_edit_group_ = true
+
+[node name="RedDoor" type="Sprite2D" parent="RedDoor0"]
+position = Vector2(-8.00002, -1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_pirte")
+
+[node name="RedDoor1" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(410, 390)
+id = 1
+enter = false
+metadata/_edit_group_ = true
+
+[node name="RedDoorR" type="Sprite2D" parent="RedDoor1"]
+position = Vector2(12, 0.999996)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_w6qnx")
+
+[node name="RedDoor2" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(633, 400)
+id = 2
+exit_id = 0
+metadata/_edit_group_ = true
+
+[node name="RedDoor" type="Sprite2D" parent="RedDoor2"]
+position = Vector2(-8.00002, -1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_pirte")
+
+[node name="YellowDoor0" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(473, 539)
+id = 3
+exit_id = 4
+x_offset = 50
+metadata/_edit_group_ = true
+
+[node name="YellowDoor" type="Sprite2D" parent="YellowDoor0"]
+position = Vector2(13, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_epech")
+
+[node name="YellowDoor1" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(675, 482)
+id = 4
+exit_id = 3
+x_offset = 50
+metadata/_edit_group_ = true
+
+[node name="YellowDoor" type="Sprite2D" parent="YellowDoor1"]
+position = Vector2(13, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_epech")
+
+[node name="BlueDoor0" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(968, 399)
+id = 5
+exit_id = 6
+x_offset = -50
+metadata/_edit_group_ = true
+
+[node name="BlueDor" type="Sprite2D" parent="BlueDoor0"]
+position = Vector2(-8, -1)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("14_djktt")
+
+[node name="BlueDoor1" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(952, 576)
+rotation = 3.14159
+gravity_dir = "up"
+id = 6
+enter = false
+metadata/_edit_group_ = true
+
+[node name="BlueDor" type="Sprite2D" parent="BlueDoor1"]
+position = Vector2(-8, -1)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("14_djktt")
+
+[node name="BlueDoor2" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(1401, 420)
+rotation = 3.14159
+gravity_dir = "up"
+id = 7
+exit_id = 5
+metadata/_edit_group_ = true
+
+[node name="BlueDoorR" type="Sprite2D" parent="BlueDoor2"]
+position = Vector2(7.00001, -3.00001)
+rotation = 3.14159
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("15_vaq3i")
+
+[node name="RedDoor3" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(1552, 289)
+id = 8
+exit_id = 9
+metadata/_edit_group_ = true
+
+[node name="RedDoor" type="Sprite2D" parent="RedDoor3"]
+position = Vector2(-8.00002, -1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_pirte")
+
+[node name="RedDoor4" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(1663, 6)
+rotation = 1.5708
+gravity_dir = "left"
+id = 9
+exit_id = 8
+y_offset = 50
+metadata/_edit_group_ = true
+
+[node name="RedDoorR" type="Sprite2D" parent="RedDoor4"]
+position = Vector2(9, -1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_w6qnx")
+
+[node name="YellowDoor2" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(1599, 232)
+id = 10
+exit_id = 11
+x_offset = 50
+metadata/_edit_group_ = true
+
+[node name="YellowDoor" type="Sprite2D" parent="YellowDoor2"]
+position = Vector2(13, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_epech")
+
+[node name="YellowDoor3" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(1676, 401)
+id = 11
+exit_id = 10
+metadata/_edit_group_ = true
+
+[node name="YellowDoorR" type="Sprite2D" parent="YellowDoor3"]
+position = Vector2(-10, 1)
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_bbbc0")
+
+[node name="BlueDoor3" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(1510, 421)
+id = 12
+exit_id = 13
+metadata/_edit_group_ = true
+
+[node name="BlueDoorR" type="Sprite2D" parent="BlueDoor3"]
+position = Vector2(7.00001, -3.00001)
+rotation = 3.14159
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("15_vaq3i")
+
+[node name="BlueDoor4" parent="." instance=ExtResource("10_w7r7g")]
+position = Vector2(1828, 508)
+rotation = 1.5708
+gravity_dir = "left"
+id = 13
+exit_id = 12
+metadata/_edit_group_ = true
+
+[node name="BlueDor" type="Sprite2D" parent="BlueDoor4"]
+position = Vector2(-8, -1)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("14_djktt")
+
+[node name="Death" parent="." instance=ExtResource("17_npv7l")]
+position = Vector2(1888, -31)
+
+[node name="Death2" parent="." instance=ExtResource("17_npv7l")]
+position = Vector2(1888, 734)
