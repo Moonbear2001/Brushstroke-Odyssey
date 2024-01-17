@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=16 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
 [ext_resource type="Texture2D" uid="uid://c2ow4nde88yi1" path="res://art/L0/big1.png" id="2_70hh4"]
@@ -14,10 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d18su8bbdi6xg" path="res://art/L0/smol4.png" id="13_0wcih"]
 [ext_resource type="Texture2D" uid="uid://dw0hexe66s8nr" path="res://art/L0/smol5.png" id="14_bxrjg"]
 [ext_resource type="PackedScene" uid="uid://dfi4l4bfunx6e" path="res://objects/moving_platform.tscn" id="15_jukwu"]
-[ext_resource type="Script" path="res://levels/Death.gd" id="15_rwrhg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r1d3"]
-size = Vector2(4757, 33)
+[ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="15_yj68c"]
 
 [node name="World" type="Node2D"]
 position = Vector2(9, 11)
@@ -269,13 +266,4 @@ polygon = PackedVector2Array(354.05, 450.131, 649.739, 450.131, 649.74, 538.2, 3
 position = Vector2(1354, 374)
 scale = Vector2(0.5, 0.5)
 
-[node name="Death" type="Area2D" parent="."]
-position = Vector2(2081, 705)
-script = ExtResource("15_rwrhg")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death"]
-position = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_6r1d3")
-
-[connection signal="body_entered" from="Death" to="Death" method="_on_body_entered"]
+[node name="Death" parent="." instance=ExtResource("15_yj68c")]
