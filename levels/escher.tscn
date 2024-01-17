@@ -1,5 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cwt2j438edhw5"]
 
+
 [ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://cs5so27i26tcr" path="res://art/Esher/wide_block.png" id="3_4o60w"]
