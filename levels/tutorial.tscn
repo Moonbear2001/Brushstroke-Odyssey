@@ -1,7 +1,7 @@
-
-[gd_scene load_steps=17 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=18 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
+[ext_resource type="Script" path="res://levels/tutorial.gd" id="1_y74qt"]
 [ext_resource type="Texture2D" uid="uid://c2ow4nde88yi1" path="res://art/L0/big1.png" id="2_70hh4"]
 [ext_resource type="Texture2D" uid="uid://enibk78rxdld" path="res://art/L0/big2.png" id="3_45pnc"]
 [ext_resource type="Texture2D" uid="uid://mqqc3sad7fhe" path="res://art/L0/med4.png" id="4_6ouc6"]
@@ -16,9 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://dw0hexe66s8nr" path="res://art/L0/smol5.png" id="14_bxrjg"]
 [ext_resource type="PackedScene" uid="uid://dfi4l4bfunx6e" path="res://objects/moving_platform.tscn" id="15_jukwu"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="15_yj68c"]
+[ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://lever.tscn" id="16_1ismo"]
 
 [node name="World" type="Node2D"]
 position = Vector2(9, 11)
+script = ExtResource("1_y74qt")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -269,3 +271,9 @@ position = Vector2(1354, 374)
 scale = Vector2(0.5, 0.5)
 
 [node name="Death" parent="." instance=ExtResource("15_yj68c")]
+
+[node name="Lever" parent="." instance=ExtResource("16_1ismo")]
+position = Vector2(1231, 375)
+scale = Vector2(0.12, 0.12)
+
+[connection signal="toggle_moving_platform" from="Lever" to="." method="_on_lever_toggle_moving_platform"]

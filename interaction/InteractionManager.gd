@@ -9,7 +9,7 @@ associated with that object if the protagonist uses "interact".
 @onready var protagonist = get_tree().get_first_node_in_group("protagonist")
 @onready var label = $Label
 
-const base_text = "[E] to "
+const base_text = "[E] "
 
 # Holds all interaction areas that can currently be
 # interacted with
