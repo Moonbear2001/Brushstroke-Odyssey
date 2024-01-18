@@ -1,10 +1,9 @@
-
 [gd_scene load_steps=21 format=3 uid="uid://cwt2j438edhw5"]
 
 [ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
-[ext_resource type="Texture2D" uid="uid://crcyg77fjvbdb" path="res://art/Esher/parallax_layers/smaller/background.png" id="1_e0fh8"]
+[ext_resource type="Texture2D" uid="uid://cfvuxye5q5ssq" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
+[ext_resource type="Texture2D" uid="uid://cxsosdhui1skr" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
 [ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
-[ext_resource type="Texture2D" uid="uid://1fwv1yhtfdyx" path="res://art/Esher/parallax_layers/smaller/midground.png" id="2_hk2fc"]
 [ext_resource type="Texture2D" uid="uid://cs5so27i26tcr" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://b7e5njflhljy4" path="res://art/Esher/short_block.png" id="4_t8kp2"]
 [ext_resource type="Texture2D" uid="uid://cdlg8wjv0ddyc" path="res://art/Esher/second_structure.png" id="5_yolr1"]
@@ -20,27 +19,29 @@
 [ext_resource type="Texture2D" uid="uid://d2y1838re0adw" path="res://art/Esher/blue_doorR.png" id="15_vaq3i"]
 [ext_resource type="Texture2D" uid="uid://baigiuvpaejfc" path="res://art/Esher/yellow_doorR.png" id="16_bbbc0"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="17_npv7l"]
-[ext_resource type="Texture2D" uid="uid://6sgse5mimnim" path="res://art/Esher/parallax_layers/together_preview.png" id="21_xiem4"]
+[ext_resource type="Texture2D" uid="uid://vc2hlon2iq35" path="res://art/Esher/parallax_layers/together_preview.png" id="21_xiem4"]
 
 [node name="Escher" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.3, 0.3)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1571.95, 327.5)
-scale = Vector2(0.280378, 0.280378)
-texture = ExtResource("1_e0fh8")
+modulate = Color(0.556863, 0.556863, 0.556863, 1)
+position = Vector2(1503.85, 304.36)
+scale = Vector2(0.302033, 0.302033)
+texture = ExtResource("1_db3fk")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="Midground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(1397, 326)
-scale = Vector2(0.28, 0.28)
-texture = ExtResource("2_hk2fc")
+position = Vector2(1496, 309)
+scale = Vector2(0.302, 0.302)
+texture = ExtResource("2_3cojc")
 
 [node name="BackArch" type="Sprite2D" parent="."]
 position = Vector2(1220, 326)
