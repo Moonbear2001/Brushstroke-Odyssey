@@ -1,7 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwt2j438edhw5"]
+
+[gd_scene load_steps=21 format=3 uid="uid://cwt2j438edhw5"]
 
 [ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
+[ext_resource type="Texture2D" uid="uid://crcyg77fjvbdb" path="res://art/Esher/parallax_layers/smaller/background.png" id="1_e0fh8"]
 [ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
+[ext_resource type="Texture2D" uid="uid://1fwv1yhtfdyx" path="res://art/Esher/parallax_layers/smaller/midground.png" id="2_hk2fc"]
 [ext_resource type="Texture2D" uid="uid://cs5so27i26tcr" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://b7e5njflhljy4" path="res://art/Esher/short_block.png" id="4_t8kp2"]
 [ext_resource type="Texture2D" uid="uid://cdlg8wjv0ddyc" path="res://art/Esher/second_structure.png" id="5_yolr1"]
@@ -17,8 +20,27 @@
 [ext_resource type="Texture2D" uid="uid://d2y1838re0adw" path="res://art/Esher/blue_doorR.png" id="15_vaq3i"]
 [ext_resource type="Texture2D" uid="uid://baigiuvpaejfc" path="res://art/Esher/yellow_doorR.png" id="16_bbbc0"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="17_npv7l"]
+[ext_resource type="Texture2D" uid="uid://6sgse5mimnim" path="res://art/Esher/parallax_layers/together_preview.png" id="21_xiem4"]
 
 [node name="Escher" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1571.95, 327.5)
+scale = Vector2(0.280378, 0.280378)
+texture = ExtResource("1_e0fh8")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Midground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1397, 326)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_hk2fc")
 
 [node name="BackArch" type="Sprite2D" parent="."]
 position = Vector2(1220, 326)
@@ -67,12 +89,13 @@ scale = Vector2(0.0931243, 0.0931243)
 texture = ExtResource("5_yolr1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
-polygon = PackedVector2Array(1476, 318, 1558, 317, 1558, 2, 1629, 1, 1631, 51, 1658, 51, 1657, 122, 1595, 123, 1601, 151, 1684, 151, 1686, 202, 1599, 202, 1601, 261, 1685, 261, 1687, 341, 1712, 344, 1714, 426, 1739, 431, 1743, 454, 1767, 458, 1770, 482, 1795, 487, 1798, 505, 1964, 512, 1966, 535, 1956, 563, 1565, 562, 1558, 535, 1560, 518, 1587, 513, 1589, 490, 1615, 486, 1617, 461, 1643, 456, 1644, 433, 1671, 431, 1672, 386, 1510, 386, 1509, 455, 1530, 454, 1532, 479, 1527, 648, 1474, 648)
+polygon = PackedVector2Array(1476, 318, 1558, 317, 1558, 2, 1629, 1, 1629, 54, 1656, 55, 1657, 116, 1595, 109, 1596, 165, 1684, 152, 1685, 203, 1595, 209, 1594, 279, 1686, 260, 1687, 341, 1712, 344, 1714, 426, 1739, 431, 1743, 454, 1767, 458, 1770, 482, 1795, 487, 1798, 505, 1964, 512, 1966, 535, 1956, 563, 1565, 562, 1558, 535, 1560, 518, 1587, 513, 1589, 490, 1615, 486, 1617, 461, 1643, 456, 1644, 433, 1671, 431, 1679, 364, 1510, 386, 1509, 455, 1530, 454, 1532, 479, 1527, 648, 1474, 648)
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(57, 376)
+position = Vector2(73, 347)
 
 [node name="ForegroundSecondStructure" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1583, 324)
 scale = Vector2(0.281724, 0.281724)
 texture = ExtResource("7_bc6mr")
@@ -268,3 +291,7 @@ position = Vector2(1888, -31)
 
 [node name="Death2" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(1888, 734)
+
+[node name="TogetherPreview" type="Sprite2D" parent="."]
+position = Vector2(607, 5146)
+texture = ExtResource("21_xiem4")
