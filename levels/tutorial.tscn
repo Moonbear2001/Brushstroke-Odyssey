@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 [gd_scene load_steps=18 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_y74qt"]
-=======
-[gd_scene load_steps=17 format=3 uid="uid://bxux1fu5vvjjt"]
-
-[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
-[ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="1_i64ge"]
->>>>>>> a5585df86b919845b282d8ba65c9e7b2ae4d32b5
 [ext_resource type="Texture2D" uid="uid://c2ow4nde88yi1" path="res://art/L0/big1.png" id="2_70hh4"]
 [ext_resource type="Texture2D" uid="uid://enibk78rxdld" path="res://art/L0/big2.png" id="3_45pnc"]
 [ext_resource type="Texture2D" uid="uid://mqqc3sad7fhe" path="res://art/L0/med4.png" id="4_6ouc6"]
@@ -36,13 +29,13 @@ modulate = Color(0.65098, 0.65098, 0.65098, 0.666667)
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1200, 0)
 
-[node name="BackgroundTransparent2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(898, 363)
-texture = ExtResource("1_i64ge")
-
 [node name="BackgroundTransparent" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(298, 363)
-texture = ExtResource("1_i64ge")
+position = Vector2(300, 323)
+texture = ExtResource("14_bxrjg")
+
+[node name="BackgroundTransparent2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(900, 323)
+texture = ExtResource("14_bxrjg")
 
 [node name="Protagonist" parent="." instance=ExtResource("1_3wox7")]
 position = Vector2(173, 328)
