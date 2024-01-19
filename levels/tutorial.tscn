@@ -278,4 +278,4 @@ polygon = PackedVector2Array(354.05, 450.131, 649.739, 450.131, 649.74, 538.2, 3
 position = Vector2(1226, 369)
 scale = Vector2(0.05, 0.05)
 
-[connection signal="toggle_moving_platform" from="Lever" to="." method="_on_lever_toggle_moving_platform"]
+[connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]

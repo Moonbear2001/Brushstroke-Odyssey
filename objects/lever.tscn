@@ -7,8 +7,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_02xl5"]
 radius = 505.951
 
-[sub_resource type="Animation" id="Animation_81423"]
-resource_name = "on"
+[sub_resource type="Animation" id="Animation_h5g33"]
+resource_name = "neutral"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_kqae0"]
@@ -39,8 +39,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_h5g33"]
-resource_name = "neutral"
+[sub_resource type="Animation" id="Animation_81423"]
+resource_name = "on"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -52,7 +52,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgsad"]

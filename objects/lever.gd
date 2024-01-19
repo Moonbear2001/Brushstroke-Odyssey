@@ -1,40 +1,48 @@
 extends StaticBody2D
 
 """
-Lever
+Lever that can be used to toggle some kind of control in game. Starts in neutral
+position, then toggles between on and off. Emits a signal that when toggled
+that can be caught elsewhere to do something.
 """
 
-signal toggle_moving_platform
+signal lever_toggled(state: LeverStates)
 
 @onready var interaction_area = $InteractionArea
 @onready var animation_player = $Sprite2D/AnimationPlayer
 
 # Possible lever states
-enum states {
+enum LeverStates {
 	ON,
 	OFF,
 	NEUTRAL,
 }
 
 # Current state
-var state
+var state: LeverStates
 
-# Ready
+# Enabled
+var enabled: bool
+
+# Set to neutral and enabled by default
 func _ready():
-	interaction_area.interact = Callable(self, "pull_lever")
-	state = states.NEUTRAL
+	enabled = true
+	state = LeverStates.NEUTRAL
 	animation_player.play("neutral")
+	interaction_area.interact = Callable(self, "pull_lever")
 
-# Interaction with the lever
+# Interact with the lever, if allowed
 func pull_lever():
+	if !enabled:
+		return
 	
 	# Control state and animation
-	if state == states.NEUTRAL or state == states.OFF:
-		state = states.ON
+	if state == LeverStates.NEUTRAL or state == LeverStates.OFF:
+		state = LeverStates.ON
 		animation_player.play("on")
 	else:
-		state = states.OFF
+		state = LeverStates.OFF
 		animation_player.play("off")
 	
 	# Toggle platform movement
-	toggle_moving_platform.emit()
+	lever_toggled.emit(state)
