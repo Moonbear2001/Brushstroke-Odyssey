@@ -1,10 +1,10 @@
+[gd_scene load_steps=25 format=3 uid="uid://cyjue85li2vvi"]
 
-[gd_scene load_steps=21 format=3 uid="uid://cwt2j438edhw5"]
-
+[ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
 [ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
-[ext_resource type="Texture2D" uid="uid://crcyg77fjvbdb" path="res://art/Esher/parallax_layers/smaller/background.png" id="1_e0fh8"]
+[ext_resource type="Texture2D" uid="uid://clan7geli6b5e" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
+[ext_resource type="Texture2D" uid="uid://d0skuom564unj" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
 [ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
-[ext_resource type="Texture2D" uid="uid://1fwv1yhtfdyx" path="res://art/Esher/parallax_layers/smaller/midground.png" id="2_hk2fc"]
 [ext_resource type="Texture2D" uid="uid://cs5so27i26tcr" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://b7e5njflhljy4" path="res://art/Esher/short_block.png" id="4_t8kp2"]
 [ext_resource type="Texture2D" uid="uid://cdlg8wjv0ddyc" path="res://art/Esher/second_structure.png" id="5_yolr1"]
@@ -20,27 +20,52 @@
 [ext_resource type="Texture2D" uid="uid://d2y1838re0adw" path="res://art/Esher/blue_doorR.png" id="15_vaq3i"]
 [ext_resource type="Texture2D" uid="uid://baigiuvpaejfc" path="res://art/Esher/yellow_doorR.png" id="16_bbbc0"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="17_npv7l"]
-[ext_resource type="Texture2D" uid="uid://6sgse5mimnim" path="res://art/Esher/parallax_layers/together_preview.png" id="21_xiem4"]
+[ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://objects/lever.tscn" id="21_pvfto"]
+[ext_resource type="Texture2D" uid="uid://btmsd1chdv68g" path="res://art/Esher/parallax_layers/together_preview.png" id="21_xiem4"]
+
+[sub_resource type="Animation" id="Animation_sl3vk"]
+resource_name = "move_into_position"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 335), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xf7l"]
+_data = {
+"move_into_position": SubResource("Animation_sl3vk")
+}
 
 [node name="Escher" type="Node2D"]
+script = ExtResource("1_4wu67")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.3, 0.3)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1571.95, 327.5)
-scale = Vector2(0.280378, 0.280378)
-texture = ExtResource("1_e0fh8")
+modulate = Color(0.556863, 0.556863, 0.556863, 1)
+position = Vector2(1503.85, 304.36)
+scale = Vector2(0.302033, 0.302033)
+texture = ExtResource("1_db3fk")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="Midground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(1397, 326)
-scale = Vector2(0.28, 0.28)
-texture = ExtResource("2_hk2fc")
+position = Vector2(1496, 309)
+scale = Vector2(0.302, 0.302)
+texture = ExtResource("2_3cojc")
 
 [node name="BackArch" type="Sprite2D" parent="."]
 position = Vector2(1220, 326)
@@ -69,16 +94,36 @@ texture = ExtResource("3_4o60w")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
 polygon = PackedVector2Array(1176, 376, 1176, 424, 1296, 424, 1288, 376)
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="MovingPlatform1" type="StaticBody2D" parent="."]
+position = Vector2(0, 336.25)
 metadata/_edit_group_ = true
 
-[node name="ShortBlock" type="Sprite2D" parent="StaticBody2D3"]
+[node name="ShortBlock" type="Sprite2D" parent="MovingPlatform1"]
 position = Vector2(1376, 368)
 scale = Vector2(0.0923332, 0.0923332)
 texture = ExtResource("4_t8kp2")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MovingPlatform1"]
 polygon = PackedVector2Array(1352, 344, 1352, 392, 1408, 392, 1408, 344)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform1"]
+libraries = {
+"": SubResource("AnimationLibrary_2xf7l")
+}
+
+[node name="BlueDoor2" parent="MovingPlatform1" instance=ExtResource("10_w7r7g")]
+position = Vector2(1401, 417)
+rotation = 3.14159
+gravity_dir = "up"
+id = 7
+exit_id = 5
+metadata/_edit_group_ = true
+
+[node name="BlueDoorR" type="Sprite2D" parent="MovingPlatform1/BlueDoor2"]
+position = Vector2(7.00001, -3.00001)
+rotation = 3.14159
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("15_vaq3i")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
@@ -198,20 +243,6 @@ position = Vector2(-8, -1)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("14_djktt")
 
-[node name="BlueDoor2" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(1401, 420)
-rotation = 3.14159
-gravity_dir = "up"
-id = 7
-exit_id = 5
-metadata/_edit_group_ = true
-
-[node name="BlueDoorR" type="Sprite2D" parent="BlueDoor2"]
-position = Vector2(7.00001, -3.00001)
-rotation = 3.14159
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("15_vaq3i")
-
 [node name="RedDoor3" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1552, 289)
 id = 8
@@ -295,3 +326,10 @@ position = Vector2(1888, 734)
 [node name="TogetherPreview" type="Sprite2D" parent="."]
 position = Vector2(607, 5146)
 texture = ExtResource("21_xiem4")
+
+[node name="Lever" parent="." instance=ExtResource("21_pvfto")]
+position = Vector2(1275, 463)
+rotation = 3.14159
+scale = Vector2(0.05, 0.05)
+
+[connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]

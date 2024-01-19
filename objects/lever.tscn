@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://bc6rebuuy2i1k"]
+
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area/interaction_area.tscn" id="1_kjm0i"]
+[ext_resource type="Script" path="res://objects/lever.gd" id="1_o4aqn"]
+[ext_resource type="Texture2D" uid="uid://bdif45x4lglh4" path="res://art/Esher/levers/lever.png" id="3_8qsh7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_02xl5"]
+radius = 505.951
+
+[sub_resource type="Animation" id="Animation_h5g33"]
+resource_name = "neutral"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_kqae0"]
+resource_name = "off"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_81423"]
+resource_name = "on"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgsad"]
+_data = {
+"neutral": SubResource("Animation_h5g33"),
+"off": SubResource("Animation_kqae0"),
+"on": SubResource("Animation_81423")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ncau"]
+size = Vector2(20.2483, 34.9206)
+
+[node name="Lever" type="StaticBody2D"]
+script = ExtResource("1_o4aqn")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_kjm0i")]
+action_name = "Pull lever"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_02xl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_8qsh7")
+hframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_fgsad")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.1, 171)
+scale = Vector2(41.08, 7.56)
+shape = SubResource("RectangleShape2D_8ncau")
