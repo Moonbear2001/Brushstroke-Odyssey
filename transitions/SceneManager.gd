@@ -70,6 +70,7 @@ func monitor_load_status() -> void:
 			_load_progress_timer.stop()
 			_load_progress_timer.queue_free()
 			content_finished_loading.emit(ResourceLoader.load_threaded_get(_content_path).instantiate())
+			#content_finished_loading.emit(ResourceLoader.load_threaded_get(_content_path))
 			return
 
 # Prints an error message if content fails to load
@@ -81,6 +82,7 @@ func on_content_invalid(path: String) -> void:
 	printerr("error: Cannot load resource: '%s'" % [path])
 	
 func on_content_finished_loading(content) -> void:
+
 	var outgoing_scene = get_tree().current_scene
 	
 	# If we're moving between Levels, pass LevelDataHandoff (the next Level's data) here
@@ -112,3 +114,4 @@ func on_content_finished_loading(content) -> void:
 		scene_transition = null
 		if content is Level:
 			content.enter_level()
+			

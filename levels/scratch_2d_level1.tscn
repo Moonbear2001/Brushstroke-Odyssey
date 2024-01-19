@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dupqdxwgkbegg"]
+[gd_scene load_steps=6 format=3 uid="uid://dupqdxwgkbegg"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_wwyhx"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="3_spkmr"]
 [ext_resource type="PackedScene" uid="uid://e26jjmik8l13" path="res://transitions/level_door.tscn" id="4_2pkhb"]
 [ext_resource type="PackedScene" uid="uid://m0pq7qn45q28" path="res://scratch_tile_map.tscn" id="4_aiof3"]
+[ext_resource type="Script" path="res://levels/menu_button.gd" id="5_jl6xy"]
 
 [node name="Scratch2DLevel1" type="Node2D" node_paths=PackedStringArray("protagonist", "level_doors")]
 script = ExtResource("1_wwyhx")
@@ -32,3 +33,11 @@ offset_top = 110.0
 offset_right = 256.0
 offset_bottom = 133.0
 text = "Level 1"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 331.0
+offset_top = 109.0
+offset_right = 388.0
+offset_bottom = 140.0
+text = "MENU"
+script = ExtResource("5_jl6xy")
