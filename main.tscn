@@ -18,7 +18,7 @@ offset_left = 467.0
 offset_top = 305.0
 offset_right = 690.0
 offset_bottom = 439.0
-text = "Level 1"
+text = "Escher"
 
 [node name="quit" type="Button" parent="."]
 offset_left = 479.0

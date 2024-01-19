@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwt2j438edhw5"]
+[gd_scene load_steps=21 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
-[ext_resource type="Texture2D" uid="uid://cfvuxye5q5ssq" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
-[ext_resource type="Texture2D" uid="uid://cxsosdhui1skr" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
+[ext_resource type="Texture2D" uid="uid://clan7geli6b5e" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
+[ext_resource type="Texture2D" uid="uid://d0skuom564unj" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
 [ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://cs5so27i26tcr" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://b7e5njflhljy4" path="res://art/Esher/short_block.png" id="4_t8kp2"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://d2y1838re0adw" path="res://art/Esher/blue_doorR.png" id="15_vaq3i"]
 [ext_resource type="Texture2D" uid="uid://baigiuvpaejfc" path="res://art/Esher/yellow_doorR.png" id="16_bbbc0"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="17_npv7l"]
-[ext_resource type="Texture2D" uid="uid://vc2hlon2iq35" path="res://art/Esher/parallax_layers/together_preview.png" id="21_xiem4"]
+[ext_resource type="Texture2D" uid="uid://btmsd1chdv68g" path="res://art/Esher/parallax_layers/together_preview.png" id="21_xiem4"]
 
 [node name="Escher" type="Node2D"]
 
