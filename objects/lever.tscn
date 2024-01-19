@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bc6rebuuy2i1k"]
 
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area/interaction_area.tscn" id="1_kjm0i"]
-[ext_resource type="Script" path="res://lever.gd" id="1_o4aqn"]
+[ext_resource type="Script" path="res://objects/lever.gd" id="1_o4aqn"]
 [ext_resource type="Texture2D" uid="uid://folbq43rbao5" path="res://art/Esher/levers/Property 1=neutral.png" id="2_fcucw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02xl5"]

@@ -1,7 +1,7 @@
 extends Node2D
 
 """
-Top leve script for the tutorial level.
+Top level script for the tutorial level.
 """
 
 @onready var moving_platform_animation_player = $MovingPlatform/Platform/AnimationPlayer
