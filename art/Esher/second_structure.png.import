@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjks5hbx2fg3v"
-path="res://.godot/imported/1.png-76b64e59c731ed05035c5c9ccf0f2454.ctex"
+uid="uid://bh7kjif1d0eop"
+path="res://.godot/imported/second_structure.png-6750e12983a479ee3d5305ce4728a03d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/walk/1.png"
-dest_files=["res://.godot/imported/1.png-76b64e59c731ed05035c5c9ccf0f2454.ctex"]
+source_file="res://art/Esher/second_structure.png"
+dest_files=["res://.godot/imported/second_structure.png-6750e12983a479ee3d5305ce4728a03d.ctex"]
 
 [params]
 

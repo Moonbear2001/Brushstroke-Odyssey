@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwfn6w0gtp8ud"
-path="res://.godot/imported/3.png-57628fe1ee853ba5f7c004214dd9ccf2.ctex"
+uid="uid://cm3geieecstfd"
+path="res://.godot/imported/doors.png-159fdace4f9e0833dc0cc746c89b294d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/walk/3.png"
-dest_files=["res://.godot/imported/3.png-57628fe1ee853ba5f7c004214dd9ccf2.ctex"]
+source_file="res://art/Esher/doors.png"
+dest_files=["res://.godot/imported/doors.png-159fdace4f9e0833dc0cc746c89b294d.ctex"]
 
 [params]
 
