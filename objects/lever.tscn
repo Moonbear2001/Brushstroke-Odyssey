@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bc6rebuuy2i1k"]
+[gd_scene load_steps=12 format=3 uid="uid://bc6rebuuy2i1k"]
 
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area/interaction_area.tscn" id="1_kjm0i"]
 [ext_resource type="Script" path="res://objects/lever.gd" id="1_o4aqn"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02xl5"]
 radius = 505.951
+
+[sub_resource type="Animation" id="Animation_hct20"]
+resource_name = "lever"
 
 [sub_resource type="Animation" id="Animation_h5g33"]
 resource_name = "neutral"
@@ -57,6 +60,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgsad"]
 _data = {
+"lever": SubResource("Animation_hct20"),
 "neutral": SubResource("Animation_h5g33"),
 "off": SubResource("Animation_kqae0"),
 "on": SubResource("Animation_81423")
@@ -64,6 +68,8 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ncau"]
 size = Vector2(20.2483, 34.9206)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ugpwd"]
 
 [node name="Lever" type="StaticBody2D"]
 script = ExtResource("1_o4aqn")
@@ -88,3 +94,6 @@ libraries = {
 position = Vector2(5.1, 171)
 scale = Vector2(41.08, 7.56)
 shape = SubResource("RectangleShape2D_8ncau")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ugpwd")
