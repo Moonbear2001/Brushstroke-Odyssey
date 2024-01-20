@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://betfkfuxeatri"
-path="res://.godot/imported/4.png-a97596e51fae6469a7c041842a44ff66.ctex"
+uid="uid://cxev8semuld5f"
+path="res://.godot/imported/wide_block.png-351cc06a710d8436a1d6fd45d15a7384.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/jump/4.png"
-dest_files=["res://.godot/imported/4.png-a97596e51fae6469a7c041842a44ff66.ctex"]
+source_file="res://art/Esher/wide_block.png"
+dest_files=["res://.godot/imported/wide_block.png-351cc06a710d8436a1d6fd45d15a7384.ctex"]
 
 [params]
 
