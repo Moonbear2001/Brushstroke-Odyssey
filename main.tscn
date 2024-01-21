@@ -6,25 +6,25 @@
 script = ExtResource("1_vweto")
 
 [node name="tutorial" type="Button" parent="."]
-offset_left = 469.0
-offset_top = 141.0
-offset_right = 692.0
-offset_bottom = 275.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 123.0
+offset_bottom = 80.0
 text = "Tutorial
 "
 
 [node name="level1" type="Button" parent="."]
-offset_left = 467.0
-offset_top = 305.0
-offset_right = 690.0
-offset_bottom = 439.0
+offset_left = 129.0
+offset_top = 6.0
+offset_right = 245.0
+offset_bottom = 81.0
 text = "Escher"
 
 [node name="quit" type="Button" parent="."]
-offset_left = 479.0
-offset_top = 483.0
-offset_right = 676.0
-offset_bottom = 606.0
+offset_left = 257.0
+offset_top = 7.0
+offset_right = 355.0
+offset_bottom = 85.0
 text = "Quit
 "
 
