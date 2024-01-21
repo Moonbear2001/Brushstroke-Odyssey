@@ -1,5 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cyjue85li2vvi"]
 
+
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://clan7geli6b5e" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://btlckfni362al" path="res://art/Esher/second_structure_front.png" id="7_bc6mr"]
 [ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="Texture2D" uid="uid://db0cbwtfb21r1" path="res://art/Esher/overlay/smol_grain.png" id="9_0tm0a"]
+[ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/door.tscn" id="10_w7r7g"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="17_npv7l"]
 [ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://objects/lever.tscn" id="21_pvfto"]
@@ -74,6 +76,7 @@ position = Vector2(544, 426)
 scale = Vector2(0.27, 0.27)
 texture = ExtResource("2_12ntw")
 
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(0, 80)
 polygon = PackedVector2Array(-16, 408, 184, 408, 184, 216, 296, 112, 408, 216, 408, 424, 527, 430, 527, 512, 472, 512, 472, 568, 584, 568, 584, 432, 640, 432, 640, 208, 656, 192, 672, 216, 672, 512, 776, 512, 776, 488, 808, 488, 808, 464, 832, 464, 832, 432, 864, 432, 864, 408, 896, 408, 896, 432, 976, 432, 976, 376, 1104, 376, 1112, 376, 1112, 400, 1088, 400, 1088, 432, 1056, 432, 1056, 456, 1032, 456, 1032, 488, 1000, 488, 1000, 512, 976, 512, 976, 544, 944, 544, 944, 648, -16, 648)
@@ -114,6 +117,7 @@ id = 7
 exit_id = 5
 metadata/_edit_group_ = true
 
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
 
@@ -132,7 +136,6 @@ position = Vector2(70, 460)
 visible = false
 position = Vector2(1583, 324)
 scale = Vector2(0.281724, 0.281724)
-texture = ExtResource("7_bc6mr")
 
 [node name="FrontArch" type="Sprite2D" parent="."]
 position = Vector2(1236, 333)
@@ -147,7 +150,6 @@ polygon = PackedVector2Array(1211, 265, 1244, 264, 1253, 274, 1221, 275)
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
 scale = Vector2(99.5, 99.5)
-texture = ExtResource("9_0tm0a")
 
 [node name="RedDoor0" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(185, 376)
@@ -156,17 +158,20 @@ exit_id = 1
 x_offset = -50
 metadata/_edit_group_ = true
 
+
 [node name="RedDoor1" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(410, 390)
 id = 1
 enter = false
 metadata/_edit_group_ = true
 
+
 [node name="RedDoor2" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(633, 400)
 id = 2
 exit_id = 0
 metadata/_edit_group_ = true
+
 
 [node name="YellowDoor0" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(473, 539)
@@ -181,6 +186,7 @@ id = 4
 exit_id = 3
 x_offset = 50
 metadata/_edit_group_ = true
+
 
 [node name="BlueDoor0" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(968, 399)
