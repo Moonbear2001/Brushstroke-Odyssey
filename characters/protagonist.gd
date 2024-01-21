@@ -9,7 +9,7 @@ Main playable character.
 @export var input_enabled: bool = true
 
 # Constants
-const SPEED = 300.0
+const SPEED = 140.0
 const JUMP_VELOCITY = 400.0
 const GRAV_UP = -1
 const GRAV_DOWN = 1
@@ -26,13 +26,13 @@ var orientation = GRAV_DOWN
 
 # Child nodes
 @onready var camera = $Camera2D
-@onready var sprite = $Sprite
+@onready var anim = $AnimationPlayer
 
 # Not using atm
 #var move_dir: Vector2
 
 func _ready():
-	pass
+	anim.play("Idle")
 
 func _physics_process(delta):
 	
@@ -90,10 +90,10 @@ func rotate_180():
 	else:
 		up_direction = Vector2.UP
 
-	if sprite.rotation_degrees == 0:
-		sprite.rotation_degrees = 180
+	if self.rotation_degrees == 0:
+		self.rotation_degrees = 180
 	else:
-		sprite.rotation_degrees = 0
+		self.rotation_degrees = 0
 		
 
 # Switches gravity, rotates the character model and changes the up direction
@@ -139,7 +139,12 @@ func use_gravity_down(delta):
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		if direction > 0:
+			anim.play("RunRight")
+		else:
+			anim.play("RunLeft")
 	else:
+		anim.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 func use_gravity_up(delta):
@@ -160,16 +165,16 @@ func use_gravity_up(delta):
 func set_gravity(direction):
 	if direction.to_lower() == "down":
 		orientation = GRAV_DOWN
-		sprite.rotation_degrees = 0
+		self.rotation_degrees = 0
 	elif direction.to_lower() == "left":
 		orientation = GRAV_LEFT
-		sprite.rotation_degrees = 90
+		self.rotation_degrees = 90
 	elif direction.to_lower() == "right":
 		orientation = GRAV_RIGHT
-		sprite.rotation_degrees = 270
+		self.rotation_degrees = 270
 	else:
 		orientation = GRAV_UP
-		sprite.rotation_degrees = 180
+		self.rotation_degrees = 180
 
 # Disable visibility and controls
 func disable():
