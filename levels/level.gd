@@ -6,12 +6,18 @@ Script holding functions data and functions that will exist across all levels. T
 kind of abstract superclass for a level.
 """
 
+# The name of the level
+@export var level_name: String
+
 # The main playable character
 @export var protagonist: Protagonist
 
 # Level transition stuff
 @export var level_doors: Array[LevelDoor]
 var data: LevelDataHandoff
+
+# Stopwatch to keep track of score
+@export var stopwatch: Stopwatch
 
 # Ready
 func _ready() -> void:

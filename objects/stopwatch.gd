@@ -1,3 +1,4 @@
+class_name Stopwatch
 extends Node2D
 
 """
@@ -8,7 +9,7 @@ Stopwatch for keeping track of time spent doing each level.
 @export var update_interval: float
 
 @onready var update_timer = $UpdateTimer
-@onready var label = $Label
+@onready var label = $PanelContainer/Label
 
 var elapsed_time : float
 var running : bool 

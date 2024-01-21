@@ -1,4 +1,4 @@
-extends Node2D
+extends Level
 
 """
 Top level script for the tutorial level. Currently just being used to make a 
