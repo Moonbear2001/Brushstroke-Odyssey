@@ -1,24 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=16 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
-[ext_resource type="Texture2D" uid="uid://b3fqfolqjfvre" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
+[ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://clan7geli6b5e" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
 [ext_resource type="Texture2D" uid="uid://d0skuom564unj" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
-[ext_resource type="Texture2D" uid="uid://d060xk7ggebdi" path="res://art/Esher/first house.png" id="2_12ntw"]
-[ext_resource type="Texture2D" uid="uid://cs5so27i26tcr" path="res://art/Esher/wide_block.png" id="3_4o60w"]
-[ext_resource type="Texture2D" uid="uid://b7e5njflhljy4" path="res://art/Esher/short_block.png" id="4_t8kp2"]
-[ext_resource type="Texture2D" uid="uid://cdlg8wjv0ddyc" path="res://art/Esher/second_structure.png" id="5_yolr1"]
+[ext_resource type="Texture2D" uid="uid://cxev8semuld5f" path="res://art/Esher/wide_block.png" id="3_4o60w"]
+[ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
+[ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
-[ext_resource type="Texture2D" uid="uid://bh0abdl5ksrf5" path="res://art/Esher/second_structure/foreground_second_structure.png" id="7_bc6mr"]
-[ext_resource type="Texture2D" uid="uid://dqb6hmrvdvs5l" path="res://art/Esher/front_arch.png" id="8_lmtet"]
-[ext_resource type="Texture2D" uid="uid://db0cbwtfb21r1" path="res://art/Esher/overlay/smol_grain.png" id="9_0tm0a"]
+[ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/door.tscn" id="10_w7r7g"]
-[ext_resource type="Texture2D" uid="uid://d6jmadmfkj0e" path="res://art/Esher/red_doorL.png" id="11_pirte"]
-[ext_resource type="Texture2D" uid="uid://bg0gaa8dv32vv" path="res://art/Esher/red_doorR.png" id="12_w6qnx"]
-[ext_resource type="Texture2D" uid="uid://di5qmetf5556y" path="res://art/Esher/yellow_door.png" id="13_epech"]
-[ext_resource type="Texture2D" uid="uid://cemk3k5grrgxg" path="res://art/Esher/blue_dor.png" id="14_djktt"]
-[ext_resource type="Texture2D" uid="uid://d2y1838re0adw" path="res://art/Esher/blue_doorR.png" id="15_vaq3i"]
-[ext_resource type="Texture2D" uid="uid://baigiuvpaejfc" path="res://art/Esher/yellow_doorR.png" id="16_bbbc0"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="17_npv7l"]
 [ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://objects/lever.tscn" id="21_pvfto"]
 [ext_resource type="Texture2D" uid="uid://btmsd1chdv68g" path="res://art/Esher/parallax_layers/together_preview.png" id="21_xiem4"]
@@ -78,7 +69,6 @@ metadata/_edit_group_ = true
 [node name="FirstHouse" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(547, 355)
 scale = Vector2(0.0931967, 0.0931967)
-texture = ExtResource("2_12ntw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-16, 408, 184, 408, 184, 216, 296, 112, 408, 216, 408, 424, 527, 430, 527, 512, 472, 512, 472, 568, 584, 568, 584, 432, 640, 432, 640, 208, 656, 192, 672, 216, 672, 512, 776, 512, 776, 488, 808, 488, 808, 464, 832, 464, 832, 432, 864, 432, 864, 408, 896, 408, 896, 432, 976, 432, 976, 376, 1104, 376, 1112, 376, 1112, 400, 1088, 400, 1088, 432, 1056, 432, 1056, 456, 1032, 456, 1032, 488, 1000, 488, 1000, 512, 976, 512, 976, 544, 944, 544, 944, 648, -16, 648)
@@ -123,7 +113,6 @@ metadata/_edit_group_ = true
 position = Vector2(7.00001, -3.00001)
 rotation = 3.14159
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("15_vaq3i")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
@@ -143,7 +132,6 @@ position = Vector2(73, 347)
 visible = false
 position = Vector2(1583, 324)
 scale = Vector2(0.281724, 0.281724)
-texture = ExtResource("7_bc6mr")
 
 [node name="FrontArch" type="Sprite2D" parent="."]
 position = Vector2(1236, 333)
@@ -158,7 +146,6 @@ polygon = PackedVector2Array(1211, 265, 1244, 264, 1253, 274, 1221, 275)
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
 scale = Vector2(99.5, 99.5)
-texture = ExtResource("9_0tm0a")
 
 [node name="RedDoor0" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(185, 376)
@@ -170,7 +157,6 @@ metadata/_edit_group_ = true
 [node name="RedDoor" type="Sprite2D" parent="RedDoor0"]
 position = Vector2(-8.00002, -1)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("11_pirte")
 
 [node name="RedDoor1" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(410, 390)
@@ -181,7 +167,6 @@ metadata/_edit_group_ = true
 [node name="RedDoorR" type="Sprite2D" parent="RedDoor1"]
 position = Vector2(12, 0.999996)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("12_w6qnx")
 
 [node name="RedDoor2" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(633, 400)
@@ -192,7 +177,6 @@ metadata/_edit_group_ = true
 [node name="RedDoor" type="Sprite2D" parent="RedDoor2"]
 position = Vector2(-8.00002, -1)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("11_pirte")
 
 [node name="YellowDoor0" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(473, 539)
@@ -204,7 +188,6 @@ metadata/_edit_group_ = true
 [node name="YellowDoor" type="Sprite2D" parent="YellowDoor0"]
 position = Vector2(13, 1)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("13_epech")
 
 [node name="YellowDoor1" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(675, 482)
@@ -216,7 +199,6 @@ metadata/_edit_group_ = true
 [node name="YellowDoor" type="Sprite2D" parent="YellowDoor1"]
 position = Vector2(13, 1)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("13_epech")
 
 [node name="BlueDoor0" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(968, 399)
@@ -228,7 +210,6 @@ metadata/_edit_group_ = true
 [node name="BlueDor" type="Sprite2D" parent="BlueDoor0"]
 position = Vector2(-8, -1)
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("14_djktt")
 
 [node name="BlueDoor1" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(952, 576)
@@ -241,7 +222,6 @@ metadata/_edit_group_ = true
 [node name="BlueDor" type="Sprite2D" parent="BlueDoor1"]
 position = Vector2(-8, -1)
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("14_djktt")
 
 [node name="RedDoor3" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1552, 289)
@@ -252,7 +232,6 @@ metadata/_edit_group_ = true
 [node name="RedDoor" type="Sprite2D" parent="RedDoor3"]
 position = Vector2(-8.00002, -1)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("11_pirte")
 
 [node name="RedDoor4" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1663, 6)
@@ -266,7 +245,6 @@ metadata/_edit_group_ = true
 [node name="RedDoorR" type="Sprite2D" parent="RedDoor4"]
 position = Vector2(9, -1)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("12_w6qnx")
 
 [node name="YellowDoor2" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1599, 232)
@@ -278,7 +256,6 @@ metadata/_edit_group_ = true
 [node name="YellowDoor" type="Sprite2D" parent="YellowDoor2"]
 position = Vector2(13, 1)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("13_epech")
 
 [node name="YellowDoor3" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1676, 401)
@@ -290,7 +267,6 @@ metadata/_edit_group_ = true
 position = Vector2(-10, 1)
 rotation = -1.5708
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("16_bbbc0")
 
 [node name="BlueDoor3" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1510, 421)
@@ -302,7 +278,6 @@ metadata/_edit_group_ = true
 position = Vector2(7.00001, -3.00001)
 rotation = 3.14159
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("15_vaq3i")
 
 [node name="BlueDoor4" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1828, 508)
@@ -315,7 +290,6 @@ metadata/_edit_group_ = true
 [node name="BlueDor" type="Sprite2D" parent="BlueDoor4"]
 position = Vector2(-8, -1)
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("14_djktt")
 
 [node name="Death" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(1888, -31)

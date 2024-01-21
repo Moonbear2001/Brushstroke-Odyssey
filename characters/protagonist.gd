@@ -65,7 +65,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 # Handle input events, gets called before physics process
-func _input(input_event):
+func _input(_input_event):
 	
 	if not input_enabled:
 		return
