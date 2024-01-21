@@ -22,7 +22,7 @@
 
 [node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch")]
 script = ExtResource("1_y74qt")
-level_name = "Rothko"
+level_name = "tutorial"
 protagonist = NodePath("Protagonist")
 stopwatch = NodePath("Stopwatch")
 

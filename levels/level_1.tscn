@@ -24,7 +24,6 @@ offset_bottom = 40.0
 
 [node name="Door" parent="." instance=ExtResource("3_cnkpt")]
 position = Vector2(297, 297)
-gravity_reversed = true
 
 [node name="Door2" parent="." instance=ExtResource("3_cnkpt")]
 position = Vector2(607, 303)
