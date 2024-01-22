@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bausrlni12gax"]
 
 [ext_resource type="Script" path="res://objects/color_box.gd" id="1_8rovd"]
-[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="2_b5xep"]
+[ext_resource type="PackedScene" path="res://interaction/interaction_area.tscn" id="2_b5xep"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qpixj"]
 radius = 189.003

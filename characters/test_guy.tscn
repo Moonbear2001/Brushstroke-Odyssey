@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsuabjrdnix0n"]
+
+[ext_resource type="Texture2D" uid="uid://rvdvn1htpnru" path="res://art/scratch_artwork/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="1_1fp3e"]
+[ext_resource type="Script" path="res://characters/test_guy.gd" id="1_abrhh"]
+[ext_resource type="Script" path="res://interaction/interaction_area/interaction_area.gd" id="2_7qt8h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhq8l"]
+radius = 106.471
+
+[node name="TestGuy" type="Node2D"]
+script = ExtResource("1_abrhh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1fp3e")
+hframes = 4
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("2_7qt8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_mhq8l")
