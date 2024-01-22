@@ -1,5 +1,9 @@
 extends Area2D
 
+"""
+Door that teleports the player to another door.
+"""
+
 @export var gravity_dir = "down"
 @export var id:int = -1
 @export var enter: bool = true
@@ -7,16 +11,39 @@ extends Area2D
 @export var x_offset = 0
 @export var y_offset = 0
 
+# Enums that describe direction, color, and state
+# These help with choosing which animation to play
+@export_enum("left", "right") var direction: String
+@export_enum("black", "orange", "red", "blue", "white") var color: String
+@export_enum("open", "closed") var state: String
+
+@onready var animation_player = $Sprite2D/AnimationPlayer
+
 var lock_door = false
 
-func _on_body_entered(body):
-	if body.is_in_group("protagonist") && enter:
-		teleport(body)
+# Play the correct animation when ready
+func _ready() -> void:
+	var start_anim = build_anim_name(color, state, direction)
+	animation_player.play(start_anim)
 
-func lock():
-	lock_door = true
+# When the door is entered
+func _on_body_entered(body):
+	
+	if body.is_in_group("protagonist"):
+
+		# Play door opening animation
+		state = "open"
+		var open_anim = build_anim_name(color, state, direction)
+		animation_player.play(open_anim)
+		
+		if enter:
+			teleport(body)
+
+# When the body is exited
+func _on_body_exited(body):
 	$Timer.start()
 
+# Teleports the player to the new location
 func teleport(body):
 	for door in get_tree().get_nodes_in_group("door"):
 		if door != self && door.id == exit_id: 
@@ -29,5 +56,18 @@ func teleport(body):
 			break
 
 
+# Lock the door for a while after the player enters it
+func lock():
+	lock_door = true
+	$Timer.start()
+
+# Re-enable the door and close it 
 func _on_timer_timeout():
 	lock_door = false
+	state = "closed"
+	var start_anim = build_anim_name(color, state, direction)
+	animation_player.play(start_anim)
+	
+# Utility function to help build the animation name
+func build_anim_name(color: String, state: String, direction: String) -> String:
+	return color + "_door_" + state + "_" + direction

@@ -23,7 +23,7 @@ signal player_entered_door(door: LevelDoor, transition_type: String)
 # Called when a player enters a door
 func _on_body_entered(body: Node2D) -> void:
 	
-	print("Door detected body entering.")
+	#"Door detected body entering.")
 	
 	# If a body entered that is not the player, then ignore
 	if not body is Protagonist:
