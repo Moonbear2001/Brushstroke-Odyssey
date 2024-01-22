@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://d0skuom564unj" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
 [ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
-[ext_resource type="Texture2D" uid="uid://cxev8semuld5f" path="res://art/Esher/wide_block.png" id="3_4o60w"]
-[ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
-[ext_resource type="Texture2D" uid="uid://h1wt1antynpa" path="res://art/Esher/parallax_layers/front_most_layer.png" id="5_2ioyc"]
-[ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
+[ext_resource type="Texture2D" uid="uid://bw1as137t0ybl" path="res://art/Esher/wide_block.png" id="3_4o60w"]
+[ext_resource type="Texture2D" uid="uid://cac8ajx5j6vyk" path="res://art/Esher/parallax_layers/front.png" id="3_ioprh"]
+[ext_resource type="Texture2D" uid="uid://clh7mgpyrhhf1" path="res://art/Esher/short_block.png" id="4_t8kp2"]
+[ext_resource type="Texture2D" uid="uid://jbfiytay5wxf" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
 [ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/door.tscn" id="10_w7r7g"]
@@ -48,6 +48,15 @@ script = ExtResource("1_4wu67")
 position = Vector2(2012, 357)
 scale = Vector2(0.642417, 0.642417)
 texture = ExtResource("2_nopj3")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Front" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+modulate = Color(0.701961, 0.701961, 0.701961, 0.556863)
+position = Vector2(1878, 395)
+scale = Vector2(0.565359, 0.565359)
+texture = ExtResource("3_ioprh")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
@@ -305,19 +314,5 @@ position = Vector2(1888, 870)
 position = Vector2(1275, 463)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
-
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-layer = 0
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
-visible = false
-modulate = Color(1, 1, 1, 0.705882)
-motion_scale = Vector2(1.5, 1.5)
-motion_offset = Vector2(1.5, 0)
-
-[node name="FrontMostLayer" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2(4894, 361)
-scale = Vector2(0.858998, 0.858998)
-texture = ExtResource("5_2ioyc")
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
