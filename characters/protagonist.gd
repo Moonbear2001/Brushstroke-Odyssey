@@ -10,7 +10,9 @@ Main playable character.
 
 # Constants
 const SPEED = 140.0
-const JUMP_VELOCITY = 400.0
+#const JUMP_VELOCITY = 400.0
+# Temporarily increased jump velocity for passing level easier for demo!
+const JUMP_VELOCITY = 500.0
 const GRAV_UP = -1
 const GRAV_DOWN = 1
 const GRAV_LEFT = 2
@@ -101,7 +103,7 @@ func use_gravity_left(delta):
 	var direction = Input.get_axis("right", "left")
 	if direction:
 		velocity.y = direction * SPEED * -1
-		print(velocity.x)
+		# velocity.x)
 		if velocity.x == 0:
 			if direction < 0:
 				anim.play("RunRight")
