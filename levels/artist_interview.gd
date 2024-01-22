@@ -33,12 +33,12 @@ func _ready():
 	
 # Called when the HTTP request is completed.
 func _http_request_completed(result, response_code, headers, body):
-	print("req completed")
+	#print("req completed")
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	var response = json.get_data()
-	print("here")
+	#print("here")
 
 	# Print response
-	print(response)
+	#print(response)
 	#print(response.headers["User-Agent"])

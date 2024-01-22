@@ -28,7 +28,7 @@ func _ready() -> void:
 	# If we're not transitioning between levels, there won't be any LevelHandoffData and we don't
 	# need to wait for the SceneManager to call this
 	if data == null:
-		print("Not transitioning between levels")
+		# print("Not transitioning between levels")
 		enter_level()
 
 
@@ -55,7 +55,7 @@ func init_player_location() -> void:
 # Creates handoff data to pass to the new scene.
 func _on_player_entered_door(door: LevelDoor) -> void:
 	
-	print("On player entered door signal caught in level script")
+	# print("On player entered door signal caught in level script")
 	
 	_disconnect_from_level_doors()
 	protagonist.disable()
@@ -64,7 +64,7 @@ func _on_player_entered_door(door: LevelDoor) -> void:
 	data.entry_door_name = door.entry_door_name
 	#data.move_dir = door.get_move_dir()
 	#print("LevelDataHandoff, entry door name : ", data.entry_door_name, " move_dir: ", data.move_dir)
-	print("LevelDataHandoff, entry door name : ", data.entry_door_name)
+	# print("LevelDataHandoff, entry door name : ", data.entry_door_name)
 	# set_process(false)
 
 
