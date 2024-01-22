@@ -24,7 +24,7 @@ SceneManager="*res://transitions/SceneManager.gd"
 
 window/size/viewport_width=1270
 window/size/viewport_height=720
-window/stretch/scale=3.0
+window/stretch/scale=1.5
 
 [editor]
 
