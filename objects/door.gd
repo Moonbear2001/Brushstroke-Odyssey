@@ -17,14 +17,14 @@ Door that teleports the player to another door.
 @export_enum("black", "orange", "red", "blue", "white") var color: String
 @export_enum("open", "closed") var state: String
 
-@onready var animation_player = $Sprite2D/AnimationPlayer
+@onready var animated_sprite = $AnimatedSprite2D
 
 var lock_door = false
 
-# Play the correct animation when ready
+# Play the closed door animation on scene startup
 func _ready() -> void:
 	var start_anim = build_anim_name(color, state, direction)
-	animation_player.play(start_anim)
+	animated_sprite.play(start_anim)
 
 # When the door is entered
 func _on_body_entered(body):
@@ -34,14 +34,17 @@ func _on_body_entered(body):
 		# Play door opening animation
 		state = "open"
 		var open_anim = build_anim_name(color, state, direction)
-		animation_player.play(open_anim)
+		animated_sprite.play(open_anim)
 		
 		if enter:
 			teleport(body)
 
 # When the body is exited
 func _on_body_exited(body):
-	$Timer.start()
+	if body.is_in_group("protagonist") and !lock_door:
+		state = "closed"
+		var close_anim = build_anim_name(color, state, direction)
+		animated_sprite.play(close_anim)
 
 # Teleports the player to the new location
 func teleport(body):
@@ -65,9 +68,15 @@ func lock():
 func _on_timer_timeout():
 	lock_door = false
 	state = "closed"
-	var start_anim = build_anim_name(color, state, direction)
-	animation_player.play(start_anim)
+	var close_anim = build_anim_name(color, state, direction)
+	animated_sprite.play(close_anim)
 	
 # Utility function to help build the animation name
 func build_anim_name(color: String, state: String, direction: String) -> String:
 	return color + "_door_" + state + "_" + direction
+
+
+func _on_animated_sprite_2d_animation_finished():
+	state = "closed"
+	var start_anim = build_anim_name(color, state, direction)
+	animated_sprite.play(start_anim)

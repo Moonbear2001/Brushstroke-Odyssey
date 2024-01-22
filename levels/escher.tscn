@@ -87,7 +87,7 @@ texture = ExtResource("3_4o60w")
 polygon = PackedVector2Array(1176, 376, 1176, 424, 1296, 424, 1288, 376)
 
 [node name="MovingPlatform1" type="StaticBody2D" parent="."]
-position = Vector2(0, 335)
+position = Vector2(0, 337)
 metadata/_edit_group_ = true
 
 [node name="ShortBlock" type="Sprite2D" parent="MovingPlatform1"]
@@ -104,13 +104,12 @@ libraries = {
 }
 
 [node name="BlueDoor2" parent="MovingPlatform1" instance=ExtResource("10_w7r7g")]
-position = Vector2(1401, 426)
-rotation = 3.14159
-scale = Vector2(0.4, 0.4)
+position = Vector2(1391, 440)
+scale = Vector2(0.3, 0.3)
 gravity_dir = "up"
 id = 7
 exit_id = 5
-direction = "right"
+direction = "left"
 color = "blue"
 state = "closed"
 metadata/_edit_group_ = true
@@ -147,8 +146,8 @@ position = Vector2(856, 548)
 scale = Vector2(99.5, 99.5)
 
 [node name="RedDoor0" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(184, 446)
-scale = Vector2(0.4, 0.4)
+position = Vector2(167, 466)
+scale = Vector2(0.3, 0.3)
 id = 0
 exit_id = 1
 x_offset = -50
@@ -158,18 +157,19 @@ state = "closed"
 metadata/_edit_group_ = true
 
 [node name="RedDoor1" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(429, 464)
-scale = Vector2(0.4, 0.4)
+position = Vector2(429, 461)
+scale = Vector2(0.3, 0.3)
 id = 1
 enter = false
+x_offset = 30
 direction = "right"
 color = "red"
 state = "closed"
 metadata/_edit_group_ = true
 
 [node name="RedDoor2" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(639, 471)
-scale = Vector2(0.4, 0.4)
+position = Vector2(617, 469)
+scale = Vector2(0.3, 0.3)
 id = 2
 exit_id = 0
 direction = "left"
@@ -179,7 +179,7 @@ metadata/_edit_group_ = true
 
 [node name="YellowDoor0" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(491, 624)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 id = 3
 exit_id = 4
 x_offset = 50
@@ -190,7 +190,7 @@ metadata/_edit_group_ = true
 
 [node name="YellowDoor1" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(685, 568)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 id = 4
 exit_id = 3
 x_offset = 50
@@ -200,8 +200,8 @@ state = "closed"
 metadata/_edit_group_ = true
 
 [node name="BlueDoor0" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(976, 472)
-scale = Vector2(0.4, 0.4)
+position = Vector2(954, 468)
+scale = Vector2(0.3, 0.3)
 id = 5
 exit_id = 6
 x_offset = -50
@@ -211,9 +211,9 @@ state = "closed"
 metadata/_edit_group_ = true
 
 [node name="BlueDoor1" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(944, 664)
+position = Vector2(972, 666)
 rotation = 3.14159
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 gravity_dir = "up"
 id = 6
 enter = false
@@ -223,8 +223,8 @@ state = "closed"
 metadata/_edit_group_ = true
 
 [node name="RedDoor3" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(1554, 277)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1538, 271)
+scale = Vector2(0.3, 0.3)
 id = 8
 exit_id = 9
 direction = "left"
@@ -233,9 +233,9 @@ state = "closed"
 metadata/_edit_group_ = true
 
 [node name="RedDoor4" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(1663, 6)
+position = Vector2(1663, 22)
 rotation = 1.5708
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 gravity_dir = "left"
 id = 9
 exit_id = 8
@@ -246,8 +246,8 @@ state = "closed"
 metadata/_edit_group_ = true
 
 [node name="YellowDoor2" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(1611, 239)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1625, 240)
+scale = Vector2(0.3, 0.3)
 id = 10
 exit_id = 11
 x_offset = 50
@@ -258,7 +258,7 @@ metadata/_edit_group_ = true
 
 [node name="YellowDoor3" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1688, 403)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 id = 11
 exit_id = 10
 direction = "left"
@@ -267,8 +267,8 @@ state = "closed"
 metadata/_edit_group_ = true
 
 [node name="BlueDoor3" parent="." instance=ExtResource("10_w7r7g")]
-position = Vector2(1519, 415)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1533, 429)
+scale = Vector2(0.3, 0.3)
 id = 12
 exit_id = 13
 direction = "right"
@@ -279,7 +279,7 @@ metadata/_edit_group_ = true
 [node name="BlueDoor4" parent="." instance=ExtResource("10_w7r7g")]
 position = Vector2(1849, 511)
 rotation = 1.5708
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 gravity_dir = "left"
 id = 13
 exit_id = 12
