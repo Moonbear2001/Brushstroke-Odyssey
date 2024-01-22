@@ -6,6 +6,7 @@ move.
 """
 
 @onready var moving_platform_animation_player = $MovingPlatform1/AnimationPlayer
+@onready var lever = $Lever
 
 # Have we moved the platform yet
 var platform_moved: bool = false
@@ -18,6 +19,7 @@ func _ready():
 
 # Called when the lever is pulled, toggles moving platform animation
 func _on_lever_lever_toggled(lever_state):
+	#lever.disable()
 	if !platform_moved:
 		moving_platform_animation_player.play("move_into_position")
 		platform_moved = true

@@ -12,7 +12,7 @@ Main playable character.
 const SPEED = 140.0
 #const JUMP_VELOCITY = 400.0
 # Temporarily increased jump velocity for passing level easier for demo!
-const JUMP_VELOCITY = 500.0
+const JUMP_VELOCITY = 520.0
 const GRAV_UP = -1
 const GRAV_DOWN = 1
 const GRAV_LEFT = 2
