@@ -5,7 +5,7 @@ Top level script for the Escher level. Currently just using to make the platform
 move.
 """
 
-@onready var moving_platform_animation_player = $MovingPlatform1/AnimationPlayer
+@onready var moving_platform_animation_player = $"Platforms/Moving platform/AnimationPlayer"
 @onready var lever = $Lever
 
 # Have we moved the platform yet
