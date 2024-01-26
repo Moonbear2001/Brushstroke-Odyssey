@@ -4,7 +4,7 @@ extends Area2D
 Door that teleports the player to another door.
 """
 
-@export var gravity_dir = "down"
+@export_enum("down", "up", "left", "right") var gravity_dir:String = "down"
 @export var id:int = -1
 @export var enter: bool = true
 @export var exit_id:int = -1

@@ -13,17 +13,11 @@ const SPEED = 140.0
 #const JUMP_VELOCITY = 400.0
 # Temporarily increased jump velocity for passing level easier for demo!
 const JUMP_VELOCITY = 520.0
-const GRAV_UP = -1
-const GRAV_DOWN = 1
-const GRAV_LEFT = 2
-const GRAV_RIGHT = 3
-
-
 
 # Get the default gravity setting (980)
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var gravity_orientation = GRAV_DOWN
-
+var x_val = 0
+var y_val = -1
 
 # Child nodes
 @onready var camera = $Camera2D
@@ -41,14 +35,7 @@ func _physics_process(delta):
 	if not input_enabled:
 		return
 	
-	if gravity_orientation == GRAV_DOWN:
-		use_gravity_down(delta)
-	elif gravity_orientation == GRAV_LEFT:
-		use_gravity_left(delta)
-	elif gravity_orientation == GRAV_RIGHT:
-		use_gravity_right(delta)
-	else:
-		use_gravity_up(delta)
+	use_gravity(delta)
 
 	move_and_slide()
 
@@ -84,135 +71,77 @@ func _input(_input_event):
 		#self.rotation_degrees = 0
 		
 
-# Switches gravity, rotates the character model and changes the up direction
-func use_gravity_left(delta):
-	# Add gravity
-	if not is_on_floor():
-		velocity.x += gravity * delta * -1
+func use_gravity(delta):
+	if x_val != 0:
+		if not is_on_floor():
+			velocity.x += gravity * delta * x_val * -1
+		else:
+			velocity.x = 0
 	else:
-		velocity.x = 0
-
-	# Handle jump
+		if not is_on_floor():
+			velocity.y += gravity * delta * y_val * -1
+		else:
+			velocity.y = 0
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.x = JUMP_VELOCITY
-		
-	if not is_on_floor():
-		set_jump_animation()
-
-	# Handle left and right movement
-	var direction = Input.get_axis("right", "left")
-	if direction:
-		velocity.y = direction * SPEED * -1
-		# velocity.x)
-		if velocity.x == 0:
-			if direction < 0:
-				anim.play("RunRight")
-			else:
-				anim.play("RunLeft")
-	else:
-		if velocity.x == 0:
-			anim.play("Idle")
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-
-func use_gravity_right(delta):
-	# Add gravity
-	if not is_on_floor():
-		velocity.x += gravity * delta
-	else:
-		velocity.x = 0
-
-	# Handle jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.x = JUMP_VELOCITY * -1
+		if x_val != 0:
+			velocity.x = JUMP_VELOCITY * x_val
+		else:
+			velocity.y = JUMP_VELOCITY * y_val
 	
 	if not is_on_floor():
 		set_jump_animation()
-
-	# Handle left and right movement
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		velocity.y = direction * SPEED
-		if velocity.x == 0:
-			if direction > 0:
-				anim.play("RunRight")
-			else:
-				anim.play("RunLeft")
-	else:
-		if velocity.x == 0:
-			anim.play("Idle")
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-
-func use_gravity_down(delta):
-	# Add gravity
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	else:
-		velocity.y = 0
-	# Handle jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY * -1
 	
-	if not is_on_floor():
-		set_jump_animation()
-
-	# Handle left and right movement
-	var direction = Input.get_axis("left", "right")
+	var direction
+	if x_val < 0 or y_val < 0:
+		direction = Input.get_axis("left", "right")
+	else:
+		direction = Input.get_axis("right", "left")
 	if direction:
-		velocity.x = direction * SPEED
-		if velocity.y == 0:
-			if direction > 0:
-				anim.play("RunRight")
-			else:
-				anim.play("RunLeft")
+		if x_val != 0:
+			velocity.y = direction * SPEED * x_val * -1
+			if velocity.x == 0:
+				if direction < 0:
+					anim.play("RunRight")
+				else:
+					anim.play("RunLeft")
+		else:
+			velocity.x = direction * SPEED * y_val * -1
+			if velocity.y == 0:
+				if direction > 0:
+					anim.play("RunRight")
+				else:
+					anim.play("RunLeft")
 	else:
-		if velocity.y == 0:
-			anim.play("Idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED) 
-
-func use_gravity_up(delta):
-	# Add gravity
-	if not is_on_floor():
-		velocity.y += gravity * delta * -1
-	else:
-		velocity.y = 0
-
-	# Handle jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
-	if not is_on_floor():
-		set_jump_animation()
-
-	# Handle left and right movement
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		velocity.x = direction * SPEED
-		if velocity.y == 0:
-			if direction < 0:
-				anim.play("RunRight")
-			else:
-				anim.play("RunLeft")
-	else:
-		if velocity.y == 0:
-			anim.play("Idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if x_val != 0:
+			if velocity.x == 0:
+				anim.play("Idle")
+			velocity.y = move_toward(velocity.y, 0, SPEED)
+		else:
+			if velocity.y == 0:
+				anim.play("Idle")
+			velocity.x = move_toward(velocity.x, 0, SPEED) 
 
 func set_gravity(direction):
 	if direction.to_lower() == "down":
 		up_direction = Vector2(0, -1)
-		gravity_orientation = GRAV_DOWN
+		x_val = 0
+		y_val = -1
 		rotate_protagonist(0)
 	elif direction.to_lower() == "left":
 		up_direction = Vector2(1, 0)
-		gravity_orientation = GRAV_LEFT
+		x_val = 1
+		y_val = 0
 		rotate_protagonist(90)
 	elif direction.to_lower() == "right":
 		up_direction = Vector2(-1, 0)
-		gravity_orientation = GRAV_RIGHT
+		x_val = -1
+		y_val = 0
 		rotate_protagonist(270)
 	else:
 		up_direction = Vector2(0, 1)
-		gravity_orientation = GRAV_UP
+		x_val = 0
+		y_val = 1
 		rotate_protagonist(180)
 
 
@@ -221,95 +150,40 @@ func rotate_protagonist(deg):
 	collision_shape.rotation_degrees = deg
 
 func set_jump_animation():
-	if gravity_orientation == GRAV_DOWN:
-		if velocity.x < 0:
-			if velocity.y > -100 and velocity.y < 100:
-				anim.play("CrouchLeft")
-			elif velocity.y > 0:
-				anim.play("FallLeft")
-			elif velocity.y < 0:
-				anim.play("JumpLeft")
-		elif velocity.x > 0:
-			if velocity.y > -100 and velocity.y < 100:
-				anim.play("CrouchRight")
-			elif velocity.y > 0:
-				anim.play("FallRight")
-			elif velocity.y < 0:
-				anim.play("JumpRight")
-		else:
-			if velocity.y > -100 and velocity.y < 100:
-				anim.play("CrouchRight")
-			elif velocity.y > 0:
-				anim.play("FallCenter")
-			elif velocity.y < 0:
-				anim.play("JumpCenter")
-	elif gravity_orientation == GRAV_UP:
-		if velocity.x > 0:
-			if velocity.y > -100 and velocity.y < 100:
-				anim.play("CrouchLeft")
-			elif velocity.y < 0:
-				anim.play("FallLeft")
-			elif velocity.y > 0:
-				anim.play("JumpLeft")
-		elif velocity.x < 0:
-			if velocity.y > -100 and velocity.y < 100:
-				anim.play("CrouchRight")
-			elif velocity.y < 0:
-				anim.play("FallRight")
-			elif velocity.y > 0:
-				anim.play("JumpRight")
-		else:
-			if velocity.y > -100 and velocity.y < 100:
-				anim.play("CrouchLeft")
-			elif velocity.y > 0:
-				anim.play("FallCenter")
-			elif velocity.y < 0:
-				anim.play("JumpCenter")
-	elif gravity_orientation == GRAV_RIGHT:
-		if velocity.y > 0:
-			if velocity.x > -100 and velocity.x < 100:
-				anim.play("CrouchLeft")
-			elif velocity.x < 0:
-				anim.play("FallLeft")
-			elif velocity.x > 0:
-				anim.play("JumpLeft")
-		elif velocity.y < 0:
-			if velocity.x > -100 and velocity.x < 100:
-				anim.play("CrouchRight")
-			elif velocity.x > 0:
-				anim.play("FallRight")
-			elif velocity.x < 0:
-				anim.play("JumpRight")
-		else:
-			if velocity.x > -100 and velocity.x < 100:
-				anim.play("CrouchLeft")
-			elif velocity.x > 0:
-				anim.play("FallCenter")
-			elif velocity.x < 0:
-				anim.play("JumpCenter")
-	elif gravity_orientation == GRAV_LEFT:
-		if velocity.y < 0:
-			if velocity.x > -100 and velocity.x < 100:
-				anim.play("CrouchLeft")
-			elif velocity.x > 0:
-				anim.play("JumpLeft")
-			elif velocity.x < 0:
-				anim.play("FallLeft")
-		elif velocity.y > 0:
-			if velocity.x > -100 and velocity.x < 100:
-				anim.play("CrouchRight")
-			elif velocity.x < 0:
-				anim.play("FallRight")
-			elif velocity.x > 0:
-				anim.play("JumpRight")
-		else:
-			if velocity.x > -100 and velocity.x < 100:
-				anim.play("CrouchRight")
-			elif velocity.x > 0:
-				anim.play("FallCenter")
-			elif velocity.x < 0:
-				anim.play("JumpCenter")
-		
+	var v_jump
+	var v_lat
+	var dir
+
+	if x_val != 0:
+		v_jump = velocity.x
+		v_lat = velocity.y
+		dir = x_val
+	else:
+		v_jump = velocity.y
+		v_lat = velocity.x * y_val * -1
+		dir = y_val
+	
+	if v_lat < 0:
+		if v_jump * dir * -1 > -100 and v_jump * dir * -1 < 100:
+			anim.play("CrouchLeft")
+		elif v_jump * dir * -1 > 0:
+			anim.play("FallLeft")
+		elif v_jump * dir * -1 < 0:
+			anim.play("JumpLeft")
+	elif v_lat > 0:
+		if v_jump * dir * -1  > -100 and v_jump * dir * -1 < 100:
+			anim.play("CrouchRight")
+		elif v_jump * dir * -1 > 0:
+			anim.play("FallRight")
+		elif v_jump * dir * -1 < 0:
+			anim.play("JumpRight")
+	else:
+		if v_jump > -100 and v_jump < 100:
+			anim.play("CrouchRight")
+		elif v_jump * dir * -1 > 0:
+			anim.play("FallCenter")
+		elif v_jump * dir * -1 < 0:
+			anim.play("JumpCenter")
 
 # Disable visibility and controls
 func disable():

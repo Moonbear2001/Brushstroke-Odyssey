@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://d0skuom564unj" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
 [ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
-[ext_resource type="Texture2D" uid="uid://bw1as137t0ybl" path="res://art/Esher/wide_block.png" id="3_4o60w"]
+[ext_resource type="Texture2D" uid="uid://cxev8semuld5f" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://cac8ajx5j6vyk" path="res://art/Esher/parallax_layers/front.png" id="3_ioprh"]
-[ext_resource type="Texture2D" uid="uid://clh7mgpyrhhf1" path="res://art/Esher/short_block.png" id="4_t8kp2"]
-[ext_resource type="Texture2D" uid="uid://jbfiytay5wxf" path="res://art/Esher/second_structure.png" id="5_yolr1"]
+[ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
+[ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
 [ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/door.tscn" id="10_w7r7g"]
@@ -89,7 +89,7 @@ texture = ExtResource("2_12ntw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(0, 80)
-polygon = PackedVector2Array(-16, 408, 184, 408, 184, 216, 296, 112, 408, 216, 408, 424, 527, 430, 527, 512, 472, 512, 472, 568, 584, 568, 584, 432, 640, 432, 640, 208, 656, 192, 672, 216, 672, 512, 776, 512, 776, 488, 808, 488, 808, 464, 832, 464, 832, 432, 864, 432, 864, 408, 896, 408, 896, 432, 976, 432, 976, 376, 1104, 376, 1112, 376, 1112, 400, 1088, 400, 1088, 432, 1056, 432, 1056, 456, 1032, 456, 1032, 488, 1000, 488, 1000, 512, 976, 512, 976, 544, 944, 544, 944, 648, -16, 648)
+polygon = PackedVector2Array(-16, 408, 184, 408, 184, 216, 296, 112, 408, 216, 408, 424, 527, 430, 527, 512, 472, 512, 472, 568, 584, 568, 584, 432, 640, 432, 640, 208, 656, 192, 672, 216, 672, 512, 776, 512, 776, 488, 808, 488, 808, 464, 832, 464, 832, 432, 864, 432, 864, 408, 896, 408, 896, 432, 976, 432, 976, 376, 1104, 376, 1112, 376, 1112, 400, 1088, 400, 1088, 432, 1056, 432, 1056, 456, 1032, 456, 1032, 488, 1000, 488, 1000, 512, 976, 512, 976, 544, 944, 544, 942, 779, -16, 648)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
@@ -103,7 +103,7 @@ texture = ExtResource("3_4o60w")
 polygon = PackedVector2Array(1176, 376, 1176, 424, 1296, 424, 1288, 376)
 
 [node name="MovingPlatform1" type="StaticBody2D" parent="."]
-position = Vector2(0, 337)
+position = Vector2(0, 448)
 metadata/_edit_group_ = true
 
 [node name="ShortBlock" type="Sprite2D" parent="MovingPlatform1"]
@@ -131,6 +131,7 @@ state = "closed"
 metadata/_edit_group_ = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="SecondStructure" type="Sprite2D" parent="StaticBody2D2"]
 position = Vector2(1715.97, 317.05)
@@ -140,10 +141,10 @@ texture = ExtResource("5_yolr1")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 position = Vector2(-9.91604, -1.11776)
 scale = Vector2(1.00739, 1.00739)
-polygon = PackedVector2Array(1481, 633, 1482, 315, 1560, 312, 1561.26, 3.77077, 1630.03, 3.77077, 1630.03, 57.5899, 1656.94, 57.5899, 1656.94, 136.325, 1650.96, 156.258, 1603.12, 156.258, 1603.12, 257.917, 1682.85, 257.917, 1682.85, 336.652, 1732.69, 336.652, 1732.69, 438.311, 1758.6, 438.311, 1758.6, 466.217, 1786.5, 466.217, 1786.5, 492.13, 1812.42, 492.13, 1812.42, 517.046, 1945.97, 517.046, 1946, 564, 1591, 564, 1582, 546, 1584, 527, 1609, 522, 1612, 500, 1635, 493, 1640, 470, 1661, 465, 1665, 443, 1693, 436, 1693, 384, 1512, 386, 1514, 447, 1534, 446, 1536, 616, 1946, 615, 1945, 637)
+polygon = PackedVector2Array(1481, 633, 1482, 315, 1560, 312, 1561.26, 3.77077, 1629.87, -59.443, 1630.03, 57.5899, 1656.94, 57.5899, 1656.94, 136.325, 1650.96, 156.258, 1603.12, 156.258, 1603.12, 257.917, 1682.85, 257.917, 1682.85, 336.652, 1732.69, 336.652, 1732.69, 438.311, 1758.6, 438.311, 1758.6, 466.217, 1786.5, 466.217, 1786.5, 492.13, 1812.42, 492.13, 1812.42, 517.046, 1945.97, 517.046, 1946, 564, 1591, 564, 1582, 546, 1584, 527, 1609, 522, 1612, 500, 1635, 493, 1640, 470, 1661, 465, 1665, 443, 1693, 436, 1693, 384, 1512, 386, 1514, 447, 1534, 446, 1536, 616, 1946, 615, 1945, 637)
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(35, 453)
+position = Vector2(92, 462)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
