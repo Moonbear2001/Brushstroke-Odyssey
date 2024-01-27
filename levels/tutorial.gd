@@ -9,7 +9,7 @@ platform move.
 
 # Ready
 func _ready():
-	
+	super._ready()
 	# Stop the moving platform
 	moving_platform_animation_player.stop()
 
@@ -19,3 +19,4 @@ func _on_lever_lever_toggled(lever_state):
 		moving_platform_animation_player.pause()
 	else:
 		moving_platform_animation_player.play()
+	

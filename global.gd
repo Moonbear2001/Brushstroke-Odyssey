@@ -8,6 +8,7 @@ and accessed anywhere throughout the project.
 # Global constants
 const LEVELS = ["tutorial", "escher"]
 const SAVE_DATA_PATH = "user://"
+const MENU_PATH = "res://main.tscn"
 
 # Global variables
 var high_scores : HighScores

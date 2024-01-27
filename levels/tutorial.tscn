@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=21 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_y74qt"]
@@ -20,11 +20,15 @@
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
 [ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="19_50ti2"]
 
-[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnas"]
+size = Vector2(254, 512)
+
+[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
 script = ExtResource("1_y74qt")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
-stopwatch = NodePath("Stopwatch")
+stopwatch = NodePath("PlayerUI/Stopwatch")
+end = NodePath("End")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -42,7 +46,7 @@ position = Vector2(301, 347)
 texture = ExtResource("18_mr6vo")
 
 [node name="Protagonist" parent="." instance=ExtResource("1_3wox7")]
-position = Vector2(173, 328)
+position = Vector2(3212, 289)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("15_jukwu")]
 position = Vector2(1357, 471)
@@ -282,7 +286,15 @@ polygon = PackedVector2Array(354.05, 450.131, 649.739, 450.131, 649.74, 538.2, 3
 position = Vector2(1226, 369)
 scale = Vector2(0.05, 0.05)
 
-[node name="Stopwatch" parent="." instance=ExtResource("19_50ti2")]
-visible = false
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="Stopwatch" parent="PlayerUI" instance=ExtResource("19_50ti2")]
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2(3506, 117)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(72, 222)
+shape = SubResource("RectangleShape2D_xjnas")
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
