@@ -1,0 +1,391 @@
+[gd_scene load_steps=26 format=3 uid="uid://de0yn1n3yaoaj"]
+
+[ext_resource type="Script" path="res://objects/doors/door.gd" id="1_hja7c"]
+[ext_resource type="Texture2D" uid="uid://cm3geieecstfd" path="res://art/Esher/doors.png" id="2_2b7l1"]
+[ext_resource type="Script" path="res://interaction/interaction_area.gd" id="3_sm474"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oppnj"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(15, 0, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8wm4"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(187, 0, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8j3g"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(15, 909, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl1gt"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(187, 909, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypgnj"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(15, 1212, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm3j6"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(187, 1212, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjwce"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(15, 606, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8sed"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(187, 606, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgkiw"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(15, 1515, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m38bv"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(187, 1515, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fgl2"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(15, 303, 172, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grnhe"]
+atlas = ExtResource("2_2b7l1")
+region = Rect2(187, 303, 172, 303)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iga4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oppnj")
+}],
+"loop": true,
+"name": &"black_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8wm4")
+}],
+"loop": true,
+"name": &"black_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8j3g")
+}],
+"loop": true,
+"name": &"blue_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl1gt")
+}],
+"loop": true,
+"name": &"blue_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypgnj")
+}],
+"loop": true,
+"name": &"gold_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm3j6")
+}],
+"loop": true,
+"name": &"gold_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjwce")
+}],
+"loop": true,
+"name": &"red_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8sed")
+}],
+"loop": true,
+"name": &"red_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgkiw")
+}],
+"loop": true,
+"name": &"white_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m38bv")
+}],
+"loop": true,
+"name": &"white_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fgl2")
+}],
+"loop": true,
+"name": &"yellow_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grnhe")
+}],
+"loop": true,
+"name": &"yellow_open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qst01"]
+size = Vector2(5.5, 65)
+
+[sub_resource type="Animation" id="Animation_sjwp5"]
+resource_name = "black_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"black_open", &"black_closed"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_v2o61"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"black_open"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qx3tp"]
+resource_name = "red_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"red_open", &"red_closed"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_jptgb"]
+resource_name = "blue_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"blue_open", &"blue_closed"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_bk6f0"]
+resource_name = "gold_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"gold_open", &"gold_closed"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_2uakt"]
+resource_name = "white_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"white_open"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_ughoa"]
+resource_name = "yellow_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"yellow_open"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uq5e6"]
+_data = {
+"RESET": SubResource("Animation_v2o61"),
+"black_exit": SubResource("Animation_sjwp5"),
+"blue_exit": SubResource("Animation_jptgb"),
+"gold_exit": SubResource("Animation_bk6f0"),
+"red_exit": SubResource("Animation_qx3tp"),
+"white_exit": SubResource("Animation_2uakt"),
+"yellow_exit": SubResource("Animation_ughoa")
+}
+
+[node name="Door" type="Area2D" groups=["door"]]
+script = ExtResource("1_hja7c")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_iga4d")
+animation = &"black_open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 10)
+shape = SubResource("RectangleShape2D_qst01")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(15, 10)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_sm474")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_qst01")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uq5e6")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]

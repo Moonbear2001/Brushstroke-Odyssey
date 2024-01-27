@@ -13,37 +13,30 @@ Door that teleports the player to another door.
 
 # Enums that describe direction, color, and state
 # These help with choosing which animation to play
-@export_enum("left", "right") var direction: String
-@export_enum("black", "orange", "red", "blue", "white") var color: String
+@export_enum("black", "yellow", "red", "blue", "gold", "white") var color: String
 @export_enum("open", "closed") var state: String
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var interaction_area = $InteractionArea
+@onready var anim_player = $AnimationPlayer
 
 var lock_door = false
 
 # Play the closed door animation on scene startup
 func _ready() -> void:
-	var start_anim = build_anim_name(color, state, direction)
+	var start_anim = build_anim_name(color, state)
 	animated_sprite.play(start_anim)
 
 # When the door is entered
 func _on_body_entered(body):
-	
-	if body.is_in_group("protagonist"):
-
-		# Play door opening animation
-		state = "open"
-		var open_anim = build_anim_name(color, state, direction)
-		animated_sprite.play(open_anim)
-		
-		if enter:
-			teleport(body)
+	if body.is_in_group("protagonist") and enter:
+		teleport(body) 
 
 # When the body is exited
 func _on_body_exited(body):
 	if body.is_in_group("protagonist") and !lock_door:
 		state = "closed"
-		var close_anim = build_anim_name(color, state, direction)
+		var close_anim = build_anim_name(color, state)
 		animated_sprite.play(close_anim)
 
 # Teleports the player to the new location
@@ -56,6 +49,10 @@ func teleport(body):
 				body.global_position.y = door.global_position.y + door.y_offset
 				
 				body.set_gravity(door.gravity_dir)
+				
+				if not door.enter:
+					door.anim_player.play(door.color + "_exit")
+				
 			break
 
 
@@ -67,16 +64,31 @@ func lock():
 # Re-enable the door and close it 
 func _on_timer_timeout():
 	lock_door = false
-	state = "closed"
-	var close_anim = build_anim_name(color, state, direction)
-	animated_sprite.play(close_anim)
+	#state = "closed"
+	#var close_anim = build_anim_name(color, state, direction)
+	#animated_sprite.play(close_anim)
 	
 # Utility function to help build the animation name
-func build_anim_name(color: String, state: String, direction: String) -> String:
-	return color + "_door_" + state + "_" + direction
-
+func build_anim_name(color: String, state: String) -> String:
+	return color + "_" + state 
 
 func _on_animated_sprite_2d_animation_finished():
 	state = "closed"
-	var start_anim = build_anim_name(color, state, direction)
-	animated_sprite.play(start_anim)
+	var start_anim = build_anim_name(color, state)
+	animated_sprite.play(start_anim) 
+	
+
+func _on_interaction_area_area_entered(area):
+	if enter:
+		# Play door opening animation
+		state = "open"
+		var open_anim = build_anim_name(color, state)
+		animated_sprite.play(open_anim)
+
+
+func _on_interaction_area_area_exited(area):
+	if state == "open":
+		# Play door closing animation
+		state = "closed"
+		var close_anim = build_anim_name(color, state)
+		animated_sprite.play(close_anim)
