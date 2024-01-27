@@ -28,6 +28,15 @@ offset_bottom = 85.0
 text = "Quit
 "
 
+[node name="highscores" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 98.0
+offset_right = 140.0
+offset_bottom = 170.0
+text = "High Scores
+"
+
 [connection signal="pressed" from="tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="highscores" to="." method="_on_highscores_pressed"]

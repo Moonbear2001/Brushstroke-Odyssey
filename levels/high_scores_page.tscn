@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://djgyy8lgactiq"]
+
+[ext_resource type="Script" path="res://levels/high_scores_page.gd" id="1_70mxn"]
+
+[node name="HighScoresPage" type="Node2D"]
+script = ExtResource("1_70mxn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 61.0
+offset_top = 49.0
+offset_right = 369.0
+offset_bottom = 80.0
+text = "High Scores"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 92.0
+offset_right = 372.0
+offset_bottom = 123.0
+text = "test"

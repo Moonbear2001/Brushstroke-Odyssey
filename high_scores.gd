@@ -40,3 +40,11 @@ func new_high_score(level: String, score: float):
 # Get a level's high score
 func get_level_high_score(level: String) -> float:
 	return high_scores[level]
+	
+# Return a string with the high scores
+func get_high_scores_str() -> String:
+	var res = String()
+	var format_str = "{level} : {high_score}\n"
+	for level in high_scores:
+		res += format_str.format({"level": level, "high_score": high_scores[level]})
+	return res
