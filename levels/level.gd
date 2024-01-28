@@ -19,6 +19,9 @@ var data: LevelDataHandoff
 # Stopwatch to keep track of score
 @export var stopwatch: Stopwatch
 
+# Area that when entered is the end of the level
+@export var end: Area2D
+
 # Ready
 func _ready() -> void:
 	
@@ -30,6 +33,9 @@ func _ready() -> void:
 	if data == null:
 		# print("Not transitioning between levels")
 		enter_level()
+	
+	# Set up end signal
+	end.body_entered.connect(level_end)
 
 
 # Called by the SceneManager once the transitionis complete.
@@ -81,4 +87,17 @@ func _disconnect_from_level_doors() -> void:
 		if level_door.player_entered_door.is_connected(_on_player_entered_door):
 			level_door.player_entered_door.disconnect(_on_player_entered_door)
 
+
+# Catches signal that is emitted when the player reaches the end of the level
+func level_end(body):
+	
+	# Get player's score for this run and save if its a high score
+	stopwatch.stop_stopwatch()
+	var time = stopwatch.get_time()
+	var high_score = Global.high_scores.get_level_high_score(level_name)
+	if time < high_score:
+		Global.high_scores.new_high_score(level_name, time)
+
+	# Go back to the main menu
+	SceneManager.load_new_scene(Global.MENU_PATH)
 
