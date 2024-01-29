@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=32 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cg8r3w888s1d2" path="res://art/Esher/section2/2.png" id="17_w6p1v"]
 [ext_resource type="Texture2D" uid="uid://b4gv0t7bq8s3x" path="res://art/Esher/section2/3.png" id="18_t32xk"]
 [ext_resource type="Texture2D" uid="uid://dyc57xtdtx2md" path="res://art/Esher/section2/block.png" id="19_3bn8d"]
+[ext_resource type="Script" path="res://objects/moving_platform.gd" id="20_ftb70"]
 [ext_resource type="Texture2D" uid="uid://dmuib8t5icu17" path="res://art/Esher/section2/downblock2.png" id="20_i38b6"]
 [ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://objects/lever.tscn" id="21_pvfto"]
 [ext_resource type="Texture2D" uid="uid://dlpck0ag6b6e4" path="res://art/Esher/section2/downblock3.png" id="21_uc55d"]
@@ -27,7 +28,28 @@
 [ext_resource type="Texture2D" uid="uid://bugpmcui1pyon" path="res://art/Esher/section2/block3.png" id="24_exg2w"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
-resource_name = "move_into_position"
+resource_name = "move_platform"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 2480), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xf7l"]
+_data = {
+"move_platform": SubResource("Animation_sl3vk")
+}
+
+[sub_resource type="Animation" id="Animation_j4hrq"]
+resource_name = "move_platform"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,12 +61,28 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 335), Vector2(0, 0)]
+"values": [Vector2(0, 1900), Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xf7l"]
+[sub_resource type="Animation" id="Animation_y2pic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.8147e-06, 1992.79)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tlqsa"]
 _data = {
-"move_into_position": SubResource("Animation_sl3vk")
+"RESET": SubResource("Animation_y2pic"),
+"move_platform": SubResource("Animation_j4hrq")
 }
 
 [node name="Escher" type="Node2D"]
@@ -200,17 +238,7 @@ scale = Vector2(0.354, 0.393763)
 texture = ExtResource("23_ntwq6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Top/StaticBody2D2"]
-polygon = PackedVector2Array(3303, 183, 3306, 289, 3718, 287, 3710, 81, 3658, 83, 3656, 218, 3598, 219, 3592, 179)
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/Mirror/Top"]
-
-[node name="Block4" type="Sprite2D" parent="Platforms/Mirror/Top/StaticBody2D3"]
-position = Vector2(3776, 232)
-scale = Vector2(0.272181, 0.272181)
-texture = ExtResource("19_3bn8d")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Top/StaticBody2D3"]
-polygon = PackedVector2Array(3732, 203, 3735, 288, 3814, 288, 3809, 201)
+polygon = PackedVector2Array(3303, 183, 3306, 289, 3718, 287, 3717, 61, 3655, 61, 3656, 218, 3598, 219, 3592, 179)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/Mirror/Top"]
 
@@ -264,38 +292,73 @@ texture = ExtResource("22_b0yri")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D4"]
 polygon = PackedVector2Array(4131, 489, 4135, 550, 4276, 556, 4285, 518, 4285, 450, 4146, 452)
 
-[node name="Moving platform" type="StaticBody2D" parent="Platforms"]
-position = Vector2(0, 335)
+[node name="MPlatform1" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
+position = Vector2(1395, 404)
+scale = Vector2(0.0923332, 0.0923332)
+script = ExtResource("20_ftb70")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms/MPlatform1"]
+position = Vector2(0, 2480)
+scale = Vector2(10.8303, 10.8303)
 metadata/_edit_group_ = true
 
-[node name="ShortBlock" type="Sprite2D" parent="Platforms/Moving platform"]
-position = Vector2(1376, 368)
+[node name="ShortBlock" type="Sprite2D" parent="Platforms/MPlatform1/AnimatableBody2D"]
+position = Vector2(-5.2002, -5.38672)
 scale = Vector2(0.0923332, 0.0923332)
 texture = ExtResource("4_t8kp2")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Moving platform"]
-position = Vector2(2, -33)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/MPlatform1/AnimatableBody2D"]
+position = Vector2(-1379.2, -406.387)
 scale = Vector2(1, 1.09896)
-polygon = PackedVector2Array(1352, 344, 1352, 392, 1408, 392, 1408, 344)
+polygon = PackedVector2Array(1346.2, 340.674, 1353.2, 393.451, 1407.2, 393.451, 1403.2, 340.674)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Moving platform"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MPlatform1/AnimatableBody2D"]
 libraries = {
 "": SubResource("AnimationLibrary_2xf7l")
 }
 
-[node name="BlueDoor3" parent="Platforms/Moving platform" instance=ExtResource("10_w7r7g")]
-position = Vector2(1391, 426)
+[node name="BlueDoor3" parent="Platforms/MPlatform1/AnimatableBody2D" instance=ExtResource("10_w7r7g")]
+position = Vector2(9.80005, 52.6133)
 rotation = 3.14159
 gravity_dir = "up"
 id = 7
 exit_id = 5
 color = "blue"
-state = "closed"
+
+[node name="MPlatform2" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
+position = Vector2(3810, 119)
+scale = Vector2(0.0923328, 0.0923328)
+script = ExtResource("20_ftb70")
+id = 1
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms/MPlatform2"]
+position = Vector2(3.8147e-06, 1992.79)
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MPlatform2/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_tlqsa")
+}
+
+[node name="ShortBlock" type="Sprite2D" parent="Platforms/MPlatform2/AnimatableBody2D"]
+position = Vector2(-1.19922, -9.38657)
+texture = ExtResource("4_t8kp2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/MPlatform2/AnimatableBody2D"]
+position = Vector2(-15060, -4548.56)
+scale = Vector2(10.9074, 12.3873)
+polygon = PackedVector2Array(1353.31, 344.324, 1352.32, 391.537, 1360.26, 409.023, 1414.87, 409.897, 1414.87, 397.363, 1414.87, 360.062, 1408.91, 344.324)
 
 [node name="Lever" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(1272, 440)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
+
+[node name="Lever2" parent="." instance=ExtResource("21_pvfto")]
+position = Vector2(3926, 528)
+rotation = 3.14159
+scale = Vector2(0.05, 0.05)
+platform_id = 1
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -305,21 +368,18 @@ id = 0
 exit_id = 1
 x_offset = -25
 color = "red"
-state = "closed"
 
 [node name="RedDoor1" parent="Doors" instance=ExtResource("10_w7r7g")]
 position = Vector2(434, 471)
 id = 1
 enter = false
 color = "red"
-state = "closed"
 
 [node name="RedDoor2" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(619, 467)
 id = 2
 exit_id = 0
 color = "red"
-state = "closed"
 
 [node name="YellowDoor0" parent="Doors" instance=ExtResource("10_w7r7g")]
 position = Vector2(490, 629)
@@ -327,7 +387,6 @@ id = 3
 exit_id = 4
 x_offset = 25
 color = "yellow"
-state = "closed"
 
 [node name="YellowDoor1" parent="Doors" instance=ExtResource("10_w7r7g")]
 position = Vector2(687, 573)
@@ -335,7 +394,6 @@ id = 4
 exit_id = 3
 x_offset = 25
 color = "yellow"
-state = "closed"
 
 [node name="BlueDoor0" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(959, 480)
@@ -343,7 +401,6 @@ id = 5
 exit_id = 6
 x_offset = -25
 color = "blue"
-state = "closed"
 
 [node name="BlueDoor1" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(966, 652)
@@ -352,14 +409,12 @@ gravity_dir = "up"
 id = 6
 enter = false
 color = "blue"
-state = "closed"
 
 [node name="RedDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(1576, 321)
 id = 8
 exit_id = 9
 color = "red"
-state = "closed"
 
 [node name="RedDoor4" parent="Doors" instance=ExtResource("10_w7r7g")]
 position = Vector2(1699, 8)
@@ -369,15 +424,13 @@ id = 9
 exit_id = 8
 y_offset = 25
 color = "red"
-state = "closed"
 
 [node name="YellowDoor2" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(1656, 268)
+position = Vector2(1657, 264)
 id = 10
 exit_id = 11
 x_offset = 25
 color = "yellow"
-state = "closed"
 
 [node name="YellowDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(1730, 474)
@@ -385,14 +438,12 @@ id = 11
 exit_id = 10
 x_offset = -25
 color = "yellow"
-state = "closed"
 
 [node name="BlueDoor3" parent="Doors" instance=ExtResource("10_w7r7g")]
 position = Vector2(1545, 490)
 id = 12
 exit_id = 13
 color = "blue"
-state = "closed"
 
 [node name="BlueDoor4" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(1915, 578)
@@ -401,10 +452,43 @@ gravity_dir = "left"
 id = 13
 exit_id = 12
 color = "blue"
-state = "closed"
+
+[node name="WhiteDoor0" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(2024, 680)
+id = 14
+exit_id = 15
+color = "white"
+
+[node name="WhiteDoor1" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(2122, 663)
+id = 15
+exit_id = 14
+color = "white"
+
+[node name="GoldDoor0" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(2822, 223)
+id = 16
+exit_id = 17
+color = "gold"
+duplicate_id = 18
+
+[node name="GoldDoor1" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(2925, 582)
+rotation = 3.14159
+gravity_dir = "up"
+id = 18
+exit_id = 16
+color = "gold"
+duplicate = true
+
+[node name="GoldDoor2" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(2925, 159)
+id = 17
+exit_id = 16
+color = "gold"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(61, 447)
+position = Vector2(894, 407)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -417,7 +501,8 @@ position = Vector2(1885, -166)
 position = Vector2(1888, 870)
 
 [node name="Death3" parent="." instance=ExtResource("17_npv7l")]
-position = Vector2(3573, 375)
+position = Vector2(3573, 366)
 scale = Vector2(0.3, 0.937)
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
+[connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]

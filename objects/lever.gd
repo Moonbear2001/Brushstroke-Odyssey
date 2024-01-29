@@ -7,6 +7,7 @@ that can be caught elsewhere to do something.
 """
 
 signal lever_toggled(state: LeverStates)
+@export var platform_id:int
 
 @onready var interaction_area = $InteractionArea
 @onready var animation_player = $Sprite2D/AnimationPlayer
@@ -27,8 +28,8 @@ var enabled: bool
 # Set to neutral and enabled by default
 func _ready():
 	enabled = true
-	state = LeverStates.NEUTRAL
-	animation_player.play("neutral")
+	state = LeverStates.OFF
+	animation_player.play("off")
 	interaction_area.interact = Callable(self, "pull_lever")
 
 # Interact with the lever, if allowed
@@ -40,9 +41,15 @@ func pull_lever():
 	if state == LeverStates.NEUTRAL or state == LeverStates.OFF:
 		state = LeverStates.ON
 		animation_player.play("on")
+		enabled = false
 	else:
 		state = LeverStates.OFF
 		animation_player.play("off")
 	
 	# Toggle platform movement
-	lever_toggled.emit(state)
+	for platform in get_tree().get_nodes_in_group("MovingPlatform"):
+		if platform.id == platform_id:
+			platform.playAnimation()
+	
+	
+	#lever_toggled.emit(state)

@@ -10,12 +10,12 @@ Door that teleports the player to another door.
 @export var exit_id:int = -1
 @export var x_offset = 0
 @export var y_offset = 0
-
+@export_enum("black", "yellow", "red", "blue", "gold", "white") var color: String
+@export_enum("open", "closed") var state: String = "closed"
+@export var duplicate: bool = false
+@export var duplicate_id: int = -1
 # Enums that describe direction, color, and state
 # These help with choosing which animation to play
-@export_enum("black", "yellow", "red", "blue", "gold", "white") var color: String
-@export_enum("open", "closed") var state: String
-
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interaction_area = $InteractionArea
 @onready var anim_player = $AnimationPlayer
@@ -30,7 +30,12 @@ func _ready() -> void:
 # When the door is entered
 func _on_body_entered(body):
 	if body.is_in_group("protagonist") and enter:
-		teleport(body) 
+		if duplicate:
+			body.queue_free()
+		else:
+			teleport(body)
+			if duplicate_id > 0:
+				duplicate_node(body)
 
 # When the body is exited
 func _on_body_exited(body):
@@ -42,19 +47,16 @@ func _on_body_exited(body):
 # Teleports the player to the new location
 func teleport(body):
 	for door in get_tree().get_nodes_in_group("door"):
-		if door != self && door.id == exit_id: 
-			if !door.lock_door:
-				lock()
-				body.global_position.x = door.global_position.x + door.x_offset
-				body.global_position.y = door.global_position.y + door.y_offset
-				
-				body.set_gravity(door.gravity_dir)
-				
-				if not door.enter:
-					door.anim_player.play(door.color + "_exit")
-				
+		if door != self and door.id == exit_id and not door.lock_door: 
+			lock()
+			body.global_position.x = door.global_position.x + door.x_offset
+			body.global_position.y = door.global_position.y + door.y_offset
+			
+			body.set_gravity(door.gravity_dir)
+			
+			if not door.enter:
+				door.anim_player.play(door.color + "_exit")
 			break
-
 
 # Lock the door for a while after the player enters it
 func lock():
@@ -92,3 +94,14 @@ func _on_interaction_area_area_exited(area):
 		state = "closed"
 		var close_anim = build_anim_name(color, state)
 		animated_sprite.play(close_anim)
+		
+func duplicate_node(body):
+	var duplicatedNode: Protagonist = body.duplicate()
+	for door in get_tree().get_nodes_in_group("door"):
+		if door.id == duplicate_id and door != self and not door.lock_door:
+			duplicatedNode.global_position.x = door.global_position.x + door.x_offset
+			duplicatedNode.global_position.y = door.global_position.y + door.y_offset
+				
+			get_tree().current_scene.add_child(duplicatedNode)	
+			duplicatedNode.set_gravity(door.gravity_dir)
+			break
