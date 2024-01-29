@@ -32,6 +32,9 @@ func _process(_delta):
 	# Show label based on closest interactable
 	if active_areas.size() > 0 && can_interact:
 		active_areas.sort_custom(sort_by_distance_to_player)
+		if not active_areas[0].enabled:
+			label.hide()
+			return
 		label.text = base_text + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
 		label.global_position.y -= 36
@@ -43,9 +46,17 @@ func _process(_delta):
 # Custom sorting function for active areas to determine closest interactable
 # to the player
 func sort_by_distance_to_player(area1: InteractionArea, area2: InteractionArea):
-	var area1_to_player = protagonist.global_position.distance_to(area1.global_position)
-	var area2_to_player = protagonist.global_position.distance_to(area2.global_position)
-	return area1_to_player < area2_to_player
+		# Check if both areas are enabled
+	if area1.enabled and area2.enabled:
+		# Calculate distances only if both areas are enabled
+		var area1_to_player = protagonist.global_position.distance_to(area1.global_position)
+		var area2_to_player = protagonist.global_position.distance_to(area2.global_position)
+
+		# Compare distances and return the result
+		return area1_to_player < area2_to_player
+
+	# If only one area is enabled, prioritize it
+	return area1.enabled
 	
 	 
 func _input(event):

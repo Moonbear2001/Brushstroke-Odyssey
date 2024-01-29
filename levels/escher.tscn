@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dyc57xtdtx2md" path="res://art/Esher/section2/block.png" id="19_3bn8d"]
 [ext_resource type="Script" path="res://objects/moving_platform.gd" id="20_ftb70"]
 [ext_resource type="Texture2D" uid="uid://dmuib8t5icu17" path="res://art/Esher/section2/downblock2.png" id="20_i38b6"]
-[ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://objects/lever.tscn" id="21_pvfto"]
+[ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://objects/lever/lever.tscn" id="21_pvfto"]
 [ext_resource type="Texture2D" uid="uid://dlpck0ag6b6e4" path="res://art/Esher/section2/downblock3.png" id="21_uc55d"]
 [ext_resource type="Texture2D" uid="uid://dhcexm1yn4mlx" path="res://art/Esher/section2/downblock4.png" id="22_b0yri"]
 [ext_resource type="Texture2D" uid="uid://t14r1gx4b8vb" path="res://art/Esher/section2/block2.png" id="23_ntwq6"]

@@ -9,6 +9,7 @@ adding a CollisionShape2D as a child node in that scene.
 """
 
 @export var action_name: String = "interact"
+var enabled = true
 
 var interact: Callable = func():
 	pass

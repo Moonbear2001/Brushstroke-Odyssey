@@ -28,6 +28,7 @@ var enabled: bool
 # Set to neutral and enabled by default
 func _ready():
 	enabled = true
+	interaction_area.enabled = true
 	state = LeverStates.OFF
 	animation_player.play("off")
 	interaction_area.interact = Callable(self, "pull_lever")
@@ -42,6 +43,7 @@ func pull_lever():
 		state = LeverStates.ON
 		animation_player.play("on")
 		enabled = false
+		interaction_area.enabled = false
 	else:
 		state = LeverStates.OFF
 		animation_player.play("off")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bc6rebuuy2i1k"]
 
-[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="1_kjm0i"]
-[ext_resource type="Script" path="res://objects/lever.gd" id="1_o4aqn"]
-[ext_resource type="Texture2D" uid="uid://jb04h6cy82no" path="res://art/Esher/levers/lever_transparent.png" id="3_ol0p4"]
+[ext_resource type="Script" path="res://objects/lever/lever.gd" id="1_7onxr"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="2_46xqt"]
+[ext_resource type="Texture2D" uid="uid://jb04h6cy82no" path="res://art/Esher/levers/lever_transparent.png" id="3_2o8mc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02xl5"]
 radius = 505.951
@@ -70,9 +70,9 @@ _data = {
 size = Vector2(20.2483, 34.9206)
 
 [node name="Lever" type="StaticBody2D"]
-script = ExtResource("1_o4aqn")
+script = ExtResource("1_7onxr")
 
-[node name="InteractionArea" parent="." instance=ExtResource("1_kjm0i")]
+[node name="InteractionArea" parent="." instance=ExtResource("2_46xqt")]
 action_name = "Pull lever"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
@@ -80,7 +80,7 @@ shape = SubResource("CircleShape2D_02xl5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.12206, 2.18648)
-texture = ExtResource("3_ol0p4")
+texture = ExtResource("3_2o8mc")
 hframes = 3
 frame = 1
 

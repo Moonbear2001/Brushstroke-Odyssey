@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d18su8bbdi6xg" path="res://art/L0/smol4.png" id="13_0wcih"]
 [ext_resource type="Texture2D" uid="uid://dw0hexe66s8nr" path="res://art/L0/smol5.png" id="14_bxrjg"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="15_yj68c"]
-[ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://objects/lever.tscn" id="16_1ismo"]
+[ext_resource type="PackedScene" uid="uid://bc6rebuuy2i1k" path="res://objects/lever/lever.tscn" id="16_1ismo"]
 [ext_resource type="Script" path="res://objects/moving_platform.gd" id="17_vmtur"]
 [ext_resource type="Texture2D" uid="uid://mwc0pgttbsej" path="res://art/L0/Rectangle 26.png" id="18_kdiem"]
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
