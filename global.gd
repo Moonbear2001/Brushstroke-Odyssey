@@ -12,6 +12,7 @@ const MENU_PATH = "res://main.tscn"
 
 # Global variables
 var high_scores : HighScores
+var waiting_for_duplicate: bool = false
 
 # Stuff that should happen on game start up
 func _ready() -> void:

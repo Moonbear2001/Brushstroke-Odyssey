@@ -19,6 +19,7 @@ Door that teleports the player to another door.
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interaction_area = $InteractionArea
 @onready var anim_player = $AnimationPlayer
+@onready var protagonist = preload("res://characters/protagonist.tscn")
 
 var lock_door = false
 
@@ -32,6 +33,9 @@ func _on_body_entered(body):
 	if body.is_in_group("protagonist") and enter:
 		if duplicate:
 			body.queue_free()
+			if Global.waiting_for_duplicate:
+				var newNode: Protagonist = protagonist.instantiate()
+				teleport(newNode)
 		else:
 			teleport(body)
 			if duplicate_id > 0:
@@ -48,10 +52,18 @@ func _on_body_exited(body):
 func teleport(body):
 	for door in get_tree().get_nodes_in_group("door"):
 		if door != self and door.id == exit_id and not door.lock_door: 
+			#delay if the duplicate protagonist still exists
+			if len(get_tree().get_nodes_in_group("protagonist")) > 1:
+				Global.waiting_for_duplicate = true
+				body.queue_free()
+				return
 			lock()
 			body.global_position.x = door.global_position.x + door.x_offset
 			body.global_position.y = door.global_position.y + door.y_offset
 			
+			if Global.waiting_for_duplicate:
+				get_tree().current_scene.add_child(body)	
+				Global.waiting_for_duplicate = false
 			body.set_gravity(door.gravity_dir)
 			
 			if not door.enter:
