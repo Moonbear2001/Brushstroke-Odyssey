@@ -221,7 +221,7 @@ polygon = PackedVector2Array(2770, 291, 2770, 731, 2909, 732, 2910, 555, 3029, 5
 [node name="Top" type="Node2D" parent="Platforms/Mirror"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Mirror/Top"]
-position = Vector2(-68, 54)
+position = Vector2(13, 7)
 metadata/_edit_group_ = true
 
 [node name="Block" type="Sprite2D" parent="Platforms/Mirror/Top/StaticBody2D"]
@@ -258,7 +258,7 @@ polygon = PackedVector2Array(3897, 45, 3897, 284, 4271, 282, 4262, 116, 4119, 11
 [node name="Bottom" type="Node2D" parent="Platforms/Mirror"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Mirror/Bottom"]
-position = Vector2(-76, 31)
+position = Vector2(11, -4)
 metadata/_edit_group_ = true
 
 [node name="Downblock2" type="Sprite2D" parent="Platforms/Mirror/Bottom/StaticBody2D"]
