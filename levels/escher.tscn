@@ -1,17 +1,17 @@
 [gd_scene load_steps=55 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
-[ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
+[ext_resource type="Texture2D" uid="uid://b7nuahpv3dk0q" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://clan7geli6b5e" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
 [ext_resource type="Texture2D" uid="uid://d0skuom564unj" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
-[ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
+[ext_resource type="Texture2D" uid="uid://1d8burc3uf4e" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
-[ext_resource type="Texture2D" uid="uid://cxev8semuld5f" path="res://art/Esher/wide_block.png" id="3_4o60w"]
+[ext_resource type="Texture2D" uid="uid://bw1as137t0ybl" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://cac8ajx5j6vyk" path="res://art/Esher/parallax_layers/front.png" id="3_ioprh"]
-[ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
-[ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
+[ext_resource type="Texture2D" uid="uid://clh7mgpyrhhf1" path="res://art/Esher/short_block.png" id="4_t8kp2"]
+[ext_resource type="Texture2D" uid="uid://jbfiytay5wxf" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
-[ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
+[ext_resource type="Texture2D" uid="uid://d0qxalpgexd13" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/doors/left_door.tscn" id="10_w7r7g"]
 [ext_resource type="PackedScene" uid="uid://de0yn1n3yaoaj" path="res://objects/doors/right_door.tscn" id="14_8a6pv"]
 [ext_resource type="Texture2D" uid="uid://4d5q4dwav7ra" path="res://art/Esher/section2/1.png" id="16_gumf2"]
@@ -105,6 +105,21 @@ _data = {
 "move_platform": SubResource("Animation_j4hrq")
 }
 
+[sub_resource type="Animation" id="Animation_jxp6f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 220)]
+}
+
 [sub_resource type="Animation" id="Animation_mmbgw"]
 resource_name = "move_platform"
 length = 2.0
@@ -119,21 +134,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 220), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_jxp6f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 220)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ad3yk"]
@@ -346,7 +346,7 @@ scale = Vector2(0.450756, 0.450756)
 texture = ExtResource("21_uc55d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D3"]
-polygon = PackedVector2Array(3518, 492, 3521, 581, 3659, 588, 3663, 651, 3732, 654, 3744, 614, 3741, 520, 3812, 524, 3815, 593, 3881, 599, 3891, 559, 3890, 516, 3950, 519, 3950, 594, 4018, 598, 4027, 561, 4028, 445, 3535, 448)
+polygon = PackedVector2Array(3518, 492, 3521, 581, 3659, 588, 3663, 651, 3732, 654, 3744, 614, 3741, 520, 3812, 524, 3815, 593, 3881, 599, 3891, 559, 3890, 516, 3950, 519, 3947, 689, 4030, 688, 4027, 561, 4028, 445, 3535, 448)
 
 [node name="MPlatform1" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
 position = Vector2(1395, 404)
@@ -461,23 +461,23 @@ polygon = PackedVector2Array(5244, 590, 5244, 616, 5254, 631, 5361, 632, 5360, 6
 [node name="StaticBody2D6" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="6" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D6"]
-position = Vector2(5471, 601)
+position = Vector2(5475, 575)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("27_ygplm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D6"]
-position = Vector2(168, -3)
+position = Vector2(172, -29)
 polygon = PackedVector2Array(5244, 590, 5244, 616, 5254, 631, 5361, 632, 5360, 614, 5354, 588)
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="7" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D7"]
-position = Vector2(5635, 600)
+position = Vector2(5647, 549)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("27_ygplm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D7"]
-position = Vector2(333, -4)
+position = Vector2(345, -55)
 polygon = PackedVector2Array(5244, 590, 5244, 616, 5254, 631, 5361, 632, 5360, 614, 5354, 588)
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Platforms/fourth section"]
@@ -493,31 +493,34 @@ polygon = PackedVector2Array(5034, -21, 5034, 161, 5227, 166, 5223, -25)
 [node name="StaticBody2D9" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="4" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D9"]
-position = Vector2(5337, 115)
+position = Vector2(5353, 95)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("29_aedtv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D9"]
+position = Vector2(16, -20)
 polygon = PackedVector2Array(5288, 0, 5290, 192, 5382, 198, 5384, -1)
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="3" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D10"]
-position = Vector2(5493, 161)
+position = Vector2(5518.38, 111.1)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("30_iyluj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D10"]
+position = Vector2(25.3779, -49.9)
 polygon = PackedVector2Array(5444, 1, 5447, 279, 5537, 285, 5540, -2)
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="2" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D11"]
-position = Vector2(5637, 180)
+position = Vector2(5684.34, 109)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("31_7r6mm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D11"]
+position = Vector2(47.3418, -71)
 polygon = PackedVector2Array(5593, -22, 5598, 375, 5689, 382, 5690, -28)
 
 [node name="fifth section" type="Node2D" parent="Platforms"]
@@ -545,11 +548,12 @@ polygon = PackedVector2Array(6116, 616, 6120, 721, 6166, 720, 6167, 522, 6135, 5
 [node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/fifth section"]
 
 [node name="3" type="Sprite2D" parent="Platforms/fifth section/StaticBody2D3"]
-position = Vector2(6146, 459)
+position = Vector2(6145.1, 461.3)
 scale = Vector2(0.313, 0.313)
 texture = ExtResource("34_imksn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D3"]
+position = Vector2(-0.899902, 2.29999)
 polygon = PackedVector2Array(6132, 415, 6130, 503, 6167, 503, 6167, 427, 6161, 412)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/fifth section"]
@@ -626,12 +630,12 @@ polygon = PackedVector2Array(6666, 421, 6666, 514, 6746, 518, 6745, 434, 6740, 4
 [node name="StaticBody2D11" type="StaticBody2D" parent="Platforms/fifth section"]
 
 [node name="MovingBlock" type="Sprite2D" parent="Platforms/fifth section/StaticBody2D11"]
-position = Vector2(6913, 298)
+position = Vector2(6913, 334)
 scale = Vector2(0.313, 0.313)
 texture = ExtResource("42_fowqm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D11"]
-position = Vector2(10, 0)
+position = Vector2(10, 36)
 polygon = PackedVector2Array(6864, 286, 6864, 318, 6949, 318, 6947, 302, 6943, 285)
 
 [node name="MPlatform3" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
@@ -820,8 +824,134 @@ exit_id = 18
 color = "gold"
 duplicate_id = 20
 
+[node name="YellowDoor4" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(4544, 398)
+id = 20
+exit_id = 21
+color = "yellow"
+
+[node name="YellowDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(5067, 542)
+id = 21
+color = "yellow"
+
+[node name="BlueDoor5" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(5864, 455)
+id = 22
+exit_id = 23
+color = "blue"
+
+[node name="BlueDoor6" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(5052, 183)
+rotation = -3.14159
+gravity_dir = "up"
+id = 23
+enter = false
+color = "blue"
+
+[node name="RedDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(5862, 304)
+rotation = -3.14159
+id = 24
+exit_id = 25
+color = "red"
+
+[node name="RedDoor6" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6088, 704)
+rotation = 1.5708
+gravity_dir = "right"
+id = 25
+enter = false
+y_offset = 1
+color = "red"
+
+[node name="WhiteDoor2" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6261, 68)
+rotation = 1.5708
+gravity_dir = "right"
+id = 26
+exit_id = 27
+color = "white"
+
+[node name="WhiteDoor3" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6506, 416)
+id = 27
+enter = false
+color = "white"
+
+[node name="WhiteDoor4" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6908, 540)
+id = 28
+exit_id = 27
+color = "white"
+
+[node name="RedDoor7" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6534, 620)
+id = 29
+exit_id = 30
+color = "red"
+
+[node name="RedDoor8" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6935, 298)
+id = 30
+exit_id = 29
+color = "red"
+
+[node name="YellowDoor6" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6878, 642)
+id = 31
+exit_id = 32
+color = "yellow"
+
+[node name="YellowDoor7" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6508, 159)
+rotation = -3.14159
+gravity_dir = "up"
+id = 32
+exit_id = 31
+color = "yellow"
+
+[node name="BlueDoor7" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6768, 70)
+rotation = -3.14159
+gravity_dir = "up"
+id = 33
+exit_id = 34
+color = "blue"
+
+[node name="BlueDoor8" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(7140, 659)
+id = 34
+exit_id = 33
+color = "blue"
+
+[node name="GoldDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6954, 663)
+id = 35
+exit_id = 36
+color = "gold"
+
+[node name="GoldDoor6" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6963, 547)
+id = 36
+color = "gold"
+
+[node name="Door" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(7185, 161)
+rotation = -3.14159
+gravity_dir = "up"
+id = 37
+exit_id = 38
+color = "black"
+
+[node name="Door2" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(7188, 545)
+id = 38
+exit_id = 37
+color = "black"
+
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(4173, 83)
+position = Vector2(6555, 384)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -829,9 +959,11 @@ scale = Vector2(99.5, 99.5)
 
 [node name="Death" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(1885, -166)
+scale = Vector2(2.36, 1)
 
 [node name="Death2" parent="." instance=ExtResource("17_npv7l")]
-position = Vector2(1888, 870)
+position = Vector2(1905, 968)
+scale = Vector2(-2.37316, -0.6978)
 
 [node name="Death3" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(3573, 366)
