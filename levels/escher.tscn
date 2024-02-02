@@ -1,17 +1,17 @@
 [gd_scene load_steps=52 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
-[ext_resource type="Texture2D" uid="uid://b7nuahpv3dk0q" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
+[ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://clan7geli6b5e" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
 [ext_resource type="Texture2D" uid="uid://d0skuom564unj" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
-[ext_resource type="Texture2D" uid="uid://1d8burc3uf4e" path="res://art/Esher/first_house.png" id="2_12ntw"]
+[ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
-[ext_resource type="Texture2D" uid="uid://bw1as137t0ybl" path="res://art/Esher/wide_block.png" id="3_4o60w"]
+[ext_resource type="Texture2D" uid="uid://cxev8semuld5f" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://cac8ajx5j6vyk" path="res://art/Esher/parallax_layers/front.png" id="3_ioprh"]
-[ext_resource type="Texture2D" uid="uid://clh7mgpyrhhf1" path="res://art/Esher/short_block.png" id="4_t8kp2"]
-[ext_resource type="Texture2D" uid="uid://jbfiytay5wxf" path="res://art/Esher/second_structure.png" id="5_yolr1"]
+[ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
+[ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
-[ext_resource type="Texture2D" uid="uid://d0qxalpgexd13" path="res://art/Esher/front_arch.png" id="8_lmtet"]
+[ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/doors/left_door.tscn" id="10_w7r7g"]
 [ext_resource type="PackedScene" uid="uid://de0yn1n3yaoaj" path="res://objects/doors/right_door.tscn" id="14_8a6pv"]
 [ext_resource type="Texture2D" uid="uid://4d5q4dwav7ra" path="res://art/Esher/section2/1.png" id="16_gumf2"]
@@ -747,8 +747,29 @@ id = 17
 exit_id = 16
 color = "gold"
 
+[node name="GoldDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(4242, 85)
+id = 18
+exit_id = 19
+color = "gold"
+
+[node name="GoldDoor4" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(4443, 645)
+id = 19
+exit_id = 18
+color = "gold"
+duplicate_id = 20
+
+[node name="GoldDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(4256, 567)
+rotation = -3.14159
+id = 20
+exit_id = 18
+color = "gold"
+duplicate = true
+
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(2683, 315)
+position = Vector2(4173, 83)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)

@@ -7,9 +7,10 @@ Main playable character.
 
 # Export variables
 @export var input_enabled: bool = true
+@export var big = false
 
 # Constants
-const SPEED = 140.0
+var SPEED = 140.0
 #const JUMP_VELOCITY = 400.0
 # Temporarily increased jump velocity for passing level easier for demo!
 const JUMP_VELOCITY = 520.0
@@ -29,6 +30,8 @@ var y_val = -1
 #var move_dir: Vector2
 
 func _ready():
+	if big:
+		SPEED = 260
 	anim.play("Idle")
 
 func _physics_process(delta):
@@ -83,13 +86,13 @@ func use_gravity(delta):
 		else:
 			velocity.y = 0
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and not big:
 		if x_val != 0:
 			velocity.x = JUMP_VELOCITY * x_val
 		else:
 			velocity.y = JUMP_VELOCITY * y_val
 	
-	if not is_on_floor():
+	if not is_on_floor() and not big:
 		set_jump_animation()
 	
 	var direction
