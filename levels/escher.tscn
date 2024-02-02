@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=55 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -103,6 +103,43 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_y2pic"),
 "move_platform": SubResource("Animation_j4hrq")
+}
+
+[sub_resource type="Animation" id="Animation_mmbgw"]
+resource_name = "move_platform"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 220), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jxp6f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 220)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ad3yk"]
+_data = {
+"RESET": SubResource("Animation_jxp6f"),
+"move_platform": SubResource("Animation_mmbgw")
 }
 
 [node name="Escher" type="Node2D"]
@@ -310,18 +347,6 @@ texture = ExtResource("21_uc55d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D3"]
 polygon = PackedVector2Array(3518, 492, 3521, 581, 3659, 588, 3663, 651, 3732, 654, 3744, 614, 3741, 520, 3812, 524, 3815, 593, 3881, 599, 3891, 559, 3890, 516, 3950, 519, 3950, 594, 4018, 598, 4027, 561, 4028, 445, 3535, 448)
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/Mirror/Bottom"]
-position = Vector2(0, -10)
-metadata/_edit_group_ = true
-
-[node name="Downblock4" type="Sprite2D" parent="Platforms/Mirror/Bottom/StaticBody2D4"]
-position = Vector2(4216, 504)
-scale = Vector2(0.354, 0.354)
-texture = ExtResource("22_b0yri")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D4"]
-polygon = PackedVector2Array(4131, 489, 4135, 550, 4276, 556, 4285, 518, 4285, 450, 4146, 452)
 
 [node name="MPlatform1" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
 position = Vector2(1395, 404)
@@ -609,6 +634,36 @@ texture = ExtResource("42_fowqm")
 position = Vector2(10, 0)
 polygon = PackedVector2Array(6864, 286, 6864, 318, 6949, 318, 6947, 302, 6943, 285)
 
+[node name="MPlatform3" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
+script = ExtResource("20_ftb70")
+id = 2
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms/MPlatform3"]
+position = Vector2(0, 220)
+metadata/_edit_group_ = true
+
+[node name="Downblock4" type="Sprite2D" parent="Platforms/MPlatform3/AnimatableBody2D"]
+position = Vector2(4216, 494)
+scale = Vector2(0.354, 0.354)
+texture = ExtResource("22_b0yri")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/MPlatform3/AnimatableBody2D"]
+position = Vector2(0, -10)
+polygon = PackedVector2Array(4131, 489, 4135, 550, 4276, 556, 4285, 518, 4285, 450, 4146, 452)
+
+[node name="GoldDoor5" parent="Platforms/MPlatform3/AnimatableBody2D" instance=ExtResource("10_w7r7g")]
+position = Vector2(4256, 567)
+rotation = -3.14159
+id = 20
+exit_id = 18
+color = "gold"
+duplicate = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MPlatform3/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ad3yk")
+}
+
 [node name="Lever" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(1272, 440)
 rotation = 3.14159
@@ -619,6 +674,11 @@ position = Vector2(3926, 528)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
 platform_id = 1
+
+[node name="Lever3" parent="." instance=ExtResource("21_pvfto")]
+position = Vector2(4080, 171)
+scale = Vector2(0.05, 0.05)
+platform_id = 2
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -760,14 +820,6 @@ exit_id = 18
 color = "gold"
 duplicate_id = 20
 
-[node name="GoldDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(4256, 567)
-rotation = -3.14159
-id = 20
-exit_id = 18
-color = "gold"
-duplicate = true
-
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
 position = Vector2(4173, 83)
 
@@ -787,3 +839,4 @@ scale = Vector2(0.3, 0.937)
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]
+[connection signal="lever_toggled" from="Lever3" to="." method="_on_lever_lever_toggled"]
