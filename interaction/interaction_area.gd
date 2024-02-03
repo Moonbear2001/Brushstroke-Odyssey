@@ -9,6 +9,12 @@ adding a CollisionShape2D as a child node in that scene.
 """
 
 @export var action_name: String = "interact"
+@export var key: String = "E"
+@export var position_x = -36
+@export var position_y = -36
+
+@onready var overlay = $Overlay
+
 var enabled = true
 
 var interact: Callable = func():

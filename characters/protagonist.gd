@@ -31,7 +31,7 @@ var y_val = -1
 
 func _ready():
 	if big:
-		SPEED = 260
+		SPEED = 320
 	anim.play("Idle")
 
 func _physics_process(delta):
