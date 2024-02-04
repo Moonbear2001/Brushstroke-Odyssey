@@ -729,7 +729,7 @@ scale = Vector2(0.313, 0.313)
 texture = ExtResource("38_7oji8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D7"]
-polygon = PackedVector2Array(6464, 138, 6463, 210, 6395, 214, 6394, 320, 6462, 324, 6463, 410, 6394, 413, 6393, 501, 6352, 502, 6349, 587, 6310, 588, 6306, 612, 6287, 614, 6284, 636, 6265, 640, 6260, 664, 6246, 668, 6239, 692, 6257, 699, 6719, 700, 6719, 656, 6710, 641, 6516, 641, 6516, 580, 6617, 578, 6618, 459, 6612, 441, 6486, 435, 6488, 134)
+polygon = PackedVector2Array(6464, 138, 6463, 210, 6395, 214, 6394, 320, 6462, 324, 6463, 410, 6394, 413, 6393, 501, 6352, 502, 6349, 587, 6310, 588, 6306, 612, 6287, 614, 6284, 636, 6265, 640, 6260, 664, 6246, 668, 6239, 692, 6257, 699, 6719, 700, 6719, 656, 6710, 641, 6509, 641, 6508, 583, 6617, 578, 6618, 459, 6612, 441, 6486, 435, 6488, 134)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/fifth section"]
 position = Vector2(-14, 0)
@@ -1080,7 +1080,7 @@ exit_id = 27
 color = "white"
 
 [node name="RedDoor7" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(6528, 617)
+position = Vector2(6530, 617)
 id = 29
 exit_id = 30
 color = "red"
