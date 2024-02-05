@@ -13,7 +13,7 @@ Main playable character.
 var SPEED = 140.0
 #const JUMP_VELOCITY = 400.0
 # Temporarily increased jump velocity for passing level easier for demo!
-const JUMP_VELOCITY = 520.0
+const JUMP_VELOCITY = 430.0
 
 # Get the default gravity setting (980)
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
