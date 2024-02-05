@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=68 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -140,6 +140,152 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_jxp6f"),
 "move_platform": SubResource("Animation_mmbgw")
+}
+
+[sub_resource type="Animation" id="Animation_xlusr"]
+resource_name = "vertical_move"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5340, 555), Vector2(5340, 680), Vector2(5340, 430), Vector2(5340, 555)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uwrdy"]
+_data = {
+"vertical_move": SubResource("Animation_xlusr")
+}
+
+[sub_resource type="Animation" id="Animation_x845f"]
+resource_name = "vertical_move"
+length = 3.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.25, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5505, 630), Vector2(5505, 680), Vector2(5505, 430), Vector2(5505, 630)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hkfoi"]
+_data = {
+"vertical_move": SubResource("Animation_x845f")
+}
+
+[sub_resource type="Animation" id="Animation_cx6bb"]
+resource_name = "vertical_move"
+length = 4.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5679, 430), Vector2(5679, 680), Vector2(5679, 430)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8nty6"]
+_data = {
+"vertical_move": SubResource("Animation_cx6bb")
+}
+
+[sub_resource type="Animation" id="Animation_nufra"]
+resource_name = "move_platform"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(230, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6kps"]
+_data = {
+"move_platform": SubResource("Animation_nufra")
+}
+
+[sub_resource type="Animation" id="Animation_vf5b5"]
+resource_name = "move_platform"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(230, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rxl5m"]
+_data = {
+"move_platform": SubResource("Animation_vf5b5")
+}
+
+[sub_resource type="Animation" id="Animation_82o72"]
+resource_name = "move_vertical"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -120), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oab41"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -118)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtlc4"]
+_data = {
+"RESET": SubResource("Animation_oab41"),
+"move_vertical": SubResource("Animation_82o72")
 }
 
 [node name="Escher" type="Node2D"]
@@ -346,7 +492,7 @@ scale = Vector2(0.450756, 0.450756)
 texture = ExtResource("21_uc55d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D3"]
-polygon = PackedVector2Array(3518, 492, 3521, 581, 3659, 588, 3663, 651, 3732, 654, 3744, 614, 3741, 520, 3812, 524, 3815, 593, 3881, 599, 3891, 559, 3890, 516, 3950, 519, 3950, 684, 4028, 685, 4028, 445, 3535, 448)
+polygon = PackedVector2Array(3518, 492, 3521, 581, 3659, 588, 3663, 651, 3732, 654, 3744, 614, 3741, 520, 3812, 524, 3815, 593, 3881, 599, 3891, 559, 3890, 516, 3950, 519, 3947, 689, 4030, 688, 4027, 561, 4028, 445, 3535, 448)
 
 [node name="MPlatform1" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
 position = Vector2(1395, 404)
@@ -405,6 +551,38 @@ position = Vector2(-15060, -4548.56)
 scale = Vector2(10.9074, 12.3873)
 polygon = PackedVector2Array(1353.31, 344.324, 1352.32, 391.537, 1360.26, 409.023, 1414.87, 409.897, 1414.87, 397.363, 1414.87, 360.062, 1408.91, 344.324)
 
+[node name="MPlatform3" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
+position = Vector2(4162, 478)
+script = ExtResource("20_ftb70")
+id = 2
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms/MPlatform3"]
+position = Vector2(0, 220)
+metadata/_edit_group_ = true
+
+[node name="Downblock4" type="Sprite2D" parent="Platforms/MPlatform3/AnimatableBody2D"]
+position = Vector2(30.2002, 8.90796)
+scale = Vector2(0.354, 0.354)
+texture = ExtResource("22_b0yri")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/MPlatform3/AnimatableBody2D"]
+position = Vector2(-4185.8, -495.092)
+polygon = PackedVector2Array(4131, 489, 4135, 550, 4276, 556, 4285, 518, 4285, 450, 4146, 452)
+
+[node name="GoldDoor5" parent="Platforms/MPlatform3/AnimatableBody2D" instance=ExtResource("10_w7r7g")]
+position = Vector2(70.2002, 81.908)
+rotation = -3.14159
+gravity_dir = "up"
+id = 39
+exit_id = 41
+color = "gold"
+duplicate = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MPlatform3/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ad3yk")
+}
+
 [node name="fourth section" type="Node2D" parent="Platforms"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/fourth section"]
@@ -448,37 +626,62 @@ texture = ExtResource("26_b666u")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D4"]
 polygon = PackedVector2Array(5046, 565, 5045, 772, 5207, 774, 5192, 563)
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Platforms/fourth section"]
+[node name="AnimatableBody2D5" type="AnimatableBody2D" parent="Platforms/fourth section"]
+position = Vector2(5340, 555)
+metadata/_edit_group_ = true
 
-[node name="5" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D5"]
-position = Vector2(5302, 603)
+[node name="5" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D5"]
+position = Vector2(0.100464, -0.430054)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("27_ygplm")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D5"]
-polygon = PackedVector2Array(5244, 590, 5244, 616, 5254, 631, 5361, 632, 5360, 614, 5354, 588)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/AnimatableBody2D5"]
+position = Vector2(-5299, -600)
+polygon = PackedVector2Array(5243, 588, 5244, 616, 5254, 631, 5361, 632, 5360, 614, 5354, 588)
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="Platforms/fourth section"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/fourth section/AnimatableBody2D5"]
+libraries = {
+"": SubResource("AnimationLibrary_uwrdy")
+}
+autoplay = "vertical_move"
 
-[node name="6" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D6"]
-position = Vector2(5471, 601)
+[node name="AnimatableBody2D6" type="AnimatableBody2D" parent="Platforms/fourth section"]
+position = Vector2(5505, 430)
+metadata/_edit_group_ = true
+
+[node name="6" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D6"]
+position = Vector2(0.100586, -0.429932)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("27_ygplm")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D6"]
-position = Vector2(168, -3)
-polygon = PackedVector2Array(5244, 590, 5244, 616, 5254, 631, 5361, 632, 5360, 614, 5354, 588)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/AnimatableBody2D6"]
+position = Vector2(-5299, -602)
+polygon = PackedVector2Array(5242, 588, 5244, 616, 5254, 631, 5361, 632, 5360, 614, 5354, 588)
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="Platforms/fourth section"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/fourth section/AnimatableBody2D6"]
+libraries = {
+"": SubResource("AnimationLibrary_hkfoi")
+}
+autoplay = "vertical_move"
 
-[node name="7" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D7"]
-position = Vector2(5635, 600)
+[node name="AnimatableBody2D7" type="AnimatableBody2D" parent="Platforms/fourth section"]
+position = Vector2(5679, 430)
+metadata/_edit_group_ = true
+
+[node name="7" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D7"]
+position = Vector2(0.100586, -0.429932)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("27_ygplm")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D7"]
-position = Vector2(333, -4)
-polygon = PackedVector2Array(5244, 590, 5244, 616, 5254, 631, 5361, 632, 5360, 614, 5354, 588)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/AnimatableBody2D7"]
+position = Vector2(-5299.9, -599.43)
+polygon = PackedVector2Array(5242.9, 590.43, 5244, 616, 5254, 631, 5361, 632, 5360, 614, 5354.9, 590.43)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/fourth section/AnimatableBody2D7"]
+libraries = {
+"": SubResource("AnimationLibrary_8nty6")
+}
+autoplay = "vertical_move"
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Platforms/fourth section"]
 
@@ -493,31 +696,34 @@ polygon = PackedVector2Array(5034, -21, 5034, 161, 5227, 166, 5223, -25)
 [node name="StaticBody2D9" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="4" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D9"]
-position = Vector2(5337, 115)
+position = Vector2(5353, 95)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("29_aedtv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D9"]
+position = Vector2(16, -20)
 polygon = PackedVector2Array(5288, 0, 5290, 192, 5382, 198, 5384, -1)
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="3" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D10"]
-position = Vector2(5493, 161)
+position = Vector2(5518.38, 111.1)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("30_iyluj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D10"]
-polygon = PackedVector2Array(5444, 1, 5447, 279, 5537, 285, 5540, -2)
+position = Vector2(25.3779, -49.9)
+polygon = PackedVector2Array(5444, 1, 5447, 279, 5540.62, 281.9, 5538.62, 1.9)
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="2" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D11"]
-position = Vector2(5637, 180)
+position = Vector2(5684.34, 109)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("31_7r6mm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D11"]
+position = Vector2(47.3418, -71)
 polygon = PackedVector2Array(5593, -22, 5598, 375, 5689, 382, 5690, -28)
 
 [node name="fifth section" type="Node2D" parent="Platforms"]
@@ -540,17 +746,29 @@ scale = Vector2(0.313, 0.313)
 texture = ExtResource("33_blhto")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D2"]
-polygon = PackedVector2Array(6116, 616, 6120, 721, 6166, 720, 6167, 522, 6135, 521, 6129, 502, 6044, 505, 6045, 547, 6057, 551, 6065, 569, 6078, 573, 6084, 592, 6101, 594, 6105, 612)
+polygon = PackedVector2Array(6116, 616, 6120, 721, 6166, 720, 6167, 522, 6135, 521, 6129, 502, 6044, 505, 6045, 547, 6062, 550, 6062, 571, 6083, 571, 6084, 592, 6101, 594, 6101, 615)
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/fifth section"]
+[node name="MPlatform" type="Node2D" parent="Platforms/fifth section" groups=["MovingPlatform"]]
+position = Vector2(6145, 461)
+script = ExtResource("20_ftb70")
+id = 3
 
-[node name="3" type="Sprite2D" parent="Platforms/fifth section/StaticBody2D3"]
-position = Vector2(6146, 459)
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms/fifth section/MPlatform"]
+metadata/_edit_group_ = true
+
+[node name="3" type="Sprite2D" parent="Platforms/fifth section/MPlatform/AnimatableBody2D"]
+position = Vector2(0.100586, -0.699951)
 scale = Vector2(0.313, 0.313)
 texture = ExtResource("34_imksn")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D3"]
-polygon = PackedVector2Array(6132, 415, 6130, 503, 6167, 503, 6167, 427, 6161, 412)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/MPlatform/AnimatableBody2D"]
+position = Vector2(-6146, -459)
+polygon = PackedVector2Array(6131, 414, 6130, 503, 6168, 503, 6168, 427, 6163, 414)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/fifth section/MPlatform/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_s6kps")
+}
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/fifth section"]
 
@@ -560,17 +778,29 @@ scale = Vector2(0.313, 0.313)
 texture = ExtResource("35_cac47")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D4"]
-polygon = PackedVector2Array(6049, 413, 6059, 430, 6167, 431, 6167, 331, 6168, 307, 6116, 318, 6115, 340, 6097, 343, 6094, 363, 6074, 367, 6072, 392, 6051, 395)
+polygon = PackedVector2Array(6050, 414, 6059, 430, 6167, 431, 6167, 331, 6168, 307, 6116, 318, 6116, 340, 6095, 340, 6095, 364, 6072, 364, 6072, 392, 6050, 392)
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Platforms/fifth section"]
+[node name="MPlatform2" type="Node2D" parent="Platforms/fifth section" groups=["MovingPlatform"]]
+position = Vector2(6146, 264)
+script = ExtResource("20_ftb70")
+id = 4
 
-[node name="5" type="Sprite2D" parent="Platforms/fifth section/StaticBody2D5"]
-position = Vector2(6145, 259)
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms/fifth section/MPlatform2"]
+metadata/_edit_group_ = true
+
+[node name="5" type="Sprite2D" parent="Platforms/fifth section/MPlatform2/AnimatableBody2D"]
+position = Vector2(-0.299316, 0.400024)
 scale = Vector2(0.313, 0.313)
 texture = ExtResource("36_cwm3c")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D5"]
-polygon = PackedVector2Array(6129, 209, 6129, 315, 6168, 316, 6168, 222, 6163, 208)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/MPlatform2/AnimatableBody2D"]
+position = Vector2(-6146.3, -262.6)
+polygon = PackedVector2Array(6128.3, 209.6, 6129, 315, 6168, 316, 6168.3, 226.6, 6163.3, 209.6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/fifth section/MPlatform2/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_rxl5m")
+}
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Platforms/fifth section"]
 
@@ -623,46 +853,30 @@ texture = ExtResource("41_khvcq")
 position = Vector2(-3, -9.29999)
 polygon = PackedVector2Array(6666, 421, 6666, 514, 6746, 518, 6745, 434, 6740, 419)
 
-[node name="StaticBody2D11" type="StaticBody2D" parent="Platforms/fifth section"]
+[node name="AnimatableBody2D11" type="AnimatableBody2D" parent="Platforms/fifth section"]
+position = Vector2(0, -118)
+metadata/_edit_group_ = true
 
-[node name="MovingBlock" type="Sprite2D" parent="Platforms/fifth section/StaticBody2D11"]
-position = Vector2(6913, 298)
+[node name="MovingBlock" type="Sprite2D" parent="Platforms/fifth section/AnimatableBody2D11"]
+position = Vector2(6913, 334)
 scale = Vector2(0.313, 0.313)
 texture = ExtResource("42_fowqm")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D11"]
-position = Vector2(10, 0)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/AnimatableBody2D11"]
+position = Vector2(10, 36)
 polygon = PackedVector2Array(6864, 286, 6864, 318, 6949, 318, 6947, 302, 6943, 285)
 
-[node name="MPlatform3" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
-script = ExtResource("20_ftb70")
-id = 2
+[node name="RedDoor8" parent="Platforms/fifth section/AnimatableBody2D11" instance=ExtResource("14_8a6pv")]
+position = Vector2(6935, 298)
+id = 30
+exit_id = 29
+color = "red"
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms/MPlatform3"]
-position = Vector2(0, 220)
-metadata/_edit_group_ = true
-
-[node name="Downblock4" type="Sprite2D" parent="Platforms/MPlatform3/AnimatableBody2D"]
-position = Vector2(4216, 494)
-scale = Vector2(0.354, 0.354)
-texture = ExtResource("22_b0yri")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/MPlatform3/AnimatableBody2D"]
-position = Vector2(0, -10)
-polygon = PackedVector2Array(4131, 489, 4135, 550, 4276, 556, 4285, 518, 4285, 450, 4146, 452)
-
-[node name="GoldDoor5" parent="Platforms/MPlatform3/AnimatableBody2D" instance=ExtResource("10_w7r7g")]
-position = Vector2(4256, 567)
-rotation = -3.14159
-id = 20
-exit_id = 18
-color = "gold"
-duplicate = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MPlatform3/AnimatableBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/fifth section/AnimatableBody2D11"]
 libraries = {
-"": SubResource("AnimationLibrary_ad3yk")
+"": SubResource("AnimationLibrary_vtlc4")
 }
+autoplay = "move_vertical"
 
 [node name="Lever" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(1272, 440)
@@ -679,6 +893,18 @@ platform_id = 1
 position = Vector2(4080, 171)
 scale = Vector2(0.05, 0.05)
 platform_id = 2
+
+[node name="Lever4" parent="." instance=ExtResource("21_pvfto")]
+position = Vector2(5958, 118)
+rotation = -1.57079
+scale = Vector2(0.05, 0.05)
+platform_id = 3
+
+[node name="Lever5" parent="." instance=ExtResource("21_pvfto")]
+position = Vector2(6230, 680)
+rotation = -1.57079
+scale = Vector2(0.05, 0.05)
+platform_id = 4
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -809,19 +1035,142 @@ color = "gold"
 
 [node name="GoldDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(4242, 85)
-id = 18
-exit_id = 19
+id = 40
+exit_id = 41
 color = "gold"
 
 [node name="GoldDoor4" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(4443, 645)
-id = 19
-exit_id = 18
+position = Vector2(4466, 641)
+id = 41
+exit_id = 40
 color = "gold"
-duplicate_id = 20
+duplicate_id = 39
+
+[node name="YellowDoor4" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(4544, 398)
+id = 20
+exit_id = 21
+color = "yellow"
+
+[node name="YellowDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(5067, 542)
+id = 21
+exit_id = 20
+color = "yellow"
+
+[node name="BlueDoor5" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(5864, 455)
+id = 22
+exit_id = 23
+color = "blue"
+
+[node name="BlueDoor6" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(5052, 183)
+rotation = -3.14159
+gravity_dir = "up"
+id = 23
+exit_id = 22
+color = "blue"
+
+[node name="RedDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(5862, 304)
+rotation = -3.14159
+id = 24
+exit_id = 25
+color = "red"
+
+[node name="RedDoor6" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6088, 700)
+rotation = 1.5708
+gravity_dir = "right"
+id = 25
+enter = false
+exit_id = 24
+y_offset = 1
+color = "red"
+
+[node name="WhiteDoor2" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6261, 68)
+rotation = 1.5708
+gravity_dir = "right"
+id = 26
+exit_id = 27
+color = "white"
+
+[node name="WhiteDoor3" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6506, 416)
+id = 27
+exit_id = 26
+color = "white"
+
+[node name="WhiteDoor4" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6908, 540)
+id = 28
+exit_id = 27
+color = "white"
+
+[node name="RedDoor7" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6534, 620)
+id = 29
+exit_id = 30
+color = "red"
+
+[node name="YellowDoor6" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6878, 642)
+id = 31
+exit_id = 32
+color = "yellow"
+
+[node name="YellowDoor7" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(6508, 159)
+rotation = -3.14159
+gravity_dir = "up"
+id = 32
+exit_id = 31
+color = "yellow"
+
+[node name="BlueDoor7" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6768, 70)
+rotation = -3.14159
+gravity_dir = "up"
+id = 33
+exit_id = 34
+color = "blue"
+
+[node name="BlueDoor8" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(7140, 659)
+id = 34
+exit_id = 33
+color = "blue"
+
+[node name="GoldDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6954, 663)
+id = 35
+exit_id = 36
+color = "gold"
+
+[node name="GoldDoor6" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(6963, 547)
+id = 36
+exit_id = 35
+color = "gold"
+
+[node name="Door" parent="Doors" instance=ExtResource("10_w7r7g")]
+position = Vector2(7185, 161)
+rotation = -3.14159
+gravity_dir = "up"
+id = 37
+exit_id = 38
+color = "black"
+
+[node name="Door2" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(7188, 545)
+id = 38
+exit_id = 37
+color = "black"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(77, 470)
+position = Vector2(6547, 413)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -829,9 +1178,11 @@ scale = Vector2(99.5, 99.5)
 
 [node name="Death" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(1885, -166)
+scale = Vector2(2.36, 1)
 
 [node name="Death2" parent="." instance=ExtResource("17_npv7l")]
-position = Vector2(1888, 902)
+position = Vector2(9634, 1000)
+scale = Vector2(-2.37316, -0.6978)
 
 [node name="Death3" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(3233, 399)
@@ -840,3 +1191,5 @@ scale = Vector2(0.192, 0.6)
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever3" to="." method="_on_lever_lever_toggled"]
+[connection signal="lever_toggled" from="Lever4" to="." method="_on_lever_lever_toggled"]
+[connection signal="lever_toggled" from="Lever5" to="." method="_on_lever_lever_toggled"]

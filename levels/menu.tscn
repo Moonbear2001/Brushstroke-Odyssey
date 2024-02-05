@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdhced5wuwde4"]
+[gd_scene load_steps=17 format=3 uid="uid://bdhced5wuwde4"]
 
 [ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
 [ext_resource type="PackedScene" uid="uid://cn5gs4eorpydv" path="res://enter_level.tscn" id="2_a14vu"]
 [ext_resource type="PackedScene" uid="uid://cducn8pjghtlw" path="res://characters/protagonist_big.tscn" id="2_hfs4s"]
 [ext_resource type="Texture2D" uid="uid://lfn1xuiqba76" path="res://art/menu/front_arch1.png" id="3_fqd2f"]
+[ext_resource type="Texture2D" uid="uid://iembktiha2c6" path="res://art/menu/overlay1.png" id="3_mahh3"]
+[ext_resource type="Texture2D" uid="uid://cii75xj57gklt" path="res://art/menu/overlay2.png" id="4_a5gs1"]
 [ext_resource type="Texture2D" uid="uid://g8gm5345vui4" path="res://art/menu/front_arch2.png" id="4_te7xp"]
+[ext_resource type="Texture2D" uid="uid://0wu412e758o5" path="res://art/menu/overlay3.png" id="5_1sded"]
 [ext_resource type="Texture2D" uid="uid://bn7a7810kd884" path="res://art/menu/front_arch3.png" id="5_n8e3p"]
-[ext_resource type="Texture2D" uid="uid://hnus6bgyqy5" path="res://art/menu/front_arch4.png" id="6_pj6dg"]
+[ext_resource type="Texture2D" uid="uid://vlkby45jl7lm" path="res://art/menu/blinking_arrows.png" id="6_wdumw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sob0k"]
 size = Vector2(7092, 55)
@@ -14,17 +17,47 @@ size = Vector2(7092, 55)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxxs1"]
 size = Vector2(20, 760)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0q83"]
+atlas = ExtResource("6_wdumw")
+region = Rect2(66, 0, 66, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npw26"]
+atlas = ExtResource("6_wdumw")
+region = Rect2(0, 0, 66, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bx6pg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0q83")
+}],
+"loop": true,
+"name": &"fill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npw26")
+}],
+"loop": true,
+"name": &"outline",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lak8j"]
+load_path = "res://.godot/imported/front_arch4.png-afcdd8e9813478fd501dde5e2a024214.ctex"
+
 [node name="Menu" type="Node2D"]
 
 [node name="Layout" type="Sprite2D" parent="."]
-position = Vector2(3200, 360)
+position = Vector2(3388, 360)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_mibmc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3548, 701)
+position = Vector2(3548, 685)
 shape = SubResource("RectangleShape2D_sob0k")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -34,45 +67,80 @@ position = Vector2(0, 370)
 shape = SubResource("RectangleShape2D_vxxs1")
 
 [node name="EnterVanGogh" parent="." instance=ExtResource("2_a14vu")]
+position = Vector2(2637, 272)
 level_path = ""
+label_x = 260
+label_y = 110
+
+[node name="Overlay" type="Sprite2D" parent="EnterVanGogh"]
+position = Vector2(6.10352e-05, 0)
+scale = Vector2(0.908599, 0.9)
+texture = ExtResource("3_mahh3")
 
 [node name="EnterDali" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(3703, 312)
+position = Vector2(3986, 293)
 scale = Vector2(1.16, 1.16)
 level_path = ""
+label_x = 260
+label_y = 110
+
+[node name="Overlay" type="Sprite2D" parent="EnterDali"]
+position = Vector2(0.862366, -4.31035)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("4_a5gs1")
 
 [node name="EnterEscher" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(5254, 319)
-scale = Vector2(1.16, 1.16)
+position = Vector2(5599, 270)
+label_x = 260
+label_y = 110
+
+[node name="Overlay" type="Sprite2D" parent="EnterEscher"]
+position = Vector2(3, 3)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_1sded")
+
+[node name="EnterTutorial" parent="." instance=ExtResource("2_a14vu")]
+position = Vector2(1046, 470)
+scale = Vector2(0.15, 0.15)
+level_path = "res://levels/tutorial.tscn"
+label_x = 115
+label_y = -200
+color = Color(0.592157, 0.513726, 0.490196, 1)
+
+[node name="Overlay" type="AnimatedSprite2D" parent="EnterTutorial"]
+position = Vector2(0.000488281, -6.66675)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_bx6pg")
+animation = &"outline"
 
 [node name="ProtagonistBig" parent="." instance=ExtResource("2_hfs4s")]
-position = Vector2(4836, 507)
+position = Vector2(1496, 515)
 scale = Vector2(0.75, 0.75)
 big = true
 
 [node name="FrontArch1" type="Sprite2D" parent="."]
-position = Vector2(1686, 361)
+position = Vector2(2064, 361)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_fqd2f")
 
 [node name="FrontArch2" type="Sprite2D" parent="."]
-position = Vector2(3056, 359)
+position = Vector2(3433, 360)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_te7xp")
 
 [node name="FrontArch3" type="Sprite2D" parent="."]
-position = Vector2(4610, 356)
+position = Vector2(4973, 339)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_n8e3p")
 
 [node name="FrontArch4" type="Sprite2D" parent="."]
-position = Vector2(6314, 355)
+position = Vector2(6528, 332)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("6_pj6dg")
+texture = SubResource("CompressedTexture2D_lak8j")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(-30, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(6309, 372)
+position = Vector2(6564, 372)
 shape = SubResource("RectangleShape2D_vxxs1")

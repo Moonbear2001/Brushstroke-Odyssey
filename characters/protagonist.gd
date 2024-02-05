@@ -96,10 +96,14 @@ func use_gravity(delta):
 		set_jump_animation()
 	
 	var direction
-	if x_val < 0 or y_val < 0:
-		direction = Input.get_axis("left", "right")
-	else:
+	
+	if x_val < 0 and y_val == 0:
 		direction = Input.get_axis("right", "left")
+	else:
+		if x_val < 0 or y_val < 0:
+			direction = Input.get_axis("left", "right")
+		else:
+			direction = Input.get_axis("right", "left")
 	if direction:
 		if x_val != 0:
 			velocity.y = direction * SPEED * x_val * -1
@@ -166,27 +170,51 @@ func set_jump_animation():
 		v_lat = velocity.x * y_val * -1
 		dir = y_val
 	
-	if v_lat < 0:
-		if v_jump * dir * -1 > -100 and v_jump * dir * -1 < 100:
-			anim.play("CrouchLeft")
-		elif v_jump * dir * -1 > 0:
-			anim.play("FallLeft")
-		elif v_jump * dir * -1 < 0:
-			anim.play("JumpLeft")
-	elif v_lat > 0:
-		if v_jump * dir * -1  > -100 and v_jump * dir * -1 < 100:
-			anim.play("CrouchRight")
-		elif v_jump * dir * -1 > 0:
-			anim.play("FallRight")
-		elif v_jump * dir * -1 < 0:
-			anim.play("JumpRight")
+	if x_val == -1 and y_val == 0:
+		if v_lat > 0:
+			if v_jump > -100 and v_jump  < 100:
+				anim.play("CrouchLeft")
+			elif v_jump > 0:
+				anim.play("FallLeft")
+			elif v_jump < 0:
+				anim.play("JumpLeft")
+		elif v_lat < 0:
+			if v_jump > -100 and v_jump < 100:
+				anim.play("CrouchRight")
+			elif v_jump > 0:
+				anim.play("FallRight")
+			elif v_jump < 0:
+				anim.play("JumpRight")
+		else:
+			if v_jump > -100 and v_jump < 100:
+				anim.play("CrouchRight")
+			elif v_jump > 0:
+				anim.play("FallCenter")
+			elif v_jump < 0:
+				anim.play("JumpCenter")
+	
 	else:
-		if v_jump > -100 and v_jump < 100:
-			anim.play("CrouchRight")
-		elif v_jump * dir * -1 > 0:
-			anim.play("FallCenter")
-		elif v_jump * dir * -1 < 0:
-			anim.play("JumpCenter")
+		if v_lat < 0:
+			if v_jump * dir * -1 > -100 and v_jump * dir * -1 < 100:
+				anim.play("CrouchLeft")
+			elif v_jump * dir * -1 > 0:
+				anim.play("FallLeft")
+			elif v_jump * dir * -1 < 0:
+				anim.play("JumpLeft")
+		elif v_lat > 0:
+			if v_jump * dir * -1  > -100 and v_jump * dir * -1 < 100:
+				anim.play("CrouchRight")
+			elif v_jump * dir * -1 > 0:
+				anim.play("FallRight")
+			elif v_jump * dir * -1 < 0:
+				anim.play("JumpRight")
+		else:
+			if v_jump > -100 and v_jump < 100:
+				anim.play("CrouchRight")
+			elif v_jump * dir * -1 > 0:
+				anim.play("FallCenter")
+			elif v_jump * dir * -1 < 0:
+				anim.play("JumpCenter")
 
 # Disable visibility and controls
 func disable():

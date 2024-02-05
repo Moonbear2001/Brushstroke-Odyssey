@@ -26,8 +26,7 @@ func register_area(area: InteractionArea):
 func unregister_area(area: InteractionArea):
 	var index = active_areas.find(area)
 	if index != -1:
-		if active_areas[index].overlay:
-			active_areas[index].overlay.hide()
+		active_areas[index].onLeave.call()
 		active_areas.remove_at(index)
 		
 func _process(_delta):
@@ -44,13 +43,14 @@ func _process(_delta):
 		
 		label.text += active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
+		
 		label.global_position.y += active_areas[0].position_y
 		label.global_position.x += active_areas[0].position_x
-		if active_areas[0].overlay:
-			active_areas[0].overlay.show()
+		label.modulate = active_areas[0].label_color
+		active_areas[0].onEnter.call()
 		label.show()
-	elif active_areas.size() > 0 and active_areas[0].overlay:
-		active_areas[0].overlay.hide()
+	elif active_areas.size() > 0:
+		active_areas[0].onEnter.call()
 	else:
 		label.hide()
 

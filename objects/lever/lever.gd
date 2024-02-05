@@ -32,6 +32,7 @@ func _ready():
 	state = LeverStates.OFF
 	animation_player.play("off")
 	interaction_area.interact = Callable(self, "pull_lever")
+	interaction_area.position_y = -25
 
 # Interact with the lever, if allowed
 func pull_lever():
