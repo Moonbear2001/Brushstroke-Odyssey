@@ -1,13 +1,12 @@
-[gd_scene load_steps=70 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=69 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
-[ext_resource type="Texture2D" uid="uid://clan7geli6b5e" path="res://art/Esher/parallax_layers/background.png" id="1_db3fk"]
-[ext_resource type="Texture2D" uid="uid://d0skuom564unj" path="res://art/Esher/parallax_layers/midground.png" id="2_3cojc"]
 [ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
+[ext_resource type="Texture2D" uid="uid://bfaap54kfc2vy" path="res://art/Esher/parallax_layers/backkk.png" id="3_1afl0"]
 [ext_resource type="Texture2D" uid="uid://cxev8semuld5f" path="res://art/Esher/wide_block.png" id="3_4o60w"]
-[ext_resource type="Texture2D" uid="uid://cac8ajx5j6vyk" path="res://art/Esher/parallax_layers/front.png" id="3_ioprh"]
+[ext_resource type="Texture2D" uid="uid://dio5jogn7r5j6" path="res://art/Esher/parallax_layers/midground_new.png" id="4_6mjae"]
 [ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
 [ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
@@ -135,7 +134,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -300)]
+"values": [Vector2(0, 0), Vector2(0, -450)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtlc4"]
@@ -305,28 +304,20 @@ texture = ExtResource("2_nopj3")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1522, 0)
 
-[node name="Front" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-modulate = Color(0.701961, 0.701961, 0.701961, 0.556863)
-position = Vector2(1878, 395)
-scale = Vector2(0.565359, 0.565359)
-texture = ExtResource("3_ioprh")
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 0.3)
-
-[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1653.29, 338.86)
-scale = Vector2(0.332007, 0.332007)
-texture = ExtResource("1_db3fk")
+[node name="Backkk" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1261, 366)
+scale = Vector2(0.682746, 0.682746)
+texture = ExtResource("3_1afl0")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
 
-[node name="Midground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(1639.8, 342.199)
-scale = Vector2(0.330844, 0.330844)
-texture = ExtResource("2_3cojc")
+[node name="MidgroundNew" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(2958.76, 376.5)
+scale = Vector2(0.752841, 0.752841)
+texture = ExtResource("4_6mjae")
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -343,6 +334,7 @@ position = Vector2(0, 80)
 polygon = PackedVector2Array(-17, 419, 185, 419, 184, 216, 300, 109, 422, 236, 421, 419, 527, 419, 527, 512, 472, 512, 472, 568, 584, 568, 584, 420, 640, 420, 640, 208, 656, 192, 669, 217, 668, 512, 776, 512, 776, 488, 808, 488, 808, 464, 832, 464, 832, 432, 864, 432, 864, 408, 896, 408, 896, 432, 976, 432, 976, 376, 1104, 376, 1116, 376, 1117, 400, 1088, 400, 1088, 432, 1060, 433, 1060, 456, 1032, 456, 1032, 488, 1003, 488, 1003, 512, 976, 512, 976, 544, 944, 544, 942, 779, -16, 648)
 
 [node name="Lever block" type="StaticBody2D" parent="Platforms"]
+position = Vector2(0, 40)
 metadata/_edit_group_ = true
 
 [node name="BackArch" type="Sprite2D" parent="Platforms/Lever block"]
@@ -457,7 +449,7 @@ scale = Vector2(0.354, 0.393763)
 texture = ExtResource("23_ntwq6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Top/StaticBody2D2"]
-polygon = PackedVector2Array(3303, 183, 3306, 289, 3718, 287, 3709, 69, 3655, 69, 3656, 218, 3598, 219, 3592, 179)
+polygon = PackedVector2Array(3303, 183, 3306, 289, 3718, 287, 3710, 81, 3659, 83, 3656, 218, 3598, 219, 3592, 179)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/Mirror/Top"]
 position = Vector2(60, 57)
@@ -507,7 +499,7 @@ scale = Vector2(0.450756, 0.450756)
 texture = ExtResource("21_uc55d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D3"]
-polygon = PackedVector2Array(3531, 484, 3535, 571, 3675, 574, 3675, 648, 3747, 648, 3750, 519, 3825, 518, 3827, 589, 3896, 590, 3899, 519, 3961, 522, 3962, 672, 4031, 676, 4042, 435, 3547, 441)
+polygon = PackedVector2Array(3531, 484, 3535, 571, 3675, 574, 3675, 648, 3747, 648, 3750, 519, 3825, 518, 3827, 589, 3896, 590, 3899, 519, 3961, 522, 3962, 672, 4032, 671, 4042, 435, 3547, 441)
 
 [node name="MPlatform1" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
 position = Vector2(1395, 404)
@@ -924,7 +916,7 @@ polygon = PackedVector2Array(8651, 358, 8658, 427, 8666, 429, 8667, 442, 8676, 4
 polygon = PackedVector2Array(8651, 357, 8658, 292, 8669, 290, 8671, 275, 8682, 270, 8683, 256, 8694, 251, 8694, 236, 8706, 232, 8708, 217, 8718, 213, 8720, 197, 8729, 191, 8730, 178, 8741, 172, 8740, 155, 8751, 151, 8747, 130, 8757, 123, 8756, 110, 8765, 105, 8765, 101, 8765, 97, 8765, 93, 8765, 89, 8766, 84, 8767, 80, 8768, 77, 8769, 74, 8771, 71, 8773, 68, 8776, 65, 8778, 63, 8781, 61, 8783, 59, 8786, 57, 8789, 55, 8793, 53, 8796, 51, 8799, 50, 8803, 49, 8806, 48, 8809, 48, 8812, 48, 8816, 48, 8819, 48, 8823, 48, 8826, 48, 8829, 49, 8832, 50, 8835, 51, 8838, 52, 8840, 53, 8842, 54, 8845, 56, 8848, 58, 8850, 60, 8852, 62, 8855, 65, 8857, 67, 8860, 69, 8896, 54, 9205, 52, 9203, 411, 9265, 411, 9264, -4, 8771, 1, 8563, 356)
 
 [node name="Lever" parent="." instance=ExtResource("21_pvfto")]
-position = Vector2(1272, 440)
+position = Vector2(1272, 472)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
 
@@ -1114,6 +1106,7 @@ position = Vector2(5056, 203)
 rotation = -3.14159
 gravity_dir = "up"
 id = 23
+enter = false
 exit_id = 22
 color = "blue"
 
@@ -1302,7 +1295,7 @@ exit_id = 53
 color = "gold"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(5828, 438)
+position = Vector2(51, 440)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
