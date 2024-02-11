@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0w488mk0j2nr"]
+
+[ext_resource type="Script" path="res://scenes/settings.gd" id="1_aoe52"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_aoe52")
+
+[node name="Window" type="Window" parent="."]
+title = "Settings"
+size = Vector2i(320, 250)
+
+[node name="Control" type="Control" parent="Window"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/Control"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 136.0
+
+[node name="GridContainer" type="GridContainer" parent="Window/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="MenuBtn" type="Button" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="QuitBtn" type="Button" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="CheckButton" type="CheckButton" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "music"
+
+[node name="CheckButton2" type="CheckButton" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "sound"
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/Control/MarginContainer/GridContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="Window/Control/MarginContainer/GridContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=70 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://bhvt2f75g8g3p" path="res://art/Esher/section3/long_block.png" id="41_khvcq"]
 [ext_resource type="Texture2D" uid="uid://37srqvjfc7ev" path="res://art/Esher/section3/moving_block.png" id="42_fowqm"]
 [ext_resource type="Texture2D" uid="uid://bkhmkbfqb4lc6" path="res://art/Esher/end!!!.png" id="48_3cxfi"]
+[ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="48_a1pxx"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -1042,7 +1043,7 @@ id = 14
 exit_id = 15
 color = "white"
 
-[node name="WhiteDoor1" parent="Doors" instance=ExtResource("10_w7r7g")]
+[node name="WhiteDoor1" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
 position = Vector2(2122, 663)
 id = 15
 exit_id = 14
@@ -1076,7 +1077,7 @@ id = 40
 exit_id = 41
 color = "gold"
 
-[node name="GoldDoor4" parent="Doors" instance=ExtResource("10_w7r7g")]
+[node name="GoldDoor4" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
 position = Vector2(4440, 632)
 id = 41
 exit_id = 40
@@ -1135,7 +1136,7 @@ id = 26
 exit_id = 27
 color = "white"
 
-[node name="WhiteDoor3" parent="Doors" instance=ExtResource("10_w7r7g")]
+[node name="WhiteDoor3" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
 position = Vector2(6499, 419)
 id = 27
 color = "white"
@@ -1312,6 +1313,8 @@ scale = Vector2(-2.37316, -0.6978)
 [node name="Death3" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(3233, 399)
 scale = Vector2(0.192, 0.6)
+
+[node name="Settings" parent="." instance=ExtResource("48_a1pxx")]
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]
