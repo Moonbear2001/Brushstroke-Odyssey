@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bdhced5wuwde4"]
+[gd_scene load_steps=21 format=3 uid="uid://bdhced5wuwde4"]
 
 [ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
 [ext_resource type="PackedScene" uid="uid://cn5gs4eorpydv" path="res://enter_level.tscn" id="2_a14vu"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://0wu412e758o5" path="res://art/menu/overlay3.png" id="5_1sded"]
 [ext_resource type="Texture2D" uid="uid://bn7a7810kd884" path="res://art/menu/front_arch3.png" id="5_n8e3p"]
 [ext_resource type="Texture2D" uid="uid://vlkby45jl7lm" path="res://art/menu/blinking_arrows.png" id="6_wdumw"]
+[ext_resource type="AudioStream" uid="uid://bl3f1ir388yng" path="res://audio/music/joie_de_vivre_albert_behar.mp3" id="11_cf0mi"]
+[ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="12_kmmyy"]
+[ext_resource type="AudioStream" uid="uid://73wpow8lpsyc" path="res://audio/music/mystic_forest_ambient.mp3" id="13_mbnec"]
+[ext_resource type="AudioStream" uid="uid://d1gwdnwvx3f52" path="res://audio/music/atmospheric_loop.mp3" id="14_w1mak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sob0k"]
 size = Vector2(7092, 55)
@@ -144,3 +148,29 @@ position = Vector2(-30, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(6564, 372)
 shape = SubResource("RectangleShape2D_vxxs1")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Studio" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(338, 49)
+stream = ExtResource("11_cf0mi")
+autoplay = true
+bus = &"Music"
+
+[node name="GoghRoom" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(2780, 0)
+stream = ExtResource("12_kmmyy")
+autoplay = true
+max_distance = 1000.0
+
+[node name="DaliRoom" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(4248, 0)
+stream = ExtResource("13_mbnec")
+autoplay = true
+max_distance = 1000.0
+
+[node name="EscherRoom" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(5849, 0)
+stream = ExtResource("14_w1mak")
+autoplay = true
+max_distance = 1000.0
