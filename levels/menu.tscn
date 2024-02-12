@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bdhced5wuwde4"]
+[gd_scene load_steps=22 format=3 uid="uid://bdhced5wuwde4"]
 
 [ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
 [ext_resource type="PackedScene" uid="uid://cn5gs4eorpydv" path="res://enter_level.tscn" id="2_a14vu"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="12_kmmyy"]
 [ext_resource type="AudioStream" uid="uid://73wpow8lpsyc" path="res://audio/music/mystic_forest_ambient.mp3" id="13_mbnec"]
 [ext_resource type="AudioStream" uid="uid://d1gwdnwvx3f52" path="res://audio/music/atmospheric_loop.mp3" id="14_w1mak"]
+[ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="15_c2shu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sob0k"]
 size = Vector2(7092, 55)
@@ -174,3 +175,5 @@ position = Vector2(5849, 0)
 stream = ExtResource("14_w1mak")
 autoplay = true
 max_distance = 1000.0
+
+[node name="Settings" parent="." instance=ExtResource("15_c2shu")]

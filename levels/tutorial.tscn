@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=27 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_y74qt"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://mwc0pgttbsej" path="res://art/L0/Rectangle 26.png" id="18_kdiem"]
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
 [ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="19_50ti2"]
+[ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="21_iid18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0doj"]
 size = Vector2(110, 50)
@@ -352,5 +353,7 @@ position = Vector2(3506, 117)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(-28, 226)
 shape = SubResource("RectangleShape2D_xjnas")
+
+[node name="Settings" parent="." instance=ExtResource("21_iid18")]
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
