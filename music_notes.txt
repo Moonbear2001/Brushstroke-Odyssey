@@ -1,0 +1,40 @@
+Option 1:
+make audio manager responsible for instantiating and playing a steam
+that's passed in
+audio steam is exported on the object
+
+Option 2:
+add buses for music, sfx, etc
+make menu to manage different sound levels using AudioServer
+
+Option 3:
+sound manager
+- autoloaded singleton
+- manages commonly used sounds
+sound pool:
+- pick from multiple similar sounds to avoid repetition
+sound queue:
+- queue sounds to make sure they don't get caught off
+
+
+Plan:
+sound manager
+sound queue
+buses + audio sliders
+
+
+
+
+
+Sites:
+https://pixabay.com/sound-effects/search/ambient/
+chiptone
+free music archive .org
+
+Specific options:
+UniversalField
+https://pixabay.com/users/universfield-28281460/
+- lots of ambient effects for different moods
+https://uppbeat.io/music/tag/french
+- french ambience
+
