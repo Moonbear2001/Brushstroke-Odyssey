@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0w488mk0j2nr"]
+
+[ext_resource type="Script" path="res://scenes/settings.gd" id="1_aoe52"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_aoe52")
+
+[node name="Window" type="Window" parent="."]
+title = "Settings"
+position = Vector2i(0, 36)
+size = Vector2i(320, 250)
+
+[node name="Control" type="Control" parent="Window"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/Control"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 136.0
+
+[node name="GridContainer" type="GridContainer" parent="Window/Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MenuBtn" type="Button" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="QuitBtn" type="Button" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="CheckButton" type="CheckButton" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "music"
+
+[node name="CheckButton2" type="CheckButton" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "sound"
+
+[node name="MusicLabel" type="Label" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SfxLabel" type="Label" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sfx"
+
+[node name="SfxVolumeSlider" type="HSlider" parent="Window/Control/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/Control/MarginContainer/GridContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="Window/Control/MarginContainer/GridContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="value_changed" from="Window/Control/MarginContainer/GridContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="Window/Control/MarginContainer/GridContainer/SfxVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]

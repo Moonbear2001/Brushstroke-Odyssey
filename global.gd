@@ -10,6 +10,7 @@ const LEVELS = ["tutorial", "escher"]
 const SAVE_DATA_PATH = "user://"
 const MENU_PATH = "res://levels/menu.tscn"
 
+
 # Global variables
 var high_scores : HighScores
 var waiting_for_duplicate: bool = false

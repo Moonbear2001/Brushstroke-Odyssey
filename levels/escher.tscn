@@ -1,16 +1,16 @@
-[gd_scene load_steps=69 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=70 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
-[ext_resource type="Texture2D" uid="uid://b7nuahpv3dk0q" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
-[ext_resource type="Texture2D" uid="uid://1d8burc3uf4e" path="res://art/Esher/first_house.png" id="2_12ntw"]
+[ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
+[ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
 [ext_resource type="Texture2D" uid="uid://bfaap54kfc2vy" path="res://art/Esher/parallax_layers/backkk.png" id="3_1afl0"]
-[ext_resource type="Texture2D" uid="uid://bw1as137t0ybl" path="res://art/Esher/wide_block.png" id="3_4o60w"]
+[ext_resource type="Texture2D" uid="uid://cxev8semuld5f" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://dio5jogn7r5j6" path="res://art/Esher/parallax_layers/midground_new.png" id="4_6mjae"]
-[ext_resource type="Texture2D" uid="uid://clh7mgpyrhhf1" path="res://art/Esher/short_block.png" id="4_t8kp2"]
-[ext_resource type="Texture2D" uid="uid://jbfiytay5wxf" path="res://art/Esher/second_structure.png" id="5_yolr1"]
+[ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
+[ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
-[ext_resource type="Texture2D" uid="uid://d0qxalpgexd13" path="res://art/Esher/front_arch.png" id="8_lmtet"]
+[ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/doors/left_door.tscn" id="10_w7r7g"]
 [ext_resource type="Texture2D" uid="uid://bewg47vw5e1pm" path="res://art/Esher/section2/barrier.png" id="13_gmew8"]
 [ext_resource type="PackedScene" uid="uid://de0yn1n3yaoaj" path="res://objects/doors/right_door.tscn" id="14_8a6pv"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://bhvt2f75g8g3p" path="res://art/Esher/section3/long_block.png" id="41_khvcq"]
 [ext_resource type="Texture2D" uid="uid://37srqvjfc7ev" path="res://art/Esher/section3/moving_block.png" id="42_fowqm"]
 [ext_resource type="Texture2D" uid="uid://bkhmkbfqb4lc6" path="res://art/Esher/end!!!.png" id="48_3cxfi"]
+[ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="48_a1pxx"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -894,7 +895,6 @@ polygon = PackedVector2Array(6666, 421, 6666, 514, 6746, 518, 6745, 434, 6740, 4
 
 [node name="AnimatableBody2D11" type="AnimatableBody2D" parent="Platforms/fifth section"]
 position = Vector2(0, -220)
-metadata/_edit_group_ = true
 
 [node name="MovingBlock" type="Sprite2D" parent="Platforms/fifth section/AnimatableBody2D11"]
 position = Vector2(6915, 449)
@@ -1044,7 +1044,7 @@ id = 14
 exit_id = 15
 color = "white"
 
-[node name="WhiteDoor1" parent="Doors" instance=ExtResource("10_w7r7g")]
+[node name="WhiteDoor1" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
 position = Vector2(2122, 663)
 id = 15
 exit_id = 14
@@ -1078,7 +1078,7 @@ id = 40
 exit_id = 41
 color = "gold"
 
-[node name="GoldDoor4" parent="Doors" instance=ExtResource("10_w7r7g")]
+[node name="GoldDoor4" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
 position = Vector2(4440, 632)
 id = 41
 exit_id = 40
@@ -1092,7 +1092,7 @@ exit_id = 21
 color = "yellow"
 
 [node name="YellowDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(4963, 68)
+position = Vector2(4970, 217)
 id = 21
 exit_id = 20
 color = "yellow"
@@ -1137,7 +1137,7 @@ id = 26
 exit_id = 27
 color = "white"
 
-[node name="WhiteDoor3" parent="Doors" instance=ExtResource("10_w7r7g")]
+[node name="WhiteDoor3" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
 position = Vector2(6499, 419)
 id = 27
 color = "white"
@@ -1320,6 +1320,8 @@ scale = Vector2(-2.37316, -0.6978)
 [node name="Death3" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(3233, 399)
 scale = Vector2(0.192, 0.6)
+
+[node name="Settings" parent="." instance=ExtResource("48_a1pxx")]
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]
