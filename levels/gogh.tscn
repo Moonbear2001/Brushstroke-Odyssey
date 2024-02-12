@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://favkge4nh881"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_rlq30"]
+[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_jcigm"]
+[ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="3_8ej5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo6q6"]
+
+[node name="Gogh" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
+position = Vector2(3, 0)
+script = ExtResource("1_rlq30")
+level_name = "gogh"
+protagonist = NodePath("Protagonist")
+stopwatch = NodePath("PlayerUI/Stopwatch")
+end = NodePath("End")
+
+[node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2(414, 57)
+scale = Vector2(1, 5.72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+shape = SubResource("RectangleShape2D_qrr0h")
+
+[node name="Label" type="Label" parent="End"]
+offset_left = -32.0
+offset_top = -11.3636
+offset_right = 8.00003
+offset_bottom = 11.6364
+scale = Vector2(1.86028, 0.992966)
+text = "End"
+
+[node name="placeholder" type="Label" parent="."]
+offset_left = 91.0
+offset_top = 7.0
+offset_right = 305.0
+offset_bottom = 30.0
+text = "Van Gogh Level Placeholder"
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
+scale = Vector2(39.44, 1)
+shape = SubResource("RectangleShape2D_yo6q6")
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="Stopwatch" parent="PlayerUI" instance=ExtResource("3_8ej5w")]
+position = Vector2(3, 0)

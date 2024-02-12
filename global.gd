@@ -6,9 +6,11 @@ and accessed anywhere throughout the project.
 """
 
 # Global constants
-const LEVELS = ["tutorial", "escher"]
+const LEVELS = ["tutorial", "escher", "gogh", "dali"]
 const SAVE_DATA_PATH = "user://"
-const MENU_PATH = "res://levels/menu.tscn"
+const LEVELS_PATH = "res://levels/"
+const MENU_PATH = LEVELS_PATH + "menu.tscn"
+
 
 
 # Global variables

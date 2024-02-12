@@ -73,7 +73,7 @@ shape = SubResource("RectangleShape2D_vxxs1")
 
 [node name="EnterVanGogh" parent="." instance=ExtResource("2_a14vu")]
 position = Vector2(2637, 272)
-level_path = ""
+level_name = "gogh"
 label_x = 260
 label_y = 110
 
@@ -85,7 +85,7 @@ texture = ExtResource("3_mahh3")
 [node name="EnterDali" parent="." instance=ExtResource("2_a14vu")]
 position = Vector2(3986, 293)
 scale = Vector2(1.16, 1.16)
-level_path = ""
+level_name = "dali"
 label_x = 260
 label_y = 110
 
@@ -96,6 +96,7 @@ texture = ExtResource("4_a5gs1")
 
 [node name="EnterEscher" parent="." instance=ExtResource("2_a14vu")]
 position = Vector2(5599, 270)
+level_name = "escher"
 label_x = 260
 label_y = 110
 
@@ -107,7 +108,7 @@ texture = ExtResource("5_1sded")
 [node name="EnterTutorial" parent="." instance=ExtResource("2_a14vu")]
 position = Vector2(1046, 470)
 scale = Vector2(0.15, 0.15)
-level_path = "res://levels/tutorial.tscn"
+level_name = "tutorial"
 label_x = 115
 label_y = -200
 color = Color(0.592157, 0.513726, 0.490196, 1)
