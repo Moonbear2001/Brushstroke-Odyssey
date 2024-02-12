@@ -17,6 +17,7 @@ stopwatch = NodePath("PlayerUI/Stopwatch")
 end = NodePath("End")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
+position = Vector2(241, 77)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(414, 57)

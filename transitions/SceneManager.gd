@@ -2,10 +2,6 @@ extends Node
 
 """
 Manages all the different scenes and the transitions between them in the game.
-
-Is able to differentiate between transitioning between non-level->non-level, level->non-level, and 
-level->level transitions. For example, it handles transitioning from level1 to level2 differently 
-than transitioning between a menu scene and level 1.
 """
 
 signal content_finished_loading(content)
@@ -86,13 +82,16 @@ func on_content_finished_loading(content) -> void:
 	var outgoing_scene = get_tree().current_scene
 	
 	# If we're moving between Levels, pass LevelDataHandoff (the next Level's data) here
-	var incoming_data: LevelDataHandoff
-	if get_tree().current_scene is Level:
-		incoming_data = get_tree().current_scene.data as LevelDataHandoff
+	#var incoming_data: LevelDataHandoff
+	
+	# TESTING
+	#if get_tree().current_scene is Level:
+		#incoming_data = get_tree().current_scene.data as LevelDataHandoff
 	
 	# If we are going to a level, pass the LevelHandoffData
-	if content is Level:
-		content.data = incoming_data
+	# TESTING
+	#if content is Level:
+		#content.data = incoming_data
 
 	# Remove the old scene
 	outgoing_scene.queue_free()
@@ -106,8 +105,8 @@ func on_content_finished_loading(content) -> void:
 		scene_transition.finish_transition()
 		
 		# If were loading a level, load the player location
-		if content is Level:
-			content.init_player_location()
+		#if content is Level:
+			#content.init_player_location()
 		
 		# Wait for LoadingScreen's transition to finish playing
 		await scene_transition.anim_player.animation_finished

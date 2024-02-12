@@ -27,8 +27,8 @@ var onEnter: Callable = func():
 var onLeave: Callable = func():
 	pass
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	InteractionManager.register_area(self)
 
-func _on_area_exited(area):
+func _on_area_exited(_area):
 	InteractionManager.unregister_area(self)
