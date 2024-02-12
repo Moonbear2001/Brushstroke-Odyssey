@@ -12,10 +12,11 @@ const LEVELS_PATH = "res://levels/"
 const MENU_PATH = LEVELS_PATH + "menu.tscn"
 
 
-
 # Global variables
 var high_scores : HighScores
 var waiting_for_duplicate: bool = false
+var transitioning = false
+
 
 # Stuff that should happen on game start up
 func _ready() -> void:
@@ -25,9 +26,13 @@ func _ready() -> void:
 # Global inputs
 func _input(_event) -> void:
 	
-	# Player can go back to the menu at any time by pressing 'escape'
-	if Input.is_action_just_pressed("menu"):
-		SceneManager.load_new_scene(MENU_PATH)
+	# Only accept input if we are not transitioning
+	if !transitioning:
+		
+		# Player can go back to the menu at any time by pressing 'escape'
+		if Input.is_action_just_pressed("menu"):
+			print("menu")
+			SceneManager.load_new_scene(MENU_PATH)
 		
 
 # Check to see if a save file exists, create a new one if not

@@ -20,11 +20,17 @@ func _ready() -> void:
 
 # Loads the new scene
 func load_new_scene(content_path: String, transition_type: String="fade_to_black") -> void:
+	
+	# Put game in transitioning state
+	Global.transitioning = true
+	print(Global.transitioning)
+	
 	_transition = transition_type
 	scene_transition = _scene_transition_scene.instantiate() as SceneTransition
 	get_tree().root.add_child(scene_transition)
 	scene_transition.start_transition(transition_type)
 	_load_content(content_path)
+	
 
 # Tell the ResourceLoader to start loading the new scene
 func _load_content(content_path: String) -> void:
@@ -113,4 +119,8 @@ func on_content_finished_loading(content) -> void:
 		scene_transition = null
 		if content is Level:
 			content.enter_level()
+			
+	# Take game out of transitioning state
+	Global.transitioning = false
+	print(Global.transitioning)
 			
