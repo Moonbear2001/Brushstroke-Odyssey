@@ -1,7 +1,7 @@
 extends Node2D
 
 """
-An interactable area that takes the player into a new level when interacted 
+An interactable area that takes the player into a new scene when interacted 
 with.
 """
 

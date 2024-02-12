@@ -1,6 +1,7 @@
 extends Area2D
 
 """
+Area where player dies.
 """
 
 func _on_body_entered(body):

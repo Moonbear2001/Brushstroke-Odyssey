@@ -3,7 +3,8 @@ extends Resource
 
 """
 A resource holding high scores that is saved and loaded in the users's 
-directory. Each function that chances the high scores should be ended with a 
+directory. 
+Each function that chances the high scores should be ended with a 
 save operation so that those functions can be safely called from outside this 
 script.
 """
@@ -17,7 +18,7 @@ const HIGH_SCORES_PATH = Global.SAVE_DATA_PATH + "high_scores.tres"
 func reset_scores() -> void:
 	high_scores = {}
 	for level in Global.LEVELS:
-		high_scores[level] = 0.0
+		high_scores[level] = INF
 	save_high_scores()
 
 # Check if high scores exist
@@ -30,10 +31,12 @@ static func load_high_scores() -> Resource:
 
 # Saves high scores to the user directory
 func save_high_scores() -> void:
+	print("save hs")
 	ResourceSaver.save(self, HIGH_SCORES_PATH)
 
 # Write a new high score
 func new_high_score(level: String, score: float):
+	print("new hs")
 	high_scores[level] = score
 	save_high_scores()
 	

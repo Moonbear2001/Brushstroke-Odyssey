@@ -14,8 +14,6 @@ adding a CollisionShape2D as a child node in that scene.
 var position_x = 0
 var position_y = 0
 
-@onready var overlay = $Overlay
-
 var enabled = true
 
 var interact: Callable = func():

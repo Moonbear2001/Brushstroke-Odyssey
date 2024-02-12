@@ -16,6 +16,7 @@ Door that teleports the player to another door.
 @export var duplicate_id: int = -1
 # Enums that describe direction, color, and state
 # These help with choosing which animation to play
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interaction_area = $InteractionArea
 @onready var anim_player = $AnimationPlayer

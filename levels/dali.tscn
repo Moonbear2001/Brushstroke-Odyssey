@@ -11,7 +11,7 @@
 [node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
 position = Vector2(3, 0)
 script = ExtResource("1_d4s5o")
-level_name = "gogh"
+level_name = "dali"
 protagonist = NodePath("Protagonist")
 stopwatch = NodePath("PlayerUI/Stopwatch")
 end = NodePath("End")

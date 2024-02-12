@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://bdhced5wuwde4"]
+[gd_scene load_steps=25 format=3 uid="uid://bdhced5wuwde4"]
 
+[ext_resource type="Script" path="res://levels/menu.gd" id="1_2sh28"]
 [ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
 [ext_resource type="PackedScene" uid="uid://cn5gs4eorpydv" path="res://enter_level.tscn" id="2_a14vu"]
 [ext_resource type="PackedScene" uid="uid://cducn8pjghtlw" path="res://characters/protagonist_big.tscn" id="2_hfs4s"]
@@ -15,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://73wpow8lpsyc" path="res://audio/music/mystic_forest_ambient.mp3" id="13_mbnec"]
 [ext_resource type="AudioStream" uid="uid://d1gwdnwvx3f52" path="res://audio/music/atmospheric_loop.mp3" id="14_w1mak"]
 [ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="15_c2shu"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="16_ndpgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sob0k"]
 size = Vector2(7092, 55)
@@ -52,7 +54,10 @@ animations = [{
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lak8j"]
 load_path = "res://.godot/imported/front_arch4.png-afcdd8e9813478fd501dde5e2a024214.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dbe"]
+
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_2sh28")
 
 [node name="Layout" type="Sprite2D" parent="."]
 position = Vector2(3388, 360)
@@ -178,3 +183,12 @@ autoplay = true
 max_distance = 1000.0
 
 [node name="Settings" parent="." instance=ExtResource("15_c2shu")]
+
+[node name="ViewHighScores" parent="." instance=ExtResource("16_ndpgp")]
+position = Vector2(413, 423)
+scale = Vector2(7.79841, 1.17743)
+action_name = "view high scores"
+label_color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViewHighScores"]
+shape = SubResource("RectangleShape2D_g5dbe")

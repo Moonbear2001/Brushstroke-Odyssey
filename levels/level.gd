@@ -12,10 +12,6 @@ kind of abstract superclass for a level.
 # The main playable character
 @export var protagonist: Protagonist
 
-# Level transition stuff
-#@export var level_doors: Array[LevelDoor]
-#var data: LevelDataHandoff
-
 # Stopwatch to keep track of score
 @export var stopwatch: Stopwatch
 
@@ -36,7 +32,13 @@ func level_end(_body):
 	var time = stopwatch.get_time()
 	var high_score = Global.high_scores.get_level_high_score(level_name)
 	if time < high_score:
+		print("time < hs")
 		Global.high_scores.new_high_score(level_name, time)
+		
+	# TESTING
+	print()
+	print("time", time)
+	print("hs: ", high_score)
 
 	# Go back to the main menu
 	SceneManager.load_new_scene(Global.MENU_PATH)
@@ -50,6 +52,10 @@ func enter_level() -> void:
 """
 Old code from when we were using the level doors
 """
+
+# Level transition stuff
+#@export var level_doors: Array[LevelDoor]
+#var data: LevelDataHandoff
 
 #func _ready() -> void:
 	#
