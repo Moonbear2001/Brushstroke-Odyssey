@@ -1,6 +1,6 @@
-[gd_scene load_steps=70 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=72 format=3 uid="uid://cyjue85li2vvi"]
 
-[ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
+[ext_resource type="Script" path="res://levels/level.gd" id="1_4xute"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://37srqvjfc7ev" path="res://art/Esher/section3/moving_block.png" id="42_fowqm"]
 [ext_resource type="Texture2D" uid="uid://bkhmkbfqb4lc6" path="res://art/Esher/end!!!.png" id="48_3cxfi"]
 [ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="48_a1pxx"]
+[ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="49_kass5"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -290,8 +291,15 @@ _data = {
 "move_vertical": SubResource("Animation_qknow")
 }
 
-[node name="Escher" type="Node2D"]
-script = ExtResource("1_4wu67")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mhpl"]
+size = Vector2(79.5, 576)
+
+[node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
+script = ExtResource("1_4xute")
+level_name = "escher"
+protagonist = NodePath("Protagonist")
+stopwatch = NodePath("PlayerUI/Stopwatch")
+end = NodePath("End")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1303,7 +1311,7 @@ exit_id = 53
 color = "gold"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(6558, 420)
+position = Vector2(8818, 413)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1322,6 +1330,17 @@ position = Vector2(3233, 399)
 scale = Vector2(0.192, 0.6)
 
 [node name="Settings" parent="." instance=ExtResource("48_a1pxx")]
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="Stopwatch" parent="PlayerUI" instance=ExtResource("49_kass5")]
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2(8991, 444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(87.25, -83)
+shape = SubResource("RectangleShape2D_4mhpl")
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]
