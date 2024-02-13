@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=73 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_4xute"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://bkhmkbfqb4lc6" path="res://art/Esher/end!!!.png" id="48_3cxfi"]
 [ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="48_a1pxx"]
 [ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="49_kass5"]
+[ext_resource type="AudioStream" uid="uid://d1gwdnwvx3f52" path="res://audio/music/atmospheric_loop.mp3" id="50_ykumc"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -1311,7 +1312,7 @@ exit_id = 53
 color = "gold"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(8818, 413)
+position = Vector2(84, 373)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1341,6 +1342,11 @@ position = Vector2(8991, 444)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(87.25, -83)
 shape = SubResource("RectangleShape2D_4mhpl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("50_ykumc")
+autoplay = true
+bus = &"Music"
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]

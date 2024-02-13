@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=7 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_rlq30"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_jcigm"]
 [ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="3_8ej5w"]
+[ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="4_763oi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
@@ -54,3 +55,8 @@ shape = SubResource("RectangleShape2D_yo6q6")
 
 [node name="Stopwatch" parent="PlayerUI" instance=ExtResource("3_8ej5w")]
 position = Vector2(3, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_763oi")
+autoplay = true
+bus = &"Music"

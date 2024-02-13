@@ -23,7 +23,6 @@ func load_new_scene(content_path: String, transition_type: String="fade_to_black
 	
 	# Put game in transitioning state
 	Global.transitioning = true
-	print(Global.transitioning)
 	
 	_transition = transition_type
 	scene_transition = _scene_transition_scene.instantiate() as SceneTransition

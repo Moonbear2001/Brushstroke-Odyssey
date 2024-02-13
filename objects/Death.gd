@@ -1,5 +1,6 @@
 extends Area2D
 
+
 """
 Area where player dies.
 """

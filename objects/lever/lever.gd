@@ -39,7 +39,6 @@ func _ready():
 func pull_lever():
 	if !enabled:
 		return
-	print("pull")
 	audio_player.play()
 	
 	# Control state and animation

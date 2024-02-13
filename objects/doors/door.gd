@@ -93,7 +93,7 @@ func _on_animated_sprite_2d_animation_finished():
 	animated_sprite.play(start_anim) 
 	
 
-func _on_interaction_area_area_entered(area):
+func _on_interaction_area_area_entered(_area):
 	if enter:
 		# Play door opening animation
 		state = "open"
@@ -101,7 +101,7 @@ func _on_interaction_area_area_entered(area):
 		animated_sprite.play(open_anim)
 
 
-func _on_interaction_area_area_exited(area):
+func _on_interaction_area_area_exited(_area):
 	if state == "open":
 		# Play door closing animation
 		state = "closed"

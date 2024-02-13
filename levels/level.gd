@@ -34,12 +34,7 @@ func level_end(_body):
 	if time < high_score:
 		print("time < hs")
 		Global.high_scores.new_high_score(level_name, time)
-		
-	# TESTING
-	print()
-	print("time", time)
-	print("hs: ", high_score)
-
+	
 	# Go back to the main menu
 	SceneManager.load_new_scene(Global.MENU_PATH)
 	
