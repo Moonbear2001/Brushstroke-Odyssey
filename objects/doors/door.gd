@@ -5,9 +5,9 @@ Door that teleports the player to another door.
 """
 
 @export_enum("down", "up", "left", "right") var gravity_dir:String = "down"
-@export var id:int = -1
+@export var id: int = -1
 @export var enter: bool = true
-@export var exit_id:int = -1
+@export var exit_id: int = -1
 @export var x_offset = 0
 @export var y_offset = 0
 @export_enum("black", "yellow", "red", "blue", "gold", "white") var color: String
