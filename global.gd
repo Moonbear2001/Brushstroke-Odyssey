@@ -31,7 +31,6 @@ func _input(_event) -> void:
 		
 		# Player can go back to the menu at any time by pressing 'escape'
 		if Input.is_action_just_pressed("menu"):
-			print("menu")
 			SceneManager.load_new_scene(MENU_PATH)
 		
 
@@ -40,6 +39,5 @@ func create_or_load_high_scores() -> void:
 	if HighScores.high_scores_exist():
 		high_scores = HighScores.load_high_scores() as HighScores
 	else:
-		print("hs dont exist")
 		high_scores = HighScores.new()
 		high_scores.reset_scores()

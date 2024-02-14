@@ -24,7 +24,6 @@ func _ready():
 func collect_star() -> void:
 	# Send a message to level script to add a star to be collected
 	collected.emit()
-	print("collected")
 	
 	# Free from queue/destroy
 	queue_free()

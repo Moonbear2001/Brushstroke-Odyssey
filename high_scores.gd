@@ -32,17 +32,14 @@ static func load_high_scores() -> Resource:
 # Saves high scores to the user directory
 func save_high_scores() -> void:
 	ResourceSaver.save(self, HIGH_SCORES_PATH)
-	
-func new_high_time(level: String, time: float):
-	print("new high time")
+		
+func new_low_time(level: String, time: float):
 	high_scores[level].set_time(time)
 	save_high_scores()
 	
 func new_high_stars(level: String, stars: int):
-	print("new high stars")
 	high_scores[level].set_stars(stars)
 	save_high_scores()
-	
 	
 # Get a level's high score
 func get_level_high_score(level: String) -> LevelHighScore:
@@ -55,7 +52,5 @@ func get_high_scores_str() -> String:
 	for level in high_scores:
 		var stars = high_scores[level].get_stars()
 		var time = high_scores[level].get_time()
-		print("stars from get: ", stars)
-		print("time from get: ", time)
 		res += format_str.format({"level": level, "time": time, "stars": stars})
 	return res

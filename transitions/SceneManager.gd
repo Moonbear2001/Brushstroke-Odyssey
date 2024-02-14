@@ -121,5 +121,3 @@ func on_content_finished_loading(content) -> void:
 			
 	# Take game out of transitioning state
 	Global.transitioning = false
-	print(Global.transitioning)
-			

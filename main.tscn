@@ -1,9 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://d21l32yy4q7bx"]
+[gd_scene load_steps=2 format=3 uid="uid://cqy0seymn2cg4"]
 
-[ext_resource type="Script" path="res://Main.gd" id="1_vweto"]
+[sub_resource type="GDScript" id="GDScript_nrwct"]
+script/source = "extends Node2D
+
+\"\"\"
+Main menu.
+\"\"\"
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+
+func _on_tutorial_pressed():
+	#get_tree().change_scene_to_file(\"res://levels/tutorial.tscn\")
+	SceneManager.load_new_scene(\"res://levels/tutorial.tscn\")
+
+func _on_level_1_pressed():
+	#get_tree().change_scene_to_file(\"res://levels/escher.tscn\")
+	SceneManager.load_new_scene(\"res://levels/escher.tscn\")
+
+func _on_highscores_pressed():
+	SceneManager.load_new_scene(\"res://levels/high_scores_page.tscn\")
+"
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_vweto")
+script = SubResource("GDScript_nrwct")
 
 [node name="tutorial" type="Button" parent="."]
 offset_left = 12.0
