@@ -19,11 +19,13 @@ config/features=PackedStringArray("4.2", "Mobile")
 Global="*res://global.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 SceneManager="*res://transitions/SceneManager.gd"
+Settings="*res://scenes/settings.tscn"
 
 [display]
 
 window/size/viewport_width=1270
 window/size/viewport_height=720
+window/subwindows/embed_subwindows=false
 window/stretch/scale=1.5
 
 [editor]

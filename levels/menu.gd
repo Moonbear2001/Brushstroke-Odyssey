@@ -19,4 +19,4 @@ func _ready():
 
 # View high scores pages
 func open_hs_scene() -> void:
-	SceneManager.load_new_scene("res://levels/high_scores_page.tscn")
+	SceneManager.load_new_scene(Global.LEVELS_PATH + "high_scores_page.tscn")

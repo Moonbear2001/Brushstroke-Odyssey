@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=76 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_4xute"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -49,7 +49,6 @@
 [ext_resource type="Texture2D" uid="uid://bhvt2f75g8g3p" path="res://art/Esher/section3/long_block.png" id="41_khvcq"]
 [ext_resource type="Texture2D" uid="uid://37srqvjfc7ev" path="res://art/Esher/section3/moving_block.png" id="42_fowqm"]
 [ext_resource type="Texture2D" uid="uid://bkhmkbfqb4lc6" path="res://art/Esher/end!!!.png" id="48_3cxfi"]
-[ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="48_a1pxx"]
 [ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="49_kass5"]
 [ext_resource type="AudioStream" uid="uid://d1gwdnwvx3f52" path="res://audio/music/atmospheric_loop.mp3" id="50_ykumc"]
 [ext_resource type="Texture2D" uid="uid://oc3w211fkgi8" path="res://art/Esher/front_stair_end_door.png" id="53_57aom"]
@@ -1365,8 +1364,6 @@ scale = Vector2(-2.37316, -0.6978)
 [node name="Death3" parent="." instance=ExtResource("17_npv7l")]
 position = Vector2(3233, 399)
 scale = Vector2(0.192, 0.6)
-
-[node name="Settings" parent="." instance=ExtResource("48_a1pxx")]
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 

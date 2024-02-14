@@ -22,7 +22,8 @@ func _ready() -> void:
 func load_new_scene(content_path: String, transition_type: String="fade_to_black") -> void:
 	
 	# Put game in transitioning state
-	Global.transitioning = true
+	Global.scene_transitioning = true
+	Settings.hide_settings_window()
 	
 	_transition = transition_type
 	scene_transition = _scene_transition_scene.instantiate() as SceneTransition
@@ -120,4 +121,4 @@ func on_content_finished_loading(content) -> void:
 			content.enter_level()
 			
 	# Take game out of transitioning state
-	Global.transitioning = false
+	Global.scene_transitioning = false
