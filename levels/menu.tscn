@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdhced5wuwde4"]
+[gd_scene load_steps=25 format=3 uid="uid://bdhced5wuwde4"]
 
 [ext_resource type="Script" path="res://levels/menu.gd" id="1_2sh28"]
 [ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://qpn4w2y7wal2" path="res://audio/music/la-loire-theo-gerard-main.mp3" id="16_4vahx"]
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="16_ndpgp"]
 [ext_resource type="AudioStream" uid="uid://dbe00p6c0shdx" path="res://audio/music/evening_meal_alex_main.mp3" id="17_bht6u"]
+[ext_resource type="PackedScene" uid="uid://p8vf3s0glmab" path="res://objects/score_banner.tscn" id="17_dwc86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sob0k"]
 size = Vector2(7092, 55)
@@ -178,3 +179,10 @@ bus = &"Music"
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("17_bht6u")
 bus = &"Music"
+
+[node name="Banners" type="Node" parent="."]
+
+[node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
+position = Vector2(2420, -204)
+scale = Vector2(0.091, 0.0906374)
+level_name = "gogh"
