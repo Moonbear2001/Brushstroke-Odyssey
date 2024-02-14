@@ -1,21 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=8 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_rlq30"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_jcigm"]
 [ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="3_8ej5w"]
 [ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="4_763oi"]
+[ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_huc8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yo6q6"]
 
-[node name="Gogh" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
+[node name="Gogh" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end", "stars")]
 position = Vector2(3, 0)
 script = ExtResource("1_rlq30")
 level_name = "gogh"
 protagonist = NodePath("Protagonist")
 stopwatch = NodePath("PlayerUI/Stopwatch")
 end = NodePath("End")
+stars = [NodePath("Stars/Star1")]
 
 [node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
 position = Vector2(241, 77)
@@ -60,3 +62,9 @@ position = Vector2(3, 0)
 stream = ExtResource("4_763oi")
 autoplay = true
 bus = &"Music"
+
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="Star1" parent="Stars" instance=ExtResource("5_huc8b")]
+position = Vector2(350, 87)
+scale = Vector2(0.05, 0.05)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bckab5xmmrat0"]
+
+[ext_resource type="Script" path="res://objects/star.gd" id="1_7emdp"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="1_yc8ah"]
+[ext_resource type="Texture2D" uid="uid://ckcwut3uvlnt3" path="res://art/mario_star.jpg" id="2_ypn1d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4hubj"]
+radius = 479.07
+
+[node name="Star" type="Node2D"]
+script = ExtResource("1_7emdp")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_yc8ah")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_4hubj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ypn1d")

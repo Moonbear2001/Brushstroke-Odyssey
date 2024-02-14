@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=28 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
 [ext_resource type="Script" path="res://levels/level.gd" id="1_b2fp5"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
 [ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="19_50ti2"]
 [ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="21_iid18"]
+[ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="22_r7ynq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0doj"]
 size = Vector2(110, 50)
@@ -65,12 +66,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnas"]
 size = Vector2(254, 512)
 
-[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
+[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end", "stars")]
 script = ExtResource("1_b2fp5")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
 stopwatch = NodePath("PlayerUI/Stopwatch")
 end = NodePath("End")
+stars = [NodePath("Stars/Star1")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -355,5 +357,11 @@ position = Vector2(-28, 226)
 shape = SubResource("RectangleShape2D_xjnas")
 
 [node name="Settings" parent="." instance=ExtResource("21_iid18")]
+
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="Star1" parent="Stars" instance=ExtResource("22_r7ynq")]
+position = Vector2(368, 282)
+scale = Vector2(0.05, 0.05)
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]

@@ -18,22 +18,49 @@ kind of abstract superclass for a level.
 # Area that when entered is the end of the level
 @export var end: Area2D
 
+# Stars to be collected
+@export var stars: Array[Star]
+
+# Stars that have been collected
+var collected_stars: int = 0
+
+
 # Ready
 func _ready() -> void:
 	
 	# Set up end signal
 	end.body_entered.connect(level_end)
 	
+	# Setup signal for each star
+	for star in stars:
+		star.collected.connect(collect_star)
+
+# Track collected stars
+func collect_star() -> void:
+	collected_stars += 1
+	
 # Catches signal that is emitted when the player reaches the end of the level
 func level_end(_body):
 	
-	# Get player's score for this run and save if its a high score
-	stopwatch.stop_stopwatch()
+	# Get player's scores for this run
+	stopwatch.stop_stopwatch()	
 	var time = stopwatch.get_time()
-	var high_score = Global.high_scores.get_level_high_score(level_name)
-	if time < high_score:
-		print("time < hs")
-		Global.high_scores.new_high_score(level_name, time)
+	
+	# Get best scores
+	var high_score_data = Global.high_scores.get_level_high_score(level_name)	
+	var best_time = high_score_data.get_time()
+	var best_stars = high_score_data.get_stars()
+	
+	print("time: ", time)
+	print("best time: ", best_time)
+	print("collected stars: ", collected_stars)
+	print("best stars: ", best_stars)
+	
+	# Update saved data
+	if time < best_time:
+		Global.high_scores.new_high_time(level_name, time)
+	if collected_stars > best_stars:
+		Global.high_scores.new_high_stars(level_name, collected_stars)
 	
 	# Go back to the main menu
 	SceneManager.load_new_scene(Global.MENU_PATH)

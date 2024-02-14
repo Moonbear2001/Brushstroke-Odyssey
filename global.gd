@@ -40,5 +40,6 @@ func create_or_load_high_scores() -> void:
 	if HighScores.high_scores_exist():
 		high_scores = HighScores.load_high_scores() as HighScores
 	else:
+		print("hs dont exist")
 		high_scores = HighScores.new()
 		high_scores.reset_scores()
