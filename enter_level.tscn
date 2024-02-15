@@ -8,7 +8,6 @@ size = Vector2(414.5, 427)
 
 [node name="EnterLevel" type="Node2D"]
 script = ExtResource("1_6ujk7")
-level_path = "res://levels/escher.tscn"
 metadata/_edit_group_ = true
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_xlv2o")]
