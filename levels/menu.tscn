@@ -189,3 +189,4 @@ stream = ExtResource("17_bht6u")
 bus = &"Music"
 
 [node name="Settings" parent="." instance=ExtResource("18_rsq0u")]
+menu = true
