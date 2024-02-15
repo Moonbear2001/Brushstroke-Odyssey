@@ -4,16 +4,21 @@ extends Control
 Window for navigating to the menu, controlling user's volume, and resetting high scores.
 """
 
-@onready var sfx_check = $CanvasLayer/SfxCheckBtn
+@export var menu: bool = false
+
+@onready var sfx_check = $CanvasLayer/Node2D/SfxCheckBtn
 @onready var node = $CanvasLayer/Node2D
 @onready var canvas_layer = $CanvasLayer
 @onready var SFX_BUS_ID: int = AudioServer.get_bus_index("SFX")
 @onready var MUSIC_BUS_ID: int = AudioServer.get_bus_index("Music")
 
-@onready var music_check_btn: CheckButton = $CanvasLayer/MusicCheckBtn
-@onready var sfx_check_btn: CheckButton = $CanvasLayer/SfxCheckBtn
-@onready var music_slider: HSlider = $CanvasLayer/MusicVolumeSlider
-@onready var sfx_slider: HSlider = $CanvasLayer/SfxVolumeSlider
+@onready var music_check_btn: CheckButton = $CanvasLayer/Node2D/MusicCheckBtn
+@onready var sfx_check_btn: CheckButton = $CanvasLayer/Node2D/SfxCheckBtn
+@onready var music_slider: HSlider = $CanvasLayer/Node2D/MusicVolumeSlider
+@onready var sfx_slider: HSlider = $CanvasLayer/Node2D/SfxVolumeSlider
+
+@onready var menu_btn = $CanvasLayer/Node2D/MenuBtn
+@onready var restart_btn = $CanvasLayer/Node2D/RestartBtn
 
 var music_volume: float
 var sfx_volume: float
@@ -38,6 +43,10 @@ func _ready():
 	sfx_check_btn.button_pressed = !sfx_muted
 	AudioServer.set_bus_mute(MUSIC_BUS_ID, music_muted)
 	AudioServer.set_bus_mute(SFX_BUS_ID, sfx_muted)
+	
+	if menu:
+		menu_btn.queue_free()
+		restart_btn.queue_free()
 
 # Open the settings page
 func toggle_settings_window() -> void:
