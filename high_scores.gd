@@ -34,7 +34,6 @@ func save_high_scores() -> void:
 	ResourceSaver.save(self, HIGH_SCORES_PATH)
 	
 func new_last_time(level: String, time: float):
-	print("high scores new last time")
 	high_scores[level].set_last_time(time)
 	save_high_scores()
 		
@@ -56,6 +55,7 @@ func get_high_scores_str() -> String:
 	var format_str = "{level} : time = {time} stars = {stars}\n"
 	for level in high_scores:
 		var stars = high_scores[level].get_best_stars()
-		var time = high_scores[level].get_best_time()
-		res += format_str.format({"level": level, "time": time, "stars": stars})
+		var best_time = high_scores[level].get_best_time()
+		var last_time = high_scores[level].get_last_time()
+		res += format_str.format({"level": level, "time": best_time, "stars": stars})
 	return res
