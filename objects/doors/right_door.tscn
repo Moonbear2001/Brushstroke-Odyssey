@@ -1,38 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://de0yn1n3yaoaj"]
+[gd_scene load_steps=25 format=3 uid="uid://de0yn1n3yaoaj"]
 
 [ext_resource type="Script" path="res://objects/doors/door.gd" id="1_hja7c"]
-[ext_resource type="Texture2D" uid="uid://cm3geieecstfd" path="res://art/Esher/doors.png" id="2_2b7l1"]
+[ext_resource type="Texture2D" uid="uid://b0eq7iu5dxkel" path="res://art/Esher/doors/doors.png" id="3_3ghf1"]
 [ext_resource type="Script" path="res://interaction/interaction_area.gd" id="3_sm474"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qst01"]
 size = Vector2(5.5, 65)
-
-[sub_resource type="Animation" id="Animation_v2o61"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"black_open"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
 
 [sub_resource type="Animation" id="Animation_sjwp5"]
 resource_name = "black_exit"
@@ -88,8 +61,8 @@ tracks/1/keys = {
 "values": [0, 0]
 }
 
-[sub_resource type="Animation" id="Animation_bk6f0"]
-resource_name = "gold_exit"
+[sub_resource type="Animation" id="Animation_cofie"]
+resource_name = "green_exit"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -100,7 +73,22 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [&"gold_open", &"gold_closed"]
+"values": [&"green_open", &"green_closed"]
+}
+
+[sub_resource type="Animation" id="Animation_2uakt"]
+resource_name = "purple_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"purple_open", &"purple_closed"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -128,33 +116,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"red_open", &"red_closed"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 0]
-}
-
-[sub_resource type="Animation" id="Animation_2uakt"]
-resource_name = "white_exit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"white_open"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -198,68 +159,67 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uq5e6"]
 _data = {
-"RESET": SubResource("Animation_v2o61"),
 "black_exit": SubResource("Animation_sjwp5"),
 "blue_exit": SubResource("Animation_jptgb"),
-"gold_exit": SubResource("Animation_bk6f0"),
+"green_exit": SubResource("Animation_cofie"),
+"purple_exit": SubResource("Animation_2uakt"),
 "red_exit": SubResource("Animation_qx3tp"),
-"white_exit": SubResource("Animation_2uakt"),
 "yellow_exit": SubResource("Animation_ughoa")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oppnj"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(15, 0, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1pc5"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(40, 1835, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8wm4"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(187, 0, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvpe7"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(252, 1835, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8j3g"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(15, 909, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed4wn"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(40, 1101, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hl1gt"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(187, 909, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cg6o"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(252, 1101, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ypgnj"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(15, 1212, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sow7w"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(42, 734, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gm3j6"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(187, 1212, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mujry"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(254, 734, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bjwce"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(15, 606, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e26xa"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(40, 1468, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g8sed"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(187, 606, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkmhc"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(252, 1468, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fgkiw"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(15, 1515, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jus8"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(40, 0, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m38bv"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(187, 1515, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2177h"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(252, 0, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2fgl2"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(15, 303, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_45l30"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(40, 367, 212, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_grnhe"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(187, 303, 172, 303)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy2y4"]
+atlas = ExtResource("3_3ghf1")
+region = Rect2(252, 367, 212, 367)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iga4d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oppnj")
+"texture": SubResource("AtlasTexture_p1pc5")
 }],
 "loop": true,
 "name": &"black_closed",
@@ -267,7 +227,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p8wm4")
+"texture": SubResource("AtlasTexture_yvpe7")
 }],
 "loop": true,
 "name": &"black_open",
@@ -275,7 +235,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d8j3g")
+"texture": SubResource("AtlasTexture_ed4wn")
 }],
 "loop": true,
 "name": &"blue_closed",
@@ -283,7 +243,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hl1gt")
+"texture": SubResource("AtlasTexture_3cg6o")
 }],
 "loop": true,
 "name": &"blue_open",
@@ -291,23 +251,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ypgnj")
+"texture": SubResource("AtlasTexture_sow7w")
 }],
 "loop": true,
-"name": &"gold_closed",
+"name": &"green_closed",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gm3j6")
+"texture": SubResource("AtlasTexture_mujry")
 }],
 "loop": true,
-"name": &"gold_open",
+"name": &"green_open",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bjwce")
+"texture": SubResource("AtlasTexture_e26xa")
+}],
+"loop": true,
+"name": &"purple_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkmhc")
+}],
+"loop": true,
+"name": &"purple_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jus8")
 }],
 "loop": true,
 "name": &"red_closed",
@@ -315,7 +291,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g8sed")
+"texture": SubResource("AtlasTexture_2177h")
 }],
 "loop": true,
 "name": &"red_open",
@@ -323,23 +299,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fgkiw")
-}],
-"loop": true,
-"name": &"white_closed",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m38bv")
-}],
-"loop": true,
-"name": &"white_open",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2fgl2")
+"texture": SubResource("AtlasTexture_45l30")
 }],
 "loop": true,
 "name": &"yellow_closed",
@@ -347,7 +307,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_grnhe")
+"texture": SubResource("AtlasTexture_yy2y4")
 }],
 "loop": true,
 "name": &"yellow_open",
@@ -358,11 +318,11 @@ animations = [{
 script = ExtResource("1_hja7c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15, 10)
+position = Vector2(9, 7)
 shape = SubResource("RectangleShape2D_qst01")
 
 [node name="InteractionArea" type="Area2D" parent="."]
-position = Vector2(15, 10)
+position = Vector2(9, 7)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_sm474")
@@ -381,7 +341,7 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_iga4d")
-animation = &"black_open"
+animation = &"black_closed"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

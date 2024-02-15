@@ -37,7 +37,6 @@ func _ready() -> void:
 	# Set up end signal
 	end.body_entered.connect(level_end)
 
-
 # Called by the SceneManager once the transitionis complete.
 # Enter a level, initialize the player location, make player visible again
 func enter_level() -> void:

@@ -347,6 +347,15 @@ scale = Vector2(0.05, 0.05)
 
 [node name="Stopwatch" parent="PlayerUI" instance=ExtResource("19_50ti2")]
 
+[node name="Camera2D" type="Camera2D" parent="PlayerUI"]
+ignore_rotation = false
+limit_left = 0
+limit_top = 0
+limit_bottom = 725
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
+
 [node name="End" type="Area2D" parent="."]
 position = Vector2(3506, 117)
 

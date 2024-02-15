@@ -1303,7 +1303,7 @@ exit_id = 53
 color = "gold"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(6558, 420)
+position = Vector2(2592, 356)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)

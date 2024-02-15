@@ -10,7 +10,7 @@ Door that teleports the player to another door.
 @export var exit_id:int = -1
 @export var x_offset = 0
 @export var y_offset = 0
-@export_enum("black", "yellow", "red", "blue", "gold", "white") var color: String
+@export_enum("black", "yellow", "red", "blue", "green", "purple") var color: String
 @export_enum("open", "closed") var state: String = "closed"
 @export var duplicate: bool = false
 @export var duplicate_id: int = -1
