@@ -1,0 +1,108 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0w488mk0j2nr"]
+
+[ext_resource type="Script" path="res://scenes/settings.gd" id="1_aoe52"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aoe52")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -64.0
+offset_right = 111.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0.235294, 0.235294, 0.784314)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 2
+offset_right = 222.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings
+"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="ResetScoresBtn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Reset HS"
+
+[node name="MenuBtn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="QuitBtn" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music"
+
+[node name="MusicCheckBtn" type="CheckButton" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+button_pressed = true
+text = "music"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SfxLabel" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sfx"
+
+[node name="SfxCheckBtn" type="CheckButton" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+button_pressed = true
+text = "sound"
+
+[node name="SfxVolumeSlider" type="HSlider" parent="CanvasLayer/ColorRect/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/GridContainer/ResetScoresBtn" to="." method="_on_reset_scores_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/GridContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/GridContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="toggled" from="CanvasLayer/ColorRect/VBoxContainer/GridContainer/MusicCheckBtn" to="." method="_on_music_check_btn_toggled"]
+[connection signal="value_changed" from="CanvasLayer/ColorRect/VBoxContainer/GridContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="toggled" from="CanvasLayer/ColorRect/VBoxContainer/GridContainer/SfxCheckBtn" to="." method="_on_sfx_check_btn_toggled"]
+[connection signal="value_changed" from="CanvasLayer/ColorRect/VBoxContainer/GridContainer/SfxVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]

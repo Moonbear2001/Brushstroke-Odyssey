@@ -34,7 +34,6 @@ func save_high_scores() -> void:
 	ResourceSaver.save(self, HIGH_SCORES_PATH)
 	
 func new_last_time(level: String, time: float):
-	print("high scores new last time")
 	high_scores[level].set_last_time(time)
 	save_high_scores()
 		
