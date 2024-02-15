@@ -165,6 +165,13 @@ label_color = Color(0, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ViewHighScores"]
 shape = SubResource("RectangleShape2D_g5dbe")
 
+[node name="Banners" type="Node2D" parent="."]
+
+[node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
+position = Vector2(2370, -206)
+scale = Vector2(0.091, 0.0906374)
+level_name = "gogh"
+
 [node name="SoundPool" type="Node2D" parent="."]
 script = ExtResource("14_dlvkp")
 
@@ -179,10 +186,3 @@ bus = &"Music"
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("17_bht6u")
 bus = &"Music"
-
-[node name="Banners" type="Node" parent="."]
-
-[node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(2420, -204)
-scale = Vector2(0.091, 0.0906374)
-level_name = "gogh"
