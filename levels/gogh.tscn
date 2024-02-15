@@ -17,10 +17,10 @@ level_name = "gogh"
 protagonist = NodePath("Protagonist")
 stopwatch = NodePath("PlayerUI/Stopwatch")
 end = NodePath("End")
-stars = [NodePath("Stars/Star1")]
+stars = [NodePath("Stars/Star1"), NodePath("Stars/Star2")]
 
 [node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
-position = Vector2(241, 77)
+position = Vector2(157, 82)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(414, 57)
@@ -67,4 +67,8 @@ bus = &"Music"
 
 [node name="Star1" parent="Stars" instance=ExtResource("5_huc8b")]
 position = Vector2(350, 87)
+scale = Vector2(0.05, 0.05)
+
+[node name="Star2" parent="Stars" instance=ExtResource("5_huc8b")]
+position = Vector2(278, 87)
 scale = Vector2(0.05, 0.05)

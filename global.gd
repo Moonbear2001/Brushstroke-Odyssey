@@ -34,7 +34,7 @@ func _input(_event) -> void:
 			SceneManager.load_new_scene(MENU_PATH)
 		
 		# Open settings
-		if Input.is_action_pressed("settings"):
+		if Input.is_action_just_pressed("settings"):
 			Settings.toggle_settings_window()
 		
 
