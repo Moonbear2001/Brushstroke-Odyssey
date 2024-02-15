@@ -9,5 +9,4 @@ Page for displaying high scores.
 # Ready
 func _ready():
 	var ret = Global.high_scores.get_high_scores_str()
-	print(ret)
 	label.text = ret

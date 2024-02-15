@@ -5,9 +5,9 @@ Door that teleports the player to another door.
 """
 
 @export_enum("down", "up", "left", "right") var gravity_dir:String = "down"
-@export var id:int = -1
+@export var id: int = -1
 @export var enter: bool = true
-@export var exit_id:int = -1
+@export var exit_id: int = -1
 @export var x_offset = 0
 @export var y_offset = 0
 @export_enum("black", "yellow", "red", "blue", "green", "purple") var color: String
@@ -16,6 +16,7 @@ Door that teleports the player to another door.
 @export var duplicate_id: int = -1
 # Enums that describe direction, color, and state
 # These help with choosing which animation to play
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interaction_area = $InteractionArea
 @onready var anim_player = $AnimationPlayer
@@ -92,7 +93,7 @@ func _on_animated_sprite_2d_animation_finished():
 	animated_sprite.play(start_anim) 
 	
 
-func _on_interaction_area_area_entered(area):
+func _on_interaction_area_area_entered(_area):
 	if enter:
 		# Play door opening animation
 		state = "open"
@@ -100,7 +101,7 @@ func _on_interaction_area_area_entered(area):
 		animated_sprite.play(open_anim)
 
 
-func _on_interaction_area_area_exited(area):
+func _on_interaction_area_area_exited(_area):
 	if state == "open":
 		# Play door closing animation
 		state = "closed"

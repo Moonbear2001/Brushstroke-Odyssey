@@ -10,7 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _on_body_entered(body):
 	var greatest_x_below_target = -INF
 	var door

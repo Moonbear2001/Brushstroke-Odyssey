@@ -8,10 +8,5 @@ func _ready():
 	if anim:
 		anim.stop()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func playAnimation():
 	anim.play("move_platform")

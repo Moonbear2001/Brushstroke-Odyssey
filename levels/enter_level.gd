@@ -1,8 +1,14 @@
 extends Node2D
 
+"""
+An interactable area that takes the player into a new scene when interacted 
+with.
+"""
+
 @onready var interaction_area = $InteractionArea
 @onready var overlay = $Overlay
-@export var level_path: String
+
+@export var level_name: String
 @export var label_x: int = 0
 @export var label_y: int = 0
 @export var color = Color(1, 1, 1)
@@ -23,5 +29,5 @@ func hide_overlay():
 	overlay.hide()
 
 func enter_level():
-	if level_path:
-		SceneManager.load_new_scene(level_path)
+	if level_name:
+		SceneManager.load_new_scene(Global.LEVELS_PATH + level_name + ".tscn")

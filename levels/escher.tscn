@@ -1,6 +1,6 @@
-[gd_scene load_steps=70 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=76 format=3 uid="uid://cyjue85li2vvi"]
 
-[ext_resource type="Script" path="res://levels/escher.gd" id="1_4wu67"]
+[ext_resource type="Script" path="res://levels/level.gd" id="1_4xute"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
@@ -33,8 +33,10 @@
 [ext_resource type="Texture2D" uid="uid://dmsh1256v78qf" path="res://art/Esher/secion4/6.png" id="28_lhnxd"]
 [ext_resource type="Texture2D" uid="uid://bvp8vw1fapc7m" path="res://art/Esher/secion4/4.png" id="29_aedtv"]
 [ext_resource type="Texture2D" uid="uid://coavuytahd8a4" path="res://art/Esher/secion4/3.png" id="30_iyluj"]
+[ext_resource type="Texture2D" uid="uid://b1of5j7wi0pry" path="res://art/Esher/end_door2.png" id="31_7m67s"]
 [ext_resource type="Texture2D" uid="uid://bl65xoskmvvrc" path="res://art/Esher/secion4/2.png" id="31_7r6mm"]
 [ext_resource type="Texture2D" uid="uid://eurnlgpme6og" path="res://art/Esher/house.png" id="31_xvf36"]
+[ext_resource type="Texture2D" uid="uid://y6kmgpigghf2" path="res://art/Esher/end_door.png" id="32_horwv"]
 [ext_resource type="Texture2D" uid="uid://dqpnojjyil1tf" path="res://art/Esher/section3/1.png" id="32_lkell"]
 [ext_resource type="Texture2D" uid="uid://dtad1cfrp4aao" path="res://art/Esher/section3/2.png" id="33_blhto"]
 [ext_resource type="Texture2D" uid="uid://c6x07absdw225" path="res://art/Esher/section3/3.png" id="34_imksn"]
@@ -47,7 +49,10 @@
 [ext_resource type="Texture2D" uid="uid://bhvt2f75g8g3p" path="res://art/Esher/section3/long_block.png" id="41_khvcq"]
 [ext_resource type="Texture2D" uid="uid://37srqvjfc7ev" path="res://art/Esher/section3/moving_block.png" id="42_fowqm"]
 [ext_resource type="Texture2D" uid="uid://bkhmkbfqb4lc6" path="res://art/Esher/end!!!.png" id="48_3cxfi"]
-[ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="48_a1pxx"]
+[ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="49_kass5"]
+[ext_resource type="AudioStream" uid="uid://d1gwdnwvx3f52" path="res://audio/music/atmospheric_loop.mp3" id="50_ykumc"]
+[ext_resource type="Texture2D" uid="uid://oc3w211fkgi8" path="res://art/Esher/front_stair_end_door.png" id="53_57aom"]
+[ext_resource type="Texture2D" uid="uid://cobs2epkltbku" path="res://art/Esher/front_stair_end_door2.png" id="54_hnj44"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -124,7 +129,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_rncs8"]
 resource_name = "moving_platform"
-length = 2.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -132,7 +137,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -450)]
@@ -158,7 +163,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(5340, 600), Vector2(5340, 270), Vector2(5340, 600)]
+"values": [Vector2(5340, 600), Vector2(5340, 250), Vector2(5340, 600)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uwrdy"]
@@ -180,7 +185,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(5505, 330), Vector2(5505, 630), Vector2(5505, 330)]
+"values": [Vector2(5505, 300), Vector2(5505, 630), Vector2(5505, 300)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hkfoi"]
@@ -202,7 +207,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(5679, 660), Vector2(5679, 400), Vector2(5679, 660)]
+"values": [Vector2(5679, 660), Vector2(5679, 370), Vector2(5679, 660)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8nty6"]
@@ -290,8 +295,15 @@ _data = {
 "move_vertical": SubResource("Animation_qknow")
 }
 
-[node name="Escher" type="Node2D"]
-script = ExtResource("1_4wu67")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mhpl"]
+size = Vector2(16, 573)
+
+[node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
+script = ExtResource("1_4xute")
+level_name = "escher"
+protagonist = NodePath("Protagonist")
+stopwatch = NodePath("PlayerUI/Stopwatch")
+end = NodePath("End")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -377,21 +389,19 @@ scale = Vector2(0.275619, 0.275619)
 texture = ExtResource("5_yolr1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Second structure"]
-position = Vector2(-9.91604, -1.11776)
-scale = Vector2(1.00739, 1.00739)
-polygon = PackedVector2Array(1481, 633, 1482, 315, 1560, 312, 1561.26, 3.77077, 1629.87, -59.443, 1630.03, 57.5899, 1656.94, 57.5899, 1656.94, 136.325, 1650.96, 156.258, 1603.12, 156.258, 1603.12, 257.917, 1682.85, 257.917, 1682.85, 336.652, 1732.69, 336.652, 1732.69, 438.311, 1758.6, 438.311, 1758.6, 466.217, 1786.5, 466.217, 1786.5, 492.13, 1812.42, 492.13, 1812.42, 517.046, 1945.97, 517.046, 1946, 564, 1591, 564, 1585.27, 547.075, 1585.27, 519.691, 1612.65, 519.691, 1612.65, 492.307, 1640.04, 492.307, 1640.04, 465.779, 1666.57, 465.779, 1666.57, 435.828, 1693, 436, 1693, 384, 1507.4, 384.483, 1507.4, 451.231, 1538.2, 451.231, 1538.2, 615.534, 1946, 615, 1945, 637)
+polygon = PackedVector2Array(1631.03, -15.5172, 1634.48, 52.5862, 1659.48, 54.3104, 1660.35, 167.241, 1605.17, 173.276, 1599.14, 256.897, 1687.07, 250.862, 1688.79, 327.586, 1715.52, 328.448, 1715.52, 431.035, 1741.38, 435.345, 1743.97, 457.759, 1768.97, 462.069, 1771.55, 485.345, 1795.69, 491.379, 1794.83, 522.414, 1954.31, 520.69, 1951.72, 563.793, 1572.41, 565.517, 1560.35, 541.379, 1564.66, 523.276, 1589.66, 518.104, 1592.24, 493.104, 1615.52, 487.931, 1618.97, 465.517, 1644.83, 457.759, 1646.55, 436.207, 1672.41, 433.621, 1675, 381.035, 1488.79, 380.172, 1487.93, 447.414, 1520.69, 443.966, 1523.28, 611.207, 1953.45, 611.207, 1957.76, 631.897, 1468.97, 632.759, 1468.97, 305.172, 1567.24, 305.172, 1566.38, -28.4483)
 
 [node name="Stairs" type="Node2D" parent="Platforms"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Stairs"]
 
 [node name="1" type="Sprite2D" parent="Platforms/Stairs/StaticBody2D"]
-position = Vector2(2261, 537)
+position = Vector2(2270, 588)
 scale = Vector2(0.353, 0.353)
 texture = ExtResource("16_gumf2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Stairs/StaticBody2D"]
-polygon = PackedVector2Array(2040, 480, 2040, 728, 2504, 728, 2509, 507, 2499, 477, 2465, 477, 2464, 513, 2429, 513, 2429, 548, 2394, 548, 2393, 582, 2360, 582, 2359, 620, 2325, 620, 2325, 653, 2288, 653, 2288, 689, 2102, 691, 2102, 482)
+polygon = PackedVector2Array(2043, 511, 2040, 728, 2504, 728, 2509, 507, 2499, 477, 2465, 477, 2464, 513, 2429, 513, 2429, 548, 2394, 548, 2393, 582, 2360, 582, 2359, 620, 2325, 620, 2325, 653, 2288, 653, 2288, 689, 2102, 691, 2093, 510)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/Stairs"]
 
@@ -444,12 +454,12 @@ position = Vector2(20, 43)
 metadata/_edit_group_ = true
 
 [node name="Block2" type="Sprite2D" parent="Platforms/Mirror/Top/StaticBody2D2"]
-position = Vector2(3488, 170.926)
+position = Vector2(3507, 174.926)
 scale = Vector2(0.354, 0.393763)
 texture = ExtResource("23_ntwq6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Top/StaticBody2D2"]
-polygon = PackedVector2Array(3303, 183, 3306, 289, 3718, 287, 3710, 81, 3659, 83, 3656, 218, 3598, 219, 3592, 179)
+polygon = PackedVector2Array(3303, 183, 3306, 289, 3718, 287, 3716, 94, 3654, 95, 3656, 218, 3598, 219, 3592, 179)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/Mirror/Top"]
 position = Vector2(60, 57)
@@ -494,12 +504,12 @@ position = Vector2(-25, -31)
 metadata/_edit_group_ = true
 
 [node name="Downblock3" type="Sprite2D" parent="Platforms/Mirror/Bottom/StaticBody2D3"]
-position = Vector2(3784, 571)
+position = Vector2(3784, 565)
 scale = Vector2(0.450756, 0.450756)
 texture = ExtResource("21_uc55d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D3"]
-polygon = PackedVector2Array(3531, 484, 3535, 571, 3675, 574, 3675, 648, 3747, 648, 3750, 519, 3825, 518, 3827, 589, 3896, 590, 3899, 519, 3961, 522, 3962, 672, 4032, 671, 4042, 435, 3547, 441)
+polygon = PackedVector2Array(3531, 484, 3535, 571, 3675, 574, 3675, 648, 3747, 648, 3750, 519, 3825, 518, 3827, 589, 3896, 590, 3899, 519, 3961, 522, 3963, 664, 4035, 666, 4042, 435, 3547, 441)
 
 [node name="MPlatform1" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
 position = Vector2(1395, 404)
@@ -626,7 +636,7 @@ texture = ExtResource("26_b666u")
 polygon = PackedVector2Array(5046, 565, 5045, 772, 5207, 774, 5192, 563)
 
 [node name="AnimatableBody2D5" type="AnimatableBody2D" parent="Platforms/fourth section"]
-position = Vector2(5340, 600)
+position = Vector2(5340, 250)
 metadata/_edit_group_ = true
 
 [node name="5" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D5"]
@@ -645,7 +655,7 @@ libraries = {
 autoplay = "vertical_move"
 
 [node name="AnimatableBody2D6" type="AnimatableBody2D" parent="Platforms/fourth section"]
-position = Vector2(5505, 630)
+position = Vector2(5505, 608)
 metadata/_edit_group_ = true
 
 [node name="6" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D6"]
@@ -664,7 +674,7 @@ libraries = {
 autoplay = "vertical_move"
 
 [node name="AnimatableBody2D7" type="AnimatableBody2D" parent="Platforms/fourth section"]
-position = Vector2(5679, 660)
+position = Vector2(5679, 370)
 metadata/_edit_group_ = true
 
 [node name="7" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D7"]
@@ -706,63 +716,97 @@ polygon = PackedVector2Array(5288, 0, 5290, 192, 5382, 198, 5384, -1)
 [node name="StaticBody2D10" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="3" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D10"]
-position = Vector2(5518.38, 111.1)
+position = Vector2(5518.38, 105.1)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("30_iyluj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D10"]
-position = Vector2(25.3779, -49.9)
+position = Vector2(25.3779, -55.9)
 polygon = PackedVector2Array(5444, 1, 5447, 279, 5540.62, 281.9, 5538.62, 1.9)
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Platforms/fourth section"]
 
 [node name="2" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D11"]
-position = Vector2(5679.34, 109)
+position = Vector2(5679.34, 92)
 scale = Vector2(0.284, 0.284)
 texture = ExtResource("31_7r6mm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D11"]
-position = Vector2(42.3418, -71)
+position = Vector2(42.3418, -88)
 polygon = PackedVector2Array(5593, -22, 5598, 375, 5689, 382, 5690, -28)
+
+[node name="EndDoor2" type="Sprite2D" parent="Platforms"]
+position = Vector2(9014, 147)
+scale = Vector2(0.104, 0.104)
+texture = ExtResource("31_7m67s")
+
+[node name="EndDoor" type="Sprite2D" parent="Platforms"]
+position = Vector2(9016, 576)
+scale = Vector2(0.103953, 0.103953)
+texture = ExtResource("32_horwv")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Platforms"]
 
 [node name="End!!!" type="Sprite2D" parent="Platforms/StaticBody2D3"]
-position = Vector2(9287.44, 362.688)
+position = Vector2(9206.44, 362.688)
 scale = Vector2(0.314781, 0.314781)
 texture = ExtResource("48_3cxfi")
 
+[node name="FrontStairEndDoor" type="Sprite2D" parent="Platforms/StaticBody2D3"]
+position = Vector2(8983, 653)
+scale = Vector2(0.104, 0.104)
+texture = ExtResource("53_57aom")
+
+[node name="FrontStairEndDoor2" type="Sprite2D" parent="Platforms/StaticBody2D3"]
+position = Vector2(8982, 68)
+scale = Vector2(0.104, 0.104)
+texture = ExtResource("54_hnj44")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D3"]
-position = Vector2(-68, 0)
-polygon = PackedVector2Array(8651, 358, 8658, 427, 8666, 429, 8667, 442, 8676, 448, 8678, 462, 8690, 467, 8692, 481, 8704, 485, 8705, 502, 8718, 505, 8718, 521, 8729, 524, 8730, 540, 8742, 544, 8740, 561, 8753, 566, 8753, 584, 8760, 591, 8756, 607, 8763, 614, 8763, 619, 8763, 622, 8764, 626, 8766, 630, 8767, 633, 8769, 638, 8772, 642, 8774, 645, 8777, 649, 8779, 652, 8781, 655, 8784, 658, 8787, 661, 8790, 663, 8794, 665, 8799, 667, 8804, 669, 8808, 670, 8812, 671, 8817, 671, 8822, 671, 8827, 671, 8832, 671, 8837, 670, 8842, 668, 8845, 666, 8848, 662, 8853, 656, 8857, 651, 8886, 664, 8896, 667, 8929, 669, 9205, 667, 9204, 413, 9265, 414, 9264, 681, 9246, 724, 8774, 717, 8562, 356)
+position = Vector2(-149, 0)
+polygon = PackedVector2Array(8651, 358, 8658, 427, 8666, 429, 8667, 442, 8676, 448, 8678, 462, 8690, 467, 8692, 481, 8704, 485, 8705, 502, 8718, 505, 8718, 521, 8729, 524, 8730, 540, 8742, 544, 8740, 561, 8753, 566, 8753, 584, 8760, 591, 8756, 607, 8763, 614, 8763, 619, 8763, 622, 8764, 626, 8766, 630, 8767, 633, 8769, 638, 8772, 642, 8774, 645, 8777, 649, 8779, 652, 8781, 655, 8784, 658, 8787, 661, 8790, 663, 8794, 665, 8798, 667, 8803, 669, 8808, 671, 8812, 672, 8817, 673, 8822, 673, 8827, 673, 8832, 672, 8837, 670, 8842, 668, 8845, 666, 8848, 663, 8852, 659, 8857, 658, 8886, 664, 8896, 667, 8929, 669, 9115, 665, 9143, 647, 9241, 646, 9264, 681, 9246, 724, 8774, 717, 8562, 356)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/StaticBody2D3"]
-position = Vector2(-68, 2)
-polygon = PackedVector2Array(8651, 357, 8658, 292, 8669, 290, 8671, 275, 8682, 270, 8683, 256, 8694, 251, 8694, 236, 8706, 232, 8708, 217, 8718, 213, 8720, 197, 8729, 191, 8730, 178, 8741, 172, 8740, 155, 8751, 151, 8747, 130, 8757, 123, 8756, 110, 8765, 105, 8765, 101, 8765, 97, 8765, 93, 8765, 89, 8766, 84, 8767, 80, 8768, 77, 8769, 74, 8771, 71, 8773, 68, 8776, 65, 8778, 63, 8781, 61, 8783, 59, 8786, 57, 8789, 55, 8793, 53, 8796, 51, 8799, 50, 8803, 49, 8806, 48, 8809, 48, 8812, 48, 8816, 48, 8819, 48, 8823, 48, 8826, 48, 8829, 49, 8832, 50, 8835, 51, 8838, 52, 8840, 53, 8842, 54, 8845, 56, 8848, 58, 8850, 60, 8852, 62, 8855, 65, 8857, 67, 8860, 69, 8896, 54, 9205, 52, 9203, 411, 9265, 411, 9264, -4, 8771, 1, 8563, 356)
+position = Vector2(-149, 2)
+polygon = PackedVector2Array(8651, 357, 8658, 292, 8669, 290, 8671, 275, 8682, 270, 8683, 256, 8694, 251, 8694, 236, 8706, 232, 8708, 217, 8718, 213, 8720, 197, 8729, 191, 8730, 178, 8741, 172, 8740, 155, 8751, 151, 8747, 130, 8757, 123, 8756, 110, 8765, 105, 8765, 101, 8765, 97, 8765, 93, 8765, 89, 8766, 84, 8767, 80, 8768, 77, 8769, 74, 8771, 71, 8773, 68, 8776, 65, 8778, 63, 8781, 61, 8783, 59, 8786, 57, 8789, 55, 8793, 53, 8796, 51, 8799, 50, 8803, 49, 8806, 48, 8809, 48, 8812, 48, 8816, 48, 8819, 48, 8823, 48, 8826, 48, 8829, 49, 8832, 50, 8835, 51, 8838, 52, 8840, 53, 8842, 54, 8845, 56, 8848, 58, 8850, 60, 8852, 62, 8855, 65, 8857, 67, 8860, 69, 8896, 54, 9109, 48, 9147, 68, 9213, 63, 9264, -4, 8771, 1, 8563, 356)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Platforms/StaticBody2D3"]
+position = Vector2(-81, 0)
+polygon = PackedVector2Array(9080, 644, 9080, 485, 9142, 486, 9140, 650)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Platforms/StaticBody2D3"]
+position = Vector2(-81, 0)
+polygon = PackedVector2Array(9080, 59, 9081, 298, 9154, 295, 9145, 52)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms"]
 
 [node name="House" type="Sprite2D" parent="Platforms/StaticBody2D2"]
-position = Vector2(7864.15, 380.5)
+position = Vector2(7816.15, 372.5)
 scale = Vector2(0.348827, 0.348827)
 texture = ExtResource("31_xvf36")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
-polygon = PackedVector2Array(7281, -22, 7280, 741, 7300, 779, 7599, 782, 7602, 314, 7575, 294, 7582, 690, 7348, 694, 7356, -20)
+position = Vector2(-90, -8)
+polygon = PackedVector2Array(7280, 691, 7280, 741, 7300, 779, 7599, 782, 7602, 314, 7575, 294, 7582, 690, 7348, 694, 7322, 691)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
+position = Vector2(-89, -8)
 polygon = PackedVector2Array(8375, 317, 8375, 345, 7603, 340, 7601, 312)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
+position = Vector2(-89, -8)
 polygon = PackedVector2Array(7600, 691, 7704, 687, 7707, 652, 7728, 647, 7730, 628, 7750, 624, 7753, 605, 7771, 603, 7775, 583, 7796, 581, 7799, 679, 7957, 683, 7961, 581, 7870, 560, 7873, 530, 7892, 527, 7894, 507, 7914, 504, 7915, 486, 7934, 480, 7937, 462, 7957, 459, 7959, 440, 8019, 440, 8018, 342, 8058, 341, 8061, 781, 7599, 779)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
+position = Vector2(-89, -8)
 polygon = PackedVector2Array(8057, 341, 8060, 781, 8094, 742, 8107, 511, 8129, 509, 8132, 490, 8151, 487, 8155, 468, 8174, 465, 8173, 441, 8082, 438, 8081, 359, 8191, 360, 8191, 343)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
+position = Vector2(-89, -8)
 polygon = PackedVector2Array(8345, 345, 8344, 394, 8271, 402, 8270, 423, 8287, 425, 8291, 445, 8310, 447, 8314, 467, 8338, 467, 8344, 730, 8374, 780, 8375, 344)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
+position = Vector2(-89, -8)
 polygon = PackedVector2Array(8095, 728, 8343, 728, 8376, 779, 8059, 781)
 
 [node name="fifth section" type="Node2D" parent="Platforms"]
@@ -770,12 +814,12 @@ polygon = PackedVector2Array(8095, 728, 8343, 728, 8376, 779, 8059, 781)
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/fifth section"]
 
 [node name="1" type="Sprite2D" parent="Platforms/fifth section/StaticBody2D"]
-position = Vector2(5901, 362)
+position = Vector2(5908, 358)
 scale = Vector2(0.313, 0.313)
 texture = ExtResource("32_lkell")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D"]
-polygon = PackedVector2Array(5875, 282, 5880, 277, 5881, 478, 5787, 480, 5786, 719, 5910, 719, 5910, 272, 5902, 251, 5870, 249, 5870, 64, 5966, 84, 5961, 318, 6008, 304, 6020, 252, 6021, -6, 5800, -1, 5804, 262, 5811, 284)
+polygon = PackedVector2Array(5875, 282, 5880, 277, 5881, 478, 5787, 480, 5786, 719, 5910, 719, 5910, 272, 5902, 251, 5870, 249, 5870, 64, 5998, 71, 6004, 313, 6021, 316, 6031, 292, 6034, -10, 5800, -1, 5804, 262, 5811, 284)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/fifth section"]
 
@@ -934,7 +978,7 @@ scale = Vector2(0.05, 0.05)
 platform_id = 2
 
 [node name="Lever4" parent="." instance=ExtResource("21_pvfto")]
-position = Vector2(5958, 118)
+position = Vector2(5997, 88)
 rotation = -1.57079
 scale = Vector2(0.05, 0.05)
 platform_id = 3
@@ -996,7 +1040,7 @@ enter = false
 color = "blue"
 
 [node name="RedDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(1576, 321)
+position = Vector2(1574, 320)
 id = 8
 exit_id = 9
 color = "red"
@@ -1018,20 +1062,20 @@ x_offset = 25
 color = "yellow"
 
 [node name="YellowDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(1730, 474)
+position = Vector2(1703, 473)
 id = 11
 exit_id = 10
 x_offset = -25
 color = "yellow"
 
 [node name="BlueDoor3" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(1545, 490)
+position = Vector2(1525, 490)
 id = 12
 exit_id = 13
 color = "blue"
 
 [node name="BlueDoor4" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(1915, 578)
+position = Vector2(1890, 578)
 rotation = 1.5708
 gravity_dir = "left"
 id = 13
@@ -1045,7 +1089,7 @@ exit_id = 15
 color = "white"
 
 [node name="WhiteDoor1" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
-position = Vector2(2122, 663)
+position = Vector2(2113, 663)
 id = 15
 exit_id = 14
 color = "white"
@@ -1210,35 +1254,35 @@ exit_id = 42
 color = "gold"
 
 [node name="GoldDoor7" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(7368, 665)
+position = Vector2(7287, 657)
 id = 42
 enter = false
 x_offset = 1
 color = "gold"
 
 [node name="RedDoor9" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(7563, 661)
+position = Vector2(7474, 653)
 scale = Vector2(0.8, 0.8)
 id = 43
 exit_id = 44
 color = "red"
 
 [node name="RedDoor10" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(7617, 665)
+position = Vector2(7528, 657)
 scale = Vector2(0.8, 0.8)
 id = 44
 exit_id = 43
 color = "red"
 
 [node name="YellowDoor8" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(8005, 413)
+position = Vector2(7916, 405)
 scale = Vector2(0.8, 0.8)
 id = 45
 exit_id = 46
 color = "yellow"
 
 [node name="YellowDoor9" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8097, 389)
+position = Vector2(8008, 381)
 scale = Vector2(0.8, 0.8)
 gravity_dir = "up"
 id = 46
@@ -1246,56 +1290,56 @@ exit_id = 45
 color = "yellow"
 
 [node name="BlueDoor9" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(7942, 658)
+position = Vector2(7853, 650)
 scale = Vector2(0.8, 0.8)
 id = 47
 exit_id = 48
 color = "blue"
 
 [node name="BlueDoor10" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8112, 705)
+position = Vector2(8023, 697)
 scale = Vector2(0.8, 0.8)
 id = 48
 exit_id = 47
 color = "blue"
 
 [node name="WhiteDoor5" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(8332, 374)
+position = Vector2(8243, 366)
 scale = Vector2(0.8, 0.8)
 id = 49
 exit_id = 50
 color = "white"
 
 [node name="WhiteDoor6" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8603, 323)
+position = Vector2(8523, 323)
 scale = Vector2(0.72, 0.72)
 gravity_dir = "up"
 id = 50
 color = "white"
 
 [node name="RedDoor11" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8121, 541)
+position = Vector2(8032, 533)
 scale = Vector2(0.8, 0.8)
 id = 51
 exit_id = 52
 color = "red"
 
 [node name="RedDoor12" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8599, 402)
+position = Vector2(8519, 402)
 scale = Vector2(0.72, 0.72)
 id = 52
 enter = false
 color = "red"
 
 [node name="GoldDoor8" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(8326, 703)
+position = Vector2(8237, 695)
 scale = Vector2(0.8, 0.8)
 id = 53
 exit_id = 54
 color = "gold"
 
 [node name="GoldDoor9" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(8326, 494)
+position = Vector2(8237, 486)
 scale = Vector2(0.8, 0.8)
 gravity_dir = "up"
 id = 54
@@ -1303,7 +1347,7 @@ exit_id = 53
 color = "gold"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(2592, 356)
+position = Vector2(5799, 404)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1321,7 +1365,21 @@ scale = Vector2(-2.37316, -0.6978)
 position = Vector2(3233, 399)
 scale = Vector2(0.192, 0.6)
 
-[node name="Settings" parent="." instance=ExtResource("48_a1pxx")]
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="Stopwatch" parent="PlayerUI" instance=ExtResource("49_kass5")]
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2(8991, 444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(-2, -84.5)
+shape = SubResource("RectangleShape2D_4mhpl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("50_ykumc")
+autoplay = true
+bus = &"Music"
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]

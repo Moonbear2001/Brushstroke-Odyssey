@@ -11,6 +11,7 @@ signal lever_toggled(state: LeverStates)
 
 @onready var interaction_area = $InteractionArea
 @onready var animation_player = $Sprite2D/AnimationPlayer
+@onready var audio_player = $AudioStreamPlayer2D
 
 # Possible lever states
 enum LeverStates {
@@ -38,6 +39,7 @@ func _ready():
 func pull_lever():
 	if !enabled:
 		return
+	audio_player.play()
 	
 	# Control state and animation
 	if state == LeverStates.NEUTRAL or state == LeverStates.OFF:

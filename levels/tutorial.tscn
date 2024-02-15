@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_3wox7"]
-[ext_resource type="Script" path="res://levels/tutorial.gd" id="1_y74qt"]
+[ext_resource type="Script" path="res://levels/level.gd" id="1_b2fp5"]
 [ext_resource type="Texture2D" uid="uid://c2ow4nde88yi1" path="res://art/L0/big1.png" id="2_70hh4"]
 [ext_resource type="Texture2D" uid="uid://enibk78rxdld" path="res://art/L0/big2.png" id="3_45pnc"]
 [ext_resource type="Texture2D" uid="uid://mqqc3sad7fhe" path="res://art/L0/med4.png" id="4_6ouc6"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://mwc0pgttbsej" path="res://art/L0/Rectangle 26.png" id="18_kdiem"]
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
 [ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="19_50ti2"]
-[ext_resource type="PackedScene" uid="uid://d0w488mk0j2nr" path="res://scenes/settings.tscn" id="21_iid18"]
+[ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="22_r7ynq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0doj"]
 size = Vector2(110, 50)
@@ -65,12 +65,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnas"]
 size = Vector2(254, 512)
 
-[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
-script = ExtResource("1_y74qt")
+[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end", "stars")]
+script = ExtResource("1_b2fp5")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
 stopwatch = NodePath("PlayerUI/Stopwatch")
 end = NodePath("End")
+stars = [NodePath("Stars/Star1")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -88,7 +89,7 @@ position = Vector2(301, 374)
 texture = ExtResource("18_mr6vo")
 
 [node name="Protagonist" parent="." instance=ExtResource("1_3wox7")]
-position = Vector2(191, 346)
+position = Vector2(200, 314)
 
 [node name="Death" parent="." instance=ExtResource("15_yj68c")]
 
@@ -357,12 +358,16 @@ position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true
 
 [node name="End" type="Area2D" parent="."]
-position = Vector2(3506, 117)
+position = Vector2(3467, 142)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(-28, 226)
 shape = SubResource("RectangleShape2D_xjnas")
 
-[node name="Settings" parent="." instance=ExtResource("21_iid18")]
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="Star1" parent="Stars" instance=ExtResource("22_r7ynq")]
+position = Vector2(368, 282)
+scale = Vector2(0.05, 0.05)
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]

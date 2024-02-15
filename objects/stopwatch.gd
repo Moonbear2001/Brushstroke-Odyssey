@@ -41,7 +41,7 @@ func reset_stopwatch() -> void:
 	update_label()
 
 # Return the current time
-func get_time() -> float:
+func get_best_time() -> float:
 	return elapsed_time
 
 func _on_update_timer_timeout() -> void:
