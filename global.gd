@@ -32,8 +32,8 @@ func _input(_event) -> void:
 	if !scene_transitioning:
 		
 		# Go back to the menu
-		if Input.is_action_just_pressed("menu"):
-			SceneManager.load_new_scene(MENU_PATH)
+		#if Input.is_action_just_pressed("menu"):
+			#SceneManager.load_new_scene(MENU_PATH)
 		
 		# Open settings
 		if Input.is_action_just_pressed("settings"):

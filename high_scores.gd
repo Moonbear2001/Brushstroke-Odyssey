@@ -52,10 +52,10 @@ func get_level_high_score(level: String) -> LevelHighScore:
 # Return a string with the high scores
 func get_high_scores_str() -> String:
 	var res = String()
-	var format_str = "{level} : time = {time} stars = {stars}\n"
+	var format_str = "{level} : time = {time}	last time: {last_time}	stars = {stars}\n"
 	for level in high_scores:
 		var stars = high_scores[level].get_best_stars()
 		var best_time = high_scores[level].get_best_time()
 		var last_time = high_scores[level].get_last_time()
-		res += format_str.format({"level": level, "time": best_time, "stars": stars})
+		res += format_str.format({"level": level, "time": best_time, "last time": last_time, "stars": stars})
 	return res
