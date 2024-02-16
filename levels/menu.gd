@@ -4,7 +4,6 @@ extends Node2D
 Menu script.
 """
 
-@onready var view_hs = $ViewHighScores
 @onready var sound_pool = $SoundPool
 
 # Ready

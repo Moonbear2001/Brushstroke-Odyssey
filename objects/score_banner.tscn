@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://p8vf3s0glmab"]
+[gd_scene load_steps=15 format=3 uid="uid://p8vf3s0glmab"]
 
 [ext_resource type="Script" path="res://objects/score_banner.gd" id="2_d8cvp"]
 [ext_resource type="Texture2D" uid="uid://bexuymfplxxq8" path="res://art/menu/score_dali.png" id="2_ja4xa"]
@@ -80,26 +80,10 @@ tracks/0/keys = {
 "values": [Vector2(0, 4200), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_86ol3"]
-resource_name = "gogh_colors"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp1gn"]
 _data = {
 "drop_down": SubResource("Animation_65oow"),
-"go_up": SubResource("Animation_qbqtj"),
-"gogh_colors": SubResource("Animation_86ol3")
+"go_up": SubResource("Animation_qbqtj")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mserr"]

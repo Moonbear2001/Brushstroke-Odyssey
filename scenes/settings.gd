@@ -6,7 +6,7 @@ Window for navigating to the menu, controlling user's volume, and resetting high
 
 @export var menu: bool = false
 
-@onready var sfx_check = $CanvasLayer/Node2D/SfxCheckBtn
+@onready var sfx_check = $CanvasLayer/Node2D/Group92/SfxCheckBtn
 @onready var node = $CanvasLayer/Node2D
 @onready var canvas_layer = $CanvasLayer
 @onready var SFX_BUS_ID: int = AudioServer.get_bus_index("SFX")
