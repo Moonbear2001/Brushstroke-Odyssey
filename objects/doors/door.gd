@@ -22,10 +22,30 @@ Door that teleports the player to another door.
 @onready var anim_player = $AnimationPlayer
 @onready var protagonist = preload("res://characters/protagonist.tscn")
 
+const CLOSE_SOUND_PATH: String = "res://audio/sfx/shutting-the-door-119118.mp3"
+const OPEN_SOUND_PATH: String = "res://audio/sfx/open-doors-114615.mp3"
+
+var close_sound_stream: AudioStream
+var open_sound_stream: AudioStream
+
+var close_sound = AudioStreamPlayer.new()
+var open_sound = AudioStreamPlayer.new()
+
 var lock_door = false
 
-# Play the closed door animation on scene startup
 func _ready() -> void:
+	
+	# Set up opening and closing sounds
+	close_sound_stream = load(CLOSE_SOUND_PATH)
+	open_sound_stream = load(OPEN_SOUND_PATH)
+	close_sound.set_stream(close_sound_stream)
+	open_sound.set_stream(open_sound_stream)
+	close_sound.set_bus("SFX")
+	open_sound.set_bus("SFX")
+	add_child(close_sound)
+	add_child(open_sound)
+	
+	# Play correct starting animation
 	var start_anim = build_anim_name(color, state)
 	animated_sprite.play(start_anim)
 
@@ -48,6 +68,7 @@ func _on_body_exited(body):
 		state = "closed"
 		var close_anim = build_anim_name(color, state)
 		animated_sprite.play(close_anim)
+		#close_sound.play()
 
 # Teleports the player to the new location
 func teleport(body):
@@ -67,8 +88,11 @@ func teleport(body):
 				Global.waiting_for_duplicate = false
 			body.set_gravity(door.gravity_dir)
 			
+			# Exit animation + sound
 			if not door.enter:
 				door.anim_player.play(door.color + "_exit")
+				
+				
 			break
 
 # Lock the door for a while after the player enters it
@@ -99,6 +123,7 @@ func _on_interaction_area_area_entered(_area):
 		state = "open"
 		var open_anim = build_anim_name(color, state)
 		animated_sprite.play(open_anim)
+		open_sound.play()
 
 
 func _on_interaction_area_area_exited(_area):
@@ -107,6 +132,8 @@ func _on_interaction_area_area_exited(_area):
 		state = "closed"
 		var close_anim = build_anim_name(color, state)
 		animated_sprite.play(close_anim)
+		close_sound.play()
+		
 		
 func duplicate_node(body):
 	var duplicatedNode: Protagonist = body.duplicate()

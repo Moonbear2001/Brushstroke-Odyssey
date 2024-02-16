@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/star.gd" id="1_7emdp"]
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="1_yc8ah"]
-[ext_resource type="Texture2D" uid="uid://ckcwut3uvlnt3" path="res://art/mario_star.jpg" id="2_ypn1d"]
+[ext_resource type="Texture2D" uid="uid://c1ptg3amxvk6i" path="res://art/menu/star_full.png" id="3_2vppc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4hubj"]
 radius = 479.07
@@ -11,9 +11,11 @@ radius = 479.07
 script = ExtResource("1_7emdp")
 
 [node name="InteractionArea" parent="." instance=ExtResource("1_yc8ah")]
+action_name = "collect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_4hubj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ypn1d")
+scale = Vector2(9.32, 9.32)
+texture = ExtResource("3_2vppc")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://boel38r3e5vm5" path="res://art/menu/vangogh_score.png" id="1_frkj6"]
 [ext_resource type="Script" path="res://objects/score_banner.gd" id="2_d8cvp"]
-[ext_resource type="Texture2D" uid="uid://ckcwut3uvlnt3" path="res://art/mario_star.jpg" id="3_h3s0e"]
+[ext_resource type="Texture2D" uid="uid://c1ptg3amxvk6i" path="res://art/menu/star_full.png" id="3_7yd0w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sx0ji"]
 atlas = ExtResource("1_frkj6")
@@ -75,21 +75,21 @@ sprite_frames = SubResource("SpriteFrames_24pig")
 
 [node name="Star1" type="Sprite2D" parent="AnimatedSprite2D/Stars"]
 visible = false
-position = Vector2(-764.94, -544.44)
-scale = Vector2(0.277392, 0.293394)
-texture = ExtResource("3_h3s0e")
+position = Vector2(-768.924, -556.44)
+scale = Vector2(2.50846, 2.65316)
+texture = ExtResource("3_7yd0w")
 
 [node name="Star2" type="Sprite2D" parent="AnimatedSprite2D/Stars"]
 visible = false
-position = Vector2(-398.407, -544.44)
-scale = Vector2(0.277392, 0.293394)
-texture = ExtResource("3_h3s0e")
+position = Vector2(-398.406, -556.44)
+scale = Vector2(2.50846, 2.65316)
+texture = ExtResource("3_7yd0w")
 
 [node name="Star3" type="Sprite2D" parent="AnimatedSprite2D/Stars"]
 visible = false
-position = Vector2(-27.8887, -544.44)
-scale = Vector2(0.277392, 0.293394)
-texture = ExtResource("3_h3s0e")
+position = Vector2(-27.8883, -556.44)
+scale = Vector2(2.50846, 2.65316)
+texture = ExtResource("3_7yd0w")
 
 [node name="HighScoreLabel" type="Label" parent="AnimatedSprite2D"]
 offset_left = -936.257
