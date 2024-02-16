@@ -24,6 +24,9 @@ func _ready():
 	# Reset position
 	sprite.position = Vector2.ZERO
 	
+	# Play correct animation for level
+	sprite.play(level_name)
+	
 	# Load saved score data
 	var level_hs: LevelHighScore = Global.high_scores.get_level_high_score(level_name)
 	num_stars = level_hs.get_best_stars()

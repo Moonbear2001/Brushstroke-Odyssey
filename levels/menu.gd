@@ -10,10 +10,6 @@ Menu script.
 # Ready
 func _ready():
 	
-	# Set up interaction
-	view_hs.enabled = true
-	view_hs.interact = Callable(self, "open_hs_scene")
-	
 	# Play random ambience music 
 	sound_pool.play_random_sound()
 

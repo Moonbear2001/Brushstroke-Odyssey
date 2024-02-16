@@ -1,8 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://p8vf3s0glmab"]
+[gd_scene load_steps=16 format=3 uid="uid://p8vf3s0glmab"]
 
 [ext_resource type="Script" path="res://objects/score_banner.gd" id="2_d8cvp"]
+[ext_resource type="Texture2D" uid="uid://bexuymfplxxq8" path="res://art/menu/score_dali.png" id="2_ja4xa"]
 [ext_resource type="Texture2D" uid="uid://boel38r3e5vm5" path="res://art/menu/score_van_gogh.png" id="2_s2f4w"]
 [ext_resource type="Texture2D" uid="uid://c1ptg3amxvk6i" path="res://art/menu/star_full.png" id="3_7yd0w"]
+[ext_resource type="Texture2D" uid="uid://byayd55cvd7q7" path="res://art/menu/score_escher.png" id="3_g1vnk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkvoo"]
+atlas = ExtResource("2_ja4xa")
+region = Rect2(0, 0, 2280, 4530)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml00h"]
+atlas = ExtResource("3_g1vnk")
+region = Rect2(0, 0, 2280, 4530)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sx0ji"]
 atlas = ExtResource("2_s2f4w")
@@ -12,10 +22,26 @@ region = Rect2(0, 0, 2280, 4540)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pkvoo")
+}],
+"loop": true,
+"name": &"dali",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml00h")
+}],
+"loop": true,
+"name": &"escher",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sx0ji")
 }],
 "loop": true,
-"name": &"default",
+"name": &"gogh",
 "speed": 5.0
 }]
 
@@ -85,6 +111,7 @@ script = ExtResource("2_d8cvp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_24pig")
+animation = &"gogh"
 
 [node name="Stars" type="Node2D" parent="AnimatedSprite2D"]
 

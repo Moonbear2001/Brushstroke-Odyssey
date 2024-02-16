@@ -12,13 +12,12 @@ Window for navigating to the menu, controlling user's volume, and resetting high
 @onready var SFX_BUS_ID: int = AudioServer.get_bus_index("SFX")
 @onready var MUSIC_BUS_ID: int = AudioServer.get_bus_index("Music")
 
-@onready var music_check_btn: CheckButton = $CanvasLayer/Node2D/MusicCheckBtn
-@onready var sfx_check_btn: CheckButton = $CanvasLayer/Node2D/SfxCheckBtn
-@onready var music_slider: HSlider = $CanvasLayer/Node2D/MusicVolumeSlider
-@onready var sfx_slider: HSlider = $CanvasLayer/Node2D/SfxVolumeSlider
-
-@onready var menu_btn = $CanvasLayer/Node2D/MenuBtn
-@onready var restart_btn = $CanvasLayer/Node2D/RestartBtn
+@onready var music_check_btn: CheckButton = $CanvasLayer/Node2D/Group92/MusicCheckBtn
+@onready var sfx_check_btn: CheckButton = $CanvasLayer/Node2D/Group92/SfxCheckBtn
+@onready var music_slider: HSlider = $CanvasLayer/Node2D/Group92/MusicVolumeSlider
+@onready var sfx_slider: HSlider = $CanvasLayer/Node2D/Group92/SfxVolumeSlider
+@onready var menu_btn = $CanvasLayer/Node2D/Group92/MenuBtn
+@onready var restart_btn = $CanvasLayer/Node2D/Group92/RestartBtn
 
 var music_volume: float
 var sfx_volume: float
@@ -33,7 +32,6 @@ func _ready():
 	music_volume = saved_settings.get_music_volume()
 	sfx_volume = saved_settings.get_sfx_volume()
 	music_muted = saved_settings.get_music_muted()
-	print("music muted: ", music_muted)
 	sfx_muted = saved_settings.get_sfx_muted()
 	
 	# Apply saved settings
@@ -53,6 +51,7 @@ func toggle_settings_window() -> void:
 	if canvas_layer.visible:
 		canvas_layer.hide()
 	else:
+		$CanvasLayer/Node2D.position = get_viewport_rect().size/2
 		canvas_layer.show()
 			
 # Hide the settings sindow
