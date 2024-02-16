@@ -31,10 +31,6 @@ func _input(_event) -> void:
 	# Only accept input if we are not transitioning between scenes
 	if !scene_transitioning:
 		
-		# Go back to the menu
-		#if Input.is_action_just_pressed("menu"):
-			#SceneManager.load_new_scene(MENU_PATH)
-		
 		# Open settings
 		if Input.is_action_just_pressed("settings"):
 			Settings.toggle_settings_window()
