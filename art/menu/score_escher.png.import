@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boel38r3e5vm5"
-path="res://.godot/imported/vangogh_score.png-c0463dc584e77764a568b064190dead4.ctex"
+uid="uid://byayd55cvd7q7"
+path="res://.godot/imported/score_escher.png-917b6287d3509dbf32ead8712a62131c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/vangogh_score.png"
-dest_files=["res://.godot/imported/vangogh_score.png-c0463dc584e77764a568b064190dead4.ctex"]
+source_file="res://art/menu/score_escher.png"
+dest_files=["res://.godot/imported/score_escher.png-917b6287d3509dbf32ead8712a62131c.ctex"]
 
 [params]
 

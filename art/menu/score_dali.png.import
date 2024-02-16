@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bexuymfplxxq8"
-path="res://.godot/imported/dali_score.png-3dacf566e50cc214cdccb88f24b035f0.ctex"
+path="res://.godot/imported/score_dali.png-f9b4c98e35c36200b4d91f9251a31491.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/dali_score.png"
-dest_files=["res://.godot/imported/dali_score.png-3dacf566e50cc214cdccb88f24b035f0.ctex"]
+source_file="res://art/menu/score_dali.png"
+dest_files=["res://.godot/imported/score_dali.png-f9b4c98e35c36200b4d91f9251a31491.ctex"]
 
 [params]
 
