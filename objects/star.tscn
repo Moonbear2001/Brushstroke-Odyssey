@@ -1,10 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://bckab5xmmrat0"]
+[gd_scene load_steps=7 format=3 uid="uid://bckab5xmmrat0"]
 
 [ext_resource type="Script" path="res://objects/star.gd" id="1_7emdp"]
 [ext_resource type="Texture2D" uid="uid://c1ptg3amxvk6i" path="res://art/menu/star_full.png" id="3_2vppc"]
+[ext_resource type="AudioStream" uid="uid://bkbnn38euoixv" path="res://audio/sfx/new_info.mp3" id="3_kx4ee"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_767e8"]
 radius = 10.3276
+
+[sub_resource type="Animation" id="Animation_djafo"]
+resource_name = "collect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.2, 0.2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1000), Vector2(0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_kx4ee")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbqes"]
+_data = {
+"collect": SubResource("Animation_djafo")
+}
 
 [node name="Star" type="Node2D"]
 script = ExtResource("1_7emdp")
@@ -18,5 +54,12 @@ texture = ExtResource("3_2vppc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea"]
 scale = Vector2(49.48, 49.48)
 shape = SubResource("CircleShape2D_767e8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xbqes")
+}
 
 [connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]

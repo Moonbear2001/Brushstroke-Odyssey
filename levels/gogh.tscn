@@ -68,3 +68,11 @@ bus = &"Music"
 [node name="Star1" parent="Stars" instance=ExtResource("5_huc8b")]
 position = Vector2(290, 80)
 scale = Vector2(0.0400012, 0.0400012)
+
+[node name="Star2" parent="Stars" instance=ExtResource("5_huc8b")]
+position = Vector2(350, 86)
+scale = Vector2(0.0400012, 0.0400012)
+
+[node name="Star3" parent="Stars" instance=ExtResource("5_huc8b")]
+position = Vector2(234, 79)
+scale = Vector2(0.0400012, 0.0400012)
