@@ -121,7 +121,7 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_bx6pg")
 animation = &"outline"
 
-[node name="ProtagonistBig" parent="." instance=ExtResource("2_hfs4s")]
+[node name="ProtagonistBig" parent="." groups=["big protagonist"] instance=ExtResource("2_hfs4s")]
 position = Vector2(1496, 515)
 scale = Vector2(0.75, 0.75)
 big = true

@@ -17,7 +17,7 @@ var high_scores : HighScores
 var user_settings: UserSettings
 var waiting_for_duplicate: bool = false
 var scene_transitioning = false
-
+var menu_pos = Vector2.ZERO
 
 # Stuff that should happen on game start up
 func _ready() -> void:

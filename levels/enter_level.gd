@@ -5,6 +5,8 @@ An interactable area that takes the player into a new scene when interacted
 with.
 """
 
+signal entering_level()
+
 @onready var interaction_area = $InteractionArea
 @onready var overlay = $Overlay
 
@@ -30,4 +32,5 @@ func hide_overlay():
 
 func enter_level():
 	if level_name:
+		entering_level.emit()
 		SceneManager.load_new_scene(Global.LEVELS_PATH + level_name + ".tscn")
