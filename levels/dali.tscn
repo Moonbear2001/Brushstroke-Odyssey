@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_d4s5o"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_3lwtv"]
-[ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="3_losmo"]
 [ext_resource type="AudioStream" uid="uid://73wpow8lpsyc" path="res://audio/music/mystic_forest_ambient.mp3" id="4_ysj0h"]
+[ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yo6q6"]
 
-[node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end", "stars")]
+[node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end", "stars")]
 position = Vector2(3, 0)
 script = ExtResource("1_d4s5o")
 level_name = "dali"
 protagonist = NodePath("Protagonist")
-stopwatch = NodePath("PlayerUI/Stopwatch")
+level_ui = NodePath("LevelUI")
 end = NodePath("End")
 stars = [NodePath("Stars/Star1")]
 
@@ -52,11 +52,6 @@ position = Vector2(40, 130)
 scale = Vector2(39.44, 1)
 shape = SubResource("RectangleShape2D_yo6q6")
 
-[node name="PlayerUI" type="CanvasLayer" parent="."]
-
-[node name="Stopwatch" parent="PlayerUI" instance=ExtResource("3_losmo")]
-position = Vector2(3, 0)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ysj0h")
 autoplay = true
@@ -67,3 +62,5 @@ bus = &"Music"
 [node name="Star1" parent="Stars" instance=ExtResource("5_uogdb")]
 position = Vector2(350, 87)
 scale = Vector2(0.05, 0.05)
+
+[node name="LevelUI" parent="." instance=ExtResource("5_8t4rr")]

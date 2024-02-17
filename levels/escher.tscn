@@ -49,11 +49,11 @@
 [ext_resource type="Texture2D" uid="uid://bhvt2f75g8g3p" path="res://art/Esher/section3/long_block.png" id="41_khvcq"]
 [ext_resource type="Texture2D" uid="uid://37srqvjfc7ev" path="res://art/Esher/section3/moving_block.png" id="42_fowqm"]
 [ext_resource type="Texture2D" uid="uid://bkhmkbfqb4lc6" path="res://art/Esher/end!!!.png" id="48_3cxfi"]
-[ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="49_kass5"]
 [ext_resource type="PackedScene" uid="uid://bxkg871gnuocl" path="res://objects/doors/floor_door.tscn" id="50_w1bq1"]
 [ext_resource type="AudioStream" uid="uid://d1gwdnwvx3f52" path="res://audio/music/atmospheric_loop.mp3" id="50_ykumc"]
 [ext_resource type="Texture2D" uid="uid://oc3w211fkgi8" path="res://art/Esher/front_stair_end_door.png" id="53_57aom"]
 [ext_resource type="Texture2D" uid="uid://cobs2epkltbku" path="res://art/Esher/front_stair_end_door2.png" id="54_hnj44"]
+[ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="54_kuasg"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -299,11 +299,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mhpl"]
 size = Vector2(16, 573)
 
-[node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end")]
+[node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
 script = ExtResource("1_4xute")
 level_name = "escher"
 protagonist = NodePath("Protagonist")
-stopwatch = NodePath("PlayerUI/Stopwatch")
+level_ui = NodePath("LevelUI")
 end = NodePath("End")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -1363,10 +1363,6 @@ scale = Vector2(-2.37316, -0.6978)
 position = Vector2(3233, 399)
 scale = Vector2(0.192, 0.6)
 
-[node name="PlayerUI" type="CanvasLayer" parent="."]
-
-[node name="Stopwatch" parent="PlayerUI" instance=ExtResource("49_kass5")]
-
 [node name="End" type="Area2D" parent="."]
 position = Vector2(8991, 444)
 
@@ -1378,6 +1374,8 @@ shape = SubResource("RectangleShape2D_4mhpl")
 stream = ExtResource("50_ykumc")
 autoplay = true
 bus = &"Music"
+
+[node name="LevelUI" parent="." instance=ExtResource("54_kuasg")]
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]

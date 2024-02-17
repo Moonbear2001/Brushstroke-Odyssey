@@ -32,8 +32,12 @@ tracks/1/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("3_kx4ee")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
 }],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0, 2.5)
 }
 tracks/1/use_blend = true
 
@@ -42,7 +46,7 @@ _data = {
 "collect": SubResource("Animation_djafo")
 }
 
-[node name="Star" type="Node2D"]
+[node name="Star" type="Node2D" groups=["star"]]
 script = ExtResource("1_7emdp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -56,6 +60,8 @@ scale = Vector2(49.48, 49.48)
 shape = SubResource("CircleShape2D_767e8")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kx4ee")
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

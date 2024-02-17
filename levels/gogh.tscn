@@ -2,22 +2,22 @@
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_rlq30"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_jcigm"]
-[ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="3_8ej5w"]
 [ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="4_763oi"]
+[ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_1f3ar"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_huc8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yo6q6"]
 
-[node name="Gogh" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end", "stars")]
+[node name="Gogh" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end", "stars")]
 position = Vector2(3, 0)
 script = ExtResource("1_rlq30")
 level_name = "gogh"
 protagonist = NodePath("Protagonist")
-stopwatch = NodePath("PlayerUI/Stopwatch")
+level_ui = NodePath("LevelUI")
 end = NodePath("End")
-stars = [NodePath("Stars/Star1")]
+stars = [NodePath("Stars/Star1"), NodePath("Stars/Star2"), NodePath("Stars/Star3")]
 
 [node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
 position = Vector2(157, 82)
@@ -53,11 +53,6 @@ position = Vector2(40, 130)
 scale = Vector2(39.44, 1)
 shape = SubResource("RectangleShape2D_yo6q6")
 
-[node name="PlayerUI" type="CanvasLayer" parent="."]
-
-[node name="Stopwatch" parent="PlayerUI" instance=ExtResource("3_8ej5w")]
-position = Vector2(3, 0)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_763oi")
 autoplay = true
@@ -76,3 +71,5 @@ scale = Vector2(0.0400012, 0.0400012)
 [node name="Star3" parent="Stars" instance=ExtResource("5_huc8b")]
 position = Vector2(234, 79)
 scale = Vector2(0.0400012, 0.0400012)
+
+[node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]

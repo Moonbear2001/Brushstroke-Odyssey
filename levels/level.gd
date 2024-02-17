@@ -12,14 +12,17 @@ kind of abstract superclass for a level.
 # The main playable character
 @export var protagonist: Protagonist
 
-# Stopwatch to keep track of score
-@export var stopwatch: Stopwatch
+# Level's user interface
+@export var level_ui: LevelUI
 
 # Area that when entered is the end of the level
 @export var end: Area2D
 
 # Stars to be collected
 @export var stars: Array[Star]
+
+# Stopwatch to keep track of score
+@onready var stopwatch: Stopwatch = $LevelUI/Stopwatch
 
 # Stars that have been collected
 var collected_stars: int = 0
@@ -34,6 +37,8 @@ func _ready() -> void:
 	# Setup signal for each star
 	for star in stars:
 		star.collected.connect(collect_star)
+		
+	
 
 # Track collected stars
 func collect_star() -> void:

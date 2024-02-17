@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://objects/moving_platform.gd" id="17_vmtur"]
 [ext_resource type="Texture2D" uid="uid://mwc0pgttbsej" path="res://art/L0/Rectangle 26.png" id="18_kdiem"]
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
-[ext_resource type="PackedScene" uid="uid://blrqdqdom7guo" path="res://objects/stopwatch.tscn" id="19_50ti2"]
+[ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="21_n74nv"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="22_r7ynq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0doj"]
@@ -65,11 +65,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnas"]
 size = Vector2(254, 512)
 
-[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "stopwatch", "end", "stars")]
+[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end", "stars")]
 script = ExtResource("1_b2fp5")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
-stopwatch = NodePath("PlayerUI/Stopwatch")
+level_ui = NodePath("LevelUI")
 end = NodePath("End")
 stars = [NodePath("Stars/Star1")]
 
@@ -344,19 +344,6 @@ libraries = {
 position = Vector2(1226, 369)
 scale = Vector2(0.05, 0.05)
 
-[node name="PlayerUI" type="CanvasLayer" parent="."]
-
-[node name="Stopwatch" parent="PlayerUI" instance=ExtResource("19_50ti2")]
-
-[node name="Camera2D" type="Camera2D" parent="PlayerUI"]
-ignore_rotation = false
-limit_left = 0
-limit_top = 0
-limit_bottom = 725
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-rotation_smoothing_enabled = true
-
 [node name="End" type="Area2D" parent="."]
 position = Vector2(3467, 142)
 
@@ -369,5 +356,7 @@ shape = SubResource("RectangleShape2D_xjnas")
 [node name="Star1" parent="Stars" instance=ExtResource("22_r7ynq")]
 position = Vector2(368, 282)
 scale = Vector2(0.05, 0.05)
+
+[node name="LevelUI" parent="." instance=ExtResource("21_n74nv")]
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
