@@ -1,7 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://b66jvbecg4tog"]
+[gd_scene load_steps=26 format=3 uid="uid://b66jvbecg4tog"]
 
 [ext_resource type="Script" path="res://objects/doors/door.gd" id="1_hja7c"]
-[ext_resource type="Texture2D" uid="uid://cm3geieecstfd" path="res://art/Esher/doors.png" id="2_2b7l1"]
 [ext_resource type="Texture2D" uid="uid://b0eq7iu5dxkel" path="res://art/Esher/doors/doors.png" id="3_cjaks"]
 [ext_resource type="Script" path="res://interaction/interaction_area.gd" id="3_sm474"]
 
@@ -224,10 +223,6 @@ region = Rect2(682, 0, 205, 367)
 atlas = ExtResource("3_cjaks")
 region = Rect2(468, 0, 205, 367)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hsarx"]
-atlas = ExtResource("2_2b7l1")
-region = Rect2(346, 305, 176, 302)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjw6o"]
 atlas = ExtResource("3_cjaks")
 region = Rect2(682, 367, 205, 367)
@@ -319,9 +314,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hsarx")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fjw6o")
 }],

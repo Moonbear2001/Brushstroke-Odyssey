@@ -65,13 +65,12 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnas"]
 size = Vector2(254, 512)
 
-[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end", "stars")]
+[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
 script = ExtResource("1_b2fp5")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
 level_ui = NodePath("LevelUI")
 end = NodePath("End")
-stars = [NodePath("Stars/Star1")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

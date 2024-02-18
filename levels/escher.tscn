@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=78 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_4xute"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://oc3w211fkgi8" path="res://art/Esher/front_stair_end_door.png" id="53_57aom"]
 [ext_resource type="Texture2D" uid="uid://cobs2epkltbku" path="res://art/Esher/front_stair_end_door2.png" id="54_hnj44"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="54_kuasg"]
+[ext_resource type="PackedScene" uid="uid://dmtefdkou43hk" path="res://objects/doors/left_inverse_door.tscn" id="55_tvs1l"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -311,7 +312,7 @@ end = NodePath("End")
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Backdrop" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(2012, 357)
+position = Vector2(2012, 359)
 scale = Vector2(0.642417, 0.642417)
 texture = ExtResource("2_nopj3")
 
@@ -390,7 +391,7 @@ scale = Vector2(0.275619, 0.275619)
 texture = ExtResource("5_yolr1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Second structure"]
-polygon = PackedVector2Array(1631.03, -15.5172, 1634.48, 52.5862, 1659.48, 54.3104, 1660.35, 167.241, 1605.17, 173.276, 1599.14, 256.897, 1687.07, 250.862, 1688.79, 327.586, 1715.52, 328.448, 1715.52, 431.035, 1741.38, 435.345, 1743.97, 457.759, 1768.97, 462.069, 1771.55, 485.345, 1795.69, 491.379, 1794.83, 522.414, 1954.31, 520.69, 1951.72, 563.793, 1572.41, 565.517, 1560.35, 541.379, 1564.66, 523.276, 1589.66, 518.104, 1592.24, 493.104, 1615.52, 487.931, 1618.97, 465.517, 1644.83, 457.759, 1646.55, 436.207, 1679.31, 434.483, 1675, 381.035, 1488.79, 380.172, 1487.93, 447.414, 1520.69, 443.966, 1523.28, 611.207, 1953.45, 611.207, 1957.76, 631.897, 1468.97, 632.759, 1468.97, 305.172, 1567.24, 305.172, 1566.38, -28.4483)
+polygon = PackedVector2Array(1631.03, -15.5172, 1634.48, 52.5862, 1659.48, 54.3104, 1660.35, 167.241, 1605.17, 173.276, 1600, 250.862, 1687.07, 250.862, 1688.79, 327.586, 1715.52, 328.448, 1715.52, 431.035, 1741.38, 435.345, 1743.97, 457.759, 1768.97, 462.069, 1771.55, 485.345, 1795.69, 491.379, 1794.83, 522.414, 1954.31, 520.69, 1951.72, 563.793, 1572.41, 565.517, 1560.35, 541.379, 1564.66, 523.276, 1589.66, 518.104, 1592.24, 493.104, 1615.52, 487.931, 1618.97, 465.517, 1644.83, 457.759, 1646.55, 436.207, 1679.31, 434.483, 1675, 381.035, 1488.79, 380.172, 1487.93, 447.414, 1520.69, 443.966, 1523.28, 611.207, 1953.45, 611.207, 1957.76, 631.897, 1468.97, 632.759, 1468.97, 305.172, 1567.24, 305.172, 1566.38, -28.4483)
 
 [node name="Stairs" type="Node2D" parent="Platforms"]
 
@@ -991,7 +992,7 @@ platform_id = 4
 
 [node name="Doors" type="Node2D" parent="."]
 
-[node name="RedDoor0" parent="Doors" instance=ExtResource("14_8a6pv")]
+[node name="RedDoor0" parent="Doors" groups=["checkpoint"] instance=ExtResource("14_8a6pv")]
 position = Vector2(179, 462)
 id = 0
 exit_id = 1
@@ -1054,11 +1055,11 @@ exit_id = 8
 y_offset = 25
 color = "red"
 
-[node name="YellowDoor2" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(1657, 264)
+[node name="Door" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(1655, 247)
 id = 10
 exit_id = 11
-x_offset = 25
+x_offset = 10
 color = "green"
 
 [node name="YellowDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
@@ -1084,12 +1085,14 @@ color = "purple"
 position = Vector2(2113, 663)
 id = 15
 exit_id = 14
+x_offset = 10
 color = "purple"
 
 [node name="GoldDoor0" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(2830, 223)
 id = 16
 exit_id = 17
+x_offset = -10
 color = "yellow"
 duplicate_id = 18
 
@@ -1099,13 +1102,15 @@ rotation = 3.14159
 gravity_dir = "up"
 id = 18
 exit_id = 16
+x_offset = 10
 color = "yellow"
 duplicate = true
 
-[node name="GoldDoor2" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(2925, 159)
+[node name="Door2" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(2929, 156)
 id = 17
 exit_id = 16
+x_offset = 10
 color = "yellow"
 
 [node name="GoldDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
@@ -1114,8 +1119,8 @@ id = 40
 exit_id = 41
 color = "green"
 
-[node name="GoldDoor4" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
-position = Vector2(4440, 632)
+[node name="Door3" parent="Doors" groups=["checkpoint"] instance=ExtResource("55_tvs1l")]
+position = Vector2(4437, 633)
 id = 41
 exit_id = 40
 color = "green"
@@ -1127,8 +1132,8 @@ id = 20
 exit_id = 21
 color = "yellow"
 
-[node name="YellowDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(4970, 217)
+[node name="Door4" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(4962, 217)
 id = 21
 exit_id = 20
 color = "yellow"
@@ -1345,7 +1350,7 @@ exit_id = 12
 color = "blue"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(2613, 351)
+position = Vector2(67, 3)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1360,7 +1365,7 @@ position = Vector2(9634, 1000)
 scale = Vector2(-2.37316, -0.6978)
 
 [node name="Death3" parent="." instance=ExtResource("17_npv7l")]
-position = Vector2(3233, 399)
+position = Vector2(3233, 384)
 scale = Vector2(0.192, 0.6)
 
 [node name="End" type="Area2D" parent="."]
@@ -1376,6 +1381,15 @@ autoplay = true
 bus = &"Music"
 
 [node name="LevelUI" parent="." instance=ExtResource("54_kuasg")]
+
+[node name="Camera2D" type="Camera2D" parent="LevelUI"]
+ignore_rotation = false
+limit_left = 0
+limit_top = 0
+limit_bottom = 725
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]

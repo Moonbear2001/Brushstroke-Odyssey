@@ -24,12 +24,15 @@ kind of abstract superclass for a level.
 # Stopwatch to keep track of score
 @onready var stopwatch: Stopwatch = $LevelUI/Stopwatch
 
+@onready var camera: Camera2D = $LevelUI/Camera2D
+
 # Stars that have been collected
 var collected_stars: int = 0
 
 
 # Ready
 func _ready() -> void:
+	camera.global_position = protagonist.global_position
 	
 	# Set up end signal
 	end.body_entered.connect(level_end)
@@ -38,7 +41,17 @@ func _ready() -> void:
 	for star in stars:
 		star.collected.connect(collect_star)
 		
-	
+func _process(delta) -> void:
+	var x = 0
+	var y = 0
+	var size = 0
+	for p in get_tree().get_nodes_in_group("protagonist"):
+		x += p.global_position.x
+		y += p.global_position.y
+		size += 1
+
+	camera.global_position.x = int(x / size)
+	camera.global_position.y = int(y / size)
 
 # Track collected stars
 func collect_star() -> void:
