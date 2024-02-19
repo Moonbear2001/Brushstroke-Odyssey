@@ -40,6 +40,7 @@ position = Vector2(3, 0)
 scale = Vector2(0.993906, 0.993906)
 
 [node name="Stars" type="Node2D" parent="."]
+position = Vector2(28, 0)
 
 [node name="Star1" type="AnimatedSprite2D" parent="Stars"]
 position = Vector2(60, 13)

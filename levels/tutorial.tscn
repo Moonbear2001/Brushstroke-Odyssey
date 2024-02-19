@@ -65,11 +65,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjnas"]
 size = Vector2(254, 512)
 
-[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
+[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "end")]
 script = ExtResource("1_b2fp5")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
-level_ui = NodePath("LevelUI")
 end = NodePath("End")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -88,7 +87,7 @@ position = Vector2(301, 374)
 texture = ExtResource("18_mr6vo")
 
 [node name="Protagonist" parent="." instance=ExtResource("1_3wox7")]
-position = Vector2(3208, 461)
+position = Vector2(208, 350)
 
 [node name="Death" parent="." instance=ExtResource("15_yj68c")]
 
@@ -321,7 +320,7 @@ scale = Vector2(0.257026, 0.204385)
 polygon = PackedVector2Array(354.05, 450.131, 649.739, 450.131, 649.74, 538.2, 354.05, 538.2)
 
 [node name="MPlatform" type="Node2D" parent="Platforms" groups=["MovingPlatform"]]
-position = Vector2(1325, 398)
+position = Vector2(1334, 370)
 script = ExtResource("17_vmtur")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Platforms/MPlatform"]
@@ -340,14 +339,14 @@ libraries = {
 }
 
 [node name="Lever" parent="." instance=ExtResource("16_1ismo")]
-position = Vector2(1226, 369)
+position = Vector2(1226, 380)
 scale = Vector2(0.05, 0.05)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(3467, 142)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(-28, 226)
+position = Vector2(-130, 122)
 shape = SubResource("RectangleShape2D_xjnas")
 
 [node name="Stars" type="Node2D" parent="."]
@@ -357,5 +356,14 @@ position = Vector2(368, 282)
 scale = Vector2(0.05, 0.05)
 
 [node name="LevelUI" parent="." instance=ExtResource("21_n74nv")]
+
+[node name="Camera2D" type="Camera2D" parent="LevelUI"]
+ignore_rotation = false
+limit_left = 0
+limit_top = -5
+limit_bottom = 660
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]

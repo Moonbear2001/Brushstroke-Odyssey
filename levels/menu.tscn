@@ -1,16 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://bdhced5wuwde4"]
+[gd_scene load_steps=24 format=3 uid="uid://bdhced5wuwde4"]
 
 [ext_resource type="Script" path="res://levels/menu.gd" id="1_2sh28"]
 [ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
 [ext_resource type="PackedScene" uid="uid://cn5gs4eorpydv" path="res://enter_level.tscn" id="2_a14vu"]
 [ext_resource type="PackedScene" uid="uid://cducn8pjghtlw" path="res://characters/protagonist_big.tscn" id="2_hfs4s"]
+[ext_resource type="Texture2D" uid="uid://boy0sedrcdqb3" path="res://art/menu/arrow.png" id="3_e6vvp"]
 [ext_resource type="Texture2D" uid="uid://lfn1xuiqba76" path="res://art/menu/front_arch1.png" id="3_fqd2f"]
 [ext_resource type="Texture2D" uid="uid://iembktiha2c6" path="res://art/menu/overlay1.png" id="3_mahh3"]
 [ext_resource type="Texture2D" uid="uid://cii75xj57gklt" path="res://art/menu/overlay2.png" id="4_a5gs1"]
 [ext_resource type="Texture2D" uid="uid://g8gm5345vui4" path="res://art/menu/front_arch2.png" id="4_te7xp"]
 [ext_resource type="Texture2D" uid="uid://0wu412e758o5" path="res://art/menu/overlay3.png" id="5_1sded"]
 [ext_resource type="Texture2D" uid="uid://bn7a7810kd884" path="res://art/menu/front_arch3.png" id="5_n8e3p"]
-[ext_resource type="Texture2D" uid="uid://vlkby45jl7lm" path="res://art/menu/blinking_arrows.png" id="6_wdumw"]
+[ext_resource type="Texture2D" uid="uid://dlvjs8qyw7flj" path="res://art/menu/Group 81.png" id="8_k2p16"]
 [ext_resource type="AudioStream" uid="uid://bl3f1ir388yng" path="res://audio/music/joie_de_vivre_albert_behar.mp3" id="11_cf0mi"]
 [ext_resource type="Script" path="res://audio/sound_pool.gd" id="14_dlvkp"]
 [ext_resource type="AudioStream" uid="uid://qpn4w2y7wal2" path="res://audio/music/la-loire-theo-gerard-main.mp3" id="16_4vahx"]
@@ -23,19 +24,19 @@ size = Vector2(7092, 55)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxxs1"]
 size = Vector2(20, 760)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v0q83"]
-atlas = ExtResource("6_wdumw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0h0f"]
+atlas = ExtResource("8_k2p16")
 region = Rect2(66, 0, 66, 68)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_npw26"]
-atlas = ExtResource("6_wdumw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4onku"]
+atlas = ExtResource("8_k2p16")
 region = Rect2(0, 0, 66, 68)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bx6pg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v0q83")
+"texture": SubResource("AtlasTexture_c0h0f")
 }],
 "loop": true,
 "name": &"fill",
@@ -43,7 +44,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_npw26")
+"texture": SubResource("AtlasTexture_4onku")
 }],
 "loop": true,
 "name": &"outline",
@@ -60,6 +61,11 @@ script = ExtResource("1_2sh28")
 position = Vector2(3388, 360)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_mibmc")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(1046, 469.5)
+scale = Vector2(0.895522, 0.897059)
+texture = ExtResource("3_e6vvp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -122,7 +128,7 @@ sprite_frames = SubResource("SpriteFrames_bx6pg")
 animation = &"outline"
 
 [node name="ProtagonistBig" parent="." groups=["big protagonist"] instance=ExtResource("2_hfs4s")]
-position = Vector2(1496, 515)
+position = Vector2(1263, 513)
 scale = Vector2(0.75, 0.75)
 big = true
 
