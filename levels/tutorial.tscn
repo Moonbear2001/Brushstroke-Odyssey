@@ -88,7 +88,7 @@ position = Vector2(301, 374)
 texture = ExtResource("18_mr6vo")
 
 [node name="Protagonist" parent="." instance=ExtResource("1_3wox7")]
-position = Vector2(200, 314)
+position = Vector2(3208, 461)
 
 [node name="Death" parent="." instance=ExtResource("15_yj68c")]
 

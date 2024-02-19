@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
 [ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="4_763oi"]
 [ext_resource type="Texture2D" uid="uid://cunk6bh7ewi4w" path="res://art/gogh/house section/houses/IMG_0444.PNG" id="4_sknkl"]
-[ext_resource type="PackedScene" path="res://scenes/level_ui.tscn" id="5_1f3ar"]
+[ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_1f3ar"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_huc8b"]
 [ext_resource type="Texture2D" uid="uid://bfkddg653gdh" path="res://art/gogh/house section/houses/IMG_0417.PNG" id="5_pis4t"]
 [ext_resource type="Texture2D" uid="uid://bhpog2xdqk2co" path="res://art/gogh/house section/houses/IMG_0419.PNG" id="7_xoa8w"]
@@ -359,7 +359,6 @@ scale = Vector2(1, 5.72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(3890, -42.6573)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qrr0h")
 
 [node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]

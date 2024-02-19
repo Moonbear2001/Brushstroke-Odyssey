@@ -10,6 +10,7 @@ const LEVELS = ["tutorial", "escher", "gogh", "dali"]
 const SAVE_DATA_PATH = "user://"
 const LEVELS_PATH = "res://levels/"
 const MENU_PATH = LEVELS_PATH + "menu.tscn"
+const DEF_MENU_POS = Vector2(1500, 500)
 
 
 # Global variables
@@ -21,6 +22,7 @@ var menu_pos = Vector2.ZERO
 
 # Stuff that should happen on game start up
 func _ready() -> void:
+	menu_pos = DEF_MENU_POS
 	create_or_load_high_scores()
 	create_or_load_user_settings()
 
