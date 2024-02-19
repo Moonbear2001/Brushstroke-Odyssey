@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=79 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_4xute"]
 [ext_resource type="Texture2D" uid="uid://b7nuahpv3dk0q" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -53,9 +53,9 @@
 [ext_resource type="AudioStream" uid="uid://d1gwdnwvx3f52" path="res://audio/music/atmospheric_loop.mp3" id="50_ykumc"]
 [ext_resource type="Texture2D" uid="uid://oc3w211fkgi8" path="res://art/Esher/front_stair_end_door.png" id="53_57aom"]
 [ext_resource type="Texture2D" uid="uid://cobs2epkltbku" path="res://art/Esher/front_stair_end_door2.png" id="54_hnj44"]
-[ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="54_kuasg"]
-[ext_resource type="PackedScene" uid="uid://dmtefdkou43hk" path="res://objects/doors/left_inverse_door.tscn" id="55_tvs1l"]
 [ext_resource type="PackedScene" path="res://scenes/level_ui.tscn" id="54_kuasg"]
+[ext_resource type="PackedScene" path="res://objects/doors/left_inverse_door.tscn" id="55_tvs1l"]
+[ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="56_k5iqm"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -313,7 +313,7 @@ end = NodePath("End")
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Backdrop" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(2012, 359)
+position = Vector2(2030, 360)
 scale = Vector2(0.642417, 0.642417)
 texture = ExtResource("2_nopj3")
 
@@ -322,7 +322,7 @@ motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1522, 0)
 
 [node name="Backkk" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(1261, 366)
+position = Vector2(1246, 369)
 scale = Vector2(0.682746, 0.682746)
 texture = ExtResource("3_1afl0")
 
@@ -330,7 +330,7 @@ texture = ExtResource("3_1afl0")
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="MidgroundNew" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(2958.76, 376.5)
+position = Vector2(2968, 361)
 scale = Vector2(0.752841, 0.752841)
 texture = ExtResource("4_6mjae")
 
@@ -590,20 +590,19 @@ position = Vector2(-7261.96, -495.092)
 scale = Vector2(1.71023, 1)
 polygon = PackedVector2Array(4131, 489, 4135, 550, 4285.95, 557.092, 4285, 518, 4285, 450, 4146, 452)
 
-[node name="GoldDoor5" parent="Platforms/MPlatform3/AnimatableBody2D" instance=ExtResource("10_w7r7g")]
-position = Vector2(37.2002, 84.908)
-rotation = -3.14159
-gravity_dir = "up"
-id = 39
-exit_id = 41
-color = "green"
-duplicate = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MPlatform3/AnimatableBody2D"]
 libraries = {
 "": SubResource("AnimationLibrary_vtlc4")
 }
 autoplay = "move_vertical"
+
+[node name="Door" parent="Platforms/MPlatform3/AnimatableBody2D" instance=ExtResource("55_tvs1l")]
+position = Vector2(23, 95)
+rotation = -3.14159
+id = 39
+exit_id = 41
+color = "green"
+duplicate = true
 
 [node name="fourth section" type="Node2D" parent="Platforms"]
 
@@ -770,7 +769,7 @@ polygon = PackedVector2Array(8651, 358, 8658, 427, 8666, 429, 8667, 442, 8676, 4
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/StaticBody2D3"]
 position = Vector2(-149, 2)
-polygon = PackedVector2Array(8651, 357, 8658, 292, 8669, 290, 8671, 275, 8682, 270, 8683, 256, 8694, 251, 8694, 236, 8706, 232, 8708, 217, 8718, 213, 8720, 197, 8729, 191, 8730, 178, 8741, 172, 8740, 155, 8751, 151, 8747, 130, 8757, 123, 8756, 110, 8765, 105, 8765, 101, 8765, 97, 8765, 93, 8765, 89, 8766, 84, 8767, 80, 8768, 77, 8769, 74, 8771, 71, 8773, 68, 8776, 65, 8778, 63, 8781, 61, 8783, 59, 8786, 57, 8789, 55, 8793, 53, 8796, 51, 8799, 50, 8803, 49, 8806, 48, 8809, 48, 8812, 48, 8816, 48, 8819, 48, 8823, 48, 8826, 48, 8829, 49, 8832, 50, 8835, 51, 8838, 52, 8840, 53, 8842, 54, 8845, 56, 8848, 58, 8850, 60, 8852, 62, 8855, 65, 8857, 67, 8860, 69, 8896, 54, 9109, 48, 9147, 68, 9213, 63, 9264, -4, 8771, 1, 8563, 356)
+polygon = PackedVector2Array(8651, 357, 8649, 291, 8669, 290, 8671, 275, 8682, 270, 8683, 256, 8694, 251, 8694, 236, 8706, 232, 8708, 217, 8718, 213, 8720, 197, 8729, 191, 8730, 178, 8741, 172, 8740, 155, 8751, 151, 8747, 130, 8757, 123, 8756, 110, 8765, 105, 8765, 101, 8765, 97, 8765, 93, 8765, 89, 8766, 84, 8767, 80, 8768, 77, 8769, 74, 8771, 71, 8773, 68, 8776, 65, 8778, 63, 8781, 61, 8783, 59, 8786, 57, 8789, 55, 8793, 53, 8796, 51, 8799, 50, 8803, 49, 8806, 48, 8809, 48, 8812, 48, 8816, 48, 8819, 48, 8823, 48, 8826, 48, 8829, 49, 8832, 50, 8835, 51, 8838, 52, 8840, 53, 8842, 54, 8845, 56, 8848, 58, 8850, 60, 8852, 62, 8855, 65, 8857, 67, 8860, 69, 8896, 54, 9109, 48, 9147, 68, 9213, 63, 9264, -4, 8771, 1, 8563, 356)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Platforms/StaticBody2D3"]
 position = Vector2(-81, 0)
@@ -797,15 +796,15 @@ polygon = PackedVector2Array(8375, 317, 8375, 345, 7603, 340, 7601, 312)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
 position = Vector2(-89, -8)
-polygon = PackedVector2Array(7600, 691, 7704, 687, 7707, 652, 7728, 647, 7730, 628, 7750, 624, 7753, 605, 7771, 603, 7775, 583, 7796, 581, 7799, 679, 7957, 683, 7961, 581, 7870, 560, 7873, 530, 7892, 527, 7894, 507, 7914, 504, 7915, 486, 7934, 480, 7937, 462, 7957, 459, 7959, 440, 8019, 440, 8018, 342, 8058, 341, 8061, 781, 7599, 779)
+polygon = PackedVector2Array(7600, 691, 7704, 687, 7707, 652, 7728, 647, 7730, 628, 7750, 624, 7753, 605, 7771, 603, 7775, 583, 7796, 581, 7799, 679, 7959, 687, 7965, 578, 7870, 560, 7873, 530, 7892, 527, 7894, 507, 7914, 504, 7915, 486, 7934, 480, 7937, 462, 7957, 459, 7959, 440, 8022, 443, 8023, 339, 8058, 341, 8061, 781, 7599, 779)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
 position = Vector2(-89, -8)
-polygon = PackedVector2Array(8057, 341, 8060, 781, 8094, 742, 8107, 511, 8129, 509, 8132, 490, 8151, 487, 8155, 468, 8174, 465, 8173, 441, 8082, 438, 8081, 359, 8191, 360, 8191, 343)
+polygon = PackedVector2Array(8057, 341, 8060, 781, 8094, 742, 8095, 511, 8129, 509, 8132, 490, 8151, 487, 8155, 468, 8174, 465, 8173, 441, 8078, 439, 8078, 358, 8191, 360, 8191, 343)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
 position = Vector2(-89, -8)
-polygon = PackedVector2Array(8345, 345, 8344, 394, 8271, 402, 8270, 423, 8287, 425, 8291, 445, 8310, 447, 8314, 467, 8338, 467, 8344, 730, 8374, 780, 8375, 344)
+polygon = PackedVector2Array(8345, 345, 8344, 394, 8271, 402, 8270, 423, 8287, 425, 8291, 445, 8310, 447, 8314, 467, 8338, 467, 8348, 731, 8374, 780, 8375, 344)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Platforms/StaticBody2D2"]
 position = Vector2(-89, -8)
@@ -841,7 +840,7 @@ scale = Vector2(0.313, 0.313)
 texture = ExtResource("38_7oji8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fifth section/StaticBody2D7"]
-polygon = PackedVector2Array(6464, 138, 6463, 210, 6395, 214, 6394, 320, 6462, 324, 6463, 410, 6394, 413, 6393, 501, 6350, 505, 6349, 587, 6310, 588, 6306, 612, 6287, 614, 6284, 636, 6265, 640, 6260, 664, 6246, 668, 6239, 692, 6257, 699, 6687, 700, 6686, 659, 6685, 642, 6509, 641, 6508, 583, 6617, 578, 6618, 459, 6612, 441, 6486, 435, 6488, 134)
+polygon = PackedVector2Array(6464, 138, 6463, 210, 6395, 214, 6394, 320, 6462, 324, 6463, 410, 6394, 413, 6393, 501, 6350, 505, 6349, 587, 6310, 588, 6306, 612, 6287, 614, 6284, 636, 6265, 640, 6260, 664, 6246, 668, 6239, 692, 6257, 699, 6687, 700, 6686, 659, 6685, 642, 6509, 641, 6508, 583, 6617, 578, 6618, 459, 6612, 441, 6486, 435, 6478, 136)
 
 [node name="MPlatform" type="Node2D" parent="Platforms/fifth section" groups=["MovingPlatform"]]
 position = Vector2(6145, 461)
@@ -955,7 +954,7 @@ polygon = PackedVector2Array(6864, 286, 6864, 318, 6949, 318, 6947, 302, 6943, 2
 position = Vector2(6936, 411)
 id = 30
 exit_id = 29
-color = "red"
+color = "black"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/fifth section/AnimatableBody2D11"]
 libraries = {
@@ -1030,7 +1029,7 @@ color = "yellow"
 position = Vector2(970, 481)
 id = 5
 exit_id = 6
-x_offset = -25
+x_offset = -35
 color = "blue"
 
 [node name="BlueDoor1" parent="Doors" instance=ExtResource("14_8a6pv")]
@@ -1154,31 +1153,6 @@ enter = false
 exit_id = 22
 color = "purple"
 
-[node name="RedDoor5" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(5863, 309)
-rotation = -3.14159
-id = 24
-exit_id = 25
-color = "red"
-
-[node name="RedDoor6" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(6088, 700)
-rotation = 1.5708
-gravity_dir = "right"
-id = 25
-enter = false
-exit_id = 24
-y_offset = 1
-color = "red"
-
-[node name="WhiteDoor2" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(6259, 70)
-rotation = 1.5708
-gravity_dir = "right"
-id = 26
-exit_id = 27
-color = "green"
-
 [node name="WhiteDoor3" parent="Doors" groups=["checkpoint"] instance=ExtResource("10_w7r7g")]
 position = Vector2(6499, 419)
 id = 27
@@ -1194,7 +1168,7 @@ color = "green"
 position = Vector2(6527, 619)
 id = 29
 exit_id = 30
-color = "red"
+color = "black"
 
 [node name="YellowDoor6" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(6889, 638)
@@ -1203,34 +1177,18 @@ exit_id = 32
 color = "yellow"
 
 [node name="YellowDoor7" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(6491, 163)
+position = Vector2(6488, 164)
 rotation = -3.14159
 gravity_dir = "up"
 id = 32
 exit_id = 31
 color = "yellow"
 
-[node name="BlueDoor7" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(6768, 70)
-rotation = -3.14159
-gravity_dir = "up"
-id = 33
-exit_id = 34
-color = "blue"
-
 [node name="BlueDoor8" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(7146, 656)
 id = 34
 exit_id = 33
 color = "blue"
-
-[node name="BlackDoor1" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(7185, 164)
-rotation = -3.14159
-gravity_dir = "up"
-id = 37
-exit_id = 38
-color = "purple"
 
 [node name="BlackDoor2" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(7192, 537)
@@ -1249,99 +1207,48 @@ color = "purple"
 position = Vector2(6955, 543)
 id = 35
 exit_id = 42
-color = "black"
+color = "red"
 
 [node name="GoldDoor7" parent="Doors" instance=ExtResource("10_w7r7g")]
 position = Vector2(7287, 657)
 id = 42
 enter = false
 x_offset = 1
-color = "black"
+color = "red"
 
 [node name="RedDoor9" parent="Doors" instance=ExtResource("14_8a6pv")]
 position = Vector2(7480, 653)
 scale = Vector2(0.8, 0.8)
 id = 43
 exit_id = 44
-color = "red"
+color = "purple"
 
 [node name="RedDoor10" parent="Doors" instance=ExtResource("10_w7r7g")]
 position = Vector2(7528, 657)
 scale = Vector2(0.8, 0.8)
 id = 44
 exit_id = 43
-color = "red"
+color = "purple"
 
 [node name="YellowDoor8" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(7920, 405)
+position = Vector2(7924, 408)
 scale = Vector2(0.8, 0.8)
 id = 45
 exit_id = 46
 color = "yellow"
 
-[node name="YellowDoor9" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8008, 381)
-scale = Vector2(0.8, 0.8)
-gravity_dir = "up"
-id = 46
-exit_id = 45
-color = "yellow"
-
 [node name="BlueDoor9" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(7859, 650)
+position = Vector2(7864, 653)
 scale = Vector2(0.8, 0.8)
 id = 47
 exit_id = 48
 color = "blue"
 
-[node name="BlueDoor10" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8023, 697)
-scale = Vector2(0.8, 0.8)
-id = 48
-exit_id = 47
-color = "blue"
-
-[node name="WhiteDoor5" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(8245, 366)
-scale = Vector2(0.8, 0.8)
-id = 49
-exit_id = 50
-color = "purple"
-
-[node name="WhiteDoor6" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8523, 323)
-scale = Vector2(0.72, 0.72)
-gravity_dir = "up"
-id = 50
-color = "purple"
-
-[node name="RedDoor11" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8032, 533)
-scale = Vector2(0.8, 0.8)
-id = 51
-exit_id = 52
-color = "red"
-
-[node name="RedDoor12" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(8519, 402)
-scale = Vector2(0.72, 0.72)
-id = 52
-enter = false
-color = "red"
-
 [node name="GoldDoor8" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(8245, 695)
+position = Vector2(8249, 701)
 scale = Vector2(0.8, 0.8)
 id = 53
 exit_id = 54
-color = "green"
-
-[node name="GoldDoor9" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(8239, 486)
-scale = Vector2(0.8, 0.8)
-gravity_dir = "up"
-id = 54
-exit_id = 53
 color = "green"
 
 [node name="FloorDoor" parent="Doors" instance=ExtResource("50_w1bq1")]
@@ -1350,8 +1257,105 @@ id = 13
 exit_id = 12
 color = "blue"
 
+[node name="Door5" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(5864, 317)
+rotation = -3.14159
+id = 24
+exit_id = 25
+color = "red"
+
+[node name="FloorDoor2" parent="Doors" instance=ExtResource("50_w1bq1")]
+position = Vector2(6092, 695)
+gravity_dir = "right"
+id = 25
+exit_id = 24
+color = "red"
+
+[node name="FloorDoor3" parent="Doors" instance=ExtResource("50_w1bq1")]
+position = Vector2(6270, 58)
+rotation = -3.14159
+gravity_dir = "right"
+id = 26
+exit_id = 27
+color = "green"
+
+[node name="Door7" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(6769, 71)
+rotation = -3.14159
+gravity_dir = "up"
+id = 33
+exit_id = 34
+color = "blue"
+
+[node name="Door6" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(7184, 174)
+rotation = -3.14159
+gravity_dir = "up"
+id = 37
+exit_id = 38
+color = "purple"
+
+[node name="Door8" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(7999, 383)
+rotation = -3.14159
+scale = Vector2(0.8, 0.8)
+gravity_dir = "up"
+id = 46
+exit_id = 45
+color = "yellow"
+
+[node name="Door9" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(8017, 530)
+rotation = -3.14159
+scale = Vector2(0.8, 0.8)
+gravity_dir = "up"
+id = 51
+exit_id = 52
+color = "red"
+
+[node name="Door10" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(8243, 357)
+rotation = -3.14159
+scale = Vector2(0.8, 0.8)
+gravity_dir = "up"
+id = 49
+exit_id = 50
+color = "purple"
+
+[node name="Door11" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(8238, 485)
+rotation = -3.14159
+scale = Vector2(0.8, 0.8)
+gravity_dir = "up"
+id = 54
+exit_id = 53
+color = "green"
+
+[node name="Door12" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(8024, 696)
+scale = Vector2(0.8, 0.8)
+id = 48
+exit_id = 47
+color = "blue"
+
+[node name="Door13" parent="Doors" instance=ExtResource("55_tvs1l")]
+position = Vector2(8524, 408)
+scale = Vector2(1, 0.6)
+id = 52
+enter = false
+color = "red"
+
+[node name="Door14" parent="Doors" instance=ExtResource("14_8a6pv")]
+position = Vector2(8512, 310)
+rotation = -3.14159
+scale = Vector2(1, 0.6)
+gravity_dir = "up"
+id = 50
+enter = false
+color = "purple"
+
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(67, 3)
+position = Vector2(52, 311)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1391,6 +1395,18 @@ limit_bottom = 725
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true
+
+[node name="Star" parent="." instance=ExtResource("56_k5iqm")]
+position = Vector2(2066, 499)
+scale = Vector2(0.03, 0.03)
+
+[node name="Star2" parent="." instance=ExtResource("56_k5iqm")]
+position = Vector2(6909, 3)
+scale = Vector2(0.03, 0.03)
+
+[node name="Star3" parent="." instance=ExtResource("56_k5iqm")]
+position = Vector2(6443, 175)
+scale = Vector2(0.03, 0.03)
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]

@@ -24,7 +24,7 @@ kind of abstract superclass for a level.
 # Stopwatch to keep track of score
 @onready var stopwatch: Stopwatch = $LevelUI/Stopwatch
 
-@onready var camera: Camera2D = $LevelUI/Camera2D
+@onready var camera: Camera2D = $Protagonist/Camera2D
 
 # Stars that have been collected
 var collected_stars: int = 0
@@ -41,7 +41,7 @@ func _ready() -> void:
 	for star in stars:
 		star.collected.connect(collect_star)
 		
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	var x = 0
 	var y = 0
 	var size = 0
@@ -63,6 +63,9 @@ func level_end(_body) -> void:
 	# Get player's scores for this run
 	stopwatch.stop_stopwatch()	
 	var time: float = stopwatch.get_best_time()
+	
+	# Stop player from moving
+	protagonist.disable()
 	
 	# Get best scores
 	var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)	

@@ -359,7 +359,6 @@ scale = Vector2(1, 5.72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(3890, -42.6573)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qrr0h")
 
 [node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]

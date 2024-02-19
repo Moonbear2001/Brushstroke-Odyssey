@@ -338,7 +338,7 @@ shape = SubResource("RectangleShape2D_0fjgy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_fbjyh")
-animation = &"black_open"
+animation = &"blue_closed"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
