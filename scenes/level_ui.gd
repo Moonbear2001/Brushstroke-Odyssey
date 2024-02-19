@@ -23,6 +23,7 @@ func _ready():
 		
 	
 func star_collected() -> void:
+	print(num_stars)
 	ui_stars[num_stars].play("full")
 	num_stars += 1
 	

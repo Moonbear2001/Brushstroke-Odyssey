@@ -38,7 +38,7 @@ func _ready() -> void:
 	end.body_entered.connect(level_end)
 	
 	# Setup signal for each star
-	for star in stars:
+	for star in get_tree().get_nodes_in_group("star"):
 		star.collected.connect(collect_star)
 		
 func _process(_delta) -> void:

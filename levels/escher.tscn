@@ -1359,7 +1359,7 @@ enter = false
 color = "purple"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(64, 297)
+position = Vector2(86, 362)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1395,7 +1395,7 @@ bus = &"Music"
 ignore_rotation = false
 limit_left = 0
 limit_top = -5
-limit_bottom = 725
+limit_bottom = 720
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true

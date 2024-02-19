@@ -172,7 +172,7 @@ scale = Vector2(0.091, 0.0906374)
 level_name = "dali"
 
 [node name="EscherScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(5322, -206)
+position = Vector2(5325, -206)
 scale = Vector2(0.091, 0.0906374)
 level_name = "escher"
 
