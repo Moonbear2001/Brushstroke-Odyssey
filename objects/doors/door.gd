@@ -54,6 +54,7 @@ func _on_body_entered(body):
 	if body.is_in_group("protagonist") and enter:
 		if duplicate:
 			body.queue_free()
+			print("freed")
 			if Global.waiting_for_duplicate:
 				var newNode: Protagonist = protagonist.instantiate()
 				teleport(newNode)
@@ -139,6 +140,7 @@ func duplicate_node(body):
 	var duplicatedNode: Protagonist = body.duplicate()
 	for door in get_tree().get_nodes_in_group("door"):
 		if door.id == duplicate_id and door != self and not door.lock_door:
+			door.lock()
 			duplicatedNode.global_position.x = door.global_position.x + door.x_offset
 			duplicatedNode.global_position.y = door.global_position.y + door.y_offset
 				

@@ -6,7 +6,7 @@ Main playable character.
 """
 
 # Export variables
-@export var input_enabled: bool = true
+@export var enabled: bool = true
 @export var big = false
 
 # Constants
@@ -26,8 +26,6 @@ var y_val = -1
 @onready var sprite = $AnimatedSprite2D
 @onready var collision_shape = $CollisionShape2D
 
-# Not using atm
-#var move_dir: Vector2
 
 func _ready():
 	if big:
@@ -35,44 +33,15 @@ func _ready():
 	anim.play("Idle")
 
 func _physics_process(delta):
-	if not input_enabled:
+	if not enabled:
 		return
-	
 	use_gravity(delta)
-
 	move_and_slide()
 
 # Handle input events, gets called before physics process
 func _input(_input_event):
-	
-	if not input_enabled:
+	if not enabled:
 		return
-	
-	# Testing camera rotation (C)
-	if Input.is_action_just_pressed("camera"):
-		camera.rotation_degrees += 90
-		
-	# Gravity control (G)
-	#if Input.is_action_just_pressed("gravity"):
-		#rotate_180()
-		
-# Switches gravity, rotates the character model and changes the up direction
-#func rotate_180():
-	#gravity_orientation *= -1
-	#
-	## Option for the future: 'if you want all collisions to be reported as walls, 
-	## consider using MOTION_MODE_FLOATING as motion_mode.' in CharacterBody2D docs
-	#
-	#if up_direction == Vector2.UP:
-		#up_direction = Vector2.DOWN
-	#else:
-		#up_direction = Vector2.UP
-#
-	#if self.rotation_degrees == 0:
-		#self.rotation_degrees = 180
-	#else:
-		#self.rotation_degrees = 0
-		
 
 func use_gravity(delta):
 	if x_val != 0:
@@ -216,13 +185,13 @@ func set_jump_animation():
 			elif v_jump * dir * -1 < 0:
 				anim.play("JumpCenter")
 
-# Disable visibility and controls
+# Disable visibility and controls and movement
 func disable():
-	input_enabled = false
+	enabled = false
 	visible = false
 
 # Enable visibility and controls
 func enable():
-	input_enabled = true
+	enabled = true
 	visible = true
 

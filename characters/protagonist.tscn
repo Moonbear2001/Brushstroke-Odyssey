@@ -584,12 +584,3 @@ animation = &"CrouchLeft"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_bdb12")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-ignore_rotation = false
-limit_left = 0
-limit_top = 0
-limit_bottom = 725
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-rotation_smoothing_enabled = true
