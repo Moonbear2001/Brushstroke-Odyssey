@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="24_hdcnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
-size = Vector2(21.5917, 15.5594)
+size = Vector2(11.8979, 8.30418)
 
 [node name="Gogh" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end", "stars")]
 position = Vector2(3, -62)
@@ -48,7 +48,7 @@ metadata/_edit_lock_ = true
 [node name="House Section" type="Node2D" parent="Platforms"]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(378, 115)
+position = Vector2(170, -4)
 metadata/_edit_group_ = true
 
 [node name="6" type="Sprite2D" parent="Platforms/House Section/StaticBody2D2"]
@@ -57,10 +57,10 @@ texture = ExtResource("4_sknkl")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D2"]
 position = Vector2(73, -9)
-polygon = PackedVector2Array(1243, 725, 1234, 608, 1275, 494, 1359, 493, 1365, 518, 1550, 514, 1574, 695, 1495, 717, 1383, 687, 1383, 714, 1312, 737)
+polygon = PackedVector2Array(1243, 725, 1234, 608, 1275, 494, 1359, 493, 1365, 518, 1550, 514, 1557, 698, 1495, 717, 1383, 687, 1383, 714, 1312, 737)
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-1473, -183)
+position = Vector2(-1677, -279)
 scale = Vector2(1.3, 1.3)
 metadata/_edit_group_ = true
 
@@ -74,7 +74,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(3303, 898, 3288, 797, 3350, 706, 3452, 696, 3521, 742, 3517, 751, 3493, 737, 3495, 838, 3438, 886)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-312, 142)
+position = Vector2(-516, 46)
 metadata/_edit_group_ = true
 
 [node name="13" type="Sprite2D" parent="Platforms/House Section/StaticBody2D"]
@@ -84,10 +84,10 @@ texture = ExtResource("3_4xp8y")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D"]
 position = Vector2(-46, -141)
-polygon = PackedVector2Array(2801, 783, 2778, 665, 2851, 527, 2980, 532, 3070, 588, 3066, 636, 3124, 656, 3138, 804, 3064, 843, 2908, 843, 2903, 775)
+polygon = PackedVector2Array(2801, 783, 2732, 671, 2851, 527, 2980, 532, 3070, 588, 3066, 636, 3124, 656, 3138, 804, 3064, 843, 2908, 843, 2903, 775)
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(1579, 392)
+position = Vector2(1375, 296)
 scale = Vector2(0.7, 0.7)
 metadata/_edit_group_ = true
 
@@ -101,7 +101,7 @@ position = Vector2(36.8571, -205.286)
 polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2132, 498, 2180, 585, 2163, 603, 2179, 722, 2087, 757)
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(36, 51)
+position = Vector2(29, 18)
 metadata/_edit_group_ = true
 
 [node name="3" type="Sprite2D" parent="Platforms/House Section/StaticBody2D7"]
@@ -111,7 +111,7 @@ texture = ExtResource("9_oapxk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D7"]
 position = Vector2(-71, -71)
-polygon = PackedVector2Array(427, 762, 433, 590, 510, 594, 549, 544, 622, 540, 664, 583, 662, 594, 733, 603, 761, 658, 736, 665, 748, 749)
+polygon = PackedVector2Array(448, 761, 433, 590, 510, 594, 549, 544, 622, 540, 664, 583, 662, 594, 733, 603, 777, 661, 736, 665, 748, 749)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/House Section"]
 position = Vector2(-23, 2)
@@ -127,7 +127,7 @@ position = Vector2(21, -141)
 polygon = PackedVector2Array(231, 856, 205, 767, 237, 682, 310, 652, 359, 732, 365, 827, 306, 860)
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(4090, -295)
+position = Vector2(4567, -377)
 scale = Vector2(1.4, 1.4)
 metadata/_edit_group_ = true
 
@@ -138,10 +138,10 @@ texture = ExtResource("5_pis4t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D20"]
 position = Vector2(21, -141)
-polygon = PackedVector2Array(231, 856, 208.286, 763.857, 237, 682, 310, 652, 359, 732, 365, 827, 306, 860)
+polygon = PackedVector2Array(231, 856, 208.286, 763.857, 237, 682, 310, 652, 370.429, 733.857, 365, 827, 306, 860)
 
 [node name="StaticBody2D21" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(2819, 27)
+position = Vector2(3286, -61)
 metadata/_edit_group_ = true
 
 [node name="6" type="Sprite2D" parent="Platforms/House Section/StaticBody2D21"]
@@ -153,7 +153,7 @@ position = Vector2(73, -9)
 polygon = PackedVector2Array(1243, 725, 1234, 608, 1275, 494, 1359, 493, 1365, 518, 1550, 514, 1574, 695, 1495, 717, 1383, 687, 1383, 714, 1312, 737)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(1532, 32)
+position = Vector2(2804, -15)
 metadata/_edit_group_ = true
 
 [node name="17" type="Sprite2D" parent="Platforms/House Section/StaticBody2D5"]
@@ -163,23 +163,10 @@ texture = ExtResource("7_xoa8w")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D5"]
 position = Vector2(-46, -136)
-polygon = PackedVector2Array(3938, 754, 3962, 676, 4039, 658, 4059, 616, 4114, 591, 4166, 642, 4212, 626, 4196, 525, 4155, 533, 4183, 355, 4180, 170, 4254, 497, 4283, 503, 4249, 518, 4265, 582, 4322, 709, 4319, 820, 4237, 853, 4158, 840, 4136, 861, 4027, 857, 4027, 835, 3984, 847, 3974, 754)
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(173, 95)
-metadata/_edit_group_ = true
-
-[node name="5" type="Sprite2D" parent="Platforms/House Section/StaticBody2D6"]
-position = Vector2(1122, 532)
-scale = Vector2(0.809, 0.809)
-texture = ExtResource("8_ygd5l")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D6"]
-position = Vector2(12, -186)
-polygon = PackedVector2Array(965, 899, 961, 803, 931, 802, 965, 742, 1014, 736, 1002, 617, 1050, 538, 1115, 541, 1170, 595, 1175, 674, 1233, 682, 1298, 737, 1292, 863, 1194, 891, 1124, 891)
+polygon = PackedVector2Array(3954, 757, 3962, 676, 4039, 658, 4059, 616, 4114, 591, 4166, 642, 4212, 626, 4196, 525, 4155, 533, 4183, 355, 4180, 170, 4254, 497, 4283, 503, 4249, 518, 4265, 582, 4322, 709, 4319, 820, 4237, 853, 4158, 840, 4136, 861, 4027, 857, 4027, 835, 3984, 847, 3974, 754)
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-1164, 83)
+position = Vector2(-1368, -13)
 metadata/_edit_group_ = true
 
 [node name="15" type="Sprite2D" parent="Platforms/House Section/StaticBody2D8"]
@@ -189,10 +176,10 @@ texture = ExtResource("10_nuuhn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D8"]
 position = Vector2(-46, -141)
-polygon = PackedVector2Array(3456, 866, 3456, 638, 3431, 661, 3431, 645, 3496, 565, 3603, 561, 3666, 655, 3619, 655, 3631, 730, 3655, 731, 3693, 761, 3671, 782, 3674, 840)
+polygon = PackedVector2Array(3456, 866, 3456, 638, 3431, 661, 3431, 645, 3496, 565, 3599, 565, 3638, 623, 3685, 657, 3617, 659, 3631, 730, 3655, 731, 3693, 761, 3671, 782, 3674, 840)
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-636, 122)
+position = Vector2(-636, 34)
 metadata/_edit_group_ = true
 
 [node name="7" type="Sprite2D" parent="Platforms/House Section/StaticBody2D12"]
@@ -202,10 +189,10 @@ texture = ExtResource("13_rgd15")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D12"]
 position = Vector2(73, -9)
-polygon = PackedVector2Array(1536, 701, 1546, 498, 1513, 498, 1564, 427, 1629, 424, 1657, 476, 1683, 423, 1751, 420, 1795, 500, 1781, 507, 1782, 711, 1713, 717, 1649, 689, 1606, 714)
+polygon = PackedVector2Array(1536, 701, 1552, 483, 1530, 482, 1564, 427, 1629, 424, 1646, 464, 1669, 463, 1683, 423, 1751, 420, 1805, 475, 1781, 507, 1782, 711, 1713, 717, 1649, 689, 1606, 714)
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(2124, 26)
+position = Vector2(3309, -165)
 metadata/_edit_group_ = true
 
 [node name="H2Lit" type="Sprite2D" parent="Platforms/House Section/StaticBody2D10"]
@@ -214,10 +201,14 @@ texture = ExtResource("12_cjgs1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D10"]
 position = Vector2(73, -9)
-polygon = PackedVector2Array(1717, 754, 1717, 664, 1674, 664, 1768, 534, 1818, 533, 1812, 497, 1888, 497, 1893, 534, 1915, 537, 1981, 625, 1974, 747, 1868, 789)
+polygon = PackedVector2Array(1717, 754, 1717, 664, 1670, 662, 1768, 534, 1818, 533, 1812, 497, 1888, 497, 1893, 534, 1915, 537, 1981, 625, 1974, 747, 1868, 789)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D10"]
+position = Vector2(1, 7)
+polygon = PackedVector2Array(1763, 577, 1813, 578, 1812, 595, 1763, 593)
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-1040, 129)
+position = Vector2(-1244, 33)
 metadata/_edit_group_ = true
 
 [node name="H1Lit2" type="Sprite2D" parent="Platforms/House Section/StaticBody2D11"]
@@ -226,10 +217,23 @@ texture = ExtResource("11_6shgf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D11"]
 position = Vector2(-46, -141)
-polygon = PackedVector2Array(3145, 802, 3144, 676, 3128, 690, 3113, 681, 3177, 607, 3271, 607, 3278, 577, 3325, 581, 3326, 611, 3391, 712, 3348, 716, 3348, 821, 3209, 829)
+polygon = PackedVector2Array(3145, 802, 3144, 676, 3132, 689, 3128, 668, 3177, 607, 3271, 607, 3278, 577, 3325, 581, 3326, 611, 3391, 712, 3348, 716, 3348, 821, 3209, 829)
+
+[node name="StaticBody2D27" type="StaticBody2D" parent="Platforms/House Section"]
+position = Vector2(6299, -67)
+metadata/_edit_group_ = true
+
+[node name="2" type="Sprite2D" parent="Platforms/House Section/StaticBody2D27"]
+position = Vector2(311, 613)
+scale = Vector2(0.809, 0.809)
+texture = ExtResource("5_pis4t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D27"]
+position = Vector2(21, -141)
+polygon = PackedVector2Array(231, 856, 205, 767, 237, 682, 310, 652, 359, 732, 365, 827, 306, 860)
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-588, 64)
+position = Vector2(841, -43)
 metadata/_edit_group_ = true
 
 [node name="9" type="Sprite2D" parent="Platforms/House Section/StaticBody2D13"]
@@ -239,10 +243,10 @@ texture = ExtResource("14_3h7bj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D13"]
 position = Vector2(73, -9)
-polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2132, 498, 2180, 585, 2163, 603, 2179, 722, 2087, 757)
+polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2145, 499, 2196, 597, 2163, 603, 2172, 723, 2087, 757)
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(1291, 242)
+position = Vector2(1544, 152)
 metadata/_edit_group_ = true
 
 [node name="11" type="Sprite2D" parent="Platforms/House Section/StaticBody2D14"]
@@ -254,7 +258,7 @@ position = Vector2(15, -185)
 polygon = PackedVector2Array(2321, 766, 2319, 698, 2308, 688, 2395, 580, 2571, 587, 2638, 642, 2614, 662, 2617, 720, 2516, 746)
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(2571, 29)
+position = Vector2(3304, -49)
 metadata/_edit_group_ = true
 
 [node name="10" type="Sprite2D" parent="Platforms/House Section/StaticBody2D15"]
@@ -278,8 +282,21 @@ texture = ExtResource("18_hlwiq")
 position = Vector2(21, -141)
 polygon = PackedVector2Array(63, 892, 40, 786, 91, 705, 195, 690, 254, 783, 234, 790, 241, 879, 113, 899)
 
+[node name="StaticBody2D6" type="StaticBody2D" parent="Platforms/House Section"]
+position = Vector2(194, 32)
+metadata/_edit_group_ = true
+
+[node name="5" type="Sprite2D" parent="Platforms/House Section/StaticBody2D6"]
+position = Vector2(1122, 532)
+scale = Vector2(0.809, 0.809)
+texture = ExtResource("8_ygd5l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D6"]
+position = Vector2(12, -186)
+polygon = PackedVector2Array(965, 899, 961, 803, 931, 802, 965, 742, 1014, 736, 990, 625, 1050, 538, 1115, 541, 1170, 595, 1175, 674, 1233, 682, 1298, 737, 1292, 863, 1194, 891, 1124, 891)
+
 [node name="StaticBody2D18" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-1850, 154)
+position = Vector2(600, 75)
 metadata/_edit_group_ = true
 
 [node name="H3Lit" type="Sprite2D" parent="Platforms/House Section/StaticBody2D18"]
@@ -288,10 +305,10 @@ texture = ExtResource("19_3elfj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D18"]
 position = Vector2(-46, -141)
-polygon = PackedVector2Array(2576, 790, 2573, 736, 2547, 726, 2618, 595, 2668, 562, 2666, 541, 2793, 537, 2849, 681, 2828, 688, 2836, 740, 2767, 778)
+polygon = PackedVector2Array(2576, 790, 2573, 736, 2559, 724, 2618, 595, 2668, 562, 2666, 541, 2793, 537, 2845, 686, 2828, 688, 2836, 740, 2767, 778)
 
 [node name="StaticBody2D22" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(2631, 168)
+position = Vector2(3372, 84)
 metadata/_edit_group_ = true
 
 [node name="11" type="Sprite2D" parent="Platforms/House Section/StaticBody2D22"]
@@ -303,7 +320,7 @@ position = Vector2(15, -185)
 polygon = PackedVector2Array(2321, 766, 2319, 698, 2308, 688, 2395, 580, 2571, 587, 2638, 642, 2614, 662, 2617, 720, 2516, 746)
 
 [node name="StaticBody2D23" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(4354, -129)
+position = Vector2(5440, -207)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -314,10 +331,10 @@ texture = ExtResource("11_6shgf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D23"]
 position = Vector2(-46, -141)
-polygon = PackedVector2Array(800, 840, 800, 735, 788, 750, 777, 738, 829, 680, 900, 679, 907, 652, 949, 659, 945, 683, 1003, 765, 965, 768, 967, 852, 856, 862)
+polygon = PackedVector2Array(800, 840, 800, 735, 792.667, 743.5, 785.167, 733.5, 829, 680, 900, 679, 907, 652, 949, 659, 945, 683, 1003, 765, 965, 768, 967, 852, 856, 862)
 
 [node name="StaticBody2D24" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(2707, -99)
+position = Vector2(2963, -189)
 scale = Vector2(1.3, 1.3)
 metadata/_edit_group_ = true
 
@@ -330,13 +347,64 @@ texture = ExtResource("9_oapxk")
 position = Vector2(-71, -71)
 polygon = PackedVector2Array(427, 762, 433, 590, 510, 594, 549, 544, 622, 540, 664, 583, 662, 594, 733, 603, 761, 658, 736, 665, 748, 749)
 
+[node name="StaticBody2D25" type="StaticBody2D" parent="Platforms/House Section"]
+position = Vector2(-1093, -50)
+metadata/_edit_group_ = true
+
+[node name="H2Lit" type="Sprite2D" parent="Platforms/House Section/StaticBody2D25"]
+position = Vector2(1911, 625)
+texture = ExtResource("12_cjgs1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D25"]
+position = Vector2(73, -9)
+polygon = PackedVector2Array(1717, 754, 1717, 664, 1674, 669, 1759, 535, 1818, 533, 1812, 497, 1888, 497, 1893, 534, 1915, 537, 1968, 623, 1966, 755, 1868, 789)
+
+[node name="StaticBody2D26" type="StaticBody2D" parent="Platforms/House Section"]
+position = Vector2(2140, 179)
+metadata/_edit_group_ = true
+
+[node name="9" type="Sprite2D" parent="Platforms/House Section/StaticBody2D26"]
+position = Vector2(2122.86, 425.714)
+scale = Vector2(1.15827, 1.15827)
+texture = ExtResource("14_3h7bj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D26"]
+position = Vector2(36.8571, -205.286)
+polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2147.14, 497.286, 2180, 585, 2163, 603, 2179, 722, 2087, 757)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Platforms/House Section"]
+position = Vector2(943, -37)
+metadata/_edit_group_ = true
+
+[node name="15" type="Sprite2D" parent="Platforms/House Section/StaticBody2D9"]
+position = Vector2(3517, 572)
+scale = Vector2(0.919885, 0.919885)
+texture = ExtResource("10_nuuhn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D9"]
+position = Vector2(-46, -141)
+polygon = PackedVector2Array(3456, 866, 3456, 638, 3431, 661, 3431, 645, 3496, 565, 3599, 565, 3638, 623, 3676, 653, 3617, 659, 3631, 730, 3655, 731, 3671, 760, 3668, 780, 3674, 840)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/House Section"]
+position = Vector2(3224, 17)
+metadata/_edit_group_ = true
+
+[node name="13" type="Sprite2D" parent="Platforms/House Section/StaticBody2D4"]
+position = Vector2(2911, 543)
+scale = Vector2(0.808668, 0.808668)
+texture = ExtResource("3_4xp8y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D4"]
+position = Vector2(-46, -141)
+polygon = PackedVector2Array(2801, 783, 2763, 666, 2851, 527, 2980, 532, 3061, 583, 3066, 636, 3124, 656, 3138, 804, 3064, 843, 2908, 843, 2903, 775)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_763oi")
 autoplay = true
 bus = &"Music"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
-position = Vector2(156, 491)
+position = Vector2(155, 488)
 
 [node name="Stars" type="Node2D" parent="."]
 position = Vector2(-4, -340)
@@ -358,7 +426,7 @@ position = Vector2(433, -64)
 scale = Vector2(1, 5.72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(3890, -42.6573)
+position = Vector2(6519.95, 90.035)
 shape = SubResource("RectangleShape2D_qrr0h")
 
 [node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]

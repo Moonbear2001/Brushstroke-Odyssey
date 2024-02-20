@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://df6fy3tal4kj" path="res://art/test/circle.png" id="8_lser0"]
 [ext_resource type="Texture2D" uid="uid://buwb8jdhdiiqo" path="res://art/test/wind.png" id="9_r1y11"]
 
-[sub_resource type="Resource" id="Resource_g7ps3"]
+[sub_resource type="Resource" id="Resource_ebw7u"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -21,9 +21,9 @@ script = ExtResource("5_ea05c")
 position = Vector2(-130.941, -0.824585)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_g7ps3")
+properties = SubResource("Resource_ebw7u")
 
-[sub_resource type="Resource" id="Resource_fj36n"]
+[sub_resource type="Resource" id="Resource_nvlfn"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -34,9 +34,9 @@ script = ExtResource("5_ea05c")
 position = Vector2(-130.941, -0.824585)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_fj36n")
+properties = SubResource("Resource_nvlfn")
 
-[sub_resource type="Resource" id="Resource_vfl55"]
+[sub_resource type="Resource" id="Resource_su6wh"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -47,9 +47,9 @@ script = ExtResource("5_ea05c")
 position = Vector2(-2.24719, -72.9495)
 point_in = Vector2(-128.693, 4.24265)
 point_out = Vector2(128.693, -4.24265)
-properties = SubResource("Resource_vfl55")
+properties = SubResource("Resource_su6wh")
 
-[sub_resource type="Resource" id="Resource_tqxfq"]
+[sub_resource type="Resource" id="Resource_nchti"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -60,9 +60,9 @@ script = ExtResource("5_ea05c")
 position = Vector2(130.689, -0.117462)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_tqxfq")
+properties = SubResource("Resource_nchti")
 
-[sub_resource type="Resource" id="Resource_rls3n"]
+[sub_resource type="Resource" id="Resource_vhe8l"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -73,7 +73,7 @@ script = ExtResource("5_ea05c")
 position = Vector2(2.70255, 73.4216)
 point_in = Vector2(127.986, -2.12134)
 point_out = Vector2(-127.986, 2.12134)
-properties = SubResource("Resource_rls3n")
+properties = SubResource("Resource_vhe8l")
 
 [sub_resource type="Resource" id="Resource_i7wm8"]
 script = ExtResource("6_36k4t")
@@ -149,6 +149,21 @@ _data = {
 "move": SubResource("Animation_rimi3")
 }
 
+[sub_resource type="Animation" id="Animation_55hhx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-267, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_sak14"]
 resource_name = "move"
 length = 4.0
@@ -164,21 +179,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-267, 0), Vector2(0, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_55hhx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-267, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qi6y2"]
