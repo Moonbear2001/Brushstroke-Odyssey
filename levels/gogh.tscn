@@ -1,12 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=39 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_rlq30"]
-[ext_resource type="Texture2D" uid="uid://dlm2n5e5t17st" path="res://art/gogh/house section/full_layout1.png" id="2_bsy7a"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_jcigm"]
+[ext_resource type="Texture2D" uid="uid://gf6h17iuvp2b" path="res://art/VanGogh/paralax_layers/backhill2.PNG" id="2_swqqb"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
 [ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="4_763oi"]
 [ext_resource type="Texture2D" uid="uid://cunk6bh7ewi4w" path="res://art/gogh/house section/houses/IMG_0444.PNG" id="4_sknkl"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_1f3ar"]
+[ext_resource type="Texture2D" uid="uid://cubwbfmfdwomi" path="res://art/VanGogh/paralax_layers/backhill.PNG" id="5_bk2g7"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_huc8b"]
 [ext_resource type="Texture2D" uid="uid://bfkddg653gdh" path="res://art/gogh/house section/houses/IMG_0417.PNG" id="5_pis4t"]
 [ext_resource type="Texture2D" uid="uid://bhpog2xdqk2co" path="res://art/gogh/house section/houses/IMG_0419.PNG" id="7_xoa8w"]
@@ -23,9 +24,22 @@
 [ext_resource type="Texture2D" uid="uid://bafel6yqdu8wj" path="res://art/gogh/house section/houses/Untitled_Artwork-1.png" id="18_hlwiq"]
 [ext_resource type="Texture2D" uid="uid://dlhtfloy4hqeb" path="res://art/gogh/house section/houses/lantern_houses/h3_lit.PNG" id="19_3elfj"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="24_hdcnw"]
+[ext_resource type="Texture2D" uid="uid://deosmx2v1nt24" path="res://art/VanGogh/paralax_layers/fronthill1.PNG" id="25_ickr1"]
+[ext_resource type="Texture2D" uid="uid://cma0p5cymg0qg" path="res://art/VanGogh/paralax_layers/fronthill2.PNG" id="26_um408"]
+[ext_resource type="Texture2D" uid="uid://bt6genldg4yek" path="res://art/VanGogh/paralax_layers/fronthill3.PNG" id="27_2ell1"]
+[ext_resource type="Texture2D" uid="uid://e8t42aurxhxl" path="res://art/VanGogh/concept art/general vibe.JPG" id="27_a7fhp"]
+[ext_resource type="Texture2D" uid="uid://cbe0lwvids3cq" path="res://art/VanGogh/misc/bushes/3.png" id="29_a78ow"]
+[ext_resource type="Texture2D" uid="uid://b76s8p0a5pn07" path="res://art/VanGogh/misc/bushes/1.png" id="30_5f5ie"]
+[ext_resource type="Texture2D" uid="uid://bm0ektssmglv2" path="res://art/VanGogh/misc/bushes/10.PNG" id="31_ni5ms"]
+[ext_resource type="Texture2D" uid="uid://bamxp2rrj7i4t" path="res://art/VanGogh/misc/bushes/5.png" id="32_6qgr4"]
+[ext_resource type="Texture2D" uid="uid://dr800intnck4h" path="res://art/VanGogh/misc/bushes/6.png" id="33_qhnsq"]
+[ext_resource type="Texture2D" uid="uid://bkavm872c7xkp" path="res://art/VanGogh/misc/bushes/7.png" id="34_l18uu"]
+[ext_resource type="Texture2D" uid="uid://bg6p0qb58bjki" path="res://art/VanGogh/misc/bushes/9.PNG" id="35_ybqt1"]
+[ext_resource type="Texture2D" uid="uid://dhtt6wgsu5avl" path="res://art/VanGogh/misc/bushes/8.png" id="36_w64ui"]
+[ext_resource type="Texture2D" uid="uid://5chpknaaodyl" path="res://art/VanGogh/misc/bushes/4.png" id="37_ffhy0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
-size = Vector2(11.8979, 8.30418)
+size = Vector2(7.94896, 8.30418)
 
 [node name="Gogh" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end", "stars")]
 position = Vector2(3, -62)
@@ -36,19 +50,75 @@ level_ui = NodePath("LevelUI")
 end = NodePath("End")
 stars = [NodePath("Stars/Star1"), NodePath("Stars/Star2"), NodePath("Stars/Star3")]
 
-[node name="Platforms" type="Node2D" parent="."]
-
-[node name="FullLayout1" type="Sprite2D" parent="Platforms"]
-visible = false
-position = Vector2(2537.16, 641.5)
-scale = Vector2(3.6392, 3.6392)
-texture = ExtResource("2_bsy7a")
+[node name="Backhill2" type="Sprite2D" parent="."]
+position = Vector2(1560, -269.75)
+scale = Vector2(0.768682, 0.768682)
+texture = ExtResource("2_swqqb")
 metadata/_edit_lock_ = true
 
+[node name="Backhill3" type="Sprite2D" parent="."]
+position = Vector2(4689, -254)
+scale = Vector2(0.768682, 0.768682)
+texture = ExtResource("2_swqqb")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(1.5, 1.5)
+
+[node name="Fronthill1" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(26, 1109)
+texture = ExtResource("25_ickr1")
+
+[node name="Fronthill2" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(2659, 835)
+texture = ExtResource("26_um408")
+metadata/_edit_lock_ = true
+
+[node name="Fronthill3" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(3855, 911)
+texture = ExtResource("27_2ell1")
+
+[node name="Fronthill4" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(6227, 779)
+texture = ExtResource("26_um408")
+metadata/_edit_lock_ = true
+
+[node name="Fronthill5" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(7212, 1031)
+texture = ExtResource("25_ickr1")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(4062, 0)
+
+[node name="Backhill" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2031, -367)
+texture = ExtResource("5_bk2g7")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(3120, 0)
+
+[node name="Backhill2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+visible = false
+position = Vector2(1560, -269.75)
+scale = Vector2(0.768682, 0.768682)
+texture = ExtResource("2_swqqb")
+metadata/_edit_lock_ = true
+
+[node name="Platforms" type="Node2D" parent="."]
+
 [node name="House Section" type="Node2D" parent="Platforms"]
+position = Vector2(55, 74)
+scale = Vector2(0.771929, 0.771929)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(170, -4)
+position = Vector2(211.454, -4)
 metadata/_edit_group_ = true
 
 [node name="6" type="Sprite2D" parent="Platforms/House Section/StaticBody2D2"]
@@ -60,7 +130,7 @@ position = Vector2(73, -9)
 polygon = PackedVector2Array(1243, 725, 1234, 608, 1275, 494, 1359, 493, 1365, 518, 1550, 514, 1557, 698, 1495, 717, 1383, 687, 1383, 714, 1312, 737)
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-1677, -279)
+position = Vector2(-1599.27, -279)
 scale = Vector2(1.3, 1.3)
 metadata/_edit_group_ = true
 
@@ -74,7 +144,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(3303, 898, 3288, 797, 3350, 706, 3452, 696, 3521, 742, 3517, 751, 3493, 737, 3495, 838, 3438, 886)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-516, 46)
+position = Vector2(-447.341, 46)
 metadata/_edit_group_ = true
 
 [node name="13" type="Sprite2D" parent="Platforms/House Section/StaticBody2D"]
@@ -87,7 +157,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(2801, 783, 2732, 671, 2851, 527, 2980, 532, 3070, 588, 3066, 636, 3124, 656, 3138, 804, 3064, 843, 2908, 843, 2903, 775)
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(1375, 296)
+position = Vector2(1450.14, 296)
 scale = Vector2(0.7, 0.7)
 metadata/_edit_group_ = true
 
@@ -127,7 +197,7 @@ position = Vector2(21, -141)
 polygon = PackedVector2Array(231, 856, 205, 767, 237, 682, 310, 652, 359, 732, 365, 827, 306, 860)
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(4567, -377)
+position = Vector2(4710.79, -377)
 scale = Vector2(1.4, 1.4)
 metadata/_edit_group_ = true
 
@@ -141,7 +211,7 @@ position = Vector2(21, -141)
 polygon = PackedVector2Array(231, 856, 208.286, 763.857, 237, 682, 310, 652, 370.429, 733.857, 365, 827, 306, 860)
 
 [node name="StaticBody2D21" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(3286, -61)
+position = Vector2(3418.14, -61)
 metadata/_edit_group_ = true
 
 [node name="6" type="Sprite2D" parent="Platforms/House Section/StaticBody2D21"]
@@ -153,7 +223,7 @@ position = Vector2(73, -9)
 polygon = PackedVector2Array(1243, 725, 1234, 608, 1275, 494, 1359, 493, 1365, 518, 1550, 514, 1574, 695, 1495, 717, 1383, 687, 1383, 714, 1312, 737)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(2804, -15)
+position = Vector2(3044.95, -15)
 metadata/_edit_group_ = true
 
 [node name="17" type="Sprite2D" parent="Platforms/House Section/StaticBody2D5"]
@@ -166,7 +236,7 @@ position = Vector2(-46, -136)
 polygon = PackedVector2Array(3954, 757, 3962, 676, 4039, 658, 4059, 616, 4114, 591, 4166, 642, 4212, 626, 4196, 525, 4155, 533, 4183, 355, 4180, 170, 4254, 497, 4283, 503, 4249, 518, 4265, 582, 4322, 709, 4319, 820, 4237, 853, 4158, 840, 4136, 861, 4027, 857, 4027, 835, 3984, 847, 3974, 754)
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-1368, -13)
+position = Vector2(-1311, -13)
 metadata/_edit_group_ = true
 
 [node name="15" type="Sprite2D" parent="Platforms/House Section/StaticBody2D8"]
@@ -179,7 +249,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(3456, 866, 3456, 638, 3431, 661, 3431, 645, 3496, 565, 3599, 565, 3638, 623, 3685, 657, 3617, 659, 3631, 730, 3655, 731, 3693, 761, 3671, 782, 3674, 840)
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-636, 34)
+position = Vector2(-617.863, 34)
 metadata/_edit_group_ = true
 
 [node name="7" type="Sprite2D" parent="Platforms/House Section/StaticBody2D12"]
@@ -192,7 +262,7 @@ position = Vector2(73, -9)
 polygon = PackedVector2Array(1536, 701, 1552, 483, 1530, 482, 1564, 427, 1629, 424, 1646, 464, 1669, 463, 1683, 423, 1751, 420, 1805, 475, 1781, 507, 1782, 711, 1713, 717, 1649, 689, 1606, 714)
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(3309, -165)
+position = Vector2(3464.46, -165)
 metadata/_edit_group_ = true
 
 [node name="H2Lit" type="Sprite2D" parent="Platforms/House Section/StaticBody2D10"]
@@ -204,11 +274,11 @@ position = Vector2(73, -9)
 polygon = PackedVector2Array(1717, 754, 1717, 664, 1670, 662, 1768, 534, 1818, 533, 1812, 497, 1888, 497, 1893, 534, 1915, 537, 1981, 625, 1974, 747, 1868, 789)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/House Section/StaticBody2D10"]
-position = Vector2(1, 7)
+position = Vector2(-2.9977, 9.54531)
 polygon = PackedVector2Array(1763, 577, 1813, 578, 1812, 595, 1763, 593)
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-1244, 33)
+position = Vector2(-1196.07, 33)
 metadata/_edit_group_ = true
 
 [node name="H1Lit2" type="Sprite2D" parent="Platforms/House Section/StaticBody2D11"]
@@ -220,7 +290,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(3145, 802, 3144, 676, 3132, 689, 3128, 668, 3177, 607, 3271, 607, 3278, 577, 3325, 581, 3326, 611, 3391, 712, 3348, 716, 3348, 821, 3209, 829)
 
 [node name="StaticBody2D27" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(6299, -67)
+position = Vector2(6510.16, -67)
 metadata/_edit_group_ = true
 
 [node name="2" type="Sprite2D" parent="Platforms/House Section/StaticBody2D27"]
@@ -233,7 +303,7 @@ position = Vector2(21, -141)
 polygon = PackedVector2Array(231, 856, 205, 767, 237, 682, 310, 652, 359, 732, 365, 827, 306, 860)
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(841, -43)
+position = Vector2(916.136, -43)
 metadata/_edit_group_ = true
 
 [node name="9" type="Sprite2D" parent="Platforms/House Section/StaticBody2D13"]
@@ -246,7 +316,7 @@ position = Vector2(73, -9)
 polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2145, 499, 2196, 597, 2163, 603, 2172, 723, 2087, 757)
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(1544, 152)
+position = Vector2(1660.59, 152)
 metadata/_edit_group_ = true
 
 [node name="11" type="Sprite2D" parent="Platforms/House Section/StaticBody2D14"]
@@ -258,7 +328,7 @@ position = Vector2(15, -185)
 polygon = PackedVector2Array(2321, 766, 2319, 698, 2308, 688, 2395, 580, 2571, 587, 2638, 642, 2614, 662, 2617, 720, 2516, 746)
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(3304, -49)
+position = Vector2(3469.82, -49)
 metadata/_edit_group_ = true
 
 [node name="10" type="Sprite2D" parent="Platforms/House Section/StaticBody2D15"]
@@ -283,7 +353,7 @@ position = Vector2(21, -141)
 polygon = PackedVector2Array(63, 892, 40, 786, 91, 705, 195, 690, 254, 783, 234, 790, 241, 879, 113, 899)
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(194, 32)
+position = Vector2(218.613, 32)
 metadata/_edit_group_ = true
 
 [node name="5" type="Sprite2D" parent="Platforms/House Section/StaticBody2D6"]
@@ -296,7 +366,7 @@ position = Vector2(12, -186)
 polygon = PackedVector2Array(965, 899, 961, 803, 931, 802, 965, 742, 1014, 736, 990, 625, 1050, 538, 1115, 541, 1170, 595, 1175, 674, 1233, 682, 1298, 737, 1292, 863, 1194, 891, 1124, 891)
 
 [node name="StaticBody2D18" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(600, 75)
+position = Vector2(685.5, 75)
 metadata/_edit_group_ = true
 
 [node name="H3Lit" type="Sprite2D" parent="Platforms/House Section/StaticBody2D18"]
@@ -308,7 +378,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(2576, 790, 2573, 736, 2559, 724, 2618, 595, 2668, 562, 2666, 541, 2793, 537, 2845, 686, 2828, 688, 2836, 740, 2767, 778)
 
 [node name="StaticBody2D22" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(3372, 84)
+position = Vector2(3544.3, 84)
 metadata/_edit_group_ = true
 
 [node name="11" type="Sprite2D" parent="Platforms/House Section/StaticBody2D22"]
@@ -320,7 +390,7 @@ position = Vector2(15, -185)
 polygon = PackedVector2Array(2321, 766, 2319, 698, 2308, 688, 2395, 580, 2571, 587, 2638, 642, 2614, 662, 2617, 720, 2516, 746)
 
 [node name="StaticBody2D23" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(5440, -207)
+position = Vector2(5649.87, -207)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -334,7 +404,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(800, 840, 800, 735, 792.667, 743.5, 785.167, 733.5, 829, 680, 900, 679, 907, 652, 949, 659, 945, 683, 1003, 765, 965, 768, 967, 852, 856, 862)
 
 [node name="StaticBody2D24" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(2963, -189)
+position = Vector2(3062.75, -189)
 scale = Vector2(1.3, 1.3)
 metadata/_edit_group_ = true
 
@@ -348,7 +418,7 @@ position = Vector2(-71, -71)
 polygon = PackedVector2Array(427, 762, 433, 590, 510, 594, 549, 544, 622, 540, 664, 583, 662, 594, 733, 603, 761, 658, 736, 665, 748, 749)
 
 [node name="StaticBody2D25" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(-1093, -50)
+position = Vector2(-1091.7, -50)
 metadata/_edit_group_ = true
 
 [node name="H2Lit" type="Sprite2D" parent="Platforms/House Section/StaticBody2D25"]
@@ -360,7 +430,7 @@ position = Vector2(73, -9)
 polygon = PackedVector2Array(1717, 754, 1717, 664, 1674, 669, 1759, 535, 1818, 533, 1812, 497, 1888, 497, 1893, 534, 1915, 537, 1968, 623, 1966, 755, 1868, 789)
 
 [node name="StaticBody2D26" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(2140, 179)
+position = Vector2(2256.59, 179)
 metadata/_edit_group_ = true
 
 [node name="9" type="Sprite2D" parent="Platforms/House Section/StaticBody2D26"]
@@ -373,7 +443,7 @@ position = Vector2(36.8571, -205.286)
 polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2147.14, 497.286, 2180, 585, 2163, 603, 2179, 722, 2087, 757)
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(943, -37)
+position = Vector2(1059.59, -37)
 metadata/_edit_group_ = true
 
 [node name="15" type="Sprite2D" parent="Platforms/House Section/StaticBody2D9"]
@@ -386,7 +456,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(3456, 866, 3456, 638, 3431, 661, 3431, 645, 3496, 565, 3599, 565, 3638, 623, 3676, 653, 3617, 659, 3631, 730, 3655, 731, 3671, 760, 3668, 780, 3674, 840)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(3224, 17)
+position = Vector2(3418.32, 10.5227)
 metadata/_edit_group_ = true
 
 [node name="13" type="Sprite2D" parent="Platforms/House Section/StaticBody2D4"]
@@ -404,7 +474,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
-position = Vector2(155, 488)
+position = Vector2(160, 456)
 
 [node name="Stars" type="Node2D" parent="."]
 position = Vector2(-4, -340)
@@ -426,7 +496,7 @@ position = Vector2(433, -64)
 scale = Vector2(1, 5.72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(6519.95, 90.035)
+position = Vector2(5173.97, 84.0909)
 shape = SubResource("RectangleShape2D_qrr0h")
 
 [node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]
@@ -441,4 +511,198 @@ position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true
 
 [node name="Death" parent="." instance=ExtResource("24_hdcnw")]
-position = Vector2(2441, 969)
+position = Vector2(1385, 969)
+
+[node name="GeneralVibe" type="Sprite2D" parent="."]
+position = Vector2(2074, -2840)
+texture = ExtResource("27_a7fhp")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(146, 649)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_a78ow")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(446, 614)
+scale = Vector2(0.372172, 0.372172)
+texture = ExtResource("30_5f5ie")
+
+[node name="10" type="Sprite2D" parent="."]
+position = Vector2(657, 630)
+scale = Vector2(0.208333, 0.208333)
+texture = ExtResource("31_ni5ms")
+
+[node name="5" type="Sprite2D" parent="."]
+position = Vector2(602, 590)
+scale = Vector2(0.296468, 0.296468)
+texture = ExtResource("32_6qgr4")
+
+[node name="11" type="Sprite2D" parent="."]
+position = Vector2(1072, 647)
+scale = Vector2(0.386842, 0.386842)
+texture = ExtResource("31_ni5ms")
+
+[node name="6" type="Sprite2D" parent="."]
+position = Vector2(882, 635)
+scale = Vector2(0.333059, 0.333059)
+texture = ExtResource("33_qhnsq")
+
+[node name="7" type="Sprite2D" parent="."]
+position = Vector2(182, 667)
+scale = Vector2(0.416667, 0.416667)
+texture = ExtResource("34_l18uu")
+
+[node name="9" type="Sprite2D" parent="."]
+position = Vector2(963, 628)
+scale = Vector2(0.382, 0.382)
+texture = ExtResource("35_ybqt1")
+
+[node name="8" type="Sprite2D" parent="."]
+position = Vector2(713, 643)
+scale = Vector2(0.261454, 0.261454)
+texture = ExtResource("36_w64ui")
+
+[node name="12" type="Sprite2D" parent="."]
+position = Vector2(1679, 619)
+scale = Vector2(0.457237, 0.457237)
+texture = ExtResource("33_qhnsq")
+
+[node name="36" type="Sprite2D" parent="."]
+position = Vector2(1937, 650)
+scale = Vector2(0.567919, 0.567919)
+texture = ExtResource("29_a78ow")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(1182, 649)
+scale = Vector2(0.428733, 0.428733)
+texture = ExtResource("30_5f5ie")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(1576, 627)
+scale = Vector2(0.644509, 0.644509)
+texture = ExtResource("29_a78ow")
+
+[node name="13" type="Sprite2D" parent="."]
+position = Vector2(1359, 613)
+scale = Vector2(0.463816, 0.463816)
+texture = ExtResource("33_qhnsq")
+
+[node name="14" type="Sprite2D" parent="."]
+position = Vector2(2110, 636)
+scale = Vector2(0.392105, 0.392105)
+texture = ExtResource("31_ni5ms")
+
+[node name="15" type="Sprite2D" parent="."]
+position = Vector2(1908, 627)
+scale = Vector2(0.372, 0.372)
+texture = ExtResource("35_ybqt1")
+
+[node name="16" type="Sprite2D" parent="."]
+position = Vector2(2254, 607)
+scale = Vector2(0.383715, 0.383715)
+texture = ExtResource("36_w64ui")
+
+[node name="17" type="Sprite2D" parent="."]
+position = Vector2(2800, 603)
+scale = Vector2(0.411184, 0.411184)
+texture = ExtResource("33_qhnsq")
+
+[node name="18" type="Sprite2D" parent="."]
+position = Vector2(3517, 601)
+scale = Vector2(0.423307, 0.423307)
+texture = ExtResource("36_w64ui")
+
+[node name="19" type="Sprite2D" parent="."]
+position = Vector2(3033, 613)
+scale = Vector2(0.314912, 0.314912)
+texture = ExtResource("31_ni5ms")
+
+[node name="28" type="Sprite2D" parent="."]
+position = Vector2(3870, 561)
+scale = Vector2(0.302632, 0.302632)
+texture = ExtResource("33_qhnsq")
+
+[node name="20" type="Sprite2D" parent="."]
+position = Vector2(2539, 631)
+scale = Vector2(0.696532, 0.696532)
+texture = ExtResource("29_a78ow")
+
+[node name="21" type="Sprite2D" parent="."]
+position = Vector2(2355, 601)
+scale = Vector2(0.381579, 0.381579)
+texture = ExtResource("33_qhnsq")
+
+[node name="22" type="Sprite2D" parent="."]
+position = Vector2(2199, 596)
+scale = Vector2(0.396839, 0.396839)
+texture = ExtResource("32_6qgr4")
+
+[node name="23" type="Sprite2D" parent="."]
+position = Vector2(3366, 608)
+scale = Vector2(0.547688, 0.547688)
+texture = ExtResource("29_a78ow")
+
+[node name="24" type="Sprite2D" parent="."]
+position = Vector2(3820, 526)
+scale = Vector2(0.367098, 0.367098)
+texture = ExtResource("32_6qgr4")
+
+[node name="25" type="Sprite2D" parent="."]
+position = Vector2(3627, 588)
+scale = Vector2(0.519231, 0.519231)
+texture = ExtResource("30_5f5ie")
+
+[node name="26" type="Sprite2D" parent="."]
+position = Vector2(3959, 556)
+scale = Vector2(0.609827, 0.609827)
+texture = ExtResource("29_a78ow")
+
+[node name="27" type="Sprite2D" parent="."]
+position = Vector2(4089, 521)
+scale = Vector2(0.388, 0.388)
+texture = ExtResource("37_ffhy0")
+
+[node name="34" type="Sprite2D" parent="."]
+position = Vector2(4806, 566)
+scale = Vector2(0.398026, 0.398026)
+texture = ExtResource("33_qhnsq")
+
+[node name="29" type="Sprite2D" parent="."]
+position = Vector2(4591, 574)
+scale = Vector2(0.326001, 0.326001)
+texture = ExtResource("35_ybqt1")
+
+[node name="30" type="Sprite2D" parent="."]
+position = Vector2(4381, 525)
+scale = Vector2(0.319079, 0.319079)
+texture = ExtResource("33_qhnsq")
+
+[node name="31" type="Sprite2D" parent="."]
+position = Vector2(4637, 591)
+scale = Vector2(0.556358, 0.556358)
+texture = ExtResource("29_a78ow")
+
+[node name="32" type="Sprite2D" parent="."]
+position = Vector2(4875, 586)
+scale = Vector2(0.68408, 0.68408)
+texture = ExtResource("34_l18uu")
+
+[node name="33" type="Sprite2D" parent="."]
+position = Vector2(5350, 563)
+scale = Vector2(0.303785, 0.303785)
+texture = ExtResource("36_w64ui")
+
+[node name="35" type="Sprite2D" parent="."]
+position = Vector2(4971, 614)
+scale = Vector2(0.309649, 0.309649)
+texture = ExtResource("31_ni5ms")
+
+[node name="37" type="Sprite2D" parent="."]
+position = Vector2(5588, 612)
+scale = Vector2(0.442308, 0.442308)
+texture = ExtResource("30_5f5ie")
+
+[node name="38" type="Sprite2D" parent="."]
+position = Vector2(5659, 600)
+scale = Vector2(0.427789, 0.427789)
+texture = ExtResource("36_w64ui")
