@@ -1,0 +1,6 @@
+[gd_resource type="AnimatedTexture" load_steps=2 format=3 uid="uid://c38garpropb8p"]
+
+[ext_resource type="Texture2D" uid="uid://dyx5eqkp3g5bo" path="res://art/lighting/def_light_text.webp" id="1_1uihk"]
+
+[resource]
+frame_0/texture = ExtResource("1_1uihk")

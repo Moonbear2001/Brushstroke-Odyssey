@@ -40,7 +40,8 @@ func _ready() -> void:
 	# Setup signal for each star
 	for star in get_tree().get_nodes_in_group("star"):
 		star.collected.connect(collect_star)
-		
+
+# Repositioning the camera
 func _process(_delta) -> void:
 	var x = 0
 	var y = 0
