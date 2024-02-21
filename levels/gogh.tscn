@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=41 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_jcigm"]
@@ -28,8 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://deosmx2v1nt24" path="res://art/VanGogh/paralax_layers/fronthill1.PNG" id="25_ickr1"]
 [ext_resource type="Texture2D" uid="uid://cma0p5cymg0qg" path="res://art/VanGogh/paralax_layers/fronthill2.PNG" id="26_um408"]
 [ext_resource type="Texture2D" uid="uid://bt6genldg4yek" path="res://art/VanGogh/paralax_layers/fronthill3.PNG" id="27_2ell1"]
-[ext_resource type="Texture2D" uid="uid://e8t42aurxhxl" path="res://art/VanGogh/concept art/general vibe.JPG" id="27_a7fhp"]
-[ext_resource type="PackedScene" uid="uid://dr7h5s2v3681c" path="res://objects/fuel_bar.tscn" id="28_coumb"]
+[ext_resource type="PackedScene" path="res://objects/fuel_bar.tscn" id="28_coumb"]
 [ext_resource type="Texture2D" uid="uid://cbe0lwvids3cq" path="res://art/VanGogh/misc/bushes/3.png" id="29_a78ow"]
 [ext_resource type="Texture2D" uid="uid://b76s8p0a5pn07" path="res://art/VanGogh/misc/bushes/1.png" id="30_5f5ie"]
 [ext_resource type="Texture2D" uid="uid://bm0ektssmglv2" path="res://art/VanGogh/misc/bushes/10.PNG" id="31_ni5ms"]
@@ -39,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://bg6p0qb58bjki" path="res://art/VanGogh/misc/bushes/9.PNG" id="35_ybqt1"]
 [ext_resource type="Texture2D" uid="uid://dhtt6wgsu5avl" path="res://art/VanGogh/misc/bushes/8.png" id="36_w64ui"]
 [ext_resource type="Texture2D" uid="uid://5chpknaaodyl" path="res://art/VanGogh/misc/bushes/4.png" id="37_ffhy0"]
-[ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refill_station.tscn" id="39_d8lh2"]
+[ext_resource type="PackedScene" path="res://objects/refill_station.tscn" id="39_d8lh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 size = Vector2(7.94896, 8.30418)
@@ -56,19 +55,25 @@ level_ui = NodePath("LevelUI")
 end = NodePath("End")
 metadata/_edit_horizontal_guides_ = [-3391.0]
 
-[node name="Backhill2" type="Sprite2D" parent="."]
-position = Vector2(1560, -270)
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Backhill" type="Sprite2D" parent="Background"]
+position = Vector2(3044, -491)
+scale = Vector2(1.07672, 1.07672)
+texture = ExtResource("5_bk2g7")
+
+[node name="Backhill2" type="Sprite2D" parent="Background"]
+position = Vector2(1243, -154)
 scale = Vector2(0.768682, 0.768682)
 texture = ExtResource("2_swqqb")
-metadata/_edit_lock_ = true
 
-[node name="Backhill3" type="Sprite2D" parent="."]
-position = Vector2(4689, -254)
+[node name="Backhill3" type="Sprite2D" parent="Background"]
+position = Vector2(4674, -148)
 scale = Vector2(0.768682, 0.768682)
 texture = ExtResource("2_swqqb")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-visible = false
+layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 motion_scale = Vector2(1.5, 1.5)
@@ -94,27 +99,6 @@ metadata/_edit_lock_ = true
 [node name="Fronthill5" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
 position = Vector2(7212, 1031)
 texture = ExtResource("25_ickr1")
-metadata/_edit_lock_ = true
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(4062, 0)
-
-[node name="Backhill" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(2031, -367)
-texture = ExtResource("5_bk2g7")
-metadata/_edit_lock_ = true
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(3120, 0)
-
-[node name="Backhill2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(1560, -269.75)
-scale = Vector2(0.768682, 0.768682)
-texture = ExtResource("2_swqqb")
 metadata/_edit_lock_ = true
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -177,7 +161,7 @@ position = Vector2(36.8571, -205.286)
 polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2132, 498, 2180, 585, 2163, 603, 2179, 722, 2087, 757)
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(29, 18)
+position = Vector2(27.7045, 18)
 metadata/_edit_group_ = true
 
 [node name="3" type="Sprite2D" parent="Platforms/House Section/StaticBody2D7"]
@@ -190,7 +174,7 @@ position = Vector2(-71, -71)
 polygon = PackedVector2Array(448, 761, 433, 590, 510, 594, 549, 544, 622, 540, 664, 583, 662, 594, 733, 603, 777, 661, 736, 665, 748, 749)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(98.7729, 2)
+position = Vector2(59.9093, 2)
 metadata/_edit_group_ = true
 
 [node name="2" type="Sprite2D" parent="Platforms/House Section/StaticBody2D3"]
@@ -347,7 +331,7 @@ position = Vector2(12, -186)
 polygon = PackedVector2Array(2094, 823, 2094, 759, 2074, 759, 2155, 679, 2446, 679, 2489, 739, 2455, 740, 2458, 805)
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(121.773, 0)
+position = Vector2(94.5684, 0)
 metadata/_edit_group_ = true
 
 [node name="1" type="Sprite2D" parent="Platforms/House Section/StaticBody2D17"]
@@ -482,7 +466,7 @@ bus = &"Music"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
 top_level = true
-position = Vector2(160, 456)
+position = Vector2(64, 426)
 
 [node name="Lantern" parent="Protagonist" instance=ExtResource("25_cmusv")]
 
@@ -525,214 +509,213 @@ offset_left = 185.0
 offset_top = 4.0
 offset_right = 185.0
 offset_bottom = 4.0
+metadata/_edit_lock_ = true
 
 [node name="Death" parent="." instance=ExtResource("24_hdcnw")]
 position = Vector2(1385, 969)
 
-[node name="GeneralVibe" type="Sprite2D" parent="."]
-position = Vector2(2074, -2840)
-texture = ExtResource("27_a7fhp")
+[node name="Bushes" type="Node2D" parent="."]
 
-[node name="Buildings" type="Node2D" parent="."]
-
-[node name="3" type="Sprite2D" parent="Buildings"]
+[node name="3" type="Sprite2D" parent="Bushes"]
 position = Vector2(146, 649)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("29_a78ow")
 
-[node name="1" type="Sprite2D" parent="Buildings"]
+[node name="1" type="Sprite2D" parent="Bushes"]
 position = Vector2(446, 614)
 scale = Vector2(0.372172, 0.372172)
 texture = ExtResource("30_5f5ie")
 
-[node name="10" type="Sprite2D" parent="Buildings"]
+[node name="10" type="Sprite2D" parent="Bushes"]
 position = Vector2(657, 630)
 scale = Vector2(0.208333, 0.208333)
 texture = ExtResource("31_ni5ms")
 
-[node name="5" type="Sprite2D" parent="Buildings"]
+[node name="5" type="Sprite2D" parent="Bushes"]
 position = Vector2(602, 590)
 scale = Vector2(0.296468, 0.296468)
 texture = ExtResource("32_6qgr4")
 
-[node name="11" type="Sprite2D" parent="Buildings"]
+[node name="11" type="Sprite2D" parent="Bushes"]
 position = Vector2(1072, 647)
 scale = Vector2(0.386842, 0.386842)
 texture = ExtResource("31_ni5ms")
 
-[node name="6" type="Sprite2D" parent="Buildings"]
+[node name="6" type="Sprite2D" parent="Bushes"]
 position = Vector2(882, 635)
 scale = Vector2(0.333059, 0.333059)
 texture = ExtResource("33_qhnsq")
 
-[node name="7" type="Sprite2D" parent="Buildings"]
+[node name="7" type="Sprite2D" parent="Bushes"]
 position = Vector2(182, 667)
 scale = Vector2(0.416667, 0.416667)
 texture = ExtResource("34_l18uu")
 
-[node name="9" type="Sprite2D" parent="Buildings"]
+[node name="9" type="Sprite2D" parent="Bushes"]
 position = Vector2(963, 628)
 scale = Vector2(0.382, 0.382)
 texture = ExtResource("35_ybqt1")
 
-[node name="8" type="Sprite2D" parent="Buildings"]
+[node name="8" type="Sprite2D" parent="Bushes"]
 position = Vector2(713, 643)
 scale = Vector2(0.261454, 0.261454)
 texture = ExtResource("36_w64ui")
 
-[node name="12" type="Sprite2D" parent="Buildings"]
+[node name="12" type="Sprite2D" parent="Bushes"]
 position = Vector2(1679, 619)
 scale = Vector2(0.457237, 0.457237)
 texture = ExtResource("33_qhnsq")
 
-[node name="36" type="Sprite2D" parent="Buildings"]
+[node name="36" type="Sprite2D" parent="Bushes"]
 position = Vector2(1937, 650)
 scale = Vector2(0.567919, 0.567919)
 texture = ExtResource("29_a78ow")
 
-[node name="2" type="Sprite2D" parent="Buildings"]
+[node name="2" type="Sprite2D" parent="Bushes"]
 position = Vector2(1182, 649)
 scale = Vector2(0.428733, 0.428733)
 texture = ExtResource("30_5f5ie")
 
-[node name="4" type="Sprite2D" parent="Buildings"]
+[node name="4" type="Sprite2D" parent="Bushes"]
 position = Vector2(1576, 627)
 scale = Vector2(0.644509, 0.644509)
 texture = ExtResource("29_a78ow")
 
-[node name="13" type="Sprite2D" parent="Buildings"]
+[node name="13" type="Sprite2D" parent="Bushes"]
 position = Vector2(1359, 613)
 scale = Vector2(0.463816, 0.463816)
 texture = ExtResource("33_qhnsq")
 
-[node name="14" type="Sprite2D" parent="Buildings"]
+[node name="14" type="Sprite2D" parent="Bushes"]
 position = Vector2(2110, 636)
 scale = Vector2(0.392105, 0.392105)
 texture = ExtResource("31_ni5ms")
 
-[node name="15" type="Sprite2D" parent="Buildings"]
+[node name="15" type="Sprite2D" parent="Bushes"]
 position = Vector2(1908, 627)
 scale = Vector2(0.372, 0.372)
 texture = ExtResource("35_ybqt1")
 
-[node name="16" type="Sprite2D" parent="Buildings"]
+[node name="16" type="Sprite2D" parent="Bushes"]
 position = Vector2(2254, 607)
 scale = Vector2(0.383715, 0.383715)
 texture = ExtResource("36_w64ui")
 
-[node name="17" type="Sprite2D" parent="Buildings"]
+[node name="17" type="Sprite2D" parent="Bushes"]
 position = Vector2(2800, 603)
 scale = Vector2(0.411184, 0.411184)
 texture = ExtResource("33_qhnsq")
 
-[node name="18" type="Sprite2D" parent="Buildings"]
+[node name="18" type="Sprite2D" parent="Bushes"]
 position = Vector2(3517, 601)
 scale = Vector2(0.423307, 0.423307)
 texture = ExtResource("36_w64ui")
 
-[node name="19" type="Sprite2D" parent="Buildings"]
+[node name="19" type="Sprite2D" parent="Bushes"]
 position = Vector2(3033, 613)
 scale = Vector2(0.314912, 0.314912)
 texture = ExtResource("31_ni5ms")
 
-[node name="28" type="Sprite2D" parent="Buildings"]
+[node name="28" type="Sprite2D" parent="Bushes"]
 position = Vector2(3870, 561)
 scale = Vector2(0.302632, 0.302632)
 texture = ExtResource("33_qhnsq")
 
-[node name="20" type="Sprite2D" parent="Buildings"]
+[node name="20" type="Sprite2D" parent="Bushes"]
 position = Vector2(2539, 631)
 scale = Vector2(0.696532, 0.696532)
 texture = ExtResource("29_a78ow")
 
-[node name="21" type="Sprite2D" parent="Buildings"]
+[node name="21" type="Sprite2D" parent="Bushes"]
 position = Vector2(2355, 601)
 scale = Vector2(0.381579, 0.381579)
 texture = ExtResource("33_qhnsq")
 
-[node name="22" type="Sprite2D" parent="Buildings"]
+[node name="22" type="Sprite2D" parent="Bushes"]
 position = Vector2(2199, 596)
 scale = Vector2(0.396839, 0.396839)
 texture = ExtResource("32_6qgr4")
 
-[node name="23" type="Sprite2D" parent="Buildings"]
+[node name="23" type="Sprite2D" parent="Bushes"]
 position = Vector2(3366, 608)
 scale = Vector2(0.547688, 0.547688)
 texture = ExtResource("29_a78ow")
 
-[node name="24" type="Sprite2D" parent="Buildings"]
+[node name="24" type="Sprite2D" parent="Bushes"]
 position = Vector2(3820, 526)
 scale = Vector2(0.367098, 0.367098)
 texture = ExtResource("32_6qgr4")
 
-[node name="25" type="Sprite2D" parent="Buildings"]
+[node name="25" type="Sprite2D" parent="Bushes"]
 position = Vector2(3627, 588)
 scale = Vector2(0.519231, 0.519231)
 texture = ExtResource("30_5f5ie")
 
-[node name="26" type="Sprite2D" parent="Buildings"]
+[node name="26" type="Sprite2D" parent="Bushes"]
 position = Vector2(3959, 556)
 scale = Vector2(0.609827, 0.609827)
 texture = ExtResource("29_a78ow")
 
-[node name="27" type="Sprite2D" parent="Buildings"]
+[node name="27" type="Sprite2D" parent="Bushes"]
 position = Vector2(4089, 521)
 scale = Vector2(0.388, 0.388)
 texture = ExtResource("37_ffhy0")
 
-[node name="34" type="Sprite2D" parent="Buildings"]
+[node name="34" type="Sprite2D" parent="Bushes"]
 position = Vector2(4806, 566)
 scale = Vector2(0.398026, 0.398026)
 texture = ExtResource("33_qhnsq")
 
-[node name="29" type="Sprite2D" parent="Buildings"]
+[node name="29" type="Sprite2D" parent="Bushes"]
 position = Vector2(4591, 574)
 scale = Vector2(0.326001, 0.326001)
 texture = ExtResource("35_ybqt1")
 
-[node name="30" type="Sprite2D" parent="Buildings"]
+[node name="30" type="Sprite2D" parent="Bushes"]
 position = Vector2(4381, 525)
 scale = Vector2(0.319079, 0.319079)
 texture = ExtResource("33_qhnsq")
 
-[node name="31" type="Sprite2D" parent="Buildings"]
+[node name="31" type="Sprite2D" parent="Bushes"]
 position = Vector2(4637, 591)
 scale = Vector2(0.556358, 0.556358)
 texture = ExtResource("29_a78ow")
 
-[node name="32" type="Sprite2D" parent="Buildings"]
+[node name="32" type="Sprite2D" parent="Bushes"]
 position = Vector2(4875, 586)
 scale = Vector2(0.68408, 0.68408)
 texture = ExtResource("34_l18uu")
 
-[node name="33" type="Sprite2D" parent="Buildings"]
+[node name="33" type="Sprite2D" parent="Bushes"]
 position = Vector2(5350, 563)
 scale = Vector2(0.303785, 0.303785)
 texture = ExtResource("36_w64ui")
 
-[node name="35" type="Sprite2D" parent="Buildings"]
+[node name="35" type="Sprite2D" parent="Bushes"]
 position = Vector2(4971, 614)
 scale = Vector2(0.309649, 0.309649)
 texture = ExtResource("31_ni5ms")
 
-[node name="37" type="Sprite2D" parent="Buildings"]
+[node name="37" type="Sprite2D" parent="Bushes"]
 position = Vector2(5588, 612)
 scale = Vector2(0.442308, 0.442308)
 texture = ExtResource("30_5f5ie")
 
-[node name="38" type="Sprite2D" parent="Buildings"]
+[node name="38" type="Sprite2D" parent="Bushes"]
 position = Vector2(5659, 600)
 scale = Vector2(0.427789, 0.427789)
 texture = ExtResource("36_w64ui")
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 top_level = true
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0.0862745, 1)
 
 [node name="Moonlight" type="DirectionalLight2D" parent="."]
 position = Vector2(6220, -942)
 energy = 0.2
 blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.854902)
 
 [node name="RefillStations" type="Node2D" parent="."]
 
