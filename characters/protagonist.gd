@@ -21,7 +21,7 @@ var x_val = 0
 var y_val = -1
 
 # Child nodes
-@onready var camera = $Camera2D
+#@onready var camera = $Camera2D
 @onready var anim = $AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
 @onready var collision_shape = $CollisionShape2D
