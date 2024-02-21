@@ -599,6 +599,7 @@ autoplay = "move_vertical"
 [node name="Door" parent="Platforms/MPlatform3/AnimatableBody2D" instance=ExtResource("55_tvs1l")]
 position = Vector2(23, 95)
 rotation = -3.14159
+gravity_dir = "up"
 id = 39
 exit_id = 41
 x_offset = -10
