@@ -1,3 +1,4 @@
+class_name RefuelStation
 extends Node2D
 
 """
@@ -9,7 +10,6 @@ signal refuel_area_entered()
 signal refuel_area_exited()
 signal increment_fuel_level()
 
-@onready var anim_sprite = $AnimatedSprite2D
 @onready var anim_player = $AnimationPlayer
 @onready var enter_station_area = $EnterStationArea
 @onready var exit_station_area = $ExitStationArea
@@ -18,7 +18,7 @@ signal increment_fuel_level()
 
 # Play correct starting animation, hook up interactions
 func _ready():
-	anim_sprite.play("lit")
+	anim_player.play("lit")
 	enter_station_area.interact = Callable(self, "enter")
 	exit_station_area.interact = Callable(self, "exit")
 
@@ -28,8 +28,8 @@ func enter() -> void:
 	
 # Exit the refill station
 func exit() -> void:
-	anim_player.play("lit")
 	exit_station.emit(exit_pos)
+	anim_player.play("lit")
 	
 # Protagonist entered the refill area
 func _on_refill_area_body_entered(body):
