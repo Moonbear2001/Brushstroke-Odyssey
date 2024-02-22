@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gf6h17iuvp2b"
-path="res://.godot/imported/backhill2.png-a9c0871952c9a5c03a5512bc24ec0041.ctex"
+uid="uid://cp12inb6ixknn"
+path="res://.godot/imported/lightup.png-710ed2f3cec421995ab6140c073e9b29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/VanGogh/paralax_layers/backhill2.png"
-dest_files=["res://.godot/imported/backhill2.png-a9c0871952c9a5c03a5512bc24ec0041.ctex"]
+source_file="res://art/VanGogh/character/lightup.png"
+dest_files=["res://.godot/imported/lightup.png-710ed2f3cec421995ab6140c073e9b29.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gf6h17iuvp2b"
-path="res://.godot/imported/backhill2.png-a9c0871952c9a5c03a5512bc24ec0041.ctex"
+uid="uid://cpr7oavq4pelq"
+path="res://.godot/imported/climbing.png-5a58b199def7bfbe1adceb58b6fae765.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/VanGogh/paralax_layers/backhill2.png"
-dest_files=["res://.godot/imported/backhill2.png-a9c0871952c9a5c03a5512bc24ec0041.ctex"]
+source_file="res://art/VanGogh/character/climbing.png"
+dest_files=["res://.godot/imported/climbing.png-5a58b199def7bfbe1adceb58b6fae765.ctex"]
 
 [params]
 
