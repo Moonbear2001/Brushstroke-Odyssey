@@ -57,9 +57,18 @@ func _process(_delta):
 # Custom sorting function for active areas to determine closest interactable
 # to the player
 func sort_by_distance_to_player(area1: InteractionArea, area2: InteractionArea):
-		# Check if both areas are enabled
+
+	# Check if both areas are enabled
 	if area1.enabled and area2.enabled:
-		# Calculate distances only if both areas are enabled
+		
+		# When a new scene is loaded, this object's reference to "protagonist" can
+		# be lost, make sure that we get protagonist again to prevent an error
+		# TODO: fix this! horrible design (maybe protagonist should be gobal (ie. Global.protagonist? maybe
+		# when scenes change we refresh the reference?
+		if protagonist == null:
+			protagonist = get_tree().get_first_node_in_group("protagonist")
+		
+		# Calculate distances
 		var area1_to_player = protagonist.global_position.distance_to(area1.global_position)
 		var area2_to_player = protagonist.global_position.distance_to(area2.global_position)
 

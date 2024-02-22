@@ -21,10 +21,6 @@ func _ready():
 	
 	# Position the protagonist
 	protagonist.position = Global.menu_pos
-
-# View high scores pages
-func open_hs_scene() -> void:
-	SceneManager.load_new_scene(Global.LEVELS_PATH + "high_scores_page.tscn")
 	
 # Save the big protagonist's position globally
 func save_pos() -> void:
