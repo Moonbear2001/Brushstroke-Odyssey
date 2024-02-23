@@ -1,6 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://bqbvdpmlbbk1a"]
+[gd_scene load_steps=49 format=3 uid="uid://bqbvdpmlbbk1a"]
 
 [ext_resource type="Script" path="res://characters/protagonist.gd" id="1_1gqkp"]
+[ext_resource type="Texture2D" uid="uid://m4e2j36y3lak" path="res://art/VanGogh/sprite_sheets/climbing.png" id="2_2tusg"]
 [ext_resource type="Texture2D" uid="uid://dy1rei62q518f" path="res://art/character/sprite_sheet.png" id="2_vg6vo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qqohp"]
@@ -252,21 +253,6 @@ tracks/1/keys = {
 "values": [&"JumpRight"]
 }
 
-[sub_resource type="Animation" id="Animation_ifqme"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1]
-}
-
 [sub_resource type="Animation" id="Animation_yae7l"]
 resource_name = "RunLeft"
 length = 0.45
@@ -325,8 +311,38 @@ tracks/1/keys = {
 "values": [&"RunRight"]
 }
 
+[sub_resource type="Animation" id="Animation_3220o"]
+resource_name = "Climb"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Climb"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bwlin"]
 _data = {
+"Climb": SubResource("Animation_3220o"),
 "CrouchLeft": SubResource("Animation_7jpr5"),
 "CrouchRight": SubResource("Animation_66hv6"),
 "FallCenter": SubResource("Animation_5kth4"),
@@ -336,10 +352,37 @@ _data = {
 "JumpCenter": SubResource("Animation_w0lst"),
 "JumpLeft": SubResource("Animation_pqc7d"),
 "JumpRight": SubResource("Animation_61tm3"),
-"RESET": SubResource("Animation_ifqme"),
 "RunLeft": SubResource("Animation_yae7l"),
 "RunRight": SubResource("Animation_m431g")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8m6u"]
+atlas = ExtResource("2_2tusg")
+region = Rect2(0, 0, 686, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl4uk"]
+atlas = ExtResource("2_2tusg")
+region = Rect2(0, 1200, 686, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpwfd"]
+atlas = ExtResource("2_2tusg")
+region = Rect2(0, 2400, 686, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcqt7"]
+atlas = ExtResource("2_2tusg")
+region = Rect2(0, 3600, 686, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dido"]
+atlas = ExtResource("2_2tusg")
+region = Rect2(0, 4800, 686, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycc2l"]
+atlas = ExtResource("2_2tusg")
+region = Rect2(0, 6000, 686, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ibwg"]
+atlas = ExtResource("2_2tusg")
+region = Rect2(0, 7200, 686, 1200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ko3k"]
 atlas = ExtResource("2_vg6vo")
@@ -431,6 +474,32 @@ region = Rect2(1388, 456, 347, 456)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mr000"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8m6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl4uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpwfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcqt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dido")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycc2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ibwg")
+}],
+"loop": true,
+"name": &"Climb",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8ko3k")
@@ -579,7 +648,7 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_mr000")
-animation = &"CrouchLeft"
+animation = &"Climb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

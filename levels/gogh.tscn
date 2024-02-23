@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://deosmx2v1nt24" path="res://art/VanGogh/paralax_layers/fronthill1.PNG" id="25_ickr1"]
 [ext_resource type="Texture2D" uid="uid://cma0p5cymg0qg" path="res://art/VanGogh/paralax_layers/fronthill2.PNG" id="26_um408"]
 [ext_resource type="Texture2D" uid="uid://bt6genldg4yek" path="res://art/VanGogh/paralax_layers/fronthill3.PNG" id="27_2ell1"]
-[ext_resource type="PackedScene" path="res://objects/fuel_bar.tscn" id="28_coumb"]
+[ext_resource type="PackedScene" uid="uid://dr7h5s2v3681c" path="res://objects/fuel_bar.tscn" id="28_coumb"]
 [ext_resource type="Texture2D" uid="uid://cbe0lwvids3cq" path="res://art/VanGogh/misc/bushes/3.png" id="29_a78ow"]
 [ext_resource type="Texture2D" uid="uid://b76s8p0a5pn07" path="res://art/VanGogh/misc/bushes/1.png" id="30_5f5ie"]
 [ext_resource type="Texture2D" uid="uid://bm0ektssmglv2" path="res://art/VanGogh/misc/bushes/10.PNG" id="31_ni5ms"]
@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://bg6p0qb58bjki" path="res://art/VanGogh/misc/bushes/9.PNG" id="35_ybqt1"]
 [ext_resource type="Texture2D" uid="uid://dhtt6wgsu5avl" path="res://art/VanGogh/misc/bushes/8.png" id="36_w64ui"]
 [ext_resource type="Texture2D" uid="uid://5chpknaaodyl" path="res://art/VanGogh/misc/bushes/4.png" id="37_ffhy0"]
-[ext_resource type="PackedScene" path="res://objects/refill_station.tscn" id="39_d8lh2"]
+[ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refill_station.tscn" id="39_d8lh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 size = Vector2(7.94896, 8.30418)
@@ -466,7 +466,7 @@ bus = &"Music"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
 top_level = true
-position = Vector2(64, 426)
+position = Vector2(109, 431)
 
 [node name="Lantern" parent="Protagonist" instance=ExtResource("25_cmusv")]
 
@@ -722,6 +722,10 @@ shadow_color = Color(0, 0, 0, 0.854902)
 [node name="RefillStation1" parent="RefillStations" instance=ExtResource("39_d8lh2")]
 position = Vector2(131, 622)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.4
+
 [connection signal="fuel_exhausted" from="Protagonist/Lantern" to="." method="_on_lantern_fuel_exhausted"]
 [connection signal="fuel_level_changed" from="Protagonist/Lantern" to="LevelUI/FuelBar" method="_on_lantern_fuel_level_changed"]
 [connection signal="exit_station" from="RefillStations/RefillStation1" to="." method="_on_refill_station_1_exit_station"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

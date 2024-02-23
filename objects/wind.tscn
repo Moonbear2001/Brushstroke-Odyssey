@@ -1,0 +1,196 @@
+[gd_scene load_steps=20 format=3 uid="uid://nbwvn7ah2udr"]
+
+[ext_resource type="Script" path="res://objects/wind.gd" id="1_3s057"]
+[ext_resource type="Texture2D" uid="uid://dvp2ookoux22h" path="res://art/VanGogh/sprite_sheets/wind1.png" id="2_f0wg0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtwmn"]
+size = Vector2(187.688, 132.375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktbkg"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 0, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vukt1"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 0, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w13n"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 1000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asadc"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 2000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yygj2"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 3000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcbll"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 4000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxybl"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 5000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_secly"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 6000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7raaf"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 7000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esmtk"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 8000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k12xs"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 9000, 2000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fgfy"]
+atlas = ExtResource("2_f0wg0")
+region = Rect2(0, 10000, 2000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjyjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktbkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vukt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w13n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asadc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yygj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcbll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxybl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_secly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7raaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esmtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k12xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fgfy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_g6a0a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(63, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_o1yud"]
+resource_name = "blowing"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-400, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(191, -25), Vector2(159, -20.5), Vector2(63, -16), Vector2(-35.3636, -6.81818), Vector2(-124.727, 1.36363), Vector2(-178.646, 20.4343), Vector2(-213.441, 28.755), Vector2(-256.663, 15.0758), Vector2(-315.053, 1.39646), Vector2(-385.842, -3.88283), Vector2(-426.632, -9.16212), Vector2(-495.754, -22.4414), Vector2(-516.377, -23.7207), Vector2(-555.688, -24.3604)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kqcva"]
+_data = {
+"RESET": SubResource("Animation_g6a0a"),
+"blowing": SubResource("Animation_o1yud")
+}
+
+[node name="Wind" type="Node2D"]
+script = ExtResource("1_3s057")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(63, -16)
+scale = Vector2(0.999999, 0.999999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.156189, 18.8125)
+shape = SubResource("RectangleShape2D_wtwmn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_pjyjc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kqcva")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

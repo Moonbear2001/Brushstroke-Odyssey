@@ -19,6 +19,10 @@ const JUMP_VELOCITY = 430.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var x_val = 0
 var y_val = -1
+var windDirection = Vector2(-1, 0)
+var windForce = -400
+var inWind = false
+var climb = false
 
 # Child nodes
 #@onready var camera = $Camera2D
@@ -36,12 +40,18 @@ func _physics_process(delta):
 	if not enabled:
 		return
 	use_gravity(delta)
+	if inWind:
+		apply_wind_force(delta)
 	move_and_slide()
 
 # Handle input events, gets called before physics process
 func _input(_input_event):
 	if not enabled:
 		return
+
+func apply_wind_force(delta):
+	velocity.x = windForce
+	velocity.y = -50
 
 func use_gravity(delta):
 	if x_val != 0:
@@ -61,8 +71,12 @@ func use_gravity(delta):
 		else:
 			velocity.y = JUMP_VELOCITY * y_val
 	
-	if not is_on_floor() and not big:
+	if not is_on_floor() and not big and not Input.is_action_pressed("climb"):
 		set_jump_animation()
+	
+	if Input.is_action_pressed("climb") and climb:
+		velocity = Vector2(0, -SPEED)
+		anim.play("Climb")
 	
 	var direction
 	
