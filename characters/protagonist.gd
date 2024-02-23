@@ -87,7 +87,7 @@ func use_gravity(delta):
 			direction = Input.get_axis("left", "right")
 		else:
 			direction = Input.get_axis("right", "left")
-	if direction:
+	if direction and not inWind:
 		if x_val != 0:
 			velocity.y = direction * SPEED * x_val * -1
 			if velocity.x == 0:

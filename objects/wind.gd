@@ -11,10 +11,8 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("protagonist"):
-		body.enabled = false
 		body.inWind = true
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("protagonist"):
-		body.enabled = true
 		body.inWind = false

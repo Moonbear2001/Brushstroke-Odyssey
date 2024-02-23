@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=42 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_jcigm"]
@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bafel6yqdu8wj" path="res://art/gogh/house section/houses/Untitled_Artwork-1.png" id="18_hlwiq"]
 [ext_resource type="Texture2D" uid="uid://dlhtfloy4hqeb" path="res://art/gogh/house section/houses/lantern_houses/h3_lit.PNG" id="19_3elfj"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="24_hdcnw"]
-[ext_resource type="PackedScene" uid="uid://cho7dlwku5h6q" path="res://art/lighting/lantern.tscn" id="25_cmusv"]
+[ext_resource type="PackedScene" uid="uid://cho7dlwku5h6q" path="res://objects/lantern.tscn" id="25_cmusv"]
 [ext_resource type="Texture2D" uid="uid://deosmx2v1nt24" path="res://art/VanGogh/paralax_layers/fronthill1.PNG" id="25_ickr1"]
 [ext_resource type="Texture2D" uid="uid://cma0p5cymg0qg" path="res://art/VanGogh/paralax_layers/fronthill2.PNG" id="26_um408"]
 [ext_resource type="Texture2D" uid="uid://bt6genldg4yek" path="res://art/VanGogh/paralax_layers/fronthill3.PNG" id="27_2ell1"]
@@ -38,7 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://bg6p0qb58bjki" path="res://art/VanGogh/misc/bushes/9.PNG" id="35_ybqt1"]
 [ext_resource type="Texture2D" uid="uid://dhtt6wgsu5avl" path="res://art/VanGogh/misc/bushes/8.png" id="36_w64ui"]
 [ext_resource type="Texture2D" uid="uid://5chpknaaodyl" path="res://art/VanGogh/misc/bushes/4.png" id="37_ffhy0"]
-[ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refill_station.tscn" id="39_d8lh2"]
+[ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_station_1.tscn" id="39_d8lh2"]
+[ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_station_3.tscn" id="40_n2r0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 size = Vector2(7.94896, 8.30418)
@@ -161,7 +162,7 @@ position = Vector2(36.8571, -205.286)
 polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2132, 498, 2180, 585, 2163, 603, 2179, 722, 2087, 757)
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(27.7045, 18)
+position = Vector2(187.046, 18)
 metadata/_edit_group_ = true
 
 [node name="3" type="Sprite2D" parent="Platforms/House Section/StaticBody2D7"]
@@ -174,7 +175,7 @@ position = Vector2(-71, -71)
 polygon = PackedVector2Array(448, 761, 433, 590, 510, 594, 549, 544, 622, 540, 664, 583, 662, 594, 733, 603, 777, 661, 736, 665, 748, 749)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(59.9093, 2)
+position = Vector2(352.682, 2)
 metadata/_edit_group_ = true
 
 [node name="2" type="Sprite2D" parent="Platforms/House Section/StaticBody2D3"]
@@ -331,7 +332,7 @@ position = Vector2(12, -186)
 polygon = PackedVector2Array(2094, 823, 2094, 759, 2074, 759, 2155, 679, 2446, 679, 2489, 739, 2455, 740, 2458, 805)
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="Platforms/House Section"]
-position = Vector2(94.5684, 0)
+position = Vector2(522.069, 0)
 metadata/_edit_group_ = true
 
 [node name="1" type="Sprite2D" parent="Platforms/House Section/StaticBody2D17"]
@@ -712,20 +713,23 @@ color = Color(0, 0, 0.0862745, 1)
 
 [node name="Moonlight" type="DirectionalLight2D" parent="."]
 position = Vector2(6220, -942)
-energy = 0.2
+energy = 0.1
 blend_mode = 2
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.854902)
 
 [node name="RefillStations" type="Node2D" parent="."]
 
-[node name="RefillStation1" parent="RefillStations" instance=ExtResource("39_d8lh2")]
-position = Vector2(131, 622)
+[node name="RefuelStation1" parent="RefillStations" instance=ExtResource("39_d8lh2")]
+position = Vector2(106, 629)
+
+[node name="RefuelStation3" parent="RefillStations" instance=ExtResource("40_n2r0d")]
+position = Vector2(370, 598)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.4
+autostart = true
 
 [connection signal="fuel_exhausted" from="Protagonist/Lantern" to="." method="_on_lantern_fuel_exhausted"]
 [connection signal="fuel_level_changed" from="Protagonist/Lantern" to="LevelUI/FuelBar" method="_on_lantern_fuel_level_changed"]
-[connection signal="exit_station" from="RefillStations/RefillStation1" to="." method="_on_refill_station_1_exit_station"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
