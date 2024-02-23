@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_jcigm"]
-[ext_resource type="Texture2D" uid="uid://gf6h17iuvp2b" path="res://art/VanGogh/paralax_layers/backhill2.PNG" id="2_swqqb"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
+[ext_resource type="Texture2D" uid="uid://cu4xli4pa60am" path="res://art/VanGogh/paralax_layers/backhill2_connected.png" id="3_kvpk8"]
 [ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="4_763oi"]
 [ext_resource type="Texture2D" uid="uid://cunk6bh7ewi4w" path="res://art/gogh/house section/houses/IMG_0444.PNG" id="4_sknkl"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_1f3ar"]
@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://deosmx2v1nt24" path="res://art/VanGogh/paralax_layers/fronthill1.PNG" id="25_ickr1"]
 [ext_resource type="Texture2D" uid="uid://cma0p5cymg0qg" path="res://art/VanGogh/paralax_layers/fronthill2.PNG" id="26_um408"]
 [ext_resource type="Texture2D" uid="uid://bt6genldg4yek" path="res://art/VanGogh/paralax_layers/fronthill3.PNG" id="27_2ell1"]
-[ext_resource type="PackedScene" uid="uid://dr7h5s2v3681c" path="res://objects/fuel_bar.tscn" id="28_coumb"]
+[ext_resource type="PackedScene" path="res://objects/fuel_bar.tscn" id="28_coumb"]
 [ext_resource type="Texture2D" uid="uid://cbe0lwvids3cq" path="res://art/VanGogh/misc/bushes/3.png" id="29_a78ow"]
 [ext_resource type="Texture2D" uid="uid://b76s8p0a5pn07" path="res://art/VanGogh/misc/bushes/1.png" id="30_5f5ie"]
 [ext_resource type="Texture2D" uid="uid://bm0ektssmglv2" path="res://art/VanGogh/misc/bushes/10.PNG" id="31_ni5ms"]
@@ -63,15 +63,15 @@ position = Vector2(3044, -491)
 scale = Vector2(1.07672, 1.07672)
 texture = ExtResource("5_bk2g7")
 
-[node name="Backhill2" type="Sprite2D" parent="Background"]
-position = Vector2(1243, -154)
-scale = Vector2(0.768682, 0.768682)
-texture = ExtResource("2_swqqb")
+[node name="Backhill2Connected" type="Sprite2D" parent="Background"]
+position = Vector2(1184, -120)
+scale = Vector2(0.89418, 0.89418)
+texture = ExtResource("3_kvpk8")
 
-[node name="Backhill3" type="Sprite2D" parent="Background"]
-position = Vector2(4674, -148)
-scale = Vector2(0.768682, 0.768682)
-texture = ExtResource("2_swqqb")
+[node name="Backhill2Connected2" type="Sprite2D" parent="Background"]
+position = Vector2(5688, -480)
+scale = Vector2(0.89418, 0.89418)
+texture = ExtResource("3_kvpk8")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 1
