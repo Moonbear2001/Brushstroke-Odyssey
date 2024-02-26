@@ -3548,7 +3548,7 @@ end = NodePath("End")
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1653.93, -103.625)
+position = Vector2(1653.93, -30.6249)
 scale = Vector2(0.806626, 0.806626)
 texture = ExtResource("2_shn6u")
 
