@@ -19,14 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://cqph7b5ej7pag" path="res://art/gogh/house section/houses/IMG_0415.PNG" id="16_4xwri"]
 [ext_resource type="Texture2D" uid="uid://ch3wjopdqo8oo" path="res://art/gogh/house section/houses/IMG_0416.PNG" id="17_nai7y"]
 [ext_resource type="Texture2D" uid="uid://bafel6yqdu8wj" path="res://art/gogh/house section/houses/Untitled_Artwork-1.png" id="18_hlwiq"]
-[ext_resource type="Texture2D" uid="uid://dlhtfloy4hqeb" path="res://art/gogh/house section/houses/lantern_houses/h3_lit.PNG" id="19_3elfj"]
-[ext_resource type="PackedScene" uid="uid://cub2bualqx0yk" path="res://characters/protagonist_gogh.tscn" id="24_en3te"]
+[ext_resource type="PackedScene" path="res://characters/protagonist_gogh.tscn" id="24_en3te"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="24_hdcnw"]
 [ext_resource type="PackedScene" uid="uid://cho7dlwku5h6q" path="res://objects/lantern.tscn" id="25_cmusv"]
 [ext_resource type="Texture2D" uid="uid://deosmx2v1nt24" path="res://art/VanGogh/paralax_layers/fronthill1.PNG" id="25_ickr1"]
 [ext_resource type="Texture2D" uid="uid://cma0p5cymg0qg" path="res://art/VanGogh/paralax_layers/fronthill2.PNG" id="26_um408"]
 [ext_resource type="Texture2D" uid="uid://bt6genldg4yek" path="res://art/VanGogh/paralax_layers/fronthill3.PNG" id="27_2ell1"]
-[ext_resource type="PackedScene" uid="uid://dr7h5s2v3681c" path="res://objects/fuel_bar.tscn" id="28_coumb"]
+[ext_resource type="PackedScene" uid="uid://bcnds3kcg2d1m" path="res://objects/fuel_bar.tscn" id="28_coumb"]
 [ext_resource type="Texture2D" uid="uid://cbe0lwvids3cq" path="res://art/VanGogh/misc/bushes/3.png" id="29_a78ow"]
 [ext_resource type="Texture2D" uid="uid://b76s8p0a5pn07" path="res://art/VanGogh/misc/bushes/1.png" id="30_5f5ie"]
 [ext_resource type="Texture2D" uid="uid://bm0ektssmglv2" path="res://art/VanGogh/misc/bushes/10.PNG" id="31_ni5ms"]
@@ -444,12 +443,6 @@ stream = ExtResource("4_763oi")
 autoplay = true
 bus = &"Music"
 
-[node name="Protagonist" parent="." instance=ExtResource("2_jcigm")]
-top_level = true
-position = Vector2(4706, 262)
-
-[node name="Lantern" parent="Protagonist" instance=ExtResource("25_cmusv")]
-
 [node name="Stars" type="Node2D" parent="."]
 position = Vector2(-4, -340)
 
@@ -698,14 +691,15 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(4741, 473)
 scale = Vector2(0.8, 0.8)
 
+[node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
+position = Vector2(81, 467)
+metadata/_edit_group_ = true
+
+[node name="Lantern" parent="Protagonist" instance=ExtResource("25_cmusv")]
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_763oi")
-autoplay = true
-bus = &"Music"
 
 [node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]
 
