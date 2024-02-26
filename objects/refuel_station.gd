@@ -25,6 +25,8 @@ func _ready():
 # Enter the refill station
 func enter() -> void:
 	anim_player.play("inside")
+	var protagonist = get_tree().get_first_node_in_group("protagonist")
+	protagonist.glow = false
 	
 # Exit the refill station
 func exit() -> void:
@@ -35,12 +37,14 @@ func exit() -> void:
 func _on_refill_area_body_entered(body):
 	if body is Protagonist:
 		refuel_area_entered.emit()
+		body.refueling = true
 		timer.start()
 	
 # Protagonist exited the refill area
 func _on_refill_area_body_exited(body):
 	if body is Protagonist:
 		refuel_area_exited.emit()
+		body.refueling = false
 		timer.stop()
 
 # Signal to increment how much fuel we have

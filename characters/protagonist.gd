@@ -23,18 +23,22 @@ var windDirection = Vector2(-1, 0)
 var windForce = -400
 var inWind = false
 var climb = false
+var glow = false
+var glow_level = "0"
+var refueling = false
 
 # Child nodes
 #@onready var camera = $Camera2D
 @onready var anim = $AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
 @onready var collision_shape = $CollisionShape2D
+@onready var glow_anim = $Glow
 
 
 func _ready():
 	if big:
 		SPEED = 320
-	anim.play("Idle")
+	anim.play(get_anim_name("Idle"))
 
 func _physics_process(delta):
 	if not enabled:
@@ -76,7 +80,7 @@ func use_gravity(delta):
 	
 	if Input.is_action_pressed("climb") and climb:
 		velocity = Vector2(0, -SPEED)
-		anim.play("Climb")
+		anim.play(get_anim_name("Climb"))
 	
 	var direction
 	
@@ -92,24 +96,24 @@ func use_gravity(delta):
 			velocity.y = direction * SPEED * x_val * -1
 			if velocity.x == 0:
 				if direction < 0:
-					anim.play("RunRight")
+					anim.play(get_anim_name("RunRight"))
 				else:
-					anim.play("RunLeft")
+					anim.play(get_anim_name("RunLeft"))
 		else:
 			velocity.x = direction * SPEED * y_val * -1
 			if velocity.y == 0:
 				if direction > 0:
-					anim.play("RunRight")
+					anim.play(get_anim_name("RunRight"))
 				else:
-					anim.play("RunLeft")
+					anim.play(get_anim_name("RunLeft"))
 	else:
 		if x_val != 0:
 			if velocity.x == 0:
-				anim.play("Idle")
+				anim.play(get_anim_name("Idle"))
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 		else:
 			if velocity.y == 0:
-				anim.play("Idle")
+				anim.play(get_anim_name("Idle"))
 			velocity.x = move_toward(velocity.x, 0, SPEED) 
 
 func set_gravity(direction):
@@ -156,48 +160,48 @@ func set_jump_animation():
 	if x_val == -1 and y_val == 0:
 		if v_lat > 0:
 			if v_jump > -100 and v_jump  < 100:
-				anim.play("CrouchLeft")
+				anim.play(get_anim_name("CrouchLeft"))
 			elif v_jump > 0:
-				anim.play("FallLeft")
+				anim.play(get_anim_name("FallLeft"))
 			elif v_jump < 0:
-				anim.play("JumpLeft")
+				anim.play(get_anim_name("JumpLeft"))
 		elif v_lat < 0:
 			if v_jump > -100 and v_jump < 100:
-				anim.play("CrouchRight")
+				anim.play(get_anim_name("CrouchRight"))
 			elif v_jump > 0:
-				anim.play("FallRight")
+				anim.play(get_anim_name("FallRight"))
 			elif v_jump < 0:
-				anim.play("JumpRight")
+				anim.play(get_anim_name("JumpRight"))
 		else:
 			if v_jump > -100 and v_jump < 100:
-				anim.play("CrouchRight")
+				anim.play(get_anim_name("CrouchRight"))
 			elif v_jump > 0:
-				anim.play("FallCenter")
+				anim.play(get_anim_name("FallCenter"))
 			elif v_jump < 0:
-				anim.play("JumpCenter")
+				anim.play(get_anim_name("JumpCenter"))
 	
 	else:
 		if v_lat < 0:
 			if v_jump * dir * -1 > -100 and v_jump * dir * -1 < 100:
-				anim.play("CrouchLeft")
+				anim.play(get_anim_name("CrouchLeft"))
 			elif v_jump * dir * -1 > 0:
-				anim.play("FallLeft")
+				anim.play(get_anim_name("FallLeft"))
 			elif v_jump * dir * -1 < 0:
-				anim.play("JumpLeft")
+				anim.play(get_anim_name("JumpLeft"))
 		elif v_lat > 0:
 			if v_jump * dir * -1  > -100 and v_jump * dir * -1 < 100:
-				anim.play("CrouchRight")
+				anim.play(get_anim_name("CrouchRight"))
 			elif v_jump * dir * -1 > 0:
-				anim.play("FallRight")
+				anim.play(get_anim_name("FallRight"))
 			elif v_jump * dir * -1 < 0:
-				anim.play("JumpRight")
+				anim.play(get_anim_name("JumpRight"))
 		else:
 			if v_jump > -100 and v_jump < 100:
-				anim.play("CrouchRight")
+				anim.play(get_anim_name("CrouchRight"))
 			elif v_jump * dir * -1 > 0:
-				anim.play("FallCenter")
+				anim.play(get_anim_name("FallCenter"))
 			elif v_jump * dir * -1 < 0:
-				anim.play("JumpCenter")
+				anim.play(get_anim_name("JumpCenter"))
 
 # Disable visibility and controls and movement
 func disable():
@@ -209,3 +213,19 @@ func enable():
 	enabled = true
 	visible = true
 
+func get_anim_name(name):
+	if glow:
+		if glow_anim:
+			glow_anim.show()
+			glow_anim.play(glow_level)
+		return name + "_glow"
+	else:
+		if name == "Idle" and refueling:
+			glow_anim.show()
+			if glow_level == "10":
+				return "RefillDone_default"
+			else:
+				return "Refill_default"
+		if glow_anim:
+			glow_anim.hide()
+		return name + "_default"
