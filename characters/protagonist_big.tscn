@@ -120,7 +120,7 @@ animations = [{
 }]
 
 [sub_resource type="Animation" id="Animation_ygu2q"]
-resource_name = "Idle"
+resource_name = "Idle_default"
 length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -163,7 +163,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_iht68"]
-resource_name = "RunLeft"
+resource_name = "RunLeft_default"
 length = 0.45
 loop_mode = 1
 tracks/0/type = "value"
@@ -192,7 +192,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_wq4vm"]
-resource_name = "RunRight"
+resource_name = "RunRight_default"
 length = 0.45
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -221,10 +221,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_02djy"]
 _data = {
-"Idle": SubResource("Animation_ygu2q"),
+"Idle_default": SubResource("Animation_ygu2q"),
 "RESET": SubResource("Animation_em1td"),
-"RunLeft": SubResource("Animation_iht68"),
-"RunRight": SubResource("Animation_wq4vm")
+"RunLeft_default": SubResource("Animation_iht68"),
+"RunRight_default": SubResource("Animation_wq4vm")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nd5sq"]
