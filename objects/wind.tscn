@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://objects/wind.gd" id="1_3s057"]
 [ext_resource type="Texture2D" uid="uid://dvp2ookoux22h" path="res://art/VanGogh/sprite_sheets/wind1.png" id="2_f0wg0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtwmn"]
-size = Vector2(187.688, 132.375)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktbkg"]
 atlas = ExtResource("2_f0wg0")
 region = Rect2(0, 0, 2000, 1000)
@@ -98,7 +95,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_g6a0a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtwmn"]
+size = Vector2(187.688, 132.375)
+
+[sub_resource type="Animation" id="Animation_u8nut"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -110,7 +110,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(63, -16)]
+"values": [Vector2(619, -24)]
 }
 
 [sub_resource type="Animation" id="Animation_o1yud"]
@@ -162,35 +162,38 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(191, -25), Vector2(159, -20.5), Vector2(63, -16), Vector2(-35.3636, -6.81818), Vector2(-124.727, 1.36363), Vector2(-178.646, 20.4343), Vector2(-213.441, 28.755), Vector2(-256.663, 15.0758), Vector2(-315.053, 1.39646), Vector2(-385.842, -3.88283), Vector2(-426.632, -9.16212), Vector2(-495.754, -22.4414), Vector2(-516.377, -23.7207), Vector2(-555.688, -24.3604)]
+"values": [Vector2(619, -24), Vector2(599, -24), Vector2(333, 8), Vector2(83, 45), Vector2(-125, 73), Vector2(-231, 102), Vector2(-295, 141), Vector2(-397, 97), Vector2(-493, 27), Vector2(-630, 22), Vector2(-702, 1), Vector2(-839, -26), Vector2(-871, -17), Vector2(-889, -24)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kqcva"]
 _data = {
-"RESET": SubResource("Animation_g6a0a"),
+"RESET": SubResource("Animation_u8nut"),
 "blowing": SubResource("Animation_o1yud")
 }
 
 [node name="Wind" type="Node2D"]
 script = ExtResource("1_3s057")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-400, 0)
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_pjyjc")
+frame = 11
+
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(63, -16)
-scale = Vector2(0.999999, 0.999999)
+position = Vector2(619, -24)
+scale = Vector2(3, 3)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.156189, 18.8125)
+position = Vector2(0.333333, -1.90735e-06)
 shape = SubResource("RectangleShape2D_wtwmn")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = -3.14159
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_pjyjc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_kqcva")
 }
+autoplay = "blowing"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
