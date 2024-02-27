@@ -11,8 +11,8 @@ signal refuel_area_exited()
 signal increment_fuel_level()
 
 @onready var anim_player = $AnimationPlayer
-@onready var enter_station_area = $EnterStationArea
-@onready var exit_station_area = $ExitStationArea
+@onready var enter_station_area = $Enter/EnterStationArea
+@onready var exit_station_area = $Exit/ExitStationArea
 @onready var exit_pos = $ExitPos
 @onready var timer = $Timer
 

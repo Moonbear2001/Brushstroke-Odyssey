@@ -38,7 +38,6 @@ func _on_lantern_fuel_exhausted():
 	get_tree().reload_current_scene()
 
 func spawn_wind():
-	print("called")
 	var newWind = wind.instantiate()
 	newWind.global_position.x = randf_range(0, 5200)
 	newWind.global_position.y = randf_range(200, 400)
