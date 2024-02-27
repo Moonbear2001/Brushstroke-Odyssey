@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=43 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
@@ -9,9 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://cubwbfmfdwomi" path="res://art/VanGogh/paralax_layers/backhill.PNG" id="5_bk2g7"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_huc8b"]
 [ext_resource type="Texture2D" uid="uid://bfkddg653gdh" path="res://art/gogh/house section/houses/IMG_0417.PNG" id="5_pis4t"]
+[ext_resource type="PackedScene" uid="uid://ttw54akscy01" path="res://objects/swaying_trees/tree1.tscn" id="7_5h0g3"]
 [ext_resource type="Texture2D" uid="uid://bhpog2xdqk2co" path="res://art/gogh/house section/houses/IMG_0419.PNG" id="7_xoa8w"]
+[ext_resource type="PackedScene" uid="uid://ckhpqu0ah2lat" path="res://objects/swaying_trees/tree2.tscn" id="8_dxxt4"]
 [ext_resource type="Texture2D" uid="uid://dwfbq2igswk1q" path="res://art/gogh/house section/houses/IMG_0420.PNG" id="8_ygd5l"]
 [ext_resource type="Texture2D" uid="uid://c7qfks4nx4ucj" path="res://art/gogh/house section/houses/IMG_0430.PNG" id="9_oapxk"]
+[ext_resource type="PackedScene" uid="uid://di65hof4u3arf" path="res://objects/swaying_trees/tree3.tscn" id="9_xaqnx"]
 [ext_resource type="Texture2D" uid="uid://bpynnfwijgeh4" path="res://art/gogh/house section/houses/IMG_0431.PNG" id="10_nuuhn"]
 [ext_resource type="Texture2D" uid="uid://4fgvbjc2f0h8" path="res://art/gogh/house section/houses/IMG_0434.PNG" id="13_rgd15"]
 [ext_resource type="Texture2D" uid="uid://crqht1uihfr01" path="res://art/gogh/house section/houses/IMG_0441.PNG" id="14_3h7bj"]
@@ -19,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cqph7b5ej7pag" path="res://art/gogh/house section/houses/IMG_0415.PNG" id="16_4xwri"]
 [ext_resource type="Texture2D" uid="uid://ch3wjopdqo8oo" path="res://art/gogh/house section/houses/IMG_0416.PNG" id="17_nai7y"]
 [ext_resource type="Texture2D" uid="uid://bafel6yqdu8wj" path="res://art/gogh/house section/houses/Untitled_Artwork-1.png" id="18_hlwiq"]
-[ext_resource type="PackedScene" path="res://characters/protagonist_gogh.tscn" id="24_en3te"]
+[ext_resource type="PackedScene" uid="uid://cub2bualqx0yk" path="res://characters/protagonist_gogh.tscn" id="24_en3te"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="24_hdcnw"]
 [ext_resource type="PackedScene" uid="uid://cho7dlwku5h6q" path="res://objects/lantern.tscn" id="25_cmusv"]
 [ext_resource type="Texture2D" uid="uid://deosmx2v1nt24" path="res://art/VanGogh/paralax_layers/fronthill1.PNG" id="25_ickr1"]
@@ -99,6 +102,27 @@ metadata/_edit_lock_ = true
 position = Vector2(7212, 1031)
 texture = ExtResource("25_ickr1")
 metadata/_edit_lock_ = true
+
+[node name="Tree1" parent="." instance=ExtResource("7_5h0g3")]
+position = Vector2(551, 288)
+scale = Vector2(0.8, 0.8)
+
+[node name="Tree2" parent="." instance=ExtResource("8_dxxt4")]
+position = Vector2(1369, 386)
+scale = Vector2(0.6, 0.6)
+
+[node name="Tree5" parent="." instance=ExtResource("8_dxxt4")]
+position = Vector2(2176, 328)
+rotation = -0.193732
+scale = Vector2(0.6, 0.6)
+
+[node name="Tree3" parent="." instance=ExtResource("9_xaqnx")]
+position = Vector2(650, 355)
+scale = Vector2(0.7, 0.7)
+
+[node name="Tree4" parent="." instance=ExtResource("9_xaqnx")]
+position = Vector2(1914, 367)
+scale = Vector2(0.7, 0.7)
 
 [node name="Platforms" type="Node2D" parent="."]
 

@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://o8fsnpdb0itg"]
+
+[ext_resource type="Texture2D" uid="uid://dfdmaxtn26mfo" path="res://art/VanGogh/sprite_sheets/smolwind1.png" id="1_f52qp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eamu3"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(0, 0, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gx0p"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(934, 0, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij6st"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(1868, 0, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_462n8"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(2802, 0, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bciff"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(0, 697, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phb3n"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(934, 697, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpsge"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(1868, 697, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiqed"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(2802, 697, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qww3o"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(0, 1394, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi8ks"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(934, 1394, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8u33"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(1868, 1394, 934, 697)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sunk"]
+atlas = ExtResource("1_f52qp")
+region = Rect2(2802, 1394, 934, 697)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mn5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eamu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gx0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij6st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_462n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bciff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phb3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpsge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiqed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qww3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi8ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8u33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sunk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="SmallWind2" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3mn5i")
+frame_progress = 0.0959918

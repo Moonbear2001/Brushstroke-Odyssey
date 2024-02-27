@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://di65hof4u3arf"]
+
+[ext_resource type="Texture2D" uid="uid://btxx53njtmxeg" path="res://art/VanGogh/sprite_sheets/swaying trees/tree3.png" id="1_fe0rm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u3r2"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(0, 0, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44ar0"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(0, 0, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33gr6"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(1010, 0, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1siub"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(0, 1016, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vnou"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(1010, 1016, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hayc"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(0, 2032, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lonm"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(1010, 2032, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aebvd"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(0, 3048, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vpdr"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(1010, 3048, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvd30"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(0, 4064, 1010, 1016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b1fv"]
+atlas = ExtResource("1_fe0rm")
+region = Rect2(1010, 4064, 1010, 1016)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35gfy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u3r2")
+}],
+"loop": false,
+"name": &"still",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44ar0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33gr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1siub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vnou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hayc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lonm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aebvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vpdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvd30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b1fv")
+}],
+"loop": true,
+"name": &"swaying",
+"speed": 5.0
+}]
+
+[node name="Tree3" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_35gfy")
+animation = &"still"
+autoplay = "still"
