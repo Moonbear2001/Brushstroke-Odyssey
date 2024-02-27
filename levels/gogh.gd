@@ -50,9 +50,10 @@ func _on_lantern_fuel_exhausted():
 	get_tree().reload_current_scene()
 
 func spawn_wind():
+
 	var screen_size = get_viewport_rect().size
 	var x_pos = camera.global_position.x + floori(screen_size.x / 2)
-	
+
 	var newWind = wind.instantiate()
 	newWind.global_position = Vector2(x_pos, 260)
 	add_child(newWind)

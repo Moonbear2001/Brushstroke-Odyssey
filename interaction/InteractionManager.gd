@@ -7,52 +7,61 @@ associated with that object if the protagonist uses "interact".
 """
 
 @onready var protagonist = get_tree().get_first_node_in_group("protagonist")
-@onready var label = $Label
 
 const base_text = "[E] "
-const enter_text = "[ENTER] "
 
-# Holds all interaction areas that can currently be
-# interacted with
+var text_box_scene: PackedScene = preload("res://interaction/text_box.tscn")
+var text_box = text_box_scene.instantiate()
+
+# Holds all interaction areas
 var active_areas = []
 
+# Whether there was a change in the 
+var change: bool = true
 var can_interact = true
+
+func _ready():
+	set_scale(Vector2(0.5, 0.5))
+	add_child(text_box)
+	
+func make_new_text_box() -> void:
+	remove_child(text_box)
+	text_box = text_box_scene.instantiate()
+	add_child(text_box)
 
 # Register an area
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)
+	change = true
 
 # Unregister an area, if it is in the active areas
 func unregister_area(area: InteractionArea):
 	var index = active_areas.find(area)
 	if index != -1:
-		active_areas[index].onLeave.call()
 		active_areas.remove_at(index)
-		
+	change = true
+
 func _process(_delta):
-	# Show label based on closest interactable
-	if active_areas.size() > 0 && can_interact:
+	
+	# If interaction isn't allowed or there has been on change, dont bother
+	if !can_interact or !change:
+		return
+		
+	# There's been a change in the available interaction areas
+	change = false
+	make_new_text_box()
+	if active_areas.size() > 0:
 		active_areas.sort_custom(sort_by_distance_to_player)
-		if not active_areas[0].enabled:
-			label.hide()
+		if !active_areas[0].enabled:
+			text_box.hide()
 			return
-		if active_areas[0].key == "E":
-			label.text = base_text
-		else:
-			label.text = enter_text
-		
-		label.text += active_areas[0].action_name
-		label.global_position = active_areas[0].global_position
-		
-		label.global_position.y += active_areas[0].position_y
-		label.global_position.x += active_areas[0].position_x
-		label.modulate = active_areas[0].label_color
-		active_areas[0].onEnter.call()
-		label.show()
-	elif active_areas.size() > 0:
-		active_areas[0].onEnter.call()
+		text_box.display_text("[" + active_areas[0].key + "] " + active_areas[0].action_name)
+		text_box.global_position = active_areas[0].label_pos.global_position
+		text_box.show()
+	
+	# Hide new text_box
 	else:
-		label.hide()
+		text_box.hide()
 
 # Custom sorting function for active areas to determine closest interactable
 # to the player
@@ -85,7 +94,8 @@ func _input(event):
 	if event.is_action_pressed("interact") && can_interact:
 		if active_areas.size() > 0:
 			can_interact = false
-			label.hide()
+			
+			text_box.hide()
 			
 			# Call the custom interaction function for the closest interactable
 			await active_areas[0].interact.call()

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnjkxkejv3y1a"]
+
+[ext_resource type="Script" path="res://interaction/text_box.gd" id="1_6ffn8"]
+[ext_resource type="StyleBox" uid="uid://c3wc5xwxothg1" path="res://new_style_box_flat.tres" id="2_cwix5"]
+
+[node name="TextBox" type="MarginContainer"]
+z_index = 200
+offset_right = 102.0
+offset_bottom = 31.0
+scale = Vector2(1.48, 1.48)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_6ffn8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_cwix5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2

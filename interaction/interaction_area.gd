@@ -10,23 +10,19 @@ adding a CollisionShape2D as a child node in that scene.
 
 @export var action_name: String = "interact"
 @export var key: String = "E"
-@export var label_color = Color(1, 1, 1)
-var position_x = 0
-var position_y = 0
+@export var label_color: Color = Color(1, 1, 1)
+
+# The parent shoule define a Node2D that is where it wants the InteractionManager
+# to draw it's interaction label
+@onready var label_pos: Node2D = $"../LabelPos"
 
 var enabled = true
 
 var interact: Callable = func():
 	pass
 
-var onEnter: Callable = func():
-	pass
-
-var onLeave: Callable = func():
-	pass
-
-func _on_area_entered(_area):
+func _on_area_entered(_area) -> void:
 	InteractionManager.register_area(self)
 
-func _on_area_exited(_area):
+func _on_area_exited(_area) -> void:
 	InteractionManager.unregister_area(self)

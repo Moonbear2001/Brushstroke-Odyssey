@@ -970,16 +970,25 @@ position = Vector2(1272, 472)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
 
+[node name="LabelPos" type="Node2D" parent="Lever"]
+position = Vector2(459.998, 640.001)
+
 [node name="Lever2" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(3911, 491)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
 platform_id = 1
 
+[node name="LabelPos" type="Node2D" parent="Lever2"]
+position = Vector2(639.998, 840.002)
+
 [node name="Lever3" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(4174, 246)
 scale = Vector2(0.05, 0.05)
 platform_id = 2
+
+[node name="LabelPos" type="Node2D" parent="Lever3"]
+position = Vector2(-580.002, 360)
 
 [node name="Lever4" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(5997, 88)
@@ -987,11 +996,17 @@ rotation = -1.57079
 scale = Vector2(0.05, 0.05)
 platform_id = 3
 
+[node name="LabelPos" type="Node2D" parent="Lever4"]
+position = Vector2(180.002, 360.002)
+
 [node name="Lever5" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(6230, 680)
 rotation = -1.57079
 scale = Vector2(0.05, 0.05)
 platform_id = 4
+
+[node name="LabelPos" type="Node2D" parent="Lever5"]
+position = Vector2(100.002, 340.003)
 
 [node name="Doors" type="Node2D" parent="."]
 
