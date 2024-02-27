@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://objects/refuel_station.gd" id="1_l06q0"]
 [ext_resource type="Texture2D" uid="uid://dtcdax8i4qvbp" path="res://art/gogh/house section/houses/lantern_houses/h1_inside.PNG" id="2_ckw6k"]
 [ext_resource type="Texture2D" uid="uid://c5cc8vl4264vf" path="res://art/gogh/house section/houses/lantern_houses/h1_lit.PNG" id="3_63dl2"]
-[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="4_uy3ch"]
-[ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="5_ub11y"]
+[ext_resource type="PackedScene" path="res://interaction/interaction_area.tscn" id="4_uy3ch"]
+[ext_resource type="PackedScene" path="res://objects/climb.tscn" id="5_ub11y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkj0m"]
 atlas = ExtResource("2_ckw6k")
@@ -164,7 +164,7 @@ position = Vector2(38, 16)
 collision_layer = 8388608
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
-polygon = PackedVector2Array(-86, -102, -139, -24, -112, 101, -46, 129, 102, 125, 102, 12, 147, 9, 72, -104, 69, -134, 21, -134, 15, -103)
+polygon = PackedVector2Array(-86, -102, -139, -24, -112, 101, -50, 122, 81, 116, 78, -8, 117, -11, 75, -83, 75, -125, 5, -125, 15, -103)
 
 [node name="InsideHitbox" type="StaticBody2D" parent="."]
 

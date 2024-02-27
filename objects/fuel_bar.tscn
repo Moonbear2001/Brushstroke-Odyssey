@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr7h5s2v3681c"]
+[gd_scene load_steps=3 format=3 uid="uid://bcnds3kcg2d1m"]
 
-[ext_resource type="Theme" uid="uid://bun6epfcimyo7" path="res://objects/fuel_bar_theme.tres" id="1_qccls"]
+[ext_resource type="Theme" uid="uid://dgakqmw5i6wf0" path="res://objects/fuel_bar_theme.tres" id="1_qccls"]
 [ext_resource type="Script" path="res://objects/fuel_bar.gd" id="1_yvgse"]
 
 [node name="FuelBar" type="Control"]
