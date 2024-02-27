@@ -342,6 +342,9 @@ libraries = {
 position = Vector2(1226, 380)
 scale = Vector2(0.05, 0.05)
 
+[node name="LabelPos" type="Node2D" parent="Lever"]
+position = Vector2(-260, -580)
+
 [node name="End" type="Area2D" parent="."]
 position = Vector2(3467, 142)
 

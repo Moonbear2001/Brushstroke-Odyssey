@@ -4,14 +4,10 @@ extends Node2D
 Menu script.
 """
 
-@onready var sound_pool = $SoundPool
 @onready var protagonist = get_tree().get_first_node_in_group("big protagonist")
 
 # Ready
 func _ready():
-	
-	# Play random ambience music 
-	sound_pool.play_random_sound()
 	
 	# Listen for entering level signal
 	$EnterDali.entering_level.connect(save_pos)

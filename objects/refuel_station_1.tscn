@@ -134,21 +134,31 @@ script = ExtResource("1_l06q0")
 sprite_frames = SubResource("SpriteFrames_3n7cl")
 animation = &"inside"
 
-[node name="EnterStationArea" parent="." instance=ExtResource("4_uy3ch")]
+[node name="Enter" type="Node2D" parent="."]
+
+[node name="EnterStationArea" parent="Enter" instance=ExtResource("4_uy3ch")]
 position = Vector2(48, -140)
 action_name = "enter"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterStationArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enter/EnterStationArea"]
 scale = Vector2(2.32, 2.32)
 shape = SubResource("RectangleShape2D_6e284")
 
-[node name="ExitStationArea" parent="." instance=ExtResource("4_uy3ch")]
+[node name="LabelPos" type="Node2D" parent="Enter"]
+position = Vector2(75, -152)
+
+[node name="Exit" type="Node2D" parent="."]
+
+[node name="ExitStationArea" parent="Exit" instance=ExtResource("4_uy3ch")]
 position = Vector2(22, 25)
 action_name = "exit"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitStationArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/ExitStationArea"]
 scale = Vector2(0.666663, 0.666663)
 shape = SubResource("RectangleShape2D_6e284")
+
+[node name="LabelPos" type="Node2D" parent="Exit"]
+position = Vector2(38, 16)
 
 [node name="OutsideHitbox" type="StaticBody2D" parent="."]
 collision_layer = 8388608
