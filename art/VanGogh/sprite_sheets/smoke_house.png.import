@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8tsn64d4nxg5"
-path="res://.godot/imported/house_smoke.png-712abf3efe15eb87fdcfc03e82c6dcc3.ctex"
+uid="uid://d3psjy6te6yic"
+path="res://.godot/imported/smoke_house.png-c84a905fc5eaa061689f701f475f0259.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/VanGogh/sprite_sheets/house_smoke.png"
-dest_files=["res://.godot/imported/house_smoke.png-712abf3efe15eb87fdcfc03e82c6dcc3.ctex"]
+source_file="res://art/VanGogh/sprite_sheets/smoke_house.png"
+dest_files=["res://.godot/imported/smoke_house.png-c84a905fc5eaa061689f701f475f0259.ctex"]
 
 [params]
 
