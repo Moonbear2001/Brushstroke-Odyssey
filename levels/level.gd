@@ -24,7 +24,7 @@ kind of abstract superclass for a level.
 # Stopwatch to keep track of score
 @onready var stopwatch: Stopwatch = $LevelUI/Stopwatch
 
-@onready var camera: Camera2D = $LevelUI/Camera2D
+@onready var camera: Camera2D = $Camera2D
 
 # Stars that have been collected
 var collected_stars: int = 0

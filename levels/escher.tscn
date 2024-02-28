@@ -1407,15 +1407,6 @@ bus = &"Music"
 
 [node name="LevelUI" parent="." instance=ExtResource("54_kuasg")]
 
-[node name="Camera2D" type="Camera2D" parent="LevelUI"]
-ignore_rotation = false
-limit_left = 0
-limit_top = -5
-limit_bottom = 720
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-rotation_smoothing_enabled = true
-
 [node name="Star" parent="." instance=ExtResource("56_k5iqm")]
 position = Vector2(2066, 499)
 scale = Vector2(0.03, 0.03)
@@ -1427,6 +1418,15 @@ scale = Vector2(0.03, 0.03)
 [node name="Star3" parent="." instance=ExtResource("56_k5iqm")]
 position = Vector2(6443, 175)
 scale = Vector2(0.03, 0.03)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+limit_left = 0
+limit_top = -5
+limit_bottom = 720
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]
