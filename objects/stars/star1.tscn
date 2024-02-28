@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc421pi8luaa7"]
+
+[ext_resource type="Texture2D" uid="uid://byvxmnxhoby3n" path="res://art/VanGogh/sprite_sheets/stars/star1.png" id="1_6c6d3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f72h0"]
+atlas = ExtResource("1_6c6d3")
+region = Rect2(0, 0, 734, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh3ml"]
+atlas = ExtResource("1_6c6d3")
+region = Rect2(734, 0, 734, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udgds"]
+atlas = ExtResource("1_6c6d3")
+region = Rect2(1468, 0, 734, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_344ug"]
+atlas = ExtResource("1_6c6d3")
+region = Rect2(2202, 0, 734, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi2wv"]
+atlas = ExtResource("1_6c6d3")
+region = Rect2(2936, 0, 734, 682)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qilye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f72h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh3ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udgds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_344ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi2wv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Star1" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qilye")
+frame_progress = 0.673572
