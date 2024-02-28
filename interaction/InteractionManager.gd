@@ -6,8 +6,6 @@ text above the object that is closest to the player and calling the method
 associated with that object if the protagonist uses "interact".
 """
 
-@onready var protagonist = get_tree().get_first_node_in_group("protagonist")
-
 const base_text = "[E] "
 
 var text_box_scene: PackedScene = preload("res://interaction/text_box.tscn")
@@ -43,7 +41,7 @@ func unregister_area(area: InteractionArea):
 
 func _process(_delta):
 	
-	# If interaction isn't allowed or there has been on change, dont bother
+	# If interaction isn't allowed or there has been any change, dont bother
 	if !can_interact or !change:
 		return
 		
@@ -70,16 +68,9 @@ func sort_by_distance_to_player(area1: InteractionArea, area2: InteractionArea):
 	# Check if both areas are enabled
 	if area1.enabled and area2.enabled:
 		
-		# When a new scene is loaded, this object's reference to "protagonist" can
-		# be lost, make sure that we get protagonist again to prevent an error
-		# TODO: fix this! horrible design (maybe protagonist should be gobal (ie. Global.protagonist? maybe
-		# when scenes change we refresh the reference?
-		if protagonist == null:
-			protagonist = get_tree().get_first_node_in_group("protagonist")
-		
 		# Calculate distances
-		var area1_to_player = protagonist.global_position.distance_to(area1.global_position)
-		var area2_to_player = protagonist.global_position.distance_to(area2.global_position)
+		var area1_to_player = Global.protagonist.global_position.distance_to(area1.global_position)
+		var area2_to_player = Global.protagonist.global_position.distance_to(area2.global_position)
 
 		# Compare distances and return the result
 		return area1_to_player < area2_to_player

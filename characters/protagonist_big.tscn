@@ -239,7 +239,7 @@ script = ExtResource("1_lhea4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4a4rg")
-animation = &"RunRight"
+animation = &"Idle"
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -254,7 +254,6 @@ limit_top = 0
 limit_right = 6600
 limit_bottom = 648
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -38,7 +38,4 @@ func ambience_mode() -> void:
 	while true:
 		var item = sounds[get_random()]
 		item.play()
-		print("waiting")
 		await item.finished
-		print("item finished!")
-
