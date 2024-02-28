@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_aoe52")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
 
 [node name="Node2D" type="Node2D" parent="CanvasLayer"]
 position = Vector2(-1, -5)

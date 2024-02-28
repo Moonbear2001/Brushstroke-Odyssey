@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ket0s4kxjh76"]
+
+[ext_resource type="Texture2D" uid="uid://cma0p5cymg0qg" path="res://art/VanGogh/paralax_layers/fronthill2.PNG" id="1_ffhjr"]
+
+[node name="FrontHill2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ffhjr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1416, -1044)
+polygon = PackedVector2Array(-555, 1387, -3, 989, 272, 839, 833, 842, 932, 901, 1063, 901, 1415, 879, 1810, 1069, 2318, 1087, 2639, 1186, 2849, 1183, 3193, 1384)
