@@ -1,10 +1,12 @@
 extends Node2D
 
 """
-Menu script.
+Menu script. Saves the protagonists position in the menu when a level is 
+entered. Positions the protagonist in the correct position when the menu is 
+reloaded.
 """
 
-@onready var protagonist = get_tree().get_first_node_in_group("big protagonist")
+@export var protagonist: Protagonist
 
 # Ready
 func _ready():
@@ -15,10 +17,9 @@ func _ready():
 	$EnterEscher.entering_level.connect(save_pos)
 	$EnterTutorial.entering_level.connect(save_pos)
 	
-	# Position the protagonist
+	# Position the protagonist where they were in the menu
 	protagonist.position = Global.menu_pos
-	
+
 # Save the big protagonist's position globally
 func save_pos() -> void:
-	Global.menu_pos = protagonist.position
-	
+	Global.menu_pos = Global.protagonist.position
