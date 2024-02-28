@@ -7,6 +7,7 @@ Manages all the different scenes and the transitions between them in the game.
 signal content_finished_loading(content)
 signal content_invalid(content_path: String)
 signal content_failed_to_load(content_path: String)
+signal new_scene_loaded()
 
 var scene_transition: SceneTransition
 var _scene_transition_scene: PackedScene = preload("res://transitions/scene_transition.tscn")
@@ -72,7 +73,6 @@ func monitor_load_status() -> void:
 			_load_progress_timer.stop()
 			_load_progress_timer.queue_free()
 			content_finished_loading.emit(ResourceLoader.load_threaded_get(_content_path).instantiate())
-			#content_finished_loading.emit(ResourceLoader.load_threaded_get(_content_path))
 			return
 
 # Prints an error message if content fails to load
@@ -82,22 +82,11 @@ func on_content_failed_to_load(path: String) -> void:
 # Prints an error message if we tried to load invalid content
 func on_content_invalid(path: String) -> void:
 	printerr("error: Cannot load resource: '%s'" % [path])
-	
+
+# Content finished loading, 
 func on_content_finished_loading(content) -> void:
 
 	var outgoing_scene = get_tree().current_scene
-	
-	# If we're moving between Levels, pass LevelDataHandoff (the next Level's data) here
-	#var incoming_data: LevelDataHandoff
-	
-	# TESTING
-	#if get_tree().current_scene is Level:
-		#incoming_data = get_tree().current_scene.data as LevelDataHandoff
-	
-	# If we are going to a level, pass the LevelHandoffData
-	# TESTING
-	#if content is Level:
-		#content.data = incoming_data
 
 	# Remove the old scene
 	outgoing_scene.queue_free()
@@ -110,15 +99,11 @@ func on_content_finished_loading(content) -> void:
 		# Play transition outro
 		scene_transition.finish_transition()
 		
-		# If were loading a level, load the player location
-		#if content is Level:
-			#content.init_player_location()
-		
 		# Wait for LoadingScreen's transition to finish playing
 		await scene_transition.anim_player.animation_finished
 		scene_transition = null
 		if content is Level:
 			content.enter_level()
 			
-	# Take game out of transitioning state
-	Global.scene_transitioning = false
+	# Let other scripts now new scene has finished loading
+	new_scene_loaded.emit()

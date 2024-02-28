@@ -65,4 +65,5 @@ scale = Vector2(0.05, 0.05)
 
 [node name="LevelUI" parent="." instance=ExtResource("5_8t4rr")]
 
-[node name="Camera2D" type="Camera2D" parent="LevelUI"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, 0)

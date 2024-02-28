@@ -54,8 +54,9 @@ animations = [{
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lak8j"]
 load_path = "res://.godot/imported/front_arch4.png-afcdd8e9813478fd501dde5e2a024214.ctex"
 
-[node name="Menu" type="Node2D"]
+[node name="Menu" type="Node2D" node_paths=PackedStringArray("protagonist")]
 script = ExtResource("1_2sh28")
+protagonist = NodePath("ProtagonistBig")
 
 [node name="Layout" type="Sprite2D" parent="."]
 position = Vector2(3388, 360)
@@ -131,7 +132,7 @@ animation = &"outline"
 [node name="LabelPos" type="Node2D" parent="EnterTutorial"]
 position = Vector2(766.667, -1333.33)
 
-[node name="ProtagonistBig" parent="." groups=["big protagonist"] instance=ExtResource("2_hfs4s")]
+[node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
 position = Vector2(1263, 513)
 scale = Vector2(0.75, 0.75)
 big = true
