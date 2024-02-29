@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c7128oudtn41b" path="res://art/gogh/house section/houses/lantern_houses/h2_dark.PNG" id="2_rx8k4"]
 [ext_resource type="Texture2D" uid="uid://c1syj33oxo4j1" path="res://art/gogh/house section/houses/lantern_houses/h2_inside.PNG" id="3_pmmcb"]
 [ext_resource type="Texture2D" uid="uid://f6s75lmhnuao" path="res://art/gogh/house section/houses/lantern_houses/h2_lit.PNG" id="4_4txrk"]
-[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="4_dkvx4"]
-[ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="6_67nry"]
+[ext_resource type="PackedScene" path="res://interaction/interaction_area.tscn" id="4_dkvx4"]
+[ext_resource type="PackedScene" path="res://objects/climb.tscn" id="6_67nry"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n247n"]
 atlas = ExtResource("2_rx8k4")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dkfw4ga7oe7np"]
+[gd_scene load_steps=21 format=3 uid="uid://yfyu33mtas0d"]
 
 [ext_resource type="Texture2D" uid="uid://c26egopw3bwqy" path="res://art/VanGogh/sprite_sheets/bigtree_back.png" id="1_tgced"]
 
@@ -140,4 +140,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1ulln")
-frame_progress = 0.0263827
+autoplay = "default"
+frame_progress = 0.308186

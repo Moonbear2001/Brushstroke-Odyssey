@@ -12,6 +12,7 @@ Custom level script for the Van Gogh level.
 
 @onready var spawnTimer = $Timer
 @onready var camera_anim = $Camera2D/AnimationPlayer
+@onready var next_scene = $"Next Scene/InteractionArea"
 
 var windArr: Array[Node2D]
 var wind = preload("res://objects/wind.tscn")
@@ -39,6 +40,8 @@ func _ready():
 		
 	set_layer_hitboxes_disabled(1, false)
 	
+	next_scene.interact = Callable(self, "cont")
+	
 
 # Call the base level script's _process()
 func _process(delta):
@@ -50,8 +53,8 @@ func _process(delta):
 		spawnTimer.start()
 	elif protagonist.global_position.x <= 500:
 		spawnTimer.stop()
-	
-	if spawnTimer.time_left <= 3.6:
+
+	if spawnTimer.time_left <= 8.6:
 		free_wind()
 
 # When exiting refill station, put protag back on top of station
@@ -121,6 +124,8 @@ func get_all_children(node) -> Array:
 			nodes.append(child)
 	return nodes
 
-	
-	
-	
+func cont() -> void:
+	$AnimationPlayer.play("scene_out")
+	await $AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file("res://levels/gogh2.tscn")
+	$AnimationPlayer.play("scene_in")
