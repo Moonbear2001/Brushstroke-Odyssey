@@ -25,7 +25,6 @@ func _ready():
 		refill_station.refuel_area_exited.connect(lantern.refueling_stopped)
 		refill_station.exit_station.connect(on_refill_station_exited)
 		
-
 # Call the base level script's _process()
 func _process(delta):
 	super._process(delta)
@@ -37,7 +36,7 @@ func _process(delta):
 	elif protagonist.global_position.x <= 500:
 		spawnTimer.stop()
 	
-	if spawnTimer.time_left <= 3.6:
+	if spawnTimer.time_left <= 6.6:
 		free_wind()
 
 # When exiting refill station, put protag back on top of station

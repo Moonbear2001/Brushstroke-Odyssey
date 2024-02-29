@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cqph7b5ej7pag" path="res://art/gogh/house section/houses/IMG_0415.PNG" id="16_4xwri"]
 [ext_resource type="Texture2D" uid="uid://ch3wjopdqo8oo" path="res://art/gogh/house section/houses/IMG_0416.PNG" id="17_nai7y"]
 [ext_resource type="Texture2D" uid="uid://bafel6yqdu8wj" path="res://art/gogh/house section/houses/Untitled_Artwork-1.png" id="18_hlwiq"]
-[ext_resource type="PackedScene" path="res://characters/protagonist_gogh.tscn" id="24_en3te"]
+[ext_resource type="PackedScene" uid="uid://cub2bualqx0yk" path="res://characters/protagonist_gogh.tscn" id="24_en3te"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="24_hdcnw"]
 [ext_resource type="PackedScene" uid="uid://cho7dlwku5h6q" path="res://objects/lantern.tscn" id="25_cmusv"]
 [ext_resource type="Texture2D" uid="uid://deosmx2v1nt24" path="res://art/VanGogh/paralax_layers/fronthill1.PNG" id="25_ickr1"]
@@ -698,7 +698,7 @@ metadata/_edit_group_ = true
 [node name="Lantern" parent="Protagonist" instance=ExtResource("25_cmusv")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 8.0
 one_shot = true
 
 [node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]

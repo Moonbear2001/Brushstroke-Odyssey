@@ -172,13 +172,12 @@ _data = {
 }
 
 [node name="Wind" type="Node2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_3s057")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-400, 0)
 rotation = -3.14159
 sprite_frames = SubResource("SpriteFrames_pjyjc")
-frame = 11
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(619, -24)
