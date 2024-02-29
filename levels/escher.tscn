@@ -1,16 +1,16 @@
 [gd_scene load_steps=79 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_4xute"]
-[ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
-[ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
+[ext_resource type="Texture2D" uid="uid://b7nuahpv3dk0q" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
+[ext_resource type="Texture2D" uid="uid://1d8burc3uf4e" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
 [ext_resource type="Texture2D" uid="uid://bfaap54kfc2vy" path="res://art/Esher/parallax_layers/backkk.png" id="3_1afl0"]
-[ext_resource type="Texture2D" uid="uid://cxev8semuld5f" path="res://art/Esher/wide_block.png" id="3_4o60w"]
+[ext_resource type="Texture2D" uid="uid://bw1as137t0ybl" path="res://art/Esher/wide_block.png" id="3_4o60w"]
 [ext_resource type="Texture2D" uid="uid://dio5jogn7r5j6" path="res://art/Esher/parallax_layers/midground_new.png" id="4_6mjae"]
-[ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
+[ext_resource type="Texture2D" uid="uid://clh7mgpyrhhf1" path="res://art/Esher/short_block.png" id="4_t8kp2"]
 [ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
-[ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
+[ext_resource type="Texture2D" uid="uid://d0qxalpgexd13" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/doors/left_door.tscn" id="10_w7r7g"]
 [ext_resource type="Texture2D" uid="uid://bewg47vw5e1pm" path="res://art/Esher/section2/barrier.png" id="13_gmew8"]
 [ext_resource type="PackedScene" uid="uid://de0yn1n3yaoaj" path="res://objects/doors/right_door.tscn" id="14_8a6pv"]
@@ -54,7 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://oc3w211fkgi8" path="res://art/Esher/front_stair_end_door.png" id="53_57aom"]
 [ext_resource type="Texture2D" uid="uid://cobs2epkltbku" path="res://art/Esher/front_stair_end_door2.png" id="54_hnj44"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="54_kuasg"]
-[ext_resource type="PackedScene" uid="uid://dmtefdkou43hk" path="res://objects/doors/left_inverse_door.tscn" id="55_tvs1l"]
+[ext_resource type="PackedScene" path="res://objects/doors/left_inverse_door.tscn" id="55_tvs1l"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="56_k5iqm"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
@@ -970,16 +970,25 @@ position = Vector2(1272, 472)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
 
+[node name="LabelPos" type="Node2D" parent="Lever"]
+position = Vector2(459.998, 640.001)
+
 [node name="Lever2" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(3911, 491)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
 platform_id = 1
 
+[node name="LabelPos" type="Node2D" parent="Lever2"]
+position = Vector2(639.998, 840.002)
+
 [node name="Lever3" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(4174, 246)
 scale = Vector2(0.05, 0.05)
 platform_id = 2
+
+[node name="LabelPos" type="Node2D" parent="Lever3"]
+position = Vector2(-580.002, 360)
 
 [node name="Lever4" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(5997, 88)
@@ -987,11 +996,17 @@ rotation = -1.57079
 scale = Vector2(0.05, 0.05)
 platform_id = 3
 
+[node name="LabelPos" type="Node2D" parent="Lever4"]
+position = Vector2(180.002, 360.002)
+
 [node name="Lever5" parent="." instance=ExtResource("21_pvfto")]
 position = Vector2(6230, 680)
 rotation = -1.57079
 scale = Vector2(0.05, 0.05)
 platform_id = 4
+
+[node name="LabelPos" type="Node2D" parent="Lever5"]
+position = Vector2(100.002, 340.003)
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -1392,15 +1407,6 @@ bus = &"Music"
 
 [node name="LevelUI" parent="." instance=ExtResource("54_kuasg")]
 
-[node name="Camera2D" type="Camera2D" parent="LevelUI"]
-ignore_rotation = false
-limit_left = 0
-limit_top = -5
-limit_bottom = 720
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-rotation_smoothing_enabled = true
-
 [node name="Star" parent="." instance=ExtResource("56_k5iqm")]
 position = Vector2(2066, 499)
 scale = Vector2(0.03, 0.03)
@@ -1412,6 +1418,15 @@ scale = Vector2(0.03, 0.03)
 [node name="Star3" parent="." instance=ExtResource("56_k5iqm")]
 position = Vector2(6443, 175)
 scale = Vector2(0.03, 0.03)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+limit_left = 0
+limit_top = -5
+limit_bottom = 720
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
 [connection signal="lever_toggled" from="Lever2" to="." method="_on_lever_lever_toggled"]

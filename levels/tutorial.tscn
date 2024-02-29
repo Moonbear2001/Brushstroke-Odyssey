@@ -71,6 +71,15 @@ level_name = "tutorial"
 protagonist = NodePath("Protagonist")
 end = NodePath("End")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+limit_left = 0
+limit_top = -5
+limit_bottom = 660
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -342,6 +351,9 @@ libraries = {
 position = Vector2(1226, 380)
 scale = Vector2(0.05, 0.05)
 
+[node name="LabelPos" type="Node2D" parent="Lever"]
+position = Vector2(-260, -580)
+
 [node name="End" type="Area2D" parent="."]
 position = Vector2(3467, 142)
 
@@ -356,14 +368,5 @@ position = Vector2(368, 282)
 scale = Vector2(0.05, 0.05)
 
 [node name="LevelUI" parent="." instance=ExtResource("21_n74nv")]
-
-[node name="Camera2D" type="Camera2D" parent="LevelUI"]
-ignore_rotation = false
-limit_left = 0
-limit_top = -5
-limit_bottom = 660
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-rotation_smoothing_enabled = true
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]

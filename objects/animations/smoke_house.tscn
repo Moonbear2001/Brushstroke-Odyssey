@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhsdxqqj0feem"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a1klt"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="SmokeHouse" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a1klt")
+animation = &"new_animation"

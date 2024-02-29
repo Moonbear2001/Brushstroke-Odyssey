@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlroneefg1jak"]
+
+[ext_resource type="Texture2D" uid="uid://caq6wrxol0pyc" path="res://art/VanGogh/sprite_sheets/light_sunflower.png" id="1_0iq5y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twwr2"]
+atlas = ExtResource("1_0iq5y")
+region = Rect2(0, 0, 1368, 1838)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssy2v"]
+atlas = ExtResource("1_0iq5y")
+region = Rect2(1408, 0, 1368, 1838)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6irh4"]
+atlas = ExtResource("1_0iq5y")
+region = Rect2(2816, 0, 1368, 1838)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j37br"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twwr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssy2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6irh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssy2v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RefuelLight" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j37br")
+frame_progress = 0.218957
