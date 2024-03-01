@@ -19,12 +19,12 @@ signal fuel_exhausted()
 @onready var timer = $Timer
 
 const MIN_FUEL_LEVEL: int = 0
-const MAX_FUEL_LEVEL: int = 100
+const MAX_FUEL_LEVEL: int = 50
 const START_FUEL_LEVEL: int = 10
-const SCALE = 10.0
+const SCALE = 20.0
 
 var on: bool = true
-var fuel_level: float = 50.0
+var fuel_level: float = 30
 var decrement: bool = true
 
 # Set correct timer wait time

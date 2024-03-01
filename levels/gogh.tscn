@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=57 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
@@ -45,6 +45,8 @@
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
 [ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_station_3.tscn" id="40_n2r0d"]
+[ext_resource type="Texture2D" uid="uid://jaxd7to73e6r" path="res://art/gogh/whitelight1.png" id="42_vysew"]
+[ext_resource type="Texture2D" uid="uid://hqg5ca6g8kda" path="res://art/gogh/whitelight2.png" id="43_ov7hi"]
 [ext_resource type="PackedScene" path="res://interaction/interaction_area.tscn" id="45_qur0i"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
@@ -57,10 +59,10 @@ tracks/0/path = NodePath("ParallaxBackground2/ParallaxLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.152941), Color(0, 0, 0, 0.356863), Color(0, 0, 0, 0.47451), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b5t77"]
@@ -131,6 +133,12 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_ny3vl"]
 radius = 50.1597
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qbp61"]
+frames = 2
+frame_0/texture = ExtResource("42_vysew")
+frame_1/texture = ExtResource("43_ov7hi")
+frame_1/duration = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 size = Vector2(7.94896, 8.30418)
 
@@ -155,6 +163,8 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-3, 62)
 ignore_rotation = false
+limit_top = 0
+limit_bottom = 700
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true
@@ -791,7 +801,7 @@ position = Vector2(703, 2169)
 scale = Vector2(1.48, 1.48)
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-layer = 0
+layer = 100
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 motion_scale = Vector2(1.5, 1.5)
@@ -839,11 +849,16 @@ bus = &"Music"
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(89, 452)
+position = Vector2(139, 394)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
 [node name="Lantern" parent="Protagonist" instance=ExtResource("25_cmusv")]
+blend_mode = 2
+shadow_color = Color(0, 0, 0, 1)
+texture = SubResource("AnimatedTexture_qbp61")
+decrement_per_second = 2.0
+updates_per_second = 10
 
 [node name="Stars" type="Node2D" parent="."]
 position = Vector2(-4, -340)
@@ -886,6 +901,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]
+visible = false
 
 [node name="FuelBar" parent="LevelUI" instance=ExtResource("28_coumb")]
 offset_left = 185.0
