@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=56 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
@@ -45,9 +45,8 @@
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
 [ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_station_3.tscn" id="40_n2r0d"]
-[ext_resource type="Texture2D" uid="uid://jaxd7to73e6r" path="res://art/gogh/whitelight1.png" id="42_vysew"]
 [ext_resource type="Texture2D" uid="uid://hqg5ca6g8kda" path="res://art/gogh/whitelight2.png" id="43_ov7hi"]
-[ext_resource type="PackedScene" path="res://interaction/interaction_area.tscn" id="45_qur0i"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="45_qur0i"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
 resource_name = "scene_transition"
@@ -134,8 +133,7 @@ _data = {
 radius = 50.1597
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_qbp61"]
-frames = 2`
-frame_0/texture = ExtResource("42_vysew")
+frames = 2
 frame_1/texture = ExtResource("43_ov7hi")
 frame_1/duration = 1.0
 
@@ -888,7 +886,6 @@ shape = SubResource("RectangleShape2D_qrr0h")
 position = Vector2(1272, 1298)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 top_level = true
 color = Color(0, 0, 0.0862745, 1)
 
