@@ -1,25 +1,38 @@
 extends Area2D
 
-@onready var protagonist = preload("res://characters/protagonist.tscn")
+signal respawn
 
+@onready var protagonist_escher = preload("res://characters/protagonist.tscn")
+@onready var protagonist_gogh = preload("res://characters/protagonist_gogh.tscn")
+
+var duplicatedNode
 
 func _on_body_entered(body):
 	var greatest_x_below_target = -INF
-	var door
+	var checkpoint
 	
 	if body.is_in_group("protagonist"):
 		for node in get_tree().get_nodes_in_group("checkpoint"):
 			if node.global_position.x < body.global_position.x and node.global_position.x > greatest_x_below_target:
 				greatest_x_below_target = node.global_position.x
-				door = node
+				checkpoint = node
 		for p in get_tree().get_nodes_in_group("protagonist"):
 			p.queue_free()
 		
 		# Check if a valid x value was found
 		if greatest_x_below_target != -INF:
-			var duplicatedNode: Protagonist = protagonist.instantiate()
-			duplicatedNode.global_position.x = door.global_position.x + door.x_offset
-			duplicatedNode.global_position.y = door.global_position.y + door.y_offset
+			var curr_scene = get_tree().get_current_scene().get_name()
+			if curr_scene == "Gogh":
+				respawn.emit()
+				return
+			elif curr_scene == "Escher":
+				duplicatedNode = protagonist_escher.instantiate()
+			duplicatedNode.global_position.x = checkpoint.global_position.x
+			if "x_offset" in checkpoint:
+				duplicatedNode.global_position.x += checkpoint.x_offset
+			duplicatedNode.global_position.y = checkpoint.global_position.y
+			if "y_offset" in checkpoint:
+				duplicatedNode.global_position.y += checkpoint.y_offset
 			get_tree().current_scene.add_child(duplicatedNode)
 			duplicatedNode.set_gravity("down")
 		else:

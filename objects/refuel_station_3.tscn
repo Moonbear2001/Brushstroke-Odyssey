@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c78lwy0uhw6n7"]
+[gd_scene load_steps=17 format=3 uid="uid://c78lwy0uhw6n7"]
 
 [ext_resource type="Script" path="res://objects/refuel_station.gd" id="1_w35wc"]
 [ext_resource type="Texture2D" uid="uid://dqkxuiu78xd3i" path="res://art/gogh/house section/houses/lantern_houses/h3_dark.PNG" id="2_ac1rj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlhtfloy4hqeb" path="res://art/gogh/house section/houses/lantern_houses/h3_lit.PNG" id="4_v1676"]
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="5_jenw0"]
 [ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="6_tb7tn"]
+[ext_resource type="PackedScene" uid="uid://dlroneefg1jak" path="res://objects/refuel_light.tscn" id="7_7iidq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kijso"]
 atlas = ExtResource("2_ac1rj")
@@ -203,6 +204,9 @@ wait_time = 0.1
 [node name="Climb" parent="." instance=ExtResource("6_tb7tn")]
 position = Vector2(-79, 12)
 scale = Vector2(0.685529, 0.980919)
+
+[node name="RefuelLight" parent="." instance=ExtResource("7_7iidq")]
+position = Vector2(60, 43)
 
 [connection signal="body_entered" from="RefillArea" to="." method="_on_refill_area_body_entered"]
 [connection signal="body_exited" from="RefillArea" to="." method="_on_refill_area_body_exited"]

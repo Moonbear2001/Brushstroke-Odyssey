@@ -99,6 +99,5 @@ script = ExtResource("1_1wuve")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k3phh")
 animation = &"swaying"
-autoplay = "swaying"
 frame = 9
 frame_progress = 1.0

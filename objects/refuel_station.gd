@@ -6,15 +6,16 @@ Refill station for a lantern.
 """
 
 signal exit_station(exit_pos: Vector2)
-signal refuel_area_entered()
-signal refuel_area_exited()
-signal increment_fuel_level()
+signal refuel_area_entered
+signal refuel_area_exited
+signal increment_fuel_level
 
 @onready var anim_player = $AnimationPlayer
 @onready var enter_station_area = $Enter/EnterStationArea
 @onready var exit_station_area = $Exit/ExitStationArea
 @onready var exit_pos = $ExitPos
 @onready var timer = $Timer
+@onready var refuel_light = $RefuelLight
 
 # Play correct starting animation, hook up interactions
 func _ready():
@@ -34,18 +35,18 @@ func exit() -> void:
 	anim_player.play("lit")
 	
 # Protagonist entered the refill area
-func _on_refill_area_body_entered(body):
-	if body is Protagonist:
-		refuel_area_entered.emit()
-		body.refueling = true
-		timer.start()
+#func _on_refill_area_body_entered(body):
+	#if body is Protagonist:
+		##refuel_area_entered.emit()
+		##body.refueling = true
+		#timer.start()
 	
 # Protagonist exited the refill area
-func _on_refill_area_body_exited(body):
-	if body is Protagonist:
-		refuel_area_exited.emit()
-		body.refueling = false
-		timer.stop()
+#func _on_refill_area_body_exited(body):
+	#if body is Protagonist:
+		##refuel_area_exited.emit()
+		##body.refueling = false
+		#timer.stop()
 
 # Signal to increment how much fuel we have
 func _on_timer_timeout():

@@ -1,5 +1,5 @@
 extends Node2D
-@onready var tree = $AnimatedSprite2D
+signal breeze_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,5 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func sway():
-	tree.play("swaying")
+
+func _on_animation_player_animation_finished(anim_name):
+	breeze_finished.emit()
+	queue_free()

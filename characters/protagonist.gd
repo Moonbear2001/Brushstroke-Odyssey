@@ -25,7 +25,8 @@ var inWind = false
 var climb = false
 var glow = false
 var glow_level = "0"
-var refueling = false
+var refueling_left = false
+var refueling_right = false
 
 # Child nodes
 #@onready var camera = $Camera2D
@@ -109,11 +110,15 @@ func use_gravity(delta):
 	else:
 		if x_val != 0:
 			if velocity.x == 0:
-				anim.play(get_anim_name("Idle"))
+				var anim_name = get_anim_name("Idle")
+				if anim_name:
+					anim.play(anim_name)
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 		else:
 			if velocity.y == 0:
-				anim.play(get_anim_name("Idle"))
+				var anim_name = get_anim_name("Idle")
+				if anim_name:
+					anim.play(anim_name)
 			velocity.x = move_toward(velocity.x, 0, SPEED) 
 
 func set_gravity(direction):
@@ -218,14 +223,22 @@ func get_anim_name(name):
 		if glow_anim:
 			glow_anim.show()
 			glow_anim.play(glow_level)
+		if int(glow_level) < 5:
+			return name + "_dim"
 		return name + "_glow"
 	else:
-		if name == "Idle" and refueling:
+		if (refueling_left or refueling_right) and glow_level == "9":
 			glow_anim.show()
-			if glow_level == "10":
-				return "RefillDone_default"
-			else:
-				return "Refill_default"
-		if glow_anim:
+			glow_anim.play(glow_level)
+			return "RefillDone_default"
+		elif refueling_left:
+			glow_anim.show()
+			glow_anim.play(glow_level)
+			return "RefillLeft_default"
+		elif refueling_right:
+			glow_anim.show()
+			glow_anim.play(glow_level)
+			return "RefillRight_default"
+		if glow_anim and not (refueling_left or refueling_right):
 			glow_anim.hide()
 		return name + "_default"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhx5p40jq8mb6"]
+[gd_scene load_steps=15 format=3 uid="uid://dhx5p40jq8mb6"]
 
 [ext_resource type="Script" path="res://objects/refuel_station.gd" id="1_l06q0"]
 [ext_resource type="Texture2D" uid="uid://dtcdax8i4qvbp" path="res://art/gogh/house section/houses/lantern_houses/h1_inside.PNG" id="2_ckw6k"]
 [ext_resource type="Texture2D" uid="uid://c5cc8vl4264vf" path="res://art/gogh/house section/houses/lantern_houses/h1_lit.PNG" id="3_63dl2"]
+[ext_resource type="PackedScene" uid="uid://dlroneefg1jak" path="res://objects/refuel_light.tscn" id="4_868r8"]
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="4_uy3ch"]
 [ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="5_ub11y"]
 
@@ -134,6 +135,9 @@ script = ExtResource("1_l06q0")
 sprite_frames = SubResource("SpriteFrames_3n7cl")
 animation = &"inside"
 
+[node name="RefuelLight" parent="." instance=ExtResource("4_868r8")]
+position = Vector2(-59, 25)
+
 [node name="Enter" type="Node2D" parent="."]
 
 [node name="EnterStationArea" parent="Enter" instance=ExtResource("4_uy3ch")]
@@ -148,6 +152,7 @@ shape = SubResource("RectangleShape2D_6e284")
 position = Vector2(75, -152)
 
 [node name="Exit" type="Node2D" parent="."]
+position = Vector2(105, 0)
 
 [node name="ExitStationArea" parent="Exit" instance=ExtResource("4_uy3ch")]
 position = Vector2(22, 25)
@@ -161,6 +166,7 @@ shape = SubResource("RectangleShape2D_6e284")
 position = Vector2(38, 16)
 
 [node name="OutsideHitbox" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 8388608
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
@@ -180,6 +186,7 @@ libraries = {
 position = Vector2(-44, -166)
 
 [node name="RefillArea" type="Area2D" parent="."]
+visible = false
 position = Vector2(-16, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RefillArea"]
@@ -190,7 +197,7 @@ shape = SubResource("RectangleShape2D_h707i")
 wait_time = 0.1
 
 [node name="Climb" parent="." instance=ExtResource("5_ub11y")]
-position = Vector2(12, -25)
+position = Vector2(26, -25)
 
 [connection signal="body_entered" from="RefillArea" to="." method="_on_refill_area_body_entered"]
 [connection signal="body_exited" from="RefillArea" to="." method="_on_refill_area_body_exited"]

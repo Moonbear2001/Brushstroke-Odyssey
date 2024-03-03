@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlroneefg1jak"]
+[gd_scene load_steps=9 format=3 uid="uid://dlroneefg1jak"]
 
 [ext_resource type="Texture2D" uid="uid://caq6wrxol0pyc" path="res://art/VanGogh/sprite_sheets/light_sunflower.png" id="1_0iq5y"]
+[ext_resource type="Script" path="res://objects/refuel_light.gd" id="1_bk45n"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="3_xeppo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twwr2"]
 atlas = ExtResource("1_0iq5y")
@@ -34,8 +36,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mgryn"]
+radius = 18.0
+height = 98.0
+
 [node name="RefuelLight" type="Node2D"]
+script = ExtResource("1_bk45n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_j37br")
-frame_progress = 0.218957
+autoplay = "default"
+frame = 2
+frame_progress = 0.0711208
+
+[node name="LabelPos" type="Node2D" parent="."]
+position = Vector2(17, -55)
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_xeppo")]
+position = Vector2(65, -195)
+action_name = "to refuel lamp"
+hide_after_action = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-71, 202)
+shape = SubResource("CapsuleShape2D_mgryn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

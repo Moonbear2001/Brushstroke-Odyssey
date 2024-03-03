@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckhpqu0ah2lat"]
+[gd_scene load_steps=15 format=3 uid="uid://ckhpqu0ah2lat"]
 
+[ext_resource type="Script" path="res://objects/swaying_trees/tree.gd" id="1_oguth"]
 [ext_resource type="Texture2D" uid="uid://ckfd48ie77b53" path="res://art/VanGogh/sprite_sheets/swaying trees/tree2.png" id="1_w6ryo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oaiqs"]
@@ -93,6 +94,7 @@ animations = [{
 }]
 
 [node name="Tree2" type="Node2D"]
+script = ExtResource("1_oguth")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_croci")

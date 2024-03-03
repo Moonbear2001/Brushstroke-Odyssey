@@ -11,6 +11,7 @@ adding a CollisionShape2D as a child node in that scene.
 @export var action_name: String = "interact"
 @export var key: String = "E"
 @export var label_color: Color = Color(1, 1, 1)
+@export var hide_after_action = true
 
 # The parent shoule define a Node2D that is where it wants the InteractionManager
 # to draw it's interaction label
@@ -22,7 +23,9 @@ var interact: Callable = func():
 	pass
 
 func _on_area_entered(_area) -> void:
-	InteractionManager.register_area(self)
+	if _area.is_in_group("protagonistArea"):
+		InteractionManager.register_area(self)
 
 func _on_area_exited(_area) -> void:
-	InteractionManager.unregister_area(self)
+	if _area.is_in_group("protagonistArea"):
+		InteractionManager.unregister_area(self)

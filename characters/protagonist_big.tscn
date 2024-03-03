@@ -263,7 +263,7 @@ shape = SubResource("CapsuleShape2D_nd5sq")
 [node name="InteractionComponents" type="Node2D" parent="."]
 scale = Vector2(4, 4)
 
-[node name="ProtagInteractionArea" type="Area2D" parent="InteractionComponents"]
+[node name="ProtagInteractionArea" type="Area2D" parent="InteractionComponents" groups=["protagonistArea"]]
 collision_layer = 2
 collision_mask = 0
 monitoring = false

@@ -7,7 +7,6 @@ collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("1_1fdnf")
-label_color = null
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

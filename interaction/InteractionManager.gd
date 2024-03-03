@@ -42,7 +42,9 @@ func unregister_area(area: InteractionArea):
 func _process(_delta):
 	
 	# If interaction isn't allowed or there has been any change, dont bother
-	if !can_interact or !change:
+	if active_areas.size() > 0 and not active_areas[0].hide_after_action and Input.is_action_just_released("interact"):
+		pass
+	elif !can_interact or !change:
 		return
 		
 	# There's been a change in the available interaction areas

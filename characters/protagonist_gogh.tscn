@@ -1,10 +1,11 @@
-[gd_scene load_steps=123 format=3 uid="uid://cub2bualqx0yk"]
+[gd_scene load_steps=146 format=3 uid="uid://cub2bualqx0yk"]
 
 [ext_resource type="Script" path="res://characters/protagonist.gd" id="1_wqdd7"]
 [ext_resource type="Texture2D" uid="uid://m4e2j36y3lak" path="res://art/VanGogh/sprite_sheets/climbing.png" id="2_x6bt3"]
 [ext_resource type="Texture2D" uid="uid://bi32hi3sl3qkn" path="res://art/VanGogh/sprite_sheets/vangogh_character.png" id="3_mmh4k"]
 [ext_resource type="Texture2D" uid="uid://dgfwlwbvlhx3d" path="res://art/VanGogh/sprite_sheets/light3.png" id="4_6fys5"]
 [ext_resource type="Texture2D" uid="uid://ch5oviwr7a6ps" path="res://art/VanGogh/character/lightup_new-min.png" id="4_38afv"]
+[ext_resource type="Texture2D" uid="uid://bs6ung421eicq" path="res://art/VanGogh/character/lightup_new-minreverse.png" id="5_pblg4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qqohp"]
 radius = 54.1479
@@ -63,6 +64,45 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [&"CrouchLeft_default", &"CrouchLeft"]
+}
+
+[sub_resource type="Animation" id="Animation_tjcj0"]
+resource_name = "CrouchLeft_dim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [&"CrouchLeft_dim", &"CrouchLeft"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, 4)]
 }
 
 [sub_resource type="Animation" id="Animation_7jpr5"]
@@ -132,6 +172,46 @@ tracks/1/keys = {
 "values": [&"CrouchRight_default"]
 }
 
+[sub_resource type="Animation" id="Animation_5jg42"]
+resource_name = "CrouchRight_dim"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"CrouchRight_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(12, 3)]
+}
+
 [sub_resource type="Animation" id="Animation_66hv6"]
 resource_name = "CrouchRight_glow"
 length = 0.2
@@ -197,6 +277,45 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"FallCenter_default"]
+}
+
+[sub_resource type="Animation" id="Animation_536sn"]
+resource_name = "FallCenter_dim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"FallCenter_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 9)]
 }
 
 [sub_resource type="Animation" id="Animation_5kth4"]
@@ -265,6 +384,45 @@ tracks/1/keys = {
 "values": [&"FallLeft_default"]
 }
 
+[sub_resource type="Animation" id="Animation_odylr"]
+resource_name = "FallLeft_dim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"FallLeft_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 5)]
+}
+
 [sub_resource type="Animation" id="Animation_b45pf"]
 resource_name = "FallLeft_glow"
 tracks/0/type = "value"
@@ -329,6 +487,45 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"FallRight_default"]
+}
+
+[sub_resource type="Animation" id="Animation_m3atd"]
+resource_name = "FallRight_dim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"FallRight_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 5)]
 }
 
 [sub_resource type="Animation" id="Animation_4acme"]
@@ -399,6 +596,47 @@ tracks/1/keys = {
 "values": [&"Idle_default"]
 }
 
+[sub_resource type="Animation" id="Animation_o4que"]
+resource_name = "Idle_dim"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(347.35, 347.35, 347.35, 347.35),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"Idle_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(347.35, 347.35, 347.35, 347.35),
+"update": 0,
+"values": [Vector2(15, 8), Vector2(7, 8), Vector2(14.6667, 8), Vector2(9.83333, 9)]
+}
+
 [sub_resource type="Animation" id="Animation_1jjx7"]
 resource_name = "Idle_glow"
 length = 8.0
@@ -467,6 +705,45 @@ tracks/1/keys = {
 "values": [&"JumpCenter_default"]
 }
 
+[sub_resource type="Animation" id="Animation_doriw"]
+resource_name = "JumpCenter_dim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"JumpCenter_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, 9)]
+}
+
 [sub_resource type="Animation" id="Animation_w0lst"]
 resource_name = "JumpCenter_glow"
 tracks/0/type = "value"
@@ -533,6 +810,45 @@ tracks/1/keys = {
 "values": [&"JumpLeft_default"]
 }
 
+[sub_resource type="Animation" id="Animation_wmejq"]
+resource_name = "JumpLeft_dim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"JumpLeft_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, 6)]
+}
+
 [sub_resource type="Animation" id="Animation_pqc7d"]
 resource_name = "JumpLeft_glow"
 tracks/0/type = "value"
@@ -597,6 +913,45 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"JumpRight_default"]
+}
+
+[sub_resource type="Animation" id="Animation_cmket"]
+resource_name = "JumpRight_dim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"JumpRight_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 5)]
 }
 
 [sub_resource type="Animation" id="Animation_61tm3"]
@@ -701,7 +1056,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -717,7 +1072,8 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_28efk"]
-resource_name = "Refill_default"
+resource_name = "RefillLeft_default"
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -728,7 +1084,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Refill_default"]
+"values": [&"RefillLeft_default"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -737,10 +1093,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(350, 350, 350, 350, 350),
 "update": 1,
-"values": [0]
+"values": [0, 1, 2, 3, 4]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -749,10 +1105,50 @@ tracks/2/path = NodePath("Glow:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(350, 350, 350, 350),
+"update": 0,
+"values": [Vector2(-3, 5), Vector2(-4, 4), Vector2(-9, 10), Vector2(-11, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_amdmr"]
+resource_name = "RefillRight_default"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"RefillRight_default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(350, 350, 350, 350, 350),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(350, 350, 350, 350),
 "update": 0,
-"values": [Vector2(18, 12)]
+"values": [Vector2(11, 5), Vector2(12, 4), Vector2(17, 11), Vector2(19, 10)]
 }
 
 [sub_resource type="Animation" id="Animation_wck10"]
@@ -782,6 +1178,47 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"RunLeft_default"]
+}
+
+[sub_resource type="Animation" id="Animation_n603o"]
+resource_name = "RunLeft_dim"
+length = 0.45
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32),
+"transitions": PackedFloat32Array(347.35, 347.35, 347.35, 347.35, 347.35),
+"update": 0,
+"values": [4, 3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"RunLeft_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32),
+"transitions": PackedFloat32Array(347.35, 347.35, 347.35, 347.35, 347.35),
+"update": 0,
+"values": [Vector2(-5, 5), Vector2(-4, 5), Vector2(-5.324, 3), Vector2(-4, 5), Vector2(-5.465, 4)]
 }
 
 [sub_resource type="Animation" id="Animation_yae7l"]
@@ -854,6 +1291,47 @@ tracks/1/keys = {
 "values": [&"RunRight_default"]
 }
 
+[sub_resource type="Animation" id="Animation_i3uh5"]
+resource_name = "RunRight_dim"
+length = 0.45
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32),
+"transitions": PackedFloat32Array(350, 350, 350, 350, 350),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"RunRight_dim"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Glow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.24, 0.32),
+"transitions": PackedFloat32Array(350, 350, 350, 350),
+"update": 0,
+"values": [Vector2(15.535, 4), Vector2(14.535, 3), Vector2(14.1064, 4.57143), Vector2(14.0588, 5.19048)]
+}
+
 [sub_resource type="Animation" id="Animation_m431g"]
 resource_name = "RunRight_glow"
 length = 0.45
@@ -899,29 +1377,41 @@ tracks/2/keys = {
 _data = {
 "Climb_default": SubResource("Animation_3220o"),
 "CrouchLeft_default": SubResource("Animation_xnyli"),
+"CrouchLeft_dim": SubResource("Animation_tjcj0"),
 "CrouchLeft_glow": SubResource("Animation_7jpr5"),
 "CrouchRight_default": SubResource("Animation_g88vn"),
+"CrouchRight_dim": SubResource("Animation_5jg42"),
 "CrouchRight_glow": SubResource("Animation_66hv6"),
 "FallCenter_default": SubResource("Animation_44444"),
+"FallCenter_dim": SubResource("Animation_536sn"),
 "FallCenter_glow": SubResource("Animation_5kth4"),
 "FallLeft_default": SubResource("Animation_6i6c7"),
+"FallLeft_dim": SubResource("Animation_odylr"),
 "FallLeft_glow": SubResource("Animation_b45pf"),
 "FallRight_default": SubResource("Animation_voakh"),
+"FallRight_dim": SubResource("Animation_m3atd"),
 "FallRight_glow": SubResource("Animation_4acme"),
 "Idle_default": SubResource("Animation_0hcsw"),
+"Idle_dim": SubResource("Animation_o4que"),
 "Idle_glow": SubResource("Animation_1jjx7"),
 "JumpCenter_default": SubResource("Animation_cr04i"),
+"JumpCenter_dim": SubResource("Animation_doriw"),
 "JumpCenter_glow": SubResource("Animation_w0lst"),
 "JumpLeft_default": SubResource("Animation_gru6j"),
+"JumpLeft_dim": SubResource("Animation_wmejq"),
 "JumpLeft_glow": SubResource("Animation_pqc7d"),
 "JumpRight_default": SubResource("Animation_ycn3w"),
+"JumpRight_dim": SubResource("Animation_cmket"),
 "JumpRight_glow": SubResource("Animation_61tm3"),
 "RESET": SubResource("Animation_tij2y"),
 "RefillDone_default": SubResource("Animation_mhwpe"),
-"Refill_default": SubResource("Animation_28efk"),
+"RefillLeft_default": SubResource("Animation_28efk"),
+"RefillRight_default": SubResource("Animation_amdmr"),
 "RunLeft_default": SubResource("Animation_wck10"),
+"RunLeft_dim": SubResource("Animation_n603o"),
 "RunLeft_glow": SubResource("Animation_yae7l"),
 "RunRight_default": SubResource("Animation_vtd2y"),
+"RunRight_dim": SubResource("Animation_i3uh5"),
 "RunRight_glow": SubResource("Animation_m431g")
 }
 
@@ -1097,13 +1587,53 @@ region = Rect2(1058, 5568, 529, 696)
 atlas = ExtResource("3_mmh4k")
 region = Rect2(1058, 2088, 529, 696)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l8475"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3op5q"]
 atlas = ExtResource("4_38afv")
-region = Rect2(0, 7664, 1200, 958)
+region = Rect2(0, 6790, 1200, 800)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqne6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iapf3"]
 atlas = ExtResource("4_38afv")
-region = Rect2(0, 1858, 1200, 929)
+region = Rect2(0, 7760, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx5i6"]
+atlas = ExtResource("5_pblg4")
+region = Rect2(350, 0, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lftbk"]
+atlas = ExtResource("5_pblg4")
+region = Rect2(350, 970, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpbwc"]
+atlas = ExtResource("5_pblg4")
+region = Rect2(350, 1940, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4bmo"]
+atlas = ExtResource("5_pblg4")
+region = Rect2(350, 2910, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drkq6"]
+atlas = ExtResource("5_pblg4")
+region = Rect2(350, 3880, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e8nl"]
+atlas = ExtResource("4_38afv")
+region = Rect2(0, 0, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eht1"]
+atlas = ExtResource("4_38afv")
+region = Rect2(0, 970, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxhf3"]
+atlas = ExtResource("4_38afv")
+region = Rect2(0, 1940, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un137"]
+atlas = ExtResource("4_38afv")
+region = Rect2(0, 2910, 1200, 800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6ysr"]
+atlas = ExtResource("4_38afv")
+region = Rect2(0, 3880, 1200, 800)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mhpv"]
 atlas = ExtResource("3_mmh4k")
@@ -1498,19 +2028,54 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l8475")
+"texture": SubResource("AtlasTexture_3op5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iapf3")
 }],
-"loop": true,
+"loop": false,
 "name": &"RefillDone_default",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fqne6")
+"texture": SubResource("AtlasTexture_qx5i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lftbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpbwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4bmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drkq6")
 }],
-"loop": true,
-"name": &"Refill_default",
-"speed": 5.0
+"loop": false,
+"name": &"RefillLeft_default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e8nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eht1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxhf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un137")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6ysr")
+}],
+"loop": false,
+"name": &"RefillRight_default",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1778,7 +2343,7 @@ script = ExtResource("1_wqdd7")
 
 [node name="InteractionComponents" type="Node2D" parent="."]
 
-[node name="ProtagInteractionArea" type="Area2D" parent="InteractionComponents"]
+[node name="ProtagInteractionArea" type="Area2D" parent="InteractionComponents" groups=["protagonistArea"]]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
