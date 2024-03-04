@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckmkv584cq3gx"
-path="res://.godot/imported/light_animation1.png-e60ec85b8b00ef52040d567277dd5a5b.ctex"
+uid="uid://32slqks2pbgm"
+path="res://.godot/imported/image_part_004.png-c2a5a746994eeedbbd7079fce98a512d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/VanGogh/misc/light_animation1.png"
-dest_files=["res://.godot/imported/light_animation1.png-e60ec85b8b00ef52040d567277dd5a5b.ctex"]
+source_file="res://art/gogh/cut_images_XPasZalvAvnv7/image_part_004.png"
+dest_files=["res://.godot/imported/image_part_004.png-c2a5a746994eeedbbd7079fce98a512d.ctex"]
 
 [params]
 

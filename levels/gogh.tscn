@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=54 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
@@ -45,7 +45,6 @@
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
 [ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_station_3.tscn" id="40_n2r0d"]
-[ext_resource type="Texture2D" uid="uid://jaxd7to73e6r" path="res://art/gogh/whitelight1.png" id="42_p0wtk"]
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="45_qur0i"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
@@ -204,12 +203,38 @@ position = Vector2(2176, 328)
 rotation = -0.193732
 scale = Vector2(0.6, 0.6)
 
+[node name="Tree8" parent="Layers/1/Trees" instance=ExtResource("8_dxxt4")]
+position = Vector2(3771, 313)
+rotation = -0.193732
+scale = Vector2(0.6, 0.6)
+
+[node name="Tree11" parent="Layers/1/Trees" instance=ExtResource("8_dxxt4")]
+position = Vector2(5197, 316)
+rotation = -0.193732
+scale = Vector2(0.6, 0.6)
+
 [node name="Tree3" parent="Layers/1/Trees" instance=ExtResource("9_xaqnx")]
 position = Vector2(650, 355)
 scale = Vector2(0.7, 0.7)
 
 [node name="Tree4" parent="Layers/1/Trees" instance=ExtResource("9_xaqnx")]
 position = Vector2(1914, 367)
+scale = Vector2(0.7, 0.7)
+
+[node name="Tree7" parent="Layers/1/Trees" instance=ExtResource("7_5h0g3")]
+position = Vector2(3404, 305)
+scale = Vector2(0.8, 0.8)
+
+[node name="Tree6" parent="Layers/1/Trees" instance=ExtResource("9_xaqnx")]
+position = Vector2(2797, 321)
+scale = Vector2(0.7, 0.7)
+
+[node name="Tree10" parent="Layers/1/Trees" instance=ExtResource("9_xaqnx")]
+position = Vector2(4469, 303)
+scale = Vector2(0.7, 0.7)
+
+[node name="Tree9" parent="Layers/1/Trees" instance=ExtResource("9_xaqnx")]
+position = Vector2(4363, 288)
 scale = Vector2(0.7, 0.7)
 
 [node name="House Section" type="Node2D" parent="Layers/1"]
@@ -384,7 +409,7 @@ texture = ExtResource("14_3h7bj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D13"]
 position = Vector2(73, -9)
-polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2145, 499, 2196, 597, 2163, 603, 2172, 723, 2087, 757)
+polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2145, 499, 2182.14, 599.978, 2163, 603, 2165.3, 733.41, 2087, 757)
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Layers/1/House Section"]
 position = Vector2(1660.59, 152)
@@ -468,7 +493,7 @@ position = Vector2(-71, -71)
 polygon = PackedVector2Array(427, 762, 433, 590, 510, 594, 549, 544, 622, 540, 664, 583, 662, 594, 733, 603, 761, 658, 736, 665, 748, 749)
 
 [node name="StaticBody2D26" type="StaticBody2D" parent="Layers/1/House Section"]
-position = Vector2(2256.59, 179)
+position = Vector2(2219.12, 183.955)
 metadata/_edit_group_ = true
 
 [node name="9" type="Sprite2D" parent="Layers/1/House Section/StaticBody2D26"]
@@ -478,20 +503,11 @@ texture = ExtResource("14_3h7bj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D26"]
 position = Vector2(36.8571, -205.286)
-polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2147.14, 497.286, 2180, 585, 2163, 603, 2179, 722, 2087, 757)
+polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2126.55, 498.059, 2177.08, 590.036, 2163, 603, 2179, 722, 2087, 757)
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="Layers/1/House Section"]
-position = Vector2(1059.59, -37)
-metadata/_edit_group_ = true
-
-[node name="15" type="Sprite2D" parent="Layers/1/House Section/StaticBody2D9"]
-position = Vector2(3517, 572)
-scale = Vector2(0.919885, 0.919885)
-texture = ExtResource("10_nuuhn")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D9"]
-position = Vector2(-46, -141)
-polygon = PackedVector2Array(3456, 866, 3456, 638, 3431, 661, 3431, 645, 3496, 565, 3599, 565, 3638, 623, 3676, 653, 3617, 659, 3631, 730, 3655, 731, 3671, 760, 3668, 780, 3674, 840)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D26"]
+position = Vector2(0, -3.88637)
+polygon = PackedVector2Array(2172.48, 336.819, 2221.71, 336.819, 2221.71, 353.659, 2172.48, 353.659)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Layers/1/House Section"]
 position = Vector2(3844.53, 10.5227)
@@ -505,20 +521,6 @@ texture = ExtResource("3_4xp8y")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D4"]
 position = Vector2(-46, -141)
 polygon = PackedVector2Array(2801, 783, 2763, 666, 2851, 527, 2980, 532, 3061, 583, 3066, 636, 3124, 656, 3138, 804, 3064, 843, 2908, 843, 2903, 775)
-
-[node name="StaticBody2D25" type="StaticBody2D" parent="Layers/1/House Section"]
-position = Vector2(-2010.55, -180.068)
-scale = Vector2(1.2, 1.2)
-metadata/_edit_group_ = true
-
-[node name="14" type="Sprite2D" parent="Layers/1/House Section/StaticBody2D25"]
-position = Vector2(3355, 654)
-scale = Vector2(0.809, 0.809)
-texture = ExtResource("17_nai7y")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D25"]
-position = Vector2(-46, -141)
-polygon = PackedVector2Array(3303, 898, 3288, 797, 3350, 706, 3452, 696, 3521, 742, 3517, 751, 3493, 737, 3495, 838, 3438, 886)
 
 [node name="StaticBody2D28" type="StaticBody2D" parent="Layers/1/House Section"]
 position = Vector2(4846.3, 237.068)
@@ -596,7 +598,7 @@ scale = Vector2(0.194472, 0.194472)
 texture = ExtResource("36_w64ui")
 
 [node name="12" type="Sprite2D" parent="Layers/1/Bushes"]
-position = Vector2(1724, 589)
+position = Vector2(1808, 590)
 scale = Vector2(0.457237, 0.457237)
 texture = ExtResource("33_qhnsq")
 
@@ -611,7 +613,7 @@ scale = Vector2(0.428733, 0.428733)
 texture = ExtResource("30_5f5ie")
 
 [node name="4" type="Sprite2D" parent="Layers/1/Bushes"]
-position = Vector2(1576, 627)
+position = Vector2(1454, 616)
 scale = Vector2(0.644509, 0.644509)
 texture = ExtResource("29_a78ow")
 
@@ -641,7 +643,7 @@ scale = Vector2(0.411184, 0.411184)
 texture = ExtResource("33_qhnsq")
 
 [node name="18" type="Sprite2D" parent="Layers/1/Bushes"]
-position = Vector2(3517, 601)
+position = Vector2(2880, 617)
 scale = Vector2(0.423307, 0.423307)
 texture = ExtResource("36_w64ui")
 
@@ -681,7 +683,7 @@ scale = Vector2(0.367098, 0.367098)
 texture = ExtResource("32_6qgr4")
 
 [node name="25" type="Sprite2D" parent="Layers/1/Bushes"]
-position = Vector2(3627, 588)
+position = Vector2(3411, 615)
 scale = Vector2(0.519231, 0.519231)
 texture = ExtResource("30_5f5ie")
 
@@ -748,7 +750,7 @@ texture = ExtResource("36_w64ui")
 [node name="RefillStations" type="Node2D" parent="Layers/1"]
 
 [node name="RefuelStation1" parent="Layers/1/RefillStations" instance=ExtResource("39_d8lh2")]
-position = Vector2(85, 610)
+position = Vector2(116, 597)
 
 [node name="RefuelStation3" parent="Layers/1/RefillStations" instance=ExtResource("40_n2r0d")]
 position = Vector2(2643, 527)
@@ -757,6 +759,14 @@ scale = Vector2(0.8, 0.8)
 [node name="RefuelStation2" parent="Layers/1/RefillStations" instance=ExtResource("38_2ltat")]
 position = Vector2(4741, 473)
 scale = Vector2(0.8, 0.8)
+
+[node name="RefuelStation4" parent="Layers/1/RefillStations" instance=ExtResource("38_2ltat")]
+position = Vector2(1612, 546)
+scale = Vector2(0.75, 0.75)
+
+[node name="RefuelStation5" parent="Layers/1/RefillStations" instance=ExtResource("39_d8lh2")]
+position = Vector2(3569, 539)
+scale = Vector2(0.9, 0.9)
 
 [node name="2" type="Node2D" parent="Layers"]
 visible = false
@@ -827,6 +837,7 @@ metadata/_edit_lock_ = true
 [node name="BigtreeBack" parent="ParallaxBackground2/ParallaxLayer" instance=ExtResource("38_x1ebn")]
 position = Vector2(-172, 649)
 scale = Vector2(1.9, 1.9)
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground2/ParallaxLayer"]
 offset_left = -141.0
@@ -844,14 +855,14 @@ bus = &"Music"
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(139, 394)
+position = Vector2(50, 447)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
 [node name="Lantern" parent="Protagonist" instance=ExtResource("25_cmusv")]
+energy = 1.5
 blend_mode = 2
 shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("42_p0wtk")
 decrement_per_second = 2.0
 updates_per_second = 10
 

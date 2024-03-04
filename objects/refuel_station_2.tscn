@@ -173,7 +173,7 @@ position = Vector2(56, 39)
 collision_layer = 8388608
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
-polygon = PackedVector2Array(-168, 33, -131, 35, -136, 126, 24, 159, 133, 119, 149, -13, 76, -103, 54, -103, 54, -142, -30, -142, -29, -106, -82, -102)
+polygon = PackedVector2Array(-142, 18, -131, 35, -136, 126, 24, 159, 133, 119, 149, -13, 76, -103, 54, -103, 54, -142, -30, -142, -29, -106, -82, -102)
 
 [node name="InsideHitbox" type="StaticBody2D" parent="."]
 

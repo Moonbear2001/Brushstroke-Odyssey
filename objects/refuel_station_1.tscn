@@ -167,11 +167,10 @@ shape = SubResource("RectangleShape2D_6e284")
 position = Vector2(-51, 23)
 
 [node name="OutsideHitbox" type="StaticBody2D" parent="."]
-visible = false
 collision_layer = 8388608
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
-polygon = PackedVector2Array(-86, -102, -139, -24, -112, 101, -50, 122, 81, 116, 78, -8, 117, -11, 75, -83, 75, -125, 5, -125, 15, -103)
+polygon = PackedVector2Array(-86, -102, -139, -24, -112, 101, -50, 122, 81, 116, 78, -8, 117, -11, 75, -83, 75, -125, 14, -124, 15, -103)
 
 [node name="InsideHitbox" type="StaticBody2D" parent="."]
 

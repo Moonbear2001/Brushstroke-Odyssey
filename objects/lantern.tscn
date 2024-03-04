@@ -1,8 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://cho7dlwku5h6q"]
+[gd_scene load_steps=8 format=3 uid="uid://cho7dlwku5h6q"]
 
+[ext_resource type="Texture2D" uid="uid://32slqks2pbgm" path="res://art/gogh/cut_images_XPasZalvAvnv7/image_part_004.png" id="1_dtk6t"]
 [ext_resource type="Script" path="res://objects/lantern.gd" id="2_m63ym"]
+[ext_resource type="Texture2D" uid="uid://dk5syiw41nft" path="res://art/gogh/cut_images_XPasZalvAvnv7/image_part_001.png" id="3_r250e"]
+[ext_resource type="Texture2D" uid="uid://ci1noyw5mb7dt" path="res://art/gogh/cut_images_XPasZalvAvnv7/image_part_002.png" id="4_gvqtj"]
+[ext_resource type="Texture2D" uid="uid://ctj68ndl3ltoj" path="res://art/gogh/cut_images_XPasZalvAvnv7/image_part_003.png" id="5_j6bh8"]
+
+[sub_resource type="Animation" id="Animation_08fhe"]
+resource_name = "light_flicker"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_r250e"), ExtResource("4_gvqtj"), ExtResource("5_j6bh8"), ExtResource("1_dtk6t")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwdqx"]
+_data = {
+"light_flicker": SubResource("Animation_08fhe")
+}
 
 [node name="Lantern" type="PointLight2D"]
+texture = ExtResource("3_r250e")
 script = ExtResource("2_m63ym")
 decrement_per_second = 1.0
 updates_per_second = 8
@@ -10,5 +37,11 @@ updates_per_second = 8
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iwdqx")
+}
+autoplay = "light_flicker"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
