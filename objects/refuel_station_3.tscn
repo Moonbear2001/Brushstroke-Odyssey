@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dqkxuiu78xd3i" path="res://art/gogh/house section/houses/lantern_houses/h3_dark.PNG" id="2_ac1rj"]
 [ext_resource type="Texture2D" uid="uid://cmtveu4cj6ogv" path="res://art/gogh/house section/houses/lantern_houses/h3_inside.PNG" id="3_5mpib"]
 [ext_resource type="Texture2D" uid="uid://dlhtfloy4hqeb" path="res://art/gogh/house section/houses/lantern_houses/h3_lit.PNG" id="4_v1676"]
-[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="5_jenw0"]
-[ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="6_tb7tn"]
+[ext_resource type="PackedScene" path="res://interaction/interaction_area.tscn" id="5_jenw0"]
+[ext_resource type="PackedScene" uid="uid://blrifwgh8tbnh" path="res://objects/climb.tscn" id="6_tb7tn"]
 [ext_resource type="PackedScene" uid="uid://dlroneefg1jak" path="res://objects/refuel_light.tscn" id="7_7iidq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kijso"]
@@ -173,7 +173,7 @@ position = Vector2(-128, 24)
 collision_layer = 8388608
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
-polygon = PackedVector2Array(-162, 52, -136, 42, -124, 132, 68, 132, 137, 82, 144, 9, 92, -118, -11, -114, -35, -79, -88, -79)
+polygon = PackedVector2Array(-150, 36, -136, 42, -124, 132, 68, 132, 125, 81, 128, 5, 92, -118, -11, -114, -35, -79, -88, -79)
 
 [node name="InsideHitbox" type="StaticBody2D" parent="."]
 
