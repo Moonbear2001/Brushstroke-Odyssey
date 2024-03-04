@@ -20,6 +20,7 @@ Custom level script for the Van Gogh level.
 var windArr: Array[Node2D]
 var wind = preload("res://objects/wind.tscn")
 var smallwind = preload("res://objects/small_wind/breeze.tscn")
+var new_lantern = preload("res://objects/lantern.tscn")
 
 var curr_layer = 1
 
@@ -108,26 +109,33 @@ func get_all_children(node) -> Array:
 	return nodes
 	
 func respawn():
-	var greatest_x_below_target = -INF
-	var checkpoint
-	for node in get_tree().get_nodes_in_group("checkpoint"):
-		if node.global_position.x < protagonist.global_position.x and node.global_position.x > greatest_x_below_target:
-			greatest_x_below_target = node.global_position.x
-			checkpoint = node
-	for p in get_tree().get_nodes_in_group("protagonist"):
-		p.queue_free()
-		
-	# Check if a valid x value was found
-	if greatest_x_below_target != -INF:
-		var duplicatedNode = protagonist_gogh.instantiate()
-		duplicatedNode.global_position.x = checkpoint.global_position.x
-		duplicatedNode.global_position.y = checkpoint.global_position.y
-		get_tree().current_scene.add_child(duplicatedNode)
-		protagonist = duplicatedNode
-		Global.protagonist = protagonist
-		duplicatedNode.set_gravity("down")
-	else:
-		get_tree().reload_current_scene()
+	#var greatest_x_below_target = -INF
+	#var checkpoint
+	#for node in get_tree().get_nodes_in_group("checkpoint"):
+		#if node.global_position.x < protagonist.global_position.x and node.global_position.x > greatest_x_below_target:
+			#greatest_x_below_target = node.global_position.x
+			#checkpoint = node
+	#for p in get_tree().get_nodes_in_group("protagonist"):
+		#p.queue_free()
+		#
+	## Check if a valid x value was found
+	#if greatest_x_below_target != -INF:
+		#var duplicatedNode = protagonist_gogh.instantiate()
+		#var duplicateLantern = new_lantern.instantiate()
+		#duplicatedNode.global_position.x = checkpoint.global_position.x
+		#duplicatedNode.global_position.y = checkpoint.global_position.y
+		#get_tree().current_scene.add_child(duplicatedNode)
+		#duplicatedNode.add_child(duplicateLantern)
+		#protagonist = duplicatedNode
+		#lantern = duplicateLantern
+		#for refill_station in refill_stations.get_children():
+			#refill_station.refuel_light.increment_fuel_level.connect(lantern.increment_fuel)
+			#refill_station.refuel_light.refuel_area_entered.connect(lantern.refueling_started)
+			#refill_station.refuel_light.refuel_area_exited.connect(lantern.refueling_stopped)
+		#Global.protagonist = protagonist
+		#duplicatedNode.set_gravity("down")
+	#else:
+	get_tree().reload_current_scene()
 
 func cont() -> void:
 	$AnimationPlayer.play("scene_out")
@@ -156,6 +164,7 @@ func spawn_smallwind():
 	newWind.breeze_finished.connect(Callable(self, "spawn_wind"))
 	newWind.global_position = Vector2(x_pos, 260)
 	add_child(newWind)
+	sway_trees()
 
 func sway_trees():
 	var tree_arr = trees.get_children()

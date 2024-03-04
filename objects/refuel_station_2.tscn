@@ -190,10 +190,11 @@ libraries = {
 position = Vector2(-59, -166)
 
 [node name="RefillArea" type="Area2D" parent="."]
-position = Vector2(0, 91)
+position = Vector2(0, 149)
 scale = Vector2(1.28, 1.28)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RefillArea"]
+position = Vector2(-68.75, 127.344)
 scale = Vector2(1.68, 1.68)
 shape = SubResource("RectangleShape2D_h707i")
 
@@ -201,7 +202,7 @@ shape = SubResource("RectangleShape2D_h707i")
 wait_time = 0.1
 
 [node name="Climb" parent="." instance=ExtResource("6_67nry")]
-position = Vector2(12, -4)
+position = Vector2(37, 327)
 rotation = -0.174533
 scale = Vector2(1, 1.5)
 

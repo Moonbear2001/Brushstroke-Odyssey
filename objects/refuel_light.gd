@@ -25,7 +25,7 @@ func _process(delta):
 			timer.start()
 
 func refuel():
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_pressed("interact") and is_instance_valid(Global.protagonist):
 		refuel_area_entered.emit()
 		if global_position.x < Global.protagonist.global_position.x:
 			Global.protagonist.refueling_left = true

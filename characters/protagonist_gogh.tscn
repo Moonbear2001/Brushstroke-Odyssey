@@ -1073,7 +1073,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_28efk"]
 resource_name = "RefillLeft_default"
-length = 10.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1113,7 +1113,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_amdmr"]
 resource_name = "RefillRight_default"
-length = 10.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

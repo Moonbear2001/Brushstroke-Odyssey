@@ -124,7 +124,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_q6tmv"]
 resource_name = "blowing"
-length = 1.2
+length = 2.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

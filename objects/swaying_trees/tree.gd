@@ -11,4 +11,6 @@ func _process(delta):
 	pass
 
 func sway():
+	if tree.is_playing():
+		tree.stop()
 	tree.play("swaying")

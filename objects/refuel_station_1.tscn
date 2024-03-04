@@ -136,7 +136,7 @@ sprite_frames = SubResource("SpriteFrames_3n7cl")
 animation = &"inside"
 
 [node name="RefuelLight" parent="." instance=ExtResource("4_868r8")]
-position = Vector2(-59, 25)
+position = Vector2(-74, 25)
 
 [node name="Enter" type="Node2D" parent="."]
 
@@ -155,15 +155,16 @@ position = Vector2(75, -152)
 position = Vector2(105, 0)
 
 [node name="ExitStationArea" parent="Exit" instance=ExtResource("4_uy3ch")]
-position = Vector2(22, 25)
+position = Vector2(-69, 48)
 action_name = "exit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/ExitStationArea"]
+position = Vector2(27, -8)
 scale = Vector2(0.666663, 0.666663)
 shape = SubResource("RectangleShape2D_6e284")
 
 [node name="LabelPos" type="Node2D" parent="Exit"]
-position = Vector2(38, 16)
+position = Vector2(-51, 23)
 
 [node name="OutsideHitbox" type="StaticBody2D" parent="."]
 visible = false
@@ -197,7 +198,7 @@ shape = SubResource("RectangleShape2D_h707i")
 wait_time = 0.1
 
 [node name="Climb" parent="." instance=ExtResource("5_ub11y")]
-position = Vector2(26, -25)
+position = Vector2(-29, 315)
 
 [connection signal="body_entered" from="RefillArea" to="." method="_on_refill_area_body_entered"]
 [connection signal="body_exited" from="RefillArea" to="." method="_on_refill_area_body_exited"]
