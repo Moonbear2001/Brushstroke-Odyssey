@@ -1406,6 +1406,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="LevelUI" parent="." instance=ExtResource("54_kuasg")]
+visible = false
 
 [node name="Star" parent="." instance=ExtResource("56_k5iqm")]
 position = Vector2(2066, 499)

@@ -227,7 +227,6 @@ func get_anim_name(name):
 			return name + "_dim"
 		return name + "_glow"
 	else:
-		print(glow_level)
 		if (refueling_left or refueling_right) and glow_level == "4":
 			glow_anim.show()
 			glow_anim.play(glow_level)

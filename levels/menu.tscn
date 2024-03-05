@@ -59,7 +59,7 @@ script = ExtResource("1_2sh28")
 protagonist = NodePath("ProtagonistBig")
 
 [node name="Layout" type="Sprite2D" parent="."]
-position = Vector2(3388, 360)
+position = Vector2(3305, 360)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_mibmc")
 
