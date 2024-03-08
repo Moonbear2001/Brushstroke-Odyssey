@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dhx5p40jq8mb6"]
 
-[ext_resource type="Script" path="res://objects/refuel_station.gd" id="1_l06q0"]
+[ext_resource type="Script" path="res://objects/refuel_stations/refuel_station.gd" id="1_l06q0"]
 [ext_resource type="Texture2D" uid="uid://dtcdax8i4qvbp" path="res://art/gogh/house section/houses/lantern_houses/h1_inside.PNG" id="2_ckw6k"]
 [ext_resource type="Texture2D" uid="uid://c5cc8vl4264vf" path="res://art/gogh/house section/houses/lantern_houses/h1_lit.PNG" id="3_63dl2"]
 [ext_resource type="PackedScene" uid="uid://dlroneefg1jak" path="res://objects/refuel_light.tscn" id="4_868r8"]
@@ -128,7 +128,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h707i"]
 size = Vector2(93, 20)
 
-[node name="RefuelStation1" type="Node2D"]
+[node name="RefuelStation1" type="Node2D" groups=["checkpoint"]]
 script = ExtResource("1_l06q0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -198,6 +198,9 @@ wait_time = 0.1
 
 [node name="Climb" parent="." instance=ExtResource("5_ub11y")]
 position = Vector2(-29, 315)
+
+[node name="Checkpoint" type="Node2D" parent="."]
+position = Vector2(-43, -154)
 
 [connection signal="body_entered" from="RefillArea" to="." method="_on_refill_area_body_entered"]
 [connection signal="body_exited" from="RefillArea" to="." method="_on_refill_area_body_exited"]

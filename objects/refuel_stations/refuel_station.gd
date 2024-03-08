@@ -16,7 +16,9 @@ signal increment_fuel_level
 @onready var exit_pos = $ExitPos
 @onready var timer = $Timer
 @onready var refuel_light = $RefuelLight
+@onready var checkpoint_pos = $Checkpoint
 
+var visited = false
 # Play correct starting animation, hook up interactions
 func _ready():
 	anim_player.play("lit")
@@ -28,6 +30,7 @@ func enter() -> void:
 	anim_player.play("inside")
 	var protagonist = get_tree().get_first_node_in_group("protagonist")
 	protagonist.glow = false
+	visited = true
 	
 # Exit the refill station
 func exit() -> void:

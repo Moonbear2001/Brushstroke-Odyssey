@@ -15,12 +15,12 @@ Custom level script for the Van Gogh level.
 @onready var next_scene = $"Next Scene/InteractionArea"
 @onready var death = $Death
 @onready var protagonist_gogh = preload("res://characters/protagonist_gogh.tscn")
+@onready var new_lantern = preload("res://objects/lantern.tscn")
 @onready var trees = $"Layers/1/Trees"
 
 var windArr: Array[Node2D]
 var wind = preload("res://objects/wind.tscn")
 var smallwind = preload("res://objects/small_wind/breeze.tscn")
-var new_lantern = preload("res://objects/lantern.tscn")
 
 var curr_layer = 1
 
@@ -29,6 +29,7 @@ func _ready():
 	super._ready()
 	protagonist.glow = true
 	death.respawn.connect(Callable(self, "respawn"))
+	
 	# Hook up the refill station's signals here because its a pain to do it
 	# one by one in the Godot editor (also not good design)
 	for refill_station in refill_stations.get_children():
@@ -66,10 +67,10 @@ func on_refill_station_exited(exit_pos):
 
 # Reload the level when fuel is exhausted
 func _on_lantern_fuel_exhausted():
-	get_tree().reload_current_scene()
+	respawn()
 
 func change_glow():
-	var glow_num = floori(fuel_bar.fuel_lvl / 11)
+	var glow_num = floori(lantern.fuel_level / 50 * 11)
 	protagonist.glow_level = str(glow_num)
 	
 # Change to the next layer
@@ -109,33 +110,35 @@ func get_all_children(node) -> Array:
 	return nodes
 	
 func respawn():
-	#var greatest_x_below_target = -INF
-	#var checkpoint
-	#for node in get_tree().get_nodes_in_group("checkpoint"):
-		#if node.global_position.x < protagonist.global_position.x and node.global_position.x > greatest_x_below_target:
-			#greatest_x_below_target = node.global_position.x
-			#checkpoint = node
-	#for p in get_tree().get_nodes_in_group("protagonist"):
-		#p.queue_free()
-		#
-	## Check if a valid x value was found
-	#if greatest_x_below_target != -INF:
-		#var duplicatedNode = protagonist_gogh.instantiate()
-		#var duplicateLantern = new_lantern.instantiate()
-		#duplicatedNode.global_position.x = checkpoint.global_position.x
-		#duplicatedNode.global_position.y = checkpoint.global_position.y
-		#get_tree().current_scene.add_child(duplicatedNode)
-		#duplicatedNode.add_child(duplicateLantern)
-		#protagonist = duplicatedNode
-		#lantern = duplicateLantern
-		#for refill_station in refill_stations.get_children():
-			#refill_station.refuel_light.increment_fuel_level.connect(lantern.increment_fuel)
-			#refill_station.refuel_light.refuel_area_entered.connect(lantern.refueling_started)
-			#refill_station.refuel_light.refuel_area_exited.connect(lantern.refueling_stopped)
-		#Global.protagonist = protagonist
-		#duplicatedNode.set_gravity("down")
-	#else:
-	get_tree().reload_current_scene()
+	var greatest_x_below_target = -INF
+	var checkpoint
+	for node in get_tree().get_nodes_in_group("checkpoint"):
+		if node is RefuelStation and node.visited and node.global_position.x < protagonist.global_position.x and node.global_position.x > greatest_x_below_target:
+			greatest_x_below_target = node.global_position.x
+			checkpoint = node
+	for p in get_tree().get_nodes_in_group("protagonist"):
+		p.queue_free()
+		
+	# Check if a valid x value was found
+	if greatest_x_below_target != -INF:	
+		var duplicatedNode = protagonist_gogh.instantiate()
+		var duplicateLantern = new_lantern.instantiate()
+		duplicatedNode.add_child(duplicateLantern)
+		duplicatedNode.glow = true
+		duplicatedNode.global_position.x = checkpoint.checkpoint_pos.global_position.x
+		duplicatedNode.global_position.y = checkpoint.checkpoint_pos.global_position.y
+		get_tree().current_scene.add_child(duplicatedNode)
+		protagonist = duplicatedNode
+		lantern = duplicateLantern
+		lantern.fuel_exhausted.connect(Callable(self, "respawn"))
+		for refill_station in refill_stations.get_children():
+			refill_station.refuel_light.increment_fuel_level.connect(lantern.increment_fuel)
+			refill_station.refuel_light.refuel_area_entered.connect(lantern.refueling_started)
+			refill_station.refuel_light.refuel_area_exited.connect(lantern.refueling_stopped)
+		Global.protagonist = protagonist
+		duplicatedNode.set_gravity("down")
+	else:
+		get_tree().reload_current_scene()
 
 func cont() -> void:
 	$AnimationPlayer.play("scene_out")
