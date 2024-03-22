@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bc6rebuuy2i1k"]
 
 [ext_resource type="Script" path="res://objects/lever/lever.gd" id="1_7onxr"]
-[ext_resource type="PackedScene" path="res://interaction/interaction_area.tscn" id="2_46xqt"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="2_46xqt"]
 [ext_resource type="Texture2D" uid="uid://jb04h6cy82no" path="res://art/Esher/levers/lever_transparent.png" id="3_2o8mc"]
 [ext_resource type="AudioStream" uid="uid://dyohwahjfr7h6" path="res://audio/sfx/lever.mp3" id="4_gx0ew"]
 
