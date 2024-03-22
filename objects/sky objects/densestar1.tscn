@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwvnbnw473cw4"]
+
+[ext_resource type="Texture2D" uid="uid://bck5bh4obaeth" path="res://art/VanGogh/sprite_sheets/stars/densestar1.png" id="1_vkiru"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejwqg"]
+atlas = ExtResource("1_vkiru")
+region = Rect2(0, 0, 166, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o0gp"]
+atlas = ExtResource("1_vkiru")
+region = Rect2(166, 0, 166, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7dmo"]
+atlas = ExtResource("1_vkiru")
+region = Rect2(332, 0, 166, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ihj2"]
+atlas = ExtResource("1_vkiru")
+region = Rect2(498, 0, 166, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0454"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejwqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o0gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7dmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ihj2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2lcm3"]
+
+[node name="Densestar1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_g0454")
+autoplay = "default"
+frame_progress = 0.466678
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5, -6)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_2lcm3")

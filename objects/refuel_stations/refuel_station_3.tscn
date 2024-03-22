@@ -1,0 +1,217 @@
+[gd_scene load_steps=17 format=3 uid="uid://c78lwy0uhw6n7"]
+
+[ext_resource type="Script" path="res://objects/refuel_stations/refuel_station.gd" id="1_w35wc"]
+[ext_resource type="Texture2D" uid="uid://dqkxuiu78xd3i" path="res://art/gogh/house section/houses/lantern_houses/h3_dark.PNG" id="2_ac1rj"]
+[ext_resource type="Texture2D" uid="uid://cmtveu4cj6ogv" path="res://art/gogh/house section/houses/lantern_houses/h3_inside.PNG" id="3_5mpib"]
+[ext_resource type="Texture2D" uid="uid://dlhtfloy4hqeb" path="res://art/gogh/house section/houses/lantern_houses/h3_lit.PNG" id="4_v1676"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="5_jenw0"]
+[ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="6_tb7tn"]
+[ext_resource type="PackedScene" uid="uid://dlroneefg1jak" path="res://objects/refuel_light.tscn" id="7_7iidq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kijso"]
+atlas = ExtResource("2_ac1rj")
+region = Rect2(0, 0, 398, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3mwo"]
+atlas = ExtResource("3_5mpib")
+region = Rect2(0, 0, 363, 317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53k42"]
+atlas = ExtResource("4_v1676")
+region = Rect2(0, 0, 368, 304)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3n7cl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kijso")
+}],
+"loop": true,
+"name": &"dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3mwo")
+}],
+"loop": true,
+"name": &"inside",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53k42")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6e284"]
+
+[sub_resource type="Animation" id="Animation_exu53"]
+resource_name = "inside"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"inside"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OutsideHitbox:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8388608]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InsideHitbox:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_elldm"]
+resource_name = "lit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"lit"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OutsideHitbox:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InsideHitbox:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8388608]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5v4s"]
+_data = {
+"inside": SubResource("Animation_exu53"),
+"lit": SubResource("Animation_elldm")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h707i"]
+size = Vector2(93, 20)
+
+[node name="RefuelStation3" type="Node2D" groups=["checkpoint"]]
+script = ExtResource("1_w35wc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3n7cl")
+animation = &"inside"
+
+[node name="Enter" type="Node2D" parent="."]
+
+[node name="EnterStationArea" parent="Enter" instance=ExtResource("5_jenw0")]
+position = Vector2(-55, -85)
+action_name = "enter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enter/EnterStationArea"]
+scale = Vector2(2.32, 2.32)
+shape = SubResource("RectangleShape2D_6e284")
+
+[node name="LabelPos" type="Node2D" parent="Enter"]
+position = Vector2(-27, -99)
+
+[node name="Exit" type="Node2D" parent="."]
+
+[node name="ExitStationArea" parent="Exit" instance=ExtResource("5_jenw0")]
+position = Vector2(-66, 30)
+action_name = "exit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/ExitStationArea"]
+scale = Vector2(0.666663, 0.666663)
+shape = SubResource("RectangleShape2D_6e284")
+
+[node name="LabelPos" type="Node2D" parent="Exit"]
+position = Vector2(-128, 24)
+
+[node name="OutsideHitbox" type="StaticBody2D" parent="."]
+collision_layer = 8388608
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
+polygon = PackedVector2Array(-150, 36, -136, 42, -124, 132, 68, 132, 125, 81, 128, 5, 92, -118, -11, -114, -35, -79, -88, -79)
+
+[node name="InsideHitbox" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InsideHitbox"]
+position = Vector2(-10, 41)
+scale = Vector2(0.919999, 0.919999)
+polygon = PackedVector2Array(109, -94, 119.565, 48.9131, -91.3045, 51.087, -94, -94, -120, -92, -119, 88, 167.392, 89.1305, 159.783, -94.5653)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q5v4s")
+}
+
+[node name="ExitPos" type="Node2D" parent="."]
+position = Vector2(-59, -166)
+
+[node name="RefillArea" type="Area2D" parent="."]
+position = Vector2(2, 137)
+scale = Vector2(1.16, 1.28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RefillArea"]
+position = Vector2(60.3448, 96.0937)
+scale = Vector2(1.68, 1.68)
+shape = SubResource("RectangleShape2D_h707i")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Climb" parent="." instance=ExtResource("6_tb7tn")]
+position = Vector2(-66, 271)
+scale = Vector2(0.685529, 0.980919)
+
+[node name="RefuelLight" parent="." instance=ExtResource("7_7iidq")]
+position = Vector2(60, 43)
+
+[node name="Checkpoint" type="Node2D" parent="."]
+position = Vector2(-58, -154)
+
+[connection signal="body_entered" from="RefillArea" to="." method="_on_refill_area_body_entered"]
+[connection signal="body_exited" from="RefillArea" to="." method="_on_refill_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

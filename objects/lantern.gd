@@ -20,12 +20,12 @@ signal fuel_exhausted()
 @onready var sprite =  $AnimatedSprite2D2
 
 const MIN_FUEL_LEVEL: int = 0
-const MAX_FUEL_LEVEL: int = 50
+const MAX_FUEL_LEVEL: int = 30
 const START_FUEL_LEVEL: int = 10
 const SCALE = 20.0
 
 var on: bool = true
-var fuel_level: float = 30
+var fuel_level: float = 20
 var decrement: bool = true
 
 # Set correct timer wait time

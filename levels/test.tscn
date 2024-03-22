@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://o0cemxpypdqw"]
+[gd_scene load_steps=25 format=3 uid="uid://o0cemxpypdqw"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_uvjo0"]
 [ext_resource type="Texture2D" uid="uid://c6eo1riftkdnn" path="res://art/test/rectangle.png" id="2_kywgl"]
@@ -8,9 +8,8 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="6_36k4t"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_r5kbc"]
 [ext_resource type="Texture2D" uid="uid://df6fy3tal4kj" path="res://art/test/circle.png" id="8_lser0"]
-[ext_resource type="Texture2D" uid="uid://buwb8jdhdiiqo" path="res://art/test/wind.png" id="9_r1y11"]
 
-[sub_resource type="Resource" id="Resource_ebw7u"]
+[sub_resource type="Resource" id="Resource_5m6yr"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -21,9 +20,9 @@ script = ExtResource("5_ea05c")
 position = Vector2(-130.941, -0.824585)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_ebw7u")
+properties = SubResource("Resource_5m6yr")
 
-[sub_resource type="Resource" id="Resource_nvlfn"]
+[sub_resource type="Resource" id="Resource_31m71"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -34,9 +33,9 @@ script = ExtResource("5_ea05c")
 position = Vector2(-130.941, -0.824585)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_nvlfn")
+properties = SubResource("Resource_31m71")
 
-[sub_resource type="Resource" id="Resource_su6wh"]
+[sub_resource type="Resource" id="Resource_qdqa5"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -47,9 +46,9 @@ script = ExtResource("5_ea05c")
 position = Vector2(-2.24719, -72.9495)
 point_in = Vector2(-128.693, 4.24265)
 point_out = Vector2(128.693, -4.24265)
-properties = SubResource("Resource_su6wh")
+properties = SubResource("Resource_qdqa5")
 
-[sub_resource type="Resource" id="Resource_nchti"]
+[sub_resource type="Resource" id="Resource_oscbl"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -60,9 +59,9 @@ script = ExtResource("5_ea05c")
 position = Vector2(130.689, -0.117462)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_nchti")
+properties = SubResource("Resource_oscbl")
 
-[sub_resource type="Resource" id="Resource_vhe8l"]
+[sub_resource type="Resource" id="Resource_x71ke"]
 script = ExtResource("4_3vyso")
 texture_idx = 0
 flip = false
@@ -73,7 +72,7 @@ script = ExtResource("5_ea05c")
 position = Vector2(2.70255, 73.4216)
 point_in = Vector2(127.986, -2.12134)
 point_out = Vector2(-127.986, 2.12134)
-properties = SubResource("Resource_vhe8l")
+properties = SubResource("Resource_x71ke")
 
 [sub_resource type="Resource" id="Resource_i7wm8"]
 script = ExtResource("6_36k4t")
@@ -149,48 +148,10 @@ _data = {
 "move": SubResource("Animation_rimi3")
 }
 
-[sub_resource type="Animation" id="Animation_55hhx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-267, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_sak14"]
-resource_name = "move"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-267, 0), Vector2(0, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qi6y2"]
-_data = {
-"RESET": SubResource("Animation_55hhx"),
-"move": SubResource("Animation_sak14")
-}
-
 [node name="Test" type="Node2D"]
 
 [node name="Protagonist" parent="." instance=ExtResource("1_uvjo0")]
-position = Vector2(66, 436)
+position = Vector2(758, 398)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -273,24 +234,5 @@ polygon = PackedVector2Array(-130.944, -0.824476, -130.69, -3.74975, -130.093, -
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D"]
 libraries = {
 "": SubResource("AnimationLibrary_umsx1")
-}
-autoplay = "move"
-
-[node name="WindAnimate" type="AnimatableBody2D" parent="."]
-position = Vector2(-267, 0)
-metadata/_edit_group_ = true
-
-[node name="Wind" type="Sprite2D" parent="WindAnimate"]
-position = Vector2(878, 262)
-rotation = -3.14159
-scale = Vector2(0.252043, 0.252043)
-texture = ExtResource("9_r1y11")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WindAnimate"]
-polygon = PackedVector2Array(760, 210, 763, 314, 773, 314, 766, 207)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="WindAnimate"]
-libraries = {
-"": SubResource("AnimationLibrary_qi6y2")
 }
 autoplay = "move"

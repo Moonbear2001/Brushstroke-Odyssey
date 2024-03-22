@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhx5p40jq8mb6"]
+[gd_scene load_steps=15 format=3 uid="uid://bxa1m02vl0wkv"]
 
 [ext_resource type="Script" path="res://objects/refuel_station.gd" id="1_l06q0"]
 [ext_resource type="Texture2D" uid="uid://dtcdax8i4qvbp" path="res://art/gogh/house section/houses/lantern_houses/h1_inside.PNG" id="2_ckw6k"]

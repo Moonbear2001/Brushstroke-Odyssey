@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds07sxn4md25p"]
+
+[ext_resource type="Texture2D" uid="uid://bs2uxvd1roehm" path="res://art/VanGogh/sprite_sheets/stars/star2.png" id="1_xo7ql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku1r0"]
+atlas = ExtResource("1_xo7ql")
+region = Rect2(0, 0, 734, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46nk6"]
+atlas = ExtResource("1_xo7ql")
+region = Rect2(734, 0, 734, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11ydi"]
+atlas = ExtResource("1_xo7ql")
+region = Rect2(1468, 0, 734, 682)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10i8h"]
+atlas = ExtResource("1_xo7ql")
+region = Rect2(2202, 0, 734, 682)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjcbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku1r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46nk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11ydi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10i8h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Star1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+sprite_frames = SubResource("SpriteFrames_mjcbq")
+autoplay = "default"
+frame = 3
+frame_progress = 0.469082
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-6, -82, -34, -79, -58, -71, -75, -58, -83, -44, -93, -14, -92, 14, -86, 35, -78, 52, -63, 73, -44, 85, -17, 87, 21, 86, 40, 77, 59, 60, 72, 33, 77, 8, 76, -25, 71, -54, 50, -73, 21, -81)
