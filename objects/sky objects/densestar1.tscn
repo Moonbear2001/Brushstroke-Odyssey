@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brcdv85myvabh"]
+[gd_scene load_steps=8 format=3 uid="uid://dwvnbnw473cw4"]
 
 [ext_resource type="Texture2D" uid="uid://bck5bh4obaeth" path="res://art/VanGogh/sprite_sheets/stars/densestar1.png" id="1_vkiru"]
 
@@ -38,8 +38,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2lcm3"]
+
 [node name="Densestar1" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
 sprite_frames = SubResource("SpriteFrames_g0454")
-frame_progress = 0.425423
+autoplay = "default"
+frame_progress = 0.466678
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5, -6)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_2lcm3")

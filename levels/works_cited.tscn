@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://y1rrgelygedy"]
+
+[node name="WorksCited" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 177.0
+offset_bottom = 152.0
+scale = Vector2(7.4, 5.84)
+text = "works cited!
+
+
+cowkrs a;lsdkjfa"

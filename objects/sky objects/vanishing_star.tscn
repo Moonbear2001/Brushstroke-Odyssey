@@ -1,0 +1,178 @@
+[gd_scene load_steps=71 format=3 uid="uid://bgh836vpopfh3"]
+
+[ext_resource type="Texture2D" uid="uid://dpakur8o8uyvd" path="res://art/gogh/PineTools.com_files/row-1-column-1.png" id="1_cplaa"]
+[ext_resource type="Texture2D" uid="uid://dfqs3vqou2mya" path="res://art/gogh/PineTools.com_files/row-1-column-2.png" id="2_5gumm"]
+[ext_resource type="Texture2D" uid="uid://x2elc716vgue" path="res://art/gogh/PineTools.com_files/row-1-column-3.png" id="2_pnr0n"]
+[ext_resource type="Texture2D" uid="uid://dkpq8f571a3dg" path="res://art/gogh/PineTools.com_files/row-1-column-4.png" id="3_0ar5w"]
+[ext_resource type="Texture2D" uid="uid://b3fo116ko4fan" path="res://art/gogh/PineTools.com_files/row-1-column-5.png" id="4_q616d"]
+[ext_resource type="Texture2D" uid="uid://51yjufklryyj" path="res://art/gogh/PineTools.com_files/row-1-column-6.png" id="5_4fx0y"]
+[ext_resource type="Texture2D" uid="uid://b0th607shujhs" path="res://art/gogh/PineTools.com_files/row-2-column-1.png" id="6_prn4v"]
+[ext_resource type="Texture2D" uid="uid://dud6yhtf7fn62" path="res://art/gogh/PineTools.com_files/row-2-column-2.png" id="7_s2dje"]
+[ext_resource type="Texture2D" uid="uid://csjktj5uhx6rs" path="res://art/gogh/PineTools.com_files/row-2-column-3.png" id="8_4il2w"]
+[ext_resource type="Texture2D" uid="uid://cxrlbed1x7x4t" path="res://art/gogh/PineTools.com_files/row-2-column-4.png" id="9_eqabo"]
+[ext_resource type="Texture2D" uid="uid://bfa3jrqfg3sii" path="res://art/gogh/PineTools.com_files/row-2-column-6.png" id="10_fhbad"]
+[ext_resource type="Texture2D" uid="uid://bvx4hmneyfdi" path="res://art/gogh/PineTools.com_files/row-2-column-5.png" id="11_3qrg7"]
+[ext_resource type="Texture2D" uid="uid://dm55rrkuvl5ol" path="res://art/gogh/PineTools.com_files/row-3-column-1.png" id="11_ptia7"]
+[ext_resource type="Texture2D" uid="uid://dtl2yo5sy1ehy" path="res://art/gogh/PineTools.com_files/row-3-column-2.png" id="12_kxym8"]
+[ext_resource type="Texture2D" uid="uid://c5dsylm5j6bw7" path="res://art/gogh/PineTools.com_files/row-3-column-3.png" id="13_dpb6s"]
+[ext_resource type="Texture2D" uid="uid://cuh41cr71kci" path="res://art/gogh/PineTools.com_files/row-3-column-4.png" id="14_2lj3g"]
+[ext_resource type="Texture2D" uid="uid://cyfmxloj81yvo" path="res://art/gogh/PineTools.com_files/row-3-column-5.png" id="15_jgxxa"]
+[ext_resource type="Texture2D" uid="uid://7jrp0f2fjh32" path="res://art/gogh/PineTools.com_files/row-3-column-6.png" id="16_spfkf"]
+[ext_resource type="Texture2D" uid="uid://cggrnocwj6ktk" path="res://art/gogh/PineTools.com_files/row-4-column-2.png" id="17_1l1yw"]
+[ext_resource type="Texture2D" uid="uid://cp2bye6d6lcfk" path="res://art/gogh/PineTools.com_files/row-4-column-3.png" id="18_f302a"]
+[ext_resource type="Texture2D" uid="uid://8iaqpbm8qpna" path="res://art/gogh/PineTools.com_files/row-4-column-4.png" id="19_gy4vo"]
+[ext_resource type="Texture2D" uid="uid://o7ai4l7h3scg" path="res://art/gogh/PineTools.com_files/row-4-column-5.png" id="20_deioi"]
+[ext_resource type="Texture2D" uid="uid://cx3abebav27gh" path="res://art/gogh/PineTools.com_files/row-4-column-6.png" id="21_xdlri"]
+[ext_resource type="Texture2D" uid="uid://c5fxwg0vhovj4" path="res://art/gogh/PineTools.com_files/row-5-column-1.png" id="22_g1g4f"]
+[ext_resource type="Texture2D" uid="uid://cu0vqranckbab" path="res://art/gogh/PineTools.com_files/row-5-column-2.png" id="23_5c6ns"]
+[ext_resource type="Texture2D" uid="uid://b0y26xps86rdu" path="res://art/gogh/PineTools.com_files/row-5-column-3.png" id="24_ycwov"]
+[ext_resource type="Texture2D" uid="uid://b72peh4oro636" path="res://art/gogh/PineTools.com_files/row-5-column-4.png" id="25_buuik"]
+[ext_resource type="Texture2D" uid="uid://bkpohl5shg6o7" path="res://art/gogh/PineTools.com_files/row-5-column-5.png" id="26_kyuei"]
+[ext_resource type="Texture2D" uid="uid://ilrm3l37fa5a" path="res://art/gogh/PineTools.com_files/row-5-column-6.png" id="27_vd21r"]
+[ext_resource type="Texture2D" uid="uid://cd5025in2t6o5" path="res://art/gogh/PineTools.com_files/row-6-column-1.png" id="28_v38st"]
+[ext_resource type="Texture2D" uid="uid://0jqo0fm52ce3" path="res://art/gogh/PineTools.com_files/row-6-column-2.png" id="29_l34rd"]
+[ext_resource type="Texture2D" uid="uid://bxe81kx5reah" path="res://art/gogh/PineTools.com_files/row-6-column-3.png" id="30_3t6g7"]
+[ext_resource type="Texture2D" uid="uid://i77rcwvk3jqs" path="res://art/gogh/PineTools.com_files/row-6-column-4.png" id="31_4xknr"]
+[ext_resource type="Texture2D" uid="uid://10607id2vcv5" path="res://art/gogh/PineTools.com_files/row-6-column-5.png" id="32_kh2pd"]
+[ext_resource type="Texture2D" uid="uid://t0altm32otrs" path="res://art/gogh/PineTools.com_files/row-6-column-6.png" id="33_7dkkl"]
+[ext_resource type="Texture2D" uid="uid://dbj7heqo1figk" path="res://art/gogh/PineTools.com_files/row-7-column-1.png" id="34_a0qos"]
+[ext_resource type="Texture2D" uid="uid://qddodglwroqk" path="res://art/gogh/PineTools.com_files/row-7-column-2.png" id="35_fo8rj"]
+[ext_resource type="Texture2D" uid="uid://db3cphpv4qlex" path="res://art/gogh/PineTools.com_files/row-7-column-3.png" id="36_1v8ci"]
+[ext_resource type="Texture2D" uid="uid://nrh2qyfvuhj7" path="res://art/gogh/PineTools.com_files/row-7-column-4.png" id="37_fif0c"]
+[ext_resource type="Texture2D" uid="uid://b2pm77oaavbcj" path="res://art/gogh/PineTools.com_files/row-7-column-5.png" id="38_unlql"]
+[ext_resource type="Texture2D" uid="uid://y2pmxbcpwmb4" path="res://art/gogh/PineTools.com_files/row-7-column-6.png" id="39_p6xnu"]
+[ext_resource type="Texture2D" uid="uid://b4ytddwm5hfc6" path="res://art/gogh/PineTools.com_files/row-8-column-1.png" id="40_3mkyf"]
+[ext_resource type="Texture2D" uid="uid://bxdfxpt7agqvj" path="res://art/gogh/PineTools.com_files/row-8-column-2.png" id="41_yaqub"]
+[ext_resource type="Texture2D" uid="uid://4qx2apk1a2nh" path="res://art/gogh/PineTools.com_files/row-8-column-3.png" id="42_dil0q"]
+[ext_resource type="Texture2D" uid="uid://cdpw3ckxfiprj" path="res://art/gogh/PineTools.com_files/row-8-column-4.png" id="43_v4ato"]
+[ext_resource type="Texture2D" uid="uid://doknikvywivjl" path="res://art/gogh/PineTools.com_files/row-8-column-5.png" id="44_n7yvj"]
+[ext_resource type="Texture2D" uid="uid://cq34omyviyrys" path="res://art/gogh/PineTools.com_files/row-8-column-6.png" id="45_bctob"]
+[ext_resource type="Texture2D" uid="uid://dr7kn4ofv0f2r" path="res://art/gogh/PineTools.com_files/row-9-column-1.png" id="46_lif47"]
+[ext_resource type="Texture2D" uid="uid://bijebdcxppefn" path="res://art/gogh/PineTools.com_files/row-9-column-2.png" id="47_l18dq"]
+[ext_resource type="Texture2D" uid="uid://gq2kl4ettdfb" path="res://art/gogh/PineTools.com_files/row-9-column-3.png" id="48_m18si"]
+[ext_resource type="Texture2D" uid="uid://dkmegqp3ipamw" path="res://art/gogh/PineTools.com_files/row-9-column-4.png" id="49_36e4t"]
+[ext_resource type="Texture2D" uid="uid://c7utokpegdit1" path="res://art/gogh/PineTools.com_files/row-9-column-5.png" id="50_wwpjs"]
+[ext_resource type="Texture2D" uid="uid://1q3stjr5na54" path="res://art/gogh/PineTools.com_files/row-9-column-6.png" id="51_61bva"]
+[ext_resource type="Texture2D" uid="uid://d37xhdto8vcg2" path="res://art/gogh/PineTools.com_files/row-10-column-1.png" id="52_ofn81"]
+[ext_resource type="Texture2D" uid="uid://ucsphsoh5tdh" path="res://art/gogh/PineTools.com_files/row-10-column-2.png" id="53_rm358"]
+[ext_resource type="Texture2D" uid="uid://bujdejjtgm5ap" path="res://art/gogh/PineTools.com_files/row-10-column-3.png" id="54_cb64r"]
+[ext_resource type="Texture2D" uid="uid://0ex230jjua1v" path="res://art/gogh/PineTools.com_files/row-10-column-4.png" id="55_owslp"]
+[ext_resource type="Texture2D" uid="uid://umo8uyet27ok" path="res://art/gogh/PineTools.com_files/row-10-column-5.png" id="56_34tdo"]
+[ext_resource type="Texture2D" uid="uid://246jgq5qjw7i" path="res://art/gogh/PineTools.com_files/row-10-column-6.png" id="57_gts8j"]
+[ext_resource type="Texture2D" uid="uid://c8vet0e166x1f" path="res://art/gogh/PineTools.com_files/row-11-column-1.png" id="58_waj2j"]
+[ext_resource type="Texture2D" uid="uid://mmc8k6p11glp" path="res://art/gogh/PineTools.com_files/row-11-column-2.png" id="59_m7obd"]
+[ext_resource type="Texture2D" uid="uid://c3wnl7v423dv6" path="res://art/gogh/PineTools.com_files/row-11-column-3.png" id="60_0e3qy"]
+[ext_resource type="Texture2D" uid="uid://c8ei4b76gmiq8" path="res://art/gogh/PineTools.com_files/row-11-column-4.png" id="61_tmfxx"]
+[ext_resource type="Texture2D" uid="uid://ds44aetubvd4v" path="res://art/gogh/PineTools.com_files/row-11-column-5.png" id="62_thogp"]
+[ext_resource type="Texture2D" uid="uid://dnq2xbfblkhks" path="res://art/gogh/PineTools.com_files/row-11-column-6.png" id="63_w2dx2"]
+[ext_resource type="Texture2D" uid="uid://kb5yciq76m3o" path="res://art/gogh/PineTools.com_files/row-4-column-1.png" id="66_xpw2b"]
+
+[sub_resource type="Animation" id="Animation_oo53u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D/CollisionPolygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(-39, -14, -42, -2, -40, 18, -31, 32, -23, 42, -12, 51, -2, 56, -3, -61, -19, -49, -29, -38, -37, -25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_cplaa")]
+}
+
+[sub_resource type="Animation" id="Animation_stoa6"]
+resource_name = "star"
+length = 13.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D/CollisionPolygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 9.5, 9.6, 10.6, 11.4, 12.2, 12.4),
+"transitions": PackedFloat32Array(350, 350, 350, 350, 350, 350, 350, 350, 1),
+"update": 1,
+"values": [PackedVector2Array(-39, -14, -42, -2, -3, 0, -3, -61, -19, -49, -29, -38, -37, -25), PackedVector2Array(-42, 20, -26, 43, -2, 57, -3, -61, -19, -49, -36, -34, -44, -12), PackedVector2Array(-44, 9, -23, 33, 15, 44, 56, 33, 72, 0, 71, -35, 54, -53, 33, -62, 0, -62, -17, -54, -32, -41, -42, -19), PackedVector2Array(-44, 9, -23, 33, 15, 44, 56, 33, 72, 0, 71, -35, 54, -53, 33, -62, 0, -62, -17, -54, -32, -41, -42, -19), PackedVector2Array(-31, 39, 16, 57, 48, 43, 78, -2, 42, 33, 13, 43, -20, 32, -38, -5, -23, -40, -22, -56, -44, -24, -48, 4), PackedVector2Array(-44, 9, -33, 32, -14, 45, 16, 51, 13, 43, -17, 33, -36, 4, -32, -28, -4, -65, -19, -59, -33, -43, -42, -19), PackedVector2Array(-46, -16, -46, -2, -45, 7, -35, 4, -36, -6, -36, -16, -32, -30, -23, -48, -4, -65, -19, -59, -33, -43, -41, -31), PackedVector2Array(0, -66, -18, -62, -7, -55), PackedVector2Array()]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.85, 3.05, 3.25, 3.45, 3.65, 3.85, 4.05, 4.25, 4.45, 4.65, 4.85, 5.05, 5.25, 5.45, 5.65, 5.85, 6.05, 6.25, 6.45, 6.65, 6.85, 7.05, 7.25, 7.45, 7.65, 7.85, 8.05, 8.25, 8.45, 8.65, 8.85, 9.05, 9.25, 9.45, 9.65, 9.85, 10.05, 10.25, 10.45, 10.65, 10.85, 11.05, 11.225, 11.425, 11.6, 11.8, 12, 12.2, 12.4, 12.6, 12.8, 13),
+"transitions": PackedFloat32Array(350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350),
+"update": 1,
+"values": [ExtResource("1_cplaa"), ExtResource("2_5gumm"), ExtResource("2_pnr0n"), ExtResource("3_0ar5w"), ExtResource("4_q616d"), ExtResource("5_4fx0y"), ExtResource("6_prn4v"), ExtResource("7_s2dje"), ExtResource("8_4il2w"), ExtResource("9_eqabo"), ExtResource("11_3qrg7"), ExtResource("10_fhbad"), ExtResource("11_ptia7"), ExtResource("12_kxym8"), ExtResource("13_dpb6s"), ExtResource("14_2lj3g"), ExtResource("15_jgxxa"), ExtResource("16_spfkf"), ExtResource("17_1l1yw"), ExtResource("18_f302a"), ExtResource("19_gy4vo"), ExtResource("20_deioi"), ExtResource("21_xdlri"), ExtResource("22_g1g4f"), ExtResource("23_5c6ns"), ExtResource("24_ycwov"), ExtResource("25_buuik"), ExtResource("26_kyuei"), ExtResource("27_vd21r"), ExtResource("28_v38st"), ExtResource("29_l34rd"), ExtResource("30_3t6g7"), ExtResource("31_4xknr"), ExtResource("32_kh2pd"), ExtResource("33_7dkkl"), ExtResource("34_a0qos"), ExtResource("35_fo8rj"), ExtResource("36_1v8ci"), ExtResource("37_fif0c"), ExtResource("38_unlql"), ExtResource("39_p6xnu"), ExtResource("40_3mkyf"), ExtResource("41_yaqub"), ExtResource("42_dil0q"), ExtResource("43_v4ato"), ExtResource("44_n7yvj"), ExtResource("45_bctob"), ExtResource("46_lif47"), ExtResource("47_l18dq"), ExtResource("48_m18si"), ExtResource("49_36e4t"), ExtResource("50_wwpjs"), ExtResource("51_61bva"), ExtResource("52_ofn81"), ExtResource("53_rm358"), ExtResource("54_cb64r"), ExtResource("55_owslp"), ExtResource("56_34tdo"), ExtResource("57_gts8j"), ExtResource("58_waj2j"), ExtResource("59_m7obd"), ExtResource("60_0e3qy"), ExtResource("61_tmfxx"), ExtResource("62_thogp"), ExtResource("62_thogp"), ExtResource("63_w2dx2")]
+}
+
+[sub_resource type="Animation" id="Animation_2wdqw"]
+resource_name = "star2"
+length = 13.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D/CollisionPolygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.1, 5.2, 6, 6.2, 6.7, 7.2, 7.6, 8.1, 9.2, 10.1, 10.7, 11.4, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-43, -27, -45, -3, -38, 23, -17, 49, 20, 56, 57, 34, 77, -1, 65, -45, 34, -64, 2, -66, -22, -54), PackedVector2Array(-43, -27, -45, -3, -38, 23, -17, 49, 20, 56, 57, 34, 77, -1, 65, -45, 34, -64, 2, -66, -22, -54), PackedVector2Array(-43, -27, -46, 4, -23, 44, 23, 56, 67, 22, 78, -3, 27, 43, -15, 36, -34, 4, -33, -27, -6, -70), PackedVector2Array(-43, -27, -46, 4, -23, 44, 23, 56, 67, 22, 78, -3, 27, 43, -15, 36, -34, 4, -33, -27, -6, -70), PackedVector2Array(-43, -27, -46, 4, -23, 44, 23, 56, 25, 47, 24, 43, 3, 42, -15, 36, -34, 4, -33, -27, -6, -70), PackedVector2Array(-43, -27, -46, 4, -23, 44, -20, 30, -33, 8, -37, -17, -16, -50, -6, -70), PackedVector2Array(-43, -27, -37, -17, -16, -50, -6, -70), PackedVector2Array(-24, -51, -21, -45, -16, -50, -6, -70), PackedVector2Array(), PackedVector2Array(-41, -33, -44, -4, -36, 3, -34, -25, -25, -41, -2, -57, -1, -67, -26, -52), PackedVector2Array(-41, -33, -47, -1, -41, 22, -22, 43, 11, 53, 18, 42, -13, 36, -27, 19, -35, 1, -34, -25, -25, -41, -2, -57, -1, -67, -26, -52), PackedVector2Array(-46, -15, -44, 21, -11, 52, 29, 51, 66, 27, 68, 3, 34, 38, -7, 40, -35, 14, -34, -25, -25, -41, -2, -57, -1, -67, -37, -43), PackedVector2Array(-43, -27, -45, -3, -38, 23, -17, 49, 20, 56, 57, 34, 77, -1, 65, -45, 34, -64, 2, -66, -22, -54), PackedVector2Array(-43, -27, -45, -3, -38, 23, -17, 49, 20, 56, 57, 34, 77, -1, 65, -45, 34, -64, 2, -66, -22, -54)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5, 5.2, 5.4, 5.6, 5.8, 6, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.4, 7.6, 7.8, 8, 8.2, 8.4, 8.6, 8.8, 9, 9.2, 9.4, 9.6, 9.8, 10, 10.2, 10.4, 10.6, 10.8, 11, 11.2, 11.4, 11.6, 11.8, 12, 12.2, 12.4, 12.6, 12.8, 13),
+"transitions": PackedFloat32Array(350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350, 350),
+"update": 1,
+"values": [ExtResource("21_xdlri"), ExtResource("22_g1g4f"), ExtResource("23_5c6ns"), ExtResource("24_ycwov"), ExtResource("25_buuik"), ExtResource("26_kyuei"), ExtResource("27_vd21r"), ExtResource("28_v38st"), ExtResource("29_l34rd"), ExtResource("30_3t6g7"), ExtResource("31_4xknr"), ExtResource("32_kh2pd"), ExtResource("33_7dkkl"), ExtResource("34_a0qos"), ExtResource("35_fo8rj"), ExtResource("36_1v8ci"), ExtResource("37_fif0c"), ExtResource("38_unlql"), ExtResource("39_p6xnu"), ExtResource("40_3mkyf"), ExtResource("41_yaqub"), ExtResource("42_dil0q"), ExtResource("43_v4ato"), ExtResource("44_n7yvj"), ExtResource("45_bctob"), ExtResource("46_lif47"), ExtResource("47_l18dq"), ExtResource("48_m18si"), ExtResource("49_36e4t"), ExtResource("50_wwpjs"), ExtResource("51_61bva"), ExtResource("52_ofn81"), ExtResource("53_rm358"), ExtResource("54_cb64r"), ExtResource("55_owslp"), ExtResource("56_34tdo"), ExtResource("57_gts8j"), ExtResource("58_waj2j"), ExtResource("59_m7obd"), ExtResource("60_0e3qy"), ExtResource("61_tmfxx"), ExtResource("62_thogp"), ExtResource("63_w2dx2"), ExtResource("1_cplaa"), ExtResource("2_5gumm"), ExtResource("2_pnr0n"), ExtResource("3_0ar5w"), ExtResource("4_q616d"), ExtResource("5_4fx0y"), ExtResource("6_prn4v"), ExtResource("7_s2dje"), ExtResource("8_4il2w"), ExtResource("9_eqabo"), ExtResource("11_3qrg7"), ExtResource("10_fhbad"), ExtResource("11_ptia7"), ExtResource("12_kxym8"), ExtResource("13_dpb6s"), ExtResource("14_2lj3g"), ExtResource("15_jgxxa"), ExtResource("16_spfkf"), ExtResource("66_xpw2b"), ExtResource("17_1l1yw"), ExtResource("18_f302a"), ExtResource("19_gy4vo"), ExtResource("20_deioi")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3dg0p"]
+_data = {
+"RESET": SubResource("Animation_oo53u"),
+"star": SubResource("Animation_stoa6"),
+"star2": SubResource("Animation_2wdqw")
+}
+
+[node name="VanishingStar" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody2D"]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_3dg0p")
+}
+autoplay = "star"
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_0ar5w")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-41, -33, -44, -4, -36, 3, -34, -25, -25, -41, -2, -57, -1, -67, -26, -52)
