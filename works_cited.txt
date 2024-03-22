@@ -24,16 +24,21 @@ Door Close - Shutting the Door - UNIVERSFIELD - https://pixabay.com/sound-effect
 1st Section:
 Refueling stations ambience - Accordion Bar Ambience - Figowitz - https://freesound.org/people/Figowitz/sounds/76427/ - res://audio/music/accordion_bar_ambience.wav
 Wind ambience - 
+Wind gust sound - Gust of Wind - Tony B kksm - https://freesound.org/people/Tony%20B%20kksm/sounds/80937/ - res://audio/sfx/gust_of_wind.wav
+Church bell - Church Bell - Pixabay - https://pixabay.com/sound-effects/church-bell-5993/ - res://audio/sfx/church-bell-5993.mp3
+
 
 2nd Section:
+Night ambience - Night Ambience - Pixabay - https://pixabay.com/sound-effects/night-ambience-17064/ - 
+Wolf howl 1 - Distant Howling Pupper - Pixabay - https://pixabay.com/sound-effects/distant-howling-pupper-14664/ - res://audio/sfx/distant-howling-pupper-14664.mp3
+Wolf howl 2 - Wolf Howling - UNIVERSFIELD - https://pixabay.com/sound-effects/wolf-howling-140235/ - res://audio/sfx/wolf-howling-140235.mp3
+Owl hoot - Owl Hooting - Pixabay - https://pixabay.com/sound-effects/owl-hooting-48028/ - res://audio/sfx/owl-hooting-48028.mp3
 
 3rd Section:
+Background music options:
+- https://pixabay.com/music/modern-classical-soulful-moonlight-sonata-111916/
+https://pixabay.com/music/ambient-cosmic-glow-6703/
+https://pixabay.com/music/modern-classical-relaxing-145038/
+Whispers - Whisper5 - Pixabay - https://pixabay.com/sound-effects/whisper5-94457/ - 
 
-
-// Van Gogh Music
-
-// Van Gogh SFX
-
-// Dali Music
-
-// Dali SFX
+### DALI ###
