@@ -1,6 +1,7 @@
-[gd_scene load_steps=71 format=3 uid="uid://bgh836vpopfh3"]
+[gd_scene load_steps=72 format=3 uid="uid://bgh836vpopfh3"]
 
 [ext_resource type="Texture2D" uid="uid://dpakur8o8uyvd" path="res://art/gogh/PineTools.com_files/row-1-column-1.png" id="1_cplaa"]
+[ext_resource type="Script" path="res://objects/sky objects/vanishing_star.gd" id="1_dwk58"]
 [ext_resource type="Texture2D" uid="uid://dfqs3vqou2mya" path="res://art/gogh/PineTools.com_files/row-1-column-2.png" id="2_5gumm"]
 [ext_resource type="Texture2D" uid="uid://x2elc716vgue" path="res://art/gogh/PineTools.com_files/row-1-column-3.png" id="2_pnr0n"]
 [ext_resource type="Texture2D" uid="uid://dkpq8f571a3dg" path="res://art/gogh/PineTools.com_files/row-1-column-4.png" id="3_0ar5w"]
@@ -160,6 +161,7 @@ _data = {
 }
 
 [node name="VanishingStar" type="Node2D"]
+script = ExtResource("1_dwk58")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -172,7 +174,7 @@ libraries = {
 autoplay = "star"
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("3_0ar5w")
+texture = ExtResource("1_cplaa")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-41, -33, -44, -4, -36, 3, -34, -25, -25, -41, -2, -57, -1, -67, -26, -52)
+polygon = PackedVector2Array(-39, -14, -42, -2, -40, 18, -31, 32, -23, 42, -12, 51, -2, 56, -3, -61, -19, -49, -29, -38, -37, -25)
