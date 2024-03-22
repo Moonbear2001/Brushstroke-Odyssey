@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://gqb3pfbuiyy"]
+
+[ext_resource type="Texture2D" uid="uid://bxe81kx5reah" path="res://art/gogh/PineTools.com_files/row-6-column-3.png" id="1_rsy5q"]
+
+[sub_resource type="Animation" id="Animation_5mrsf"]
+resource_name = "star"
+length = 13.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_px67t"]
+_data = {
+"star": SubResource("Animation_5mrsf")
+}
+
+[node name="VanishingStar2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_rsy5q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-44, 9, -23, 33, 15, 44, 56, 33, 72, 0, 71, -35, 54, -53, 33, -62, 0, -62, -17, -54, -32, -41, -42, -19)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_px67t")
+}

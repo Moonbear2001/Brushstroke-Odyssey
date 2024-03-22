@@ -855,7 +855,7 @@ bus = &"Music"
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(50, 447)
+position = Vector2(60, 450)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
