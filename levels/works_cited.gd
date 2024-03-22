@@ -11,4 +11,4 @@ const wc_path = "res://works_cited.txt"
 func _ready():
 	var file = FileAccess.open("res://works_cited.txt", FileAccess.READ)
 	var text = file.get_as_text()
-	$Label.set_text(text)
+	$Control/ScrollContainer/Label.set_text(text)

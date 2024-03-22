@@ -1,12 +1,34 @@
-// Menu songs (3)
-Joie de Vivre - Albert Behar - uppbeat.io
-La Loire - Theo Gerard - uppbeat.io
-Evening Meal - Aylex - uppbeat.io
+"""
+File format
 
-// Escher Music
+USE IN PROJECT - SFX/SONG NAME - ARTIST - LINK - PATH
+"""
 
 
-// Escher SFX
+### MENU ###
+
+Menu song - Joie de Vivre - Albert Behar - https://uppbeat.io/track/albert-behar/joie-de-vivre - res://audio/music/joie_de_vivre_albert_behar.mp3
+Menu song - La Loire - Theo Gerard - https://uppbeat.io/track/theo-gerard/la-loire - res://audio/music/la-loire-theo-gerard-main.mp3
+Menu song - Evening Meal - Aylex - https://uppbeat.io/track/aylex/evening-meal - res://audio/music/evening_meal_alex_main.mp3
+Menu song - A Walk in Paris - Onoychenkomusic - https://pixabay.com/music/acoustic-group-a-walk-in-paris-126173/ - res://audio/music/a-walk-in-paris-126173.mp3
+
+### ESCHER ###
+
+Escher Background Music - Mystic Forest Ambient - Pixabay - https://pixabay.com/sound-effects/mystic-forest-ambient-23812/ - res://audio/music/mystic_forest_ambient.mp3
+Lever Click - Switch - SoundReality - https://pixabay.com/sound-effects/switch-150130/ - res://audio/sfx/lever.mp3
+Door Open - Open Doors - UNIVERSFIELD - res://audio/sfx/open-doors-114615.mp3
+Door Close - Shutting the Door - UNIVERSFIELD - https://pixabay.com/sound-effects/shutting-the-door-119118/ - res://audio/sfx/shutting-the-door-119118.mp3
+
+### VAN GOGH ###
+
+1st Section:
+Refueling stations ambience - Accordion Bar Ambience - Figowitz - https://freesound.org/people/Figowitz/sounds/76427/ - res://audio/music/accordion_bar_ambience.wav
+Wind ambience - 
+
+2nd Section:
+
+3rd Section:
+
 
 // Van Gogh Music
 

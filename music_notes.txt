@@ -1,54 +1,11 @@
-Option 1:
-make audio manager responsible for instantiating and playing a steam
-that's passed in
-audio steam is exported on the object
-
-Option 2:
-add buses for music, sfx, etc
-make menu to manage different sound levels using AudioServer
-
-Option 3:
-sound manager
-- autoloaded singleton
-- manages commonly used sounds
-sound pool:
-- pick from multiple similar sounds to avoid repetition
-sound queue:
-- queue sounds to make sure they don't get caught off
-
-
-Plan:
-sound manager
-sound queue
-buses + audio sliders
-
-
-
-
-
-Sites:
-https://pixabay.com/sound-effects/search/ambient/
-chiptone
-free music archive .org
-
-Specific options:
-UniversalField
-https://pixabay.com/users/universfield-28281460/
-- lots of ambient effects for different moods
-https://uppbeat.io/music/tag/french
-- french ambience
-
-
 Van Gogh Sounds
 https://freesound.org/people/Tony%20B%20kksm/sounds/80937/
-https://freesound.org/people/kevp888/sounds/688091/
 https://freesound.org/people/Figowitz/sounds/76427/
 https://uppbeat.io/music/tag/french
 https://pixabay.com/sound-effects/distant-howling-pupper-14664/
 https://pixabay.com/sound-effects/wolf-howling-140235/
 https://pixabay.com/sound-effects/wolf-howl-6310/
 https://pixabay.com/sound-effects/night-ambience-17064/
-https://pixabay.com/sound-effects/outdoor-small-french-market-22733/
 https://pixabay.com/sound-effects/church-bell-5993/
 https://pixabay.com/sound-effects/old-church-bell-6298/
 https://pixabay.com/sound-effects/whisper5-94457/
@@ -58,6 +15,11 @@ https://pixabay.com/music/modern-classical-relaxing-145038/
 https://pixabay.com/music/ambient-cosmic-glow-6703/
 https://pixabay.com/music/modern-classical-soulful-moonlight-sonata-111916/
 https://pixabay.com/music/acoustic-group-a-walk-in-paris-126173/
-https://pixabay.com/music/amusement-park-luna-park-accordion-music-3835/
 
+
+NOT USED:
+https://pixabay.com/music/amusement-park-luna-park-accordion-music-3835/
+- possible menu music option
+https://freesound.org/people/kevp888/sounds/688091/
+https://pixabay.com/sound-effects/outdoor-small-french-market-22733/
 
