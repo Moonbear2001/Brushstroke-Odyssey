@@ -38,4 +38,3 @@ func refuel():
 # Signal to increment how much fuel we have
 func _on_timer_timeout():
 	increment_fuel_level.emit()
-		

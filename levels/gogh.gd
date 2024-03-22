@@ -12,11 +12,11 @@ Custom level script for the Van Gogh level.
 
 @onready var wind_timer = $WindTimer
 @onready var camera_anim = $Camera2D/AnimationPlayer
-@onready var next_scene = $"Next Scene/InteractionArea"
 @onready var death = $Death
 @onready var protagonist_gogh = preload("res://characters/protagonist_gogh.tscn")
 @onready var new_lantern = preload("res://objects/lantern.tscn")
 @onready var trees = $"Layers/1/Trees"
+@onready var parallax_foreground = $ParallaxBackground2
 
 var windArr: Array[Node2D]
 var wind = preload("res://objects/wind.tscn")
@@ -46,8 +46,6 @@ func _ready():
 		
 	set_layer_hitboxes_disabled(1, false)
 	
-	next_scene.interact = Callable(self, "cont")
-	
 
 # Call the base level script's _process()
 func _process(delta):
@@ -70,7 +68,7 @@ func _on_lantern_fuel_exhausted():
 	respawn()
 
 func change_glow():
-	var glow_num = floori(lantern.fuel_level / 50 * 11)
+	var glow_num = floori(lantern.fuel_level / 30 * 10)
 	protagonist.glow_level = str(glow_num)
 	
 # Change to the next layer
@@ -140,11 +138,11 @@ func respawn():
 	else:
 		get_tree().reload_current_scene()
 
-func cont() -> void:
-	$AnimationPlayer.play("scene_out")
-	await $AnimationPlayer.animation_finished
-	get_tree().change_scene_to_file("res://levels/gogh2.tscn")
-	$AnimationPlayer.play("scene_in")
+#func cont() -> void:
+	#$AnimationPlayer.play("scene_out")
+	#await $AnimationPlayer.animation_finished
+	#get_tree().change_scene_to_file("res://levels/gogh2.tscn")
+	#$AnimationPlayer.play("scene_in")
 
 
 func _on_wind_timer_timeout():
@@ -173,3 +171,8 @@ func sway_trees():
 	var tree_arr = trees.get_children()
 	for tree in tree_arr:
 		tree.sway()
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("protagonist"):
+		SceneManager.load_new_scene("res://levels/gogh2.tscn")

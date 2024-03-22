@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=55 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
@@ -45,7 +45,6 @@
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
 [ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_stations/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_stations/refuel_station_3.tscn" id="40_n2r0d"]
-[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="45_qur0i"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
 resource_name = "scene_transition"
@@ -128,11 +127,17 @@ _data = {
 "zoom_out_2": SubResource("Animation_ia8py")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ys56n"]
+size = Vector2(889.615, 87.1592)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ny3vl"]
 radius = 50.1597
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 size = Vector2(7.94896, 8.30418)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylrxt"]
+size = Vector2(24, 215)
 
 [node name="Gogh" type="Node2D" node_paths=PackedStringArray("lantern", "fuel_bar", "refill_stations", "layers", "protagonist", "level_ui", "end")]
 position = Vector2(3, -62)
@@ -155,7 +160,9 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-3, 62)
 ignore_rotation = false
+limit_left = -10000
 limit_top = 0
+limit_right = 6080
 limit_bottom = 700
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
@@ -357,7 +364,7 @@ texture = ExtResource("7_xoa8w")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D5"]
 position = Vector2(-46, -136)
-polygon = PackedVector2Array(3954, 757, 3962, 676, 4039, 658, 4059, 616, 4114, 591, 4166, 642, 4212, 626, 4196, 525, 4155, 533, 4183, 355, 4180, 170, 4254, 497, 4283, 503, 4249, 518, 4265, 582, 4322, 709, 4319, 820, 4237, 853, 4158, 840, 4136, 861, 4027, 857, 4027, 835, 3984, 847, 3974, 754)
+polygon = PackedVector2Array(3954, 757, 3962, 676, 4039, 658, 4059, 616, 4114, 591, 4166, 642, 4212, 626, 4259.49, 621.25, 4262.08, 831.114, 4237, 853, 4158, 840, 4136, 861, 4027, 857, 4027, 835, 3984, 847, 3974, 754)
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Layers/1/House Section"]
 position = Vector2(-1311, -13)
@@ -550,6 +557,12 @@ texture = ExtResource("17_nai7y")
 position = Vector2(-46, -141)
 polygon = PackedVector2Array(3315.95, 905.319, 3310.55, 799.523, 3350, 706, 3452, 696, 3521, 742, 3517, 751, 3493, 737, 3495, 838, 3438, 886)
 
+[node name="StaticBody2D9" type="StaticBody2D" parent="Layers/1/House Section"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/1/House Section/StaticBody2D9"]
+position = Vector2(7652.26, 738.41)
+shape = SubResource("RectangleShape2D_ys56n")
+
 [node name="Bushes" type="Node2D" parent="Layers/1"]
 
 [node name="3" type="Sprite2D" parent="Layers/1/Bushes"]
@@ -738,7 +751,7 @@ scale = Vector2(0.442308, 0.442308)
 texture = ExtResource("30_5f5ie")
 
 [node name="38" type="Sprite2D" parent="Layers/1/Bushes"]
-position = Vector2(5787, 600)
+position = Vector2(5787, 604)
 scale = Vector2(0.427789, 0.427789)
 texture = ExtResource("36_w64ui")
 
@@ -806,7 +819,7 @@ position = Vector2(703, 2169)
 scale = Vector2(1.48, 1.48)
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-layer = 100
+layer = 5
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 motion_scale = Vector2(1.5, 1.5)
@@ -855,7 +868,7 @@ bus = &"Music"
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(50, 447)
+position = Vector2(65, 436)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -914,15 +927,12 @@ metadata/_edit_lock_ = true
 
 [node name="Next Scene" type="Node2D" parent="."]
 
-[node name="InteractionArea" parent="Next Scene" instance=ExtResource("45_qur0i")]
-position = Vector2(5727, 428)
-action_name = "continue"
+[node name="Area2D" type="Area2D" parent="Next Scene"]
+position = Vector2(6074, 567)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Next Scene/InteractionArea"]
-polygon = PackedVector2Array(3, -12, 10, -12, 10, 9, 4, 9, 3, 0)
-
-[node name="LabelPos" type="Node2D" parent="Next Scene"]
-position = Vector2(5698, 405)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next Scene/Area2D"]
+position = Vector2(2, -63.5)
+shape = SubResource("RectangleShape2D_ylrxt")
 
 [node name="WindTimer" type="Timer" parent="."]
 wait_time = 10.0
@@ -930,4 +940,5 @@ wait_time = 10.0
 [connection signal="body_entered" from="Layers/2/Layer change area" to="." method="_on_layer_change_area_body_entered"]
 [connection signal="fuel_exhausted" from="Protagonist/Lantern" to="." method="_on_lantern_fuel_exhausted"]
 [connection signal="fuel_level_changed" from="Protagonist/Lantern" to="LevelUI/FuelBar" method="_on_lantern_fuel_level_changed"]
+[connection signal="body_entered" from="Next Scene/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="WindTimer" to="." method="_on_wind_timer_timeout"]
