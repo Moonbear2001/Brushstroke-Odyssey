@@ -13,6 +13,8 @@ config_version=5
 config/name="Brushstroke Odyssey"
 run/main_scene="res://levels/menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/image="res://art/intro.png"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
