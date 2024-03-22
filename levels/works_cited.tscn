@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdxlcexv2y887"]
+
+[ext_resource type="Script" path="res://levels/works_cited.gd" id="1_5slu6"]
+
+[node name="WorksCited" type="Node2D"]
+script = ExtResource("1_5slu6")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 177.0
+offset_bottom = 152.0
+scale = Vector2(7.4, 5.84)
