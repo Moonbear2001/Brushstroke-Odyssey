@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=59 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
@@ -46,6 +46,8 @@
 [ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_stations/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_stations/refuel_station_3.tscn" id="40_n2r0d"]
 [ext_resource type="AudioStream" uid="uid://koytre30eddo" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
+[ext_resource type="AudioStream" uid="uid://mo7jnjjio4k8" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
+[ext_resource type="AudioStream" uid="uid://1v5gs0fap0ic" path="res://audio/sfx/church-bell-5993.mp3" id="48_w61b5"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
 resource_name = "scene_transition"
@@ -139,6 +141,9 @@ size = Vector2(7.94896, 8.30418)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylrxt"]
 size = Vector2(24, 215)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cqtu"]
+size = Vector2(51, 66)
 
 [node name="Gogh" type="Node2D" node_paths=PackedStringArray("lantern", "fuel_bar", "refill_stations", "layers", "protagonist", "level_ui", "end")]
 position = Vector2(3, -62)
@@ -864,7 +869,7 @@ metadata/_edit_lock_ = true
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(82, 443)
+position = Vector2(4688, 288)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -942,11 +947,29 @@ bus = &"Music"
 
 [node name="AccordionBarAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("46_7g0wt")
-volume_db = -30.0
+volume_db = -5.0
 autoplay = true
+bus = &"Music"
+
+[node name="Gust" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("47_u4wk0")
+bus = &"SFX"
+
+[node name="Bells" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(5735, 207)
+stream = ExtResource("48_w61b5")
+bus = &"SFX"
+
+[node name="BellSoundArea" type="Area2D" parent="."]
+position = Vector2(2274, -1327)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BellSoundArea"]
+position = Vector2(2842, 1718)
+shape = SubResource("RectangleShape2D_5cqtu")
 
 [connection signal="body_entered" from="Layers/2/Layer change area" to="." method="_on_layer_change_area_body_entered"]
 [connection signal="fuel_exhausted" from="Protagonist/Lantern" to="." method="_on_lantern_fuel_exhausted"]
 [connection signal="fuel_level_changed" from="Protagonist/Lantern" to="LevelUI/FuelBar" method="_on_lantern_fuel_level_changed"]
 [connection signal="body_entered" from="Next Scene/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="WindTimer" to="." method="_on_wind_timer_timeout"]
+[connection signal="body_entered" from="BellSoundArea" to="." method="_on_bell_sound_area_body_entered"]

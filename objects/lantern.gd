@@ -17,7 +17,7 @@ signal fuel_level_changed(fuel_level: int)
 signal fuel_exhausted()
 
 @onready var timer = $Timer
-@onready var sprite =  $AnimatedSprite2D2
+#@onready var sprite =  $AnimatedSprite2D2
 
 const MIN_FUEL_LEVEL: int = 0
 const MAX_FUEL_LEVEL: int = 30

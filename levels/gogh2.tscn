@@ -1,4 +1,4 @@
-[gd_scene load_steps=2296 format=3 uid="uid://bm27qohdxvayg"]
+[gd_scene load_steps=2303 format=3 uid="uid://bm27qohdxvayg"]
 
 [ext_resource type="Script" path="res://levels/gogh2.gd" id="1_se3yh"]
 [ext_resource type="Texture2D" uid="uid://cunk6bh7ewi4w" path="res://art/gogh/house section/houses/IMG_0444.PNG" id="1_v7tai"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://dhtt6wgsu5avl" path="res://art/VanGogh/misc/bushes/8.png" id="28_sxaue"]
 [ext_resource type="Texture2D" uid="uid://5chpknaaodyl" path="res://art/VanGogh/misc/bushes/4.png" id="29_mlg6e"]
 [ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="30_mqiwk"]
+[ext_resource type="AudioStream" uid="uid://ddf8788jbnny7" path="res://audio/music/night-ambience-17064.mp3" id="30_q01fu"]
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="39_pkq8b"]
 [ext_resource type="PackedScene" uid="uid://dwvnbnw473cw4" path="res://objects/sky objects/densestar1.tscn" id="40_0lngj"]
 [ext_resource type="Texture2D" uid="uid://bck5bh4obaeth" path="res://art/VanGogh/sprite_sheets/stars/densestar1.png" id="40_ea25s"]
@@ -119,6 +120,11 @@
 [ext_resource type="Texture2D" uid="uid://ds44aetubvd4v" path="res://art/gogh/PineTools.com_files/row-11-column-5.png" id="109_f1pd7"]
 [ext_resource type="Texture2D" uid="uid://dnq2xbfblkhks" path="res://art/gogh/PineTools.com_files/row-11-column-6.png" id="110_xkigp"]
 [ext_resource type="Texture2D" uid="uid://kb5yciq76m3o" path="res://art/gogh/PineTools.com_files/row-4-column-1.png" id="111_q66tu"]
+[ext_resource type="Script" path="res://audio/sound_ambience.gd" id="121_8f0fb"]
+[ext_resource type="AudioStream" uid="uid://bkmtevjrpbpnd" path="res://audio/music/relaxing-145038.mp3" id="121_ocu7r"]
+[ext_resource type="AudioStream" uid="uid://bu7cxbc4s5036" path="res://audio/sfx/wolf-howling-140235.mp3" id="122_ewfpe"]
+[ext_resource type="AudioStream" uid="uid://dwep1d8cuu66t" path="res://audio/sfx/owl-hooting-48028.mp3" id="123_ewcsk"]
+[ext_resource type="AudioStream" uid="uid://dieprmwnwcax6" path="res://audio/sfx/distant-howling-pupper-14664.mp3" id="124_bviab"]
 
 [sub_resource type="Animation" id="Animation_6lejq"]
 resource_name = "scene_in"
@@ -15611,6 +15617,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsepk"]
 size = Vector2(9.5, 7.10229)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifxcy"]
+
 [node name="Gogh2" type="Node2D" node_paths=PackedStringArray("layers", "protagonist", "level_ui", "end")]
 script = ExtResource("1_se3yh")
 layers = [NodePath("Layers/1"), NodePath("Layers/2"), NodePath("Layers/3")]
@@ -16019,11 +16027,6 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_fr5ku")
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("30_mqiwk")
-autoplay = true
-bus = &"Music"
 
 [node name="Layers" type="Node2D" parent="."]
 
@@ -16647,5 +16650,47 @@ position = Vector2(45, 377)
 rotation = -0.0523599
 scale = Vector2(1.5, 8.5)
 
+[node name="NighttimeAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_q01fu")
+autoplay = true
+bus = &"Music"
+
+[node name="WindAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_mqiwk")
+autoplay = true
+bus = &"Music"
+
+[node name="StarSectionMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("121_ocu7r")
+bus = &"Music"
+
+[node name="SoundAmbience" type="Node2D" parent="."]
+script = ExtResource("121_8f0fb")
+
+[node name="OwlHoot2" type="AudioStreamPlayer" parent="SoundAmbience"]
+stream = ExtResource("123_ewcsk")
+bus = &"SFX"
+
+[node name="WolfHowl2" type="AudioStreamPlayer" parent="SoundAmbience"]
+stream = ExtResource("122_ewfpe")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="WolfHowl1" type="AudioStreamPlayer" parent="SoundAmbience"]
+stream = ExtResource("124_bviab")
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="SoundAmbience"]
+
+[node name="StarSectionEntrance" type="Area2D" parent="."]
+position = Vector2(1762, 195)
+scale = Vector2(221.526, 2.1233)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StarSectionEntrance"]
+shape = SubResource("RectangleShape2D_ifxcy")
+
 [connection signal="body_entered" from="Layers/1/Layer change area2" to="." method="_on_layer_change_area_body_entered"]
 [connection signal="body_entered" from="Layers/2/Layer change area2" to="." method="_on_layer_change_area_body_entered"]
+[connection signal="timeout" from="SoundAmbience/Timer" to="SoundAmbience" method="_on_timer_timeout"]
+[connection signal="body_entered" from="StarSectionEntrance" to="." method="_on_star_section_entrance_body_entered"]
+[connection signal="body_exited" from="StarSectionEntrance" to="." method="_on_star_section_entrance_body_exited"]

@@ -58,3 +58,21 @@ func get_all_children(node) -> Array:
 		else:
 			nodes.append(child)
 	return nodes
+
+# When entering the star section, play background music
+func _on_star_section_entrance_body_entered(body):
+	pass # Replace with function body.
+
+# Play either the section2 or star section ambience depending on whether the 
+# protag is going up or falling down
+func _on_star_section_entrance_body_exited(body):
+	if body is Protagonist:
+		if body.position.y < $StarSectionEntrance.position.y:
+			$NighttimeAmbience.stop()
+			$SoundAmbience.stop_ambience()
+			$StarSectionMusic.play(0)
+		else:
+			$StarSectionMusic.stop()
+			$NighttimeAmbience.play(0)
+			$SoundAmbience.start_ambience()
+			

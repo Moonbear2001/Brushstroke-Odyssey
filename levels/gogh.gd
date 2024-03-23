@@ -157,7 +157,9 @@ func spawn_wind():
 	add_child(newWind)
 	sway_trees()
 	
+	
 func spawn_smallwind():
+	$Gust.play(2)
 	var screen_size = get_viewport_rect().size
 	var x_pos = camera.global_position.x + floori(screen_size.x / 2)
 
@@ -176,3 +178,7 @@ func sway_trees():
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("protagonist"):
 		SceneManager.load_new_scene("res://levels/gogh2.tscn")
+
+# When character gets close to bell tower, ring the bell
+func _on_bell_sound_area_body_entered(body):
+	$Bells.play()
