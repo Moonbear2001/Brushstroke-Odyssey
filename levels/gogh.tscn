@@ -45,9 +45,9 @@
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
 [ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_stations/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_stations/refuel_station_3.tscn" id="40_n2r0d"]
-[ext_resource type="AudioStream" uid="uid://koytre30eddo" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
-[ext_resource type="AudioStream" uid="uid://mo7jnjjio4k8" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
-[ext_resource type="AudioStream" uid="uid://1v5gs0fap0ic" path="res://audio/sfx/church-bell-5993.mp3" id="48_w61b5"]
+[ext_resource type="AudioStream" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
+[ext_resource type="AudioStream" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
+[ext_resource type="AudioStream" path="res://audio/sfx/church-bell-5993.mp3" id="48_w61b5"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
 resource_name = "scene_transition"
