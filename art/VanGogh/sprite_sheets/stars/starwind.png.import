@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnh7yiuao6mqc"
-path="res://.godot/imported/IMG_0629.PNG-b107ad680d33eda290156b90b0563138.ctex"
+uid="uid://cytv3pvoavywj"
+path="res://.godot/imported/starwind.png-31b848c6a88102022fe4980f91abcd68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/blocks/IMG_0629.PNG"
-dest_files=["res://.godot/imported/IMG_0629.PNG-b107ad680d33eda290156b90b0563138.ctex"]
+source_file="res://art/VanGogh/sprite_sheets/stars/starwind.png"
+dest_files=["res://.godot/imported/starwind.png-31b848c6a88102022fe4980f91abcd68.ctex"]
 
 [params]
 
