@@ -9,18 +9,30 @@
 [sub_resource type="Animation" id="Animation_08fhe"]
 resource_name = "light_flicker"
 length = 2.0
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"transitions": PackedFloat32Array(360, 360, 360, 360),
 "update": 1,
 "values": [ExtResource("3_r250e"), ExtResource("4_gvqtj"), ExtResource("5_j6bh8"), ExtResource("1_dtk6t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(360, 360, 360, 360, 360, 360),
+"update": 0,
+"values": [0.0, 1.25664, 2.51327, 3.76991, 5.02655, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwdqx"]

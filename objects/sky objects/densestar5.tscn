@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdo73aw0vb075"]
+[gd_scene load_steps=9 format=3 uid="uid://bmm3fynmlnysh"]
 
-[ext_resource type="Texture2D" uid="uid://c8echxp26tsua" path="res://art/VanGogh/sprite_sheets/stars/s3.png" id="1_4jvln"]
+[ext_resource type="Texture2D" path="res://art/VanGogh/sprite_sheets/stars/s3.png" id="1_4jvln"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5q3q"]
 atlas = ExtResource("1_4jvln")
