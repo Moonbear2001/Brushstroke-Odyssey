@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxa1m02vl0wkv"]
+[gd_scene load_steps=16 format=3 uid="uid://dhx5p40jq8mb6"]
 
 [ext_resource type="Script" path="res://objects/refuel_station.gd" id="1_l06q0"]
 [ext_resource type="Texture2D" uid="uid://dtcdax8i4qvbp" path="res://art/gogh/house section/houses/lantern_houses/h1_inside.PNG" id="2_ckw6k"]
@@ -40,6 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e284"]
+size = Vector2(6.50862, 5.86207)
 
 [sub_resource type="Animation" id="Animation_exu53"]
 resource_name = "inside"
@@ -128,6 +129,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h707i"]
 size = Vector2(93, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgfdw"]
+size = Vector2(6, 6)
+
 [node name="RefuelStation1" type="Node2D"]
 script = ExtResource("1_l06q0")
 
@@ -145,6 +149,7 @@ position = Vector2(48, -140)
 action_name = "enter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enter/EnterStationArea"]
+position = Vector2(2, -4)
 scale = Vector2(2.32, 2.32)
 shape = SubResource("RectangleShape2D_6e284")
 
@@ -186,7 +191,6 @@ libraries = {
 position = Vector2(-44, -166)
 
 [node name="RefillArea" type="Area2D" parent="."]
-visible = false
 position = Vector2(-16, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RefillArea"]
@@ -194,11 +198,20 @@ scale = Vector2(1.68, 1.68)
 shape = SubResource("RectangleShape2D_h707i")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.05
+
+[node name="LadderExit" type="Area2D" parent="."]
+position = Vector2(24, -164)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderExit"]
+position = Vector2(4, -12)
+shape = SubResource("RectangleShape2D_sgfdw")
 
 [node name="Climb" parent="." instance=ExtResource("5_ub11y")]
-position = Vector2(-29, 315)
+position = Vector2(24, -29)
+scale = Vector2(1, 0.679999)
 
 [connection signal="body_entered" from="RefillArea" to="." method="_on_refill_area_body_entered"]
 [connection signal="body_exited" from="RefillArea" to="." method="_on_refill_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="LadderExit" to="." method="_on_ladder_exit_body_entered"]

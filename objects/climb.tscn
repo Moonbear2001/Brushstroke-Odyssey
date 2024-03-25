@@ -2,41 +2,47 @@
 
 [ext_resource type="Script" path="res://objects/climb.gd" id="1_m1goa"]
 [ext_resource type="Script" path="res://interaction/interaction_area.gd" id="2_2ku3v"]
-[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="3_7gone"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av3o1"]
+size = Vector2(24, 186.364)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p6th"]
 size = Vector2(24, 187)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkr7k"]
-size = Vector2(7.84483, 8.44827)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3341k"]
 
-[node name="Climb" type="Node2D"]
+[node name="Climb" type="Area2D"]
+scale = Vector2(1, 1.32)
 script = ExtResource("1_m1goa")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.77984e-06)
+shape = SubResource("RectangleShape2D_av3o1")
+
 [node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("2_2ku3v")
 action_name = "to climb"
 key = "↑"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(2, 2.5)
 shape = SubResource("RectangleShape2D_7p6th")
 
 [node name="LabelPos" type="Node2D" parent="."]
 position = Vector2(34, 56)
 
-[node name="InteractionArea2" parent="." instance=ExtResource("3_7gone")]
-position = Vector2(48, -140)
-action_name = "to climb"
-key = "↑"
-hide_after_action = false
+[node name="Top" type="Area2D" parent="."]
+position = Vector2(0, -96.9697)
+scale = Vector2(2.4, 0.0909091)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2"]
-position = Vector2(-14, 215)
-scale = Vector2(2.32, 2.32)
-shape = SubResource("RectangleShape2D_jkr7k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(0, 25)
+scale = Vector2(0.507013, 0.934589)
+shape = SubResource("RectangleShape2D_3341k")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="_on_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="InteractionArea" method="_on_area_exited"]
-[connection signal="body_entered" from="InteractionArea" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="InteractionArea" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
