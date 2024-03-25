@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhx5p40jq8mb6"]
+[gd_scene load_steps=14 format=3 uid="uid://dhx5p40jq8mb6"]
 
 [ext_resource type="Script" path="res://objects/refuel_stations/refuel_station.gd" id="1_l06q0"]
 [ext_resource type="Texture2D" uid="uid://dtcdax8i4qvbp" path="res://art/gogh/house section/houses/lantern_houses/h1_inside.PNG" id="2_ckw6k"]
@@ -79,6 +79,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Climb:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_elldm"]
 resource_name = "lit"
@@ -118,15 +130,24 @@ tracks/2/keys = {
 "update": 1,
 "values": [8388608]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Climb:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q5v4s"]
 _data = {
 "inside": SubResource("Animation_exu53"),
 "lit": SubResource("Animation_elldm")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h707i"]
-size = Vector2(93, 20)
 
 [node name="RefuelStation1" type="Node2D" groups=["checkpoint"]]
 script = ExtResource("1_l06q0")
@@ -151,21 +172,6 @@ shape = SubResource("RectangleShape2D_6e284")
 [node name="LabelPos" type="Node2D" parent="Enter"]
 position = Vector2(75, -152)
 
-[node name="Exit" type="Node2D" parent="."]
-position = Vector2(105, 0)
-
-[node name="ExitStationArea" parent="Exit" instance=ExtResource("4_uy3ch")]
-position = Vector2(-69, 48)
-action_name = "exit"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/ExitStationArea"]
-position = Vector2(27, -8)
-scale = Vector2(0.666663, 0.666663)
-shape = SubResource("RectangleShape2D_6e284")
-
-[node name="LabelPos" type="Node2D" parent="Exit"]
-position = Vector2(-51, 23)
-
 [node name="OutsideHitbox" type="StaticBody2D" parent="."]
 collision_layer = 8388608
 
@@ -183,25 +189,16 @@ libraries = {
 }
 
 [node name="ExitPos" type="Node2D" parent="."]
-position = Vector2(-44, -166)
-
-[node name="RefillArea" type="Area2D" parent="."]
-visible = false
-position = Vector2(-16, 56)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RefillArea"]
-scale = Vector2(1.68, 1.68)
-shape = SubResource("RectangleShape2D_h707i")
+position = Vector2(29, -235)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
-[node name="Climb" parent="." instance=ExtResource("5_ub11y")]
-position = Vector2(-29, 315)
-
 [node name="Checkpoint" type="Node2D" parent="."]
 position = Vector2(-43, -154)
 
-[connection signal="body_entered" from="RefillArea" to="." method="_on_refill_area_body_entered"]
-[connection signal="body_exited" from="RefillArea" to="." method="_on_refill_area_body_exited"]
+[node name="Climb" parent="." instance=ExtResource("5_ub11y")]
+position = Vector2(24, -34)
+scale = Vector2(0.870761, 0.93621)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

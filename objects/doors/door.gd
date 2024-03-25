@@ -54,7 +54,6 @@ func _on_body_entered(body):
 	if body.is_in_group("protagonist") and enter:
 		if duplicate:
 			body.queue_free()
-			print("freed")
 			if Global.waiting_for_duplicate:
 				var newNode: Protagonist = protagonist.instantiate()
 				teleport(newNode)

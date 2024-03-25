@@ -25,7 +25,6 @@ func get_best_stars() -> int:
 ### Setters ###
 
 func set_last_time(new_last_time: float) -> void:
-	print("set last time")
 	last_time = new_last_time
 	
 func set_best_time(new_best_time: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://do0hfonc3u5g2"]
+[gd_scene load_steps=16 format=3 uid="uid://do0hfonc3u5g2"]
 
 [ext_resource type="Script" path="res://objects/refuel_stations/refuel_station.gd" id="1_vpuhx"]
 [ext_resource type="Texture2D" uid="uid://c7128oudtn41b" path="res://art/gogh/house section/houses/lantern_houses/h2_dark.PNG" id="2_rx8k4"]
@@ -133,9 +133,6 @@ _data = {
 "lit": SubResource("Animation_elldm")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h707i"]
-size = Vector2(93, 20)
-
 [node name="RefuelStation2" type="Node2D" groups=["checkpoint"]]
 script = ExtResource("1_vpuhx")
 
@@ -156,19 +153,6 @@ shape = SubResource("RectangleShape2D_6e284")
 [node name="LabelPos" type="Node2D" parent="Enter"]
 position = Vector2(46, -159)
 
-[node name="Exit" type="Node2D" parent="."]
-
-[node name="ExitStationArea" parent="Exit" instance=ExtResource("4_dkvx4")]
-position = Vector2(34, 47)
-action_name = "exit"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/ExitStationArea"]
-scale = Vector2(0.666663, 0.666663)
-shape = SubResource("RectangleShape2D_6e284")
-
-[node name="LabelPos" type="Node2D" parent="Exit"]
-position = Vector2(56, 39)
-
 [node name="OutsideHitbox" type="StaticBody2D" parent="."]
 collision_layer = 8388608
 
@@ -187,24 +171,15 @@ libraries = {
 }
 
 [node name="ExitPos" type="Node2D" parent="."]
-position = Vector2(-59, -166)
-
-[node name="RefillArea" type="Area2D" parent="."]
-position = Vector2(0, 149)
-scale = Vector2(1.28, 1.28)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RefillArea"]
-position = Vector2(-68.75, 127.344)
-scale = Vector2(1.68, 1.68)
-shape = SubResource("RectangleShape2D_h707i")
+position = Vector2(-21, -233)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
 [node name="Climb" parent="." instance=ExtResource("6_67nry")]
-position = Vector2(37, 327)
+position = Vector2(19, -14)
 rotation = -0.174533
-scale = Vector2(1, 1.5)
+scale = Vector2(1, 1.29609)
 
 [node name="RefuelLight" parent="." instance=ExtResource("7_24ylm")]
 position = Vector2(-61, 53)
@@ -212,6 +187,4 @@ position = Vector2(-61, 53)
 [node name="Checkpoint" type="Node2D" parent="."]
 position = Vector2(-58, -154)
 
-[connection signal="body_entered" from="RefillArea" to="." method="_on_refill_area_body_entered"]
-[connection signal="body_exited" from="RefillArea" to="." method="_on_refill_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

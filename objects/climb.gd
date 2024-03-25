@@ -8,22 +8,57 @@ else in the scene to make something happens when the protag finishes climbing.
 
 signal top_reached()
 
-## Called when the node enters the scene tree for the first time.
-#func _ready():
-	#pass # Replace with function body.
-#
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#pass
+#func _on_area_2d_body_entered(body):
+	##if body.is_in_group("protagonist"):
+		##print("setting climb true")
+		##body.climb = true
+	#print("body entered")
+	#if body is Protagonist:
+		#print("setting climb true")
+		#body.climb = true
+
+#func _on_area_2d_body_exited(body):
+	##if body.is_in_group("protagonist"):
+		##print("setting climb false")
+		##body.climb = false
+	#if body is Protagonist:
+		#print("setting climb false")
+		#body.climb = false
 
 
-func _on_area_2d_body_entered(body):
+#func _on_interaction_area_body_entered(body):
+	#print("body entered")
+	#if body is Protagonist:
+		#print("setting climb false")
+		#Global.protagonist.climb = true
+#
+#
+#func _on_interaction_area_body_exited(body):
+	#print("body exited")
+	#if body is Protagonist:
+		#print("setting climb true")
+		#Global.protagonist.climb = false
+
+
+#func _on_interaction_area_area_entered(area):
+	#if area.is_in_group("protagonistArea"):
+		#Global.protagonist.climb = true
+#
+#func _on_interaction_area_area_exited(area):
+	#if area.is_in_group("protagonistArea"):
+		#Global.protagonist.climb = false
+
+# Got to top of ladder
+func _on_top_body_entered(body):
+	if body.is_in_group("protagonist") and Input.is_action_pressed("climb"):
+		top_reached.emit()
+
+
+func _on_body_entered(body):
 	if body.is_in_group("protagonist"):
-		print("setting climb true")
 		body.climb = true
 
-func _on_area_2d_body_exited(body):
+
+func _on_body_exited(body):
 	if body.is_in_group("protagonist"):
-		print("setting climb false")
 		body.climb = false

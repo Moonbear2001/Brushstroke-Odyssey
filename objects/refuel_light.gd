@@ -7,12 +7,10 @@ signal increment_fuel_level()
 @onready var timer = $Timer
 
 var refueling = false
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	interaction_area.interact = Callable(self, "refuel")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_released("interact") and is_instance_valid(Global.protagonist):
 		Global.protagonist.refueling_left = false

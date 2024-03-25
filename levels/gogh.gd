@@ -39,7 +39,6 @@ func _ready():
 		refill_station.exit_station.connect(on_refill_station_exited)
 		
 	# Disable the hitboxes of layers 2 - n and make invisible
-
 	for layer in range(2, layers.size() + 1):
 		set_layer_hitboxes_disabled(layer, true)
 		layers[layer - 1].hide()

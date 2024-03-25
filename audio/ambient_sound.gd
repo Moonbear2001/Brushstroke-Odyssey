@@ -23,9 +23,7 @@ func _ready() -> void:
 			sounds.append(child)
 			child.finished.connect(sound_finished)
 			
-	print("sound ambience ready")
 	timer = Timer.new()
-	print("timer: ", timer)
 	timer.timeout.connect(on_timeout)
 	timer.set_wait_time(low)
 	timer.set_paused(false)
@@ -35,7 +33,6 @@ func _ready() -> void:
 # When the timer times out, play a sound, and don't restart the timer until the 
 # sound is done
 func on_timeout() -> void:
-	print("timeout")
 	timer.set_paused(true)
 	play_random_sound()
 	
@@ -53,5 +50,4 @@ func get_random() -> int:
 
 # Play a random sound that is different from the previous sound
 func play_random_sound() -> void:
-	print("PLAYING A RANDOM SOUND")
 	sounds[get_random()].play()
