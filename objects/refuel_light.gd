@@ -33,7 +33,7 @@ func refuel():
 			Global.protagonist.refueling_right = true
 		refueling = true
 		timer.start()
-		
+
 
 # Signal to increment how much fuel we have
 func _on_timer_timeout():

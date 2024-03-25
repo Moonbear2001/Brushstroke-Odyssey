@@ -16,12 +16,14 @@ signal increment_fuel_level
 @onready var exit_pos = $ExitPos
 @onready var timer = $Timer
 @onready var refuel_light = $RefuelLight
+@onready var ladder_exit = $LadderExit
 
 # Play correct starting animation, hook up interactions
 func _ready():
 	anim_player.play("lit")
 	enter_station_area.interact = Callable(self, "enter")
 	exit_station_area.interact = Callable(self, "exit")
+	timer.set_wait_time(0.05)
 
 # Enter the refill station
 func enter() -> void:
@@ -51,3 +53,8 @@ func exit() -> void:
 # Signal to increment how much fuel we have
 func _on_timer_timeout():
 	increment_fuel_level.emit()
+	
+# Area that re-enables the outside view/hitboxes when the protagonist reaches
+# the top of the ladder out
+func _on_ladder_exit_body_entered(body):
+	pass # Replace with function body.

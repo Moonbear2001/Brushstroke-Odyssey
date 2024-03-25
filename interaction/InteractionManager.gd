@@ -69,6 +69,8 @@ func sort_by_distance_to_player(area1: InteractionArea, area2: InteractionArea):
 
 	# Check if both areas are enabled
 	if area1.enabled and area2.enabled:
+		
+		print(Global.protagonist)
 		if is_instance_valid(Global.protagonist):
 			# Calculate distances
 			var area1_to_player = Global.protagonist.global_position.distance_to(area1.global_position)
