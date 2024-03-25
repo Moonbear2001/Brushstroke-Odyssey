@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://5chpknaaodyl" path="res://art/VanGogh/misc/bushes/4.png" id="37_ffhy0"]
 [ext_resource type="PackedScene" uid="uid://do0hfonc3u5g2" path="res://objects/refuel_stations/refuel_station_2.tscn" id="38_2ltat"]
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
-[ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_stations/refuel_station_1.tscn" id="39_d8lh2"]
+[ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_stations/refuel_station_3.tscn" id="40_n2r0d"]
 [ext_resource type="AudioStream" uid="uid://koytre30eddo" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
 [ext_resource type="AudioStream" uid="uid://mo7jnjjio4k8" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
@@ -875,7 +875,7 @@ metadata/_edit_lock_ = true
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(4688, 288)
+position = Vector2(80, 432)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -912,7 +912,6 @@ shape = SubResource("RectangleShape2D_qrr0h")
 position = Vector2(1272, 1298)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 top_level = true
 color = Color(0, 0, 0.0862745, 1)
 

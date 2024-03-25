@@ -32,7 +32,6 @@ var collected_stars: int = 0
 
 # Ready
 func _ready() -> void:
-	print("ready")
 	camera.global_position = protagonist.global_position
 	Global.protagonist = protagonist
 	
