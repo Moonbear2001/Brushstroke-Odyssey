@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cqph7b5ej7pag" path="res://art/gogh/house section/houses/IMG_0415.PNG" id="16_4xwri"]
 [ext_resource type="Texture2D" uid="uid://ch3wjopdqo8oo" path="res://art/gogh/house section/houses/IMG_0416.PNG" id="17_nai7y"]
 [ext_resource type="Texture2D" uid="uid://bafel6yqdu8wj" path="res://art/gogh/house section/houses/Untitled_Artwork-1.png" id="18_hlwiq"]
-[ext_resource type="Texture2D" path="res://art/VanGogh/misc/IMG_0737-removebg-preview.png" id="20_y27y0"]
+[ext_resource type="Texture2D" uid="uid://c423qjyo2vn1f" path="res://art/VanGogh/misc/IMG_0737-removebg-preview.png" id="20_y27y0"]
 [ext_resource type="PackedScene" uid="uid://cub2bualqx0yk" path="res://characters/protagonist_gogh.tscn" id="24_en3te"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="24_hdcnw"]
 [ext_resource type="PackedScene" uid="uid://cho7dlwku5h6q" path="res://objects/lantern.tscn" id="25_cmusv"]
@@ -44,9 +44,9 @@
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
 [ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_stations/refuel_station_3.tscn" id="40_n2r0d"]
-[ext_resource type="AudioStream" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
-[ext_resource type="AudioStream" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
-[ext_resource type="AudioStream" path="res://audio/sfx/church-bell-5993.mp3" id="48_w61b5"]
+[ext_resource type="AudioStream" uid="uid://koytre30eddo" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
+[ext_resource type="AudioStream" uid="uid://mo7jnjjio4k8" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
+[ext_resource type="AudioStream" uid="uid://1v5gs0fap0ic" path="res://audio/sfx/church-bell-5993.mp3" id="48_w61b5"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
 resource_name = "scene_transition"

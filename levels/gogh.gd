@@ -35,14 +35,6 @@ func _ready():
 		refill_station.refuel_light.refuel_area_entered.connect(lantern.refueling_started)
 		refill_station.refuel_light.refuel_area_exited.connect(lantern.refueling_stopped)
 		refill_station.exit_station.connect(on_refill_station_exited)
-		
-	# Disable the hitboxes of layers 2 - n and make invisible
-	for layer in range(2, layers.size() + 1):
-		set_layer_hitboxes_disabled(layer, true)
-		layers[layer - 1].hide()
-		
-	set_layer_hitboxes_disabled(1, false)
-	
 
 # Call the base level script's _process()
 func _process(delta):
