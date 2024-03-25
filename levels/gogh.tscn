@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=60 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cqph7b5ej7pag" path="res://art/gogh/house section/houses/IMG_0415.PNG" id="16_4xwri"]
 [ext_resource type="Texture2D" uid="uid://ch3wjopdqo8oo" path="res://art/gogh/house section/houses/IMG_0416.PNG" id="17_nai7y"]
 [ext_resource type="Texture2D" uid="uid://bafel6yqdu8wj" path="res://art/gogh/house section/houses/Untitled_Artwork-1.png" id="18_hlwiq"]
+[ext_resource type="Texture2D" uid="uid://c423qjyo2vn1f" path="res://art/VanGogh/misc/IMG_0737-removebg-preview.png" id="20_y27y0"]
 [ext_resource type="PackedScene" uid="uid://cub2bualqx0yk" path="res://characters/protagonist_gogh.tscn" id="24_en3te"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="24_hdcnw"]
 [ext_resource type="PackedScene" uid="uid://cho7dlwku5h6q" path="res://objects/lantern.tscn" id="25_cmusv"]
@@ -45,9 +46,9 @@
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
 [ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_stations/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_stations/refuel_station_3.tscn" id="40_n2r0d"]
-[ext_resource type="AudioStream" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
-[ext_resource type="AudioStream" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
-[ext_resource type="AudioStream" path="res://audio/sfx/church-bell-5993.mp3" id="48_w61b5"]
+[ext_resource type="AudioStream" uid="uid://koytre30eddo" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
+[ext_resource type="AudioStream" uid="uid://mo7jnjjio4k8" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
+[ext_resource type="AudioStream" uid="uid://1v5gs0fap0ic" path="res://audio/sfx/church-bell-5993.mp3" id="48_w61b5"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
 resource_name = "scene_transition"
@@ -168,7 +169,7 @@ position = Vector2(-3, 62)
 ignore_rotation = false
 limit_left = -10000
 limit_top = 0
-limit_right = 6080
+limit_right = 6170
 limit_bottom = 700
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
@@ -569,6 +570,11 @@ polygon = PackedVector2Array(3315.95, 905.319, 3310.55, 799.523, 3350, 706, 3452
 position = Vector2(7652.26, 738.41)
 shape = SubResource("RectangleShape2D_ys56n")
 
+[node name="14" type="Sprite2D" parent="Layers/1/House Section"]
+position = Vector2(7796.05, 612.751)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("20_y27y0")
+
 [node name="Bushes" type="Node2D" parent="Layers/1"]
 
 [node name="3" type="Sprite2D" parent="Layers/1/Bushes"]
@@ -928,12 +934,13 @@ offset_bottom = 4.0
 metadata/_edit_lock_ = true
 
 [node name="Next Scene" type="Node2D" parent="."]
-position = Vector2(5855, 431)
+position = Vector2(6171, 428)
 scale = Vector2(-0.564553, 1.60051)
 
 [node name="Area2D" type="Area2D" parent="Next Scene"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next Scene/Area2D"]
+position = Vector2(-1.77133, 1.8744)
 shape = SubResource("RectangleShape2D_ylrxt")
 
 [node name="WindTimer" type="Timer" parent="."]

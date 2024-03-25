@@ -22,7 +22,7 @@ func _on_body_entered(body):
 		# Check if a valid x value was found
 		if greatest_x_below_target != -INF:
 			var curr_scene = get_tree().get_current_scene().get_name()
-			if curr_scene == "Gogh":
+			if curr_scene == "Gogh" or curr_scene == "Gogh2":
 				respawn.emit()
 				return
 			elif curr_scene == "Escher":

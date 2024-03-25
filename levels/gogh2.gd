@@ -2,6 +2,8 @@ extends Level
 
 @onready var camera_anim = $Camera2D/AnimationPlayer
 @export var layers: Array[Node2D]
+@onready var protagonist_gogh = preload("res://characters/protagonist_gogh.tscn")
+@onready var death_arr = $Deaths
 
 var curr_layer = 1
 
@@ -10,6 +12,9 @@ func _ready():
 	super._ready()
 	
 	$AnimationPlayer.play("scene_in")
+	
+	for death in death_arr.get_children():
+		death.respawn.connect(Callable(self, "respawn"))
 	
 	# Disable the hitboxes of layers 2 - n and make invisible
 	for layer in range(2, layers.size() + 1):
@@ -75,4 +80,26 @@ func _on_star_section_entrance_body_exited(body):
 			$StarSectionMusic.stop()
 			$NighttimeAmbience.play(0)
 			$SoundAmbience.start_ambience()
-			
+
+func respawn():
+	var greatest_y_below_target = -INF
+	var checkpoint
+	for node in get_tree().get_nodes_in_group("checkpoint"):
+		if node.global_position.y < protagonist.global_position.y and node.global_position.y > greatest_y_below_target:
+			greatest_y_below_target = node.global_position.y
+			checkpoint = node
+	for p in get_tree().get_nodes_in_group("protagonist"):
+		p.queue_free()
+		
+	# Check if a valid x value was found
+	if greatest_y_below_target != -INF:	
+		var duplicatedNode = protagonist_gogh.instantiate()
+		duplicatedNode.global_position.x = checkpoint.global_position.x
+		duplicatedNode.global_position.y = checkpoint.global_position.y
+		duplicatedNode.scale = Vector2(1.4, 1.4)
+		get_tree().current_scene.add_child(duplicatedNode)
+		protagonist = duplicatedNode
+		Global.protagonist = protagonist
+		duplicatedNode.set_gravity("down")
+	else:
+		get_tree().reload_current_scene()

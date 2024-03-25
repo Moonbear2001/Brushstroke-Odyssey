@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://dbe00p6c0shdx" path="res://audio/music/evening_meal_alex_main.mp3" id="17_bht6u"]
 [ext_resource type="PackedScene" uid="uid://p8vf3s0glmab" path="res://objects/score_banner.tscn" id="17_dwc86"]
 [ext_resource type="PackedScene" uid="uid://dagovt7ry6r10" path="res://levels/enter_works_cited.tscn" id="18_rxchs"]
-[ext_resource type="AudioStream" path="res://audio/music/a-walk-in-paris-126173.mp3" id="19_s2wx5"]
+[ext_resource type="AudioStream" uid="uid://q3gpnraqv440" path="res://audio/music/a-walk-in-paris-126173.mp3" id="19_s2wx5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sob0k"]
 size = Vector2(7092, 55)

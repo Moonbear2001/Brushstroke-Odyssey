@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://styturbm1nh5"]
+
+[ext_resource type="Texture2D" uid="uid://ceocr4gbxh3tp" path="res://art/VanGogh/sprite_sheets/stars/s2.png" id="1_kgywf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_catw7"]
+atlas = ExtResource("1_kgywf")
+region = Rect2(0, 0, 378, 389)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oln7i"]
+atlas = ExtResource("1_kgywf")
+region = Rect2(378, 0, 378, 389)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cs28"]
+atlas = ExtResource("1_kgywf")
+region = Rect2(756, 0, 378, 389)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaop8"]
+atlas = ExtResource("1_kgywf")
+region = Rect2(1134, 0, 378, 389)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0oyb"]
+atlas = ExtResource("1_kgywf")
+region = Rect2(1512, 0, 378, 389)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_meitf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_catw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oln7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cs28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaop8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0oyb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwdo6"]
+radius = 26.6007
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_meitf")
+autoplay = "default"
+frame_progress = 0.983334
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -1)
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_hwdo6")

@@ -34,19 +34,27 @@ func save_high_scores() -> void:
 	ResourceSaver.save(self, HIGH_SCORES_PATH)
 	
 func new_last_time(level: String, time: float):
+	if level == "gogh2":
+		level = "gogh"
 	high_scores[level].set_last_time(time)
 	save_high_scores()
 		
 func new_low_time(level: String, time: float):
+	if level == "gogh2":
+		level = "gogh"
 	high_scores[level].set_best_time(time)
 	save_high_scores()
 	
 func new_high_stars(level: String, stars: int):
+	if level == "gogh2":
+		level = "gogh"
 	high_scores[level].set_best_stars(stars)
 	save_high_scores()
 	
 # Get a level's high score
 func get_level_high_score(level: String) -> LevelHighScore:
+	if level == "gogh2":
+		level = "gogh"
 	return high_scores[level]
 	
 # Return a string with the high scores
