@@ -33,9 +33,9 @@ func _ready():
 	# Hook up the refill station's signals here because its a pain to do it
 	# one by one in the Godot editor (also not good design)
 	for refill_station in refill_stations.get_children():
-		refill_station.refuel_light.increment_fuel_level.connect(lantern.increment_fuel)
-		refill_station.refuel_light.refuel_area_entered.connect(lantern.refueling_started)
-		refill_station.refuel_light.refuel_area_exited.connect(lantern.refueling_stopped)
+		#refill_station.refuel_light.increment_fuel_level.connect(lantern.increment_fuel)
+		#refill_station.refuel_light.refuel_area_entered.connect(lantern.refueling_started)
+		#refill_station.refuel_light.refuel_area_exited.connect(lantern.refueling_stopped)
 		refill_station.exit_station.connect(on_refill_station_exited)
 		
 	# Disable the hitboxes of layers 2 - n and make invisible

@@ -189,7 +189,7 @@ libraries = {
 }
 
 [node name="ExitPos" type="Node2D" parent="."]
-position = Vector2(29, -235)
+position = Vector2(33, -152)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

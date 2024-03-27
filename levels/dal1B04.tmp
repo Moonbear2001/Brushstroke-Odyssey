@@ -22,7 +22,7 @@ end = NodePath("End")
 stars = [NodePath("Stars/Star1")]
 
 [node name="Protagonist" parent="." instance=ExtResource("2_3lwtv")]
-position = Vector2(-285, 94)
+position = Vector2(-245, 31)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(414, 57)
@@ -48,8 +48,8 @@ offset_bottom = 28.0
 text = "Dali Level Placeholder"
 
 [node name="SkinBlob" parent="." instance=ExtResource("3_png0t")]
-position = Vector2(73, 90)
-scale = Vector2(0.1, 0.1)
+position = Vector2(73, 70)
+scale = Vector2(0.25, 0.25)
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -57,7 +57,7 @@ scale = Vector2(0.1, 0.1)
 position = Vector2(40, 130)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
-position = Vector2(-3, 103)
+position = Vector2(-38, 101)
 scale = Vector2(39.44, 1)
 shape = SubResource("RectangleShape2D_yo6q6")
 

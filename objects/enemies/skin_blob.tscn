@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddxxd6dsg1s71"]
+
+[ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_2c58v"]
+[ext_resource type="Texture2D" uid="uid://buchwsvnkqior" path="res://art/Dali/creatures/skinthing.PNG" id="2_vbomy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y8v5"]
+atlas = ExtResource("2_vbomy")
+region = Rect2(0, 0, 964, 435)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwrxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y8v5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SkinBlob" type="CharacterBody2D"]
+collision_mask = 0
+script = ExtResource("1_2c58v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hwrxh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-360, 65, -340, 31, -312, 1, -264, -26, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 8, 410, 5, 435, -5, 438, 1, 410, 31, 384, 47, 341, 58, 189, 33, 113, 60, 66, 88, 28, 146, 13, 151, -32, 139, -45, 139, -89, 206, -96, 209, -108, 207, -137, 156, -148, 152, -201, 179, -248, 187, -297, 180, -328, 166, -348, 146, -362, 122, -367, 96)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-360, 65, -340, 31, -312, 1, -264, -26, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 8, 410, 5, 435, -5, 438, 1, 410, 31, 384, 47, 341, 58, 189, 33, 113, 60, 66, 88, 28, 146, 13, 151, -32, 139, -45, 139, -89, 206, -96, 209, -108, 207, -137, 156, -148, 152, -201, 179, -248, 187, -297, 180, -328, 166, -348, 146, -362, 122, -367, 96)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

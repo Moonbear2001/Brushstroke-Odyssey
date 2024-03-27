@@ -27,6 +27,9 @@ var glow = false
 var glow_level = "0"
 var refueling_left = false
 var refueling_right = false
+var health = 3
+var is_thrown = false
+var throw_velocity = JUMP_VELOCITY
 
 # Child nodes
 #@onready var camera = $Camera2D
@@ -42,6 +45,12 @@ func _ready():
 	anim.play(get_anim_name("Idle"))
 
 func _physics_process(delta):
+	if is_thrown and is_on_floor():
+		is_thrown = false
+	
+	if is_thrown:
+		velocity.x = throw_velocity
+	
 	if not enabled:
 		return
 	use_gravity(delta)
@@ -207,6 +216,19 @@ func set_jump_animation():
 				anim.play(get_anim_name("FallCenter"))
 			elif v_jump * dir * -1 < 0:
 				anim.play(get_anim_name("JumpCenter"))
+
+func take_damage():
+	health -= 1
+	if health == 0:
+		pass
+		#DEATH
+
+func throw(direction):
+	velocity.y = -JUMP_VELOCITY
+	throw_velocity = absi(throw_velocity) * direction
+	velocity.x += throw_velocity
+	is_thrown = true
+	move_and_slide()
 
 # Disable visibility and controls and movement
 func disable():
