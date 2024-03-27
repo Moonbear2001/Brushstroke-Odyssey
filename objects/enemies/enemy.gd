@@ -2,12 +2,15 @@ class_name Enemy
 extends CharacterBody2D
 
 @export var collision_area: Area2D
-var speed = 100  # Adjust as needed
+@export var move_speed: int = 100
 var direction = Vector2.LEFT  # Initial movement direction
+
+var attack: Callable = func(body, direction):
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	collision_area.connect("body_entered", Callable(self, "collide"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,12 +24,11 @@ func change_direction():
 	global_position.x += 25 * direction.x
 	
 func move(delta):
-	velocity.x = direction.x * speed
+	velocity.x = direction.x * move_speed
 	move_and_slide()
 
-func _on_area_2d_body_entered(body):
+func collide(body):
 	if body.is_in_group("protagonist"):
-		body.throw(direction.x)
-		body.take_damage()
+		attack.call(body, direction)
 	else:
 		change_direction()

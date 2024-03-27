@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddxxd6dsg1s71"]
+[gd_scene load_steps=6 format=3 uid="uid://ddxxd6dsg1s71"]
 
 [ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_2c58v"]
+[ext_resource type="Script" path="res://objects/enemies/skin_blob.gd" id="1_jmo0d"]
 [ext_resource type="Texture2D" uid="uid://buchwsvnkqior" path="res://art/Dali/creatures/skinthing.PNG" id="2_vbomy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6y8v5"]
@@ -18,19 +19,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SkinBlob" type="CharacterBody2D"]
+[node name="SkinBlob" type="Node2D"]
+script = ExtResource("1_jmo0d")
+
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("collision_area")]
 collision_mask = 0
 script = ExtResource("1_2c58v")
+collision_area = NodePath("Area2D")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
 sprite_frames = SubResource("SpriteFrames_hwrxh")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy"]
 polygon = PackedVector2Array(-360, 65, -340, 31, -312, 1, -264, -26, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 8, 410, 5, 435, -5, 438, 1, 410, 31, 384, 47, 341, 58, 189, 33, 113, 60, 66, 88, 28, 146, 13, 151, -32, 139, -45, 139, -89, 206, -96, 209, -108, 207, -137, 156, -148, 152, -201, 179, -248, 187, -297, 180, -328, 166, -348, 146, -362, 122, -367, 96)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Enemy"]
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Enemy/Area2D"]
 polygon = PackedVector2Array(-360, 65, -340, 31, -312, 1, -264, -26, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 8, 410, 5, 435, -5, 438, 1, 410, 31, 384, 47, 341, 58, 189, 33, 113, 60, 66, 88, 28, 146, 13, 151, -32, 139, -45, 139, -89, 206, -96, 209, -108, 207, -137, 156, -148, 152, -201, 179, -248, 187, -297, 180, -328, 166, -348, 146, -362, 122, -367, 96)
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
