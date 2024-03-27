@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dwvnbnw473cw4"]
 
 [ext_resource type="Script" path="res://objects/sky objects/move_up_star.gd" id="1_0sit6"]
-[ext_resource type="Texture2D" uid="uid://bn71xnw0xc542" path="res://art/VanGogh/sprite_sheets/stars/s5.png" id="1_8hkwe"]
+[ext_resource type="Texture2D" path="res://art/VanGogh/sprite_sheets/stars/s5.png" id="1_8hkwe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cx13q"]
 radius = 34.0147
