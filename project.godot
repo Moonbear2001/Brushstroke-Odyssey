@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Brushstroke Odyssey"
+config/name="Museum of Immersive Art"
 run/main_scene="res://levels/menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/image="res://art/intro.png"
