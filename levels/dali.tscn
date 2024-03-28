@@ -22,7 +22,7 @@ end = NodePath("End")
 stars = [NodePath("Stars/Star1")]
 
 [node name="Protagonist" parent="." instance=ExtResource("2_3lwtv")]
-position = Vector2(-285, 94)
+position = Vector2(-285, 102)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(414, 57)
