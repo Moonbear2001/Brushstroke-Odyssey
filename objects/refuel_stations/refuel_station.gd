@@ -12,7 +12,6 @@ signal increment_fuel_level
 
 @onready var anim_player = $AnimationPlayer
 @onready var enter_station_area = $Enter/EnterStationArea
-@onready var exit_pos = $ExitPos
 @onready var timer = $Timer
 @onready var refuel_light = $RefuelLight
 @onready var checkpoint_pos = $Checkpoint
@@ -24,6 +23,7 @@ func _ready():
 	anim_player.play("lit")
 	enter_station_area.interact = Callable(self, "enter")
 	climb.top_reached.connect(exit)
+	climb.disable()
 	
 
 # Enter the refill station
@@ -32,11 +32,13 @@ func enter() -> void:
 	var protagonist = get_tree().get_first_node_in_group("protagonist")
 	protagonist.glow = false
 	visited = true
+	climb.enable()
 	
 # Exit the refill station
 func exit() -> void:
-	exit_station.emit(exit_pos)
+	exit_station.emit()
 	anim_player.play("lit")
+	climb.disable()
 
 # Signal to increment how much fuel we have
 func _on_timer_timeout():

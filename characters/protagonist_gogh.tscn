@@ -1,7 +1,7 @@
-[gd_scene load_steps=146 format=3 uid="uid://cub2bualqx0yk"]
+[gd_scene load_steps=145 format=3 uid="uid://cub2bualqx0yk"]
 
 [ext_resource type="Script" path="res://characters/protagonist.gd" id="1_wqdd7"]
-[ext_resource type="Texture2D" uid="uid://m4e2j36y3lak" path="res://art/VanGogh/sprite_sheets/climbing.png" id="2_x6bt3"]
+[ext_resource type="Texture2D" uid="uid://cemouc5dey2b6" path="res://art/VanGogh/sprite_sheets/climbing1.png" id="2_843x3"]
 [ext_resource type="Texture2D" uid="uid://bi32hi3sl3qkn" path="res://art/VanGogh/sprite_sheets/vangogh_character.png" id="3_mmh4k"]
 [ext_resource type="Texture2D" uid="uid://dgfwlwbvlhx3d" path="res://art/VanGogh/sprite_sheets/light3.png" id="4_6fys5"]
 [ext_resource type="Texture2D" uid="uid://ch5oviwr7a6ps" path="res://art/VanGogh/character/lightup_new-min.png" id="4_38afv"]
@@ -634,7 +634,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 2, 4, 6),
 "transitions": PackedFloat32Array(347.35, 347.35, 347.35, 347.35),
 "update": 0,
-"values": [Vector2(15, 8), Vector2(7, 8), Vector2(14.6667, 8), Vector2(9.83333, 9)]
+"values": [Vector2(14, 9), Vector2(7, 8), Vector2(14.6667, 8), Vector2(9.83333, 9)]
 }
 
 [sub_resource type="Animation" id="Animation_1jjx7"]
@@ -991,45 +991,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(11, 5)]
-}
-
-[sub_resource type="Animation" id="Animation_tij2y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"CrouchLeft_glow"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Glow:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-4, 3)]
 }
 
 [sub_resource type="Animation" id="Animation_mhwpe"]
@@ -1403,7 +1364,6 @@ _data = {
 "JumpRight_default": SubResource("Animation_ycn3w"),
 "JumpRight_dim": SubResource("Animation_cmket"),
 "JumpRight_glow": SubResource("Animation_61tm3"),
-"RESET": SubResource("Animation_tij2y"),
 "RefillDone_default": SubResource("Animation_mhwpe"),
 "RefillLeft_default": SubResource("Animation_28efk"),
 "RefillRight_default": SubResource("Animation_amdmr"),
@@ -1415,33 +1375,33 @@ _data = {
 "RunRight_glow": SubResource("Animation_m431g")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8m6u"]
-atlas = ExtResource("2_x6bt3")
-region = Rect2(0, 0, 686, 1200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ant3w"]
+atlas = ExtResource("2_843x3")
+region = Rect2(0, 0, 2010, 1470)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kl4uk"]
-atlas = ExtResource("2_x6bt3")
-region = Rect2(0, 1200, 686, 1200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijegu"]
+atlas = ExtResource("2_843x3")
+region = Rect2(0, 1730, 2010, 1470)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpwfd"]
-atlas = ExtResource("2_x6bt3")
-region = Rect2(0, 2400, 686, 1200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l1xl"]
+atlas = ExtResource("2_843x3")
+region = Rect2(0, 3460, 2010, 1470)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcqt7"]
-atlas = ExtResource("2_x6bt3")
-region = Rect2(0, 3600, 686, 1200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6thp0"]
+atlas = ExtResource("2_843x3")
+region = Rect2(0, 5190, 2010, 1470)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4dido"]
-atlas = ExtResource("2_x6bt3")
-region = Rect2(0, 4800, 686, 1200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xxel"]
+atlas = ExtResource("2_843x3")
+region = Rect2(0, 6920, 2010, 1470)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycc2l"]
-atlas = ExtResource("2_x6bt3")
-region = Rect2(0, 6000, 686, 1200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_amuti"]
+atlas = ExtResource("2_843x3")
+region = Rect2(0, 8650, 2010, 1470)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ibwg"]
-atlas = ExtResource("2_x6bt3")
-region = Rect2(0, 7200, 686, 1200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_th01t"]
+atlas = ExtResource("2_843x3")
+region = Rect2(0, 10380, 2010, 1470)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cl20"]
 atlas = ExtResource("3_mmh4k")
@@ -1759,25 +1719,25 @@ region = Rect2(2116, 696, 529, 696)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s8m6u")
+"texture": SubResource("AtlasTexture_ant3w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kl4uk")
+"texture": SubResource("AtlasTexture_ijegu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xpwfd")
+"texture": SubResource("AtlasTexture_0l1xl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kcqt7")
+"texture": SubResource("AtlasTexture_6thp0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4dido")
+"texture": SubResource("AtlasTexture_4xxel")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ycc2l")
+"texture": SubResource("AtlasTexture_amuti")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ibwg")
+"texture": SubResource("AtlasTexture_th01t")
 }],
 "loop": true,
 "name": &"Climb_default",
@@ -2360,7 +2320,9 @@ libraries = {
 position = Vector2(-3, 0)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_sbv15")
-animation = &"CrouchLeft_glow"
+animation = &"Climb_default"
+frame = 3
+frame_progress = 0.0184142
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

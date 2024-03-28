@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m4e2j36y3lak"
-path="res://.godot/imported/climbing.png-891b53e5dcbaf6288aec3b04e5ffd172.ctex"
+uid="uid://cemouc5dey2b6"
+path="res://.godot/imported/climbing1.png-f005cd874723ff539c4865c9b7986cac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/VanGogh/sprite_sheets/climbing.png"
-dest_files=["res://.godot/imported/climbing.png-891b53e5dcbaf6288aec3b04e5ffd172.ctex"]
+source_file="res://art/VanGogh/sprite_sheets/climbing1.png"
+dest_files=["res://.godot/imported/climbing1.png-f005cd874723ff539c4865c9b7986cac.ctex"]
 
 [params]
 

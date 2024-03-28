@@ -1,95 +1,52 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhx5p40jq8mb6"]
+[gd_scene load_steps=11 format=3 uid="uid://ry3h8mfx25vm"]
 
-[ext_resource type="Script" path="res://objects/refuel_stations/refuel_station.gd" id="1_l06q0"]
-[ext_resource type="Texture2D" uid="uid://dtcdax8i4qvbp" path="res://art/gogh/house section/houses/lantern_houses/h1_inside.PNG" id="2_ckw6k"]
-[ext_resource type="Texture2D" uid="uid://c5cc8vl4264vf" path="res://art/gogh/house section/houses/lantern_houses/h1_lit.PNG" id="3_63dl2"]
-[ext_resource type="PackedScene" uid="uid://dlroneefg1jak" path="res://objects/refuel_light.tscn" id="4_868r8"]
-[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="4_uy3ch"]
-[ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="5_ub11y"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nkj0m"]
-atlas = ExtResource("2_ckw6k")
-region = Rect2(0, 0, 340, 293)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tx65h"]
-atlas = ExtResource("3_63dl2")
-region = Rect2(0, 0, 338, 329)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3n7cl"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"dark",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nkj0m")
-}],
-"loop": true,
-"name": &"inside",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tx65h")
-}],
-"loop": true,
-"name": &"lit",
-"speed": 5.0
-}]
+[ext_resource type="Script" path="res://objects/refuel_stations/refuel_station.gd" id="1_cefmc"]
+[ext_resource type="Texture2D" uid="uid://dtcdax8i4qvbp" path="res://art/gogh/house section/houses/lantern_houses/h1_inside.PNG" id="3_w4jq2"]
+[ext_resource type="Texture2D" uid="uid://c5cc8vl4264vf" path="res://art/gogh/house section/houses/lantern_houses/h1_lit.PNG" id="4_ljvxo"]
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="5_cq1nq"]
+[ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="6_csovb"]
+[ext_resource type="PackedScene" uid="uid://dlroneefg1jak" path="res://objects/refuel_light.tscn" id="7_fagu7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e284"]
+size = Vector2(6.93967, 6.50862)
 
 [sub_resource type="Animation" id="Animation_exu53"]
 resource_name = "inside"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/path = NodePath("OutsideHitbox:collision_layer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"inside"]
+"values": [8388608]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("OutsideHitbox:collision_layer")
+tracks/1/path = NodePath("InsideHitbox:collision_layer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [8388608]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("InsideHitbox:collision_layer")
+tracks/2/path = NodePath("Outside:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Climb:collision_layer")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_elldm"]
@@ -97,50 +54,38 @@ resource_name = "lit"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/path = NodePath("OutsideHitbox:collision_layer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"lit"]
+"values": [1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("OutsideHitbox:collision_layer")
+tracks/1/path = NodePath("InsideHitbox:collision_layer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [8388608]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("InsideHitbox:collision_layer")
+tracks/2/path = NodePath("Outside:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [8388608]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Climb:collision_layer")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q5v4s"]
@@ -149,56 +94,64 @@ _data = {
 "lit": SubResource("Animation_elldm")
 }
 
-[node name="RefuelStation1" type="Node2D" groups=["checkpoint"]]
-script = ExtResource("1_l06q0")
+[node name="RefuelStation2" type="Node2D" groups=["checkpoint"]]
+script = ExtResource("1_cefmc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3n7cl")
-animation = &"inside"
-
-[node name="RefuelLight" parent="." instance=ExtResource("4_868r8")]
-position = Vector2(-74, 25)
+[node name="Inside" type="Sprite2D" parent="."]
+position = Vector2(2.5, 4.87499)
+scale = Vector2(1.04412, 1.06399)
+texture = ExtResource("3_w4jq2")
 
 [node name="Enter" type="Node2D" parent="."]
+position = Vector2(0, -37)
 
-[node name="EnterStationArea" parent="Enter" instance=ExtResource("4_uy3ch")]
-position = Vector2(48, -140)
+[node name="EnterStationArea" parent="Enter" instance=ExtResource("5_cq1nq")]
+position = Vector2(31, -140)
 action_name = "enter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enter/EnterStationArea"]
+position = Vector2(29, 34)
 scale = Vector2(2.32, 2.32)
 shape = SubResource("RectangleShape2D_6e284")
 
 [node name="LabelPos" type="Node2D" parent="Enter"]
-position = Vector2(75, -152)
-
-[node name="OutsideHitbox" type="StaticBody2D" parent="."]
-collision_layer = 8388608
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
-polygon = PackedVector2Array(-86, -102, -139, -24, -112, 101, -50, 122, 81, 116, 78, -8, 117, -11, 75, -83, 75, -125, 14, -124, 15, -103)
+position = Vector2(54, -159)
 
 [node name="InsideHitbox" type="StaticBody2D" parent="."]
+collision_layer = 8388608
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InsideHitbox"]
-polygon = PackedVector2Array(63, -30, 65, 74, -96, 75, -97, -50, -117, -50, -119, 88, 77, 88, 75, -33)
+position = Vector2(-28.7323, 1.00001)
+scale = Vector2(0.883065, 1)
+polygon = PackedVector2Array(102.747, -125, 102.747, -82, 109.542, -71, 109.542, 73, -81.8374, 73, -80.705, -84, -105.618, -48, -104.486, 87, -32.011, 123, 121.998, 114, 112.939, -86)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_q5v4s")
 }
 
-[node name="ExitPos" type="Node2D" parent="."]
-position = Vector2(33, -152)
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
-[node name="Checkpoint" type="Node2D" parent="."]
-position = Vector2(-43, -154)
+[node name="Climb" parent="." instance=ExtResource("6_csovb")]
+position = Vector2(33, -38)
+scale = Vector2(1, 1.29609)
 
-[node name="Climb" parent="." instance=ExtResource("5_ub11y")]
-position = Vector2(24, -34)
-scale = Vector2(0.870761, 0.93621)
+[node name="RefuelLight" parent="." instance=ExtResource("7_fagu7")]
+position = Vector2(-61, 24)
+
+[node name="Checkpoint" type="Node2D" parent="."]
+position = Vector2(-72, -146)
+
+[node name="Outside" type="Sprite2D" parent="."]
+position = Vector2(-13, -4)
+texture = ExtResource("4_ljvxo")
+
+[node name="OutsideHitbox" type="StaticBody2D" parent="."]
+position = Vector2(337, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
+position = Vector2(-328, 10)
+polygon = PackedVector2Array(-159, -37, -136, -37, -134, 86, -67, 118, 80, 105, 77, -1, 117, -4, 54, -103, 54, -142, 1, -142, 1, -116, -106, -116)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

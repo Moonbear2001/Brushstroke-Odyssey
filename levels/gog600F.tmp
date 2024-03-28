@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://bt6genldg4yek" path="res://art/VanGogh/paralax_layers/fronthill3.PNG" id="27_2ell1"]
 [ext_resource type="PackedScene" uid="uid://bcnds3kcg2d1m" path="res://objects/fuel_bar.tscn" id="28_coumb"]
 [ext_resource type="Texture2D" uid="uid://cbe0lwvids3cq" path="res://art/VanGogh/misc/bushes/3.png" id="29_a78ow"]
-[ext_resource type="PackedScene" uid="uid://ry3h8mfx25vm" path="res://objects/refuel_stations/refuel_station_1.tscn" id="30_4wgou"]
 [ext_resource type="Texture2D" uid="uid://b76s8p0a5pn07" path="res://art/VanGogh/misc/bushes/1.png" id="30_5f5ie"]
 [ext_resource type="Texture2D" uid="uid://bm0ektssmglv2" path="res://art/VanGogh/misc/bushes/10.PNG" id="31_ni5ms"]
 [ext_resource type="Texture2D" uid="uid://bamxp2rrj7i4t" path="res://art/VanGogh/misc/bushes/5.png" id="32_6qgr4"]
@@ -43,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://5chpknaaodyl" path="res://art/VanGogh/misc/bushes/4.png" id="37_ffhy0"]
 [ext_resource type="PackedScene" uid="uid://do0hfonc3u5g2" path="res://objects/refuel_stations/refuel_station_2.tscn" id="38_2ltat"]
 [ext_resource type="PackedScene" uid="uid://yfyu33mtas0d" path="res://objects/animations/bigtree_back.tscn" id="38_x1ebn"]
+[ext_resource type="PackedScene" uid="uid://dhx5p40jq8mb6" path="res://objects/refuel_station_1.tscn" id="39_d8lh2"]
 [ext_resource type="PackedScene" uid="uid://c78lwy0uhw6n7" path="res://objects/refuel_stations/refuel_station_3.tscn" id="40_n2r0d"]
 [ext_resource type="AudioStream" uid="uid://koytre30eddo" path="res://audio/music/accordion_bar_ambience.wav" id="46_7g0wt"]
 [ext_resource type="AudioStream" uid="uid://mo7jnjjio4k8" path="res://audio/sfx/gust_of_wind.wav" id="47_u4wk0"]
@@ -454,7 +454,7 @@ scale = Vector2(0.748, 0.748)
 texture = ExtResource("18_hlwiq")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D17"]
-position = Vector2(7.77301, -25.9091)
+position = Vector2(7.77301, -18.1364)
 polygon = PackedVector2Array(213.75, 588.137, 247.432, 585.546, 248.728, 604.978, 216.341, 604.978)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D17"]
@@ -515,10 +515,6 @@ polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2126.55
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D26"]
 position = Vector2(0, -3.88637)
-polygon = PackedVector2Array(2172.48, 336.819, 2221.71, 336.819, 2221.71, 353.659, 2172.48, 353.659)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D26"]
-position = Vector2(299.25, -3.88637)
 polygon = PackedVector2Array(2172.48, 336.819, 2221.71, 336.819, 2221.71, 353.659, 2172.48, 353.659)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Layers/1/House Section"]
@@ -772,11 +768,8 @@ texture = ExtResource("36_w64ui")
 
 [node name="RefillStations" type="Node2D" parent="Layers/1"]
 
-[node name="RefuelStation5" parent="Layers/1/RefillStations" instance=ExtResource("30_4wgou")]
-position = Vector2(110, 595)
-
-[node name="RefuelStation6" parent="Layers/1/RefillStations" instance=ExtResource("30_4wgou")]
-position = Vector2(3604, 539)
+[node name="RefuelStation1" parent="Layers/1/RefillStations" groups=["checkpoint"] instance=ExtResource("39_d8lh2")]
+position = Vector2(116, 597)
 
 [node name="RefuelStation3" parent="Layers/1/RefillStations" instance=ExtResource("40_n2r0d")]
 position = Vector2(2643, 527)
@@ -789,6 +782,10 @@ scale = Vector2(0.8, 0.8)
 [node name="RefuelStation4" parent="Layers/1/RefillStations" instance=ExtResource("38_2ltat")]
 position = Vector2(1612, 546)
 scale = Vector2(0.75, 0.75)
+
+[node name="RefuelStation5" parent="Layers/1/RefillStations" groups=["checkpoint"] instance=ExtResource("39_d8lh2")]
+position = Vector2(3569, 539)
+scale = Vector2(0.9, 0.9)
 
 [node name="PointLight2D" type="PointLight2D" parent="Layers/1"]
 position = Vector2(5918, 564)
@@ -840,7 +837,7 @@ metadata/_edit_lock_ = true
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(45.0002, 434)
+position = Vector2(61.0002, 386)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
