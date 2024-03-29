@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=10 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_d4s5o"]
 [ext_resource type="PackedScene" uid="uid://cyv0src61ekil" path="res://characters/protagonist_dali.tscn" id="2_keris"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://73wpow8lpsyc" path="res://audio/music/mystic_forest_ambient.mp3" id="4_ysj0h"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
+[ext_resource type="PackedScene" uid="uid://dv1kdmuaoduuf" path="res://characters/elephant.tscn" id="7_qffot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
@@ -93,3 +94,7 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-3, 0)
+
+[node name="Elephant" parent="." instance=ExtResource("7_qffot")]
+position = Vector2(-67.9999, -34)
+scale = Vector2(0.2, 0.2)
