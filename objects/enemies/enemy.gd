@@ -13,6 +13,10 @@ var direction = Vector2.LEFT  # Initial movement direction
 var attack: Callable = func(body, direction):
 	pass
 
+# Let each enemy define its own idle animation/movement pattern
+var idle: Callable = func(body, direction):
+	pass
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	damage_area.connect("body_entered", Callable(self, "collide"))
