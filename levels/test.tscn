@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://o0cemxpypdqw"]
 
-[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="1_uvjo0"]
+[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist_escher.tscn" id="1_uvjo0"]
 [ext_resource type="Texture2D" uid="uid://c6eo1riftkdnn" path="res://art/test/rectangle.png" id="2_kywgl"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="3_kemsj"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="4_3vyso"]

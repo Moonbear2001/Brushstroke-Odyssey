@@ -1,6 +1,6 @@
 [gd_scene load_steps=145 format=3 uid="uid://cub2bualqx0yk"]
 
-[ext_resource type="Script" path="res://characters/protagonist.gd" id="1_wqdd7"]
+[ext_resource type="Script" path="res://characters/protagonist_gogh.gd" id="1_y5gtv"]
 [ext_resource type="Texture2D" uid="uid://cemouc5dey2b6" path="res://art/VanGogh/sprite_sheets/climbing1.png" id="2_843x3"]
 [ext_resource type="Texture2D" uid="uid://bi32hi3sl3qkn" path="res://art/VanGogh/sprite_sheets/vangogh_character.png" id="3_mmh4k"]
 [ext_resource type="Texture2D" uid="uid://dgfwlwbvlhx3d" path="res://art/VanGogh/sprite_sheets/light3.png" id="4_6fys5"]
@@ -2299,7 +2299,7 @@ animations = [{
 
 [node name="Protagonist" type="CharacterBody2D" groups=["protagonist"]]
 slide_on_ceiling = false
-script = ExtResource("1_wqdd7")
+script = ExtResource("1_y5gtv")
 
 [node name="InteractionComponents" type="Node2D" parent="."]
 

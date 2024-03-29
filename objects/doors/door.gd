@@ -20,7 +20,7 @@ Door that teleports the player to another door.
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interaction_area = $InteractionArea
 @onready var anim_player = $AnimationPlayer
-@onready var protagonist = preload("res://characters/protagonist.tscn")
+@onready var protagonist = preload("res://characters/protagonist_escher.tscn")
 
 const CLOSE_SOUND_PATH: String = "res://audio/sfx/shutting-the-door-119118.mp3"
 const OPEN_SOUND_PATH: String = "res://audio/sfx/open-doors-114615.mp3"

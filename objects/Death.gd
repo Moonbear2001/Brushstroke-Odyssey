@@ -2,7 +2,7 @@ extends Area2D
 
 signal respawn
 
-@onready var protagonist_escher = preload("res://characters/protagonist.tscn")
+@onready var protagonist_escher = preload("res://characters/protagonist_escher.tscn")
 @onready var protagonist_gogh = preload("res://characters/protagonist_gogh.tscn")
 
 var duplicatedNode

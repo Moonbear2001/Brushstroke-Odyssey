@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://cducn8pjghtlw"]
 
-[ext_resource type="Script" path="res://characters/protagonist.gd" id="1_lhea4"]
+[ext_resource type="Script" path="res://characters/protagonist_big.gd" id="1_1fb7f"]
 [ext_resource type="Texture2D" uid="uid://dy1rei62q518f" path="res://art/character/sprite_sheet.png" id="1_ppw7b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1c30h"]
@@ -235,7 +235,7 @@ height = 362.0
 radius = 54.1479
 
 [node name="ProtagonistBig" type="CharacterBody2D"]
-script = ExtResource("1_lhea4")
+script = ExtResource("1_1fb7f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4a4rg")

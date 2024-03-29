@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dio5jogn7r5j6" path="res://art/Esher/parallax_layers/midground_new.png" id="4_6mjae"]
 [ext_resource type="Texture2D" uid="uid://dvr3e0n2qw5ho" path="res://art/Esher/short_block.png" id="4_t8kp2"]
 [ext_resource type="Texture2D" uid="uid://bh7kjif1d0eop" path="res://art/Esher/second_structure.png" id="5_yolr1"]
-[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="6_4djpo"]
+[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist_escher.tscn" id="6_4djpo"]
 [ext_resource type="Texture2D" uid="uid://byexiu5j0c54c" path="res://art/Esher/front_arch.png" id="8_lmtet"]
 [ext_resource type="PackedScene" uid="uid://b66jvbecg4tog" path="res://objects/doors/left_door.tscn" id="10_w7r7g"]
 [ext_resource type="Texture2D" uid="uid://bewg47vw5e1pm" path="res://art/Esher/section2/barrier.png" id="13_gmew8"]

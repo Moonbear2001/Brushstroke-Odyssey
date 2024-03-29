@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_d4s5o"]
-[ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist.tscn" id="2_3lwtv"]
+[ext_resource type="PackedScene" uid="uid://cyv0src61ekil" path="res://characters/protagonist_dali.tscn" id="2_keris"]
 [ext_resource type="PackedScene" uid="uid://ddxxd6dsg1s71" path="res://objects/enemies/skin_blob.tscn" id="3_png0t"]
 [ext_resource type="AudioStream" uid="uid://73wpow8lpsyc" path="res://audio/music/mystic_forest_ambient.mp3" id="4_ysj0h"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
@@ -15,14 +15,14 @@ size = Vector2(20, 213)
 [node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end", "stars")]
 position = Vector2(3, 0)
 script = ExtResource("1_d4s5o")
-level_name = "dali"
+level_name = "Dali"
 protagonist = NodePath("Protagonist")
 level_ui = NodePath("LevelUI")
 end = NodePath("End")
 stars = [NodePath("Stars/Star1")]
 
-[node name="Protagonist" parent="." instance=ExtResource("2_3lwtv")]
-position = Vector2(-285, 102)
+[node name="Protagonist" parent="." instance=ExtResource("2_keris")]
+position = Vector2(-212, 65)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(414, 57)
