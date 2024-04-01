@@ -177,7 +177,7 @@ shape = SubResource("RectangleShape2D_vxxs1")
 [node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
 position = Vector2(2370, -206)
 scale = Vector2(0.091, 0.0906374)
-level_name = "gogh"
+level_name = "gogh2"
 
 [node name="DaliScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
 position = Vector2(3721, -206)

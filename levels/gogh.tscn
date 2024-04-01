@@ -133,10 +133,10 @@ _data = {
 size = Vector2(889.615, 87.1592)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
-size = Vector2(7.94896, 8.30418)
+size = Vector2(40, 15.9091)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylrxt"]
-size = Vector2(24, 215)
+size = Vector2(146.62, 215)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cqtu"]
 size = Vector2(51, 66)
@@ -840,7 +840,7 @@ metadata/_edit_lock_ = true
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(45.0002, 434)
+position = Vector2(4753, 273)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -866,10 +866,11 @@ position = Vector2(410, -1667)
 scale = Vector2(0.0400012, 0.0400012)
 
 [node name="End" type="Area2D" parent="."]
-position = Vector2(251, -1766)
+position = Vector2(5989, 557)
 scale = Vector2(1, 5.72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(10, -2.1853)
 shape = SubResource("RectangleShape2D_qrr0h")
 
 [node name="Death" parent="." instance=ExtResource("24_hdcnw")]
@@ -904,7 +905,8 @@ scale = Vector2(-0.564553, 1.60051)
 [node name="Area2D" type="Area2D" parent="Next Scene"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next Scene/Area2D"]
-position = Vector2(-1.77133, 1.8744)
+position = Vector2(178.903, 1.8744)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ylrxt")
 
 [node name="WindTimer" type="Timer" parent="."]
