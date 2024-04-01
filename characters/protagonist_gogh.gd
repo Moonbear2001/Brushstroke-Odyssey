@@ -18,7 +18,6 @@ var refueling_right = false
 func _process(delta):
 	if inWind:
 		apply_wind_force(delta)
-	print(glow_level)
 
 func apply_wind_force(delta):
 	velocity.x = windForce
