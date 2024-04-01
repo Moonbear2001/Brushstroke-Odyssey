@@ -41,7 +41,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_sx0ji")
 }],
 "loop": true,
-"name": &"gogh",
+"name": &"gogh2",
 "speed": 5.0
 }]
 
@@ -95,7 +95,7 @@ script = ExtResource("2_d8cvp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_24pig")
-animation = &"gogh"
+animation = &"gogh2"
 
 [node name="Stars" type="Node2D" parent="AnimatedSprite2D"]
 
