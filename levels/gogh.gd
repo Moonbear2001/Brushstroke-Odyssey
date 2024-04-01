@@ -58,7 +58,7 @@ func _on_lantern_fuel_exhausted():
 	respawn()
 
 func change_glow():
-	var glow_num = floori(lantern.fuel_level / 30 * 10)
+	var glow_num = floori(lantern.fuel_level / lantern.MAX_FUEL_LEVEL * 10)
 	protagonist.glow_level = str(glow_num)
 
 func respawn():
