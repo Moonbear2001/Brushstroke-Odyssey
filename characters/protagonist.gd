@@ -7,6 +7,7 @@ Main playable character.
 
 # Export variables
 @export var enabled: bool = true
+var input_disabled = false
 
 # Constants
 var SPEED = 140.0
@@ -19,6 +20,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var x_val = 0
 var y_val = -1
 var climb = false
+var coyote_time = Timer.new()
 
 # Child nodes
 @onready var anim = $AnimationPlayer
@@ -29,16 +31,23 @@ var climb = false
 
 func _ready():
 	anim.play(get_anim_name("Idle"))
+	coyote_time.wait_time = .15
+	coyote_time.one_shot = true
+	add_child(coyote_time)
 
 func _physics_process(delta):
 	if not enabled:
 		return
 	use_gravity(delta)
+	var was_on_floor = is_on_floor()
 	move_and_slide()
+	if was_on_floor and not is_on_floor():
+		coyote_time.start()
+
 
 # Handle input events, gets called before physics process
 func _input(_input_event):
-	if not enabled:
+	if not enabled or input_disabled:
 		return
 
 func use_gravity(delta):
@@ -46,8 +55,8 @@ func use_gravity(delta):
 		velocity.y += gravity * delta * y_val * -1
 	else:
 		velocity.y = 0
-	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or not coyote_time.is_stopped()) and not input_disabled:
 		velocity.y = JUMP_VELOCITY * y_val
 	
 	if not is_on_floor() and not Input.is_action_pressed("climb"):
@@ -59,20 +68,20 @@ func use_gravity(delta):
 	
 	var direction
 	direction = Input.get_axis("left", "right")
-
-	if direction:
-		velocity.x = direction * SPEED * y_val * -1
-		if velocity.y == 0:
-			if direction > 0:
-				anim.play(get_anim_name("RunRight"))
-			else:
-				anim.play(get_anim_name("RunLeft"))
-	else:
-		if velocity.y == 0:
-			var anim_name = get_anim_name("Idle")
-			if anim_name:
-				anim.play(anim_name)
-		velocity.x = move_toward(velocity.x, 0, SPEED) 
+	if not input_disabled:
+		if direction:
+			velocity.x = direction * SPEED * y_val * -1
+			if velocity.y == 0:
+				if direction > 0:
+					anim.play(get_anim_name("RunRight"))
+				else:
+					anim.play(get_anim_name("RunLeft"))
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED) 
+			if velocity.y == 0:
+				anim.play(get_anim_name("Idle"))
+	elif velocity.y == 0:
+			anim.play(get_anim_name("Idle"))
 
 func set_jump_animation():
 	var v_jump
@@ -120,6 +129,14 @@ func enable():
 	enabled = true
 	visible = true
 
+func disable_input():
+	input_disabled = true
+
+func enable_input():
+	input_disabled = false
+
+@warning_ignore("shadowed_variable_base_class")
 func get_anim_name(name: String):
 	return  name + "_default"
+
 

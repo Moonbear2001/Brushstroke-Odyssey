@@ -51,15 +51,15 @@ frame = 2
 frame_progress = 0.0711208
 
 [node name="LabelPos" type="Node2D" parent="."]
-position = Vector2(17, -55)
+position = Vector2(21, -47)
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_xeppo")]
-position = Vector2(65, -195)
+position = Vector2(-6, 7)
 action_name = "to refuel lamp"
 hide_after_action = false
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-71, 202)
 shape = SubResource("CapsuleShape2D_mgryn")
 
 [node name="Timer" type="Timer" parent="."]

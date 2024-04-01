@@ -7,7 +7,7 @@
 size = Vector2(24, 186.364)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p6th"]
-size = Vector2(24, 129.864)
+size = Vector2(3, 129.864)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3341k"]
 
@@ -27,7 +27,7 @@ action_name = "to climb"
 key = "↑"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 28.5682)
+position = Vector2(-0.5, 28.5682)
 shape = SubResource("RectangleShape2D_7p6th")
 
 [node name="LabelPos" type="Node2D" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://favkge4nh881"]
+[gd_scene load_steps=58 format=3 uid="uid://favkge4nh881"]
 
 [ext_resource type="Script" path="res://levels/gogh.gd" id="1_rnrkv"]
+[ext_resource type="Texture2D" uid="uid://b0objo48x4qb0" path="res://art/VanGogh/paralax_layers/sky.PNG" id="2_lglr1"]
 [ext_resource type="Texture2D" uid="uid://p7cg0wfxyuxi" path="res://art/gogh/house section/houses/IMG_0414.PNG" id="3_4xp8y"]
 [ext_resource type="Texture2D" uid="uid://cu4xli4pa60am" path="res://art/VanGogh/paralax_layers/backhill2_connected.png" id="3_kvpk8"]
 [ext_resource type="AudioStream" uid="uid://lxnpvuae8slv" path="res://audio/music/wind_ambient.mp3" id="4_763oi"]
@@ -177,6 +178,10 @@ libraries = {
 
 [node name="Background" type="Node2D" parent="."]
 
+[node name="Sky" type="Sprite2D" parent="Background"]
+position = Vector2(465, 0)
+texture = ExtResource("2_lglr1")
+
 [node name="Backhill" type="Sprite2D" parent="Background"]
 position = Vector2(3044, -491)
 scale = Vector2(1.07672, 1.07672)
@@ -250,7 +255,7 @@ position = Vector2(55, 74)
 scale = Vector2(0.771929, 0.771929)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Layers/1/House Section"]
-position = Vector2(211.454, -4)
+position = Vector2(202.386, -4)
 metadata/_edit_group_ = true
 
 [node name="6" type="Sprite2D" parent="Layers/1/House Section/StaticBody2D2"]
@@ -289,7 +294,7 @@ position = Vector2(-46, -141)
 polygon = PackedVector2Array(2801, 783, 2732, 671, 2851, 527, 2980, 532, 3070, 588, 3066, 636, 3124, 656, 3138, 804, 3064, 843, 2908, 843, 2903, 775)
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="Layers/1/House Section"]
-position = Vector2(1450.14, 296)
+position = Vector2(1469.57, 296)
 scale = Vector2(0.7, 0.7)
 metadata/_edit_group_ = true
 
@@ -407,7 +412,7 @@ position = Vector2(21, -141)
 polygon = PackedVector2Array(231, 856, 205, 767, 237, 682, 310, 652, 359, 732, 365, 827, 306, 860)
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="Layers/1/House Section"]
-position = Vector2(916.136, -43)
+position = Vector2(936.863, -43)
 metadata/_edit_group_ = true
 
 [node name="9" type="Sprite2D" parent="Layers/1/House Section/StaticBody2D13"]
@@ -417,7 +422,7 @@ texture = ExtResource("14_3h7bj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layers/1/House Section/StaticBody2D13"]
 position = Vector2(73, -9)
-polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2145, 499, 2182.14, 599.978, 2163, 603, 2165.3, 733.41, 2087, 757)
+polygon = PackedVector2Array(1995, 717, 1993, 605, 1962, 582, 2027, 493, 2145, 499, 2161.41, 552.046, 2208.05, 592.205, 2163, 603, 2165.3, 733.41, 2087, 757)
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Layers/1/House Section"]
 position = Vector2(1660.59, 152)
@@ -779,7 +784,7 @@ position = Vector2(110, 595)
 position = Vector2(3604, 539)
 
 [node name="RefuelStation3" parent="Layers/1/RefillStations" instance=ExtResource("40_n2r0d")]
-position = Vector2(2643, 527)
+position = Vector2(2626, 527)
 scale = Vector2(0.8, 0.8)
 
 [node name="RefuelStation2" parent="Layers/1/RefillStations" instance=ExtResource("38_2ltat")]
@@ -787,7 +792,7 @@ position = Vector2(4741, 473)
 scale = Vector2(0.8, 0.8)
 
 [node name="RefuelStation4" parent="Layers/1/RefillStations" instance=ExtResource("38_2ltat")]
-position = Vector2(1612, 546)
+position = Vector2(1622, 546)
 scale = Vector2(0.75, 0.75)
 
 [node name="PointLight2D" type="PointLight2D" parent="Layers/1"]

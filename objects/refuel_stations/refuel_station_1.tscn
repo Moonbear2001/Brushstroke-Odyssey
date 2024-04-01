@@ -130,28 +130,25 @@ libraries = {
 "": SubResource("AnimationLibrary_q5v4s")
 }
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-
 [node name="Climb" parent="." instance=ExtResource("6_csovb")]
 position = Vector2(33, -38)
 scale = Vector2(1, 1.29609)
 
 [node name="RefuelLight" parent="." instance=ExtResource("7_fagu7")]
-position = Vector2(-61, 24)
+position = Vector2(-67, 24)
 
 [node name="Checkpoint" type="Node2D" parent="."]
 position = Vector2(-72, -146)
 
 [node name="Outside" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-13, -4)
 texture = ExtResource("4_ljvxo")
 
 [node name="OutsideHitbox" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(337, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutsideHitbox"]
 position = Vector2(-328, 10)
 polygon = PackedVector2Array(-159, -37, -136, -37, -134, 86, -67, 118, 80, 105, 77, -1, 117, -4, 54, -103, 54, -142, 1, -142, 1, -116, -106, -116)
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

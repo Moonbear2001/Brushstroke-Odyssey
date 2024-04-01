@@ -9,10 +9,6 @@ var glow_level = "0"
 var refueling_left = false
 var refueling_right = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if inWind:

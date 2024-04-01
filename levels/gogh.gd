@@ -32,9 +32,8 @@ func _ready():
 	# one by one in the Godot editor (also not good design)
 	for refill_station in refill_stations.get_children():
 		refill_station.refuel_light.increment_fuel_level.connect(lantern.increment_fuel)
-		refill_station.refuel_light.refuel_area_entered.connect(lantern.refueling_started)
-		refill_station.refuel_light.refuel_area_exited.connect(lantern.refueling_stopped)
-		refill_station.exit_station.connect(on_refill_station_exited)
+		refill_station.refuel_area_entered.connect(on_refuel_station_entered)
+		refill_station.refuel_area_exited.connect(on_refuel_station_exited)
 
 # Call the base level script's _process()
 func _process(delta):
@@ -48,17 +47,20 @@ func _process(delta):
 		wind_timer.stop()
 
 # When exiting refill station, put protag back on top of station
-func on_refill_station_exited():
-	#protagonist.global_position = exit_pos.get_global_position()
+func on_refuel_station_exited():
+	lantern.station_exited()
 	protagonist.glow = true
-	
+
+func on_refuel_station_entered():
+	lantern.station_entered()
+	protagonist.glow = false
 
 # Reload the level when fuel is exhausted
 func _on_lantern_fuel_exhausted():
 	respawn()
 
 func change_glow():
-	var glow_num = floori(lantern.fuel_level / 30 * 10)
+	var glow_num = floori(lantern.fuel_level / 35 * 10)
 	protagonist.glow_level = str(glow_num)
 
 func respawn():
@@ -85,10 +87,9 @@ func respawn():
 		lantern.fuel_exhausted.connect(Callable(self, "respawn"))
 		for refill_station in refill_stations.get_children():
 			refill_station.refuel_light.increment_fuel_level.connect(lantern.increment_fuel)
-			refill_station.refuel_light.refuel_area_entered.connect(lantern.refueling_started)
-			refill_station.refuel_light.refuel_area_exited.connect(lantern.refueling_stopped)
+			refill_station.refuel_area_entered.connect(on_refuel_station_entered)
+			refill_station.refuel_area_exited.connect(on_refuel_station_exited)
 		Global.protagonist = protagonist
-		duplicatedNode.set_gravity("down")
 	else:
 		get_tree().reload_current_scene()
 

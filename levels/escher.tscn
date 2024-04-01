@@ -1125,7 +1125,7 @@ color = "yellow"
 duplicate = true
 
 [node name="Door2" parent="Doors" instance=ExtResource("55_tvs1l")]
-position = Vector2(2929, 156)
+position = Vector2(2925, 156)
 id = 17
 exit_id = 16
 x_offset = 10

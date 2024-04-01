@@ -20,7 +20,7 @@ signal fuel_exhausted()
 #@onready var sprite =  $AnimatedSprite2D2
 
 const MIN_FUEL_LEVEL: int = 0
-const MAX_FUEL_LEVEL: int = 30
+const MAX_FUEL_LEVEL: int = 35
 const START_FUEL_LEVEL: int = 10
 const SCALE = 20.0
 
@@ -49,10 +49,10 @@ func increment_fuel() -> void:
 		fuel_level_changed.emit(fuel_level)
 
 # Don't allow decrementing while refueling
-func refueling_started() -> void:
+func station_entered() -> void:
 	decrement = false
 
 # Restart decrementing once done refueling
-func refueling_stopped() -> void:
+func station_exited() -> void:
 	decrement = true
 	

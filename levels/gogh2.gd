@@ -74,8 +74,10 @@ func respawn():
 	for p in get_tree().get_nodes_in_group("protagonist"):
 		p.queue_free()
 		
+	if checkpoint.name == "Checkpoint0":
+		get_tree().reload_current_scene()
 	# Check if a valid x value was found
-	if greatest_y_below_target != -INF:	
+	elif greatest_y_below_target != -INF:	
 		var duplicatedNode = protagonist_gogh.instantiate()
 		duplicatedNode.global_position.x = checkpoint.global_position.x
 		duplicatedNode.global_position.y = checkpoint.global_position.y
@@ -83,11 +85,10 @@ func respawn():
 		get_tree().current_scene.add_child(duplicatedNode)
 		protagonist = duplicatedNode
 		Global.protagonist = protagonist
-		duplicatedNode.set_gravity("down")
 	else:
 		get_tree().reload_current_scene()
 
-
+	
 # Play either the section2 or star section ambience depending on whether the 
 # protag is going up or falling down (obslete, cant fall from star section anymore)
 func _on_section_separator_body_exited(body):

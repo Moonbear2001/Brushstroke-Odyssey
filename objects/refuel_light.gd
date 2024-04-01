@@ -1,6 +1,5 @@
 extends Node2D
-signal refuel_area_entered()
-signal refuel_area_exited()
+
 signal increment_fuel_level()
 
 @onready var interaction_area = $InteractionArea
@@ -15,16 +14,17 @@ func _process(delta):
 	if Input.is_action_just_released("interact") and is_instance_valid(Global.protagonist):
 		Global.protagonist.refueling_left = false
 		Global.protagonist.refueling_right = false
-		refuel_area_exited.emit()
 		timer.stop()
 		refueling = false
+		Global.protagonist.enable_input()
 	elif refueling and Input.is_action_pressed("interact"):
 		if timer.is_stopped():
 			timer.start()
+		Global.protagonist.disable_input()
+		Global.protagonist.velocity = Vector2(0, 0)
 
 func refuel():
 	if Input.is_action_pressed("interact"):
-		refuel_area_entered.emit()
 		if is_instance_valid(Global.protagonist) and global_position.x < Global.protagonist.global_position.x:
 			Global.protagonist.refueling_left = true
 		else:
