@@ -770,6 +770,11 @@ position = Vector2(735, 605)
 scale = Vector2(0.218167, 0.218166)
 texture = ExtResource("36_w64ui")
 
+[node name="PointLight2D" type="PointLight2D" parent="Layers/1"]
+position = Vector2(5918, 564)
+scale = Vector2(0.231873, 0.231873)
+texture = ExtResource("33_pywvd")
+
 [node name="RefillStations" type="Node2D" parent="Layers/1"]
 
 [node name="RefuelStation5" parent="Layers/1/RefillStations" instance=ExtResource("30_4wgou")]
@@ -789,11 +794,6 @@ scale = Vector2(0.8, 0.8)
 [node name="RefuelStation4" parent="Layers/1/RefillStations" instance=ExtResource("38_2ltat")]
 position = Vector2(1612, 546)
 scale = Vector2(0.75, 0.75)
-
-[node name="PointLight2D" type="PointLight2D" parent="Layers/1"]
-position = Vector2(5918, 564)
-scale = Vector2(0.231873, 0.231873)
-texture = ExtResource("33_pywvd")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 5
@@ -876,6 +876,7 @@ shape = SubResource("RectangleShape2D_qrr0h")
 position = Vector2(1272, 1298)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
+visible = false
 top_level = true
 color = Color(0, 0, 0.0862745, 1)
 

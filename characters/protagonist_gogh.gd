@@ -1,5 +1,10 @@
 extends Protagonist
 
+"""
+Protagonist for the Van Gogh level.
+"""
+
+@onready var glow_anim = $Glow
 
 var windDirection = Vector2(-1, 0)
 var windForce = -400
@@ -9,14 +14,11 @@ var glow_level = "0"
 var refueling_left = false
 var refueling_right = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if inWind:
 		apply_wind_force(delta)
+	print(glow_level)
 
 func apply_wind_force(delta):
 	velocity.x = windForce
