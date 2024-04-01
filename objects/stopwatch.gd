@@ -51,5 +51,5 @@ func _on_update_timer_timeout() -> void:
 
 # Update the label
 func update_label() -> void:
-	label.text = str(elapsed_time).pad_decimals(2)
+	label.text = str(elapsed_time).pad_decimals(1)
 

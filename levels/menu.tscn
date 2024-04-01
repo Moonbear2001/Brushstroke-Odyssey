@@ -144,7 +144,6 @@ position = Vector2(766.667, -1333.33)
 [node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
 position = Vector2(1263, 513)
 scale = Vector2(0.75, 0.75)
-big = true
 
 [node name="FrontArch1" type="Sprite2D" parent="."]
 position = Vector2(2064, 361)
