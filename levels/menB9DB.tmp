@@ -20,27 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://dagovt7ry6r10" path="res://levels/enter_works_cited.tscn" id="18_rxchs"]
 [ext_resource type="AudioStream" uid="uid://q3gpnraqv440" path="res://audio/music/a-walk-in-paris-126173.mp3" id="19_s2wx5"]
 
-[sub_resource type="Animation" id="Animation_sdd8a"]
-resource_name = "camera_pan"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PanningCamera:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector2(6000, 513), Vector2(1263, 513)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ikwcm"]
-_data = {
-"camera_pan": SubResource("Animation_sdd8a")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sob0k"]
 size = Vector2(7092, 55)
 
@@ -77,21 +56,30 @@ animations = [{
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lak8j"]
 load_path = "res://.godot/imported/front_arch4.png-afcdd8e9813478fd501dde5e2a024214.ctex"
 
+[sub_resource type="Animation" id="Animation_sdd8a"]
+resource_name = "camera_pan"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanningCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1263, 513), Vector2(6000, 513)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ikwcm"]
+_data = {
+"camera_pan": SubResource("Animation_sdd8a")
+}
+
 [node name="Menu" type="Node2D" node_paths=PackedStringArray("protagonist")]
 script = ExtResource("1_2sh28")
 protagonist = NodePath("ProtagonistBig")
-
-[node name="PanningCamera" type="Camera2D" parent="."]
-position = Vector2(6000, 513)
-limit_left = 0
-limit_top = 0
-limit_right = 6600
-limit_bottom = 648
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ikwcm")
-}
 
 [node name="Layout" type="Sprite2D" parent="."]
 position = Vector2(3305, 360)
@@ -108,10 +96,6 @@ texture = ExtResource("3_e6vvp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(3548, 685)
 shape = SubResource("RectangleShape2D_sob0k")
-
-[node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
-position = Vector2(1263, 513)
-scale = Vector2(0.75, 0.75)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
@@ -178,6 +162,10 @@ animation = &"outline"
 [node name="LabelPos" type="Node2D" parent="EnterTutorial"]
 position = Vector2(766.667, -1333.33)
 
+[node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
+position = Vector2(6564, 513)
+scale = Vector2(0.75, 0.75)
+
 [node name="FrontArch1" type="Sprite2D" parent="."]
 position = Vector2(2064, 361)
 scale = Vector2(0.9, 0.9)
@@ -240,5 +228,13 @@ bus = &"Music"
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("19_s2wx5")
 bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ikwcm")
+}
+
+[node name="PanningCamera" type="Camera2D" parent="."]
+position = Vector2(1263, 513)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

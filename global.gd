@@ -10,7 +10,7 @@ const LEVELS = ["tutorial", "escher", "gogh", "gogh2", "dali"]
 const SAVE_DATA_PATH = "user://"
 const LEVELS_PATH = "res://levels/"
 const MENU_PATH = LEVELS_PATH + "menu.tscn"
-const DEF_MENU_POS = Vector2(1500, 500)
+const DEF_MENU_POS = Vector2(1263, 513)
 
 # Global variables
 var high_scores : HighScores
@@ -18,6 +18,7 @@ var user_settings: UserSettings
 var waiting_for_duplicate: bool = false
 var scene_transitioning = false
 var menu_pos = Vector2.ZERO
+var startup = true # true if firs time in menu after startup
 
 # Global reference to the protagonist that global scripts share
 @onready var protagonist: Protagonist = get_tree().get_first_node_in_group("protagonist")
