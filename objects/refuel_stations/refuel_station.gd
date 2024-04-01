@@ -11,7 +11,6 @@ signal refuel_area_exited
 
 @onready var anim_player = $AnimationPlayer
 @onready var enter_station_area = $Enter/EnterStationArea
-@onready var timer = $Timer
 @onready var refuel_light = $RefuelLight
 @onready var checkpoint_pos = $Checkpoint
 @onready var climb = $Climb

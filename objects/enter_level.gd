@@ -19,8 +19,8 @@ func enter_level():
 		entering_level.emit()
 		SceneManager.load_new_scene(Global.LEVELS_PATH + level_name + ".tscn")
 
-func _on_interaction_area_area_entered(area):
+func _on_interaction_area_area_entered(_area):
 	overlay.hide()
 
-func _on_interaction_area_area_exited(area):
+func _on_interaction_area_area_exited(_area):
 	overlay.show()

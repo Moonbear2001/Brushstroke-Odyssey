@@ -19,5 +19,5 @@ func _on_area_2d_body_exited(body):
 		body.inWind = false
 		body.enable_input()
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	queue_free()

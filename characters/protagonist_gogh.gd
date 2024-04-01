@@ -19,18 +19,18 @@ func _process(delta):
 	if inWind:
 		apply_wind_force(delta)
 
-func apply_wind_force(delta):
+func apply_wind_force(_delta):
 	velocity.x = windForce
 	velocity.y = -50
 	
-func get_anim_name(name: String):
+func get_anim_name(anim_name: String):
 	if glow:
 		if glow_anim:
 			glow_anim.show()
 			glow_anim.play(glow_level)
 		if int(glow_level) < 5:
-			return name + "_dim"
-		return name + "_glow"
+			return anim_name + "_dim"
+		return anim_name + "_glow"
 	else:
 		if (refueling_left or refueling_right) and glow_level == "10":
 			glow_anim.show()
@@ -46,4 +46,4 @@ func get_anim_name(name: String):
 			return "RefillRight_default"
 		if glow_anim and not (refueling_left or refueling_right):
 			glow_anim.hide()
-		return name + "_default"
+		return anim_name + "_default"
