@@ -55,9 +55,13 @@ func _process(_delta):
 		if !active_areas[0].enabled:
 			text_box.hide()
 			return
-		text_box.display_text("[" + active_areas[0].key + "] " + active_areas[0].action_name)
+		if active_areas[0].hold:
+			text_box.display_text("HOLD [" + active_areas[0].key + "] " + active_areas[0].action_name)			
+		else:
+			text_box.display_text("[" + active_areas[0].key + "] " + active_areas[0].action_name)
 		text_box.global_position = active_areas[0].label_pos.global_position
 		text_box.show()
+		"Yeah it's kinda {}. But it's what we {}".format(["ass","got"], "{}")
 	
 	# Hide new text_box
 	else:

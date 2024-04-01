@@ -57,6 +57,7 @@ position = Vector2(21, -47)
 position = Vector2(-6, 7)
 action_name = "to refuel lamp"
 hide_after_action = false
+hold = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

@@ -911,7 +911,6 @@ scale = Vector2(-0.564553, 1.60051)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next Scene/Area2D"]
 position = Vector2(178.903, 1.8744)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ylrxt")
 
 [node name="WindTimer" type="Timer" parent="."]
