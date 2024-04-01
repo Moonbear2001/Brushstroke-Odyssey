@@ -368,5 +368,6 @@ position = Vector2(368, 282)
 scale = Vector2(0.05, 0.05)
 
 [node name="LevelUI" parent="." instance=ExtResource("21_n74nv")]
+visible = false
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
