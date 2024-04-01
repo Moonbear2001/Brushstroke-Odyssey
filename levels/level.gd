@@ -60,20 +60,20 @@ func collect_star() -> void:
 	collected_stars += 1
 	
 # Catches signal that is emitted when the player reaches the end of the level
-func level_end(_body) -> void:
+func level_end(body) -> void:
 	
-	if not _body.is_in_group("protagonist"):
+	if not body.is_in_group("protagonist"):
 		return
 	
 	# Get player's scores for this run
-	stopwatch.stop_stopwatch()	
+	stopwatch.stop_stopwatch()
 	var time: float = stopwatch.get_best_time()
 	
 	# Stop player from moving
 	# protagonist.disable()
 	
 	# Get best scores
-	var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)	
+	var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)
 	var best_time: float = level_high_score.get_best_time()
 	var best_stars: int = level_high_score.get_best_stars()
 	

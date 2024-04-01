@@ -2321,8 +2321,6 @@ position = Vector2(-3, 0)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_sbv15")
 animation = &"Climb_default"
-frame = 3
-frame_progress = 0.0184142
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -2332,4 +2330,4 @@ shape = SubResource("CapsuleShape2D_bdb12")
 position = Vector2(-4, 3)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_r3l2r")
-animation = &"4"
+animation = &"1"

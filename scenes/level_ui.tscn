@@ -38,6 +38,7 @@ script = ExtResource("1_leh3g")
 [node name="Stopwatch" parent="." instance=ExtResource("1_7p6fn")]
 position = Vector2(3, 0)
 scale = Vector2(0.993906, 0.993906)
+update_interval = 0.1
 
 [node name="Stars" type="Node2D" parent="."]
 position = Vector2(28, 0)

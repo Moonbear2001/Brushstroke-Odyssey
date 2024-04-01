@@ -26,7 +26,6 @@ var coyote_time = Timer.new()
 @onready var anim = $AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
 @onready var collision_shape = $CollisionShape2D
-@onready var glow_anim = $Glow
 
 
 func _ready():

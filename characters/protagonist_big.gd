@@ -1,5 +1,8 @@
 extends Protagonist
 
+"""
+Simple, big version of the protagonist for walking around the menu.
+"""
 
 func _ready():
 	SPEED = 320

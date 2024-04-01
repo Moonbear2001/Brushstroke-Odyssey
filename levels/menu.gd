@@ -20,7 +20,23 @@ func _ready():
 	
 	# Position the protagonist where they were in the menu
 	protagonist.position = Global.menu_pos
+	
+	# Play panning animation on startup
+	if Global.startup:
+		Global.startup = false
+		$PanningCamera.make_current()
+		$AnimationPlayer.play("camera_pan")
+	else:
+		remove_child($AnimationPlayer)		
+		remove_child($PanningCamera)
 
 # Save the big protagonist's position globally
 func save_pos() -> void:
 	Global.menu_pos = Global.protagonist.position
+
+# Camera pan finished
+func _on_animation_player_animation_finished(anim_name):
+	remove_child($AnimationPlayer)	
+	remove_child($PanningCamera)
+	
+	

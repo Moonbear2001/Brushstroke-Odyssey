@@ -1,5 +1,10 @@
 extends Protagonist
 
+"""
+Protagonist for the Van Gogh level.
+"""
+
+@onready var glow_anim = $Glow
 
 var windDirection = Vector2(-1, 0)
 var windForce = -400

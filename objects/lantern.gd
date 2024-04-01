@@ -15,12 +15,12 @@ intervals (the timer has a callback of 0.25 seconds).
 
 signal fuel_level_changed(fuel_level: int)
 signal fuel_exhausted()
+signal fuel_full()
 
 @onready var timer = $Timer
-#@onready var sprite =  $AnimatedSprite2D2
 
 const MIN_FUEL_LEVEL: int = 0
-const MAX_FUEL_LEVEL: int = 35
+const MAX_FUEL_LEVEL: int = 25
 const START_FUEL_LEVEL: int = 10
 const SCALE = 20.0
 
@@ -32,7 +32,7 @@ var decrement: bool = true
 func _ready() -> void:
 	timer.set_wait_time(decrement_per_second/updates_per_second)
 
-# Decrement the fuel level by 2 per second
+# Decrement the fuel level per second
 func _on_timer_timeout() -> void:
 	if decrement and fuel_level > MIN_FUEL_LEVEL:
 		fuel_level -= 0.25
@@ -47,6 +47,8 @@ func increment_fuel() -> void:
 		fuel_level += 1
 		set_texture_scale(fuel_level/SCALE)
 		fuel_level_changed.emit(fuel_level)
+	else:
+		fuel_full.emit()
 
 # Don't allow decrementing while refueling
 func station_entered() -> void:

@@ -60,7 +60,7 @@ func _on_lantern_fuel_exhausted():
 	respawn()
 
 func change_glow():
-	var glow_num = floori(lantern.fuel_level / 35 * 10)
+	var glow_num = floori(lantern.fuel_level / lantern.MAX_FUEL_LEVEL * 10)
 	protagonist.glow_level = str(glow_num)
 
 func respawn():
@@ -137,3 +137,27 @@ func _on_area_2d_body_entered(body):
 # When character gets close to bell tower, ring the bell
 func _on_bell_sound_area_body_entered(body):
 	$Bells.play()
+	
+# Track collected stars
+func collect_star() -> void:
+	collected_stars += 1
+	
+# Custom level end behavior for Van Gogh 1
+func level_end(body) -> void:
+	print("in gogh: ", level_name)
+	if not body.is_in_group("protagonist"):
+		return
+	
+	# Get player's scores for this run
+	stopwatch.stop_stopwatch()
+	var time: float = stopwatch.get_best_time()
+	
+	# Get best scores
+	var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)
+	var best_time: float = level_high_score.get_best_time()
+	var best_stars: int = level_high_score.get_best_stars()
+	
+	# Update saved data
+	Global.high_scores.new_last_time(level_name, time)
+	if time < best_time:
+		Global.high_scores.new_low_time(level_name, time)

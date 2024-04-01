@@ -10,7 +10,7 @@ var refueling = false
 func _ready():
 	interaction_area.interact = Callable(self, "refuel")
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_released("interact") and is_instance_valid(Global.protagonist):
 		Global.protagonist.refueling_left = false
 		Global.protagonist.refueling_right = false
