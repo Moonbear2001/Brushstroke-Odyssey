@@ -115,7 +115,6 @@ func level_end(body) -> void:
 	# Get best scores
 	var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)
 	var best_time: float = level_high_score.get_best_time()
-	var best_stars: int = level_high_score.get_best_stars()
 	
 	# Update saved data 
 	Global.high_scores.new_last_time(level_name, best_time + time)

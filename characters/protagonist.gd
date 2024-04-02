@@ -121,12 +121,10 @@ func set_jump_animation():
 # Disable visibility and controls and movement
 func disable():
 	enabled = false
-	visible = false
 
 # Enable visibility and controls
 func enable():
 	enabled = true
-	visible = true
 
 func disable_input():
 	input_disabled = true

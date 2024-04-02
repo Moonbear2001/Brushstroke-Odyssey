@@ -135,7 +135,7 @@ func _on_area_2d_body_entered(body):
 		SceneManager.load_new_scene("res://levels/gogh2.tscn")
 
 # When character gets close to bell tower, ring the bell
-func _on_bell_sound_area_body_entered(body):
+func _on_bell_sound_area_body_entered(_body):
 	$Bells.play()
 	
 # Track collected stars
@@ -155,7 +155,6 @@ func level_end(body) -> void:
 	# Get best scores
 	var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)
 	var best_time: float = level_high_score.get_best_time()
-	var best_stars: int = level_high_score.get_best_stars()
 	
 	# Update saved data
 	Global.high_scores.new_last_time(level_name, time)
