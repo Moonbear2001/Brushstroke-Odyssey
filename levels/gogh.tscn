@@ -845,7 +845,7 @@ metadata/_edit_lock_ = true
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(4753, 273)
+position = Vector2(146, 427)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -882,7 +882,6 @@ shape = SubResource("RectangleShape2D_qrr0h")
 position = Vector2(1272, 1298)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 top_level = true
 color = Color(0, 0, 0.0862745, 1)
 
@@ -911,7 +910,6 @@ scale = Vector2(-0.564553, 1.60051)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next Scene/Area2D"]
 position = Vector2(178.903, 1.8744)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ylrxt")
 
 [node name="WindTimer" type="Timer" parent="."]
