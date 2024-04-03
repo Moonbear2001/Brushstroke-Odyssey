@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dygepv0k8fry8"]
+
+[ext_resource type="Texture2D" uid="uid://cb483cxo75xtr" path="res://art/Dali/clocks/clock1.png" id="1_22qwn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwqiq"]
+atlas = ExtResource("1_22qwn")
+region = Rect2(0, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skbt5"]
+atlas = ExtResource("1_22qwn")
+region = Rect2(397, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m6ve"]
+atlas = ExtResource("1_22qwn")
+region = Rect2(794, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5pdf"]
+atlas = ExtResource("1_22qwn")
+region = Rect2(1191, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjyik"]
+atlas = ExtResource("1_22qwn")
+region = Rect2(1588, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfxav"]
+atlas = ExtResource("1_22qwn")
+region = Rect2(1985, 0, 397, 511)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c1ceb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwqiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skbt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m6ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5pdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjyik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfxav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Clock" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c1ceb")
+frame_progress = 0.38038
