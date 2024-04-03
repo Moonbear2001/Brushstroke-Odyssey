@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_d4s5o"]
-[ext_resource type="PackedScene" path="res://characters/protagonist_dali.tscn" id="2_keris"]
+[ext_resource type="PackedScene" uid="uid://cyv0src61ekil" path="res://characters/protagonist_dali.tscn" id="2_keris"]
 [ext_resource type="PackedScene" uid="uid://ddxxd6dsg1s71" path="res://objects/enemies/skin_blob.tscn" id="3_png0t"]
-[ext_resource type="AudioStream" uid="uid://73wpow8lpsyc" path="res://audio/music/mystic_forest_ambient.mp3" id="4_ysj0h"]
+[ext_resource type="AudioStream" uid="uid://gx36ykcr1x26" path="res://audio/music/lost-alone-mysterious-gentle-instrumental-175368.mp3" id="4_utn8h"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
 [ext_resource type="PackedScene" uid="uid://dv1kdmuaoduuf" path="res://characters/elephant.tscn" id="7_qffot"]
@@ -40,9 +40,11 @@ offset_bottom = 11.6364
 scale = Vector2(1.86028, 0.992966)
 text = "End"
 
-[node name="SkinBlob" parent="." instance=ExtResource("3_png0t")]
-position = Vector2(73, 90)
+[node name="SkinBlob" parent="." node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
+position = Vector2(237, 82)
 scale = Vector2(0.1, 0.1)
+protagonist = NodePath("../Protagonist")
+audio_dist = 700.0
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -54,23 +56,40 @@ position = Vector2(-3, 103)
 scale = Vector2(39.44, 1)
 shape = SubResource("RectangleShape2D_yo6q6")
 
-[node name="Platforms2" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Platforms2"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms"]
 position = Vector2(40, 130)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms2/StaticBody2D"]
-position = Vector2(-745, -116)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D2"]
+position = Vector2(900, 101)
 scale = Vector2(39.44, 1)
 shape = SubResource("RectangleShape2D_yo6q6")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platforms2/StaticBody2D"]
-position = Vector2(690, -122)
-scale = Vector2(39.44, 1)
-shape = SubResource("RectangleShape2D_yo6q6")
+[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D3"]
+position = Vector2(90.2746, 41)
+scale = Vector2(0.651402, 1)
+polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D4"]
+position = Vector2(843, 41)
+polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D5"]
+position = Vector2(-804, 245)
+scale = Vector2(0.651402, 2.89805)
+polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ysj0h")
+stream = ExtResource("4_utn8h")
+volume_db = -16.526
 autoplay = true
 bus = &"Music"
 
@@ -88,5 +107,5 @@ visible = false
 position = Vector2(-3, 0)
 
 [node name="Elephant" parent="." instance=ExtResource("7_qffot")]
-position = Vector2(-67.9999, -34)
+position = Vector2(1093, -41)
 scale = Vector2(0.2, 0.2)

@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddxxd6dsg1s71"]
+[gd_scene load_steps=9 format=3 uid="uid://ddxxd6dsg1s71"]
 
 [ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_2c58v"]
 [ext_resource type="Script" path="res://objects/enemies/skin_blob.gd" id="1_jmo0d"]
 [ext_resource type="Texture2D" uid="uid://buchwsvnkqior" path="res://art/Dali/creatures/skinthing.PNG" id="2_vbomy"]
+[ext_resource type="AudioStream" uid="uid://c1joogmccbdxr" path="res://audio/sfx/dali/squelch-106250.mp3" id="4_acqxo"]
+[ext_resource type="AudioStream" uid="uid://b6pokpxwgpme8" path="res://audio/sfx/dali/punch-boxing-02wav-14897.mp3" id="5_1xxiu"]
+[ext_resource type="AudioStream" uid="uid://b66bmu20b4u10" path="res://audio/sfx/dali/gross-slimy-goo-foley-5-164293.mp3" id="6_mpoxv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6y8v5"]
 atlas = ExtResource("2_vbomy")
@@ -21,6 +24,9 @@ animations = [{
 
 [node name="SkinBlob" type="Node2D"]
 script = ExtResource("1_jmo0d")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_area", "weak_area")]
 collision_mask = 0
@@ -50,5 +56,22 @@ polygon = PackedVector2Array(-264, -26, -161, -72, -62, -98, 67, -155, 117, -155
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="move" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_acqxo")
+volume_db = 1.5
+max_polyphony = 3
+bus = &"SFX"
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1xxiu")
+volume_db = 2.0
+max_polyphony = 3
+
+[node name="die" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_mpoxv")
+volume_db = 1.0
+pitch_scale = 0.78
+max_polyphony = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

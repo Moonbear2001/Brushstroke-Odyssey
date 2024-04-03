@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bnld8g82h3sp3"]
+[gd_scene load_steps=19 format=3 uid="uid://bnld8g82h3sp3"]
 
 [ext_resource type="Script" path="res://levels/dali_landscape.gd" id="1_a3v0x"]
 [ext_resource type="Texture2D" uid="uid://b6u64bd5qm5s5" path="res://art/Dali/parallax/bakcground.PNG" id="2_7been"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="14_fs6eh"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="15_ed1n8"]
 [ext_resource type="PackedScene" uid="uid://dygepv0k8fry8" path="res://objects/clock.tscn" id="16_sr84h"]
+[ext_resource type="PackedScene" uid="uid://ddxxd6dsg1s71" path="res://objects/enemies/skin_blob.tscn" id="17_6n6cm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r15p0"]
 size = Vector2(117.5, 7.10229)
@@ -151,6 +152,7 @@ position = Vector2(1332.5, 1592.5)
 scale = Vector2(0.75, 0.75)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Blocks"]
+position = Vector2(415, -698)
 metadata/_edit_group_ = true
 
 [node name="B2" type="Sprite2D" parent="Blocks/StaticBody2D2"]
@@ -203,3 +205,7 @@ position = Vector2(1700, 990)
 
 [node name="LevelUI" parent="." instance=ExtResource("15_ed1n8")]
 visible = false
+
+[node name="SkinBlob" parent="." instance=ExtResource("17_6n6cm")]
+position = Vector2(2211, 621)
+scale = Vector2(0.1, 0.1)

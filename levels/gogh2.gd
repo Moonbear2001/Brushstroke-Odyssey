@@ -120,3 +120,6 @@ func level_end(body) -> void:
 	Global.high_scores.new_last_time(level_name, best_time + time)
 	if best_time + time < best_time:
 		Global.high_scores.new_low_time(level_name, best_time + time)
+	
+	# Go back to the main menu
+	SceneManager.load_new_scene(Global.MENU_PATH)
