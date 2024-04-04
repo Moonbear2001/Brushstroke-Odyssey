@@ -22,6 +22,9 @@ var y_val = -1
 var climb = false
 var coyote_time = Timer.new()
 
+# Describes the angle at which the protag climbs when on a ladder
+var climb_slope = Vector2(0, 0)
+
 # Child nodes
 @onready var anim = $AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
@@ -45,7 +48,7 @@ func _physics_process(delta):
 
 
 # Handle input events, gets called before physics process
-func _input(_input_event):
+func _input(s):
 	if not enabled or input_disabled:
 		return
 
@@ -61,10 +64,13 @@ func use_gravity(delta):
 	if not is_on_floor() and not Input.is_action_pressed("climb"):
 		set_jump_animation()
 	
-	if Input.is_action_pressed("climb") and climb:
-		velocity = Vector2(0, -SPEED)
+	if climb and Input.is_action_pressed("climb"):
+		#velocity = Vector2(0, -SPEED)
+		velocity = climb_slope * SPEED
 		anim.play(get_anim_name("Climb"))
+		return
 	
+	# Left and right movement and animations
 	var direction
 	direction = Input.get_axis("left", "right")
 	if not input_disabled:
