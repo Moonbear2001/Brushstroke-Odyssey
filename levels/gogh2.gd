@@ -4,6 +4,8 @@ extends Level
 @export var layers: Array[Node2D]
 @onready var protagonist_gogh = preload("res://characters/protagonist_gogh.tscn")
 @onready var death_arr = $Deaths
+@onready var level_stars = $Sky/LevelStars
+@onready var anim = $AnimationPlayer
 
 var curr_layer = 1
 
@@ -15,6 +17,9 @@ func _ready():
 	
 	for death in death_arr.get_children():
 		death.respawn.connect(Callable(self, "respawn"))
+	
+	for star in level_stars.get_children():
+		star.level_move.connect(move_death)
 	
 	# Disable the hitboxes of layers 2 - n and make invisible
 	for layer in range(2, layers.size() + 1):
@@ -123,3 +128,9 @@ func level_end(body) -> void:
 	
 	# Go back to the main menu
 	SceneManager.load_new_scene(Global.MENU_PATH)
+
+func move_death(name):
+	if name == "first_move":
+		anim.play("death2_move")
+	elif name == "first_move_2":
+		anim.play("death3_move")

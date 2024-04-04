@@ -6,7 +6,7 @@ extends Node2D
 # The main playable character
 @onready var enemy = $Enemy
 @onready var timer = $Timer
-@onready var move = $move
+@onready var move_sound = $move
 
 var move_speed = 100
 
@@ -19,10 +19,10 @@ func _ready():
 		enemy.weak_area.connect("body_entered", Callable(self, "death"))
 
 func _process(delta):
-	if move.playing == false and abs(protagonist.global_position.x - enemy.global_position.x) < audio_dist:
-		move.play()
-	elif move.playing == true and abs(protagonist.global_position.x - enemy.global_position.x) > audio_dist:
-		move.stop()
+	if move_sound.playing == false and abs(protagonist.global_position.x - enemy.global_position.x) < audio_dist:
+		move_sound.play()
+	elif move_sound.playing == true and abs(protagonist.global_position.x - enemy.global_position.x) > audio_dist:
+		move_sound.stop()
 	
 func attack(protagonist, direction):
 	$hit.play()

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal level_move(name)
+
 @export var anim_name = "default"
 
 @onready var timer = $Timer
@@ -20,3 +22,5 @@ func _on_timer_timeout():
 	timer.stop()
 	anim.play(anim_name)
 	complete = true
+	if anim_name != "default":
+		level_move.emit(anim_name)
