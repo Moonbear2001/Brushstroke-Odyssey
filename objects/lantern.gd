@@ -20,7 +20,7 @@ signal fuel_full()
 @onready var timer = $Timer
 
 const MIN_FUEL_LEVEL: int = 0
-const MAX_FUEL_LEVEL: int = 25
+const MAX_FUEL_LEVEL: int = 30
 const START_FUEL_LEVEL: int = 10
 const SCALE = 20.0
 

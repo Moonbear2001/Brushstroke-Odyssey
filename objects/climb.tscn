@@ -30,6 +30,12 @@ key = "↑"
 position = Vector2(-0.5, 28.5682)
 shape = SubResource("RectangleShape2D_7p6th")
 
+[node name="Top" type="Node2D" parent="InteractionArea"]
+position = Vector2(0, -93.9394)
+
+[node name="Bottom" type="Node2D" parent="InteractionArea"]
+position = Vector2(0, 92.4242)
+
 [node name="LabelPos" type="Node2D" parent="."]
 position = Vector2(50, 33.3333)
 
