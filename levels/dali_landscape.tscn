@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b3mv5206sahf3" path="res://art/Dali/blocks/b4.PNG" id="13_ghv2n"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="14_fs6eh"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="15_ed1n8"]
-[ext_resource type="PackedScene" uid="uid://dygepv0k8fry8" path="res://objects/clock.tscn" id="16_sr84h"]
+[ext_resource type="PackedScene" uid="uid://eb8gtde4hxdf" path="res://objects/clock.tscn" id="16_sr84h"]
 [ext_resource type="PackedScene" uid="uid://ddxxd6dsg1s71" path="res://objects/enemies/skin_blob.tscn" id="17_6n6cm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r15p0"]

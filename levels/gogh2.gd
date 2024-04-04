@@ -91,16 +91,18 @@ func respawn():
 	
 # Play either the section2 or star section ambience depending on whether the 
 # protag is going up or falling down (obslete, cant fall from star section anymore)
-func _on_section_separator_body_exited(body):
-	if body is Protagonist:
-		if body.position.y < $SectionSeparator.position.y:
-			$NighttimeAmbience.stop()
-			$SoundAmbience.stop_ambience()
-			$StarSectionMusic.play(0)
-		else:
-			$StarSectionMusic.stop()
-			$NighttimeAmbience.play(0)
-			$SoundAmbience.start_ambience()
+#func _on_section_separator_body_exited(body):
+	#print("in func")
+	#if body is Protagonist:
+		#if body.position.y < $SectionSeparator.position.y:
+			#print("playing music")
+			#$NighttimeAmbience.stop()
+			#$SoundAmbience.stop_ambience()
+			#$StarSectionMusic.play(0)
+		#else:
+			#$StarSectionMusic.stop()
+			#$NighttimeAmbience.play(0)
+			#$SoundAmbience.start_ambience()
 			
 # Custom level end behavior for Van Gogh 2, combine time with best time from 
 # Van Gogh 1 and save if better
@@ -123,3 +125,17 @@ func level_end(body) -> void:
 	
 	# Go back to the main menu
 	SceneManager.load_new_scene(Global.MENU_PATH)
+
+
+func _on_section_seperator_body_exited(body):
+	print("in func")
+	if body is Protagonist:
+		if body.position.y < $StarSectionEntrance.position.y:
+			print("playing music")
+			$NighttimeAmbience.stop()
+			$SoundAmbience.stop_ambience()
+			$StarSectionMusic.play(0)
+		else:
+			$StarSectionMusic.stop()
+			$NighttimeAmbience.play(0)
+			$SoundAmbience.start_ambience()
