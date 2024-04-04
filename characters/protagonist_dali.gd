@@ -1,6 +1,6 @@
 extends Protagonist
 
-var health = 3
+var health = 2
 var is_thrown = false
 var throw_velocity = 400
 
@@ -13,11 +13,16 @@ func _process(delta):
 	if is_thrown:
 		velocity.x = throw_velocity
 
-func take_damage():
-	health -= 1
-	if health == 0:
+func take_damage(amount, is_clock=false):
+	if is_clock and health <= 1 and amount == 1:
+		return false
+	if health >= 5 and amount == -1:
+		return false
+	health -= amount
+	if health <= 0:
 		pass
-		#DEATH
+		#death
+	return true
 
 func throw(direction):
 	velocity.y = -JUMP_VELOCITY

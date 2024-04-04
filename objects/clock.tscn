@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=3 uid="uid://eb8gtde4hxdf"]
+
+[ext_resource type="Script" path="res://objects/clock.gd" id="1_80pad"]
+[ext_resource type="Texture2D" uid="uid://cb483cxo75xtr" path="res://art/Dali/clocks/clock1.png" id="2_6r0k0"]
+[ext_resource type="PackedScene" uid="uid://dnjkxkejv3y1a" path="res://interaction/text_box.tscn" id="4_4gtui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5tnu"]
+atlas = ExtResource("2_6r0k0")
+region = Rect2(397, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1hqx"]
+atlas = ExtResource("2_6r0k0")
+region = Rect2(794, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up6dp"]
+atlas = ExtResource("2_6r0k0")
+region = Rect2(1191, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmv48"]
+atlas = ExtResource("2_6r0k0")
+region = Rect2(1588, 0, 397, 511)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0ei7"]
+atlas = ExtResource("2_6r0k0")
+region = Rect2(0, 0, 397, 511)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jp1sq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5tnu")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1hqx")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up6dp")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmv48")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0ei7")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}]
+
+[node name="Clock" type="Node2D"]
+script = ExtResource("1_80pad")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jp1sq")
+animation = &"5"
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-107, -186, -85, -191, -72, -177, -21, -201, 38, -206, 84, -197, 129, -168, 148, -119, 147, -62, 143, -12, 126, 3, 140, 35, 140, 66, 110, 135, 81, 151, 54, 138, 41, 87, 18, 44, 17, 1, 14, -25, -21, -42, -57, -51, -86, -78, -97, -109, -97, -138, -125, -145)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SpeedUp" parent="." instance=ExtResource("4_4gtui")]
+offset_left = 89.0
+offset_top = -320.0
+offset_right = 191.0
+offset_bottom = -289.0
+scale = Vector2(3.5, 3.5)
+
+[node name="SlowDown" parent="." instance=ExtResource("4_4gtui")]
+offset_left = -463.0
+offset_top = -320.0
+offset_right = -361.0
+offset_bottom = -289.0
+scale = Vector2(3.5, 3.5)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
