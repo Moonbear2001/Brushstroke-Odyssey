@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://8p0fakq7bbha"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_d4s5o"]
+[ext_resource type="PackedScene" uid="uid://cyv0src61ekil" path="res://characters/protagonist_dali.tscn" id="2_keris"]
+[ext_resource type="PackedScene" uid="uid://ddxxd6dsg1s71" path="res://objects/enemies/skin_blob.tscn" id="3_png0t"]
+[ext_resource type="AudioStream" uid="uid://gx36ykcr1x26" path="res://audio/music/lost-alone-mysterious-gentle-instrumental-175368.mp3" id="4_utn8h"]
+[ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
+[ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
+[ext_resource type="PackedScene" uid="uid://dv1kdmuaoduuf" path="res://characters/elephant.tscn" id="7_qffot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo6q6"]
+size = Vector2(20, 213)
+
+[node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end", "stars")]
+position = Vector2(3, 0)
+script = ExtResource("1_d4s5o")
+level_name = "Dali"
+protagonist = NodePath("Protagonist")
+level_ui = NodePath("LevelUI")
+end = NodePath("End")
+stars = [NodePath("Stars/Star1")]
+
+[node name="Protagonist" parent="." instance=ExtResource("2_keris")]
+position = Vector2(-212, 65)
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2(414, 57)
+scale = Vector2(1, 5.72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+shape = SubResource("RectangleShape2D_qrr0h")
+
+[node name="Label" type="Label" parent="End"]
+offset_left = -32.0
+offset_top = -11.3636
+offset_right = 8.00003
+offset_bottom = 11.6364
+scale = Vector2(1.86028, 0.992966)
+text = "End"
+
+[node name="SkinBlob" parent="." node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
+position = Vector2(237, 72)
+scale = Vector2(0.1, 0.1)
+protagonist = NodePath("../Protagonist")
+audio_distance = 1000.0
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
+position = Vector2(-3, 103)
+scale = Vector2(39.44, 1)
+shape = SubResource("RectangleShape2D_yo6q6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D2"]
+position = Vector2(900, 101)
+scale = Vector2(39.44, 1)
+shape = SubResource("RectangleShape2D_yo6q6")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D3"]
+position = Vector2(90.2746, 41)
+scale = Vector2(0.651402, 1)
+polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D4"]
+position = Vector2(843, 41)
+polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Platforms"]
+position = Vector2(40, 130)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D5"]
+position = Vector2(-840, 28)
+scale = Vector2(0.651402, 1)
+polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_utn8h")
+autoplay = true
+bus = &"Music"
+
+[node name="Stars" type="Node2D" parent="."]
+visible = false
+
+[node name="Star1" parent="Stars" instance=ExtResource("5_uogdb")]
+position = Vector2(350, 87)
+scale = Vector2(0.05, 0.05)
+
+[node name="LevelUI" parent="." instance=ExtResource("5_8t4rr")]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, 0)
+
+[node name="Elephant" parent="." instance=ExtResource("7_qffot")]
+position = Vector2(-67.9999, -34)
+scale = Vector2(0.2, 0.2)

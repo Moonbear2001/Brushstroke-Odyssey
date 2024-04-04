@@ -8,7 +8,6 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = Vector2.LEFT  # Initial movement direction
 
-
 var attack: Callable = func(body, direction):
 	pass
 
