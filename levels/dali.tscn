@@ -102,12 +102,14 @@ position = Vector2(-212, 65)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Elephant" parent="Enemies" instance=ExtResource("7_qffot")]
-position = Vector2(1089, -41)
+[node name="Elephant" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("7_qffot")]
+position = Vector2(237, -41)
 scale = Vector2(0.2, 0.2)
+protagonist = NodePath("../../Protagonist")
+audio_dist = 700.0
 
 [node name="SkinBlob" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
-position = Vector2(237, 82)
+position = Vector2(940, 60)
 scale = Vector2(0.1, 0.1)
 protagonist = NodePath("../../Protagonist")
 audio_dist = 700.0
@@ -133,7 +135,7 @@ bus = &"Music"
 
 [node name="Tick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_l7u7k")
-volume_db = -10.0
+volume_db = -20.0
 pitch_scale = 0.6
 bus = &"SFX"
 

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv1kdmuaoduuf"]
+[gd_scene load_steps=7 format=3 uid="uid://dv1kdmuaoduuf"]
 
 [ext_resource type="Script" path="res://objects/enemies/elephant.gd" id="1_n2k5q"]
 [ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_xpor0"]
 [ext_resource type="Texture2D" uid="uid://bcfrm7vqrhmlj" path="res://art/Dali/creatures/elephant.PNG" id="2_jevwg"]
+[ext_resource type="AudioStream" uid="uid://di70snplm8pqt" path="res://audio/sfx/dali/marching-loop-32908.mp3" id="4_gbocx"]
+[ext_resource type="AudioStream" uid="uid://rxc66ntfg3fg" path="res://audio/sfx/dali/angry-elephant-40916.mp3" id="5_lpyxh"]
+[ext_resource type="AudioStream" uid="uid://celmtilskcsnw" path="res://audio/sfx/dali/mixed-whip-crack-1-102825.mp3" id="6_w2ubs"]
 
 [node name="Elephant" type="Node2D"]
 script = ExtResource("1_n2k5q")
@@ -36,3 +39,20 @@ polygon = PackedVector2Array(88, 308, 224, 567, 259, 735, 259, 755, 235, 779, 28
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Enemy"]
 polygon = PackedVector2Array(-137, 365, -123, 445, -113, 543, -110, 615, -118, 694, -123, 728, -141, 744, -105, 760, -98, 727, -103, 656, -95, 516, -98, 373)
+
+[node name="walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gbocx")
+volume_db = -15.0
+
+[node name="pre-attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lpyxh")
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_w2ubs")
+
+[node name="WalkTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]

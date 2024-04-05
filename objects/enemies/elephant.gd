@@ -1,7 +1,12 @@
 extends Node2D
 
+@export var protagonist: Protagonist
+@export var audio_dist: float
+
 @onready var timer = $Timer
 @onready var enemy = $Enemy
+@onready var move_sound = $walk
+@onready var walk_timer = $WalkTimer
 
 var move_speed = 100
 
@@ -11,6 +16,7 @@ func _ready():
 	enemy.move = Callable(self, "move")
 	
 func attack(protagonist, direction):
+	$hit.play()
 	protagonist.throw(direction.x)
 	protagonist.take_damage(1)
 
@@ -21,9 +27,15 @@ func move(delta):
 
 func increase_speed():
 	move_speed += 50
+	walk_timer.wait_time /= 2
 
 func decrease_speed():
 	move_speed -= 50
+	walk_timer.wait_time *= 2
 
 func _on_timer_timeout():
 	queue_free()
+
+func _on_walk_timer_timeout():
+	if abs(protagonist.global_position.x - enemy.global_position.x) < audio_dist:
+		move_sound.play()
