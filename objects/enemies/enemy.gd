@@ -1,6 +1,10 @@
 class_name Enemy
 extends CharacterBody2D
 
+"""
+Base enemy class.
+"""
+
 @export var damage_area: Area2D
 @export var weak_area: Area2D
 @export var use_gravity = false
@@ -18,11 +22,9 @@ var idle: Callable = func(body, direction):
 var move: Callable = func(delta):
 	pass
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	damage_area.connect("body_entered", Callable(self, "collide"))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	move.call(delta)
 	move_and_slide()
