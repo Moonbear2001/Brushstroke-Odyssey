@@ -1,11 +1,13 @@
 extends Protagonist
 
+"""
+Protagonist specific to the Dali level.
+"""
+
 var health = 2
 var is_thrown = false
 var throw_velocity = 400
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_thrown and is_on_floor():
 		is_thrown = false

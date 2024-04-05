@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpayqdv7wu7ex"]
+
+[ext_resource type="Script" path="res://objects/enemies/face.gd" id="1_n6o3u"]
+[ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_vekug"]
+[ext_resource type="Texture2D" uid="uid://yai3eslh0uqw" path="res://art/white rect.png" id="2_ok502"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0wth"]
+size = Vector2(48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ismyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ok502")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax1oj"]
+
+[sub_resource type="Animation" id="Animation_kodxt"]
+resource_name = "loop"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 5),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(160, -200), Vector2(160, 0), Vector2(160, -200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cuhkg"]
+_data = {
+"loop": SubResource("Animation_kodxt")
+}
+
+[node name="Face" type="Node2D"]
+script = ExtResource("1_n6o3u")
+
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_area", "weak_area")]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_vekug")
+damage_area = NodePath("DamageArea")
+weak_area = NodePath("WeakArea")
+use_gravity = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_b0wth")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+sprite_frames = SubResource("SpriteFrames_ismyb")
+
+[node name="DamageArea" type="Area2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/DamageArea"]
+shape = SubResource("RectangleShape2D_b0wth")
+
+[node name="WeakArea" type="Area2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/WeakArea"]
+shape = SubResource("RectangleShape2D_ax1oj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+libraries = {
+"": SubResource("AnimationLibrary_cuhkg")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 30.0
+offset_top = -11.0
+offset_right = 42.0
+offset_bottom = 12.0
+rotation = 1.55353
+scale = Vector2(2.31842, 2.31842)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = ":)"
