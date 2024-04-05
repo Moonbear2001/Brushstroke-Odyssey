@@ -29,6 +29,7 @@ script = ExtResource("1_jmo0d")
 current = true
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_area", "weak_area")]
+collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_2c58v")
 damage_area = NodePath("DamageArea")
