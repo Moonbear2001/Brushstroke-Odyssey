@@ -7,13 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://gx36ykcr1x26" path="res://audio/music/lost-alone-mysterious-gentle-instrumental-175368.mp3" id="4_utn8h"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
-[ext_resource type="PackedScene" uid="uid://eb8gtde4hxdf" path="res://objects/clock.tscn" id="6_rh1ld"]
 [ext_resource type="PackedScene" uid="uid://dv1kdmuaoduuf" path="res://objects/enemies/elephant.tscn" id="7_qffot"]
 [ext_resource type="PackedScene" uid="uid://eb8gtde4hxdf" path="res://objects/clock.tscn" id="8_3ka5o"]
 [ext_resource type="AudioStream" uid="uid://5l5e38rsaghb" path="res://audio/sfx/dali/clock-tick-tock-87936.mp3" id="10_l7u7k"]
 [ext_resource type="PackedScene" uid="uid://bpayqdv7wu7ex" path="res://objects/enemies/face.tscn" id="11_ue2ni"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
@@ -33,6 +30,7 @@ end = NodePath("End")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
 position = Vector2(349, -50)
+
 [node name="End" type="Area2D" parent="."]
 position = Vector2(1187, -74)
 scale = Vector2(1, 5.72)
@@ -89,7 +87,7 @@ polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
 position = Vector2(-621, 43)
 scale = Vector2(0.15, 0.15)
 
-[node name="Protagonist" parent="." instance=ExtResource("2_keris")]
+[node name="Protagonist2" parent="." instance=ExtResource("2_keris")]
 position = Vector2(-212, 65)
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -97,7 +95,6 @@ position = Vector2(-212, 65)
 [node name="Elephant" parent="Enemies" instance=ExtResource("7_qffot")]
 position = Vector2(-398, -65)
 scale = Vector2(0.2, 0.2)
-protagonist = NodePath("../../Protagonist")
 audio_dist = 700.0
 
 [node name="SkinBlob" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]

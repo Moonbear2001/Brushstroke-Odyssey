@@ -1,4 +1,4 @@
-[gd_scene load_steps=2337 format=3 uid="uid://bm27qohdxvayg"]
+[gd_scene load_steps=2335 format=3 uid="uid://bm27qohdxvayg"]
 
 [ext_resource type="Script" path="res://levels/gogh2.gd" id="1_se3yh"]
 [ext_resource type="Texture2D" uid="uid://cunk6bh7ewi4w" path="res://art/gogh/house section/houses/IMG_0444.PNG" id="1_v7tai"]
@@ -15425,24 +15425,9 @@ animations = [{
 
 [sub_resource type="Curve2D" id="Curve2D_hg38n"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 55, -102, 0, 0, 0, 0, 55.914, -101, 13.0868, 274.893, -13.0868, -274.893, 146.225, -670.659, 0, 0, 0, 0, 243.476, -1403.19)
+"points": PackedVector2Array(0, 0, 0, 0, 55, -102, 0, 0, 0, 0, 55.914, -101, 13.0868, 274.893, -13.0868, -274.893, 135.381, -712.575, 0, 0, 0, 0, 224.935, -1353.29)
 }
 point_count = 4
-
-[sub_resource type="Animation" id="Animation_n8myj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Deaths/Death5:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3326, -4816)]
-}
 
 [sub_resource type="Animation" id="Animation_fbmg5"]
 resource_name = "follow"
@@ -15474,7 +15459,6 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4v5q5"]
 _data = {
-"RESET": SubResource("Animation_n8myj"),
 "follow": SubResource("Animation_fbmg5")
 }
 
@@ -15579,21 +15563,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfgx1"]
 radius = 24.5765
 
-[sub_resource type="Animation" id="Animation_iu164"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Deaths/Death4:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-5312, -3218)]
-}
-
 [sub_resource type="Animation" id="Animation_awgmp"]
 resource_name = "move"
 length = 8.0
@@ -15624,7 +15593,6 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yxtjp"]
 _data = {
-"RESET": SubResource("Animation_iu164"),
 "move": SubResource("Animation_awgmp")
 }
 
@@ -16753,7 +16721,7 @@ autoplay = "default"
 polygon = PackedVector2Array(-79.9999, -110, 78.5715, -110, 98.5715, -92.8567, 111.429, -68.571, 124.286, -39.9998, 132.857, 17.1433, 120, 52.8574, 94.2858, 87.1433, 54.2858, 111.429, -5.71423, 130, -51.4285, 124.286, -87.1428, 98.5718, -87.1428, 98.5718, -117.143, 64.2861, -142.857, 2.85742, -135.714, -39.9998, -114.286, -75.7139)
 
 [node name="Path2D4" type="Path2D" parent="Sky"]
-position = Vector2(1816, -4605)
+position = Vector2(1856, -4605)
 scale = Vector2(2.8586, 1.002)
 curve = SubResource("Curve2D_hg38n")
 script = ExtResource("49_oxy2y")
@@ -16824,14 +16792,15 @@ anim_name = "move"
 metadata/_edit_group_ = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sky/Path2D3"]
-position = Vector2(1782.68, -535.079)
+position = Vector2(1733.58, -975.211)
+progress = 1017.34
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sky/Path2D3/PathFollow2D"]
 remote_path = NodePath("../../Star")
 
 [node name="Star" type="AnimatableBody2D" parent="Sky/Path2D3"]
-position = Vector2(1782.68, -535.079)
+position = Vector2(1733.58, -975.211)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sky/Path2D3/Star"]
 polygon = PackedVector2Array(-58.0096, -2.35901, -54.4452, 3.99036, -45.5343, 8.33459, -27.7125, 11.0081, 0.802429, 13.3473, 47.1392, 12.0106, 66.7431, 9.33716, 86.3472, 5.66125, 93.4759, 0.982788, 89.9115, -5.03247, 75.6541, -9.37671, 63.1788, -11.0476, -27.7125, -11.0476, -40.1877, -9.37671, -52.663, -6.70337)
@@ -17043,10 +17012,10 @@ position = Vector2(1409.15, -950.75)
 position = Vector2(1164, -2787)
 
 [node name="Death4" parent="Deaths" instance=ExtResource("42_bdmk5")]
-position = Vector2(-5312, -3218)
+position = Vector2(-2325, -4026)
 
 [node name="Death5" parent="Deaths" instance=ExtResource("42_bdmk5")]
-position = Vector2(3326, -4816)
+position = Vector2(4501, -4514)
 
 [node name="Ladder" type="Sprite2D" parent="."]
 position = Vector2(-31, 398.8)
