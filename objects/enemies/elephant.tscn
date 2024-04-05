@@ -21,23 +21,23 @@ damage_area = NodePath("DamageArea")
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 texture = ExtResource("2_jevwg")
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Enemy"]
+polygon = PackedVector2Array(-273, 365, -273, 432, -382, 688, -389, 714, -355, 708, -313, 596, -299, 538, -242, 419, -235, 351)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Enemy"]
+polygon = PackedVector2Array(-47, 281, -82, 403, -123, 479, -155, 547, -165, 567, -189, 638, -206, 695, -235, 727, -209, 735, -171, 646, -113, 498, -98, 461, -50, 361, -11, 287)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Enemy"]
+polygon = PackedVector2Array(88, 308, 224, 567, 259, 735, 259, 755, 235, 779, 285, 781, 283, 740, 243, 564, 169, 431, 114, 285)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Enemy"]
+polygon = PackedVector2Array(-137, 365, -123, 445, -113, 543, -110, 615, -118, 694, -123, 728, -141, 744, -105, 760, -98, 727, -103, 656, -95, 516, -98, 373)
+
 [node name="DamageArea" type="Area2D" parent="Enemy"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
 position = Vector2(-169, -97)
 polygon = PackedVector2Array(-215, -37, -173, -45, -146, 2, -126, 69, -137, 107, -143, 138, -130, 165, -122, 199, -131, 227, -146.361, 255.18, -165, 274, -197, 266, -222, 259, -237, 238, -245, 194, -234, 185, -215, 236, -176, 245, -152, 220, -164, 186, -202, 130, -249, 80, -249, 0)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(-273, 365, -273, 432, -382, 688, -389, 714, -355, 708, -313, 596, -299, 538, -242, 419, -235, 351)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(-47, 281, -82, 403, -123, 479, -155, 547, -165, 567, -189, 638, -206, 695, -235, 727, -209, 735, -171, 646, -113, 498, -98, 461, -50, 361, -11, 287)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(88, 308, 224, 567, 259, 735, 259, 755, 235, 779, 285, 781, 283, 740, 243, 564, 169, 431, 114, 285)
-
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(-137, 365, -123, 445, -113, 543, -110, 615, -118, 694, -123, 728, -141, 744, -105, 760, -98, 727, -103, 656, -95, 516, -98, 373)
 
 [node name="walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_gbocx")

@@ -6,6 +6,7 @@ extends Node2D
 @onready var timer = $Timer
 @onready var move_sound = $walk
 @onready var walk_timer = $WalkTimer
+@onready var enemy = $Enemy
 
 var move_speed = 100
 
