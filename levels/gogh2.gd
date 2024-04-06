@@ -4,6 +4,8 @@ extends Level
 @export var layers: Array[Node2D]
 @onready var protagonist_gogh = preload("res://characters/protagonist_gogh.tscn")
 @onready var death_arr = $Deaths
+@onready var level_stars = $Sky/LevelStars
+@onready var anim = $AnimationPlayer
 
 var curr_layer = 1
 
@@ -15,6 +17,9 @@ func _ready():
 	
 	for death in death_arr.get_children():
 		death.respawn.connect(Callable(self, "respawn"))
+	
+	for star in level_stars.get_children():
+		star.level_move.connect(move_death)
 	
 	# Disable the hitboxes of layers 2 - n and make invisible
 	for layer in range(2, layers.size() + 1):
@@ -88,20 +93,7 @@ func respawn():
 	else:
 		get_tree().reload_current_scene()
 
-	
-# Play either the section2 or star section ambience depending on whether the 
-# protag is going up or falling down (obslete, cant fall from star section anymore)
-func _on_section_separator_body_exited(body):
-	if body is Protagonist:
-		if body.position.y < $SectionSeparator.position.y:
-			$NighttimeAmbience.stop()
-			$SoundAmbience.stop_ambience()
-			$StarSectionMusic.play(0)
-		else:
-			$StarSectionMusic.stop()
-			$NighttimeAmbience.play(0)
-			$SoundAmbience.start_ambience()
-			
+
 # Custom level end behavior for Van Gogh 2, combine time with best time from 
 # Van Gogh 1 and save if better
 func level_end(body) -> void:
@@ -120,3 +112,24 @@ func level_end(body) -> void:
 	Global.high_scores.new_last_time(level_name, best_time + time)
 	if best_time + time < best_time:
 		Global.high_scores.new_low_time(level_name, best_time + time)
+	
+	# Go back to the main menu
+	SceneManager.load_new_scene(Global.MENU_PATH)
+
+func move_death(name):
+	if name == "first_move":
+		anim.play("death2_move")
+	elif name == "first_move_2":
+		anim.play("death3_move")
+# Play either the section2 or star section ambience depending on whether the 
+# protag is going up or falling down
+func _on_section_seperator_body_exited(body):
+	if body is Protagonist:
+		if body.position.y < $StarSectionEntrance.position.y:
+			$NighttimeAmbience.stop()
+			$SoundAmbience.stop_ambience()
+			$StarSectionMusic.play(0)
+		else:
+			$StarSectionMusic.stop()
+			$NighttimeAmbience.play(0)
+			$SoundAmbience.start_ambience()

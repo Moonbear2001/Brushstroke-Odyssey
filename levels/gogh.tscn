@@ -845,7 +845,7 @@ metadata/_edit_lock_ = true
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(4753, 273)
+position = Vector2(64, 400)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -854,6 +854,7 @@ energy = 1.5
 blend_mode = 2
 shadow_color = Color(0, 0, 0, 1)
 decrement_per_second = 2.0
+updates_per_second = 6
 
 [node name="Stars" type="Node2D" parent="."]
 position = Vector2(-4, -340)
@@ -882,7 +883,6 @@ shape = SubResource("RectangleShape2D_qrr0h")
 position = Vector2(1272, 1298)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 top_level = true
 color = Color(0, 0, 0.0862745, 1)
 
