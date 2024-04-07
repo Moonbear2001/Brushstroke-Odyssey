@@ -1,8 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://bnld8g82h3sp3"]
+[gd_scene load_steps=16 format=3 uid="uid://bnld8g82h3sp3"]
 
 [ext_resource type="Script" path="res://levels/dali_landscape.gd" id="1_a3v0x"]
-[ext_resource type="Texture2D" uid="uid://b6u64bd5qm5s5" path="res://art/Dali/parallax/bakcground.PNG" id="2_7been"]
-[ext_resource type="Texture2D" uid="uid://dvalnucydmxq6" path="res://art/Dali/parallax/sky.png" id="3_7y4kt"]
 [ext_resource type="Texture2D" uid="uid://4ys2xotcuf1i" path="res://art/Dali/blocks/a1.PNG" id="4_n8bkv"]
 [ext_resource type="Texture2D" uid="uid://baltdfgi2q02y" path="res://art/Dali/blocks/a2.PNG" id="5_pfynf"]
 [ext_resource type="Texture2D" uid="uid://ds0f1hop68dp4" path="res://art/Dali/blocks/a3.PNG" id="6_bp6au"]
@@ -15,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://b3mv5206sahf3" path="res://art/Dali/blocks/b4.PNG" id="13_ghv2n"]
 [ext_resource type="PackedScene" uid="uid://bahnmeoluag07" path="res://objects/death.tscn" id="14_fs6eh"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="15_ed1n8"]
-[ext_resource type="PackedScene" uid="uid://eb8gtde4hxdf" path="res://objects/clock.tscn" id="16_sr84h"]
 [ext_resource type="PackedScene" uid="uid://ddxxd6dsg1s71" path="res://objects/enemies/skin_blob.tscn" id="17_6n6cm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r15p0"]
@@ -36,13 +33,11 @@ motion_scale = Vector2(0.5, 1)
 [node name="Bakcground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(990.465, 502.25)
 scale = Vector2(0.486205, 0.486205)
-texture = ExtResource("2_7been")
 metadata/_edit_lock_ = true
 
 [node name="Sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(987, 498)
 scale = Vector2(0.49, 0.49)
-texture = ExtResource("3_7y4kt")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -147,10 +142,6 @@ texture = ExtResource("10_wiy7c")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/StaticBody2D"]
 polygon = PackedVector2Array(778, 1504, 1373, 1505, 1379, 1685, 1245, 1810, 670, 1815, 680, 1640)
 
-[node name="Clock" parent="Blocks/StaticBody2D" instance=ExtResource("16_sr84h")]
-position = Vector2(1332.5, 1592.5)
-scale = Vector2(0.75, 0.75)
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="Blocks"]
 position = Vector2(415, -698)
 metadata/_edit_group_ = true
@@ -174,10 +165,6 @@ texture = ExtResource("12_dgv6f")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/StaticBody2D3"]
 polygon = PackedVector2Array(2690, 1583, 3111, 1585, 3123, 1923, 2993, 2044, 2590, 2057, 2610, 1720)
-
-[node name="Clock" parent="Blocks/StaticBody2D3" instance=ExtResource("16_sr84h")]
-position = Vector2(3065, 1660)
-scale = Vector2(0.75, 0.75)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Blocks"]
 

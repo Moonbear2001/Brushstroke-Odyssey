@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c408vmc8fet1f"
-path="res://.godot/imported/IMG_0630.PNG-da1a08eacb6aa60265435632dade71c5.ctex"
+uid="uid://coyhx61h4ym7b"
+path="res://.godot/imported/cloud1.png-fe4d98ab9e267f62fc61d03f70fbe0da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/parallax_old/IMG_0630.PNG"
-dest_files=["res://.godot/imported/IMG_0630.PNG-da1a08eacb6aa60265435632dade71c5.ctex"]
+source_file="res://art/Dali/parrallax_water_section/clouds/cloud1.png"
+dest_files=["res://.godot/imported/cloud1.png-fe4d98ab9e267f62fc61d03f70fbe0da.ctex"]
 
 [params]
 

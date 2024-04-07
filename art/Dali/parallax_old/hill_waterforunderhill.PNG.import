@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c408vmc8fet1f"
-path="res://.godot/imported/IMG_0630.PNG-da1a08eacb6aa60265435632dade71c5.ctex"
+uid="uid://dew80qyvi4n0x"
+path="res://.godot/imported/hill_waterforunderhill.PNG-3361022d59afba597d86942d7f5def17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/parallax_old/IMG_0630.PNG"
-dest_files=["res://.godot/imported/IMG_0630.PNG-da1a08eacb6aa60265435632dade71c5.ctex"]
+source_file="res://art/Dali/parallax_old/hill_waterforunderhill.PNG"
+dest_files=["res://.godot/imported/hill_waterforunderhill.PNG-3361022d59afba597d86942d7f5def17.ctex"]
 
 [params]
 

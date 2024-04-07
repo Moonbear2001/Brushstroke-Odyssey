@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c408vmc8fet1f"
-path="res://.godot/imported/IMG_0630.PNG-da1a08eacb6aa60265435632dade71c5.ctex"
+uid="uid://dn1isfp7c4gdl"
+path="res://.godot/imported/water.png-b66b22565dbabb3df3b9d91979f331c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/parallax_old/IMG_0630.PNG"
-dest_files=["res://.godot/imported/IMG_0630.PNG-da1a08eacb6aa60265435632dade71c5.ctex"]
+source_file="res://art/Dali/parrallax_water_section/water.png"
+dest_files=["res://.godot/imported/water.png-b66b22565dbabb3df3b9d91979f331c7.ctex"]
 
 [params]
 
