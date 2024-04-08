@@ -1,108 +1,390 @@
-[gd_scene load_steps=15 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=28 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
+[ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
 [ext_resource type="PackedScene" uid="uid://cyv0src61ekil" path="res://characters/protagonist_dali.tscn" id="2_keris"]
 [ext_resource type="Texture2D" uid="uid://cxhv6ryr7nix6" path="res://art/Dali/blocks/b3.PNG" id="2_m3vv6"]
 [ext_resource type="PackedScene" uid="uid://ddxxd6dsg1s71" path="res://objects/enemies/skin_blob.tscn" id="3_png0t"]
+[ext_resource type="Texture2D" uid="uid://bn5fap6ffx22g" path="res://art/Dali/parallax_layers/backestwater.png" id="3_xqidc"]
+[ext_resource type="Texture2D" uid="uid://ccg7xl1qe3d8w" path="res://art/Dali/parallax_layers/water_background below hils.png" id="4_uopvj"]
 [ext_resource type="AudioStream" uid="uid://gx36ykcr1x26" path="res://audio/music/lost-alone-mysterious-gentle-instrumental-175368.mp3" id="4_utn8h"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
+[ext_resource type="Texture2D" uid="uid://bhvqfvtdcajby" path="res://art/Dali/parallax_layers/backgroundhill1.PNG" id="5_58yj0"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
+[ext_resource type="Texture2D" uid="uid://cjhm346ux0avy" path="res://art/Dali/parallax_layers/backgroundhill2.PNG" id="6_2y0tk"]
 [ext_resource type="PackedScene" uid="uid://dv1kdmuaoduuf" path="res://objects/enemies/elephant.tscn" id="7_qffot"]
+[ext_resource type="Texture2D" uid="uid://bmaijtf500x21" path="res://art/Dali/parallax_layers/ground.png" id="7_y85k8"]
 [ext_resource type="PackedScene" uid="uid://eb8gtde4hxdf" path="res://objects/clock.tscn" id="8_3ka5o"]
+[ext_resource type="Texture2D" uid="uid://dyr71oi01j4ga" path="res://art/Dali/blocks/b1.PNG" id="9_34d6f"]
+[ext_resource type="Texture2D" uid="uid://bkdio6tocjh4" path="res://art/Dali/blocks/b2.PNG" id="10_c5s5p"]
 [ext_resource type="AudioStream" uid="uid://5l5e38rsaghb" path="res://audio/sfx/dali/clock-tick-tock-87936.mp3" id="10_l7u7k"]
-[ext_resource type="PackedScene" uid="uid://bpayqdv7wu7ex" path="res://objects/enemies/face.tscn" id="11_ue2ni"]
+[ext_resource type="Texture2D" uid="uid://b3mv5206sahf3" path="res://art/Dali/blocks/b4.PNG" id="11_jysmu"]
+[ext_resource type="PackedScene" path="res://objects/enemies/face.tscn" id="11_ue2ni"]
+[ext_resource type="Texture2D" uid="uid://bpnw8v4myo62s" path="res://art/Dali/trees/tree1.png" id="21_gsoyd"]
+[ext_resource type="Texture2D" uid="uid://b8ga2f2gkttps" path="res://art/Dali/trees/tree2.png" id="22_tndwd"]
+[ext_resource type="Texture2D" uid="uid://dhinn7rfpt3f2" path="res://art/Dali/trees/tree3.png" id="23_efwcj"]
+[ext_resource type="Texture2D" uid="uid://b0cpsqajrffxd" path="res://art/Dali/trees/ladder.png" id="24_7jgpc"]
+[ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="25_4itko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo6q6"]
-size = Vector2(20, 213)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7y"]
+size = Vector2(3310, 312)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_igxtb"]
-size = Vector2(147, 422)
-
-[node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
+[node name="Dali" type="Node2D" node_paths=PackedStringArray("level_ui", "end")]
 position = Vector2(3, 0)
 script = ExtResource("1_hymu2")
 level_name = "dali"
-protagonist = NodePath("Protagonist")
 level_ui = NodePath("LevelUI")
 end = NodePath("End")
 
-[node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(349, -50)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(3, 0)
+motion_scale = Vector2(0.1, 1)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(3410.08, 234)
+scale = Vector2(1.35739, 1.35739)
+texture = ExtResource("2_5v35k")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 1)
+
+[node name="water" type="Node2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(0, -148)
+
+[node name="Backestwater" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(1529, 522)
+scale = Vector2(0.9825, 0.9825)
+texture = ExtResource("3_xqidc")
+
+[node name="Backestwater2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(4524, 520)
+scale = Vector2(0.9825, 0.9825)
+texture = ExtResource("3_xqidc")
+
+[node name="WaterBackgroundBelowHils" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(2392, 547)
+scale = Vector2(0.395988, 0.395988)
+texture = ExtResource("4_uopvj")
+
+[node name="WaterBackgroundBelowHils2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(7143, 620)
+scale = Vector2(0.395988, 0.395988)
+texture = ExtResource("4_uopvj")
+
+[node name="Backgroundhill1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(2181, 483)
+scale = Vector2(0.235235, 0.235235)
+texture = ExtResource("5_58yj0")
+
+[node name="Backgroundhill2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(1178, 452)
+scale = Vector2(0.314626, 0.314626)
+texture = ExtResource("6_2y0tk")
+
+[node name="Backgroundhill3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(4755, 470)
+scale = Vector2(0.321585, 0.310412)
+texture = ExtResource("6_2y0tk")
+
+[node name="Backgroundhill4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(3, 460)
+scale = Vector2(0.323945, 0.323945)
+texture = ExtResource("5_58yj0")
+
+[node name="Backgroundhill5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+position = Vector2(3494, 467)
+scale = Vector2(0.158883, 0.158883)
+texture = ExtResource("5_58yj0")
 
 [node name="End" type="Area2D" parent="."]
-position = Vector2(1187, -74)
+position = Vector2(6554, 560)
 scale = Vector2(1, 5.72)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(2, -0.699301)
 shape = SubResource("RectangleShape2D_qrr0h")
-
-[node name="Label" type="Label" parent="End"]
-offset_left = -8.0
-offset_top = -2.09791
-offset_right = 32.0
-offset_bottom = 20.9021
-scale = Vector2(1.86028, 0.992966)
-text = "End"
 
 [node name="Platforms" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
-position = Vector2(40, 130)
-collision_layer = 3
-collision_mask = 3
+[node name="Ground" type="Node2D" parent="Platforms"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
-position = Vector2(-3, 103)
-scale = Vector2(125.68, 1)
-shape = SubResource("RectangleShape2D_yo6q6")
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Ground"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms"]
-position = Vector2(1361, -120)
+[node name="Ground" type="Sprite2D" parent="Platforms/Ground/StaticBody2D"]
+position = Vector2(1647, 485)
+scale = Vector2(0.4475, 0.4475)
+texture = ExtResource("7_y85k8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D3"]
-shape = SubResource("RectangleShape2D_igxtb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground/StaticBody2D"]
+position = Vector2(1630, 783)
+shape = SubResource("RectangleShape2D_c5q7y")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="Platforms"]
-position = Vector2(-660, 60)
+[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/Ground"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Ground2" type="Sprite2D" parent="Platforms/Ground/StaticBody2D2"]
+position = Vector2(4944, 485)
+scale = Vector2(0.4475, 0.4475)
+texture = ExtResource("7_y85k8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground/StaticBody2D2"]
+position = Vector2(4930, 783)
+shape = SubResource("RectangleShape2D_c5q7y")
+
+[node name="Blocks" type="Node2D" parent="Platforms"]
+
+[node name="block" type="StaticBody2D" parent="Platforms/Blocks"]
+position = Vector2(256, 616)
 scale = Vector2(0.2, 0.2)
 metadata/_edit_group_ = true
 
-[node name="B3" type="Sprite2D" parent="Platforms/StaticBody2D6"]
+[node name="b1" type="Sprite2D" parent="Platforms/Blocks/block"]
 texture = ExtResource("2_m3vv6")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D6"]
-polygon = PackedVector2Array(-300, -50, -310, 300, 115, 290, 370, 65, 365, -275, -90, -290)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block"]
+polygon = PackedVector2Array(-300, -50, -310, 300, 115, 290, 260, 170, 240, -150, -185, -180)
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Platforms"]
-position = Vector2(36, 130)
+[node name="block4" type="StaticBody2D" parent="Platforms/Blocks"]
+position = Vector2(87, -2174)
+metadata/_edit_group_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/StaticBody2D5"]
-position = Vector2(-1432, 4.99997)
-scale = Vector2(0.651402, 2.89805)
-polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
+[node name="b4" type="Sprite2D" parent="Platforms/Blocks/block4"]
+position = Vector2(2273, 1265)
+scale = Vector2(0.556137, 0.556137)
+texture = ExtResource("10_c5s5p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block4"]
+polygon = PackedVector2Array(2117, 1211, 2121, 1454, 2290, 1455, 2369, 1374, 2361, 1150, 2169, 1147)
+
+[node name="block5" type="StaticBody2D" parent="Platforms/Blocks"]
+position = Vector2(-468, -2764)
+metadata/_edit_group_ = true
+
+[node name="b5" type="Sprite2D" parent="Platforms/Blocks/block5"]
+position = Vector2(3792, 1849)
+texture = ExtResource("11_jysmu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block5"]
+polygon = PackedVector2Array(3582, 1769, 3995, 1768, 4001, 1953, 3884, 2073, 3469, 2072, 3484, 1898)
+
+[node name="block6" type="StaticBody2D" parent="Platforms/Blocks"]
+position = Vector2(246, 77)
+scale = Vector2(0.4, 0.4)
+metadata/_edit_group_ = true
+
+[node name="b4" type="Sprite2D" parent="Platforms/Blocks/block6"]
+position = Vector2(2273, 1265)
+scale = Vector2(0.556137, 0.556137)
+texture = ExtResource("10_c5s5p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block6"]
+polygon = PackedVector2Array(2110, 1215, 2100, 1452.5, 2290, 1455, 2369, 1374, 2361, 1150, 2169, 1147)
+
+[node name="block7" type="StaticBody2D" parent="Platforms/Blocks"]
+position = Vector2(1780, -68)
+scale = Vector2(0.4, 0.4)
+metadata/_edit_group_ = true
+
+[node name="b3" type="Sprite2D" parent="Platforms/Blocks/block7"]
+position = Vector2(1089, 1599)
+texture = ExtResource("9_34d6f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block7"]
+polygon = PackedVector2Array(778, 1504, 1373, 1505, 1379, 1685, 1245, 1810, 645, 1820, 680, 1640)
+
+[node name="block2" type="StaticBody2D" parent="Platforms/Blocks"]
+position = Vector2(3786, 603)
+scale = Vector2(0.2, 0.2)
+metadata/_edit_group_ = true
+
+[node name="b1" type="Sprite2D" parent="Platforms/Blocks/block2"]
+texture = ExtResource("2_m3vv6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block2"]
+polygon = PackedVector2Array(-300, -50, -310, 300, 115, 290, 250.002, 140, 220.002, -165, -154.998, -195)
+
+[node name="block8" type="StaticBody2D" parent="Platforms/Blocks"]
+position = Vector2(3811, -345)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="b5" type="Sprite2D" parent="Platforms/Blocks/block8"]
+position = Vector2(3792, 1849)
+texture = ExtResource("11_jysmu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block8"]
+polygon = PackedVector2Array(3582, 1769, 3995, 1768, 4001, 1953, 3884, 2073, 3469, 2072, 3484, 1898)
+
+[node name="Trees" type="Node2D" parent="Platforms"]
+
+[node name="tree1" type="Node2D" parent="Platforms/Trees"]
+position = Vector2(-3, -39)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Trees/tree1"]
+
+[node name="Tree2" type="Sprite2D" parent="Platforms/Trees/tree1/StaticBody2D"]
+position = Vector2(1141.03, 378.639)
+scale = Vector2(0.370453, 0.370453)
+texture = ExtResource("22_tndwd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Trees/tree1/StaticBody2D"]
+polygon = PackedVector2Array(1064, 460, 1130, 447, 1174, 441, 1221, 442, 1258, 435, 1312, 434, 1250, 441, 1223, 447, 1155, 448, 1065, 472)
+
+[node name="ladder" type="Node2D" parent="Platforms/Trees/tree1"]
+metadata/_edit_group_ = true
+
+[node name="Ladder" type="Sprite2D" parent="Platforms/Trees/tree1/ladder"]
+position = Vector2(1046, 552)
+scale = Vector2(0.337366, 0.337366)
+texture = ExtResource("24_7jgpc")
+
+[node name="Climb" parent="Platforms/Trees/tree1/ladder" instance=ExtResource("25_4itko")]
+position = Vector2(1041, 553)
+rotation = 0.0698132
+scale = Vector2(0.7, 1.3)
+
+[node name="tree2" type="Node2D" parent="Platforms/Trees"]
+position = Vector2(32, -77)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Trees/tree2"]
+
+[node name="Tree3" type="Sprite2D" parent="Platforms/Trees/tree2/StaticBody2D"]
+position = Vector2(2562.61, 433.25)
+scale = Vector2(0.563679, 0.563679)
+texture = ExtResource("23_efwcj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Trees/tree2/StaticBody2D"]
+polygon = PackedVector2Array(2447, 403, 2594, 376, 2707, 377, 2772, 366, 2836, 364, 2751, 374, 2705, 386, 2602, 382, 2446, 421)
+
+[node name="ladder" type="Node2D" parent="Platforms/Trees/tree2"]
+position = Vector2(116, -252)
+scale = Vector2(1.4, 1.4)
+metadata/_edit_group_ = true
+
+[node name="Ladder" type="Sprite2D" parent="Platforms/Trees/tree2/ladder"]
+position = Vector2(1646.52, 568.897)
+scale = Vector2(0.337366, 0.337366)
+texture = ExtResource("24_7jgpc")
+
+[node name="Climb" parent="Platforms/Trees/tree2/ladder" instance=ExtResource("25_4itko")]
+position = Vector2(1641.52, 569.897)
+rotation = 0.0698132
+scale = Vector2(0.7, 1.3)
+
+[node name="tree3" type="Node2D" parent="Platforms/Trees"]
+position = Vector2(32, -77)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Trees/tree3"]
+
+[node name="Tree1" type="Sprite2D" parent="Platforms/Trees/tree3/StaticBody2D"]
+position = Vector2(3279, 338)
+scale = Vector2(0.567797, 0.567797)
+texture = ExtResource("21_gsoyd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Trees/tree3/StaticBody2D"]
+polygon = PackedVector2Array(2811, 365, 2895, 351, 2968, 328, 3074, 357, 3223, 342, 3289, 337, 3369, 359, 3384, 374, 3365, 403, 3342, 362, 3263, 349, 3163, 355, 3100, 362, 3067, 362, 2973, 336, 2882, 360)
+
+[node name="ladder" type="Node2D" parent="Platforms/Trees/tree3"]
+position = Vector2(927, -299)
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Ladder" type="Sprite2D" parent="Platforms/Trees/tree3/ladder"]
+position = Vector2(1646.52, 568.897)
+scale = Vector2(0.337366, 0.337366)
+texture = ExtResource("24_7jgpc")
+
+[node name="Climb" parent="Platforms/Trees/tree3/ladder" instance=ExtResource("25_4itko")]
+position = Vector2(1641.52, 569.897)
+rotation = 0.0698132
+scale = Vector2(0.7, 1.3)
+
+[node name="tree4" type="Node2D" parent="Platforms/Trees"]
+position = Vector2(3203, -21)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Trees/tree4"]
+
+[node name="Tree2" type="Sprite2D" parent="Platforms/Trees/tree4/StaticBody2D"]
+position = Vector2(1141.03, 378.639)
+scale = Vector2(0.370453, 0.370453)
+texture = ExtResource("22_tndwd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Trees/tree4/StaticBody2D"]
+polygon = PackedVector2Array(1064, 460, 1130, 447, 1174, 441, 1221, 442, 1258, 435, 1312, 434, 1250, 441, 1223, 447, 1155, 448, 1065, 472)
+
+[node name="ladder" type="Node2D" parent="Platforms/Trees/tree4"]
+metadata/_edit_group_ = true
+
+[node name="Ladder" type="Sprite2D" parent="Platforms/Trees/tree4/ladder"]
+position = Vector2(1046, 552)
+scale = Vector2(0.337366, 0.337366)
+texture = ExtResource("24_7jgpc")
+
+[node name="Climb" parent="Platforms/Trees/tree4/ladder" instance=ExtResource("25_4itko")]
+position = Vector2(1041, 553)
+rotation = 0.0698132
+scale = Vector2(0.7, 1.3)
 
 [node name="Clock" parent="." instance=ExtResource("8_3ka5o")]
-position = Vector2(-621, 43)
+position = Vector2(295, 599)
 scale = Vector2(0.15, 0.15)
+
+[node name="Protagonist" parent="." instance=ExtResource("2_keris")]
+position = Vector2(89, 622)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Elephant" parent="Enemies" instance=ExtResource("7_qffot")]
-position = Vector2(-398, -65)
+[node name="Elephant" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("7_qffot")]
+position = Vector2(417, -982)
 scale = Vector2(0.2, 0.2)
+protagonist = NodePath("../../Protagonist")
 audio_dist = 700.0
 
 [node name="SkinBlob" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
-position = Vector2(917, 78)
-scale = Vector2(0.1, 0.1)
+position = Vector2(741, 587)
+scale = Vector2(0.2, 0.2)
 protagonist = NodePath("../../Protagonist")
 audio_dist = 700.0
 
 [node name="Face" parent="Enemies" instance=ExtResource("11_ue2ni")]
-position = Vector2(160, -180)
+position = Vector2(808, -1066)
 scale = Vector2(3, 3)
+
+[node name="SkinBlob2" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
+position = Vector2(1744, 545)
+scale = Vector2(0.4, 0.4)
+protagonist = NodePath("../../Protagonist")
+audio_dist = 700.0
+
+[node name="SkinBlob3" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
+position = Vector2(5127, 571)
+scale = Vector2(0.2, 0.2)
+protagonist = NodePath("../../Protagonist")
+audio_dist = 700.0
+
+[node name="SkinBlob4" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
+position = Vector2(4844, 575)
+scale = Vector2(0.1, 0.1)
+protagonist = NodePath("../../Protagonist")
+audio_dist = 700.0
+
+[node name="SkinBlob5" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
+position = Vector2(4051, 578)
+scale = Vector2(0.15, 0.15)
+protagonist = NodePath("../../Protagonist")
+audio_dist = 700.0
 
 [node name="Stars" type="Node2D" parent="."]
 visible = false
@@ -115,7 +397,10 @@ scale = Vector2(0.05, 0.05)
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-3, 0)
+position = Vector2(963, 538)
+limit_left = 0
+limit_top = 0
+limit_bottom = 725
 
 [node name="Background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_utn8h")

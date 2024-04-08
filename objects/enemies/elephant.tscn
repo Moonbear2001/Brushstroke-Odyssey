@@ -42,12 +42,15 @@ polygon = PackedVector2Array(-215, -37, -173, -45, -146, 2, -126, 69, -137, 107,
 [node name="walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_gbocx")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="pre-attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_lpyxh")
+bus = &"SFX"
 
 [node name="hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_w2ubs")
+bus = &"SFX"
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.5

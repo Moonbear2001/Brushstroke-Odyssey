@@ -26,10 +26,8 @@ animations = [{
 script = ExtResource("1_jmo0d")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
-current = true
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_area", "weak_area")]
-collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_2c58v")
 damage_area = NodePath("DamageArea")
@@ -68,11 +66,13 @@ bus = &"SFX"
 stream = ExtResource("5_1xxiu")
 volume_db = 2.0
 max_polyphony = 3
+bus = &"SFX"
 
 [node name="die" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_mpoxv")
 volume_db = 1.0
 pitch_scale = 0.78
 max_polyphony = 3
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
