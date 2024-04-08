@@ -16792,15 +16792,14 @@ anim_name = "move"
 metadata/_edit_group_ = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sky/Path2D3"]
-position = Vector2(1733.58, -975.211)
-progress = 1017.34
+position = Vector2(1782.68, -535.079)
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sky/Path2D3/PathFollow2D"]
 remote_path = NodePath("../../Star")
 
 [node name="Star" type="AnimatableBody2D" parent="Sky/Path2D3"]
-position = Vector2(1733.58, -975.211)
+position = Vector2(1782.68, -535.079)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sky/Path2D3/Star"]
 polygon = PackedVector2Array(-58.0096, -2.35901, -54.4452, 3.99036, -45.5343, 8.33459, -27.7125, 11.0081, 0.802429, 13.3473, 47.1392, 12.0106, 66.7431, 9.33716, 86.3472, 5.66125, 93.4759, 0.982788, 89.9115, -5.03247, 75.6541, -9.37671, 63.1788, -11.0476, -27.7125, -11.0476, -40.1877, -9.37671, -52.663, -6.70337)
@@ -17012,7 +17011,7 @@ position = Vector2(1409.15, -950.75)
 position = Vector2(1164, -2787)
 
 [node name="Death4" parent="Deaths" instance=ExtResource("42_bdmk5")]
-position = Vector2(-2325, -4026)
+position = Vector2(-5312, -3218)
 
 [node name="Death5" parent="Deaths" instance=ExtResource("42_bdmk5")]
 position = Vector2(4501, -4514)

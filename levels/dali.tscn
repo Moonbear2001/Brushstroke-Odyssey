@@ -87,9 +87,6 @@ polygon = PackedVector2Array(292, -29, 290, -181, 694, -191, 709, -12)
 position = Vector2(-621, 43)
 scale = Vector2(0.15, 0.15)
 
-[node name="Protagonist2" parent="." instance=ExtResource("2_keris")]
-position = Vector2(-212, 65)
-
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Elephant" parent="Enemies" instance=ExtResource("7_qffot")]
