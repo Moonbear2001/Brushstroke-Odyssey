@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c408vmc8fet1f"
-path="res://.godot/imported/IMG_0630.PNG-0d365266f422098170fece71184524ae.ctex"
+path="res://.godot/imported/IMG_0630.PNG-da1a08eacb6aa60265435632dade71c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/parallax/IMG_0630.PNG"
-dest_files=["res://.godot/imported/IMG_0630.PNG-0d365266f422098170fece71184524ae.ctex"]
+source_file="res://art/Dali/parallax_old/IMG_0630.PNG"
+dest_files=["res://.godot/imported/IMG_0630.PNG-da1a08eacb6aa60265435632dade71c5.ctex"]
 
 [params]
 
