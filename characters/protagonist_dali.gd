@@ -8,6 +8,9 @@ var health = 2
 var is_thrown = false
 var throw_velocity = 400
 
+func _ready():
+	super._ready()
+
 func _process(delta):
 	if is_thrown and is_on_floor():
 		is_thrown = false

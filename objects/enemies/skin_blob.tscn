@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ddxxd6dsg1s71"]
 
-[ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_2c58v"]
+[ext_resource type="Script" path="res://objects/enemies/enemy_path.gd" id="1_e3ee8"]
 [ext_resource type="Script" path="res://objects/enemies/skin_blob.gd" id="1_jmo0d"]
 [ext_resource type="Texture2D" uid="uid://buchwsvnkqior" path="res://art/Dali/creatures/skinthing.PNG" id="2_vbomy"]
 [ext_resource type="AudioStream" uid="uid://c1joogmccbdxr" path="res://audio/sfx/dali/squelch-106250.mp3" id="4_acqxo"]
@@ -22,23 +22,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SkinBlob" type="Node2D"]
-script = ExtResource("1_jmo0d")
-
-[node name="AudioListener2D" type="AudioListener2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" groups=["enemy"]]
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("1_e3ee8")
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_area", "weak_area")]
 collision_mask = 0
-script = ExtResource("1_2c58v")
+script = ExtResource("1_jmo0d")
 damage_area = NodePath("DamageArea")
 weak_area = NodePath("WeakArea")
+
+[node name="DeathTimer" type="Timer" parent="Enemy"]
+wait_time = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
 sprite_frames = SubResource("SpriteFrames_hwrxh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy"]
-position = Vector2(3, -1)
-polygon = PackedVector2Array(-312, 1, -264, -26, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 8, 410, 5, 435, -5, 438, 1, 410, 31, 384, 47, 341, 58, 189, 33, 113, 60, 66, 88, 28, 146, 13, 151, -32, 139, -45, 139, -89, 206, -96, 209, -108, 207, -137, 156, -148, 152)
+position = Vector2(4, -1)
+polygon = PackedVector2Array(-312, 1, -264, -26, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 8, 341, 58, 189, 33, 113, 60, 66, 88, 28, 146, 13, 151, -32, 139, -45, 139, -89, 206, -96, 209, -108, 207, -137, 156, -148, 152)
 
 [node name="DamageArea" type="Area2D" parent="Enemy"]
 position = Vector2(0, -2)
@@ -53,26 +57,25 @@ position = Vector2(6, -7)
 position = Vector2(-1, -3)
 polygon = PackedVector2Array(-264, -26, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 8)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+[node name="AudioListener2D" type="AudioListener2D" parent="Enemy"]
 
-[node name="move" type="AudioStreamPlayer2D" parent="."]
+[node name="move" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("4_acqxo")
 volume_db = 1.5
 max_polyphony = 3
 bus = &"SFX"
 
-[node name="hit" type="AudioStreamPlayer2D" parent="."]
+[node name="hit" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("5_1xxiu")
 volume_db = 2.0
 max_polyphony = 3
 bus = &"SFX"
 
-[node name="die" type="AudioStreamPlayer2D" parent="."]
+[node name="die" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("6_mpoxv")
 volume_db = 1.0
 pitch_scale = 0.78
 max_polyphony = 3
 bus = &"SFX"
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Enemy/DeathTimer" to="Enemy" method="_on_death_timer_timeout"]
