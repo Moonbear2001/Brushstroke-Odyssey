@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=40 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -219,7 +219,6 @@ shape = SubResource("RectangleShape2D_c5q7y")
 [node name="GroundSlant" type="Sprite2D" parent="Platforms/Ground/StaticBody2D4"]
 position = Vector2(10771.8, 606.75)
 scale = Vector2(0.252422, 0.252422)
-texture = ExtResource("12_v7cvt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground/StaticBody2D4"]
 position = Vector2(11539, 784)
@@ -555,11 +554,9 @@ curve = SubResource("Curve2D_hppr8")
 position = Vector2(500, 0)
 scale = Vector2(0.5, 0.5)
 
-[node name="SkinBlob6" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
+[node name="SkinBlob6" parent="Enemies" instance=ExtResource("3_png0t")]
 position = Vector2(5884, 561)
 scale = Vector2(0.15, 0.15)
-protagonist = NodePath("../../Protagonist")
-audio_dist = 700.0
 
 [node name="Foreground Rocks" type="Node2D" parent="."]
 position = Vector2(0, -30)
