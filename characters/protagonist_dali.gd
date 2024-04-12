@@ -10,7 +10,7 @@ var throw_velocity = 400
 
 # Currently the distortion level is increased when the character takes damage,
 # but distortion and health are separate
-var distortion: int = 3
+var distortion: int = 0
 
 func _ready():
 	super._ready()
@@ -28,7 +28,8 @@ func take_damage(amount, is_clock=false):
 	if health >= 5 and amount == -1:
 		return false
 	health -= amount
-	distortion += amount
+	if distortion < 5:
+		distortion += 1
 	if health <= 0:
 		pass
 	return true
