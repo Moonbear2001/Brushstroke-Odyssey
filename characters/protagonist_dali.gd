@@ -8,7 +8,9 @@ var health = 2
 var is_thrown = false
 var throw_velocity = 400
 
-var melt: int = 3
+# Currently the distortion level is increased when the character takes damage,
+# but distortion and health are separate
+var distortion: int = 3
 
 func _ready():
 	super._ready()
@@ -26,9 +28,9 @@ func take_damage(amount, is_clock=false):
 	if health >= 5 and amount == -1:
 		return false
 	health -= amount
+	distortion += amount
 	if health <= 0:
 		pass
-		#death
 	return true
 
 func throw(direction):
@@ -41,4 +43,4 @@ func throw(direction):
 func get_anim_name(anim_name: String):
 	if anim_name in ["Climb", "CrouchLeft", "CrouchRight"]:
 		return anim_name + "_Dali"
-	return anim_name + "_Dali_" + str(melt)
+	return anim_name + "_Dali_" + str(distortion)
