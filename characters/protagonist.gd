@@ -65,7 +65,6 @@ func use_gravity(delta):
 		set_jump_animation()
 	
 	if climb and Input.is_action_pressed("climb"):
-		#velocity = Vector2(0, -SPEED)
 		velocity = climb_slope * SPEED
 		anim.play(get_anim_name("Climb"))
 		return

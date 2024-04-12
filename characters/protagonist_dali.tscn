@@ -58,13 +58,13 @@ region = Rect2(2116, 12528, 529, 696)
 atlas = ExtResource("3_wbss3")
 region = Rect2(0, 10440, 529, 696)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0c131"]
-atlas = ExtResource("3_wbss3")
-region = Rect2(529, 10440, 529, 696)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmj63"]
 atlas = ExtResource("3_wbss3")
 region = Rect2(1058, 10440, 529, 696)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c131"]
+atlas = ExtResource("3_wbss3")
+region = Rect2(529, 10440, 529, 696)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xg32n"]
 atlas = ExtResource("3_wbss3")
@@ -243,10 +243,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_i6rgu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0c131")
+"texture": SubResource("AtlasTexture_bmj63")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bmj63")
+"texture": SubResource("AtlasTexture_0c131")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xg32n")
@@ -567,6 +567,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [&"Idle_default"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Reflection:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 2, 1, 3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Reflection:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"Idle_default"]
+}
 
 [sub_resource type="Animation" id="Animation_w0lst"]
 resource_name = "JumpCenter_default"
@@ -687,10 +711,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.08, 0.1, 0.16, 0.24, 0.32),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [4, 3, 2, 1, 0]
+"values": [4, 3, 4, 2, 1, 0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -703,6 +727,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"RunLeft_default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Reflection:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("Reflection:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"RunRight_default"]
 }
 
 [sub_resource type="Animation" id="Animation_m431g"]
@@ -733,6 +781,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [&"RunRight_default"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Reflection:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("Reflection:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"RunLeft_default"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bwlin"]
 _data = {
@@ -755,7 +827,7 @@ _data = {
 radius = 12.0
 height = 44.0
 
-[node name="Protagonist" type="CharacterBody2D" groups=["protagonist"]]
+[node name="ProtagonistDali" type="CharacterBody2D" groups=["protagonist"]]
 slide_on_ceiling = false
 script = ExtResource("1_dktyh")
 
@@ -764,6 +836,15 @@ position = Vector2(-3, 0)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_thnrl")
 animation = &"FallCenter_default"
+
+[node name="Reflection" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.152941)
+z_index = -1
+position = Vector2(3, 49)
+rotation = 3.14159
+scale = Vector2(0.085, 0.085)
+sprite_frames = SubResource("SpriteFrames_thnrl")
+animation = &"RunRight_default"
 
 [node name="InteractionComponents" type="Node2D" parent="."]
 

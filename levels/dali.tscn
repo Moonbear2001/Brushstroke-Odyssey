@@ -163,7 +163,8 @@ position = Vector2(-7, -30)
 [node name="Water" type="Node2D" parent="Platforms"]
 
 [node name="Water" type="Sprite2D" parent="Platforms/Water"]
-position = Vector2(11973.4, 656.375)
+z_index = -2
+position = Vector2(11709, 658)
 scale = Vector2(0.3522, 0.385417)
 texture = ExtResource("8_au30o")
 
@@ -493,7 +494,7 @@ scale = Vector2(0.413055, 0.413055)
 texture = ExtResource("33_3js5q")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(246, 517)
+position = Vector2(9606, 506)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
