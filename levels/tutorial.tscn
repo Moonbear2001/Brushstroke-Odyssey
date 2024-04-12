@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=28 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist_escher.tscn" id="1_3wox7"]
 [ext_resource type="Script" path="res://levels/level.gd" id="1_b2fp5"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://mwc0pgttbsej" path="res://art/L0/Rectangle 26.png" id="18_kdiem"]
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="21_n74nv"]
+[ext_resource type="PackedScene" uid="uid://dnjkxkejv3y1a" path="res://interaction/text_box.tscn" id="22_k6tbf"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="22_r7ynq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0doj"]
@@ -75,6 +76,7 @@ end = NodePath("End")
 ignore_rotation = false
 limit_left = 0
 limit_top = -5
+limit_right = 3400
 limit_bottom = 660
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
@@ -96,7 +98,7 @@ position = Vector2(301, 374)
 texture = ExtResource("18_mr6vo")
 
 [node name="Protagonist" parent="." instance=ExtResource("1_3wox7")]
-position = Vector2(208, 350)
+position = Vector2(194, 333)
 
 [node name="Death" parent="." instance=ExtResource("15_yj68c")]
 
@@ -362,6 +364,7 @@ position = Vector2(-130, 122)
 shape = SubResource("RectangleShape2D_xjnas")
 
 [node name="Stars" type="Node2D" parent="."]
+visible = false
 
 [node name="Star1" parent="Stars" instance=ExtResource("22_r7ynq")]
 position = Vector2(368, 282)
@@ -369,5 +372,62 @@ scale = Vector2(0.05, 0.05)
 
 [node name="LevelUI" parent="." instance=ExtResource("21_n74nv")]
 visible = false
+
+[node name="Container" type="Container" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = 247.0
+offset_right = 110.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="TextBox" parent="Container" instance=ExtResource("22_k6tbf")]
+layout_direction = 1
+layout_mode = 2
+text_to_display = "[->] to go right"
+
+[node name="Container2" type="Container" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 114.0
+offset_top = 273.0
+offset_right = 114.0
+offset_bottom = 273.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="TextBox2" parent="Container2" instance=ExtResource("22_k6tbf")]
+layout_direction = 1
+layout_mode = 2
+text_to_display = "[<-] to go left"
+
+[node name="Container3" type="Container" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 205.0
+offset_top = 273.0
+offset_right = 205.0
+offset_bottom = 273.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="TextBox3" parent="Container3" instance=ExtResource("22_k6tbf")]
+layout_direction = 1
+layout_mode = 2
+text_to_display = "[Space] to jump"
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]

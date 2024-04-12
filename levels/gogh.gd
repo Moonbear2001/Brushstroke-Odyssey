@@ -16,6 +16,8 @@ Custom level script for the Van Gogh level.
 @onready var trees = $"Layers/1/Trees"
 @onready var parallax_foreground = $ParallaxBackground2
 
+const protag_scale = Vector2(1.2, 1.2)
+
 var windArr: Array[Node2D]
 var wind = preload("res://objects/wind.tscn")
 var smallwind = preload("res://objects/small_wind/breeze.tscn")
@@ -76,6 +78,7 @@ func respawn():
 	# Check if a valid x value was found
 	if greatest_x_below_target != -INF:	
 		var duplicatedNode = protagonist_gogh.instantiate()
+		duplicatedNode.set_scale(protag_scale)
 		var duplicateLantern = new_lantern.instantiate()
 		duplicatedNode.add_child(duplicateLantern)
 		duplicatedNode.glow = true

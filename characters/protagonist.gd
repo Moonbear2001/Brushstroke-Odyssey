@@ -48,7 +48,7 @@ func _physics_process(delta):
 
 
 # Handle input events, gets called before physics process
-func _input(s):
+func _input(_s):
 	if not enabled or input_disabled:
 		return
 

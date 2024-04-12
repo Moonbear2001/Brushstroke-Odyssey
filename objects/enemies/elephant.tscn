@@ -1,22 +1,40 @@
 [gd_scene load_steps=7 format=3 uid="uid://dv1kdmuaoduuf"]
 
+[ext_resource type="Script" path="res://objects/enemies/enemy_path.gd" id="1_l6w02"]
 [ext_resource type="Script" path="res://objects/enemies/elephant.gd" id="1_n2k5q"]
-[ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_xpor0"]
 [ext_resource type="Texture2D" uid="uid://bcfrm7vqrhmlj" path="res://art/Dali/creatures/elephant.PNG" id="2_jevwg"]
 [ext_resource type="AudioStream" uid="uid://di70snplm8pqt" path="res://audio/sfx/dali/marching-loop-32908.mp3" id="4_gbocx"]
 [ext_resource type="AudioStream" uid="uid://rxc66ntfg3fg" path="res://audio/sfx/dali/angry-elephant-40916.mp3" id="5_lpyxh"]
 [ext_resource type="AudioStream" uid="uid://celmtilskcsnw" path="res://audio/sfx/dali/mixed-whip-crack-1-102825.mp3" id="6_w2ubs"]
 
-[node name="Elephant" type="Node2D"]
-script = ExtResource("1_n2k5q")
-
-[node name="Timer" type="Timer" parent="."]
+[node name="Elephant" type="PathFollow2D" groups=["enemy"]]
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("1_l6w02")
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_area")]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_xpor0")
+script = ExtResource("1_n2k5q")
 damage_area = NodePath("DamageArea")
+
+[node name="walk" type="AudioStreamPlayer2D" parent="Enemy"]
+stream = ExtResource("4_gbocx")
+volume_db = -15.0
+bus = &"SFX"
+
+[node name="pre-attack" type="AudioStreamPlayer2D" parent="Enemy"]
+stream = ExtResource("5_lpyxh")
+bus = &"SFX"
+
+[node name="hit" type="AudioStreamPlayer2D" parent="Enemy"]
+stream = ExtResource("6_w2ubs")
+bus = &"SFX"
+
+[node name="WalkTimer" type="Timer" parent="Enemy"]
+wait_time = 0.5
+autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 texture = ExtResource("2_jevwg")
@@ -39,22 +57,4 @@ polygon = PackedVector2Array(-137, 365, -123, 445, -113, 543, -110, 615, -118, 6
 position = Vector2(-169, -97)
 polygon = PackedVector2Array(-215, -37, -173, -45, -146, 2, -126, 69, -137, 107, -143, 138, -130, 165, -122, 199, -131, 227, -146.361, 255.18, -165, 274, -197, 266, -222, 259, -237, 238, -245, 194, -234, 185, -215, 236, -176, 245, -152, 220, -164, 186, -202, 130, -249, 80, -249, 0)
 
-[node name="walk" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_gbocx")
-volume_db = -15.0
-bus = &"SFX"
-
-[node name="pre-attack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_lpyxh")
-bus = &"SFX"
-
-[node name="hit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_w2ubs")
-bus = &"SFX"
-
-[node name="WalkTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+[connection signal="timeout" from="Enemy/WalkTimer" to="." method="_on_walk_timer_timeout"]

@@ -22,7 +22,7 @@ func _ready():
 	anim.play("2")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if in_range:
 		if Input.is_action_just_pressed("interact"):
 			is_speeding_up = true

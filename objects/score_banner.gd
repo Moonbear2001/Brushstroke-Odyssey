@@ -20,7 +20,6 @@ var moving: bool = false
 var inside: bool = false
 
 func _ready():
-	print("Level name: ", level_name)
 	
 	# Reset position
 	sprite.position = Vector2.ZERO

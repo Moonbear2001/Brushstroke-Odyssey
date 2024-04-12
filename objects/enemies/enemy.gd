@@ -7,40 +7,25 @@ Base enemy class.
 
 @export var damage_area: Area2D
 @export var weak_area: Area2D
-@export var use_gravity = false
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = Vector2.LEFT  # Initial movement direction
 
-var attack: Callable = func(body, direction):
-	pass
-
 # Let each enemy define its own idle animation/movement pattern
-var idle: Callable = func(body, direction):
-	pass
-
-var move: Callable = func(delta):
+func idle(_body, _direction):
 	pass
 
 func _ready():
-	damage_area.connect("body_entered", Callable(self, "collide"))
+	damage_area.connect("body_entered", Callable(self, "attack"))
 
-func _process(delta):
-	move.call(delta)
-	move_and_slide()
+func _process(_delta):
+	pass
 
 func change_direction():
 	scale.x *= -1
-	direction.x *= -1
-	# acts as an offset so that when the enemy flips, the tail end does not collide with the barrier again 
-	# and trigger body_entered again
-	global_position.x += 25 * direction.x
-
-func collide(body):
+	direction *= -1
+	
+func attack(body):
 	if body.is_in_group("protagonist"):
-		attack.call(body, direction)
-	else:
-		change_direction()
-		
-func add_gravity():
-	use_gravity = true
+		$hit.play()
+		body.throw(direction.x)
+		body.take_damage(1)

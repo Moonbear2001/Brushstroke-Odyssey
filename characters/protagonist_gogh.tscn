@@ -2297,7 +2297,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Protagonist" type="CharacterBody2D" groups=["protagonist"]]
+[node name="ProtagonistGogh" type="CharacterBody2D" groups=["protagonist"]]
 slide_on_ceiling = false
 script = ExtResource("1_y5gtv")
 

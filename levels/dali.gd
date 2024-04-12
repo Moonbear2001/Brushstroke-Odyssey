@@ -7,6 +7,7 @@ var enemy_speed = {"skin_blob": 100, "elephant": 100}
 @onready var tick_sound = $Tick
 
 func _ready():
+	super._ready()
 	for node in enemies.get_children():
 		clock.speed_up.connect(speed_up)
 		clock.slow_down.connect(slow_down)
@@ -15,7 +16,7 @@ func speed_up():
 	var valid = protagonist.take_damage(-1, true)
 	if valid:
 		timer.wait_time /= 2
-		for node in enemies.get_children():
+		for node in get_tree().get_nodes_in_group("enemy"):
 			node.increase_speed()
 		clock.anim.play(str(protagonist.health))
 

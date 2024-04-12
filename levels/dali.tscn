@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=40 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://cqpylcjuw2fe1" path="res://art/Dali/parallax_layers/backgroundhill1.PNG" id="5_58yj0"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
 [ext_resource type="Texture2D" uid="uid://by1kaf8ewg2y4" path="res://art/Dali/parallax_layers/backgroundhill2.PNG" id="6_2y0tk"]
-[ext_resource type="PackedScene" uid="uid://dv1kdmuaoduuf" path="res://objects/enemies/elephant.tscn" id="7_qffot"]
 [ext_resource type="Texture2D" uid="uid://cm6chj2naje1w" path="res://art/Dali/parallax_layers/ground.png" id="7_y85k8"]
 [ext_resource type="PackedScene" uid="uid://eb8gtde4hxdf" path="res://objects/clock.tscn" id="8_3ka5o"]
 [ext_resource type="Texture2D" uid="uid://dn1isfp7c4gdl" path="res://art/Dali/parrallax_water_section/water.png" id="8_au30o"]
@@ -23,8 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://jryg843ay7vf" path="res://art/Dali/parrallax_water_section/ground_slant2.png" id="10_iriw4"]
 [ext_resource type="AudioStream" uid="uid://5l5e38rsaghb" path="res://audio/sfx/dali/clock-tick-tock-87936.mp3" id="10_l7u7k"]
 [ext_resource type="Texture2D" uid="uid://b3mv5206sahf3" path="res://art/Dali/blocks/b4.PNG" id="11_jysmu"]
-[ext_resource type="PackedScene" uid="uid://bpayqdv7wu7ex" path="res://objects/enemies/face.tscn" id="11_ue2ni"]
-[ext_resource type="Texture2D" uid="uid://0bh61475g7h4" path="res://art/Dali/parrallax_water_section/ground_slant.png" id="12_v7cvt"]
+[ext_resource type="PackedScene" uid="uid://dv1kdmuaoduuf" path="res://objects/enemies/elephant.tscn" id="20_btx2t"]
 [ext_resource type="Texture2D" uid="uid://bpnw8v4myo62s" path="res://art/Dali/trees/tree1.png" id="21_gsoyd"]
 [ext_resource type="Texture2D" uid="uid://b8ga2f2gkttps" path="res://art/Dali/trees/tree2.png" id="22_tndwd"]
 [ext_resource type="Texture2D" uid="uid://dhinn7rfpt3f2" path="res://art/Dali/trees/tree3.png" id="23_efwcj"]
@@ -41,10 +39,35 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7y"]
 size = Vector2(3310, 312)
 
-[node name="Dali" type="Node2D" node_paths=PackedStringArray("level_ui", "end")]
+[sub_resource type="Curve2D" id="Curve2D_rrqc2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 730, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_x6vvg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 600, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_0kylr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1150, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_hppr8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
 position = Vector2(3, 0)
 script = ExtResource("1_hymu2")
 level_name = "dali"
+protagonist = NodePath("Protagonist")
 level_ui = NodePath("LevelUI")
 end = NodePath("End")
 
@@ -140,7 +163,8 @@ position = Vector2(-7, -30)
 [node name="Water" type="Node2D" parent="Platforms"]
 
 [node name="Water" type="Sprite2D" parent="Platforms/Water"]
-position = Vector2(11973.4, 656.375)
+z_index = -2
+position = Vector2(11711.4, 656.375)
 scale = Vector2(0.3522, 0.385417)
 texture = ExtResource("8_au30o")
 
@@ -196,7 +220,6 @@ shape = SubResource("RectangleShape2D_c5q7y")
 [node name="GroundSlant" type="Sprite2D" parent="Platforms/Ground/StaticBody2D4"]
 position = Vector2(10771.8, 606.75)
 scale = Vector2(0.252422, 0.252422)
-texture = ExtResource("12_v7cvt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground/StaticBody2D4"]
 position = Vector2(11539, 784)
@@ -471,56 +494,70 @@ scale = Vector2(0.413055, 0.413055)
 texture = ExtResource("33_3js5q")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(9783, 514)
+position = Vector2(9617, 483)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
 
-[node name="Elephant" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("7_qffot")]
-position = Vector2(7838, 192)
-scale = Vector2(0.6, 0.6)
-protagonist = NodePath("../../Protagonist")
-audio_dist = 700.0
+[node name="Path2D" type="Path2D" parent="Enemies"]
+position = Vector2(378, 610)
+scale = Vector2(0.861644, 1)
+curve = SubResource("Curve2D_rrqc2")
 
-[node name="SkinBlob" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
-position = Vector2(741, 587)
+[node name="SkinBlob" parent="Enemies/Path2D" instance=ExtResource("3_png0t")]
+position = Vector2(568.38, 0)
 scale = Vector2(0.2, 0.2)
-protagonist = NodePath("../../Protagonist")
-audio_dist = 700.0
+progress = 161.62
 
-[node name="Face" parent="Enemies" instance=ExtResource("11_ue2ni")]
-position = Vector2(2791, 53)
-scale = Vector2(3, 3)
+[node name="Path2D2" type="Path2D" parent="Enemies"]
+position = Vector2(1299, 588)
+curve = SubResource("Curve2D_x6vvg")
 
-[node name="SkinBlob2" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
-position = Vector2(1859, 554)
+[node name="SkinBlob2" parent="Enemies/Path2D2" instance=ExtResource("3_png0t")]
+position = Vector2(600, 0)
+scale = Vector2(0.4, 0.4)
+
+[node name="Path2D3" type="Path2D" parent="Enemies"]
+position = Vector2(3907, 596.085)
+scale = Vector2(1.35739, 1.35739)
+curve = SubResource("Curve2D_0kylr")
+
+[node name="SkinBlob5" parent="Enemies/Path2D3" instance=ExtResource("3_png0t")]
+position = Vector2(1150, 0)
+scale = Vector2(0.110506, 0.110506)
+move_speed = 150
+
+[node name="Path2D4" type="Path2D" parent="Enemies"]
+position = Vector2(3907, 596.085)
+scale = Vector2(1.35739, 1.35739)
+curve = SubResource("Curve2D_0kylr")
+
+[node name="SkinBlob3" parent="Enemies/Path2D4" instance=ExtResource("3_png0t")]
+position = Vector2(1150, 0)
+scale = Vector2(0.147342, 0.147342)
+move_speed = 140
+
+[node name="Path2D5" type="Path2D" parent="Enemies"]
+position = Vector2(3907, 596.085)
+scale = Vector2(1.35739, 1.35739)
+curve = SubResource("Curve2D_0kylr")
+
+[node name="SkinBlob4" parent="Enemies/Path2D5" instance=ExtResource("3_png0t")]
+position = Vector2(1150, 0)
+scale = Vector2(0.0736708, 0.0736708)
+move_speed = 200
+
+[node name="Path2D6" type="Path2D" parent="Enemies"]
+position = Vector2(5955.05, 287.17)
+curve = SubResource("Curve2D_hppr8")
+
+[node name="Elephant" parent="Enemies/Path2D6" instance=ExtResource("20_btx2t")]
+position = Vector2(500, 0)
 scale = Vector2(0.5, 0.5)
-protagonist = NodePath("../../Protagonist")
-audio_dist = 700.0
 
-[node name="SkinBlob3" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
-position = Vector2(5127, 571)
-scale = Vector2(0.2, 0.2)
-protagonist = NodePath("../../Protagonist")
-audio_dist = 700.0
-
-[node name="SkinBlob4" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
-position = Vector2(4844, 575)
-scale = Vector2(0.1, 0.1)
-protagonist = NodePath("../../Protagonist")
-audio_dist = 700.0
-
-[node name="SkinBlob5" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
-position = Vector2(4051, 578)
-scale = Vector2(0.15, 0.15)
-protagonist = NodePath("../../Protagonist")
-audio_dist = 700.0
-
-[node name="SkinBlob6" parent="Enemies" node_paths=PackedStringArray("protagonist") instance=ExtResource("3_png0t")]
+[node name="SkinBlob6" parent="Enemies" instance=ExtResource("3_png0t")]
 position = Vector2(5884, 561)
 scale = Vector2(0.15, 0.15)
-protagonist = NodePath("../../Protagonist")
-audio_dist = 700.0
 
 [node name="Foreground Rocks" type="Node2D" parent="."]
 position = Vector2(0, -30)
