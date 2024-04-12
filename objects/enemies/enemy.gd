@@ -11,13 +11,13 @@ Base enemy class.
 var direction = Vector2.LEFT  # Initial movement direction
 
 # Let each enemy define its own idle animation/movement pattern
-func idle(body, direction):
+func idle(_body, _direction):
 	pass
 
 func _ready():
 	damage_area.connect("body_entered", Callable(self, "attack"))
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func change_direction():

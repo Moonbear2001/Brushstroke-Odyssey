@@ -8,10 +8,12 @@ var health = 2
 var is_thrown = false
 var throw_velocity = 400
 
+var melt: int = 3
+
 func _ready():
 	super._ready()
 
-func _process(delta):
+func _process(_delta):
 	if is_thrown and is_on_floor():
 		is_thrown = false
 	
@@ -36,3 +38,7 @@ func throw(direction):
 	is_thrown = true
 	move_and_slide()
 
+func get_anim_name(anim_name: String):
+	if anim_name in ["Climb", "CrouchLeft", "CrouchRight"]:
+		return anim_name + "_Dali"
+	return anim_name + "_Dali_" + str(melt)
