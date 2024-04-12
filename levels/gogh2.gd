@@ -86,7 +86,6 @@ func respawn():
 		var duplicatedNode = protagonist_gogh.instantiate()
 		duplicatedNode.global_position.x = checkpoint.global_position.x
 		duplicatedNode.global_position.y = checkpoint.global_position.y
-		duplicatedNode.scale = Vector2(1.4, 1.4)
 		get_tree().current_scene.add_child(duplicatedNode)
 		protagonist = duplicatedNode
 		Global.protagonist = protagonist
