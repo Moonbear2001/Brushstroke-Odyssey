@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bqbvdpmlbbk1a"]
+[gd_scene load_steps=40 format=3 uid="uid://bqbvdpmlbbk1a"]
 
 [ext_resource type="Script" path="res://characters/protagonist_escher.gd" id="1_r8naf"]
 [ext_resource type="Texture2D" uid="uid://dy1rei62q518f" path="res://art/character/sprite_sheet.png" id="2_wphxl"]
@@ -252,21 +252,6 @@ tracks/1/keys = {
 "values": [&"JumpRight_default"]
 }
 
-[sub_resource type="Animation" id="Animation_s2hrd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"FallCenter_default"]
-}
-
 [sub_resource type="Animation" id="Animation_yae7l"]
 resource_name = "RunLeft_default"
 length = 0.45
@@ -336,7 +321,6 @@ _data = {
 "JumpCenter_default": SubResource("Animation_w0lst"),
 "JumpLeft_default": SubResource("Animation_pqc7d"),
 "JumpRight_default": SubResource("Animation_61tm3"),
-"RESET": SubResource("Animation_s2hrd"),
 "RunLeft_default": SubResource("Animation_yae7l"),
 "RunRight_default": SubResource("Animation_m431g")
 }
@@ -579,7 +563,8 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_2ojj2")
-animation = &"FallCenter_default"
+animation = &"RunLeft_default"
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
