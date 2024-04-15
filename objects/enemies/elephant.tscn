@@ -13,11 +13,13 @@ cubic_interp = false
 loop = false
 script = ExtResource("1_l6w02")
 
-[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front")]
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back", "weak_area")]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_n2k5q")
-damage_front = NodePath("DamageArea")
+damage_front = NodePath("Dummy")
+damage_back = NodePath("Dummy")
+weak_area = NodePath("Dummy")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("4_gbocx")
@@ -58,5 +60,7 @@ position = Vector2(-169, -97)
 polygon = PackedVector2Array(-215, -37, -173, -45, -146, 2, -126, 69, -137, 107, -143, 138, -130, 165, -122, 199, -131, 227, -146.361, 255.18, -165, 274, -197, 266, -222, 259, -237, 238, -245, 194, -234, 185, -215, 236, -176, 245, -152, 220, -164, 186, -202, 130, -249, 80, -249, 0)
 
 [node name="Timer" type="Timer" parent="Enemy"]
+
+[node name="Dummy" type="Area2D" parent="Enemy"]
 
 [connection signal="timeout" from="Enemy/WalkTimer" to="." method="_on_walk_timer_timeout"]

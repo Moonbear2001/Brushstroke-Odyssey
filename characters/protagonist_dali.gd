@@ -28,6 +28,12 @@ func _process(_delta):
 		if throw_direction != 0:
 			input_disabled = true
 
+# Add shadow jumping behavior
+#func _physics_process(delta):
+	#super._physics_process(delta)
+	
+	
+
 func take_damage(amount, is_clock=false):
 	if is_clock and health <= 1 and amount == 1:
 		return false
