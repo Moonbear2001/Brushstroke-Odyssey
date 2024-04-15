@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=56 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="25_4itko"]
 [ext_resource type="Texture2D" uid="uid://m0qqv1bq8e5h" path="res://art/Dali/parrallax_water_section/tree_structure.png" id="31_io6ln"]
 [ext_resource type="Texture2D" uid="uid://6ox1gitpu8w0" path="res://art/Dali/parrallax_water_section/rock.PNG" id="32_bq1ph"]
+[ext_resource type="AudioStream" uid="uid://c1joogmccbdxr" path="res://audio/sfx/dali/squelch-106250.mp3" id="32_q7ib8"]
 [ext_resource type="Texture2D" uid="uid://qjebhnc206xd" path="res://art/Dali/parrallax_water_section/backrock.PNG" id="33_3js5q"]
 [ext_resource type="Texture2D" uid="uid://bve428lpen5tl" path="res://art/Dali/parrallax_water_section/backrock2.png" id="34_nrpap"]
 [ext_resource type="Texture2D" uid="uid://v528n67s05aw" path="res://art/Dali/parrallax_water_section/backrock3.png" id="35_fiefn"]
@@ -59,25 +60,25 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_aptyi"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 5336, 589, 0, 0, 0, 0, 4509, 581)
+"points": PackedVector2Array(0, 0, 0, 0, 4958, 580, 0, 0, 0, 0, 4523, 587)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_oh8jh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 5056, 594, 0, 0, 0, 0, 4320, 586)
+"points": PackedVector2Array(0, 0, 0, 0, 5056, 594, 0, 0, 0, 0, 4490, 594)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_0kylr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1607.5, -2.27277, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 1607.5, -2.27277, 0, 0, 0, 0, 481.807, -5.2196)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_8voap"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 6157, 584, 0, 0, 0, 0, 5159, 576)
+"points": PackedVector2Array(0, 0, 0, 0, 6088, 544, 0, 0, 0, 0, 5159, 543)
 }
 point_count = 2
 
@@ -89,25 +90,25 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_75dny"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 7070, 571, 0, 0, 0, 0, 6400, 581)
+"points": PackedVector2Array(0, 0, 0, 0, 7035, 575, 0, 0, 0, 0, 6425, 573)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_ipln0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 7980, 554, 0, 0, 0, 0, 6872, 554)
+"points": PackedVector2Array(0, 0, 0, 0, 7980, 554, 0, 0, 0, 0, 7208, 552)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_qil5g"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 8622, 546, 0, 0, 0, 0, 7690, 530)
+"points": PackedVector2Array(0, 0, 0, 0, 9072, 529, 0, 0, 0, 0, 7241, 530)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_vdqjf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 9076, 597, 0, 0, 0, 0, 7213, 595)
+"points": PackedVector2Array(0, 0, 0, 0, 9076, 597, 0, 0, 0, 0, 8232, 599)
 }
 point_count = 2
 
@@ -425,7 +426,7 @@ texture = ExtResource("2_m3vv6")
 polygon = PackedVector2Array(-290, -40, -310, 300, 115, 290, 250.002, 140, 220.002, -165, -190, -175)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Blocks"]
-position = Vector2(0, -66)
+position = Vector2(0, -85)
 
 [node name="Elephantblock" type="Sprite2D" parent="Platforms/Blocks/StaticBody2D"]
 position = Vector2(7501, 626.875)
@@ -433,12 +434,12 @@ scale = Vector2(1.21942, 0.395087)
 texture = ExtResource("17_uwfcw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/StaticBody2D"]
-position = Vector2(0.000488281, 364.05)
+position = Vector2(0.000488281, 374.05)
 scale = Vector2(1, 0.297794)
 polygon = PackedVector2Array(7199, 400, 7198, 360, 8576, 360, 8625, 411)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/Blocks/StaticBody2D"]
-position = Vector2(-0.00439453, 393.3)
+position = Vector2(-0.00439453, 403.3)
 scale = Vector2(1, 0.225)
 polygon = PackedVector2Array(7021, 348, 7106, 347, 7106, 396, 7015, 397)
 
@@ -577,11 +578,11 @@ position = Vector2(3806, 536)
 scale = Vector2(0.2, 0.2)
 
 [node name="Clock4" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(6440, 510)
+position = Vector2(6346, 511)
 scale = Vector2(0.2, 0.2)
 
 [node name="Clock5" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(8484, 1119)
+position = Vector2(9248, 520)
 scale = Vector2(0.2, 0.2)
 
 [node name="Background Rocks" type="Node2D" parent="."]
@@ -633,7 +634,7 @@ scale = Vector2(0.111401, 0.111401)
 texture = ExtResource("34_nrpap")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(96, 547)
+position = Vector2(6292, 439)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -662,17 +663,17 @@ position = Vector2(-605, 6)
 curve = SubResource("Curve2D_aptyi")
 
 [node name="SkinBlob3" parent="Enemies/Path2D4" instance=ExtResource("3_png0t")]
-position = Vector2(5336, 589)
+position = Vector2(4958, 580)
 scale = Vector2(0.200001, 0.200001)
+move_speed = 80
 
 [node name="Path2D12" type="Path2D" parent="Enemies"]
-position = Vector2(168, 6)
+position = Vector2(168, -25)
 curve = SubResource("Curve2D_oh8jh")
 
 [node name="SkinBlob4" parent="Enemies/Path2D12" instance=ExtResource("3_png0t")]
 position = Vector2(5056, 594)
 scale = Vector2(0.4, 0.4)
-move_speed = 160
 
 [node name="Path2D3" type="Path2D" parent="Enemies"]
 position = Vector2(3907, 596.085)
@@ -681,20 +682,20 @@ curve = SubResource("Curve2D_0kylr")
 
 [node name="SkinBlob5" parent="Enemies/Path2D3" instance=ExtResource("3_png0t")]
 position = Vector2(1607.5, -2.27277)
-scale = Vector2(0.110506, 0.110506)
-move_speed = 60
+scale = Vector2(0.2, 0.2)
+move_speed = 160
 
 [node name="Path2D5" type="Path2D" parent="Enemies"]
 position = Vector2(0, 5)
 curve = SubResource("Curve2D_8voap")
 
 [node name="SkinBlob4" parent="Enemies/Path2D5" instance=ExtResource("3_png0t")]
-position = Vector2(6157, 584)
-scale = Vector2(0.1, 0.1)
+position = Vector2(6088, 544)
+scale = Vector2(0.2, 0.2)
 move_speed = 130
 
 [node name="Path2D6" type="Path2D" parent="Enemies"]
-position = Vector2(8060, 128)
+position = Vector2(8060, 117)
 scale = Vector2(0.75, 0.75)
 curve = SubResource("Curve2D_hppr8")
 metadata/_edit_group_ = true
@@ -707,7 +708,7 @@ scale = Vector2(0.5, 0.5)
 curve = SubResource("Curve2D_75dny")
 
 [node name="SkinBlob3" parent="Enemies/Path2D7" instance=ExtResource("3_png0t")]
-position = Vector2(7070, 571)
+position = Vector2(7035, 575)
 scale = Vector2(0.23, 0.23)
 move_speed = 120
 
@@ -724,8 +725,9 @@ position = Vector2(0, 38)
 curve = SubResource("Curve2D_qil5g")
 
 [node name="SkinBlob3" parent="Enemies/Path2D11" instance=ExtResource("3_png0t")]
-position = Vector2(8622, 546)
+position = Vector2(9072, 529)
 scale = Vector2(0.2, 0.2)
+move_speed = 150
 
 [node name="Path2D9" type="Path2D" parent="Enemies"]
 position = Vector2(7, 7)
@@ -742,8 +744,8 @@ curve = SubResource("Curve2D_vdqjf")
 
 [node name="SkinBlob3" parent="Enemies/Path2D10" instance=ExtResource("3_png0t")]
 position = Vector2(9076, 597)
-scale = Vector2(0.147342, 0.147342)
-move_speed = 150
+scale = Vector2(0.15, 0.15)
+move_speed = 180
 
 [node name="Path2D13" type="Path2D" parent="Enemies"]
 position = Vector2(-305, -250)
@@ -878,5 +880,12 @@ bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="skin_blob_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_q7ib8")
+volume_db = 1.5
+max_distance = 700.0
+max_polyphony = 3
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

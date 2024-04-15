@@ -1,6 +1,6 @@
 extends Enemy
 
-@export var audio_dist: float
+@export var audio_dist = 700
 
 @onready var move_sound = $walk
 @onready var walk_timer = $WalkTimer
