@@ -1,16 +1,15 @@
 extends Enemy
 
-@export var audio_dist: float
+@export var audio_dist = 700
 
 # The main playable character
-@onready var death_timer = $DeathTimer
 @onready var move_sound = $move
+@onready var anim = $AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
-	death_timer.stop()
 	if weak_area:
 		weak_area.connect("body_entered", Callable(self, "death"))
 
@@ -26,8 +25,10 @@ func _process(delta):
 func death(body):
 	if body.is_in_group("protagonist"):
 		$die.play()
-		death_timer.start()
 		body.throw(0)
+		anim.play("death")
 	
-func _on_death_timer_timeout():
-	queue_free()
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "death":
+		queue_free()
+	

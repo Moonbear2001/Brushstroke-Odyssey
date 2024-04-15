@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuaccmkseec5l"]
+
+[ext_resource type="Script" path="res://objects/enemies/head_cloud.gd" id="1_bp6a7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr7do"]
+size = Vector2(134, 20)
+
+[node name="FaceCloud" type="Area2D"]
+script = ExtResource("1_bp6a7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dr7do")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
