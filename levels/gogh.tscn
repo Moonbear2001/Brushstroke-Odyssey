@@ -883,7 +883,6 @@ shape = SubResource("RectangleShape2D_qrr0h")
 position = Vector2(1272, 1298)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 top_level = true
 color = Color(0, 0, 0.0862745, 1)
 

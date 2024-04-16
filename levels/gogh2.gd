@@ -8,18 +8,22 @@ extends Level
 @onready var anim = $AnimationPlayer
 
 var curr_layer = 1
+var curr_level = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
 	
-	$AnimationPlayer.play("scene_in")
+	anim.play("scene_in")
 	
 	for death in death_arr.get_children():
 		death.respawn.connect(Callable(self, "respawn"))
+		if death.name != "Death0":
+			death.get_node("AnimationPlayer").play("RESET")
 	
 	for star in level_stars.get_children():
-		star.level_move.connect(move_death)
+		star.get_child(0).started_moving.connect(Callable(self, "move_death"))
+		star.get_child(0).level_changed.connect(Callable(self, "change_level"))
 	
 	# Disable the hitboxes of layers 2 - n and make invisible
 	for layer in range(2, layers.size() + 1):
@@ -69,29 +73,21 @@ func get_all_children(node) -> Array:
 			nodes.append(child)
 	return nodes
 
-func respawn():
-	var greatest_y_below_target = -INF
-	var checkpoint
-	for node in get_tree().get_nodes_in_group("checkpoint"):
-		if node.global_position.y < protagonist.global_position.y and node.global_position.y > greatest_y_below_target:
-			greatest_y_below_target = node.global_position.y
-			checkpoint = node
-	for p in get_tree().get_nodes_in_group("protagonist"):
-		p.queue_free()
-		
-	if checkpoint.name == "Checkpoint0":
-		get_tree().reload_current_scene()
-	# Check if a valid x value was found
-	elif greatest_y_below_target != -INF:	
-		var duplicatedNode = protagonist_gogh.instantiate()
-		duplicatedNode.global_position.x = checkpoint.global_position.x
-		duplicatedNode.global_position.y = checkpoint.global_position.y
-		get_tree().current_scene.add_child(duplicatedNode)
-		protagonist = duplicatedNode
-		Global.protagonist = protagonist
-	else:
-		get_tree().reload_current_scene()
+func change_level(level_num):
+	curr_level = level_num
 
+func respawn():
+	for node in get_tree().get_nodes_in_group("checkpoint"):
+		if curr_level == 4: 
+			curr_level = 3
+		if node.name == "Checkpoint" + str(curr_level):
+			protagonist.global_position = node.global_position
+	for star in level_stars.get_children():
+		var idx = star.get_index() + 1
+		if idx > curr_level:
+			star.get_child(0).reset()
+			death_arr.get_child(idx).get_node("AnimationPlayer").play("RESET")
+		
 
 # Custom level end behavior for Van Gogh 2, combine time with best time from 
 # Van Gogh 1 and save if better
@@ -115,11 +111,8 @@ func level_end(body) -> void:
 	# Go back to the main menu
 	SceneManager.load_new_scene(Global.MENU_PATH)
 
-func move_death(name):
-	if name == "first_move":
-		anim.play("death2_move")
-	elif name == "first_move_2":
-		anim.play("death3_move")
+func move_death(num):
+	death_arr.get_child(num).get_node("AnimationPlayer").play("move")
 # Play either the section2 or star section ambience depending on whether the 
 # protag is going up or falling down
 func _on_section_seperator_body_exited(body):
@@ -132,3 +125,6 @@ func _on_section_seperator_body_exited(body):
 			$StarSectionMusic.stop()
 			$NighttimeAmbience.play(0)
 			$SoundAmbience.start_ambience()
+
+
+
