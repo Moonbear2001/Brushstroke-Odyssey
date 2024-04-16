@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://characters/protagonist_dali.gd" id="1_dktyh"]
 [ext_resource type="Texture2D" uid="uid://sf14oeif7r1c" path="res://art/Dali/character/climbing.PNG" id="2_rjl8b"]
-[ext_resource type="Texture2D" uid="uid://ythms3a213tx" path="res://art/Dali/character/dali_character_Spriteshet.png" id="4_4vi2n"]
+[ext_resource type="Texture2D" uid="uid://me00xb5kmf63" path="res://art/Dali/character/dali_character_Spriteshet.png" id="4_4vi2n"]
 [ext_resource type="Texture2D" uid="uid://chp8wmxvnsx4c" path="res://art/Dali/character/melt1.png" id="5_aq5hu"]
 [ext_resource type="Texture2D" uid="uid://dbi2bj0vtitvf" path="res://art/Dali/character/melt2.png" id="6_nmdsf"]
 [ext_resource type="Texture2D" uid="uid://b1376iml1yyto" path="res://art/Dali/character/melt3.png" id="7_5ipho"]

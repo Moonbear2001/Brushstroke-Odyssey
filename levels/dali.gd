@@ -1,6 +1,7 @@
 extends Level
 
 var enemy_speed = {"skin_blob": 100, "elephant": 100}
+
 @onready var enemies = $Enemies
 @onready var clocks = $Clocks
 @onready var timer = $Timer

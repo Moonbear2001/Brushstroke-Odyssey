@@ -43,7 +43,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="PathFollow2D" type="PathFollow2D" groups=["enemy"]]
+[node name="SkinBlob" type="PathFollow2D" groups=["enemy"]]
 rotates = false
 cubic_interp = false
 loop = false
@@ -100,6 +100,7 @@ position = Vector2(-68, 0)
 [node name="move" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("4_acqxo")
 volume_db = 1.5
+max_distance = 700.0
 max_polyphony = 3
 bus = &"SFX"
 

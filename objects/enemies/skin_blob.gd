@@ -1,6 +1,6 @@
 extends Enemy
 
-@export var audio_dist: float
+@export var audio_dist = 700
 
 # The main playable character
 @onready var move_sound = $move
