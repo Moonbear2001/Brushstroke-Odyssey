@@ -1,19 +1,23 @@
-[gd_scene load_steps=56 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=60 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
 [ext_resource type="Texture2D" uid="uid://cbk0bgngjhk18" path="res://art/Dali/parrallax_water_section/sky_last_section.png" id="2_c2gru"]
 [ext_resource type="PackedScene" uid="uid://cyv0src61ekil" path="res://characters/protagonist_dali.tscn" id="2_keris"]
 [ext_resource type="Texture2D" uid="uid://cxhv6ryr7nix6" path="res://art/Dali/blocks/b3.PNG" id="2_m3vv6"]
+[ext_resource type="Texture2D" uid="uid://bnbw7x2peubtl" path="res://art/Dali/parrallax_water_section/clouds/IMG_0786.PNG" id="2_so26q"]
 [ext_resource type="PackedScene" uid="uid://ddxxd6dsg1s71" path="res://objects/enemies/skin_blob.tscn" id="3_png0t"]
+[ext_resource type="Texture2D" uid="uid://0eqv8d2b1riy" path="res://art/Dali/parrallax_water_section/clouds/IMG_0787.PNG" id="3_to6of"]
 [ext_resource type="Texture2D" uid="uid://bn5fap6ffx22g" path="res://art/Dali/parallax_layers/backestwater.png" id="3_xqidc"]
-[ext_resource type="Texture2D" uid="uid://6c2ksj0aysec" path="res://art/Dali/parallax_layers/water_background below hils.png" id="4_uopvj"]
+[ext_resource type="Texture2D" uid="uid://b5heope061krg" path="res://art/Dali/parrallax_water_section/clouds/IMG_0789.PNG" id="4_0pvlr"]
+[ext_resource type="Texture2D" uid="uid://ccg7xl1qe3d8w" path="res://art/Dali/parallax_layers/water_background below hils.png" id="4_uopvj"]
 [ext_resource type="AudioStream" uid="uid://gx36ykcr1x26" path="res://audio/music/lost-alone-mysterious-gentle-instrumental-175368.mp3" id="4_utn8h"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
-[ext_resource type="Texture2D" uid="uid://cqpylcjuw2fe1" path="res://art/Dali/parallax_layers/backgroundhill1.PNG" id="5_58yj0"]
+[ext_resource type="Texture2D" uid="uid://bhvqfvtdcajby" path="res://art/Dali/parallax_layers/backgroundhill1.PNG" id="5_58yj0"]
+[ext_resource type="Texture2D" uid="uid://5kg32cb5nuko" path="res://art/Dali/parrallax_water_section/clouds/IMG_0788.PNG" id="5_cmblo"]
 [ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
-[ext_resource type="Texture2D" uid="uid://by1kaf8ewg2y4" path="res://art/Dali/parallax_layers/backgroundhill2.PNG" id="6_2y0tk"]
-[ext_resource type="Texture2D" uid="uid://cm6chj2naje1w" path="res://art/Dali/parallax_layers/ground.png" id="7_y85k8"]
+[ext_resource type="Texture2D" uid="uid://cjhm346ux0avy" path="res://art/Dali/parallax_layers/backgroundhill2.PNG" id="6_2y0tk"]
+[ext_resource type="Texture2D" uid="uid://bmaijtf500x21" path="res://art/Dali/parallax_layers/ground.png" id="7_y85k8"]
 [ext_resource type="PackedScene" uid="uid://eb8gtde4hxdf" path="res://objects/clock.tscn" id="8_3ka5o"]
 [ext_resource type="Texture2D" uid="uid://dn1isfp7c4gdl" path="res://art/Dali/parrallax_water_section/water.png" id="8_au30o"]
 [ext_resource type="Texture2D" uid="uid://dyr71oi01j4ga" path="res://art/Dali/blocks/b1.PNG" id="9_34d6f"]
@@ -25,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://0bh61475g7h4" path="res://art/Dali/parrallax_water_section/ground_slant.png" id="11_u4irj"]
 [ext_resource type="Texture2D" uid="uid://c2r2y2xrr3eaw" path="res://art/Dali/blocks/elephantblock.PNG" id="17_uwfcw"]
 [ext_resource type="PackedScene" uid="uid://dv1kdmuaoduuf" path="res://objects/enemies/elephant.tscn" id="20_btx2t"]
-[ext_resource type="Texture2D" uid="uid://bpnw8v4myo62s" path="res://art/Dali/trees/tree1.png" id="21_gsoyd"]
 [ext_resource type="Texture2D" uid="uid://b8ga2f2gkttps" path="res://art/Dali/trees/tree2.png" id="22_tndwd"]
 [ext_resource type="Texture2D" uid="uid://dhinn7rfpt3f2" path="res://art/Dali/trees/tree3.png" id="23_efwcj"]
 [ext_resource type="Texture2D" uid="uid://b10ime0vvovuc" path="res://art/Dali/parrallax_water_section/backrock2flipped.png" id="23_jf57o"]
@@ -33,11 +36,11 @@
 [ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="25_4itko"]
 [ext_resource type="Texture2D" uid="uid://m0qqv1bq8e5h" path="res://art/Dali/parrallax_water_section/tree_structure.png" id="31_io6ln"]
 [ext_resource type="Texture2D" uid="uid://6ox1gitpu8w0" path="res://art/Dali/parrallax_water_section/rock.PNG" id="32_bq1ph"]
-[ext_resource type="AudioStream" uid="uid://c1joogmccbdxr" path="res://audio/sfx/dali/squelch-106250.mp3" id="32_q7ib8"]
 [ext_resource type="Texture2D" uid="uid://qjebhnc206xd" path="res://art/Dali/parrallax_water_section/backrock.PNG" id="33_3js5q"]
 [ext_resource type="Texture2D" uid="uid://bve428lpen5tl" path="res://art/Dali/parrallax_water_section/backrock2.png" id="34_nrpap"]
 [ext_resource type="Texture2D" uid="uid://v528n67s05aw" path="res://art/Dali/parrallax_water_section/backrock3.png" id="35_fiefn"]
 [ext_resource type="PackedScene" uid="uid://d1qgimxn4uena" path="res://objects/enemies/head_cloud.tscn" id="37_84h57"]
+[ext_resource type="Texture2D" uid="uid://bks3w75pf3ccm" path="res://art/Dali/trees/tree1_longer.PNG" id="37_oais5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
@@ -61,7 +64,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_aptyi"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 4958, 580, 0, 0, 0, 0, 4523, 587)
+"points": PackedVector2Array(0, 0, 0, 0, 5036, 577, 0, 0, 0, 0, 4582, 579)
 }
 point_count = 2
 
@@ -73,13 +76,13 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_0kylr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1607.5, -2.27277, 0, 0, 0, 0, 481.807, -5.2196)
+"points": PackedVector2Array(0, 0, 0, 0, 1607.5, -2.27277, 0, 0, 0, 0, 711.66, -2.27277)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_8voap"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 6088, 544, 0, 0, 0, 0, 5159, 543)
+"points": PackedVector2Array(0, 0, 0, 0, 6088, 544, 0, 0, 0, 0, 5439, 547)
 }
 point_count = 2
 
@@ -144,6 +147,62 @@ level_name = "dali"
 protagonist = NodePath("Protagonist")
 level_ui = NodePath("LevelUI")
 end = NodePath("End")
+
+[node name="Clouds" type="Node2D" parent="."]
+position = Vector2(59, 69)
+
+[node name="Img0786" type="Sprite2D" parent="Clouds"]
+position = Vector2(2967, 28)
+scale = Vector2(0.25647, 0.25647)
+texture = ExtResource("2_so26q")
+
+[node name="Img0787" type="Sprite2D" parent="Clouds"]
+position = Vector2(2774, 1.90735e-06)
+scale = Vector2(0.205566, 0.205566)
+texture = ExtResource("3_to6of")
+
+[node name="Img0789" type="Sprite2D" parent="Clouds"]
+position = Vector2(3654, 13)
+scale = Vector2(0.303711, 0.303711)
+texture = ExtResource("4_0pvlr")
+
+[node name="Img0788" type="Sprite2D" parent="Clouds"]
+position = Vector2(3318, 26)
+scale = Vector2(0.256836, 0.256836)
+texture = ExtResource("5_cmblo")
+
+[node name="Clouds2" type="Node2D" parent="."]
+position = Vector2(8219, 11)
+
+[node name="Img0786" type="Sprite2D" parent="Clouds2"]
+position = Vector2(3055, 34)
+scale = Vector2(0.231567, 0.231567)
+texture = ExtResource("2_so26q")
+
+[node name="Img0787" type="Sprite2D" parent="Clouds2"]
+position = Vector2(2887.75, 35.2498)
+scale = Vector2(0.218506, 0.218506)
+texture = ExtResource("3_to6of")
+
+[node name="Img0789" type="Sprite2D" parent="Clouds2"]
+position = Vector2(3654, 13)
+scale = Vector2(0.303711, 0.303711)
+texture = ExtResource("4_0pvlr")
+
+[node name="Img0788" type="Sprite2D" parent="Clouds2"]
+position = Vector2(3318, 26)
+scale = Vector2(0.256836, 0.256836)
+texture = ExtResource("5_cmblo")
+
+[node name="Img0790" type="Sprite2D" parent="Clouds2"]
+position = Vector2(3944, 23)
+scale = Vector2(0.296386, 0.296386)
+texture = ExtResource("2_so26q")
+
+[node name="Img0791" type="Sprite2D" parent="Clouds2"]
+position = Vector2(4191, 22)
+scale = Vector2(0.276611, 0.276611)
+texture = ExtResource("3_to6of")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -392,7 +451,7 @@ texture = ExtResource("9_34d6f")
 polygon = PackedVector2Array(778, 1504, 1373, 1505, 1379, 1685, 1245, 1810, 645, 1820, 680, 1640)
 
 [node name="block2" type="StaticBody2D" parent="Platforms/Blocks"]
-position = Vector2(3786, 603)
+position = Vector2(4043, 603)
 scale = Vector2(0.2, 0.2)
 metadata/_edit_group_ = true
 
@@ -513,23 +572,19 @@ rotation = 0.0698132
 scale = Vector2(0.7, 1.3)
 
 [node name="tree3" type="Node2D" parent="Platforms/Trees"]
-position = Vector2(206, -77)
-metadata/_edit_group_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Trees/tree3"]
-collision_layer = 65
-collision_mask = 65
 
-[node name="Tree1" type="Sprite2D" parent="Platforms/Trees/tree3/StaticBody2D"]
-position = Vector2(3279, 338)
-scale = Vector2(0.567797, 0.567797)
-texture = ExtResource("21_gsoyd")
+[node name="Tree1Longer" type="Sprite2D" parent="Platforms/Trees/tree3/StaticBody2D"]
+position = Vector2(3466, 149)
+scale = Vector2(0.592529, 0.592529)
+texture = ExtResource("37_oais5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Trees/tree3/StaticBody2D"]
-polygon = PackedVector2Array(2811, 365, 2895, 351, 2968, 328, 3074, 357, 3223, 342, 3289, 337, 3369, 359, 3384, 374, 3365, 403, 3342, 362, 3263, 349, 3163, 355, 3100, 362, 3067, 362, 2973, 336, 2882, 360)
+polygon = PackedVector2Array(3036, 287, 3113, 291, 3233, 278, 3359, 246, 3396, 239, 3493, 270, 3711, 250, 3777, 261, 3814, 272, 3820, 292, 3801, 310, 3775, 271, 3714, 261, 3504, 276, 3447, 265, 3395, 247, 3258, 277, 3204, 286, 3104, 296)
 
 [node name="ladder" type="Node2D" parent="Platforms/Trees/tree3"]
-position = Vector2(927, -299)
+position = Vector2(1371, -378)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
@@ -544,7 +599,7 @@ rotation = 0.0698132
 scale = Vector2(0.7, 1.3)
 
 [node name="tree4" type="Node2D" parent="Platforms/Trees"]
-position = Vector2(3407, -15)
+position = Vector2(3707, -15)
 metadata/_edit_group_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Trees/tree4"]
@@ -581,7 +636,7 @@ position = Vector2(2493, 509)
 scale = Vector2(0.2, 0.2)
 
 [node name="Clock3" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(3806, 536)
+position = Vector2(4063, 536)
 scale = Vector2(0.2, 0.2)
 
 [node name="Clock4" parent="Clocks" instance=ExtResource("8_3ka5o")]
@@ -641,7 +696,7 @@ scale = Vector2(0.111401, 0.111401)
 texture = ExtResource("34_nrpap")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(2727, 128)
+position = Vector2(2440, 416)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -666,16 +721,16 @@ scale = Vector2(0.4, 0.4)
 move_speed = 130
 
 [node name="Path2D4" type="Path2D" parent="Enemies"]
-position = Vector2(-605, 6)
+position = Vector2(-414, 6)
 curve = SubResource("Curve2D_aptyi")
 
 [node name="SkinBlob3" parent="Enemies/Path2D4" instance=ExtResource("3_png0t")]
-position = Vector2(4958, 580)
+position = Vector2(5036, 577)
 scale = Vector2(0.200001, 0.200001)
 move_speed = 80
 
 [node name="Path2D12" type="Path2D" parent="Enemies"]
-position = Vector2(168, -25)
+position = Vector2(437, -25)
 curve = SubResource("Curve2D_oh8jh")
 
 [node name="SkinBlob4" parent="Enemies/Path2D12" instance=ExtResource("3_png0t")]
@@ -889,7 +944,11 @@ bus = &"SFX"
 autostart = true
 
 [node name="HeadCloud" parent="." instance=ExtResource("37_84h57")]
-position = Vector2(2959, -44)
-scale = Vector2(4.60001, 1)
+position = Vector2(3241, -11)
+scale = Vector2(8, 8)
+
+[node name="HeadCloud2" parent="." instance=ExtResource("37_84h57")]
+position = Vector2(11743, -23)
+scale = Vector2(12, 12)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
