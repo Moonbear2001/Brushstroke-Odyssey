@@ -1,6 +1,6 @@
 [gd_scene load_steps=79 format=3 uid="uid://cyjue85li2vvi"]
 
-[ext_resource type="Script" path="res://levels/level.gd" id="1_4xute"]
+[ext_resource type="Script" path="res://levels/escher.gd" id="1_8td2l"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
 [ext_resource type="Texture2D" uid="uid://l5bm1kfpyuix" path="res://art/Esher/first_house.png" id="2_12ntw"]
 [ext_resource type="Texture2D" uid="uid://pwo81ci0ehd" path="res://art/Esher/parallax_layers/backdrop.png" id="2_nopj3"]
@@ -302,7 +302,7 @@ _data = {
 size = Vector2(16, 573)
 
 [node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
-script = ExtResource("1_4xute")
+script = ExtResource("1_8td2l")
 level_name = "escher"
 protagonist = NodePath("Protagonist")
 level_ui = NodePath("LevelUI")
@@ -1375,21 +1375,24 @@ enter = false
 color = "purple"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(86, 362)
+position = Vector2(2782, 242)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
 scale = Vector2(99.5, 99.5)
 
-[node name="Death" parent="." instance=ExtResource("17_npv7l")]
+[node name="Deaths" type="Node" parent="."]
+
+[node name="Death" parent="Deaths" instance=ExtResource("17_npv7l")]
 position = Vector2(1885, -166)
 scale = Vector2(2.36, 1)
 
-[node name="Death2" parent="." instance=ExtResource("17_npv7l")]
+[node name="Death2" parent="Deaths" instance=ExtResource("17_npv7l")]
 position = Vector2(9634, 1000)
-scale = Vector2(-2.37316, -0.6978)
+rotation = -3.14159
+scale = Vector2(2.37316, 0.6978)
 
-[node name="Death3" parent="." instance=ExtResource("17_npv7l")]
+[node name="Death3" parent="Deaths" instance=ExtResource("17_npv7l")]
 position = Vector2(3233, 384)
 scale = Vector2(0.192, 0.6)
 

@@ -1,11 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddxxd6dsg1s71"]
+[gd_scene load_steps=16 format=3 uid="uid://ddxxd6dsg1s71"]
 
 [ext_resource type="Script" path="res://objects/enemies/enemy_path.gd" id="1_e3ee8"]
 [ext_resource type="Script" path="res://objects/enemies/skin_blob.gd" id="1_jmo0d"]
-[ext_resource type="Texture2D" uid="uid://buchwsvnkqior" path="res://art/Dali/creatures/skinthing.PNG" id="2_vbomy"]
+[ext_resource type="Texture2D" uid="uid://bbvxwsh6vamom" path="res://art/Dali/creatures/skinthing_spritesheet.png" id="3_78ybu"]
 [ext_resource type="AudioStream" uid="uid://c1joogmccbdxr" path="res://audio/sfx/dali/squelch-106250.mp3" id="4_acqxo"]
 [ext_resource type="AudioStream" uid="uid://b6pokpxwgpme8" path="res://audio/sfx/dali/punch-boxing-02wav-14897.mp3" id="5_1xxiu"]
 [ext_resource type="AudioStream" uid="uid://b66bmu20b4u10" path="res://audio/sfx/dali/gross-slimy-goo-foley-5-164293.mp3" id="6_mpoxv"]
+
+[sub_resource type="Animation" id="Animation_664uk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_wg6xr"]
 resource_name = "death"
@@ -23,20 +38,60 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, 100)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_naqu5"]
-_data = {
-"death": SubResource("Animation_wg6xr")
+[sub_resource type="Animation" id="Animation_g1scd"]
+resource_name = "ooze"
+length = 0.33
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6y8v5"]
-atlas = ExtResource("2_vbomy")
-region = Rect2(0, 0, 964, 435)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_naqu5"]
+_data = {
+"RESET": SubResource("Animation_664uk"),
+"death": SubResource("Animation_wg6xr"),
+"ooze": SubResource("Animation_g1scd")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfjpo"]
+atlas = ExtResource("3_78ybu")
+region = Rect2(0, 0, 2048, 1489)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1p3q"]
+atlas = ExtResource("3_78ybu")
+region = Rect2(2048, 0, 2048, 1489)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2k8r"]
+atlas = ExtResource("3_78ybu")
+region = Rect2(4096, 0, 2048, 1489)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub6k2"]
+atlas = ExtResource("3_78ybu")
+region = Rect2(6144, 0, 2048, 1489)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hwrxh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6y8v5")
+"texture": SubResource("AtlasTexture_bfjpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1p3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2k8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub6k2")
 }],
 "loop": true,
 "name": &"default",
@@ -65,10 +120,12 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_naqu5")
 }
+autoplay = "ooze"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
-position = Vector2(-68, 0)
+position = Vector2(-68, -120)
 sprite_frames = SubResource("SpriteFrames_hwrxh")
+frame = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy"]
 position = Vector2(-64, -1)

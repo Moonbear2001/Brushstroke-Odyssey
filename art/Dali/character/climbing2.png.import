@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnsuuqowdfbib"
-path="res://.godot/imported/skinthing.PNG-192066da843b6ba6a3cca9d066f21fee.ctex"
+uid="uid://dqoyxyn0p6c4u"
+path="res://.godot/imported/climbing2.png-74ad47b20313be490a2e40236532beee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/creatures/skinthing.PNG"
-dest_files=["res://.godot/imported/skinthing.PNG-192066da843b6ba6a3cca9d066f21fee.ctex"]
+source_file="res://art/Dali/character/climbing2.png"
+dest_files=["res://.godot/imported/climbing2.png-74ad47b20313be490a2e40236532beee.ctex"]
 
 [params]
 

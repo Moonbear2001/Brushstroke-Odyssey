@@ -17,7 +17,6 @@ var refueling_right = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(get_scale())
 	if inWind:
 		apply_wind_force(delta)
 

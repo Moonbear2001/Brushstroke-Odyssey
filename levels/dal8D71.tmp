@@ -160,13 +160,10 @@ _data = {
 "scene_out": SubResource("Animation_tk22e")
 }
 
-[node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
+[node name="Dali" type="Node2D"]
 position = Vector2(3, 0)
 script = ExtResource("1_hymu2")
 level_name = "dali"
-protagonist = NodePath("Protagonist")
-level_ui = NodePath("LevelUI")
-end = NodePath("End")
 
 [node name="Clouds" type="Node2D" parent="."]
 position = Vector2(59, 69)

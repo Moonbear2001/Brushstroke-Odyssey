@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dwvnbnw473cw4"]
+[gd_scene load_steps=14 format=3 uid="uid://dwvnbnw473cw4"]
 
-[ext_resource type="Script" path="res://objects/sky objects/move_up_star.gd" id="1_0sit6"]
+[ext_resource type="Script" path="res://objects/sky objects/levelstar.gd" id="1_0sit6"]
 [ext_resource type="Texture2D" uid="uid://bn71xnw0xc542" path="res://art/VanGogh/sprite_sheets/stars/s5.png" id="1_8hkwe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cx13q"]
@@ -49,95 +49,92 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2lcm3"]
-radius = 11.3341
+[sub_resource type="Animation" id="Animation_jkjs3"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kblc5"]
+resource_name = "move_10"
+length = 10.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 10.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
 
 [sub_resource type="Animation" id="Animation_edwmf"]
-resource_name = "default"
-length = 3.0
-loop_mode = 2
+resource_name = "move_5"
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/path = NodePath(".:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0.5, 5.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -300)]
-}
-
-[sub_resource type="Animation" id="Animation_3cqd2"]
-resource_name = "first_move"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -2230)]
-}
-
-[sub_resource type="Animation" id="Animation_bv6y3"]
-resource_name = "first_move_2"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -950)]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w2ot7"]
 _data = {
-"default": SubResource("Animation_edwmf"),
-"first_move": SubResource("Animation_3cqd2"),
-"first_move_2": SubResource("Animation_bv6y3")
+"RESET": SubResource("Animation_jkjs3"),
+"move_10": SubResource("Animation_kblc5"),
+"move_5": SubResource("Animation_edwmf")
 }
 
-[node name="Densestar1" type="Node2D"]
+[node name="Densestar1" type="PathFollow2D"]
+rotates = false
+cubic_interp = false
+loop = false
 script = ExtResource("1_0sit6")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -23)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_cx13q")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatableBody2D"]
+position = Vector2(0, -23)
+polygon = PackedVector2Array(-24, -4, 24, -4, 31, 5, 35, 17, 33, 32, 27, 43, 14, 51, -3, 53, -17, 50, -31, 45, -37, 31, -38, 20, -34, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_g0454")
 autoplay = "default"
 frame_progress = 0.466678
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(0, -1)
-scale = Vector2(3, 3)
-shape = SubResource("CircleShape2D_2lcm3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_w2ot7")
 }
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../AnimatableBody2D")
 
-[connection signal="body_entered" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

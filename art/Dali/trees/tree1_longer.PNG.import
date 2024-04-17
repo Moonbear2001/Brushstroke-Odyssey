@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnsuuqowdfbib"
-path="res://.godot/imported/skinthing.PNG-192066da843b6ba6a3cca9d066f21fee.ctex"
+uid="uid://dohvacjnxft4y"
+path="res://.godot/imported/tree1_longer.PNG-9c9f4bd0cf439ae821711d8362ac4f00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/creatures/skinthing.PNG"
-dest_files=["res://.godot/imported/skinthing.PNG-192066da843b6ba6a3cca9d066f21fee.ctex"]
+source_file="res://art/Dali/trees/tree1_longer.PNG"
+dest_files=["res://.godot/imported/tree1_longer.PNG-9c9f4bd0cf439ae821711d8362ac4f00.ctex"]
 
 [params]
 
