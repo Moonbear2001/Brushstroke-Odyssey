@@ -83,9 +83,9 @@ func use_gravity(delta):
 					anim.play(get_anim_name("RunLeft"))
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED) 
-			if velocity.y == 0:
+			if velocity.y == 0 and not input_disabled:
 				anim.play(get_anim_name("Idle"))
-	elif velocity.y == 0:
+	elif velocity.y == 0 and not input_disabled:
 			anim.play(get_anim_name("Idle"))
 
 func set_jump_animation():
