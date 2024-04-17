@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbvxwsh6vamom"
-path="res://.godot/imported/skinthing_spritesheet.png-a885da9a02c7eb6766d7c881d982410a.ctex"
+uid="uid://bso7bpaslgpsm"
+path="res://.godot/imported/IMG_0786.PNG-31a2ef389e0043873931a53e01a9cc37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/creatures/skinthing_spritesheet.png"
-dest_files=["res://.godot/imported/skinthing_spritesheet.png-a885da9a02c7eb6766d7c881d982410a.ctex"]
+source_file="res://art/Dali/parrallax_water_section/clouds/IMG_0786.PNG"
+dest_files=["res://.godot/imported/IMG_0786.PNG-31a2ef389e0043873931a53e01a9cc37.ctex"]
 
 [params]
 

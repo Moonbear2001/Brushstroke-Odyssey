@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbvxwsh6vamom"
-path="res://.godot/imported/skinthing_spritesheet.png-a885da9a02c7eb6766d7c881d982410a.ctex"
+uid="uid://vo53c8emhjta"
+path="res://.godot/imported/clock.png-b0b3fd0eb206922344d14bc603108375.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/creatures/skinthing_spritesheet.png"
-dest_files=["res://.godot/imported/skinthing_spritesheet.png-a885da9a02c7eb6766d7c881d982410a.ctex"]
+source_file="res://art/Dali/clocks/clock.png"
+dest_files=["res://.godot/imported/clock.png-b0b3fd0eb206922344d14bc603108375.ctex"]
 
 [params]
 

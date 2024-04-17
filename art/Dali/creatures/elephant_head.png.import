@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbvxwsh6vamom"
-path="res://.godot/imported/skinthing_spritesheet.png-a885da9a02c7eb6766d7c881d982410a.ctex"
+uid="uid://crit01y48vkcs"
+path="res://.godot/imported/elephant_head.png-228632f3e4247e1258b21c4de6c8b975.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Dali/creatures/skinthing_spritesheet.png"
-dest_files=["res://.godot/imported/skinthing_spritesheet.png-a885da9a02c7eb6766d7c881d982410a.ctex"]
+source_file="res://art/Dali/creatures/elephant_head.png"
+dest_files=["res://.godot/imported/elephant_head.png-228632f3e4247e1258b21c4de6c8b975.ctex"]
 
 [params]
 

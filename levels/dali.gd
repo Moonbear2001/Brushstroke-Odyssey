@@ -36,7 +36,8 @@ func slow_down():
 			clock.anim.play(str(protagonist.health))
 
 func fade_to_black():
-	
+	#replace this with anim.play("scene_out")
+	get_tree().reload_current_scene()
 
 func _on_timer_timeout():
 	tick_sound.play()
