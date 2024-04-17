@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://c8l1yeatx2c06"
+=======
+uid="uid://dkbxq8o5goqje"
+>>>>>>> 81bd81c41c89703ee1bc6c272ab7446af769e2b2
 path="res://.godot/imported/skinthing_spritesheet.png-a885da9a02c7eb6766d7c881d982410a.ctex"
 metadata={
 "vram_texture": false
