@@ -18,9 +18,10 @@ func _process(delta):
 func respawn():
 	var greatest_x_below_target = -INF
 	var checkpoint
+	var old_protagonist = get_tree().get_nodes_in_group("protagonist")[0]
 	
 	for node in get_tree().get_nodes_in_group("checkpoint"):
-		if node.global_position.x < protagonist.global_position.x and node.global_position.x > greatest_x_below_target:
+		if node.global_position.x < old_protagonist.global_position.x and node.global_position.x > greatest_x_below_target:
 			greatest_x_below_target = node.global_position.x
 			checkpoint = node
 	for p in get_tree().get_nodes_in_group("protagonist"):
@@ -37,5 +38,7 @@ func respawn():
 			duplicatedNode.global_position.y += checkpoint.y_offset
 		get_tree().current_scene.add_child(duplicatedNode)
 		duplicatedNode.set_gravity("down")
+		Global.protagonist = duplicatedNode
+		protagonist = duplicatedNode
 	else:
 		get_tree().reload_current_scene()

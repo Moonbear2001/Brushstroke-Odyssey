@@ -303,7 +303,7 @@ size = Vector2(16, 573)
 
 [node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
 script = ExtResource("1_8td2l")
-level_name = "Escher"
+level_name = "escher"
 protagonist = NodePath("Protagonist")
 level_ui = NodePath("LevelUI")
 end = NodePath("End")
@@ -1375,7 +1375,7 @@ enter = false
 color = "purple"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(86, 362)
+position = Vector2(2782, 242)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)

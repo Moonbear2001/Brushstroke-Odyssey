@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://eb8gtde4hxdf"]
+[gd_scene load_steps=11 format=3 uid="uid://eb8gtde4hxdf"]
 
 [ext_resource type="Script" path="res://objects/clock.gd" id="1_80pad"]
 [ext_resource type="Texture2D" uid="uid://vo53c8emhjta" path="res://art/Dali/clocks/clock.png" id="2_5cpav"]
 [ext_resource type="PackedScene" uid="uid://dnjkxkejv3y1a" path="res://interaction/text_box.tscn" id="4_4gtui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ym5c"]
+atlas = ExtResource("2_5cpav")
+region = Rect2(0, 0, 2732, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6lau"]
 atlas = ExtResource("2_5cpav")
@@ -26,6 +30,14 @@ region = Rect2(13660, 0, 2732, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jp1sq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ym5c")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g6lau")
@@ -73,7 +85,7 @@ script = ExtResource("1_80pad")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(402, -27)
 sprite_frames = SubResource("SpriteFrames_jp1sq")
-animation = &"5"
+animation = &"1"
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false

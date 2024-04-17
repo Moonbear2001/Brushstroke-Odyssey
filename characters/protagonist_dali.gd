@@ -4,6 +4,7 @@ extends Protagonist
 Protagonist specific to the Dali level.
 """
 signal fade_to_black
+signal took_damage
 
 const THROW_VELOCITY = 200
 
@@ -50,6 +51,7 @@ func take_damage(amount, is_clock=false):
 		return false
 	health -= amount
 	distortion = 5 - health
+	took_damage.emit()
 	if health <= 0:
 		death_waiting = true
 	return true
