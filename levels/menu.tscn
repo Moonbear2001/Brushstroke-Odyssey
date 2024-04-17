@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdhced5wuwde4"]
+[gd_scene load_steps=29 format=3 uid="uid://bdhced5wuwde4"]
 
 [ext_resource type="Script" path="res://levels/menu.gd" id="1_2sh28"]
 [ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
 [ext_resource type="PackedScene" uid="uid://cn5gs4eorpydv" path="res://objects/enter_level.tscn" id="2_a14vu"]
 [ext_resource type="PackedScene" uid="uid://cducn8pjghtlw" path="res://characters/protagonist_big.tscn" id="2_hfs4s"]
+[ext_resource type="Texture2D" uid="uid://ddb180kr0s5my" path="res://art/menu/menu.png" id="2_ihjxb"]
 [ext_resource type="Texture2D" uid="uid://boy0sedrcdqb3" path="res://art/menu/arrow.png" id="3_e6vvp"]
 [ext_resource type="Texture2D" uid="uid://lfn1xuiqba76" path="res://art/menu/front_arch1.png" id="3_fqd2f"]
 [ext_resource type="Texture2D" uid="uid://iembktiha2c6" path="res://art/menu/overlay1.png" id="3_mahh3"]
@@ -93,13 +94,19 @@ libraries = {
 "": SubResource("AnimationLibrary_ikwcm")
 }
 
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(3253.91, 351.25)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_ihjxb")
+
 [node name="Layout" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(3305, 360)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_mibmc")
 
 [node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(1046, 469.5)
+position = Vector2(1049, 460)
 scale = Vector2(0.895522, 0.897059)
 texture = ExtResource("3_e6vvp")
 
@@ -127,7 +134,7 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(280, 4)
 
 [node name="EnterVanGogh" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(2637, 272)
+position = Vector2(4093, 264)
 level_name = "gogh"
 
 [node name="Overlay" type="Sprite2D" parent="EnterVanGogh"]
@@ -139,7 +146,7 @@ texture = ExtResource("3_mahh3")
 position = Vector2(278, 106)
 
 [node name="EnterDali" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(3986, 293)
+position = Vector2(5411, 285)
 scale = Vector2(1.16, 1.16)
 level_name = "dali"
 
@@ -153,7 +160,7 @@ position = Vector2(262.069, 95.6897)
 scale = Vector2(0.862069, 0.862069)
 
 [node name="EnterEscher" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(5599, 270)
+position = Vector2(2624, 258)
 level_name = "escher"
 
 [node name="Overlay" type="Sprite2D" parent="EnterEscher"]
@@ -165,7 +172,7 @@ texture = ExtResource("5_1sded")
 position = Vector2(323, 64)
 
 [node name="EnterTutorial" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(1046, 470)
+position = Vector2(1050, 461)
 scale = Vector2(0.15, 0.15)
 level_name = "tutorial"
 
@@ -179,46 +186,46 @@ animation = &"outline"
 position = Vector2(766.667, -1333.33)
 
 [node name="FrontArch1" type="Sprite2D" parent="."]
-position = Vector2(2064, 361)
+position = Vector2(2069, 351)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_fqd2f")
 
 [node name="FrontArch2" type="Sprite2D" parent="."]
-position = Vector2(3433, 360)
+position = Vector2(4891, 352)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_te7xp")
 
 [node name="FrontArch3" type="Sprite2D" parent="."]
-position = Vector2(4973, 339)
+position = Vector2(6399, 331)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_n8e3p")
 
 [node name="FrontArch4" type="Sprite2D" parent="."]
-position = Vector2(6528, 332)
-scale = Vector2(0.9, 0.9)
+position = Vector2(3553, 322)
+scale = Vector2(0.91, 0.91)
 texture = SubResource("CompressedTexture2D_lak8j")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(-30, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(6564, 372)
+position = Vector2(6520, 353)
 shape = SubResource("RectangleShape2D_vxxs1")
 
 [node name="Banners" type="Node2D" parent="."]
 
 [node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(2370, -206)
+position = Vector2(3903, -210)
 scale = Vector2(0.091, 0.0906374)
 level_name = "gogh2"
 
 [node name="DaliScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(3721, -206)
+position = Vector2(5240, -210)
 scale = Vector2(0.091, 0.0906374)
 level_name = "dali"
 
 [node name="EscherScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(5325, -206)
+position = Vector2(2435, -194)
 scale = Vector2(0.091, 0.0906374)
 level_name = "escher"
 

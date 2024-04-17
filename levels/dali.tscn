@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=62 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bve428lpen5tl" path="res://art/Dali/parrallax_water_section/backrock2.png" id="34_nrpap"]
 [ext_resource type="Texture2D" uid="uid://v528n67s05aw" path="res://art/Dali/parrallax_water_section/backrock3.png" id="35_fiefn"]
 [ext_resource type="PackedScene" uid="uid://d1qgimxn4uena" path="res://objects/enemies/head_cloud.tscn" id="37_84h57"]
+[ext_resource type="Texture2D" uid="uid://dohvacjnxft4y" path="res://art/Dali/trees/tree1_longer.PNG" id="37_oais5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
@@ -51,13 +52,13 @@ size = Vector2(721.49, 457.666)
 
 [sub_resource type="Curve2D" id="Curve2D_rrqc2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 730, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 676.614, -1, 0, 0, 0, 0, 0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_x6vvg"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 600, 0, 0, 0, 0, 0, -113, 2)
+"points": PackedVector2Array(0, 0, 0, 0, 516, 1, 0, 0, 0, 0, -31, 3)
 }
 point_count = 2
 
@@ -141,18 +142,18 @@ point_count = 2
 
 [sub_resource type="Animation" id="Animation_tk22e"]
 resource_name = "scene_transition"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/ColorRect:color")
+tracks/0/path = NodePath("ParallaxBackground3/ParallaxLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b5t77"]
@@ -241,14 +242,6 @@ metadata/_edit_lock_ = true
 position = Vector2(5367.11, 218)
 scale = Vector2(0.963964, 0.963964)
 texture = ExtResource("2_c2gru")
-
-[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = -141.0
-offset_top = -300.0
-offset_right = 9845.0
-offset_bottom = 1673.0
-color = Color(0, 0, 0, 0)
-metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 z_as_relative = false
@@ -407,6 +400,7 @@ shape = SubResource("RectangleShape2D_c5q7y")
 [node name="StaticBody2D5" type="StaticBody2D" parent="Platforms/Ground"]
 
 [node name="GroundSlant2" type="Sprite2D" parent="Platforms/Ground/StaticBody2D5"]
+z_as_relative = false
 position = Vector2(12974, 618)
 scale = Vector2(0.889056, 0.889056)
 texture = ExtResource("10_iriw4")
@@ -421,6 +415,7 @@ position = Vector2(10531, 2)
 metadata/_edit_group_ = true
 
 [node name="Ground2" type="Sprite2D" parent="Platforms/Ground/StaticBody2D6"]
+z_as_relative = false
 position = Vector2(4944, 485)
 scale = Vector2(0.4475, 0.4475)
 texture = ExtResource("7_y85k8")
@@ -467,7 +462,7 @@ texture = ExtResource("11_jysmu")
 polygon = PackedVector2Array(3582, 1769, 3995, 1768, 4001, 1953, 3884, 2073, 3469, 2072, 3484, 1898)
 
 [node name="block7" type="StaticBody2D" parent="Platforms/Blocks"]
-position = Vector2(1954, -68)
+position = Vector2(1847, -68)
 scale = Vector2(0.4, 0.4)
 metadata/_edit_group_ = true
 
@@ -604,14 +599,15 @@ scale = Vector2(0.7, 1.3)
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Trees/tree3"]
 
 [node name="Tree1Longer" type="Sprite2D" parent="Platforms/Trees/tree3/StaticBody2D"]
-position = Vector2(3466, 149)
-scale = Vector2(0.592529, 0.592529)
+position = Vector2(3471.99, 155.75)
+scale = Vector2(0.561768, 0.561768)
+texture = ExtResource("37_oais5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Trees/tree3/StaticBody2D"]
 polygon = PackedVector2Array(3036, 287, 3113, 291, 3233, 278, 3359, 246, 3396, 239, 3493, 270, 3711, 250, 3777, 261, 3814, 272, 3820, 292, 3801, 310, 3775, 271, 3714, 261, 3504, 276, 3447, 265, 3395, 247, 3258, 277, 3204, 286, 3104, 296)
 
 [node name="ladder" type="Node2D" parent="Platforms/Trees/tree3"]
-position = Vector2(1371, -378)
+position = Vector2(1363, -378)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
@@ -653,6 +649,7 @@ rotation = 0.0698132
 scale = Vector2(0.7, 1.3)
 
 [node name="Clocks" type="Node2D" parent="."]
+visible = false
 
 [node name="Clock" parent="Clocks" instance=ExtResource("8_3ka5o")]
 position = Vector2(283, 557)
@@ -723,7 +720,7 @@ scale = Vector2(0.111401, 0.111401)
 texture = ExtResource("34_nrpap")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(2440, 416)
+position = Vector2(7235, 265)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -734,7 +731,7 @@ scale = Vector2(0.861644, 1)
 curve = SubResource("Curve2D_rrqc2")
 
 [node name="SkinBlob" parent="Enemies/Path2D" instance=ExtResource("3_png0t")]
-position = Vector2(568.38, 0)
+position = Vector2(514.994, -0.761134)
 scale = Vector2(0.2, 0.2)
 progress = 161.62
 
@@ -743,8 +740,8 @@ position = Vector2(1299, 548)
 curve = SubResource("Curve2D_x6vvg")
 
 [node name="SkinBlob2" parent="Enemies/Path2D2" instance=ExtResource("3_png0t")]
-position = Vector2(600, 0)
-scale = Vector2(0.4, 0.4)
+position = Vector2(516, 1)
+scale = Vector2(0.5, 0.5)
 move_speed = 130
 
 [node name="Path2D4" type="Path2D" parent="Enemies"]
@@ -784,8 +781,8 @@ scale = Vector2(0.2, 0.2)
 move_speed = 130
 
 [node name="Path2D6" type="Path2D" parent="Enemies"]
-position = Vector2(8060, 117)
-scale = Vector2(0.75, 0.75)
+position = Vector2(8068, 160)
+scale = Vector2(0.6, 0.6)
 curve = SubResource("Curve2D_hppr8")
 metadata/_edit_group_ = true
 
@@ -844,6 +841,7 @@ metadata/_edit_group_ = true
 [node name="Elephant" parent="Enemies/Path2D13" instance=ExtResource("20_btx2t")]
 position = Vector2(15672, 517)
 scale = Vector2(0.5, 0.5)
+move_speed = 160
 
 [node name="Path2D14" type="Path2D" parent="Enemies"]
 position = Vector2(-71, -113)
@@ -982,6 +980,19 @@ scale = Vector2(12, 12)
 libraries = {
 "": SubResource("AnimationLibrary_b5t77")
 }
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+layer = 10
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground3/ParallaxLayer"]
+offset_left = -205.0
+offset_top = -358.0
+offset_right = 17304.0
+offset_bottom = 1108.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

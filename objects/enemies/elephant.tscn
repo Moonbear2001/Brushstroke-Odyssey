@@ -1,11 +1,109 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv1kdmuaoduuf"]
+[gd_scene load_steps=22 format=3 uid="uid://dv1kdmuaoduuf"]
 
 [ext_resource type="Script" path="res://objects/enemies/enemy_path.gd" id="1_l6w02"]
 [ext_resource type="Script" path="res://objects/enemies/elephant.gd" id="1_n2k5q"]
-[ext_resource type="Texture2D" uid="uid://bcfrm7vqrhmlj" path="res://art/Dali/creatures/elephant.PNG" id="2_jevwg"]
 [ext_resource type="AudioStream" uid="uid://di70snplm8pqt" path="res://audio/sfx/dali/marching-loop-32908.mp3" id="4_gbocx"]
 [ext_resource type="AudioStream" uid="uid://rxc66ntfg3fg" path="res://audio/sfx/dali/angry-elephant-40916.mp3" id="5_lpyxh"]
 [ext_resource type="AudioStream" uid="uid://celmtilskcsnw" path="res://audio/sfx/dali/mixed-whip-crack-1-102825.mp3" id="6_w2ubs"]
+[ext_resource type="Texture2D" uid="uid://bhel0ygfsmf6n" path="res://art/Dali/creatures/elephant_body.png" id="7_scjfg"]
+[ext_resource type="Texture2D" uid="uid://cqrne6ls5oj5w" path="res://art/Dali/creatures/PineTools.com_files/row-1-column-2.png" id="8_dmb2n"]
+[ext_resource type="Texture2D" uid="uid://dbfsaqur0hwg5" path="res://art/Dali/creatures/PineTools.com_files/row-1-column-1.png" id="9_28pen"]
+[ext_resource type="Texture2D" uid="uid://cr15vcmo5txvl" path="res://art/Dali/creatures/PineTools.com_files/row-1-column-3.png" id="10_l8fhg"]
+[ext_resource type="Texture2D" uid="uid://txou6ktd7mn" path="res://art/Dali/creatures/PineTools.com_files/row-1-column-4.png" id="11_lrt6j"]
+[ext_resource type="Texture2D" uid="uid://bvybyxht5uk3y" path="res://art/Dali/creatures/PineTools.com_files/row-1-column-5.png" id="12_17fus"]
+[ext_resource type="Texture2D" uid="uid://dt165fkrva427" path="res://art/Dali/creatures/PineTools.com_files/row-1-column-6.png" id="13_cllia"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulu8k"]
+atlas = ExtResource("7_scjfg")
+region = Rect2(0, 0, 1116, 1163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y0so"]
+atlas = ExtResource("7_scjfg")
+region = Rect2(1116, 0, 1116, 1163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjijc"]
+atlas = ExtResource("7_scjfg")
+region = Rect2(2232, 0, 1116, 1163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hnhe"]
+atlas = ExtResource("7_scjfg")
+region = Rect2(3348, 0, 1116, 1163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaq67"]
+atlas = ExtResource("7_scjfg")
+region = Rect2(4464, 0, 1116, 1163)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ialpy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulu8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y0so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjijc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hnhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaq67")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5y080"]
+resource_name = "attack"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_28pen"), ExtResource("8_dmb2n"), ExtResource("10_l8fhg"), ExtResource("11_lrt6j"), ExtResource("12_17fus"), ExtResource("13_cllia")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageArea/CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -289, 20, -325, 45, -361, 57, -397, 20, -405, -47, -405, -109, -404, -172, -419, -218, -447, -222, -475, -183, -513, -114, -531, -42, -530, 33, -532, 56, -540, -14, -527, -106, -496, -180, -463, -229, -434, -241, -404, -231, -387, -196, -387, -141, -385, -70, -372, -12, -362, 5, -345, -9, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -284, 34, -311, 68, -340, 111, -376, 116, -411, 88, -430, 19, -460, -134, -474, -170, -488, -179, -512, -182, -531, -173, -558, -157, -577, -136, -598, -60, -585, -147, -530, -185, -497, -196, -473, -185, -462, -170, -452, -142, -442, -107, -423, -16, -387, 81, -366, 92, -343, 63, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -265, 44, -263, 106, -261, 151, -288, 182, -334, 179, -421, 83, -445, 25, -461, -89, -480, -113, -509, -122, -535, -114, -552, -98, -562, -83, -581, -52, -565, -97, -539, -127, -515, -134, -490, -131, -473, -120, -457, -106, -444, -85, -437, 4, -401, 79, -368, 115, -335, 153, -300, 158, -287, 134, -284, 83, -302, 42, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -259, 46, -255, 113, -251, 176, -251, 245, -289, 276, -325, 289, -362, 269, -394, 204, -407, 167, -419, 92, -439, -94, -448, -112, -462, -120, -479, -120, -496, -118, -513, -110, -508, -118, -501, -123, -487, -127, -462, -129, -442, -119, -434, -102, -407, 110, -395, 174, -376, 221, -350, 265, -321, 273, -298, 256, -284, 215, -293, 138, -303, 95, -302, 42, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -283, 43, -298, 67, -276, 131, -260, 205, -265, 233, -299, 299, -370, 376, -419, 463, -435, 519, -469, 590, -503, 643, -531, 676, -544, 686, -500, 625, -464, 565, -418, 445, -379, 374, -328, 307, -288, 254, -284, 215, -314, 117, -333, 77, -324, 44, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -283, 43, -317, 54, -353, 59, -414, 65, -464, 82, -484, 147, -479, 195, -447, 319, -439, 433, -467, 507, -446, 436, -451, 361, -466, 282, -489, 205, -497, 142, -479, 76, -433, 51, -372, 44, -336, 24, -347, -44, -348, -96, -315, -130)]
+}
+
+[sub_resource type="Animation" id="Animation_6pplm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DamageArea/CollisionPolygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -284, 34, -311, 68, -340, 111, -376, 116, -411, 88, -430, 19, -460, -134, -474, -170, -488, -179, -512, -182, -531, -173, -558, -157, -577, -136, -598, -60, -585, -147, -530, -185, -497, -196, -473, -185, -462, -170, -452, -142, -442, -107, -423, -16, -387, 81, -366, 92, -343, 63, -336, 24, -347, -44, -348, -96, -315, -130)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eb0pm"]
+_data = {
+"RESET": SubResource("Animation_6pplm"),
+"attack": SubResource("Animation_5y080")
+}
 
 [node name="Elephant" type="PathFollow2D" groups=["enemy"]]
 rotates = false
@@ -38,29 +136,31 @@ bus = &"SFX"
 wait_time = 0.5
 autostart = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("2_jevwg")
+[node name="Body" type="AnimatedSprite2D" parent="Enemy"]
+position = Vector2(-81, 315)
+sprite_frames = SubResource("SpriteFrames_ialpy")
+autoplay = "default"
+frame_progress = 0.174866
+metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Enemy"]
-polygon = PackedVector2Array(-273, 365, -273, 432, -382, 688, -389, 714, -355, 708, -313, 596, -299, 538, -242, 419, -235, 351)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Enemy"]
-polygon = PackedVector2Array(-47, 281, -82, 403, -123, 479, -155, 547, -165, 567, -189, 638, -206, 695, -235, 727, -209, 735, -171, 646, -113, 498, -98, 461, -50, 361, -11, 287)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Enemy"]
-polygon = PackedVector2Array(88, 308, 224, 567, 259, 735, 259, 755, 235, 779, 285, 781, 283, 740, 243, 564, 169, 431, 114, 285)
-
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Enemy"]
-polygon = PackedVector2Array(-137, 365, -123, 445, -113, 543, -110, 615, -118, 694, -123, 728, -141, 744, -105, 760, -98, 727, -103, 656, -95, 516, -98, 373)
+[node name="Head" type="Sprite2D" parent="Enemy"]
+position = Vector2(-662, 611)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("9_28pen")
+metadata/_edit_lock_ = true
 
 [node name="DamageArea" type="Area2D" parent="Enemy"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-position = Vector2(-169, -97)
-polygon = PackedVector2Array(-215, -37, -173, -45, -146, 2, -126, 69, -137, 107, -143, 138, -130, 165, -122, 199, -131, 227, -146.361, 255.18, -165, 274, -197, 266, -222, 259, -237, 238, -245, 194, -234, 185, -215, 236, -176, 245, -152, 220, -164, 186, -202, 130, -249, 80, -249, 0)
+polygon = PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -284, 34, -311, 68, -340, 111, -376, 116, -411, 88, -430, 19, -460, -134, -474, -170, -488, -179, -512, -182, -531, -173, -558, -157, -577, -136, -598, -60, -585, -147, -530, -185, -497, -196, -473, -185, -462, -170, -452, -142, -442, -107, -423, -16, -387, 81, -366, 92, -343, 63, -336, 24, -347, -44, -348, -96, -315, -130)
 
 [node name="Timer" type="Timer" parent="Enemy"]
 
 [node name="Dummy" type="Area2D" parent="Enemy"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+libraries = {
+"": SubResource("AnimationLibrary_eb0pm")
+}
 
 [connection signal="timeout" from="Enemy/WalkTimer" to="." method="_on_walk_timer_timeout"]

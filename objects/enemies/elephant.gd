@@ -8,6 +8,7 @@ Elephant enemy.
 
 @onready var move_sound = $walk
 @onready var walk_timer = $WalkTimer
+@onready var animation = $AnimationPlayer
 
 var move_speed = 100
 
