@@ -8,6 +8,7 @@ through export variables.
 # Low and high bounds (in seconds) between possible face spawns
 @export var interval_low: int = 1
 @export var interval_high: int = 2
+@export var audio_dist: float = 700
 
 @onready var face: PackedScene = preload("res://objects/enemies/face.tscn")
 @onready var timer: Timer = $Timer

@@ -21,7 +21,8 @@ func _ready():
 func speed_up():
 	var valid = protagonist.take_damage(-1, true)
 	if valid:
-		timer.wait_time /= 2
+		if timer.wait_time > 0.125:
+			timer.wait_time /= 2
 		for node in get_tree().get_nodes_in_group("enemy"):
 			node.increase_speed()
 		for clock in clocks.get_children():
