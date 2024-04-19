@@ -154,7 +154,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_xlusr"]
 resource_name = "vertical_move"
-length = 3.0
+length = 3.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -163,7 +163,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
+"times": PackedFloat32Array(0, 1.8, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(5340, 600), Vector2(5340, 250), Vector2(5340, 600)]
@@ -176,7 +176,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_x845f"]
 resource_name = "vertical_move"
-length = 3.0
+length = 3.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -185,7 +185,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
+"times": PackedFloat32Array(0, 1.8, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(5505, 300), Vector2(5505, 630), Vector2(5505, 300)]
@@ -198,7 +198,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_cx6bb"]
 resource_name = "vertical_move"
-length = 3.0
+length = 3.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -207,7 +207,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
+"times": PackedFloat32Array(0, 1.8, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(5679, 660), Vector2(5679, 370), Vector2(5679, 660)]
@@ -349,7 +349,7 @@ position = Vector2(0, 80)
 polygon = PackedVector2Array(-17, 419, 192, 420, 184, 216, 300, 109, 422, 236, 421, 419, 527, 419, 527, 512, 472, 512, 472, 568, 584, 568, 582, 424, 646, 422, 640, 208, 656, 192, 669, 217, 668, 512, 776, 512, 776, 488, 808, 488, 808, 464, 832, 464, 832, 432, 864, 432, 864, 408, 896, 408, 896, 432, 983, 431, 979, 374, 1104, 376, 1116, 376, 1117, 400, 1088, 400, 1088, 432, 1060, 433, 1060, 456, 1032, 456, 1032, 488, 1003, 488, 1003, 512, 976, 512, 976, 544, 944, 544, 942, 779, -16, 648)
 
 [node name="Lever block" type="StaticBody2D" parent="Platforms"]
-position = Vector2(0, 40)
+position = Vector2(-13, 40)
 metadata/_edit_group_ = true
 
 [node name="BackArch" type="Sprite2D" parent="Platforms/Lever block"]
@@ -445,12 +445,14 @@ position = Vector2(13, 25)
 metadata/_edit_group_ = true
 
 [node name="Block" type="Sprite2D" parent="Platforms/Mirror/Top/StaticBody2D"]
-position = Vector2(3168, 216)
-scale = Vector2(0.354, 0.354)
+position = Vector2(3175, 216)
+scale = Vector2(0.51756, 0.354)
 texture = ExtResource("19_3bn8d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Top/StaticBody2D"]
-polygon = PackedVector2Array(3110, 178, 3106, 282, 3217, 281, 3210, 177)
+position = Vector2(-508.879, 0)
+scale = Vector2(1.15983, 1)
+polygon = PackedVector2Array(3106.65, 176, 3106, 282, 3228.32, 279, 3228.32, 175)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/Mirror/Top"]
 position = Vector2(20, 43)
@@ -483,24 +485,28 @@ position = Vector2(11, -19)
 metadata/_edit_group_ = true
 
 [node name="Downblock2" type="Sprite2D" parent="Platforms/Mirror/Bottom/StaticBody2D"]
-position = Vector2(3168, 520)
-scale = Vector2(0.354, 0.354)
+position = Vector2(3173, 520)
+scale = Vector2(0.540084, 0.354)
 texture = ExtResource("20_i38b6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D"]
-polygon = PackedVector2Array(3111, 564, 3208, 568, 3216, 531, 3218, 450, 3122, 449, 3108, 492)
+position = Vector2(-632.636, 278)
+scale = Vector2(1.19853, 1)
+polygon = PackedVector2Array(3106.65, 176, 3106, 282, 3230.21, 285, 3231.15, 175)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/Mirror/Bottom"]
 position = Vector2(15, -32)
 metadata/_edit_group_ = true
 
 [node name="Downblock5" type="Sprite2D" parent="Platforms/Mirror/Bottom/StaticBody2D2"]
-position = Vector2(3360, 520)
-scale = Vector2(0.354, 0.354)
+position = Vector2(3374.55, 520)
+scale = Vector2(0.415397, 0.354)
 texture = ExtResource("20_i38b6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Mirror/Bottom/StaticBody2D2"]
-polygon = PackedVector2Array(3302, 566, 3400, 566, 3408, 535, 3410, 449, 3314, 450, 3301, 486)
+position = Vector2(-613.782, 0.000183105)
+scale = Vector2(1.1875, 1)
+polygon = PackedVector2Array(3305, 560, 3401, 560, 3410, 449, 3305, 448)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/Mirror/Bottom"]
 position = Vector2(-25, -31)
@@ -525,13 +531,13 @@ scale = Vector2(10.8303, 10.8303)
 metadata/_edit_group_ = true
 
 [node name="ShortBlock" type="Sprite2D" parent="Platforms/MPlatform1/AnimatableBody2D"]
-position = Vector2(-5.2002, -5.38672)
-scale = Vector2(0.0923332, 0.0923332)
+position = Vector2(-13.5, -5.38672)
+scale = Vector2(0.164001, 0.0923332)
 texture = ExtResource("4_t8kp2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/MPlatform1/AnimatableBody2D"]
-position = Vector2(-1379.2, -406.387)
-scale = Vector2(1, 1.09896)
+position = Vector2(-2369.13, -406.387)
+scale = Vector2(1.71372, 1.09896)
 polygon = PackedVector2Array(1346.2, 340.674, 1352.2, 388.914, 1408.2, 389.824, 1403.2, 340.674)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MPlatform1/AnimatableBody2D"]
@@ -540,7 +546,7 @@ libraries = {
 }
 
 [node name="Door" parent="Platforms/MPlatform1/AnimatableBody2D" instance=ExtResource("10_w7r7g")]
-position = Vector2(11.0001, 52.0139)
+position = Vector2(21, 52.0139)
 rotation = -3.14159
 id = 7
 exit_id = 5
@@ -581,13 +587,13 @@ position = Vector2(0, -118)
 metadata/_edit_group_ = true
 
 [node name="Downblock4" type="Sprite2D" parent="Platforms/MPlatform3/AnimatableBody2D"]
-position = Vector2(-54.4809, 8.90796)
-scale = Vector2(0.598038, 0.354)
+position = Vector2(-72.9808, 8.90796)
+scale = Vector2(0.651352, 0.354)
 texture = ExtResource("22_b0yri")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/MPlatform3/AnimatableBody2D"]
-position = Vector2(-7261.96, -495.092)
-scale = Vector2(1.71023, 1)
+position = Vector2(-7934.74, -495.092)
+scale = Vector2(1.86552, 1)
 polygon = PackedVector2Array(4131, 489, 4135, 550, 4285.95, 557.092, 4285, 518, 4285, 450, 4146, 452)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MPlatform3/AnimatableBody2D"]
@@ -629,6 +635,8 @@ texture = ExtResource("25_yi3rc")
 polygon = PackedVector2Array(4736, 787, 4736, 625, 4765, 619, 4766, 593, 4795, 589, 4798, 561, 4824, 557, 4829, 532, 4857, 527, 4857, -1, 4940, 1, 4943, 28, 4948, 752, 4931, 781)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/fourth section"]
+position = Vector2(-2254, -166)
+scale = Vector2(1.44, 1.2)
 
 [node name="1" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D4"]
 position = Vector2(5119, 669)
@@ -636,10 +644,10 @@ scale = Vector2(0.284, 0.284)
 texture = ExtResource("26_b666u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/fourth section/StaticBody2D4"]
-polygon = PackedVector2Array(5046, 565, 5045, 772, 5207, 774, 5192, 563)
+polygon = PackedVector2Array(5046, 565, 5045, 772, 5193.06, 778.333, 5192, 563)
 
 [node name="AnimatableBody2D5" type="AnimatableBody2D" parent="Platforms/fourth section"]
-position = Vector2(5340, 250)
+position = Vector2(5340, 600)
 metadata/_edit_group_ = true
 
 [node name="5" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D5"]
@@ -658,7 +666,7 @@ libraries = {
 autoplay = "vertical_move"
 
 [node name="AnimatableBody2D6" type="AnimatableBody2D" parent="Platforms/fourth section"]
-position = Vector2(5505, 608)
+position = Vector2(5505, 300)
 metadata/_edit_group_ = true
 
 [node name="6" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D6"]
@@ -677,7 +685,7 @@ libraries = {
 autoplay = "vertical_move"
 
 [node name="AnimatableBody2D7" type="AnimatableBody2D" parent="Platforms/fourth section"]
-position = Vector2(5679, 370)
+position = Vector2(5679, 660)
 metadata/_edit_group_ = true
 
 [node name="7" type="Sprite2D" parent="Platforms/fourth section/AnimatableBody2D7"]
@@ -706,6 +714,8 @@ texture = ExtResource("28_lhnxd")
 polygon = PackedVector2Array(5034, -21, 5034, 161, 5227, 166, 5223, -25)
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Platforms/fourth section"]
+position = Vector2(-1072, -23)
+scale = Vector2(1.2, 1.2)
 
 [node name="4" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D9"]
 position = Vector2(5353, 95)
@@ -717,6 +727,8 @@ position = Vector2(16, -20)
 polygon = PackedVector2Array(5288, 0, 5290, 192, 5382, 198, 5384, -1)
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Platforms/fourth section"]
+position = Vector2(-1104, -33)
+scale = Vector2(1.2, 1.2)
 
 [node name="3" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D10"]
 position = Vector2(5518.38, 105.1)
@@ -728,6 +740,8 @@ position = Vector2(25.3779, -55.9)
 polygon = PackedVector2Array(5444, 1, 5447, 279, 5540.62, 281.9, 5538.62, 1.9)
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Platforms/fourth section"]
+position = Vector2(-1128, -72)
+scale = Vector2(1.2, 1.2)
 
 [node name="2" type="Sprite2D" parent="Platforms/fourth section/StaticBody2D11"]
 position = Vector2(5679.34, 92)
@@ -966,7 +980,7 @@ libraries = {
 autoplay = "move_vertical"
 
 [node name="Lever" parent="." instance=ExtResource("21_pvfto")]
-position = Vector2(1272, 472)
+position = Vector2(1257, 472)
 rotation = 3.14159
 scale = Vector2(0.05, 0.05)
 
@@ -1088,7 +1102,7 @@ x_offset = -25
 color = "green"
 
 [node name="BlueDoor3" parent="Doors" instance=ExtResource("10_w7r7g")]
-position = Vector2(1536, 490)
+position = Vector2(1522, 488)
 id = 12
 exit_id = 13
 color = "blue"
@@ -1375,7 +1389,7 @@ enter = false
 color = "purple"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(2782, 242)
+position = Vector2(28, 376)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
