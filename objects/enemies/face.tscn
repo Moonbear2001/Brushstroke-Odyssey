@@ -139,7 +139,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yq5ml"]
 resource_name = "splat"
-length = 2.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,7 +146,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 0.9, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -171,7 +170,7 @@ tracks/2/path = NodePath("DamageArea/Frame0Hitbox:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -183,7 +182,7 @@ tracks/3/path = NodePath("DamageArea/Frame1Hitbox:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.3, 0.5),
+"times": PackedFloat32Array(0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -195,7 +194,7 @@ tracks/4/path = NodePath("DamageArea/Frame2Hitbox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.5, 0.75),
+"times": PackedFloat32Array(0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -207,7 +206,7 @@ tracks/5/path = NodePath("DamageArea/Frame3Hitbox:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.75, 1),
+"times": PackedFloat32Array(0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -219,10 +218,10 @@ tracks/6/path = NodePath("DamageArea/Frame4Hitbox:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1, 1.25),
+"times": PackedFloat32Array(0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -231,7 +230,7 @@ tracks/7/path = NodePath("DamageArea/Frame5to6Hitbox:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(1.25, 2),
+"times": PackedFloat32Array(0.9, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -255,7 +254,6 @@ script = ExtResource("1_n6o3u")
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back", "weak_area")]
 collision_layer = 4
-collision_mask = 64
 script = ExtResource("1_vekug")
 damage_front = NodePath("Dummy")
 damage_back = NodePath("Dummy")
@@ -286,7 +284,6 @@ disabled = true
 
 [node name="Frame4Hitbox" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
 polygon = PackedVector2Array(-9, 30, -234, 169, 212, 170)
-disabled = true
 
 [node name="Frame5to6Hitbox" type="CollisionShape2D" parent="Enemy/DamageArea"]
 position = Vector2(-6.5, 166)

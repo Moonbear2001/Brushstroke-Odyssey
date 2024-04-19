@@ -4732,6 +4732,7 @@ radius = 12.0
 height = 44.0
 
 [node name="ProtagonistDali" type="CharacterBody2D" groups=["protagonist"]]
+collision_mask = 65
 slide_on_ceiling = false
 script = ExtResource("1_dktyh")
 
@@ -4739,6 +4740,7 @@ script = ExtResource("1_dktyh")
 scale = Vector2(0.17, 0.17)
 sprite_frames = SubResource("SpriteFrames_thnrl")
 animation = &"RunRight_Dali_0"
+frame = 1
 
 [node name="Reflection" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.188235)
