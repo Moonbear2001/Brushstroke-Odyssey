@@ -40,8 +40,11 @@ func _process(_delta):
 	#queue_free()
 
 func death_process():
+	
 	if not dying:
 		$DequeueTimer.start()
+		if abs(Global.protagonist.global_position.x - global_position.x) < 700:
+			$Enemy/splat.play()
 		$Enemy/AnimationPlayer.play("splat")
 		dying = true
 
@@ -55,5 +58,6 @@ func _on_dequeue_timer_timeout():
 # Protagonist entered a damage area
 func _on_damage_area_body_entered(body):
 	if body is Protagonist:
+		$Enemy/hit.play()
 		body.throw(-1)
 		body.take_damage(1)
