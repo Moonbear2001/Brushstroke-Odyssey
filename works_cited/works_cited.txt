@@ -1,0 +1,39 @@
+"""
+File format
+
+USE IN PROJECT - SFX/SONG NAME - ARTIST - LINK - PATH
+"""
+
+
+### MENU ###
+
+Menu song - Joie de Vivre - Albert Behar - https://uppbeat.io/track/albert-behar/joie-de-vivre - res://audio/music/joie_de_vivre_albert_behar.mp3
+Menu song - La Loire - Theo Gerard - https://uppbeat.io/track/theo-gerard/la-loire - res://audio/music/la-loire-theo-gerard-main.mp3
+Menu song - Evening Meal - Aylex - https://uppbeat.io/track/aylex/evening-meal - res://audio/music/evening_meal_alex_main.mp3
+Menu song - A Walk in Paris - Onoychenkomusic - https://pixabay.com/music/acoustic-group-a-walk-in-paris-126173/ - res://audio/music/a-walk-in-paris-126173.mp3
+
+### ESCHER ###
+
+Escher Background Music - Mystic Forest Ambient - Pixabay - https://pixabay.com/sound-effects/mystic-forest-ambient-23812/ - res://audio/music/mystic_forest_ambient.mp3
+Lever Click - Switch - SoundReality - https://pixabay.com/sound-effects/switch-150130/ - res://audio/sfx/lever.mp3
+Door Open - Open Doors - UNIVERSFIELD - res://audio/sfx/open-doors-114615.mp3
+Door Close - Shutting the Door - UNIVERSFIELD - https://pixabay.com/sound-effects/shutting-the-door-119118/ - res://audio/sfx/shutting-the-door-119118.mp3
+
+### VAN GOGH ###
+
+1st Section:
+Refueling stations ambience - Accordion Bar Ambience - Figowitz - https://freesound.org/people/Figowitz/sounds/76427/ - res://audio/music/accordion_bar_ambience.wav
+Wind ambience - Wind Outside | Sound Ambient - SoundsForYou - https://pixabay.com/sound-effects/wind-outside-sound-ambient-141989/ - res://audio/music/wind_ambient.mp3
+Wind gust sound - Gust of Wind - Tony B kksm - https://freesound.org/people/Tony%20B%20kksm/sounds/80937/ - res://audio/sfx/gust_of_wind.wav
+Church bell - Church Bell - Pixabay - https://pixabay.com/sound-effects/church-bell-5993/ - res://audio/sfx/church-bell-5993.mp3
+
+2nd Section:
+Night ambience - Night Ambience - Pixabay - https://pixabay.com/sound-effects/night-ambience-17064/ - res://audio/music/night-ambience-17064.mp3
+Wolf howl 1 - Distant Howling Pupper - Pixabay - https://pixabay.com/sound-effects/distant-howling-pupper-14664/ - res://audio/sfx/distant-howling-pupper-14664.mp3
+Wolf howl 2 - Wolf Howling - UNIVERSFIELD - https://pixabay.com/sound-effects/wolf-howling-140235/ - res://audio/sfx/wolf-howling-140235.mp3
+Owl hoot - Owl Hooting - Pixabay - https://pixabay.com/sound-effects/owl-hooting-48028/ - res://audio/sfx/owl-hooting-48028.mp3
+
+3rd Section:
+Background music - Relaxing - Music_For_Videos - https://pixabay.com/music/modern-classical-relaxing-145038/ - res://audio/music/relaxing-145038.mp3
+
+### DALI ###

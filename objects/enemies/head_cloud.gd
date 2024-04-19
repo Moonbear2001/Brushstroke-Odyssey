@@ -42,6 +42,7 @@ func _on_timer_timeout():
 func drop_face():
 	var new_face = face.instantiate()
 	new_face.set_global_position(Vector2(rng.randi_range(left_coord.x, right_coord.x), left_coord.y))
+	#new_face.enemy.set_collision_layer()
 	add_child(new_face)
 	
 	

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dagovt7ry6r10"]
+
+[ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="1_qlhw8"]
+[ext_resource type="Script" path="res://works_cited/enter_works_cited.gd" id="1_roksq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8roqe"]
+size = Vector2(414.5, 427)
+
+[node name="EnterWorksCited" type="Node2D"]
+script = ExtResource("1_roksq")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_qlhw8")]
+action_name = "Works Cited"
+key = "Enter"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0.499512, -1.52588e-05)
+shape = SubResource("RectangleShape2D_8roqe")

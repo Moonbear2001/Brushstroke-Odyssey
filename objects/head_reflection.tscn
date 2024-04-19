@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://cslq6riw28p82"]
+
+[ext_resource type="Texture2D" uid="uid://dtiexcabpyeso" path="res://art/Dali/creatures/head_splat.png" id="1_3cu0k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbavy"]
+atlas = ExtResource("1_3cu0k")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrr7r"]
+atlas = ExtResource("1_3cu0k")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nvtf"]
+atlas = ExtResource("1_3cu0k")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um4x1"]
+atlas = ExtResource("1_3cu0k")
+region = Rect2(4096, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0tu7"]
+atlas = ExtResource("1_3cu0k")
+region = Rect2(6144, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onq0k"]
+atlas = ExtResource("1_3cu0k")
+region = Rect2(8192, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8i5k"]
+atlas = ExtResource("1_3cu0k")
+region = Rect2(10240, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmmsj"]
+atlas = ExtResource("1_3cu0k")
+region = Rect2(12288, 0, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5hq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbavy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrr7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nvtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um4x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0tu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onq0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8i5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmmsj")
+}],
+"loop": true,
+"name": &"splat",
+"speed": 5.0
+}]
+
+[node name="HeadReflection" type="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0.572549)
+show_behind_parent = true
+light_mask = 16
+z_index = 5
+scale = Vector2(0.2, -0.2)
+sprite_frames = SubResource("SpriteFrames_t5hq3")
