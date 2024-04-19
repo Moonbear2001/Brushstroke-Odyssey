@@ -1,4 +1,4 @@
-[gd_scene load_steps=2336 format=3 uid="uid://bm27qohdxvayg"]
+[gd_scene load_steps=2338 format=3 uid="uid://bm27qohdxvayg"]
 
 [ext_resource type="Script" path="res://levels/gogh2.gd" id="1_se3yh"]
 [ext_resource type="Texture2D" uid="uid://cunk6bh7ewi4w" path="res://art/gogh/house section/houses/IMG_0444.PNG" id="1_v7tai"]
@@ -134,10 +134,12 @@
 [ext_resource type="AudioStream" uid="uid://bu7cxbc4s5036" path="res://audio/sfx/wolf-howling-140235.mp3" id="122_ewfpe"]
 [ext_resource type="AudioStream" uid="uid://dwep1d8cuu66t" path="res://audio/sfx/owl-hooting-48028.mp3" id="123_ewcsk"]
 [ext_resource type="AudioStream" uid="uid://dieprmwnwcax6" path="res://audio/sfx/distant-howling-pupper-14664.mp3" id="124_bviab"]
+[ext_resource type="Texture2D" uid="uid://cx2jrhl8i13al" path="res://art/VanGogh/misc/opposite arrow.png" id="130_bn41c"]
 [ext_resource type="PackedScene" uid="uid://42qlko5rqj3j" path="res://objects/sky objects/densestar3.tscn" id="131_1igth"]
 [ext_resource type="PackedScene" uid="uid://bmm3fynmlnysh" path="res://objects/sky objects/densestar5.tscn" id="132_wjfu8"]
 [ext_resource type="PackedScene" path="res://objects/sky objects/moon.tscn" id="133_vb8aw"]
 [ext_resource type="PackedScene" path="res://objects/sky objects/densestar4.tscn" id="134_676el"]
+[ext_resource type="AudioStream" uid="uid://cscc7jmpc8mgw" path="res://audio/music/separation-185196.mp3" id="135_s3bp0"]
 
 [sub_resource type="Animation" id="Animation_6lejq"]
 resource_name = "scene_in"
@@ -17060,6 +17062,11 @@ shape = SubResource("RectangleShape2D_jsepk")
 [node name="LevelUI" parent="." instance=ExtResource("11_sohy2")]
 visible = false
 
+[node name="OppositeArrow" type="Sprite2D" parent="."]
+position = Vector2(2644, 601)
+scale = Vector2(0.900006, 0.900007)
+texture = ExtResource("130_bn41c")
+
 [node name="Front bushes" type="Node2D" parent="."]
 position = Vector2(-88, 64)
 metadata/_edit_lock_ = true
@@ -17135,6 +17142,12 @@ bus = &"Music"
 stream = ExtResource("121_ocu7r")
 bus = &"Music"
 
+[node name="Guitar" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(2815, 562)
+stream = ExtResource("135_s3bp0")
+autoplay = true
+max_distance = 5000.0
+
 [node name="SoundAmbience" type="Node2D" parent="."]
 script = ExtResource("121_8f0fb")
 
@@ -17158,7 +17171,7 @@ position = Vector2(1762, 195)
 scale = Vector2(221.526, 2.1233)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StarSectionEntrance"]
-position = Vector2(-0.0993111, -312.25)
+position = Vector2(-0.0993111, -410.682)
 shape = SubResource("RectangleShape2D_ifxcy")
 
 [node name="Checkpoint0" type="Node2D" parent="." groups=["checkpoint"]]

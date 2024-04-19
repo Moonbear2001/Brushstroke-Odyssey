@@ -42,8 +42,8 @@ func _ready() -> void:
 	open_sound.set_stream(open_sound_stream)
 	close_sound.set_bus("SFX")
 	open_sound.set_bus("SFX")
-	close_sound.volume_db = -5
-	open_sound.volume_db = -5
+	close_sound.volume_db = -1
+	open_sound.volume_db = -1
 	add_child(close_sound)
 	add_child(open_sound)
 	

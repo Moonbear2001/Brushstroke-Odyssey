@@ -118,6 +118,7 @@ func move_death(num):
 func _on_section_seperator_body_exited(body):
 	if body is Protagonist:
 		if body.position.y < $StarSectionEntrance.position.y:
+			$Guitar.stop()
 			$NighttimeAmbience.stop()
 			$SoundAmbience.stop_ambience()
 			$StarSectionMusic.play(0)

@@ -1419,6 +1419,7 @@ shape = SubResource("RectangleShape2D_4mhpl")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("50_ykumc")
+volume_db = 6.0
 autoplay = true
 bus = &"Music"
 

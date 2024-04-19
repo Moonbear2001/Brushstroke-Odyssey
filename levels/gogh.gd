@@ -15,6 +15,7 @@ Custom level script for the Van Gogh level.
 @onready var new_lantern = preload("res://objects/lantern.tscn")
 @onready var trees = $"Layers/1/Trees"
 @onready var parallax_foreground = $ParallaxBackground2
+@onready var fade_timer = $"Sound Fade Timer"
 
 const protag_scale = Vector2(1.2, 1.2)
 
@@ -140,6 +141,7 @@ func _on_area_2d_body_entered(body):
 # When character gets close to bell tower, ring the bell
 func _on_bell_sound_area_body_entered(_body):
 	$Bells.play()
+	fade_timer.start()
 	
 # Track collected stars
 func collect_star() -> void:
@@ -163,3 +165,7 @@ func level_end(body) -> void:
 	Global.high_scores.new_last_time(level_name, time)
 	if time < best_time:
 		Global.high_scores.new_low_time(level_name, time)
+
+
+func _on_sound_fade_timer_timeout():
+	$AccordionBarAmbience.volume_db -= 1

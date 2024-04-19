@@ -201,8 +201,7 @@ scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_n8e3p")
 
 [node name="FrontArch4" type="Sprite2D" parent="."]
-position = Vector2(3553, 322)
-scale = Vector2(0.91, 0.91)
+position = Vector2(3565, 327)
 texture = SubResource("CompressedTexture2D_lak8j")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -234,18 +233,22 @@ script = ExtResource("14_dlvkp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("11_cf0mi")
+volume_db = -10.0
 bus = &"Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("16_4vahx")
+volume_db = -10.0
 bus = &"Music"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("17_bht6u")
+volume_db = -5.0
 bus = &"Music"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("19_s2wx5")
+volume_db = -12.0
 bus = &"Music"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

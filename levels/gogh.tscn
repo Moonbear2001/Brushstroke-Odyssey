@@ -789,7 +789,7 @@ scale = Vector2(0.218167, 0.218166)
 texture = ExtResource("36_w64ui")
 
 [node name="PointLight2D" type="PointLight2D" parent="Layers/1"]
-position = Vector2(5918, 564)
+position = Vector2(5916, 564)
 scale = Vector2(0.231873, 0.231873)
 texture = ExtResource("33_pywvd")
 
@@ -858,7 +858,7 @@ metadata/_edit_lock_ = true
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(55, 422)
+position = Vector2(73, 406)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -957,8 +957,11 @@ position = Vector2(2274, -1327)
 position = Vector2(2842, 1718)
 shape = SubResource("RectangleShape2D_5cqtu")
 
+[node name="Sound Fade Timer" type="Timer" parent="."]
+
 [connection signal="fuel_exhausted" from="Protagonist/Lantern" to="." method="_on_lantern_fuel_exhausted"]
 [connection signal="fuel_level_changed" from="Protagonist/Lantern" to="LevelUI/FuelBar" method="_on_lantern_fuel_level_changed"]
 [connection signal="body_entered" from="Next Scene/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="WindTimer" to="." method="_on_wind_timer_timeout"]
 [connection signal="body_entered" from="BellSoundArea" to="." method="_on_bell_sound_area_body_entered"]
+[connection signal="timeout" from="Sound Fade Timer" to="." method="_on_sound_fade_timer_timeout"]
