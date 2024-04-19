@@ -9,6 +9,7 @@ through export variables.
 @export var interval_low: int = 1
 @export var interval_high: int = 2
 @export var audio_dist: float = 700
+@export var head_scale: Vector2 = Vector2(0.03, 0.03)
 
 @onready var face: PackedScene = preload("res://objects/enemies/face.tscn")
 @onready var timer: Timer = $Timer
@@ -42,7 +43,7 @@ func _on_timer_timeout():
 func drop_face():
 	var new_face = face.instantiate()
 	new_face.set_global_position(Vector2(rng.randi_range(left_coord.x, right_coord.x), left_coord.y))
-	#new_face.enemy.set_collision_layer()
+	new_face.set_scale(head_scale)
 	add_child(new_face)
 	
 	
