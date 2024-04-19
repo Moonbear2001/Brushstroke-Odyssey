@@ -239,7 +239,6 @@ weak_area = NodePath("Dummy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
 scale = Vector2(0.28, 0.28)
 sprite_frames = SubResource("SpriteFrames_ismyb")
-animation = &"splat"
 
 [node name="DamageArea" type="Area2D" parent="Enemy"]
 collision_layer = 4
