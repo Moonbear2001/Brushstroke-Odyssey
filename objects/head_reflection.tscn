@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=16 format=3 uid="uid://cslq6riw28p82"]
 =======
 [gd_scene load_steps=11 format=3 uid="uid://cslq6riw28p82"]
 >>>>>>> 4b0b273 (reflections are hard asl)
+=======
+[gd_scene load_steps=16 format=3 uid="uid://cslq6riw28p82"]
+>>>>>>> 77a0bfb (heads)
 
 [ext_resource type="Texture2D" uid="uid://dtiexcabpyeso" path="res://art/Dali/creatures/head_splat.png" id="1_3cu0k"]
 
@@ -76,6 +80,9 @@ animations = [{
 }]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 77a0bfb (heads)
 [sub_resource type="Animation" id="Animation_5rxgi"]
 length = 0.001
 
@@ -219,8 +226,11 @@ _data = {
 "splat": SubResource("Animation_yq5ml")
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 4b0b273 (reflections are hard asl)
+=======
+>>>>>>> 77a0bfb (heads)
 [node name="HeadReflection" type="AnimatedSprite2D"]
 self_modulate = Color(1, 1, 1, 0.572549)
 show_behind_parent = true
@@ -229,10 +239,16 @@ z_index = 5
 scale = Vector2(0.2, -0.2)
 sprite_frames = SubResource("SpriteFrames_t5hq3")
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 77a0bfb (heads)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_cuhkg")
 }
+<<<<<<< HEAD
 =======
 >>>>>>> 4b0b273 (reflections are hard asl)
+=======
+>>>>>>> 77a0bfb (heads)
