@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=3 uid="uid://d0evxydct8r11"]
+
+[ext_resource type="Texture2D" uid="uid://dn1isfp7c4gdl" path="res://art/Dali/parrallax_water_section/water.png" id="1_7ps4m"]
+[ext_resource type="Script" path="res://objects/reflecting_water.gd" id="1_fkmi5"]
+[ext_resource type="Texture2D" uid="uid://tpjaxdw2ch0f" path="res://art/white.png" id="2_jo3wd"]
+[ext_resource type="Shader" path="res://objects/reflecting_water.gdshader" id="2_oqadg"]
+[ext_resource type="Texture2D" uid="uid://ythms3a213tx" path="res://art/Dali/character/dali_character_Spriteshet.png" id="10_6y622"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7wr"]
+size = Vector2(2216, 326.531)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sred"]
+atlas = ExtResource("10_6y622")
+region = Rect2(792, 0, 264, 348)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfi7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sred")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ftiey"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1ra6q"]
+normalize = false
+noise = SubResource("FastNoiseLite_ftiey")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dwg3"]
+shader = ExtResource("2_oqadg")
+shader_parameter/speed = 0.05
+shader_parameter/strength = 0.05
+shader_parameter/noise = SubResource("NoiseTexture2D_1ra6q")
+shader_parameter/mask = ExtResource("2_jo3wd")
+
+[sub_resource type="Animation" id="Animation_2vq1v"]
+resource_name = "protag_reflec_invis"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Reflections/ProtagReflection:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.392157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxol1"]
+_data = {
+"protag_reflec_invis": SubResource("Animation_2vq1v")
+}
+
+[node name="ReflectingWater" type="Node2D"]
+script = ExtResource("1_fkmi5")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1.28)
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -93.7344)
+shape = SubResource("RectangleShape2D_yu7wr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_7ps4m")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+scale = Vector2(37.3867, 5.88444)
+color = Color(0.196078, 0.196078, 0.196078, 0.0784314)
+range_item_cull_mask = 16
+texture = ExtResource("2_jo3wd")
+
+[node name="Reflections" type="Node2D" parent="."]
+position = Vector2(-1058, -177)
+
+[node name="ProtagReflection" type="AnimatedSprite2D" parent="Reflections"]
+self_modulate = Color(1, 1, 1, 0.392157)
+light_mask = 16
+position = Vector2(875, 187)
+scale = Vector2(0.25, -0.25)
+sprite_frames = SubResource("SpriteFrames_pfi7l")
+
+[node name="ScreenDistortion" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0dwg3")
+offset_left = -1058.0
+offset_top = -177.0
+offset_right = 1050.0
+offset_bottom = 170.0
+
+[node name="Surface" type="Node2D" parent="."]
+position = Vector2(0, -120)
+
+[node name="ReflectionThreshold" type="Node2D" parent="."]
+position = Vector2(0, -328)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bxol1")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

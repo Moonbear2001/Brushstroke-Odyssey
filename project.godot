@@ -101,9 +101,11 @@ interact2={
 
 [layer_names]
 
+2d_render/layer_5="Player Reflection"
 2d_physics/layer_2="Interactions"
 2d_physics/layer_3="Enemies"
 2d_physics/layer_7="Branches"
+2d_physics/layer_8="Ground"
 
 [rendering]
 
