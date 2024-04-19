@@ -4,6 +4,7 @@ extends Node2D
 Pool with shader ripple effect that reflects the protagonist.
 """
 
+<<<<<<< HEAD
 @onready var protag_reflection = $ProtagReflection
 @onready var reflections = $Reflections
 @onready var face: PackedScene = preload("res://objects/head_reflection.tscn")
@@ -22,12 +23,29 @@ func _ready():
 	set_physics_process(false)
 	free_head_reflections = $Reflections.get_children()
 	print(free_head_reflections)
+=======
+@onready var protag_reflection = $Reflections/ProtagReflection
+@onready var reflections = $Reflections
+@onready var face: PackedScene = preload("res://objects/head_reflection.tscn")
+@onready var surface_y = $Surface.position.y
+@onready var reflection_threshold_y = $ReflectionThreshold.position.y
+
+var protagonist
+const height = 70
+@onready var reflection_start = surface_y + (surface_y - reflection_threshold_y)
+
+var head_reflections = []
+
+func _ready():
+	set_physics_process(false)
+>>>>>>> 4b0b273 (reflections are hard asl)
 	
 func _input(_event):
 	if Input.is_action_just_pressed("jump"):
 		$AnimationPlayer.play("protag_reflec_invis")
 
 func _physics_process(delta):
+<<<<<<< HEAD
 	print("surface y", surface_y)
 	protag_reflection.set_global_position(Vector2(protagonist.get_global_position().x, protagonist.get_global_position().y + 80))
 	for head_reflection in used_head_reflections:
@@ -35,6 +53,13 @@ func _physics_process(delta):
 			head_reflection.play("splat")
 		else:
 			head_reflection.position.y -= 50 * delta
+=======
+	protag_reflection.set_global_position(Vector2(protagonist.get_global_position().x, protagonist.get_global_position().y + height))
+	for head_reflection in head_reflections:
+		head_reflection.position.y -= 50 * delta
+		if head_reflection.position.y <= surface_y:
+			head_reflection.play("splat")
+>>>>>>> 4b0b273 (reflections are hard asl)
 
 func _on_area_2d_body_entered(body):
 	if body is Protagonist:
@@ -43,6 +68,7 @@ func _on_area_2d_body_entered(body):
 		
 	# Make a new face reflection
 	elif body.is_in_group("faces"):
+<<<<<<< HEAD
 		var face_reflection = free_head_reflections.pop_back()
 		face_reflection.set_global_position(Vector2(body.global_position.x, global_position.y + height))
 		face_reflection.set_visible(true)
@@ -50,6 +76,12 @@ func _on_area_2d_body_entered(body):
 		used_head_reflections.append(face_reflection)
 		#reflections.add_child(face_reflection)
 		#head_reflections.append(face_reflection)
+=======
+		var face_reflection = face.instantiate()
+		face_reflection.set_global_position(Vector2(body.global_position.x, global_position.y + height))
+		reflections.add_child(face_reflection)
+		head_reflections.append(face_reflection)
+>>>>>>> 4b0b273 (reflections are hard asl)
 		body.tree_exiting.connect(destroy_reflection)
 
 func _on_area_2d_body_exited(body):
@@ -58,6 +90,11 @@ func _on_area_2d_body_exited(body):
 		protagonist = null
 		
 func destroy_reflection():
+<<<<<<< HEAD
 	var last = used_head_reflections.pop_front()
 	last.set_visible(false)
 	free_head_reflections.append(last)
+=======
+	var last = head_reflections.pop_front()
+	last.queue_free()
+>>>>>>> 4b0b273 (reflections are hard asl)

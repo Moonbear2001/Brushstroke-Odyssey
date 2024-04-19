@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 [gd_scene load_steps=15 format=3 uid="uid://d0evxydct8r11"]
+=======
+[gd_scene load_steps=14 format=3 uid="uid://d0evxydct8r11"]
+>>>>>>> 4b0b273 (reflections are hard asl)
 
 [ext_resource type="Texture2D" uid="uid://dn1isfp7c4gdl" path="res://art/Dali/parrallax_water_section/water.png" id="1_7ps4m"]
 [ext_resource type="Script" path="res://objects/reflecting_water.gd" id="1_fkmi5"]
 [ext_resource type="Texture2D" uid="uid://tpjaxdw2ch0f" path="res://art/white.png" id="2_jo3wd"]
 [ext_resource type="Shader" path="res://objects/reflecting_water.gdshader" id="2_oqadg"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cslq6riw28p82" path="res://objects/head_reflection.tscn" id="5_d5ov5"]
+=======
+>>>>>>> 4b0b273 (reflections are hard asl)
 [ext_resource type="Texture2D" uid="uid://ythms3a213tx" path="res://art/Dali/character/dali_character_Spriteshet.png" id="10_6y622"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7wr"]
@@ -43,7 +50,11 @@ resource_name = "protag_reflec_invis"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
+<<<<<<< HEAD
 tracks/0/path = NodePath("ProtagReflection:self_modulate")
+=======
+tracks/0/path = NodePath("Reflections/ProtagReflection:self_modulate")
+>>>>>>> 4b0b273 (reflections are hard asl)
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -82,6 +93,7 @@ texture = ExtResource("2_jo3wd")
 [node name="Reflections" type="Node2D" parent="."]
 position = Vector2(-1058, -177)
 
+<<<<<<< HEAD
 [node name="HeadReflection" parent="Reflections" instance=ExtResource("5_d5ov5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
@@ -134,6 +146,12 @@ position = Vector2(2010, 292)
 self_modulate = Color(1, 1, 1, 0.392157)
 light_mask = 16
 position = Vector2(-183, 10)
+=======
+[node name="ProtagReflection" type="AnimatedSprite2D" parent="Reflections"]
+self_modulate = Color(1, 1, 1, 0.392157)
+light_mask = 16
+position = Vector2(875, 187)
+>>>>>>> 4b0b273 (reflections are hard asl)
 scale = Vector2(0.25, -0.25)
 sprite_frames = SubResource("SpriteFrames_pfi7l")
 
@@ -145,7 +163,11 @@ offset_right = 1050.0
 offset_bottom = 170.0
 
 [node name="Surface" type="Node2D" parent="."]
+<<<<<<< HEAD
 position = Vector2(0, -75)
+=======
+position = Vector2(0, -120)
+>>>>>>> 4b0b273 (reflections are hard asl)
 
 [node name="ReflectionThreshold" type="Node2D" parent="."]
 position = Vector2(0, -328)
