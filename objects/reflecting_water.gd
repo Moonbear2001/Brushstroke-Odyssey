@@ -4,7 +4,7 @@ extends Node2D
 Pool with shader ripple effect that reflects the protagonist.
 """
 
-@onready var protag_reflection = $Reflections/ProtagReflection
+@onready var protag_reflection = $ProtagReflection
 @onready var reflections = $Reflections
 @onready var face: PackedScene = preload("res://objects/head_reflection.tscn")
 @onready var surface_y = $Surface.global_position.y
@@ -27,10 +27,10 @@ func _input(_event):
 		$AnimationPlayer.play("protag_reflec_invis")
 
 func _physics_process(delta):
-	protag_reflection.set_global_position(Vector2(protagonist.get_global_position().x, protagonist.get_global_position().y + height))
-	for head_reflection in head_reflections:
-		head_reflection.position.y -= 50 * delta
-		if head_reflection.position.y <= surface_y:
+	print("surface y", surface_y)
+	protag_reflection.set_global_position(Vector2(protagonist.get_global_position().x, protagonist.get_global_position().y + 80))
+	for head_reflection in used_head_reflections:
+		if head_reflection.global_position.y <= surface_y + 100:
 			head_reflection.play("splat")
 		else:
 			head_reflection.position.y -= 50 * delta
