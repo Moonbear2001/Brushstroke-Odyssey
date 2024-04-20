@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dv1kdmuaoduuf"]
+[gd_scene load_steps=23 format=3 uid="uid://dv1kdmuaoduuf"]
 
 [ext_resource type="Script" path="res://objects/enemies/enemy_path.gd" id="1_l6w02"]
 [ext_resource type="Script" path="res://objects/enemies/elephant.gd" id="1_n2k5q"]
@@ -61,7 +61,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DamageArea/CollisionPolygon2D:polygon")
+tracks/0/path = NodePath("DamageFront/CollisionPolygon2D:polygon")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -73,7 +73,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5y080"]
 resource_name = "attack"
-loop_mode = 1
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,22 +81,22 @@ tracks/0/path = NodePath("Head:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("9_28pen"), ExtResource("8_dmb2n"), ExtResource("10_l8fhg"), ExtResource("11_lrt6j"), ExtResource("12_17fus"), ExtResource("13_cllia")]
+"values": [ExtResource("9_28pen"), ExtResource("8_dmb2n"), ExtResource("10_l8fhg"), ExtResource("11_lrt6j"), ExtResource("12_17fus"), ExtResource("13_cllia"), ExtResource("9_28pen")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("DamageArea/CollisionPolygon2D:polygon")
+tracks/1/path = NodePath("DamageFront/CollisionPolygon2D:polygon")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -289, 20, -325, 45, -361, 57, -397, 20, -405, -47, -405, -109, -404, -172, -419, -218, -447, -222, -475, -183, -513, -114, -531, -42, -530, 33, -532, 56, -540, -14, -527, -106, -496, -180, -463, -229, -434, -241, -404, -231, -387, -196, -387, -141, -385, -70, -372, -12, -362, 5, -345, -9, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -284, 34, -311, 68, -340, 111, -376, 116, -411, 88, -430, 19, -460, -134, -474, -170, -488, -179, -512, -182, -531, -173, -558, -157, -577, -136, -598, -60, -585, -147, -530, -185, -497, -196, -473, -185, -462, -170, -452, -142, -442, -107, -423, -16, -387, 81, -366, 92, -343, 63, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -265, 44, -263, 106, -261, 151, -288, 182, -334, 179, -421, 83, -445, 25, -461, -89, -480, -113, -509, -122, -535, -114, -552, -98, -562, -83, -581, -52, -565, -97, -539, -127, -515, -134, -490, -131, -473, -120, -457, -106, -444, -85, -437, 4, -401, 79, -368, 115, -335, 153, -300, 158, -287, 134, -284, 83, -302, 42, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -259, 46, -255, 113, -251, 176, -251, 245, -289, 276, -325, 289, -362, 269, -394, 204, -407, 167, -419, 92, -439, -94, -448, -112, -462, -120, -479, -120, -496, -118, -513, -110, -508, -118, -501, -123, -487, -127, -462, -129, -442, -119, -434, -102, -407, 110, -395, 174, -376, 221, -350, 265, -321, 273, -298, 256, -284, 215, -293, 138, -303, 95, -302, 42, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -283, 43, -298, 67, -276, 131, -260, 205, -265, 233, -299, 299, -370, 376, -419, 463, -435, 519, -469, 590, -503, 643, -531, 676, -544, 686, -500, 625, -464, 565, -418, 445, -379, 374, -328, 307, -288, 254, -284, 215, -314, 117, -333, 77, -324, 44, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -283, 43, -317, 54, -353, 59, -414, 65, -464, 82, -484, 147, -479, 195, -447, 319, -439, 433, -467, 507, -446, 436, -451, 361, -466, 282, -489, 205, -497, 142, -479, 76, -433, 51, -372, 44, -336, 24, -347, -44, -348, -96, -315, -130)]
+"values": [PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -289, 20, -325, 45, -361, 57, -397, 20, -405, -47, -405, -109, -404, -172, -419, -218, -447, -222, -475, -183, -513, -114, -531, -42, -530, 33, -532, 56, -540, -14, -527, -106, -496, -180, -463, -229, -434, -241, -404, -231, -387, -196, -387, -141, -385, -70, -372, -12, -362, 5, -345, -9, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -284, 34, -311, 68, -340, 111, -376, 116, -411, 88, -430, 19, -460, -134, -474, -170, -488, -179, -512, -182, -531, -173, -558, -157, -577, -136, -598, -60, -585, -147, -530, -185, -497, -196, -473, -185, -462, -170, -452, -142, -442, -107, -423, -16, -387, 81, -366, 92, -343, 63, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -265, 44, -263, 106, -261, 151, -288, 182, -334, 179, -421, 83, -445, 25, -461, -89, -480, -113, -509, -122, -535, -114, -552, -98, -562, -83, -581, -52, -565, -97, -539, -127, -515, -134, -490, -131, -473, -120, -457, -106, -444, -85, -437, 4, -401, 79, -368, 115, -335, 153, -300, 158, -287, 134, -284, 83, -302, 42, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -259, 46, -255, 113, -251, 176, -251, 245, -289, 276, -325, 289, -362, 269, -394, 204, -407, 167, -419, 92, -439, -94, -448, -112, -462, -120, -479, -120, -496, -118, -513, -110, -508, -118, -501, -123, -487, -127, -462, -129, -442, -119, -434, -102, -407, 110, -395, 174, -376, 221, -350, 265, -321, 273, -298, 256, -284, 215, -293, 138, -303, 95, -302, 42, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -283, 43, -298, 67, -276, 131, -260, 205, -265, 233, -299, 299, -370, 376, -419, 463, -435, 519, -469, 590, -503, 643, -531, 676, -544, 686, -500, 625, -464, 565, -418, 445, -379, 374, -328, 307, -288, 254, -284, 215, -314, 117, -333, 77, -324, 44, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -283, 43, -317, 54, -353, 59, -414, 65, -464, 82, -484, 147, -479, 195, -447, 319, -439, 433, -467, 507, -446, 436, -451, 361, -466, 282, -489, 205, -497, 142, -479, 76, -433, 51, -372, 44, -336, 24, -347, -44, -348, -96, -315, -130), PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -289, 20, -325, 45, -361, 57, -397, 20, -405, -47, -405, -109, -404, -172, -419, -218, -447, -222, -475, -183, -513, -114, -531, -42, -530, 33, -532, 56, -540, -14, -527, -106, -496, -180, -463, -229, -434, -241, -404, -231, -387, -196, -387, -141, -385, -70, -372, -12, -362, 5, -345, -9, -347, -44, -348, -96, -315, -130)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eb0pm"]
@@ -105,19 +105,22 @@ _data = {
 "attack": SubResource("Animation_5y080")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6l3si"]
+radius = 136.0
+height = 580.0
+
 [node name="Elephant" type="PathFollow2D" groups=["enemy"]]
 rotates = false
 cubic_interp = false
 loop = false
 script = ExtResource("1_l6w02")
 
-[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back", "weak_area")]
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back")]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_n2k5q")
-damage_front = NodePath("Dummy")
-damage_back = NodePath("Dummy")
-weak_area = NodePath("Dummy")
+damage_front = NodePath("DamageFront")
+damage_back = NodePath("DamageBack")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("4_gbocx")
@@ -149,18 +152,36 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("9_28pen")
 metadata/_edit_lock_ = true
 
-[node name="DamageArea" type="Area2D" parent="Enemy"]
+[node name="DamageFront" type="Area2D" parent="Enemy"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy/DamageFront"]
 polygon = PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240, 1, -284, 34, -311, 68, -340, 111, -376, 116, -411, 88, -430, 19, -460, -134, -474, -170, -488, -179, -512, -182, -531, -173, -558, -157, -577, -136, -598, -60, -585, -147, -530, -185, -497, -196, -473, -185, -462, -170, -452, -142, -442, -107, -423, -16, -387, 81, -366, 92, -343, 63, -336, 24, -347, -44, -348, -96, -315, -130)
 
-[node name="Timer" type="Timer" parent="Enemy"]
+[node name="DamageBack" type="Area2D" parent="Enemy"]
 
-[node name="Dummy" type="Area2D" parent="Enemy"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy/DamageBack"]
+polygon = PackedVector2Array(-181, -156, -89, -132, -25, -132, 7, -53, -10, 90, -161, 97, -218, 77, -153, -92)
+
+[node name="Timer" type="Timer" parent="Enemy"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
 libraries = {
 "": SubResource("AnimationLibrary_eb0pm")
 }
 
+[node name="AttackRadius" type="Area2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/AttackRadius"]
+position = Vector2(-437, 645)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_6l3si")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Enemy"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy/StaticBody2D"]
+polygon = PackedVector2Array(-217, 98, -180, 110, -20, 110, -20, 135, -212, 129)
+
 [connection signal="timeout" from="Enemy/WalkTimer" to="Enemy" method="_on_walk_timer_timeout"]
+[connection signal="animation_finished" from="Enemy/AnimationPlayer" to="Enemy" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Enemy/AttackRadius" to="Enemy" method="_on_attack_radius_body_entered"]
+[connection signal="body_exited" from="Enemy/AttackRadius" to="Enemy" method="_on_attack_radius_body_exited"]

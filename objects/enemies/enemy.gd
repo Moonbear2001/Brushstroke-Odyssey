@@ -7,7 +7,6 @@ Base enemy class.
 
 @export var damage_front: Area2D
 @export var damage_back: Area2D
-@export var weak_area: Area2D
 
 @onready var timer: Timer = $Timer
 
