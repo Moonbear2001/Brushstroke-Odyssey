@@ -1,4 +1,4 @@
-[gd_scene load_steps=253 format=3 uid="uid://cyv0src61ekil"]
+[gd_scene load_steps=254 format=3 uid="uid://cyv0src61ekil"]
 
 [ext_resource type="Script" path="res://characters/protagonist_dali.gd" id="1_dktyh"]
 [ext_resource type="Texture2D" uid="uid://c08ociuk53wly" path="res://art/Dali/character/climbing.PNG" id="2_rjl8b"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://gq0pnavkrnod" path="res://art/Dali/character/melt4.png" id="8_wthsa"]
 [ext_resource type="Texture2D" uid="uid://diw5oj5i4yhi4" path="res://art/Dali/character/death.png" id="9_tsyxa"]
 [ext_resource type="Texture2D" uid="uid://dlg154opaf5t" path="res://art/Dali/character/melt5.png" id="9_vna44"]
+[ext_resource type="AudioStream" uid="uid://c00v5s22ex35p" path="res://audio/sfx/dali/human-impact-on-ground-6982.mp3" id="15_fw6lh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tthq3"]
 atlas = ExtResource("2_rjl8b")
@@ -4767,5 +4768,9 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_mgogc")
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_fw6lh")
+volume_db = 10.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

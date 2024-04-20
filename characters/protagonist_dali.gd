@@ -75,6 +75,7 @@ func respawn():
 	dying = true
 	disable_input()
 	velocity = Vector2(0, 0)
+	$death.play()
 	anim.play("Death_Dali")
 
 func _on_animation_player_animation_finished(anim_name):
