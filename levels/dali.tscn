@@ -722,7 +722,7 @@ scale = Vector2(0.111401, 0.111401)
 texture = ExtResource("34_nrpap")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(6933, 234)
+position = Vector2(10588, 507)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)

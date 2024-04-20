@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnowdsjk21byb"]
+
+[ext_resource type="Shader" path="res://objects/water.gdshader" id="1_x7htu"]
+[ext_resource type="Texture2D" uid="uid://dn1isfp7c4gdl" path="res://art/Dali/parrallax_water_section/water.png" id="1_yvn0o"]
+[ext_resource type="Script" path="res://objects/Water.gd" id="2_b2de5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4so5d"]
+shader = ExtResource("1_x7htu")
+shader_parameter/scale = null
+
+[node name="Water" type="Sprite2D"]
+material = SubResource("ShaderMaterial_4so5d")
+texture = ExtResource("1_yvn0o")
+script = ExtResource("2_b2de5")
+
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]
