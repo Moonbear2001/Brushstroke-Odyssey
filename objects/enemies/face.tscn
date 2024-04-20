@@ -313,6 +313,7 @@ bus = &"SFX"
 stream = ExtResource("5_7kvy4")
 volume_db = 2.0
 pitch_scale = 1.5
+bus = &"SFX"
 
 [node name="DequeueTimer" type="Timer" parent="."]
 wait_time = 2.0
