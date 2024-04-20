@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=79 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -225,9 +225,9 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_1s11c"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 15672, 517, 0, 0, 0, 0, 14521, 513)
+"points": PackedVector2Array(0, 0, 0, 0, 15672, 517, 0, 0, 0, 0, 15657.9, 510.17, 0, 0, 0, 0, 14521, 513)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_kcyij"]
 _data = {
@@ -237,13 +237,19 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_tpfsc"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 14974, 541, 0, 0, 0, 0, 14304, 541)
+"points": PackedVector2Array(0, 0, 0, 0, 14974, 541, 0, 0, 0, 0, 14183, 544)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_5u3ur"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 16035, 535, 0, 0, 0, 0, 15260, 545)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_xc0gb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 17289, 573, 0, 0, 0, 0, 16363, 575)
 }
 point_count = 2
 
@@ -641,17 +647,28 @@ texture = ExtResource("17_uwfcw")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/StaticBody2D"]
 position = Vector2(0.000488281, 374.05)
 scale = Vector2(1, 0.297794)
-polygon = PackedVector2Array(7199, 400, 7198, 360, 8576, 360, 8625, 411)
+polygon = PackedVector2Array(7199, 400, 7198, 360, 8619, 352.425, 8625, 411)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/Blocks/StaticBody2D"]
 position = Vector2(-0.00439453, 403.3)
 scale = Vector2(1, 0.225)
-polygon = PackedVector2Array(7021, 348, 7106, 347, 7106, 396, 7015, 397)
+polygon = PackedVector2Array(6981, 345.333, 7106, 347, 7106, 396, 6981, 389.778)
 
 [node name="Climb" parent="Platforms/Blocks/StaticBody2D" instance=ExtResource("25_4itko")]
 position = Vector2(7138, 592)
 rotation = 0.0698132
 scale = Vector2(2.5, 1.2)
+
+[node name="block6" type="StaticBody2D" parent="Platforms/Blocks"]
+position = Vector2(14276, 594)
+scale = Vector2(0.2, 0.2)
+metadata/_edit_group_ = true
+
+[node name="b1" type="Sprite2D" parent="Platforms/Blocks/block6"]
+texture = ExtResource("2_m3vv6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block6"]
+polygon = PackedVector2Array(-290, -40, -310, 300, 115, 290, 250.002, 140, 220.002, -165, -190, -175)
 
 [node name="Trees" type="Node2D" parent="Platforms"]
 position = Vector2(0, -19)
@@ -794,6 +811,10 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(9253, 523)
 scale = Vector2(0.2, 0.2)
 
+[node name="Clock6" parent="Clocks" instance=ExtResource("8_3ka5o")]
+position = Vector2(14305, 537)
+scale = Vector2(0.2, 0.2)
+
 [node name="Background Rocks" type="Node2D" parent="."]
 position = Vector2(0, -30)
 
@@ -803,7 +824,7 @@ scale = Vector2(0.1682, 0.1682)
 texture = ExtResource("23_jf57o")
 
 [node name="TreeStructure" type="Sprite2D" parent="Background Rocks"]
-position = Vector2(10985, 413)
+position = Vector2(10985, 442)
 scale = Vector2(0.285904, 0.285904)
 texture = ExtResource("31_io6ln")
 
@@ -818,7 +839,7 @@ scale = Vector2(0.342504, 0.356011)
 texture = ExtResource("35_fiefn")
 
 [node name="TreeStructure2" type="Sprite2D" parent="Background Rocks"]
-position = Vector2(12418, 422)
+position = Vector2(12418, 438)
 scale = Vector2(0.282801, 0.282801)
 texture = ExtResource("31_io6ln")
 
@@ -854,7 +875,7 @@ autoplay = "default"
 polygon = PackedVector2Array(17414, 339, 17442, 571, 17485, 566, 17448, 323)
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(86, 434)
+position = Vector2(117, 444)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -870,7 +891,7 @@ scale = Vector2(0.2, 0.2)
 progress = 161.62
 
 [node name="Path2D2" type="Path2D" parent="Enemies"]
-position = Vector2(1299, 548)
+position = Vector2(1299, 534)
 curve = SubResource("Curve2D_x6vvg")
 
 [node name="SkinBlob2" parent="Enemies/Path2D2" instance=ExtResource("3_png0t")]
@@ -968,40 +989,47 @@ scale = Vector2(0.15, 0.15)
 move_speed = 180
 
 [node name="Path2D13" type="Path2D" parent="Enemies"]
-position = Vector2(-305, -250)
+position = Vector2(-27, -311)
 curve = SubResource("Curve2D_1s11c")
 metadata/_edit_group_ = true
 
 [node name="Elephant" parent="Enemies/Path2D13" instance=ExtResource("20_btx2t")]
 position = Vector2(15672, 517)
-scale = Vector2(0.5, 0.5)
-move_speed = 160
+scale = Vector2(0.6, 0.6)
+move_speed = 200
 
 [node name="Path2D14" type="Path2D" parent="Enemies"]
-position = Vector2(-71, -113)
+position = Vector2(207, -33)
 curve = SubResource("Curve2D_kcyij")
 
 [node name="Elephant" parent="Enemies/Path2D14" instance=ExtResource("20_btx2t")]
 position = Vector2(16507, 236)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 
 [node name="Path2D15" type="Path2D" parent="Enemies"]
-position = Vector2(0, 43)
+position = Vector2(278, 43)
 curve = SubResource("Curve2D_tpfsc")
 
 [node name="SkinBlob3" parent="Enemies/Path2D15" instance=ExtResource("3_png0t")]
 position = Vector2(14974, 541)
 scale = Vector2(0.25, 0.25)
-move_speed = 115
 
 [node name="Path2D16" type="Path2D" parent="Enemies"]
-position = Vector2(0, 16)
+position = Vector2(278, 16)
 curve = SubResource("Curve2D_5u3ur")
 
 [node name="SkinBlob3" parent="Enemies/Path2D16" instance=ExtResource("3_png0t")]
 position = Vector2(16035, 535)
 scale = Vector2(0.15, 0.15)
 move_speed = 130
+
+[node name="Path2D17" type="Path2D" parent="Enemies"]
+curve = SubResource("Curve2D_xc0gb")
+
+[node name="SkinBlob3" parent="Enemies/Path2D17" instance=ExtResource("3_png0t")]
+position = Vector2(17289, 573)
+scale = Vector2(0.3, 0.3)
+move_speed = 60
 
 [node name="Foreground Rocks" type="Node2D" parent="."]
 position = Vector2(0, -30)

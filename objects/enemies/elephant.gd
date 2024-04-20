@@ -10,7 +10,7 @@ Elephant enemy.
 @onready var attack_radius = $AttackRadius
 
 var audio_dist = 1000
-var volume = -20
+var volume = -5
 var fade = 100
 var attacking = false
 var animation_finished = true
@@ -39,6 +39,7 @@ func _on_attack_radius_body_entered(body):
 		attack()
 
 func attack():
+	$"pre-attack".play()
 	animation.play("attack")
 	attacking = true
 	animation_finished = false

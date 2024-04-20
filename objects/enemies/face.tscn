@@ -252,12 +252,11 @@ height = 320.0
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_n6o3u")
 
-[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back", "weak_area")]
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back")]
 collision_layer = 4
 script = ExtResource("1_vekug")
 damage_front = NodePath("Dummy")
 damage_back = NodePath("Dummy")
-weak_area = NodePath("Dummy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
 scale = Vector2(0.28, 0.28)
@@ -305,7 +304,7 @@ shape = SubResource("CapsuleShape2D_masdi")
 
 [node name="splat" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("4_pyu11")
-volume_db = -10.0
+volume_db = -5.0
 pitch_scale = 0.5
 max_distance = 700.0
 bus = &"SFX"
