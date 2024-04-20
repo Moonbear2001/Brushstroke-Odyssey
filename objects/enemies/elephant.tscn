@@ -107,7 +107,7 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6l3si"]
 radius = 136.0
-height = 580.0
+height = 438.0
 
 [node name="Elephant" type="PathFollow2D" groups=["enemy"]]
 rotates = false
@@ -163,6 +163,7 @@ polygon = PackedVector2Array(-286, -149, -245, -147, -208, -121, -222, -65, -240
 polygon = PackedVector2Array(-181, -156, -89, -132, -25, -132, 7, -53, -10, 90, -161, 97, -218, 77, -153, -92)
 
 [node name="Timer" type="Timer" parent="Enemy"]
+one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
 libraries = {
@@ -172,7 +173,7 @@ libraries = {
 [node name="AttackRadius" type="Area2D" parent="Enemy"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/AttackRadius"]
-position = Vector2(-437, 645)
+position = Vector2(-478, 645)
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_6l3si")
 
