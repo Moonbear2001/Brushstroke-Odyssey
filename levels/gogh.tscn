@@ -55,14 +55,14 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/ColorRect:color")
+tracks/0/path = NodePath("ParallaxBackground3/ParallaxLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b5t77"]
@@ -158,6 +158,19 @@ metadata/_edit_horizontal_guides_ = [-3391.0]
 libraries = {
 "": SubResource("AnimationLibrary_b5t77")
 }
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+layer = 10
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground3/ParallaxLayer"]
+offset_left = -1197.0
+offset_top = -1702.0
+offset_right = 9592.0
+offset_bottom = 1892.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-3, 62)
@@ -776,7 +789,7 @@ scale = Vector2(0.218167, 0.218166)
 texture = ExtResource("36_w64ui")
 
 [node name="PointLight2D" type="PointLight2D" parent="Layers/1"]
-position = Vector2(5918, 564)
+position = Vector2(5916, 564)
 scale = Vector2(0.231873, 0.231873)
 texture = ExtResource("33_pywvd")
 
@@ -845,7 +858,7 @@ metadata/_edit_lock_ = true
 [node name="Protagonist" parent="." instance=ExtResource("24_en3te")]
 z_index = 128
 z_as_relative = false
-position = Vector2(64, 400)
+position = Vector2(73, 406)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
@@ -944,8 +957,11 @@ position = Vector2(2274, -1327)
 position = Vector2(2842, 1718)
 shape = SubResource("RectangleShape2D_5cqtu")
 
+[node name="Sound Fade Timer" type="Timer" parent="."]
+
 [connection signal="fuel_exhausted" from="Protagonist/Lantern" to="." method="_on_lantern_fuel_exhausted"]
 [connection signal="fuel_level_changed" from="Protagonist/Lantern" to="LevelUI/FuelBar" method="_on_lantern_fuel_level_changed"]
 [connection signal="body_entered" from="Next Scene/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="WindTimer" to="." method="_on_wind_timer_timeout"]
 [connection signal="body_entered" from="BellSoundArea" to="." method="_on_bell_sound_area_body_entered"]
+[connection signal="timeout" from="Sound Fade Timer" to="." method="_on_sound_fade_timer_timeout"]

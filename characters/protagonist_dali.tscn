@@ -4732,6 +4732,7 @@ radius = 12.0
 height = 44.0
 
 [node name="ProtagonistDali" type="CharacterBody2D" groups=["protagonist"]]
+collision_mask = 65
 slide_on_ceiling = false
 script = ExtResource("1_dktyh")
 

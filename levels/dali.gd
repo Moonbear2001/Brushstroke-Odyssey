@@ -21,7 +21,8 @@ func _ready():
 func speed_up():
 	var valid = protagonist.take_damage(-1, true)
 	if valid:
-		timer.wait_time /= 2
+		if timer.wait_time > 0.125:
+			timer.wait_time /= 2
 		for node in get_tree().get_nodes_in_group("enemy"):
 			node.increase_speed()
 		for clock in clocks.get_children():
@@ -41,8 +42,7 @@ func protag_took_damage():
 		clock.anim.play(str(protagonist.health))
 
 func fade_to_black():
-	#replace this with anim.play("scene_out")
-	get_tree().reload_current_scene()
+	anim.play("scene_out")
 
 func _on_timer_timeout():
 	tick_sound.play()

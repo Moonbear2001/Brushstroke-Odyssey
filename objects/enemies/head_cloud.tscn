@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1qgimxn4uena"]
+[gd_scene load_steps=4 format=3 uid="uid://d1qgimxn4uena"]
 
 [ext_resource type="Script" path="res://objects/enemies/head_cloud.gd" id="1_1ba5i"]
+[ext_resource type="AudioStream" uid="uid://dltv1i2ud25qp" path="res://audio/sfx/dali/epic-storm-thunder-rainwindwaves-no-loops-106800 (1).mp3" id="2_v71ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr7do"]
 size = Vector2(134, 20)
@@ -12,5 +13,12 @@ script = ExtResource("1_1ba5i")
 shape = SubResource("RectangleShape2D_dr7do")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="storm_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_v71ef")
+volume_db = -5.0
+autoplay = true
+max_distance = 1500.0
+attenuation = 1.56917
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
