@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=63 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -49,6 +49,9 @@ size = Vector2(3310, 312)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0jc5"]
 size = Vector2(721.49, 457.666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu8ti"]
+size = Vector2(1646, 20)
 
 [sub_resource type="Curve2D" id="Curve2D_rrqc2"]
 _data = {
@@ -516,18 +519,13 @@ position = Vector2(7501, 626.875)
 scale = Vector2(1.21942, 0.395087)
 texture = ExtResource("17_uwfcw")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/StaticBody2D"]
-position = Vector2(0.000488281, 374.05)
-scale = Vector2(1, 0.297794)
-polygon = PackedVector2Array(7199, 400, 7198, 360, 8576, 360, 8625, 411)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Blocks/StaticBody2D"]
+position = Vector2(7799, 491)
+shape = SubResource("RectangleShape2D_pu8ti")
+one_way_collision = true
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/Blocks/StaticBody2D"]
-position = Vector2(-0.00439453, 403.3)
-scale = Vector2(1, 0.225)
-polygon = PackedVector2Array(7021, 348, 7106, 347, 7106, 396, 7015, 397)
-
-[node name="Climb" parent="Platforms/Blocks/StaticBody2D" instance=ExtResource("25_4itko")]
-position = Vector2(7138, 592)
+[node name="Climb" parent="Platforms" instance=ExtResource("25_4itko")]
+position = Vector2(7138, 488)
 rotation = 0.0698132
 scale = Vector2(2.5, 1.2)
 
@@ -636,6 +634,7 @@ texture = ExtResource("22_tndwd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Trees/tree4/StaticBody2D"]
 polygon = PackedVector2Array(1064, 460, 1130, 447, 1174, 441, 1221, 442, 1258, 435, 1312, 434, 1250, 441, 1223, 447, 1155, 448, 1065, 472)
+one_way_collision = true
 
 [node name="ladder" type="Node2D" parent="Platforms/Trees/tree4"]
 metadata/_edit_group_ = true
@@ -651,7 +650,6 @@ rotation = 0.0698132
 scale = Vector2(0.7, 1.3)
 
 [node name="Clocks" type="Node2D" parent="."]
-visible = false
 
 [node name="Clock" parent="Clocks" instance=ExtResource("8_3ka5o")]
 position = Vector2(283, 557)
@@ -722,7 +720,7 @@ scale = Vector2(0.111401, 0.111401)
 texture = ExtResource("34_nrpap")
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(6933, 234)
+position = Vector2(91, 573)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
