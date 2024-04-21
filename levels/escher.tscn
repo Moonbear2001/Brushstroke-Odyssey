@@ -1129,20 +1129,19 @@ color = "yellow"
 duplicate_id = 18
 
 [node name="GoldDoor1" parent="Doors" instance=ExtResource("14_8a6pv")]
-position = Vector2(2917, 590)
+position = Vector2(2915, 590)
 rotation = 3.14159
 gravity_dir = "up"
 id = 18
 exit_id = 16
-x_offset = 10
+x_offset = 9
 color = "yellow"
 duplicate = true
 
 [node name="Door2" parent="Doors" instance=ExtResource("55_tvs1l")]
-position = Vector2(2925, 156)
+position = Vector2(2924, 156)
 id = 17
 exit_id = 16
-x_offset = 10
 color = "yellow"
 
 [node name="GoldDoor3" parent="Doors" instance=ExtResource("14_8a6pv")]
@@ -1389,7 +1388,7 @@ enter = false
 color = "purple"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(28, 376)
+position = Vector2(62, 472)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1408,6 +1407,26 @@ scale = Vector2(2.37316, 0.6978)
 
 [node name="Death3" parent="Deaths" instance=ExtResource("17_npv7l")]
 position = Vector2(3233, 384)
+scale = Vector2(0.192, 0.6)
+
+[node name="Death4" parent="Deaths" instance=ExtResource("17_npv7l")]
+position = Vector2(6313, -457)
+rotation = -1.57079
+scale = Vector2(0.192, 0.6)
+
+[node name="Death7" parent="Deaths" instance=ExtResource("17_npv7l")]
+position = Vector2(7319, -464)
+rotation = -1.57079
+scale = Vector2(0.192, 0.6)
+
+[node name="Death5" parent="Deaths" instance=ExtResource("17_npv7l")]
+position = Vector2(6344, 1794)
+rotation = -1.57079
+scale = Vector2(0.192, 0.6)
+
+[node name="Death6" parent="Deaths" instance=ExtResource("17_npv7l")]
+position = Vector2(7327, 1841)
+rotation = -1.57079
 scale = Vector2(0.192, 0.6)
 
 [node name="End" type="Area2D" parent="."]
@@ -1439,9 +1458,11 @@ position = Vector2(6443, 175)
 scale = Vector2(0.03, 0.03)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(60, 464)
 ignore_rotation = false
 limit_left = 0
 limit_top = -5
+limit_right = 9100
 limit_bottom = 720
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0

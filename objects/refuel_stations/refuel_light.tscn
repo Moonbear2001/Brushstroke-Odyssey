@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dlroneefg1jak"]
 
 [ext_resource type="Texture2D" uid="uid://caq6wrxol0pyc" path="res://art/VanGogh/sprite_sheets/light_sunflower.png" id="1_0iq5y"]
-[ext_resource type="Script" path="res://objects/refuel_light.gd" id="1_bk45n"]
+[ext_resource type="Script" path="res://objects/refuel_stations/refuel_light.gd" id="1_bk45n"]
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="3_xeppo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twwr2"]

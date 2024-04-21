@@ -24,7 +24,7 @@ func _process(_delta):
 		Global.protagonist.velocity = Vector2(0, 0)
 
 func refuel():
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		if is_instance_valid(Global.protagonist) and global_position.x < Global.protagonist.global_position.x:
 			Global.protagonist.refueling_left = true
 		else:
