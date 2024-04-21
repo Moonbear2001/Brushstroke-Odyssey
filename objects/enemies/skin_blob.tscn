@@ -104,12 +104,11 @@ cubic_interp = false
 loop = false
 script = ExtResource("1_e3ee8")
 
-[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back", "weak_area")]
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back")]
 collision_mask = 0
 script = ExtResource("1_jmo0d")
 damage_front = NodePath("DamageFront")
 damage_back = NodePath("DamageBack")
-weak_area = NodePath("WeakArea")
 
 [node name="Timer" type="Timer" parent="Enemy"]
 wait_time = 0.1

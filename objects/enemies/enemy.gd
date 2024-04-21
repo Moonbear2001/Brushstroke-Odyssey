@@ -31,8 +31,6 @@ func change_direction():
 	direction *= -1
 	
 func attack_front(body):
-	if body.is_in_group("protagonist"):
-		print(timer.is_stopped())
 	if body.is_in_group("protagonist") and timer.is_stopped() and not body.dying:
 		timer.start()
 		$hit.play()
