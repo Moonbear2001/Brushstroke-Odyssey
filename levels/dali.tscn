@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=78 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="5_8t4rr"]
 [ext_resource type="Texture2D" uid="uid://cqpylcjuw2fe1" path="res://art/Dali/parallax_layers/backgroundhill1.PNG" id="5_58yj0"]
 [ext_resource type="Texture2D" uid="uid://dfdqm3m8fnq7n" path="res://art/Dali/parrallax_water_section/clouds/IMG_0788.PNG" id="5_ahkhx"]
-[ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="5_uogdb"]
 [ext_resource type="Texture2D" uid="uid://by1kaf8ewg2y4" path="res://art/Dali/parallax_layers/backgroundhill2.PNG" id="6_2y0tk"]
 [ext_resource type="Texture2D" uid="uid://cm6chj2naje1w" path="res://art/Dali/parallax_layers/ground.png" id="7_y85k8"]
 [ext_resource type="PackedScene" uid="uid://eb8gtde4hxdf" path="res://objects/clock.tscn" id="8_3ka5o"]
@@ -276,13 +275,15 @@ _data = {
 "scene_out": SubResource("Animation_tk22e")
 }
 
-[node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
+[node name="Dali" type="Node2D" node_paths=PackedStringArray("protagonist", "end")]
 position = Vector2(3, 0)
 script = ExtResource("1_hymu2")
 level_name = "dali"
 protagonist = NodePath("Protagonist")
-level_ui = NodePath("LevelUI")
 end = NodePath("End")
+
+[node name="LevelUI" parent="." instance=ExtResource("5_8t4rr")]
+visible = false
 
 [node name="Clouds" type="Node2D" parent="."]
 position = Vector2(59, 69)
@@ -1140,13 +1141,6 @@ position = Vector2(11988, 915)
 scale = Vector2(0.0927161, 0.0927161)
 texture = ExtResource("23_jf57o")
 
-[node name="Stars" type="Node2D" parent="."]
-visible = false
-
-[node name="Star1" parent="Stars" instance=ExtResource("5_uogdb")]
-position = Vector2(350, 87)
-scale = Vector2(0.05, 0.05)
-
 [node name="End" type="Area2D" parent="."]
 position = Vector2(17415, 527)
 scale = Vector2(1, 5.72)
@@ -1155,9 +1149,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(0, -0.524476)
 shape = SubResource("RectangleShape2D_qrr0h")
-
-[node name="LevelUI" parent="." instance=ExtResource("5_8t4rr")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(963, 538)

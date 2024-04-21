@@ -15788,15 +15788,17 @@ size = Vector2(117.5, 7.10229)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifxcy"]
 
-[node name="Gogh2" type="Node2D" node_paths=PackedStringArray("layers", "protagonist", "level_ui", "end")]
+[node name="Gogh2" type="Node2D" node_paths=PackedStringArray("layers", "protagonist", "end")]
 script = ExtResource("1_se3yh")
 layers = [NodePath("Layers/1"), NodePath("Layers/2"), NodePath("Layers/3")]
 level_name = "gogh2"
 protagonist = NodePath("Protagonist")
-level_ui = NodePath("LevelUI")
 end = NodePath("End")
 has_prev_stage = true
 prev_stage_name = "gogh"
+
+[node name="LevelUI" parent="." instance=ExtResource("11_sohy2")]
+visible = false
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 1
@@ -17060,9 +17062,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2(3, 1.22378)
 shape = SubResource("RectangleShape2D_jsepk")
-
-[node name="LevelUI" parent="." instance=ExtResource("11_sohy2")]
-visible = false
 
 [node name="OppositeArrow" type="Sprite2D" parent="."]
 position = Vector2(2644, 601)

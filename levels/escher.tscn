@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=78 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_8td2l"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -55,7 +55,6 @@
 [ext_resource type="Texture2D" uid="uid://cobs2epkltbku" path="res://art/Esher/front_stair_end_door2.png" id="54_hnj44"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="54_kuasg"]
 [ext_resource type="PackedScene" uid="uid://dmtefdkou43hk" path="res://objects/doors/left_inverse_door.tscn" id="55_tvs1l"]
-[ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="56_k5iqm"]
 
 [sub_resource type="Animation" id="Animation_sl3vk"]
 resource_name = "move_platform"
@@ -301,12 +300,14 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mhpl"]
 size = Vector2(16, 573)
 
-[node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "level_ui", "end")]
+[node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "end")]
 script = ExtResource("1_8td2l")
 level_name = "escher"
 protagonist = NodePath("Protagonist")
-level_ui = NodePath("LevelUI")
 end = NodePath("End")
+
+[node name="LevelUI" parent="." instance=ExtResource("54_kuasg")]
+visible = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1388,7 +1389,7 @@ enter = false
 color = "purple"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(62, 472)
+position = Vector2(1984, 546)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1441,21 +1442,6 @@ stream = ExtResource("50_ykumc")
 volume_db = 6.0
 autoplay = true
 bus = &"Music"
-
-[node name="LevelUI" parent="." instance=ExtResource("54_kuasg")]
-visible = false
-
-[node name="Star" parent="." instance=ExtResource("56_k5iqm")]
-position = Vector2(2066, 499)
-scale = Vector2(0.03, 0.03)
-
-[node name="Star2" parent="." instance=ExtResource("56_k5iqm")]
-position = Vector2(6909, 3)
-scale = Vector2(0.03, 0.03)
-
-[node name="Star3" parent="." instance=ExtResource("56_k5iqm")]
-position = Vector2(6443, 175)
-scale = Vector2(0.03, 0.03)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(60, 429)

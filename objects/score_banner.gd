@@ -44,8 +44,8 @@ func _ready():
 		var seconds = roundi(time) % 60
 		high_score_label.text = str(minutes) + "m " + str(seconds) + "s"
 	if last_time != INF:
-		var minutes = roundi(time / 60)
-		var seconds = roundi(time) % 60
+		var minutes = roundi(last_time / 60)
+		var seconds = roundi(last_time) % 60
 		last_run_label.text = str(minutes) + "m " + str(seconds) + "s"
 		#var minutes = roundi(last_time / 60)
 		#var seconds = roundi(last_time) % 60

@@ -1,28 +1,26 @@
-[gd_scene load_steps=15 format=3 uid="uid://p8vf3s0glmab"]
+[gd_scene load_steps=13 format=3 uid="uid://p8vf3s0glmab"]
 
+[ext_resource type="Texture2D" uid="uid://dy7to2ev3iykf" path="res://art/menu/nostars_banners_small.png" id="2_1egy0"]
 [ext_resource type="Script" path="res://objects/score_banner.gd" id="2_d8cvp"]
-[ext_resource type="Texture2D" uid="uid://bexuymfplxxq8" path="res://art/menu/score_dali.png" id="2_ja4xa"]
-[ext_resource type="Texture2D" uid="uid://boel38r3e5vm5" path="res://art/menu/score_van_gogh.png" id="2_s2f4w"]
 [ext_resource type="Texture2D" uid="uid://c1ptg3amxvk6i" path="res://art/menu/star_full.png" id="3_7yd0w"]
-[ext_resource type="Texture2D" uid="uid://dm8ofyfho6o52" path="res://art/menu/score_escher.png" id="3_g1vnk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pkvoo"]
-atlas = ExtResource("2_ja4xa")
-region = Rect2(0, 0, 2280, 4530)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk4r4"]
+atlas = ExtResource("2_1egy0")
+region = Rect2(311, 0, 297, 591)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xydpi"]
-atlas = ExtResource("3_g1vnk")
-region = Rect2(0, 0, 2280, 4530)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdlqh"]
+atlas = ExtResource("2_1egy0")
+region = Rect2(608, 0, 297, 591)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sx0ji"]
-atlas = ExtResource("2_s2f4w")
-region = Rect2(0, 0, 2280, 4540)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w8kt"]
+atlas = ExtResource("2_1egy0")
+region = Rect2(14, 0, 297, 591)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24pig"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pkvoo")
+"texture": SubResource("AtlasTexture_dk4r4")
 }],
 "loop": true,
 "name": &"dali",
@@ -30,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xydpi")
+"texture": SubResource("AtlasTexture_bdlqh")
 }],
 "loop": true,
 "name": &"escher",
@@ -38,7 +36,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sx0ji")
+"texture": SubResource("AtlasTexture_5w8kt")
 }],
 "loop": true,
 "name": &"gogh2",
@@ -61,7 +59,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(0.1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 4200)]
+"values": [Vector2(0, 0), Vector2(0, 1500)]
 }
 
 [sub_resource type="Animation" id="Animation_qbqtj"]
@@ -77,7 +75,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(0.1, 1),
 "update": 0,
-"values": [Vector2(0, 4200), Vector2(0, 0)]
+"values": [Vector2(0, 1500), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp1gn"]
@@ -87,15 +85,17 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mserr"]
-size = Vector2(42.9855, 18.815)
+size = Vector2(5.9995, 2.11112)
 
 [node name="ScoreBanner" type="Node2D"]
 scale = Vector2(0.251, 0.25)
 script = ExtResource("2_d8cvp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1500)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_24pig")
-animation = &"gogh2"
+animation = &"dali"
 
 [node name="Stars" type="Node2D" parent="AnimatedSprite2D"]
 
@@ -118,17 +118,19 @@ scale = Vector2(2.50846, 2.65316)
 texture = ExtResource("3_7yd0w")
 
 [node name="HighScoreLabel" type="Label" parent="AnimatedSprite2D"]
-offset_left = -936.257
-offset_top = 172.0
-offset_right = -341.257
-offset_bottom = 581.0
+offset_left = -111.984
+offset_top = -36.0
+offset_right = 1734.02
+offset_bottom = 510.0
+scale = Vector2(0.12, 0.12)
 label_settings = SubResource("LabelSettings_rldgc")
 
 [node name="LastRunLabel" type="Label" parent="AnimatedSprite2D"]
-offset_left = -936.257
-offset_top = 1192.0
-offset_right = -341.257
-offset_bottom = 1601.0
+offset_left = -111.984
+offset_top = 82.0
+offset_right = 1701.02
+offset_bottom = 628.0
+scale = Vector2(0.12, 0.12)
 label_settings = SubResource("LabelSettings_rldgc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -139,7 +141,7 @@ libraries = {
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1535.26, 4962)
+position = Vector2(288.521, 1864)
 scale = Vector2(133.585, 404.979)
 shape = SubResource("RectangleShape2D_mserr")
 

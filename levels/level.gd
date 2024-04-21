@@ -13,13 +13,13 @@ kind of abstract superclass for a level.
 @export var protagonist: Protagonist
 
 # Level's user interface
-@export var level_ui: LevelUI
+#@export var level_ui: LevelUI
 
 # Area that when entered is the end of the level
 @export var end: Area2D
 
 # Stars to be collected
-@export var stars: Array[Star]
+#@export var stars: Array[Star]
 
 # Is this the second part of a multi-scene level
 @export var has_prev_stage: bool = false
@@ -44,8 +44,8 @@ func _ready() -> void:
 	end.body_entered.connect(level_end)
 	
 	# Setup signal for each star
-	for star in get_tree().get_nodes_in_group("star"):
-		star.collected.connect(collect_star)
+	#for star in get_tree().get_nodes_in_group("star"):
+		#star.collected.connect(collect_star)
 
 # Repositioning the camera
 func _process(_delta) -> void:
