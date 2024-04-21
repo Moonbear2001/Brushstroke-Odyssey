@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=80 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://v528n67s05aw" path="res://art/Dali/parrallax_water_section/backrock3.png" id="35_fiefn"]
 [ext_resource type="PackedScene" uid="uid://d1qgimxn4uena" path="res://objects/enemies/head_cloud.tscn" id="37_84h57"]
 [ext_resource type="Texture2D" uid="uid://dohvacjnxft4y" path="res://art/Dali/trees/tree1_longer.PNG" id="37_oais5"]
-[ext_resource type="Texture2D" uid="uid://cmowx61ney78d" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
+[ext_resource type="Texture2D" uid="uid://1t6fwr36s35l" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
@@ -50,6 +50,9 @@ size = Vector2(3310, 312)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0jc5"]
 size = Vector2(721.49, 457.666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f3vu"]
+size = Vector2(1643, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5lh0"]
 atlas = ExtResource("42_5hwyq")
@@ -305,6 +308,26 @@ position = Vector2(3318, 26)
 scale = Vector2(0.256836, 0.256836)
 texture = ExtResource("5_ahkhx")
 
+[node name="Img0790" type="Sprite2D" parent="Clouds"]
+position = Vector2(2967, 28)
+scale = Vector2(0.25647, 0.25647)
+texture = ExtResource("2_fqm0d")
+
+[node name="Img0791" type="Sprite2D" parent="Clouds"]
+position = Vector2(2774, 1.90735e-06)
+scale = Vector2(0.205566, 0.205566)
+texture = ExtResource("3_j3vxq")
+
+[node name="Img0792" type="Sprite2D" parent="Clouds"]
+position = Vector2(3654, 13)
+scale = Vector2(0.303711, 0.303711)
+texture = ExtResource("4_xmjnu")
+
+[node name="Img0793" type="Sprite2D" parent="Clouds"]
+position = Vector2(3318, 26)
+scale = Vector2(0.256836, 0.256836)
+texture = ExtResource("5_ahkhx")
+
 [node name="Clouds2" type="Node2D" parent="."]
 visible = false
 position = Vector2(8219, 11)
@@ -335,6 +358,36 @@ scale = Vector2(0.296386, 0.296386)
 texture = ExtResource("5_ahkhx")
 
 [node name="Img0791" type="Sprite2D" parent="Clouds2"]
+position = Vector2(4191, 22)
+scale = Vector2(0.276611, 0.276611)
+texture = ExtResource("2_fqm0d")
+
+[node name="Img0792" type="Sprite2D" parent="Clouds2"]
+position = Vector2(3055, 34)
+scale = Vector2(0.231567, 0.231567)
+texture = ExtResource("2_fqm0d")
+
+[node name="Img0793" type="Sprite2D" parent="Clouds2"]
+position = Vector2(2887.75, 35.2498)
+scale = Vector2(0.218506, 0.218506)
+texture = ExtResource("3_j3vxq")
+
+[node name="Img0794" type="Sprite2D" parent="Clouds2"]
+position = Vector2(3654, 13)
+scale = Vector2(0.303711, 0.303711)
+texture = ExtResource("4_xmjnu")
+
+[node name="Img0795" type="Sprite2D" parent="Clouds2"]
+position = Vector2(3318, 26)
+scale = Vector2(0.256836, 0.256836)
+texture = ExtResource("5_ahkhx")
+
+[node name="Img0796" type="Sprite2D" parent="Clouds2"]
+position = Vector2(3944, 23)
+scale = Vector2(0.296386, 0.296386)
+texture = ExtResource("5_ahkhx")
+
+[node name="Img0797" type="Sprite2D" parent="Clouds2"]
 position = Vector2(4191, 22)
 scale = Vector2(0.276611, 0.276611)
 texture = ExtResource("2_fqm0d")
@@ -648,20 +701,15 @@ position = Vector2(7501, 626.875)
 scale = Vector2(1.21942, 0.395087)
 texture = ExtResource("17_uwfcw")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/StaticBody2D"]
-position = Vector2(0.000488281, 374.05)
-scale = Vector2(1, 0.297794)
-polygon = PackedVector2Array(7199, 400, 7198, 360, 8619, 352.425, 8625, 411)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Platforms/Blocks/StaticBody2D"]
-position = Vector2(-0.00439453, 403.3)
-scale = Vector2(1, 0.225)
-polygon = PackedVector2Array(6981, 345.333, 7106, 347, 7106, 396, 6981, 389.778)
-
 [node name="Climb" parent="Platforms/Blocks/StaticBody2D" instance=ExtResource("25_4itko")]
 position = Vector2(7138, 592)
 rotation = 0.0698132
 scale = Vector2(2.5, 1.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Blocks/StaticBody2D"]
+position = Vector2(7799.5, 489.56)
+shape = SubResource("RectangleShape2D_6f3vu")
+one_way_collision = true
 
 [node name="block6" type="StaticBody2D" parent="Platforms/Blocks"]
 position = Vector2(14276, 594)
@@ -806,61 +854,11 @@ position = Vector2(11743, -23)
 scale = Vector2(12, 12)
 audio_dist = 1400.0
 
-[node name="Clouds" type="Node2D" parent="."]
+[node name="Clouds3" type="Node2D" parent="."]
 position = Vector2(59, 14)
 
-[node name="Img0786" type="Sprite2D" parent="Clouds"]
-position = Vector2(2967, 28)
-scale = Vector2(0.25647, 0.25647)
-texture = ExtResource("2_fqm0d")
-
-[node name="Img0787" type="Sprite2D" parent="Clouds"]
-position = Vector2(2774, 1.90735e-06)
-scale = Vector2(0.205566, 0.205566)
-texture = ExtResource("3_j3vxq")
-
-[node name="Img0789" type="Sprite2D" parent="Clouds"]
-position = Vector2(3654, 13)
-scale = Vector2(0.303711, 0.303711)
-texture = ExtResource("4_xmjnu")
-
-[node name="Img0788" type="Sprite2D" parent="Clouds"]
-position = Vector2(3318, 26)
-scale = Vector2(0.256836, 0.256836)
-texture = ExtResource("5_ahkhx")
-
-[node name="Clouds2" type="Node2D" parent="."]
+[node name="Clouds4" type="Node2D" parent="."]
 position = Vector2(8219, 3)
-
-[node name="Img0786" type="Sprite2D" parent="Clouds2"]
-position = Vector2(3055, 34)
-scale = Vector2(0.231567, 0.231567)
-texture = ExtResource("2_fqm0d")
-
-[node name="Img0787" type="Sprite2D" parent="Clouds2"]
-position = Vector2(2887.75, 35.2498)
-scale = Vector2(0.218506, 0.218506)
-texture = ExtResource("3_j3vxq")
-
-[node name="Img0789" type="Sprite2D" parent="Clouds2"]
-position = Vector2(3654, 13)
-scale = Vector2(0.303711, 0.303711)
-texture = ExtResource("4_xmjnu")
-
-[node name="Img0788" type="Sprite2D" parent="Clouds2"]
-position = Vector2(3318, 26)
-scale = Vector2(0.256836, 0.256836)
-texture = ExtResource("5_ahkhx")
-
-[node name="Img0790" type="Sprite2D" parent="Clouds2"]
-position = Vector2(3944, 23)
-scale = Vector2(0.296386, 0.296386)
-texture = ExtResource("5_ahkhx")
-
-[node name="Img0791" type="Sprite2D" parent="Clouds2"]
-position = Vector2(4191, 22)
-scale = Vector2(0.276611, 0.276611)
-texture = ExtResource("2_fqm0d")
 
 [node name="Clocks" type="Node2D" parent="."]
 
@@ -948,7 +946,7 @@ autoplay = "default"
 polygon = PackedVector2Array(17414, 339, 17442, 571, 17485, 566, 17448, 323)
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(117, 444)
+position = Vector2(6513, 524)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
