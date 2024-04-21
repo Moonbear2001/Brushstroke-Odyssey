@@ -123,7 +123,7 @@ damage_back = NodePath("DamageBack")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("4_gbocx")
-volume_db = -20.0
+volume_db = -30.0
 bus = &"SFX"
 
 [node name="pre-attack" type="AudioStreamPlayer2D" parent="Enemy"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=79 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://v528n67s05aw" path="res://art/Dali/parrallax_water_section/backrock3.png" id="35_fiefn"]
 [ext_resource type="PackedScene" uid="uid://d1qgimxn4uena" path="res://objects/enemies/head_cloud.tscn" id="37_84h57"]
 [ext_resource type="Texture2D" uid="uid://dohvacjnxft4y" path="res://art/Dali/trees/tree1_longer.PNG" id="37_oais5"]
-[ext_resource type="Texture2D" uid="uid://1t6fwr36s35l" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
+[ext_resource type="Texture2D" uid="uid://cmowx61ney78d" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7y"]
 size = Vector2(3310, 312)
@@ -194,7 +194,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_hppr8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 500, 0, 0, 0, 0, 0, -1010, 5.00001)
+"points": PackedVector2Array(0, 0, 0, 0, 500, 0, 0, 0, 0, 0, -1295, 0)
 }
 point_count = 2
 
@@ -224,19 +224,19 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_1s11c"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 15672, 517, 0, 0, 0, 0, 15657.9, 510.17, 0, 0, 0, 0, 14521, 513)
+"points": PackedVector2Array(0, 0, 0, 0, 15543, 519, 0, 0, 0, 0, 14521, 513)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_kcyij"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 16507, 236, 0, 0, 0, 0, 14849, 237)
+"points": PackedVector2Array(0, 0, 0, 0, 16272, 233, 0, 0, 0, 0, 14849, 237)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_tpfsc"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 14974, 541, 0, 0, 0, 0, 14183, 544)
+"points": PackedVector2Array(0, 0, 0, 0, 15374, 541, 0, 0, 0, 0, 14183, 544)
 }
 point_count = 2
 
@@ -249,6 +249,12 @@ point_count = 2
 [sub_resource type="Curve2D" id="Curve2D_xc0gb"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 17289, 573, 0, 0, 0, 0, 16363, 575)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_r10lc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 17100, 325, 0, 0, 0, 0, 16222, 328)
 }
 point_count = 2
 
@@ -917,7 +923,7 @@ position = Vector2(-24, 0)
 polygon = PackedVector2Array(17403, 246, 17442, 571, 17485, 566, 17448, 248)
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(7017, 304)
+position = Vector2(7031, 258)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -987,6 +993,18 @@ metadata/_edit_group_ = true
 position = Vector2(500, 0)
 scale = Vector2(0.5, 0.5)
 
+[node name="Path2D19" type="Path2D" parent="Enemies"]
+position = Vector2(8068, 160)
+scale = Vector2(0.6, 0.6)
+curve = SubResource("Curve2D_hppr8")
+metadata/_edit_group_ = true
+
+[node name="Elephant" parent="Enemies/Path2D19" instance=ExtResource("20_btx2t")]
+position = Vector2(500, 0)
+scale = Vector2(0.5, 0.5)
+move_speed = 150
+attack_radius = 150
+
 [node name="Path2D7" type="Path2D" parent="Enemies"]
 curve = SubResource("Curve2D_75dny")
 
@@ -1031,33 +1049,35 @@ scale = Vector2(0.15, 0.15)
 move_speed = 180
 
 [node name="Path2D13" type="Path2D" parent="Enemies"]
-position = Vector2(-27, -311)
+position = Vector2(-30, -202)
 curve = SubResource("Curve2D_1s11c")
 metadata/_edit_group_ = true
 
 [node name="Elephant" parent="Enemies/Path2D13" instance=ExtResource("20_btx2t")]
-position = Vector2(15672, 517)
-scale = Vector2(0.6, 0.6)
+position = Vector2(15543, 519)
+scale = Vector2(0.4, 0.4)
 move_speed = 200
+attack_radius = 300
 
 [node name="Path2D14" type="Path2D" parent="Enemies"]
-position = Vector2(207, -33)
+position = Vector2(207, 95)
 curve = SubResource("Curve2D_kcyij")
 
 [node name="Elephant" parent="Enemies/Path2D14" instance=ExtResource("20_btx2t")]
-position = Vector2(16507, 236)
-scale = Vector2(0.6, 0.6)
+position = Vector2(16272, 233)
+scale = Vector2(0.4, 0.4)
+attack_radius = 100
 
 [node name="Path2D15" type="Path2D" parent="Enemies"]
-position = Vector2(278, 43)
+position = Vector2(318, 25)
 curve = SubResource("Curve2D_tpfsc")
 
 [node name="SkinBlob3" parent="Enemies/Path2D15" instance=ExtResource("3_png0t")]
-position = Vector2(14974, 541)
+position = Vector2(15374, 541)
 scale = Vector2(0.25, 0.25)
 
 [node name="Path2D16" type="Path2D" parent="Enemies"]
-position = Vector2(278, 16)
+position = Vector2(389, 28)
 curve = SubResource("Curve2D_5u3ur")
 
 [node name="SkinBlob3" parent="Enemies/Path2D16" instance=ExtResource("3_png0t")]
@@ -1072,6 +1092,15 @@ curve = SubResource("Curve2D_xc0gb")
 position = Vector2(17289, 573)
 scale = Vector2(0.3, 0.3)
 move_speed = 60
+
+[node name="Path2D18" type="Path2D" parent="Enemies"]
+curve = SubResource("Curve2D_r10lc")
+
+[node name="Elephant" parent="Enemies/Path2D18" instance=ExtResource("20_btx2t")]
+position = Vector2(17100, 325)
+scale = Vector2(0.4, 0.4)
+move_speed = 150
+attack_radius = 150
 
 [node name="Foreground Rocks" type="Node2D" parent="."]
 position = Vector2(0, -30)
@@ -1185,7 +1214,7 @@ layer = 10
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground3/ParallaxLayer"]
 offset_left = -205.0
 offset_top = -358.0
-offset_right = 17304.0
+offset_right = 20176.0
 offset_bottom = 1108.0
 color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
