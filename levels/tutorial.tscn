@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist_escher.tscn" id="1_3wox7"]
-[ext_resource type="Script" path="res://levels/level.gd" id="1_b2fp5"]
+[ext_resource type="Script" path="res://levels/tutorial.gd" id="1_21saf"]
 [ext_resource type="Texture2D" uid="uid://c2ow4nde88yi1" path="res://art/L0/big1.png" id="2_70hh4"]
 [ext_resource type="Texture2D" uid="uid://enibk78rxdld" path="res://art/L0/big2.png" id="3_45pnc"]
 [ext_resource type="Texture2D" uid="uid://mqqc3sad7fhe" path="res://art/L0/med4.png" id="4_6ouc6"]
@@ -67,7 +67,7 @@ _data = {
 size = Vector2(254, 512)
 
 [node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "end")]
-script = ExtResource("1_b2fp5")
+script = ExtResource("1_21saf")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
 end = NodePath("End")
@@ -101,6 +101,7 @@ texture = ExtResource("18_mr6vo")
 position = Vector2(194, 333)
 
 [node name="Death" parent="." instance=ExtResource("15_yj68c")]
+position = Vector2(2081, 794)
 
 [node name="Platforms" type="Node2D" parent="."]
 
