@@ -1,4 +1,4 @@
-[gd_scene load_steps=254 format=3 uid="uid://cyv0src61ekil"]
+[gd_scene load_steps=253 format=3 uid="uid://cyv0src61ekil"]
 
 [ext_resource type="Script" path="res://characters/protagonist_dali.gd" id="1_dktyh"]
 [ext_resource type="Texture2D" uid="uid://c08ociuk53wly" path="res://art/Dali/character/climbing.PNG" id="2_rjl8b"]
@@ -3985,45 +3985,6 @@ tracks/3/keys = {
 "values": [&"JumpRight_Dali_5"]
 }
 
-[sub_resource type="Animation" id="Animation_ae03x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"RunRight_Dali_0"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Reflection:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"RunRight_Dali_0"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="Animation" id="Animation_agspq"]
 resource_name = "RunLeft_Dali_0"
 length = 0.35
@@ -4713,7 +4674,6 @@ _data = {
 "JumpRight_Dali_3": SubResource("Animation_a6ob0"),
 "JumpRight_Dali_4": SubResource("Animation_uk7qm"),
 "JumpRight_Dali_5": SubResource("Animation_78kps"),
-"RESET": SubResource("Animation_ae03x"),
 "RunLeft_Dali_0": SubResource("Animation_agspq"),
 "RunLeft_Dali_1": SubResource("Animation_pf3cp"),
 "RunLeft_Dali_2": SubResource("Animation_gkjtw"),
@@ -4740,8 +4700,7 @@ script = ExtResource("1_dktyh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.17, 0.17)
 sprite_frames = SubResource("SpriteFrames_thnrl")
-animation = &"RunRight_Dali_0"
-frame = 1
+animation = &"Death_Dali"
 
 [node name="Reflection" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.188235)
@@ -4774,4 +4733,9 @@ stream = ExtResource("15_fw6lh")
 volume_db = 10.0
 bus = &"SFX"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

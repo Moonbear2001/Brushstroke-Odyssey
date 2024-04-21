@@ -22,7 +22,7 @@ func _process(delta):
 		enemy.change_direction()
 
 func increase_speed():
-	move_speed += 50
+	move_speed += 20
 
 func decrease_speed():
-	move_speed -= 50
+	move_speed -= 20
