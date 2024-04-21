@@ -704,7 +704,7 @@ texture = ExtResource("17_uwfcw")
 [node name="Climb" parent="Platforms/Blocks/StaticBody2D" instance=ExtResource("25_4itko")]
 position = Vector2(7138, 592)
 rotation = 0.0698132
-scale = Vector2(2.5, 1.2)
+scale = Vector2(2, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Blocks/StaticBody2D"]
 position = Vector2(7799.5, 489.56)
