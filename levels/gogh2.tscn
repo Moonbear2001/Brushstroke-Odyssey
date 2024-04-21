@@ -17052,7 +17052,7 @@ scale = Vector2(0.8, 0.994796)
 texture = ExtResource("43_ko21o")
 
 [node name="Protagonist" parent="." instance=ExtResource("42_xwj7v")]
-position = Vector2(1625, -4842)
+position = Vector2(2818, 568)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(2676, -5781)

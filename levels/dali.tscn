@@ -917,7 +917,7 @@ position = Vector2(-24, 0)
 polygon = PackedVector2Array(17403, 246, 17442, 571, 17485, 566, 17448, 248)
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(10522, 576)
+position = Vector2(88, 559)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
