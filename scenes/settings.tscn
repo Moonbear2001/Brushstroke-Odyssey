@@ -29,9 +29,10 @@ metadata/_edit_group_ = true
 texture = ExtResource("2_tboy3")
 
 [node name="ResetScoresBtn" type="Button" parent="CanvasLayer/Node2D/Group92"]
-offset_left = -188.5
+visible = false
+offset_left = -194.5
 offset_top = -225.0
-offset_right = -112.5
+offset_right = -118.5
 offset_bottom = -194.0
 text = "Reset HS"
 

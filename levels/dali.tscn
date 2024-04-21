@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://v528n67s05aw" path="res://art/Dali/parrallax_water_section/backrock3.png" id="35_fiefn"]
 [ext_resource type="PackedScene" uid="uid://d1qgimxn4uena" path="res://objects/enemies/head_cloud.tscn" id="37_84h57"]
 [ext_resource type="Texture2D" uid="uid://dohvacjnxft4y" path="res://art/Dali/trees/tree1_longer.PNG" id="37_oais5"]
-[ext_resource type="Texture2D" uid="uid://cmowx61ney78d" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
+[ext_resource type="Texture2D" uid="uid://1t6fwr36s35l" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7y"]
 size = Vector2(3310, 312)
@@ -887,7 +887,7 @@ position = Vector2(8219, 3)
 [node name="Clocks" type="Node2D" parent="."]
 
 [node name="Clock" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(284, 557)
+position = Vector2(-574, -156)
 scale = Vector2(0.2, 0.2)
 
 [node name="Clock2" parent="Clocks" instance=ExtResource("8_3ka5o")]
@@ -923,7 +923,7 @@ position = Vector2(-24, 0)
 polygon = PackedVector2Array(17403, 246, 17442, 571, 17485, 566, 17448, 248)
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(120, 358)
+position = Vector2(105, 558)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
