@@ -21,6 +21,11 @@ kind of abstract superclass for a level.
 # Stars to be collected
 @export var stars: Array[Star]
 
+# Is this the second part of a multi-scene level
+@export var has_prev_stage: bool = false
+
+@export var prev_stage_name: String
+
 # Stopwatch to keep track of score
 @onready var stopwatch: Stopwatch = $LevelUI/Stopwatch
 
@@ -61,10 +66,9 @@ func collect_star() -> void:
 	
 # Catches signal that is emitted when the player reaches the end of the level
 func level_end(body) -> void:
-	
 	if not body.is_in_group("protagonist"):
 		return
-	
+
 	# Get player's scores for this run
 	stopwatch.stop_stopwatch()
 	var time: float = stopwatch.get_best_time()
@@ -76,6 +80,11 @@ func level_end(body) -> void:
 	var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)
 	var best_time: float = level_high_score.get_best_time()
 	var best_stars: int = level_high_score.get_best_stars()
+	
+	if has_prev_stage:
+		var prev_stage_score: LevelHighScore = Global.high_scores.get_level_high_score(prev_stage_name)
+		var prev_stage_last_time: int = prev_stage_score.get_last_time()
+		time += prev_stage_last_time
 	
 	# Update saved data
 	Global.high_scores.new_last_time(level_name, time)

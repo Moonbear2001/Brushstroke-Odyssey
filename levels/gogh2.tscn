@@ -15795,6 +15795,8 @@ level_name = "gogh2"
 protagonist = NodePath("Protagonist")
 level_ui = NodePath("LevelUI")
 end = NodePath("End")
+has_prev_stage = true
+prev_stage_name = "gogh"
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 1
@@ -17048,7 +17050,7 @@ scale = Vector2(0.8, 0.994796)
 texture = ExtResource("43_ko21o")
 
 [node name="Protagonist" parent="." instance=ExtResource("42_xwj7v")]
-position = Vector2(2815, 559)
+position = Vector2(1625, -4842)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(2676, -5781)

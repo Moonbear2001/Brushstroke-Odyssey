@@ -91,25 +91,25 @@ func respawn():
 
 # Custom level end behavior for Van Gogh 2, combine time with best time from 
 # Van Gogh 1 and save if better
-func level_end(body) -> void:
-	if not body.is_in_group("protagonist"):
-		return
-	
-	# Get player's scores for this run
-	stopwatch.stop_stopwatch()
-	var time: float = stopwatch.get_best_time()
-	
-	# Get best scores
-	var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)
-	var best_time: float = level_high_score.get_best_time()
-	
-	# Update saved data 
-	Global.high_scores.new_last_time(level_name, best_time + time)
-	if best_time + time < best_time:
-		Global.high_scores.new_low_time(level_name, best_time + time)
-	
-	# Go back to the main menu
-	SceneManager.load_new_scene(Global.MENU_PATH)
+#func level_end(body) -> void:
+	#if not body.is_in_group("protagonist"):
+		#return
+	#
+	## Get player's scores for this run
+	#stopwatch.stop_stopwatch()
+	#var time: float = stopwatch.get_best_time()
+	#
+	## Get best scores
+	#var level_high_score: LevelHighScore = Global.high_scores.get_level_high_score(level_name)
+	#var best_time: float = level_high_score.get_best_time()
+	#
+	## Update saved data 
+	#Global.high_scores.new_last_time(level_name, best_time + time)
+	#if best_time + time < best_time:
+		#Global.high_scores.new_low_time(level_name, best_time + time)
+	#
+	## Go back to the main menu
+	#SceneManager.load_new_scene(Global.MENU_PATH)
 
 func move_death(num):
 	death_arr.get_child(num).get_node("AnimationPlayer").play("move")
