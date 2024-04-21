@@ -75,10 +75,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5obbd"]
-size = Vector2(224, 20)
+size = Vector2(224, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h02sh"]
-size = Vector2(192.25, 20)
+size = Vector2(192.25, 39)
 
 [sub_resource type="Animation" id="Animation_5rxgi"]
 length = 0.001
@@ -430,6 +430,7 @@ damage_back = NodePath("DamageBack")
 scale = Vector2(0.28, 0.28)
 sprite_frames = SubResource("SpriteFrames_ismyb")
 animation = &"splat"
+frame = 5
 
 [node name="DamageFront" type="Area2D" parent="."]
 position = Vector2(0, 1)
@@ -456,7 +457,7 @@ polygon = PackedVector2Array(-12, 31, -234, 169, -8, 169)
 disabled = true
 
 [node name="Frame5to6Hitbox" type="CollisionShape2D" parent="DamageFront"]
-position = Vector2(-112, 153)
+position = Vector2(-112, 143)
 shape = SubResource("RectangleShape2D_5obbd")
 disabled = true
 
@@ -484,7 +485,7 @@ polygon = PackedVector2Array(-9, 30, -2, 169, 212, 170)
 disabled = true
 
 [node name="Frame5to6Hitbox" type="CollisionShape2D" parent="DamageBack"]
-position = Vector2(100.875, 154)
+position = Vector2(100.875, 144.5)
 shape = SubResource("RectangleShape2D_h02sh")
 disabled = true
 

@@ -29,9 +29,9 @@ func _process(delta):
 func increase_speed():
 	move_speed += 20
 	if $Enemy/AttackRadius:
-		$Enemy/AttackRadius/CollisionShape2D.shape.radius += 20
+		$Enemy/AttackRadius/CollisionShape2D.shape.radius += 10
 
 func decrease_speed():
 	move_speed -= 20
 	if $Enemy/AttackRadius:
-		$Enemy/AttackRadius/CollisionShape2D.shape.radius -= 20
+		$Enemy/AttackRadius/CollisionShape2D.shape.radius -= 10
