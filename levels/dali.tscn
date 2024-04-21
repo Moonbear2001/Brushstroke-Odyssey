@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=79 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dn1isfp7c4gdl" path="res://art/Dali/parrallax_water_section/water.png" id="8_au30o"]
 [ext_resource type="Texture2D" uid="uid://dyr71oi01j4ga" path="res://art/Dali/blocks/b1.PNG" id="9_34d6f"]
 [ext_resource type="Texture2D" uid="uid://mklde6tq5qxu" path="res://art/Dali/parrallax_water_section/backwater.png" id="9_a1u4p"]
-[ext_resource type="Texture2D" uid="uid://bkdio6tocjh4" path="res://art/Dali/blocks/b2.PNG" id="10_c5s5p"]
 [ext_resource type="Texture2D" uid="uid://jryg843ay7vf" path="res://art/Dali/parrallax_water_section/ground_slant2.png" id="10_iriw4"]
 [ext_resource type="AudioStream" uid="uid://5l5e38rsaghb" path="res://audio/sfx/dali/clock-tick-tock-87936.mp3" id="10_l7u7k"]
 [ext_resource type="Texture2D" uid="uid://b3mv5206sahf3" path="res://art/Dali/blocks/b4.PNG" id="11_jysmu"]
@@ -42,8 +41,6 @@
 [ext_resource type="PackedScene" uid="uid://d1qgimxn4uena" path="res://objects/enemies/head_cloud.tscn" id="37_84h57"]
 [ext_resource type="Texture2D" uid="uid://dohvacjnxft4y" path="res://art/Dali/trees/tree1_longer.PNG" id="37_oais5"]
 [ext_resource type="Texture2D" uid="uid://1t6fwr36s35l" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7y"]
 size = Vector2(3310, 312)
@@ -255,6 +252,8 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 17289, 573, 0, 0, 0, 0, 16363, 575)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
 
 [sub_resource type="Animation" id="Animation_tk22e"]
 resource_name = "scene_transition"
@@ -481,15 +480,6 @@ position = Vector2(8259, 467)
 scale = Vector2(0.321585, 0.310412)
 texture = ExtResource("6_2y0tk")
 
-[node name="End" type="Area2D" parent="."]
-position = Vector2(17415, 519)
-scale = Vector2(1, 5.72)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(0, -0.524476)
-shape = SubResource("RectangleShape2D_qrr0h")
-
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(-7, -30)
 
@@ -557,6 +547,8 @@ position = Vector2(4930, 783)
 shape = SubResource("RectangleShape2D_c5q7y")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/Ground"]
+collision_layer = 5
+collision_mask = 5
 
 [node name="GroundSlant" type="Sprite2D" parent="Platforms/Ground/StaticBody2D4"]
 z_as_relative = false
@@ -622,29 +614,6 @@ texture = ExtResource("2_m3vv6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block"]
 polygon = PackedVector2Array(-300, -50, -310, 300, 115, 290, 260, 170, 240, -150, -185, -180)
-
-[node name="block4" type="StaticBody2D" parent="Platforms/Blocks"]
-position = Vector2(87, -2174)
-metadata/_edit_group_ = true
-
-[node name="b4" type="Sprite2D" parent="Platforms/Blocks/block4"]
-position = Vector2(2273, 1265)
-scale = Vector2(0.556137, 0.556137)
-texture = ExtResource("10_c5s5p")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block4"]
-polygon = PackedVector2Array(2117, 1211, 2121, 1454, 2290, 1455, 2369, 1374, 2361, 1150, 2169, 1147)
-
-[node name="block5" type="StaticBody2D" parent="Platforms/Blocks"]
-position = Vector2(-468, -2764)
-metadata/_edit_group_ = true
-
-[node name="b5" type="Sprite2D" parent="Platforms/Blocks/block5"]
-position = Vector2(3792, 1849)
-texture = ExtResource("11_jysmu")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Blocks/block5"]
-polygon = PackedVector2Array(3582, 1769, 3995, 1768, 4001, 1953, 3884, 2073, 3469, 2072, 3484, 1898)
 
 [node name="block7" type="StaticBody2D" parent="Platforms/Blocks"]
 position = Vector2(1961, 116)
@@ -842,50 +811,6 @@ position = Vector2(1041, 553)
 rotation = 0.0698132
 scale = Vector2(0.7, 1.3)
 
-[node name="HeadClouds" type="Node2D" parent="."]
-
-[node name="HeadCloud" parent="HeadClouds" groups=["enemy"] instance=ExtResource("37_84h57")]
-position = Vector2(3241, -11)
-scale = Vector2(8, 8)
-audio_dist = 1400.0
-
-[node name="HeadCloud2" parent="HeadClouds" groups=["enemy"] instance=ExtResource("37_84h57")]
-position = Vector2(11743, -23)
-scale = Vector2(12, 12)
-audio_dist = 1400.0
-
-[node name="Clouds3" type="Node2D" parent="."]
-position = Vector2(59, 14)
-
-[node name="Clouds4" type="Node2D" parent="."]
-position = Vector2(8219, 3)
-
-[node name="Clocks" type="Node2D" parent="."]
-
-[node name="Clock" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(284, 557)
-scale = Vector2(0.2, 0.2)
-
-[node name="Clock2" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(2362, 536)
-scale = Vector2(0.2, 0.2)
-
-[node name="Clock3" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(4063, 536)
-scale = Vector2(0.2, 0.2)
-
-[node name="Clock4" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(6350, 514)
-scale = Vector2(0.2, 0.2)
-
-[node name="Clock5" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(9253, 523)
-scale = Vector2(0.2, 0.2)
-
-[node name="Clock6" parent="Clocks" instance=ExtResource("8_3ka5o")]
-position = Vector2(14305, 537)
-scale = Vector2(0.2, 0.2)
-
 [node name="Background Rocks" type="Node2D" parent="."]
 position = Vector2(0, -30)
 
@@ -934,19 +859,64 @@ position = Vector2(13875, 454)
 scale = Vector2(0.111401, 0.111401)
 texture = ExtResource("34_nrpap")
 
+[node name="HeadClouds" type="Node2D" parent="."]
+
+[node name="HeadCloud" parent="HeadClouds" groups=["enemy"] instance=ExtResource("37_84h57")]
+position = Vector2(3241, -11)
+scale = Vector2(8, 8)
+audio_dist = 1400.0
+
+[node name="HeadCloud2" parent="HeadClouds" groups=["enemy"] instance=ExtResource("37_84h57")]
+position = Vector2(11743, -23)
+scale = Vector2(12, 12)
+audio_dist = 1400.0
+
+[node name="Clouds3" type="Node2D" parent="."]
+position = Vector2(59, 14)
+
+[node name="Clouds4" type="Node2D" parent="."]
+position = Vector2(8219, 3)
+
+[node name="Clocks" type="Node2D" parent="."]
+
+[node name="Clock" parent="Clocks" instance=ExtResource("8_3ka5o")]
+position = Vector2(284, 557)
+scale = Vector2(0.2, 0.2)
+
+[node name="Clock2" parent="Clocks" instance=ExtResource("8_3ka5o")]
+position = Vector2(2362, 536)
+scale = Vector2(0.2, 0.2)
+
+[node name="Clock3" parent="Clocks" instance=ExtResource("8_3ka5o")]
+position = Vector2(4063, 536)
+scale = Vector2(0.2, 0.2)
+
+[node name="Clock4" parent="Clocks" instance=ExtResource("8_3ka5o")]
+position = Vector2(6350, 514)
+scale = Vector2(0.2, 0.2)
+
+[node name="Clock5" parent="Clocks" instance=ExtResource("8_3ka5o")]
+position = Vector2(9253, 523)
+scale = Vector2(0.2, 0.2)
+
+[node name="Clock6" parent="Clocks" instance=ExtResource("8_3ka5o")]
+position = Vector2(14305, 537)
+scale = Vector2(0.2, 0.2)
+
 [node name="EndClock" type="StaticBody2D" parent="."]
+position = Vector2(0, 54)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EndClock"]
 position = Vector2(17383, 436)
-scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ehi3h")
 autoplay = "default"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EndClock"]
-polygon = PackedVector2Array(17414, 339, 17442, 571, 17485, 566, 17448, 323)
+position = Vector2(-24, 0)
+polygon = PackedVector2Array(17403, 246, 17442, 571, 17485, 566, 17448, 248)
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(6513, 524)
+position = Vector2(10522, 576)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -1177,6 +1147,15 @@ visible = false
 position = Vector2(350, 87)
 scale = Vector2(0.05, 0.05)
 
+[node name="End" type="Area2D" parent="."]
+position = Vector2(17415, 527)
+scale = Vector2(1, 5.72)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(0, -0.524476)
+shape = SubResource("RectangleShape2D_qrr0h")
+
 [node name="LevelUI" parent="." instance=ExtResource("5_8t4rr")]
 visible = false
 
@@ -1184,6 +1163,7 @@ visible = false
 position = Vector2(963, 538)
 limit_left = 0
 limit_top = 0
+limit_right = 17650
 limit_bottom = 725
 
 [node name="Background music" type="AudioStreamPlayer" parent="."]

@@ -1458,11 +1458,11 @@ position = Vector2(6443, 175)
 scale = Vector2(0.03, 0.03)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(60, 464)
+position = Vector2(60, 429)
 ignore_rotation = false
 limit_left = 0
 limit_top = -5
-limit_right = 9100
+limit_right = 9200
 limit_bottom = 720
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
