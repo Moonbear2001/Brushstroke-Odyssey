@@ -44,12 +44,14 @@ func _ready():
 		var seconds = roundi(time) % 60
 		high_score_label.text = str(minutes) + "m " + str(seconds) + "s"
 	if last_time != INF:
-		var minutes = roundi(last_time / 60)
-		var seconds = roundi(last_time) % 60
-		var formatted_minutes = "%02d" % minutes
-		var formatted_seconds = "%02d" % seconds
-		last_run_label.text = formatted_minutes + ":" + formatted_seconds
-	
+		var minutes = roundi(time / 60)
+		var seconds = roundi(time) % 60
+		high_score_label.text = str(minutes) + "m " + str(seconds) + "s"
+		#var minutes = roundi(last_time / 60)
+		#var seconds = roundi(last_time) % 60
+		#var formatted_minutes = "%02d" % minutes
+		#var formatted_seconds = "%02d" % seconds
+		#last_run_label.text = formatted_minutes + ":" + formatted_seconds
 
 # Drop the banner when the player enters the area
 func _on_area_2d_body_entered(body):
