@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=78 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -249,12 +249,6 @@ point_count = 2
 [sub_resource type="Curve2D" id="Curve2D_xc0gb"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 17289, 573, 0, 0, 0, 0, 16363, 575)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_r10lc"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 17100, 325, 0, 0, 0, 0, 16222, 328)
 }
 point_count = 2
 
@@ -911,19 +905,17 @@ position = Vector2(14305, 537)
 scale = Vector2(0.2, 0.2)
 
 [node name="EndClock" type="StaticBody2D" parent="."]
-position = Vector2(0, 54)
+position = Vector2(-5193, -30)
+scale = Vector2(1.3, 1.3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EndClock"]
-position = Vector2(17383, 436)
+position = Vector2(17414, 436)
+rotation = 1.5516
 sprite_frames = SubResource("SpriteFrames_ehi3h")
 autoplay = "default"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EndClock"]
-position = Vector2(-24, 0)
-polygon = PackedVector2Array(17403, 246, 17442, 571, 17485, 566, 17448, 248)
-
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(120, 358)
+position = Vector2(87, 421)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -1049,7 +1041,7 @@ scale = Vector2(0.15, 0.15)
 move_speed = 180
 
 [node name="Path2D13" type="Path2D" parent="Enemies"]
-position = Vector2(-30, -202)
+position = Vector2(-50, -186)
 curve = SubResource("Curve2D_1s11c")
 metadata/_edit_group_ = true
 
@@ -1060,16 +1052,16 @@ move_speed = 200
 attack_radius = 300
 
 [node name="Path2D14" type="Path2D" parent="Enemies"]
-position = Vector2(207, 95)
+position = Vector2(298, 154)
 curve = SubResource("Curve2D_kcyij")
 
 [node name="Elephant" parent="Enemies/Path2D14" instance=ExtResource("20_btx2t")]
 position = Vector2(16272, 233)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 attack_radius = 100
 
 [node name="Path2D15" type="Path2D" parent="Enemies"]
-position = Vector2(318, 25)
+position = Vector2(254, 32)
 curve = SubResource("Curve2D_tpfsc")
 
 [node name="SkinBlob3" parent="Enemies/Path2D15" instance=ExtResource("3_png0t")]
@@ -1077,30 +1069,23 @@ position = Vector2(15374, 541)
 scale = Vector2(0.25, 0.25)
 
 [node name="Path2D16" type="Path2D" parent="Enemies"]
-position = Vector2(389, 28)
+position = Vector2(302, 31)
 curve = SubResource("Curve2D_5u3ur")
 
 [node name="SkinBlob3" parent="Enemies/Path2D16" instance=ExtResource("3_png0t")]
 position = Vector2(16035, 535)
 scale = Vector2(0.15, 0.15)
 move_speed = 130
+attack_radius = 160
 
 [node name="Path2D17" type="Path2D" parent="Enemies"]
+position = Vector2(-263, -3)
 curve = SubResource("Curve2D_xc0gb")
 
 [node name="SkinBlob3" parent="Enemies/Path2D17" instance=ExtResource("3_png0t")]
 position = Vector2(17289, 573)
 scale = Vector2(0.3, 0.3)
 move_speed = 60
-
-[node name="Path2D18" type="Path2D" parent="Enemies"]
-curve = SubResource("Curve2D_r10lc")
-
-[node name="Elephant" parent="Enemies/Path2D18" instance=ExtResource("20_btx2t")]
-position = Vector2(17100, 325)
-scale = Vector2(0.4, 0.4)
-move_speed = 150
-attack_radius = 150
 
 [node name="Foreground Rocks" type="Node2D" parent="."]
 position = Vector2(0, -30)
@@ -1171,12 +1156,13 @@ scale = Vector2(0.0927161, 0.0927161)
 texture = ExtResource("23_jf57o")
 
 [node name="End" type="Area2D" parent="."]
-position = Vector2(17415, 527)
+position = Vector2(17412, 571)
 scale = Vector2(1, 5.72)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(0, -0.524476)
+position = Vector2(-67, -2.7972)
+scale = Vector2(2, 0.2)
 shape = SubResource("RectangleShape2D_qrr0h")
 
 [node name="Camera2D" type="Camera2D" parent="."]
