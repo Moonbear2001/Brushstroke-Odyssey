@@ -4700,7 +4700,7 @@ script = ExtResource("1_dktyh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.17, 0.17)
 sprite_frames = SubResource("SpriteFrames_thnrl")
-animation = &"Death_Dali"
+animation = &"Climb_Dali_0"
 
 [node name="Reflection" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.188235)
@@ -4734,7 +4734,6 @@ volume_db = 10.0
 bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

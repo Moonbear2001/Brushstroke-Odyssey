@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bpayqdv7wu7ex"]
 
 [ext_resource type="Script" path="res://objects/enemies/face.gd" id="1_n6o3u"]
-[ext_resource type="Texture2D" uid="uid://dtiexcabpyeso" path="res://art/Dali/creatures/head_splat.png" id="3_diu5x"]
+[ext_resource type="Texture2D" uid="uid://c3jk2d83p3j3i" path="res://art/Dali/creatures/head_splat.png" id="3_diu5x"]
 [ext_resource type="AudioStream" uid="uid://d3nc5hfc54bmh" path="res://audio/sfx/dali/splattt-6295.mp3" id="4_pyu11"]
 [ext_resource type="AudioStream" uid="uid://b6pokpxwgpme8" path="res://audio/sfx/dali/punch-boxing-02wav-14897.mp3" id="5_7kvy4"]
 
@@ -237,7 +237,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yq5ml"]
 resource_name = "splat"
-length = 1.5
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -332,7 +332,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0.9, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -404,7 +404,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0.9, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cuhkg"]
@@ -429,6 +429,7 @@ damage_back = NodePath("DamageBack")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.28, 0.28)
 sprite_frames = SubResource("SpriteFrames_ismyb")
+animation = &"splat"
 
 [node name="DamageFront" type="Area2D" parent="."]
 position = Vector2(0, 1)

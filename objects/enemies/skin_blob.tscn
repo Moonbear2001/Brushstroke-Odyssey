@@ -135,7 +135,7 @@ position = Vector2(-68, -2)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy/DamageFront"]
 position = Vector2(14, 20)
-polygon = PackedVector2Array(-360, 65, -340, 31, -323, 5, -270, -25, -148, 152, -201, 179, -248, 187, -297, 180, -328, 166, -348, 146, -362, 122, -367, 96)
+polygon = PackedVector2Array(-360, 65, -340, 31, -323, 5, -148, 152, -201, 179, -248, 187, -297, 180, -328, 166, -348, 146, -362, 122, -367, 96)
 
 [node name="DamageBack" type="Area2D" parent="Enemy"]
 position = Vector2(-68, -2)
@@ -149,7 +149,7 @@ position = Vector2(-62, -7)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Enemy/WeakArea"]
 position = Vector2(13, 17)
-polygon = PackedVector2Array(-268, -22, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 14)
+polygon = PackedVector2Array(-256, -30, -161, -72, -62, -98, 67, -155, 117, -155, 204, -67, 243, -42, 369, 14)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="Enemy"]
 position = Vector2(-68, 0)
