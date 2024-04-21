@@ -501,7 +501,7 @@ shape = SubResource("CapsuleShape2D_masdi")
 
 [node name="splat" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pyu11")
-volume_db = -10.0
+volume_db = -5.0
 pitch_scale = 0.5
 max_distance = 700.0
 bus = &"SFX"
@@ -510,5 +510,6 @@ bus = &"SFX"
 stream = ExtResource("5_7kvy4")
 volume_db = 2.0
 pitch_scale = 1.5
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

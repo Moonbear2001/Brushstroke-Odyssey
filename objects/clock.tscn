@@ -4,35 +4,35 @@
 [ext_resource type="Texture2D" uid="uid://vo53c8emhjta" path="res://art/Dali/clocks/clock.png" id="2_5cpav"]
 [ext_resource type="PackedScene" uid="uid://dnjkxkejv3y1a" path="res://interaction/text_box.tscn" id="4_4gtui"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ym5c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_54ysf"]
 atlas = ExtResource("2_5cpav")
-region = Rect2(0, 0, 2732, 2048)
+region = Rect2(0, 0, 683, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6lau"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ve4"]
 atlas = ExtResource("2_5cpav")
-region = Rect2(2732, 0, 2732, 2048)
+region = Rect2(683, 0, 683, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_py022"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymcyt"]
 atlas = ExtResource("2_5cpav")
-region = Rect2(5464, 0, 2732, 2048)
+region = Rect2(1366, 0, 683, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vw33h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_07c50"]
 atlas = ExtResource("2_5cpav")
-region = Rect2(8196, 0, 2732, 2048)
+region = Rect2(2049, 0, 683, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ekka6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fsmg"]
 atlas = ExtResource("2_5cpav")
-region = Rect2(10928, 0, 2732, 2048)
+region = Rect2(2732, 0, 683, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kovwl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q1tu"]
 atlas = ExtResource("2_5cpav")
-region = Rect2(13660, 0, 2732, 2048)
+region = Rect2(3415, 0, 683, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jp1sq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8ym5c")
+"texture": SubResource("AtlasTexture_54ysf")
 }],
 "loop": true,
 "name": &"0",
@@ -40,7 +40,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g6lau")
+"texture": SubResource("AtlasTexture_h7ve4")
 }],
 "loop": true,
 "name": &"1",
@@ -48,7 +48,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_py022")
+"texture": SubResource("AtlasTexture_ymcyt")
 }],
 "loop": true,
 "name": &"2",
@@ -56,7 +56,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vw33h")
+"texture": SubResource("AtlasTexture_07c50")
 }],
 "loop": true,
 "name": &"3",
@@ -64,7 +64,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ekka6")
+"texture": SubResource("AtlasTexture_1fsmg")
 }],
 "loop": true,
 "name": &"4",
@@ -72,7 +72,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kovwl")
+"texture": SubResource("AtlasTexture_8q1tu")
 }],
 "loop": true,
 "name": &"5",
@@ -83,9 +83,11 @@ animations = [{
 script = ExtResource("1_80pad")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(402, -27)
+position = Vector2(567, 0)
+scale = Vector2(5.24854, 5.24854)
 sprite_frames = SubResource("SpriteFrames_jp1sq")
-animation = &"3"
+animation = &"5"
+frame_progress = 0.842999
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
