@@ -164,7 +164,8 @@ bus = &"SFX"
 
 [node name="hit" type="AudioStreamPlayer2D" parent="Enemy"]
 stream = ExtResource("5_1xxiu")
-volume_db = 2.0
+volume_db = 17.0
+pitch_scale = 0.7
 max_polyphony = 3
 bus = &"SFX"
 

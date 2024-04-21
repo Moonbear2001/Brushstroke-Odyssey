@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bpayqdv7wu7ex"]
 
 [ext_resource type="Script" path="res://objects/enemies/face.gd" id="1_n6o3u"]
-[ext_resource type="Texture2D" uid="uid://c3jk2d83p3j3i" path="res://art/Dali/creatures/head_splat.png" id="3_diu5x"]
+[ext_resource type="Texture2D" uid="uid://dtiexcabpyeso" path="res://art/Dali/creatures/head_splat.png" id="3_diu5x"]
 [ext_resource type="AudioStream" uid="uid://d3nc5hfc54bmh" path="res://audio/sfx/dali/splattt-6295.mp3" id="4_pyu11"]
 [ext_resource type="AudioStream" uid="uid://b6pokpxwgpme8" path="res://audio/sfx/dali/punch-boxing-02wav-14897.mp3" id="5_7kvy4"]
 
@@ -508,7 +508,7 @@ bus = &"SFX"
 
 [node name="hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7kvy4")
-volume_db = 2.0
+volume_db = 15.0
 pitch_scale = 1.5
 bus = &"SFX"
 

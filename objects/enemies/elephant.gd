@@ -9,9 +9,9 @@ Elephant enemy.
 @onready var animation = $AnimationPlayer
 @onready var attack_radius = $AttackRadius
 
-var audio_dist = 1000
-var volume = -5
-var fade = 100
+var audio_dist = 2000
+var volume = -20
+var fade = 500
 var attacking = false
 var animation_finished = true
 
