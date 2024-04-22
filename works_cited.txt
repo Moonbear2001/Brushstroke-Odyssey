@@ -28,6 +28,7 @@ Wind gust sound - Gust of Wind - Tony B kksm - https://freesound.org/people/Tony
 Church bell - Church Bell - Pixabay - https://pixabay.com/sound-effects/church-bell-5993/ - res://audio/sfx/church-bell-5993.mp3
 
 2nd Section:
+Background Music - Seperation - William_King - https://pixabay.com/music/solo-guitar-separation-185196/ - res://audio/music/separation-185196.mp3
 Night ambience - Night Ambience - Pixabay - https://pixabay.com/sound-effects/night-ambience-17064/ - res://audio/music/night-ambience-17064.mp3
 Wolf howl 1 - Distant Howling Pupper - Pixabay - https://pixabay.com/sound-effects/distant-howling-pupper-14664/ - res://audio/sfx/distant-howling-pupper-14664.mp3
 Wolf howl 2 - Wolf Howling - UNIVERSFIELD - https://pixabay.com/sound-effects/wolf-howling-140235/ - res://audio/sfx/wolf-howling-140235.mp3
@@ -37,3 +38,17 @@ Owl hoot - Owl Hooting - Pixabay - https://pixabay.com/sound-effects/owl-hooting
 Background music - Relaxing - Music_For_Videos - https://pixabay.com/music/modern-classical-relaxing-145038/ - res://audio/music/relaxing-145038.mp3
 
 ### DALI ###
+
+
+Background Music - Lost Alone Mysterious - free-to-use-audio - https://pixabay.com/music/ambient-lost-alone-mysterious-gentle-instrumental-175368/ - res://audio/music/lost-alone-mysterious-gentle-instrumental-175368.mp3
+Tick - clock tick tock - Pixabay - https://pixabay.com/sound-effects/clock-tick-tock-87936/ - res://audio/sfx/dali/clock-tick-tock-87936.mp3
+Protagonist Death - Human Impact on Ground - Pixabay - https://pixabay.com/sound-effects/human-impact-on-ground-6982/ - res://audio/sfx/dali/human-impact-on-ground-6982.mp3
+Skin Blob Moving - Squelch - Pixabay - https://pixabay.com/sound-effects/squelch-106250/ - res://audio/sfx/dali/squelch-106250.mp3
+Skin Blob Hit - Punch Boxing - Pixabay - https://pixabay.com/sound-effects/punch-boxing-02wav-14897/ - res://audio/sfx/dali/punch-boxing-02wav-14897.mp3
+Skin Blob Death - Gross Slimey Goo Foley 5 - floraphonic - https://pixabay.com/sound-effects/gross-slimy-goo-foley-5-164293/ - res://audio/sfx/dali/gross-slimy-goo-foley-5-164293.mp3
+Elephant Attack - Angry Elephant - Pixabay - https://pixabay.com/sound-effects/angry-elephant-40916/ - res://audio/sfx/dali/angry-elephant-40916.mp3
+Elephant Hit - Mixed Whip Crack 1 - Pixabay - https://pixabay.com/sound-effects/mixed-whip-crack-1-102825/ - res://audio/sfx/dali/mixed-whip-crack-1-102825.mp3
+Elephant Walk - Marching Loop - Pixabay - https://pixabay.com/sound-effects/marching-loop-32908/ - res://audio/sfx/dali/marching-loop-32908.mp3
+Heads Storm - Epic storm. Thunder,rain,wind,waves. (no loops) - Placidplace - https://pixabay.com/sound-effects/epic-storm-thunder-rainwindwaves-no-loops-106800/ - res://audio/sfx/dali/epic-storm-thunder-rainwindwaves-no-loops-106800 (1).mp3
+Heads Splat - Splatt - Pixabay - https://pixabay.com/sound-effects/splattt-6295/ - res://audio/sfx/dali/splattt-6295.mp3
+Heads Hit - Punch Boxing - Pixabay - https://pixabay.com/sound-effects/punch-boxing-02wav-14897/ - res://audio/sfx/dali/punch-boxing-02wav-14897.mp3

@@ -7,7 +7,6 @@ Base enemy class.
 
 @export var damage_front: Area2D
 @export var damage_back: Area2D
-@export var weak_area: Area2D
 
 @onready var timer: Timer = $Timer
 
@@ -19,6 +18,7 @@ func idle(_body, _direction):
 
 func _ready():
 	damage_front.connect("body_entered", Callable(self, "attack_front"))
+	timer.one_shot = true
 	timer.stop()
 	if damage_back:
 		damage_back.connect("body_entered", Callable(self, "attack_back"))

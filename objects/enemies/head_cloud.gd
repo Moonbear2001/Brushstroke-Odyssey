@@ -6,8 +6,8 @@ through export variables.
 """
 
 # Low and high bounds (in seconds) between possible face spawns
-@export var interval_low: int = 1
-@export var interval_high: int = 2
+@export var interval_low = 0.5
+@export var interval_high = 1.5
 @export var audio_dist: float = 700
 @export var head_scale: Vector2 = Vector2(0.03, 0.03)
 
@@ -18,9 +18,10 @@ through export variables.
 var rng = RandomNumberGenerator.new()
 var left_coord: Vector2 
 var right_coord: Vector2 
+var head_speed = 150
 
 func _ready():
-	timer.set_wait_time(rng.randi_range(interval_low, interval_high))
+	timer.set_wait_time(rng.randf_range(interval_low, interval_high))
 	timer.start()
 	
 	left_coord = cloud_rect.position
@@ -45,5 +46,10 @@ func drop_face():
 	new_face.set_global_position(Vector2(rng.randi_range(left_coord.x, right_coord.x), left_coord.y))
 	new_face.set_scale(head_scale)
 	add_child(new_face)
+	new_face.set_speed(head_speed)
+
+func increase_speed():
+	head_speed += 50
 	
-	
+func decrease_speed():
+	head_speed -= 50

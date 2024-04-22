@@ -6,7 +6,9 @@ Protagonist specific to the Dali level.
 signal fade_to_black
 signal took_damage
 
-const THROW_VELOCITY = 200
+@onready var death_timer = $Timer
+
+var THROW_VELOCITY = 250
 
 var health = 2
 var is_thrown = false
@@ -21,6 +23,7 @@ var distortion: int = 3
 
 func _ready():
 	super._ready()
+	death_timer.stop()
 
 func _process(_delta):
 	if is_thrown and is_on_floor():
@@ -54,6 +57,7 @@ func take_damage(amount, is_clock=false):
 	took_damage.emit()
 	if health <= 0:
 		death_waiting = true
+		death_timer.start()
 	return true
 
 func throw(direction):
@@ -75,8 +79,15 @@ func respawn():
 	dying = true
 	disable_input()
 	velocity = Vector2(0, 0)
+	$death.play()
 	anim.play("Death_Dali")
+
+func set_throw_velocity(v):
+	THROW_VELOCITY = v
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Death_Dali":
 		fade_to_black.emit()
+
+func _on_timer_timeout():
+	fade_to_black.emit()

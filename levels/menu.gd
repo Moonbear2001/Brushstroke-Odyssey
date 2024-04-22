@@ -16,7 +16,6 @@ func _ready():
 	$EnterVanGogh.entering_level.connect(save_pos)
 	$EnterEscher.entering_level.connect(save_pos)
 	$EnterTutorial.entering_level.connect(save_pos)
-	$EnterWorksCited.entering_works_cited.connect(save_pos)
 	
 	# Position the protagonist where they were in the menu
 	protagonist.position = Global.menu_pos

@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=27 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist_escher.tscn" id="1_3wox7"]
-[ext_resource type="Script" path="res://levels/level.gd" id="1_b2fp5"]
+[ext_resource type="Script" path="res://levels/tutorial.gd" id="1_21saf"]
 [ext_resource type="Texture2D" uid="uid://c2ow4nde88yi1" path="res://art/L0/big1.png" id="2_70hh4"]
 [ext_resource type="Texture2D" uid="uid://enibk78rxdld" path="res://art/L0/big2.png" id="3_45pnc"]
 [ext_resource type="Texture2D" uid="uid://mqqc3sad7fhe" path="res://art/L0/med4.png" id="4_6ouc6"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="21_n74nv"]
 [ext_resource type="PackedScene" uid="uid://dnjkxkejv3y1a" path="res://interaction/text_box.tscn" id="22_k6tbf"]
-[ext_resource type="PackedScene" uid="uid://bckab5xmmrat0" path="res://objects/star.tscn" id="22_r7ynq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0doj"]
 size = Vector2(110, 50)
@@ -67,7 +66,7 @@ _data = {
 size = Vector2(254, 512)
 
 [node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "end")]
-script = ExtResource("1_b2fp5")
+script = ExtResource("1_21saf")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
 end = NodePath("End")
@@ -101,6 +100,7 @@ texture = ExtResource("18_mr6vo")
 position = Vector2(194, 333)
 
 [node name="Death" parent="." instance=ExtResource("15_yj68c")]
+position = Vector2(2081, 794)
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -132,7 +132,7 @@ rotation = 3.14159
 polygon = PackedVector2Array(162, 389, 297, 389, 297, 353, 356, 353, 356, 328, 432, 328, 432, 354, 459, 354, 459, 413, 500, 413, 500, 441, 592, 441, 592, 536, 162, 536)
 
 [node name="StaticBody2D18" type="StaticBody2D" parent="Platforms"]
-position = Vector2(3054, 517)
+position = Vector2(3003, 517)
 metadata/_edit_group_ = true
 
 [node name="Big1" type="Sprite2D" parent="Platforms/StaticBody2D18"]
@@ -172,7 +172,7 @@ rotation = 3.14159
 polygon = PackedVector2Array(390, 413, 419, 413, 419, 387, 448, 387, 448, 350, 477, 350, 477, 328, 506, 328, 506, 350, 535, 350, 535, 387, 563, 387, 563, 412, 592, 412, 592, 536, 390, 536)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Platforms"]
-position = Vector2(914, 422)
+position = Vector2(932, 422)
 metadata/_edit_group_ = true
 
 [node name="Med4" type="Sprite2D" parent="Platforms/StaticBody2D5"]
@@ -186,7 +186,8 @@ scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(381, 483, 352, 483, 352, 316, 478, 316, 478, 341, 592, 341, 592, 536, 381, 536)
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="Platforms"]
-position = Vector2(2695, 433)
+position = Vector2(2626, 488)
+scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
 [node name="Med4" type="Sprite2D" parent="Platforms/StaticBody2D17"]
@@ -200,7 +201,7 @@ scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(381, 483, 352, 483, 352, 316, 478, 316, 478, 341, 592, 341, 592, 536, 381, 536)
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Platforms"]
-position = Vector2(1106, 364)
+position = Vector2(1082, 364)
 metadata/_edit_group_ = true
 
 [node name="Med2" type="Sprite2D" parent="Platforms/StaticBody2D6"]
@@ -231,7 +232,7 @@ scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(442, 440, 608, 440, 608, 536, 442, 536)
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Platforms"]
-position = Vector2(1510, 353)
+position = Vector2(1492, 353)
 metadata/_edit_group_ = true
 
 [node name="Med5" type="Polygon2D" parent="Platforms/StaticBody2D9"]
@@ -247,7 +248,8 @@ scale = Vector2(0.310373, 0.30235)
 polygon = PackedVector2Array(173.645, 165.372, 608.605, 165.371, 608.605, 535.803, 444.287, 535.803, 444.287, 271.209, 289.634, 271.209, 289.634, 380.354, 173.645, 380.354)
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Platforms"]
-position = Vector2(1707, 446)
+position = Vector2(1702, 446)
+scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
 [node name="Med6" type="Sprite2D" parent="Platforms/StaticBody2D11"]
@@ -275,7 +277,7 @@ scale = Vector2(0.208648, 0.175315)
 polygon = PackedVector2Array(129.406, 136.897, 608.683, 136.897, 608.605, 535.803, 129.406, 536.179)
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="Platforms"]
-position = Vector2(2056, 389)
+position = Vector2(2034, 431)
 metadata/_edit_group_ = true
 
 [node name="Med1" type="Sprite2D" parent="Platforms/StaticBody2D13"]
@@ -289,7 +291,7 @@ scale = Vector2(0.208648, 0.175315)
 polygon = PackedVector2Array(325.908, 222.458, 608.682, 222.458, 608.605, 535.803, 325.908, 536.18)
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Platforms"]
-position = Vector2(2209, 355)
+position = Vector2(2169, 397)
 metadata/_edit_group_ = true
 
 [node name="Smol2" type="Sprite2D" parent="Platforms/StaticBody2D14"]
@@ -303,7 +305,7 @@ scale = Vector2(0.257026, 0.204385)
 polygon = PackedVector2Array(325.068, 202.182, 647.993, 202.182, 647.992, 534.887, 325.068, 534.887)
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="Platforms"]
-position = Vector2(2378, 334)
+position = Vector2(2317, 376)
 metadata/_edit_group_ = true
 
 [node name="Smol4" type="Sprite2D" parent="Platforms/StaticBody2D15"]
@@ -317,7 +319,7 @@ scale = Vector2(0.257026, 0.204385)
 polygon = PackedVector2Array(435.754, 318.027, 649.74, 318.027, 649.74, 538.2, 435.754, 538.2)
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="Platforms"]
-position = Vector2(2531, 325)
+position = Vector2(2447, 367)
 metadata/_edit_group_ = true
 
 [node name="Smol5" type="Sprite2D" parent="Platforms/StaticBody2D16"]
@@ -360,15 +362,10 @@ position = Vector2(-260, -580)
 position = Vector2(3467, 142)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(-130, 122)
+position = Vector2(-181, 122)
 shape = SubResource("RectangleShape2D_xjnas")
 
 [node name="Stars" type="Node2D" parent="."]
-visible = false
-
-[node name="Star1" parent="Stars" instance=ExtResource("22_r7ynq")]
-position = Vector2(368, 282)
-scale = Vector2(0.05, 0.05)
 
 [node name="LevelUI" parent="." instance=ExtResource("21_n74nv")]
 visible = false

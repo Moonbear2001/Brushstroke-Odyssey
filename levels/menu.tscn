@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdhced5wuwde4"]
+[gd_scene load_steps=28 format=3 uid="uid://bdhced5wuwde4"]
 
 [ext_resource type="Script" path="res://levels/menu.gd" id="1_2sh28"]
 [ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
@@ -18,7 +18,6 @@
 [ext_resource type="AudioStream" uid="uid://qpn4w2y7wal2" path="res://audio/music/la-loire-theo-gerard-main.mp3" id="16_4vahx"]
 [ext_resource type="AudioStream" uid="uid://dbe00p6c0shdx" path="res://audio/music/evening_meal_alex_main.mp3" id="17_bht6u"]
 [ext_resource type="PackedScene" uid="uid://p8vf3s0glmab" path="res://objects/score_banner.tscn" id="17_dwc86"]
-[ext_resource type="PackedScene" uid="uid://dagovt7ry6r10" path="res://levels/enter_works_cited.tscn" id="18_rxchs"]
 [ext_resource type="AudioStream" uid="uid://q3gpnraqv440" path="res://audio/music/a-walk-in-paris-126173.mp3" id="19_s2wx5"]
 
 [sub_resource type="Animation" id="Animation_sdd8a"]
@@ -116,22 +115,11 @@ texture = ExtResource("3_e6vvp")
 position = Vector2(3548, 685)
 shape = SubResource("RectangleShape2D_sob0k")
 
-[node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
-position = Vector2(1263, 513)
-scale = Vector2(0.75, 0.75)
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(0, 370)
 shape = SubResource("RectangleShape2D_vxxs1")
-
-[node name="EnterWorksCited" parent="." instance=ExtResource("18_rxchs")]
-position = Vector2(417, 403)
-scale = Vector2(0.25, 0.25)
-
-[node name="LabelPos" type="Node2D" parent="EnterWorksCited"]
-position = Vector2(280, 4)
 
 [node name="EnterVanGogh" parent="." instance=ExtResource("2_a14vu")]
 position = Vector2(4093, 264)
@@ -185,6 +173,27 @@ animation = &"outline"
 [node name="LabelPos" type="Node2D" parent="EnterTutorial"]
 position = Vector2(766.667, -1333.33)
 
+[node name="Banners" type="Node2D" parent="."]
+
+[node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
+position = Vector2(3903, -420)
+scale = Vector2(0.4, 0.4)
+level_name = "gogh2"
+
+[node name="DaliScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
+position = Vector2(5204, -420)
+scale = Vector2(0.4, 0.4)
+level_name = "dali"
+
+[node name="EscherScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
+position = Vector2(2459, -420)
+scale = Vector2(0.4, 0.4)
+level_name = "escher"
+
+[node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
+position = Vector2(1263, 517)
+scale = Vector2(0.75, 0.75)
+
 [node name="FrontArch1" type="Sprite2D" parent="."]
 position = Vector2(2069, 351)
 scale = Vector2(0.9, 0.9)
@@ -201,8 +210,7 @@ scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_n8e3p")
 
 [node name="FrontArch4" type="Sprite2D" parent="."]
-position = Vector2(3553, 322)
-scale = Vector2(0.91, 0.91)
+position = Vector2(3565, 327)
 texture = SubResource("CompressedTexture2D_lak8j")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -212,40 +220,27 @@ position = Vector2(-30, 0)
 position = Vector2(6520, 353)
 shape = SubResource("RectangleShape2D_vxxs1")
 
-[node name="Banners" type="Node2D" parent="."]
-
-[node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(3903, -210)
-scale = Vector2(0.091, 0.0906374)
-level_name = "gogh2"
-
-[node name="DaliScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(5240, -210)
-scale = Vector2(0.091, 0.0906374)
-level_name = "dali"
-
-[node name="EscherScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(2435, -194)
-scale = Vector2(0.091, 0.0906374)
-level_name = "escher"
-
 [node name="SoundPool" type="Node2D" parent="."]
 script = ExtResource("14_dlvkp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("11_cf0mi")
+volume_db = -10.0
 bus = &"Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("16_4vahx")
+volume_db = -10.0
 bus = &"Music"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("17_bht6u")
+volume_db = -5.0
 bus = &"Music"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="SoundPool"]
 stream = ExtResource("19_s2wx5")
+volume_db = -12.0
 bus = &"Music"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

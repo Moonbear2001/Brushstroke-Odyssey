@@ -1,7 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bpayqdv7wu7ex"]
 
 [ext_resource type="Script" path="res://objects/enemies/face.gd" id="1_n6o3u"]
-[ext_resource type="Script" path="res://objects/enemies/enemy.gd" id="1_vekug"]
 [ext_resource type="Texture2D" uid="uid://dtiexcabpyeso" path="res://art/Dali/creatures/head_splat.png" id="3_diu5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbavy"]
@@ -16,25 +15,25 @@ region = Rect2(0, 0, 2048, 2048)
 atlas = ExtResource("3_diu5x")
 region = Rect2(2048, 0, 2048, 2048)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_um4x1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3yiu"]
 atlas = ExtResource("3_diu5x")
-region = Rect2(4096, 0, 2048, 2048)
+region = Rect2(4096, 0, 2048, 2035)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h0tu7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kspmh"]
 atlas = ExtResource("3_diu5x")
-region = Rect2(6144, 0, 2048, 2048)
+region = Rect2(6144, 58, 2048, 1990)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onq0k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo0ns"]
 atlas = ExtResource("3_diu5x")
-region = Rect2(8192, 0, 2048, 2048)
+region = Rect2(8192, 98, 2048, 1950)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8i5k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu585"]
 atlas = ExtResource("3_diu5x")
-region = Rect2(10240, 0, 2048, 2048)
+region = Rect2(10240, 98, 2048, 1950)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fmmsj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8e73"]
 atlas = ExtResource("3_diu5x")
-region = Rect2(12288, 0, 2048, 2048)
+region = Rect2(12288, 98, 2048, 1950)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ismyb"]
 animations = [{
@@ -54,19 +53,19 @@ animations = [{
 "texture": SubResource("AtlasTexture_8nvtf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_um4x1")
+"texture": SubResource("AtlasTexture_w3yiu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h0tu7")
+"texture": SubResource("AtlasTexture_kspmh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_onq0k")
+"texture": SubResource("AtlasTexture_wo0ns")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q8i5k")
+"texture": SubResource("AtlasTexture_pu585")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fmmsj")
+"texture": SubResource("AtlasTexture_m8e73")
 }],
 "loop": true,
 "name": &"splat",
@@ -74,10 +73,97 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5obbd"]
-size = Vector2(435, 20)
+size = Vector2(224, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h02sh"]
+size = Vector2(192.25, 39)
 
 [sub_resource type="Animation" id="Animation_5rxgi"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageBack/Frame0Hitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageBack/Frame1Hitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageBack/Frame2Hitbox:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DamageBack/Frame3Hitbox:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DamageBack/Frame4Hitbox:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DamageBack/Frame5to6Hitbox:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_vi4ol"]
 resource_name = "idle"
@@ -105,6 +191,30 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageBack/Frame0Hitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageFront/Frame0Hitbox:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_kodxt"]
 resource_name = "loop"
@@ -113,7 +223,7 @@ loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_yq5ml"]
 resource_name = "splat"
-length = 2.1
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -141,7 +251,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("DamageArea/Frame0Hitbox:disabled")
+tracks/2/path = NodePath("DamageFront/Frame0Hitbox:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -153,7 +263,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("DamageArea/Frame1Hitbox:disabled")
+tracks/3/path = NodePath("DamageFront/Frame1Hitbox:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -165,7 +275,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("DamageArea/Frame2Hitbox:disabled")
+tracks/4/path = NodePath("DamageFront/Frame2Hitbox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -177,7 +287,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("DamageArea/Frame3Hitbox:disabled")
+tracks/5/path = NodePath("DamageFront/Frame3Hitbox:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -189,7 +299,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("DamageArea/Frame4Hitbox:disabled")
+tracks/6/path = NodePath("DamageFront/Frame4Hitbox:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -201,14 +311,86 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("DamageArea/Frame5to6Hitbox:disabled")
+tracks/7/path = NodePath("DamageFront/Frame5to6Hitbox:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(1.25, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
+"values": [false, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DamageBack/Frame0Hitbox:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
 "values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DamageBack/Frame1Hitbox:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("DamageBack/Frame2Hitbox:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("DamageBack/Frame3Hitbox:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("DamageBack/Frame4Hitbox:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("DamageBack/Frame5to6Hitbox:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.9, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cuhkg"]
@@ -220,66 +402,92 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_masdi"]
-radius = 120.0
-height = 320.0
+radius = 9.0
+height = 24.0
 
-[node name="Face" type="Node2D"]
-scale = Vector2(0.05, 0.05)
-script = ExtResource("1_n6o3u")
-
-[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back", "weak_area") groups=["faces"]]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("damage_front", "damage_back") groups=["enemy"]]
 light_mask = 17
 collision_layer = 4
 collision_mask = 128
-script = ExtResource("1_vekug")
-damage_front = NodePath("Dummy")
-damage_back = NodePath("Dummy")
-weak_area = NodePath("Dummy")
+script = ExtResource("1_n6o3u")
+damage_front = NodePath("DamageFront")
+damage_back = NodePath("DamageBack")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.28, 0.28)
 sprite_frames = SubResource("SpriteFrames_ismyb")
 animation = &"splat"
+frame = 5
 
-[node name="DamageArea" type="Area2D" parent="Enemy"]
-collision_layer = 4
+[node name="DamageFront" type="Area2D" parent="."]
+position = Vector2(0, 1)
 
-[node name="Frame0Hitbox" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(3, -177, 88, -155, 139, -21, 111, 84, 26, 154, -79, 108, -110, 1, -77, -144)
+[node name="Frame0Hitbox" type="CollisionPolygon2D" parent="DamageFront"]
+polygon = PackedVector2Array(3, -177, 4, 160, -79, 108, -110, 1, -77, -144)
 
-[node name="Frame1Hitbox" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(-75, -99, -115, 7, -101, 118, 36, 162, 130, 116, 144, -8, 88, -125, 6, -163)
+[node name="Frame1Hitbox" type="CollisionPolygon2D" parent="DamageFront"]
+polygon = PackedVector2Array(-75, -99, -115, 7, -101, 118, 18, 153, -3, -160)
 disabled = true
 
-[node name="Frame2Hitbox" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(5, -143, -88, -51, -164, 143, 14, 165, 174, 140, 61, -131)
+[node name="Frame2Hitbox" type="CollisionPolygon2D" parent="DamageFront"]
+polygon = PackedVector2Array(5, -143, -88, -51, -164, 143, 14, 165)
 disabled = true
 
-[node name="Frame3Hitbox" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(6, -111, -180, 163, 183, 159)
+[node name="Frame3Hitbox" type="CollisionPolygon2D" parent="DamageFront"]
+position = Vector2(-2, 0)
+polygon = PackedVector2Array(6, -111, -180, 163, -1, 163)
 disabled = true
 
-[node name="Frame4Hitbox" type="CollisionPolygon2D" parent="Enemy/DamageArea"]
-polygon = PackedVector2Array(-9, 30, -234, 169, 212, 170)
+[node name="Frame4Hitbox" type="CollisionPolygon2D" parent="DamageFront"]
+position = Vector2(0, -9)
+polygon = PackedVector2Array(-12, 31, -234, 169, -8, 169)
 disabled = true
 
-[node name="Frame5to6Hitbox" type="CollisionShape2D" parent="Enemy/DamageArea"]
-position = Vector2(-6.5, 166)
+[node name="Frame5to6Hitbox" type="CollisionShape2D" parent="DamageFront"]
+position = Vector2(-112, 143)
 shape = SubResource("RectangleShape2D_5obbd")
 disabled = true
 
-[node name="Dummy" type="Area2D" parent="Enemy"]
+[node name="DamageBack" type="Area2D" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+[node name="Frame0Hitbox" type="CollisionPolygon2D" parent="DamageBack"]
+polygon = PackedVector2Array(9, -179, 88, -155, 139, -21, 111, 84, 16, 159)
+disabled = true
+
+[node name="Frame1Hitbox" type="CollisionPolygon2D" parent="DamageBack"]
+polygon = PackedVector2Array(36, 162, 130, 116, 144, -8, 88, -125, 6, -163)
+disabled = true
+
+[node name="Frame2Hitbox" type="CollisionPolygon2D" parent="DamageBack"]
+polygon = PackedVector2Array(5, -143, 14, 165, 174, 140, 61, -131)
+disabled = true
+
+[node name="Frame3Hitbox" type="CollisionPolygon2D" parent="DamageBack"]
+polygon = PackedVector2Array(6, -111, 3, 160, 183, 159)
+disabled = true
+
+[node name="Frame4Hitbox" type="CollisionPolygon2D" parent="DamageBack"]
+position = Vector2(0, -6)
+polygon = PackedVector2Array(-9, 30, -2, 169, 212, 170)
+disabled = true
+
+[node name="Frame5to6Hitbox" type="CollisionShape2D" parent="DamageBack"]
+position = Vector2(100.875, 144.5)
+shape = SubResource("RectangleShape2D_h02sh")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_cuhkg")
 }
 
-[node name="Timer" type="Timer" parent="Enemy"]
+[node name="Timer" type="Timer" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(20, -20)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 144)
+rotation = -1.5708
 shape = SubResource("CapsuleShape2D_masdi")
+
 
 [node name="DequeueTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -287,3 +495,18 @@ one_shot = true
 
 [connection signal="body_entered" from="Enemy/DamageArea" to="." method="_on_damage_area_body_entered"]
 [connection signal="timeout" from="DequeueTimer" to="." method="_on_dequeue_timer_timeout"]
+
+[node name="splat" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pyu11")
+volume_db = -5.0
+pitch_scale = 0.5
+max_distance = 700.0
+bus = &"SFX"
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7kvy4")
+volume_db = 15.0
+pitch_scale = 1.5
+bus = &"SFX"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
