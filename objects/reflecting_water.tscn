@@ -131,6 +131,7 @@ z_index = 0
 position = Vector2(2010, 292)
 
 
+
 [node name="ProtagReflection" type="AnimatedSprite2D" parent="Reflections"]
 self_modulate = Color(1, 1, 1, 0.392157)
 light_mask = 16
