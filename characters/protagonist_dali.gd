@@ -19,7 +19,7 @@ var dying = false
 
 # Currently the distortion level is increased when the character takes damage,
 # but distortion and health are separate
-var distortion: int = 0
+var distortion: int = 3
 
 func _ready():
 	super._ready()

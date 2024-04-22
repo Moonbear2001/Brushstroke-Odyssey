@@ -6,8 +6,8 @@ through export variables.
 """
 
 # Low and high bounds (in seconds) between possible face spawns
-@export var interval_low = 1
-@export var interval_high = 2
+@export var interval_low: float = 0.5
+@export var interval_high: float = 1.0
 @export var audio_dist: float = 700
 @export var head_scale: Vector2 = Vector2(0.03, 0.03)
 

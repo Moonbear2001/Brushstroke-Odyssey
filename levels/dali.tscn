@@ -35,15 +35,15 @@
 [ext_resource type="Texture2D" uid="uid://m0qqv1bq8e5h" path="res://art/Dali/parrallax_water_section/tree_structure.png" id="31_io6ln"]
 [ext_resource type="Texture2D" uid="uid://6ox1gitpu8w0" path="res://art/Dali/parrallax_water_section/rock.PNG" id="32_bq1ph"]
 [ext_resource type="Texture2D" uid="uid://qjebhnc206xd" path="res://art/Dali/parrallax_water_section/backrock.PNG" id="33_3js5q"]
-[ext_resource type="PackedScene" uid="uid://b436vxyenvyoa" path="res://objects/reflecting_water.tscn" id="33_yamjo"]
+[ext_resource type="PackedScene" uid="uid://c240s52xn501a" path="res://objects/reflecting_water.tscn" id="33_yamjo"]
 [ext_resource type="Texture2D" uid="uid://bve428lpen5tl" path="res://art/Dali/parrallax_water_section/backrock2.png" id="34_nrpap"]
 [ext_resource type="Texture2D" uid="uid://v528n67s05aw" path="res://art/Dali/parrallax_water_section/backrock3.png" id="35_fiefn"]
 [ext_resource type="PackedScene" uid="uid://d1qgimxn4uena" path="res://objects/enemies/head_cloud.tscn" id="37_84h57"]
 [ext_resource type="Texture2D" uid="uid://dohvacjnxft4y" path="res://art/Dali/trees/tree1_longer.PNG" id="37_oais5"]
-[ext_resource type="Texture2D" uid="uid://1t6fwr36s35l" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
+[ext_resource type="Texture2D" uid="uid://cmowx61ney78d" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7y"]
-size = Vector2(3310, 312)
+size = Vector2(3310, 308)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0jc5"]
 size = Vector2(721.49, 457.666)
@@ -437,55 +437,51 @@ position = Vector2(-13, -148)
 
 [node name="Backestwater" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
 z_as_relative = false
-position = Vector2(2673.59, 564.188)
+position = Vector2(2032.59, 564.188)
 scale = Vector2(1.63467, 1.38125)
 texture = ExtResource("3_xqidc")
-metadata/_edit_lock_ = true
 
 [node name="WaterBackgroundBelowHils" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
 z_as_relative = false
-position = Vector2(2701.29, 567.125)
+position = Vector2(1963.29, 567.125)
 scale = Vector2(0.44731, 0.369636)
 texture = ExtResource("4_uopvj")
-metadata/_edit_lock_ = true
 
 [node name="Backgroundhill1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
 z_as_relative = false
 position = Vector2(2386, 481)
 scale = Vector2(0.274426, 0.274426)
 texture = ExtResource("5_58yj0")
-metadata/_edit_lock_ = true
 
 [node name="Backgroundhill2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
 z_as_relative = false
-position = Vector2(1097, 449)
+position = Vector2(1247, 471)
 scale = Vector2(0.244798, 0.244798)
-texture = ExtResource("6_2y0tk")
-
-[node name="Backgroundhill3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
-z_as_relative = false
-position = Vector2(4175, 459)
-scale = Vector2(0.321585, 0.310412)
 texture = ExtResource("6_2y0tk")
 
 [node name="Backgroundhill4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
 z_as_relative = false
-position = Vector2(3, 460)
+position = Vector2(249, 481)
 scale = Vector2(0.323945, 0.323945)
 texture = ExtResource("5_58yj0")
-metadata/_edit_lock_ = true
 
 [node name="Backestwater2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
 z_as_relative = false
-position = Vector2(7812, 540)
+position = Vector2(6428.26, 560.125)
 scale = Vector2(1.1921, 1.00729)
 texture = ExtResource("3_xqidc")
 
 [node name="WaterBackgroundBelowHils2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
 z_as_relative = false
-position = Vector2(8677, 586)
+position = Vector2(7280.26, 612.125)
 scale = Vector2(0.44731, 0.369636)
 texture = ExtResource("4_uopvj")
+
+[node name="Backgroundhill3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+z_as_relative = false
+position = Vector2(4538, 459)
+scale = Vector2(0.321585, 0.310412)
+texture = ExtResource("6_2y0tk")
 
 [node name="Backgroundhill5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
 z_as_relative = false
@@ -499,13 +495,26 @@ position = Vector2(8259, 467)
 scale = Vector2(0.321585, 0.310412)
 texture = ExtResource("6_2y0tk")
 
+[node name="Backgroundhill6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+z_as_relative = false
+position = Vector2(3558, 488)
+scale = Vector2(0.274426, 0.274426)
+texture = ExtResource("5_58yj0")
+
+[node name="Backgroundhill8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/water"]
+visible = false
+z_as_relative = false
+position = Vector2(5634, 509)
+scale = Vector2(0.274426, 0.274426)
+texture = ExtResource("5_58yj0")
+
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(-7, -30)
 
 [node name="Water" type="Node2D" parent="Platforms"]
 
 [node name="Backwater" type="Sprite2D" parent="Platforms/Water"]
-position = Vector2(11909, 399)
+position = Vector2(11909, 418)
 scale = Vector2(0.695593, 0.516958)
 texture = ExtResource("9_a1u4p")
 
@@ -573,12 +582,12 @@ collision_mask = 7
 
 [node name="GroundSlant" type="Sprite2D" parent="Platforms/Ground/StaticBody2D4"]
 z_as_relative = false
-position = Vector2(10769, 608)
-scale = Vector2(0.251283, 0.251283)
+position = Vector2(10763, 488.975)
+scale = Vector2(0.429496, 0.429496)
 texture = ExtResource("11_u4irj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground/StaticBody2D4"]
-position = Vector2(11539, 784)
+position = Vector2(11539, 782)
 shape = SubResource("RectangleShape2D_c5q7y")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Platforms/Ground"]
@@ -587,14 +596,15 @@ collision_mask = 7
 
 [node name="GroundSlant2" type="Sprite2D" parent="Platforms/Ground/StaticBody2D5"]
 z_as_relative = false
-position = Vector2(12974, 618)
-scale = Vector2(0.889056, 0.889056)
+position = Vector2(12949, 492)
+scale = Vector2(0.431668, 0.431668)
 texture = ExtResource("10_iriw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground/StaticBody2D5"]
 position = Vector2(13509.7, 832)
 scale = Vector2(0.889056, 0.889056)
 shape = SubResource("RectangleShape2D_k0jc5")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Platforms/Ground"]
 position = Vector2(10531, 2)
@@ -900,8 +910,8 @@ audio_dist = 1400.0
 
 [node name="ReflectingWater" parent="HeadClouds/HeadCloud2" instance=ExtResource("33_yamjo")]
 z_index = -1
-position = Vector2(3.16699, 58.9171)
-scale = Vector2(0.0699999, 0.0699999)
+position = Vector2(3.16699, 54.5005)
+scale = Vector2(0.0866649, 0.0999999)
 
 [node name="Clouds3" type="Node2D" parent="."]
 position = Vector2(59, 14)
@@ -946,7 +956,7 @@ sprite_frames = SubResource("SpriteFrames_ehi3h")
 autoplay = "default"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(10532, 494)
+position = Vector2(9453, 410)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -1206,14 +1216,14 @@ limit_bottom = 725
 
 [node name="Background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_utn8h")
-volume_db = -30.0
+volume_db = -10.0
 autoplay = true
 max_polyphony = 20
 bus = &"Music"
 
 [node name="Tick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_l7u7k")
-volume_db = -30.0
+volume_db = -10.0
 pitch_scale = 0.6
 max_polyphony = 20
 bus = &"SFX"
