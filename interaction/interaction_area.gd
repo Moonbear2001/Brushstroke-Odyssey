@@ -16,7 +16,7 @@ adding a CollisionShape2D as a child node in that scene.
 
 # The parent should define a Node2D that is where it wants the InteractionManager
 # to draw it's interaction label
-@onready var label_pos: Node2D = $"../LabelPos"
+@onready var label_pos: Node2D = $'../LabelPos'
 
 var enabled = true
 

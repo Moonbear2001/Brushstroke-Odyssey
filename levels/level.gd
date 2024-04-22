@@ -83,7 +83,7 @@ func level_end(body) -> void:
 	
 	if has_prev_stage:
 		var prev_stage_score: LevelHighScore = Global.high_scores.get_level_high_score(prev_stage_name)
-		var prev_stage_last_time: int = prev_stage_score.get_last_time()
+		var prev_stage_last_time: float = prev_stage_score.get_last_time()
 		time += prev_stage_last_time
 	
 	# Update saved data

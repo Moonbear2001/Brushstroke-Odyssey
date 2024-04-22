@@ -40,7 +40,8 @@ scale = Vector2(0.567568, 0.567568)
 texture = ExtResource("3_fr4nb")
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
+wait_time = 4.0
+one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1w0ew")
