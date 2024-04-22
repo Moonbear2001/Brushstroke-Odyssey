@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0evxydct8r11"]
+[gd_scene load_steps=15 format=3 uid="uid://b436vxyenvyoa"]
 
 [ext_resource type="Texture2D" uid="uid://dn1isfp7c4gdl" path="res://art/Dali/parrallax_water_section/water.png" id="1_7ps4m"]
 [ext_resource type="Script" path="res://objects/reflecting_water.gd" id="1_fkmi5"]
 [ext_resource type="Texture2D" uid="uid://tpjaxdw2ch0f" path="res://art/white.png" id="2_jo3wd"]
 [ext_resource type="Shader" path="res://objects/reflecting_water.gdshader" id="2_oqadg"]
-[ext_resource type="PackedScene" uid="uid://cslq6riw28p82" path="res://objects/head_reflection.tscn" id="5_d5ov5"]
+[ext_resource type="PackedScene" uid="uid://du5q48286t16n" path="res://objects/head_reflection.tscn" id="5_d5ov5"]
 [ext_resource type="Texture2D" uid="uid://ythms3a213tx" path="res://art/Dali/character/dali_character_Spriteshet.png" id="10_6y622"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7wr"]
@@ -43,7 +43,7 @@ resource_name = "protag_reflec_invis"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Reflections/ProtagReflection:self_modulate")
+tracks/0/path = NodePath("ProtagReflection:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -130,12 +130,10 @@ self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
 position = Vector2(2010, 292)
 
-
-
-[node name="ProtagReflection" type="AnimatedSprite2D" parent="Reflections"]
+[node name="ProtagReflection" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.392157)
 light_mask = 16
-position = Vector2(-183, 10)
+position = Vector2(-998, 68)
 scale = Vector2(0.25, -0.25)
 sprite_frames = SubResource("SpriteFrames_pfi7l")
 

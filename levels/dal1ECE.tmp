@@ -900,7 +900,7 @@ audio_dist = 1400.0
 
 [node name="ReflectingWater" parent="HeadClouds/HeadCloud2" instance=ExtResource("33_yamjo")]
 z_index = -1
-position = Vector2(3.16699, 58.9171)
+position = Vector2(3.16667, 62)
 scale = Vector2(0.0699999, 0.0699999)
 
 [node name="Clouds3" type="Node2D" parent="."]

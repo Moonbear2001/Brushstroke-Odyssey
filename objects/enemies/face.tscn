@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpayqdv7wu7ex"]
+[gd_scene load_steps=22 format=3 uid="uid://bpayqdv7wu7ex"]
 
 [ext_resource type="Script" path="res://objects/enemies/face.gd" id="1_n6o3u"]
 [ext_resource type="Texture2D" uid="uid://dtiexcabpyeso" path="res://art/Dali/creatures/head_splat.png" id="3_diu5x"]
+[ext_resource type="AudioStream" uid="uid://d3nc5hfc54bmh" path="res://audio/sfx/dali/splattt-6295.mp3" id="4_pyu11"]
+[ext_resource type="AudioStream" uid="uid://b6pokpxwgpme8" path="res://audio/sfx/dali/punch-boxing-02wav-14897.mp3" id="5_7kvy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbavy"]
 atlas = ExtResource("3_diu5x")
@@ -220,6 +222,18 @@ tracks/3/keys = {
 resource_name = "loop"
 length = 6.0
 loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 5),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(160, 0), Vector2(160, -200)]
+}
 
 [sub_resource type="Animation" id="Animation_yq5ml"]
 resource_name = "splat"
@@ -231,7 +245,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 0.9, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -255,7 +269,7 @@ tracks/2/path = NodePath("DamageFront/Frame0Hitbox:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -267,7 +281,7 @@ tracks/3/path = NodePath("DamageFront/Frame1Hitbox:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.3, 0.5),
+"times": PackedFloat32Array(0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -279,7 +293,7 @@ tracks/4/path = NodePath("DamageFront/Frame2Hitbox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.5, 0.75),
+"times": PackedFloat32Array(0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -291,7 +305,7 @@ tracks/5/path = NodePath("DamageFront/Frame3Hitbox:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.75, 1),
+"times": PackedFloat32Array(0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -303,7 +317,7 @@ tracks/6/path = NodePath("DamageFront/Frame4Hitbox:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1, 1.25),
+"times": PackedFloat32Array(0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -315,7 +329,7 @@ tracks/7/path = NodePath("DamageFront/Frame5to6Hitbox:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(1.25, 2),
+"times": PackedFloat32Array(0.9, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, false]
@@ -405,10 +419,9 @@ _data = {
 radius = 9.0
 height = 24.0
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("damage_front", "damage_back") groups=["enemy"]]
-light_mask = 17
+[node name="Face" type="CharacterBody2D" node_paths=PackedStringArray("damage_front", "damage_back") groups=["enemy", "faces"]]
 collision_layer = 4
-collision_mask = 128
+collision_mask = 4
 script = ExtResource("1_n6o3u")
 damage_front = NodePath("DamageFront")
 damage_back = NodePath("DamageBack")
@@ -417,7 +430,6 @@ damage_back = NodePath("DamageBack")
 scale = Vector2(0.28, 0.28)
 sprite_frames = SubResource("SpriteFrames_ismyb")
 animation = &"splat"
-frame = 5
 
 [node name="DamageFront" type="Area2D" parent="."]
 position = Vector2(0, 1)
@@ -488,14 +500,6 @@ position = Vector2(0, 144)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_masdi")
 
-
-[node name="DequeueTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
-[connection signal="body_entered" from="Enemy/DamageArea" to="." method="_on_damage_area_body_entered"]
-[connection signal="timeout" from="DequeueTimer" to="." method="_on_dequeue_timer_timeout"]
-
 [node name="splat" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pyu11")
 volume_db = -5.0
@@ -508,5 +512,9 @@ stream = ExtResource("5_7kvy4")
 volume_db = 15.0
 pitch_scale = 1.5
 bus = &"SFX"
+
+[node name="DequeueTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
