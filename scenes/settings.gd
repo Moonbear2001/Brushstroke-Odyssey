@@ -92,7 +92,11 @@ func _on_sfx_check_btn_toggled(toggled_on):
 	
 
 func _on_restart_btn_pressed():
-	get_tree().reload_current_scene()
+	var current_scene = get_tree().get_current_scene()
+	if current_scene.get_name() == "Gogh2":
+		SceneManager.load_new_scene("res://levels/gogh.tscn")
+	else:
+		get_tree().reload_current_scene()
 	canvas_layer.hide()
 
 func _on_close_btn_pressed():

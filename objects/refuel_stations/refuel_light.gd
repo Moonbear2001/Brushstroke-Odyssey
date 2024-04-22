@@ -16,15 +16,15 @@ func _process(_delta):
 		Global.protagonist.refueling_right = false
 		timer.stop()
 		refueling = false
-		Global.protagonist.enable_input()
+		#Global.protagonist.enable_input()
 	elif refueling and Input.is_action_pressed("interact"):
 		if timer.is_stopped():
 			timer.start()
-		Global.protagonist.disable_input()
-		Global.protagonist.velocity = Vector2(0, 0)
+		#Global.protagonist.disable_input()
+		#Global.protagonist.velocity = Vector2(0, 0)
 
 func refuel():
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		if is_instance_valid(Global.protagonist) and global_position.x < Global.protagonist.global_position.x:
 			Global.protagonist.refueling_left = true
 		else:

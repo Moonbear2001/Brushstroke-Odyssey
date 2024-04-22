@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x3s07o4n6f01"
-path="res://.godot/imported/climb.png-2d085ae2c0348328cc96ac4ad7cf8800.ctex"
+uid="uid://1t6fwr36s35l"
+path="res://.godot/imported/end_door.png-343058b30b6e1e476ca2a802e5b8c215.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/climb.png"
-dest_files=["res://.godot/imported/climb.png-2d085ae2c0348328cc96ac4ad7cf8800.ctex"]
+source_file="res://art/Dali/clocks/end_door.png"
+dest_files=["res://.godot/imported/end_door.png-343058b30b6e1e476ca2a802e5b8c215.ctex"]
 
 [params]
 

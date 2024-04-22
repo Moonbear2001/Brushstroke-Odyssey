@@ -5,11 +5,16 @@ extends PathFollow2D
 """
 
 @export var move_speed = 100
+@export var attack_radius = 136
 
 @onready var enemy = $Enemy
 
 var direction = 1
 
+func _ready():
+	if $Enemy/AttackRadius:
+		$Enemy/AttackRadius/CollisionShape2D.shape.radius = attack_radius
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not is_instance_valid(enemy):
@@ -22,7 +27,11 @@ func _process(delta):
 		enemy.change_direction()
 
 func increase_speed():
-	move_speed += 50
+	move_speed += 20
+	if $Enemy/AttackRadius:
+		$Enemy/AttackRadius/CollisionShape2D.shape.radius += 10
 
 func decrease_speed():
-	move_speed -= 50
+	move_speed -= 20
+	if $Enemy/AttackRadius:
+		$Enemy/AttackRadius/CollisionShape2D.shape.radius -= 10

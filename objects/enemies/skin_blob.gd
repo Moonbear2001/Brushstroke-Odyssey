@@ -3,13 +3,13 @@ extends Enemy
 # The main playable character
 @onready var move_sound = $move
 @onready var anim = $AnimationPlayer
+@onready var weak_area = $WeakArea
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()
-	if weak_area:
-		weak_area.connect("body_entered", Callable(self, "death"))
+	weak_area.connect("body_entered", Callable(self, "death"))
 
 func _process(delta):
 	super._process(delta)

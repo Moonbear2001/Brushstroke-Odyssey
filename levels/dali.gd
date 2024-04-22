@@ -4,6 +4,7 @@ var enemy_speed = {"skin_blob": 100, "elephant": 100}
 
 @onready var enemies = $Enemies
 @onready var clocks = $Clocks
+@onready var head_clouds = $HeadClouds
 @onready var timer = $Timer
 @onready var tick_sound = $Tick
 @onready var anim = $AnimationPlayer
@@ -13,11 +14,11 @@ func _ready():
 	protagonist.fade_to_black.connect(Callable(self, "fade_to_black"))
 	protagonist.took_damage.connect(Callable(self, "protag_took_damage"))
 	
-	for node in enemies.get_children():
-		for clock in clocks.get_children():
-			clock.speed_up.connect(speed_up)
-			clock.slow_down.connect(slow_down)
-
+	for clock in clocks.get_children():
+		clock.speed_up.connect(speed_up)
+		clock.slow_down.connect(slow_down)
+	
+	
 func speed_up():
 	var valid = protagonist.take_damage(-1, true)
 	if valid:

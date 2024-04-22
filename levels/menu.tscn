@@ -116,10 +116,6 @@ texture = ExtResource("3_e6vvp")
 position = Vector2(3548, 685)
 shape = SubResource("RectangleShape2D_sob0k")
 
-[node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
-position = Vector2(1263, 513)
-scale = Vector2(0.75, 0.75)
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -185,6 +181,27 @@ animation = &"outline"
 [node name="LabelPos" type="Node2D" parent="EnterTutorial"]
 position = Vector2(766.667, -1333.33)
 
+[node name="Banners" type="Node2D" parent="."]
+
+[node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
+position = Vector2(3903, -420)
+scale = Vector2(0.4, 0.4)
+level_name = "gogh2"
+
+[node name="DaliScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
+position = Vector2(5204, -420)
+scale = Vector2(0.4, 0.4)
+level_name = "dali"
+
+[node name="EscherScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
+position = Vector2(2459, -420)
+scale = Vector2(0.4, 0.4)
+level_name = "escher"
+
+[node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
+position = Vector2(1263, 517)
+scale = Vector2(0.75, 0.75)
+
 [node name="FrontArch1" type="Sprite2D" parent="."]
 position = Vector2(2069, 351)
 scale = Vector2(0.9, 0.9)
@@ -210,23 +227,6 @@ position = Vector2(-30, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(6520, 353)
 shape = SubResource("RectangleShape2D_vxxs1")
-
-[node name="Banners" type="Node2D" parent="."]
-
-[node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(3903, -210)
-scale = Vector2(0.091, 0.0906374)
-level_name = "gogh2"
-
-[node name="DaliScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(5240, -210)
-scale = Vector2(0.091, 0.0906374)
-level_name = "dali"
-
-[node name="EscherScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
-position = Vector2(2435, -194)
-scale = Vector2(0.091, 0.0906374)
-level_name = "escher"
 
 [node name="SoundPool" type="Node2D" parent="."]
 script = ExtResource("14_dlvkp")
