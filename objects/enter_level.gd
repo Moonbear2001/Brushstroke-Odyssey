@@ -17,7 +17,7 @@ func _ready():
 func enter_level():
 	if level_name:
 		entering_level.emit()
-		SceneManager.load_new_scene(Global.LEVELS_PATH + level_name + ".tscn")
+		SceneManager.load_new_scene(Global.LEVELS_PATH + "load_" + level_name + ".tscn")
 
 func _on_interaction_area_area_entered(_area):
 	overlay.hide()
