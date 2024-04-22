@@ -27,7 +27,6 @@ func _input(_event):
 		$AnimationPlayer.play("protag_reflec_invis")
 
 func _physics_process(delta):
-	print("surface y", surface_y)
 	protag_reflection.set_global_position(Vector2(protagonist.get_global_position().x, protagonist.get_global_position().y + 80))
 	for head_reflection in used_head_reflections:
 		if head_reflection.global_position.y <= surface_y + 100:

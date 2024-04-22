@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://objects/reflecting_water.gd" id="1_fkmi5"]
 [ext_resource type="Texture2D" uid="uid://tpjaxdw2ch0f" path="res://art/white.png" id="2_jo3wd"]
 [ext_resource type="Shader" path="res://objects/reflecting_water.gdshader" id="2_oqadg"]
-
 [ext_resource type="PackedScene" uid="uid://cslq6riw28p82" path="res://objects/head_reflection.tscn" id="5_d5ov5"]
 [ext_resource type="Texture2D" uid="uid://ythms3a213tx" path="res://art/Dali/character/dali_character_Spriteshet.png" id="10_6y622"]
 
@@ -130,6 +129,7 @@ visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
 position = Vector2(2010, 292)
+
 
 [node name="ProtagReflection" type="AnimatedSprite2D" parent="Reflections"]
 self_modulate = Color(1, 1, 1, 0.392157)
