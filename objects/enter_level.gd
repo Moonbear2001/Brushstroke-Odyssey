@@ -15,9 +15,11 @@ func _ready():
 	interaction_area.interact = Callable(self, "enter_level")
 
 func enter_level():
-	if level_name:
-		entering_level.emit()
+	entering_level.emit()
+	if level_name == "tutorial":
 		SceneManager.load_new_scene(Global.LEVELS_PATH + level_name + ".tscn")
+	else:
+		SceneManager.load_new_scene(Global.LEVELS_PATH + "load_" + level_name + ".tscn")
 
 func _on_interaction_area_area_entered(_area):
 	overlay.hide()

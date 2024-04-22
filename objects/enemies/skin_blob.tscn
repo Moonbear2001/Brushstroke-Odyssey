@@ -105,6 +105,7 @@ loop = false
 script = ExtResource("1_e3ee8")
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("damage_front", "damage_back")]
+collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_jmo0d")
 damage_front = NodePath("DamageFront")

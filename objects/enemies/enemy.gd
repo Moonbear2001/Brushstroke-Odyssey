@@ -18,7 +18,7 @@ func idle(_body, _direction):
 
 func _ready():
 	damage_front.connect("body_entered", Callable(self, "attack_front"))
-	timer.one_shot = true
+	timer.set_one_shot(true)
 	timer.stop()
 	if damage_back:
 		damage_back.connect("body_entered", Callable(self, "attack_back"))
