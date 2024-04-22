@@ -4704,6 +4704,7 @@ sprite_frames = SubResource("SpriteFrames_thnrl")
 animation = &"Climb_Dali_0"
 
 [node name="Reflection" type="AnimatedSprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.188235)
 z_index = -1
 position = Vector2(0, 58)

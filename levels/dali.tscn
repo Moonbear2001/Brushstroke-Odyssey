@@ -39,7 +39,13 @@
 [ext_resource type="Texture2D" uid="uid://v528n67s05aw" path="res://art/Dali/parrallax_water_section/backrock3.png" id="35_fiefn"]
 [ext_resource type="PackedScene" uid="uid://d1qgimxn4uena" path="res://objects/enemies/head_cloud.tscn" id="37_84h57"]
 [ext_resource type="Texture2D" uid="uid://dohvacjnxft4y" path="res://art/Dali/trees/tree1_longer.PNG" id="37_oais5"]
+
+[ext_resource type="PackedScene" uid="uid://d0evxydct8r11" path="res://objects/reflecting_water.tscn" id="42_vmfl7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrr0h"]
+
 [ext_resource type="Texture2D" uid="uid://1t6fwr36s35l" path="res://art/Dali/clocks/end_door.png" id="42_5hwyq"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7y"]
 size = Vector2(3310, 312)
@@ -498,6 +504,21 @@ position = Vector2(8259, 467)
 scale = Vector2(0.321585, 0.310412)
 texture = ExtResource("6_2y0tk")
 
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2(8006, -174)
+scale = Vector2(1, 5.72)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(2, -0.699301)
+shape = SubResource("RectangleShape2D_qrr0h")
+
+[node name="ReflectingWater" parent="." instance=ExtResource("42_vmfl7")]
+position = Vector2(11778, 735)
+scale = Vector2(0.942931, 1.13081)
+
+
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(-7, -30)
 
@@ -519,8 +540,10 @@ z_index = -2
 position = Vector2(0, -19)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Ground"]
+
 collision_layer = 5
 collision_mask = 7
+
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -535,8 +558,10 @@ position = Vector2(1630, 783)
 shape = SubResource("RectangleShape2D_c5q7y")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms/Ground"]
+
 collision_layer = 5
 collision_mask = 7
+
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -552,8 +577,10 @@ shape = SubResource("RectangleShape2D_c5q7y")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Platforms/Ground"]
 position = Vector2(3297, 0)
+
 collision_layer = 5
 collision_mask = 7
+
 metadata/_edit_group_ = true
 
 [node name="Ground2" type="Sprite2D" parent="Platforms/Ground/StaticBody2D3"]
@@ -567,25 +594,30 @@ position = Vector2(4930, 783)
 shape = SubResource("RectangleShape2D_c5q7y")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Platforms/Ground"]
+
 collision_layer = 5
 collision_mask = 7
 
+
 [node name="GroundSlant" type="Sprite2D" parent="Platforms/Ground/StaticBody2D4"]
-z_as_relative = false
-position = Vector2(10769, 608)
+z_index = 1
+position = Vector2(10758, 612)
 scale = Vector2(0.251283, 0.251283)
 texture = ExtResource("11_u4irj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground/StaticBody2D4"]
+z_index = 1
 position = Vector2(11539, 784)
 shape = SubResource("RectangleShape2D_c5q7y")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Platforms/Ground"]
+
 collision_layer = 5
 collision_mask = 7
 
+
 [node name="GroundSlant2" type="Sprite2D" parent="Platforms/Ground/StaticBody2D5"]
-z_as_relative = false
+z_index = 1
 position = Vector2(12974, 618)
 scale = Vector2(0.889056, 0.889056)
 texture = ExtResource("10_iriw4")
@@ -597,8 +629,10 @@ shape = SubResource("RectangleShape2D_k0jc5")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Platforms/Ground"]
 position = Vector2(10531, 2)
+
 collision_layer = 5
 collision_mask = 7
+
 metadata/_edit_group_ = true
 
 [node name="Ground2" type="Sprite2D" parent="Platforms/Ground/StaticBody2D6"]
@@ -942,6 +976,7 @@ autoplay = "default"
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
 position = Vector2(8572, 420)
 
+
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
 
@@ -1117,66 +1152,79 @@ z_index = 1
 position = Vector2(0, -30)
 
 [node name="Rock" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(10984, 693)
 scale = Vector2(0.248631, 0.248631)
 texture = ExtResource("32_bq1ph")
 
 [node name="Rock7" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(12697, 667)
 scale = Vector2(0.262691, 0.262691)
 texture = ExtResource("32_bq1ph")
 
 [node name="Rock6" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(12588, 783)
 scale = Vector2(0.316238, 0.316238)
 texture = ExtResource("32_bq1ph")
 
 [node name="Backrock2Flipped" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(12863.9, 697.219)
 scale = Vector2(0.134259, 0.134259)
 texture = ExtResource("23_jf57o")
 
 [node name="Rock8" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(12778, 856)
 scale = Vector2(0.414812, 0.414812)
 texture = ExtResource("32_bq1ph")
 
 [node name="Rock2" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(11185, 800)
 scale = Vector2(0.276643, 0.276643)
 texture = ExtResource("32_bq1ph")
 
 [node name="Backrock3" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(11338, 841)
 scale = Vector2(0.284379, 0.284379)
 texture = ExtResource("33_3js5q")
 
 [node name="Backrock8" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(12499.9, 850.875)
 scale = Vector2(0.114382, 0.114382)
 texture = ExtResource("34_nrpap")
 
 [node name="Backrock9" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(12971, 874)
 scale = Vector2(0.513889, 0.513889)
 texture = ExtResource("35_fiefn")
 
 [node name="Rock9" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(10819, 662)
 scale = Vector2(0.405163, 0.405163)
 texture = ExtResource("32_bq1ph")
 
 [node name="Backrock4" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(11025, 814)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("34_nrpap")
 
 [node name="Backrock5" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(11691, 868)
 scale = Vector2(0.427083, 0.427083)
 texture = ExtResource("35_fiefn")
 
 [node name="Backrock2Flipped2" type="Sprite2D" parent="Foreground Rocks"]
+z_index = 1
 position = Vector2(11988, 915)
 scale = Vector2(0.0927161, 0.0927161)
 texture = ExtResource("23_jf57o")
@@ -1215,6 +1263,15 @@ bus = &"SFX"
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+
+[node name="HeadCloud" parent="." instance=ExtResource("37_84h57")]
+position = Vector2(3241, -11)
+scale = Vector2(8, 8)
+
+[node name="HeadCloud2" parent="." instance=ExtResource("37_84h57")]
+position = Vector2(11743, -23)
+scale = Vector2(12, 12)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_b5t77")
@@ -1233,8 +1290,14 @@ offset_bottom = 1108.0
 color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
 
+
+[node name="Protagonist" parent="." instance=ExtResource("2_keris")]
+position = Vector2(10593, 513)
+collision_mask = 65
+
 [node name="Checkpoint" type="Node2D" parent="." groups=["checkpoint"]]
 position = Vector2(9387.67, 538.722)
+
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
