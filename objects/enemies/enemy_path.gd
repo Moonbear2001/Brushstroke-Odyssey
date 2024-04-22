@@ -24,7 +24,8 @@ func _process(delta):
 	
 	if progress_ratio >= 1 or progress_ratio <= 0:
 		direction *= -1
-		enemy.change_direction()
+		if is_instance_valid(enemy):
+			enemy.change_direction()
 
 func increase_speed():
 	move_speed += 20

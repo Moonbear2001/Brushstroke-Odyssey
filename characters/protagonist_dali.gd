@@ -8,7 +8,7 @@ signal took_damage
 
 @onready var death_timer = $Timer
 
-const THROW_VELOCITY = 200
+var THROW_VELOCITY = 250
 
 var health = 2
 var is_thrown = false
@@ -35,7 +35,7 @@ func _process(_delta):
 		if throw_direction != 0:
 			input_disabled = true
 	
-	if death_waiting and (is_on_floor() or velocity == Vector2(0, 0)):
+	if death_waiting and is_on_floor():
 		death_waiting = false
 		respawn()
 
@@ -76,17 +76,18 @@ func get_anim_name(anim_name: String):
 	return anim_name + "_Dali_" + str(distortion)
 	
 func respawn():
-	death_timer.stop()
 	dying = true
 	disable_input()
 	velocity = Vector2(0, 0)
 	$death.play()
 	anim.play("Death_Dali")
 
+func set_throw_velocity(v):
+	THROW_VELOCITY = v
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Death_Dali":
 		fade_to_black.emit()
 
 func _on_timer_timeout():
-	respawn()
+	fade_to_black.emit()
