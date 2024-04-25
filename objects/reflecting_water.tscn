@@ -1,14 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://b436vxyenvyoa"]
+[gd_scene load_steps=15 format=3 uid="uid://c240s52xn501a"]
 
 [ext_resource type="Texture2D" uid="uid://dn1isfp7c4gdl" path="res://art/Dali/parrallax_water_section/water.png" id="1_7ps4m"]
 [ext_resource type="Script" path="res://objects/reflecting_water.gd" id="1_fkmi5"]
 [ext_resource type="Texture2D" uid="uid://tpjaxdw2ch0f" path="res://art/white.png" id="2_jo3wd"]
 [ext_resource type="Shader" path="res://objects/reflecting_water.gdshader" id="2_oqadg"]
-[ext_resource type="PackedScene" uid="uid://du5q48286t16n" path="res://objects/head_reflection.tscn" id="5_d5ov5"]
+[ext_resource type="PackedScene" uid="uid://bhqex7m66dpg1" path="res://objects/head_reflection.tscn" id="5_d5ov5"]
 [ext_resource type="Texture2D" uid="uid://ythms3a213tx" path="res://art/Dali/character/dali_character_Spriteshet.png" id="10_6y622"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7wr"]
-size = Vector2(2216, 326.531)
+size = Vector2(2216, 307.812)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1sred"]
 atlas = ExtResource("10_6y622")
@@ -66,7 +66,7 @@ scale = Vector2(1, 1.28)
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, -93.7344)
+position = Vector2(-2, -84.3751)
 shape = SubResource("RectangleShape2D_yu7wr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -86,49 +86,49 @@ position = Vector2(-1058, -177)
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
-position = Vector2(2010, 292)
+position = Vector2(2028.8, 298.8)
 
 [node name="HeadReflection2" parent="Reflections" instance=ExtResource("5_d5ov5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
-position = Vector2(2010, 292)
+position = Vector2(2013.8, 298.8)
 
 [node name="HeadReflection3" parent="Reflections" instance=ExtResource("5_d5ov5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
-position = Vector2(2010, 292)
+position = Vector2(2013.8, 298.8)
 
 [node name="HeadReflection4" parent="Reflections" instance=ExtResource("5_d5ov5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
-position = Vector2(2010, 292)
+position = Vector2(2013.8, 298.8)
 
 [node name="HeadReflection5" parent="Reflections" instance=ExtResource("5_d5ov5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
-position = Vector2(2010, 292)
+position = Vector2(2013.8, 298.8)
 
 [node name="HeadReflection6" parent="Reflections" instance=ExtResource("5_d5ov5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
-position = Vector2(2010, 292)
+position = Vector2(2013.8, 298.8)
 
 [node name="HeadReflection7" parent="Reflections" instance=ExtResource("5_d5ov5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
-position = Vector2(2010, 292)
+position = Vector2(2013.8, 298.8)
 
 [node name="HeadReflection8" parent="Reflections" instance=ExtResource("5_d5ov5")]
 visible = false
 self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
-position = Vector2(2010, 292)
+position = Vector2(2013.8, 298.8)
 
 [node name="ProtagReflection" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.392157)
@@ -136,6 +136,7 @@ light_mask = 16
 position = Vector2(-998, 68)
 scale = Vector2(0.25, -0.25)
 sprite_frames = SubResource("SpriteFrames_pfi7l")
+frame_progress = 0.462857
 
 [node name="ScreenDistortion" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_0dwg3")
@@ -145,10 +146,10 @@ offset_right = 1050.0
 offset_bottom = 170.0
 
 [node name="Surface" type="Node2D" parent="."]
-position = Vector2(0, -75)
+position = Vector2(0, 11)
 
 [node name="ReflectionThreshold" type="Node2D" parent="."]
-position = Vector2(0, -328)
+position = Vector2(-1, -72)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

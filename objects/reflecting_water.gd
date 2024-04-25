@@ -29,11 +29,11 @@ func _input(_event):
 func _physics_process(delta):
 	protag_reflection.set_global_position(Vector2(protagonist.get_global_position().x, protagonist.get_global_position().y + 80))
 	for head_reflection in used_head_reflections:
-		if head_reflection.global_position.y <= surface_y + 100:
+		if head_reflection.global_position.y <= surface_y:
 			head_reflection.play("splat")
 			#head_reflection.animation_finished.connect(stop_spaz)
 		else:
-			head_reflection.position.y -= 50 * delta
+			head_reflection.position.y -= 30 * delta
 			
 
 #func stop_spaz():
@@ -50,7 +50,8 @@ func _on_area_2d_body_entered(body):
 		face_reflection.set_global_position(Vector2(body.global_position.x, global_position.y + height))
 		face_reflection.set_visible(true)
 		face_reflection.play("default")
-		face_reflection.set_scale(body.scale)
+		face_reflection.scale.x = body.scale.x * 2.5
+		face_reflection.scale.y = body.scale.y * -2.5
 		used_head_reflections.append(face_reflection)
 		body.tree_exiting.connect(destroy_reflection)
 

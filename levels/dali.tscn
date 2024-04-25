@@ -906,6 +906,7 @@ audio_dist = 1400.0
 [node name="HeadCloud2" parent="HeadClouds" groups=["enemy"] instance=ExtResource("37_84h57")]
 position = Vector2(11743, -23)
 scale = Vector2(12, 12)
+interval_low = 0.25
 audio_dist = 1400.0
 
 [node name="ReflectingWater" parent="HeadClouds/HeadCloud2" instance=ExtResource("33_yamjo")]
@@ -956,7 +957,7 @@ sprite_frames = SubResource("SpriteFrames_ehi3h")
 autoplay = "default"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(9453, 410)
+position = Vector2(103, 514)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
