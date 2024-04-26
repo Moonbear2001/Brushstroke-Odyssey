@@ -83,8 +83,8 @@ func respawn():
 		var duplicateLantern = new_lantern.instantiate()
 		duplicatedNode.add_child(duplicateLantern)
 		duplicatedNode.glow = true
-		duplicatedNode.global_position.x = checkpoint.checkpoint_pos.global_position.x
-		duplicatedNode.global_position.y = checkpoint.checkpoint_pos.global_position.y
+		duplicatedNode.global_position.x = checkpoint.checkpoint_pos.global_position.x / 1.48
+		duplicatedNode.global_position.y = checkpoint.checkpoint_pos.global_position.y / 1.48
 		get_tree().current_scene.add_child(duplicatedNode)
 		protagonist = duplicatedNode
 		lantern = duplicateLantern
@@ -108,14 +108,20 @@ func _on_wind_timer_timeout():
 	spawn_smallwind()
 
 func spawn_wind():
+	#var screen_size = get_viewport_rect().size
+	#var x_pos = camera.global_position.x + floori(screen_size.x / 2)
+#
+	#var newWind = wind.instantiate()
+	#newWind.global_position = Vector2(x_pos, 260)
+	#add_child(newWind)
+	#sway_trees()
 	var screen_size = get_viewport_rect().size
-	var x_pos = camera.global_position.x + floori(screen_size.x / 2)
+	var x_pos = camera.position.x + floori(screen_size.x / 2)
 
 	var newWind = wind.instantiate()
-	newWind.global_position = Vector2(x_pos, 260)
+	newWind.position = Vector2(x_pos - 500, 260)
 	add_child(newWind)
 	sway_trees()
-	
 	
 func spawn_smallwind():
 	$Gust.play(2)
@@ -124,7 +130,7 @@ func spawn_smallwind():
 
 	var newWind = smallwind.instantiate()
 	newWind.breeze_finished.connect(Callable(self, "spawn_wind"))
-	newWind.global_position = Vector2(x_pos, 260)
+	newWind.global_position = Vector2(x_pos / 1.48, 260 / 1.48)
 	add_child(newWind)
 	sway_trees()
 

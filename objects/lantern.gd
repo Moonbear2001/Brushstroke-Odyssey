@@ -10,8 +10,8 @@ intervals (the timer has a callback of 0.25 seconds).
 """
 
 # Use these two export variables to determine how fast 
-@export var decrement_per_second: float
-@export var updates_per_second: int
+@export var decrement_per_second: float = 2
+@export var updates_per_second: int = 6
 
 signal fuel_level_changed(fuel_level: int)
 signal fuel_exhausted()

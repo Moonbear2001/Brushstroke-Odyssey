@@ -10,7 +10,7 @@ const LEVELS = ["tutorial", "escher", "gogh", "gogh2", "dali"]
 const SAVE_DATA_PATH = "user://"
 const LEVELS_PATH = "res://levels/"
 const MENU_PATH = LEVELS_PATH + "menu.tscn"
-const DEF_MENU_POS = Vector2(1263, 513)
+const DEF_MENU_POS = Vector2(2108, 800)
 
 # Global variables
 var high_scores : HighScores

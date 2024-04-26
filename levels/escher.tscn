@@ -301,6 +301,7 @@ _data = {
 size = Vector2(16, 573)
 
 [node name="Escher" type="Node2D" node_paths=PackedStringArray("protagonist", "end")]
+scale = Vector2(1.48, 1.48)
 script = ExtResource("1_8td2l")
 level_name = "escher"
 protagonist = NodePath("Protagonist")
@@ -314,8 +315,8 @@ visible = false
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Backdrop" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(2030, 360)
-scale = Vector2(0.642417, 0.642417)
+position = Vector2(2804.67, 519.375)
+scale = Vector2(0.887798, 0.887798)
 texture = ExtResource("2_nopj3")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -323,16 +324,16 @@ motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1522, 0)
 
 [node name="Backkk" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(1246, 369)
-scale = Vector2(0.682746, 0.682746)
+position = Vector2(2135.76, 629.5)
+scale = Vector2(1.16605, 1.16605)
 texture = ExtResource("3_1afl0")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="MidgroundNew" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(2968, 361)
-scale = Vector2(0.752841, 0.752841)
+position = Vector2(4226.11, 529.75)
+scale = Vector2(1.07244, 1.07244)
 texture = ExtResource("4_6mjae")
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -1402,33 +1403,13 @@ position = Vector2(1885, -166)
 scale = Vector2(2.36, 1)
 
 [node name="Death2" parent="Deaths" instance=ExtResource("17_npv7l")]
-position = Vector2(9634, 1000)
+position = Vector2(9707, 1408)
 rotation = -3.14159
 scale = Vector2(2.37316, 0.6978)
 
 [node name="Death3" parent="Deaths" instance=ExtResource("17_npv7l")]
-position = Vector2(3233, 384)
-scale = Vector2(0.192, 0.6)
-
-[node name="Death4" parent="Deaths" instance=ExtResource("17_npv7l")]
-position = Vector2(6313, -457)
-rotation = -1.57079
-scale = Vector2(0.192, 0.6)
-
-[node name="Death7" parent="Deaths" instance=ExtResource("17_npv7l")]
-position = Vector2(7319, -464)
-rotation = -1.57079
-scale = Vector2(0.192, 0.6)
-
-[node name="Death5" parent="Deaths" instance=ExtResource("17_npv7l")]
-position = Vector2(6344, 1794)
-rotation = -1.57079
-scale = Vector2(0.192, 0.6)
-
-[node name="Death6" parent="Deaths" instance=ExtResource("17_npv7l")]
-position = Vector2(7327, 1841)
-rotation = -1.57079
-scale = Vector2(0.192, 0.6)
+position = Vector2(4886, 556)
+scale = Vector2(0.28, 0.5)
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2(8991, 444)
@@ -1444,11 +1425,10 @@ autoplay = true
 bus = &"Music"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(60, 429)
+position = Vector2(67, 429)
 ignore_rotation = false
 limit_left = 0
 limit_top = -5
-limit_right = 9200
 limit_bottom = 720
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0

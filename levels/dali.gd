@@ -75,8 +75,10 @@ func respawn():
 	# Check if a valid x value was found
 	if greatest_x_below_target != -INF:
 		duplicatedNode = protagonist_dali.instantiate()
-		duplicatedNode.global_position.x = checkpoint.global_position.x
-		duplicatedNode.global_position.y = checkpoint.global_position.y
+		#duplicatedNode.global_position.x = checkpoint.global_position.x
+		#duplicatedNode.global_position.y = checkpoint.global_position.y
+		duplicatedNode.position.x = checkpoint.position.x
+		duplicatedNode.position.y = checkpoint.position.y
 		get_tree().current_scene.add_child(duplicatedNode)
 		duplicatedNode.fade_to_black.connect(Callable(self, "fade_to_black"))
 		duplicatedNode.set_throw_velocity(throw_velocity)

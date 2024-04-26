@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c5cc8vl4264vf" path="res://art/gogh/house section/houses/lantern_houses/h1_lit.PNG" id="4_ljvxo"]
 [ext_resource type="PackedScene" uid="uid://cx6wh3xewgxr" path="res://interaction/interaction_area.tscn" id="5_cq1nq"]
 [ext_resource type="PackedScene" uid="uid://huqj1xpjt0wr" path="res://objects/climb.tscn" id="6_csovb"]
-[ext_resource type="PackedScene" uid="uid://dlroneefg1jak" path="res://objects/refuel_stations/refuel_light.tscn" id="7_fagu7"]
+[ext_resource type="PackedScene" path="res://objects/refuel_stations/refuel_light.tscn" id="7_fagu7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e284"]
 size = Vector2(6.93967, 6.50862)

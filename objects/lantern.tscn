@@ -43,8 +43,6 @@ _data = {
 [node name="Lantern" type="PointLight2D"]
 texture = ExtResource("3_r250e")
 script = ExtResource("2_m63ym")
-decrement_per_second = 1.0
-updates_per_second = 8
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25

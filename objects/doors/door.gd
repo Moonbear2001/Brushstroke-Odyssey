@@ -82,8 +82,10 @@ func teleport(body):
 				body.queue_free()
 				return
 			lock()
-			body.global_position.x = door.global_position.x + door.x_offset
-			body.global_position.y = door.global_position.y + door.y_offset
+			#body.global_position.x = door.global_position.x + door.x_offset
+			#body.global_position.y = door.global_position.y + door.y_offset
+			body.position.x = door.position.x + door.x_offset
+			body.position.y = door.position.y + door.y_offset
 			
 			if Global.waiting_for_duplicate:
 				get_tree().current_scene.add_child(body)	
@@ -142,8 +144,10 @@ func duplicate_node(body):
 	for door in get_tree().get_nodes_in_group("door"):
 		if door.id == duplicate_id and door != self and not door.lock_door:
 			door.lock()
-			duplicatedNode.global_position.x = door.global_position.x + door.x_offset
-			duplicatedNode.global_position.y = door.global_position.y + door.y_offset
+			#duplicatedNode.global_position.x = door.global_position.x + door.x_offset
+			#duplicatedNode.global_position.y = door.global_position.y + door.y_offset
+			duplicatedNode.position.x = door.position.x + door.x_offset
+			duplicatedNode.position.y = door.position.y + door.y_offset
 				
 			get_tree().current_scene.add_child(duplicatedNode)	
 			duplicatedNode.set_gravity(door.gravity_dir)

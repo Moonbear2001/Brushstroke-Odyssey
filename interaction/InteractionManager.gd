@@ -19,7 +19,7 @@ var change: bool = true
 var can_interact = true
 
 func _ready():
-	set_scale(Vector2(0.5, 0.5))
+	set_scale(Vector2(0.75, 0.75))
 	add_child(text_box)
 	
 func make_new_text_box() -> void:

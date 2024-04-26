@@ -66,6 +66,7 @@ _data = {
 size = Vector2(254, 512)
 
 [node name="Tutorial" type="Node2D" node_paths=PackedStringArray("protagonist", "end")]
+scale = Vector2(1.48, 1.48)
 script = ExtResource("1_21saf")
 level_name = "tutorial"
 protagonist = NodePath("Protagonist")
@@ -74,8 +75,8 @@ end = NodePath("End")
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false
 limit_left = 0
-limit_top = -5
-limit_right = 3400
+limit_top = -7
+limit_right = 5032
 limit_bottom = 660
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
@@ -85,6 +86,7 @@ rotation_smoothing_enabled = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 modulate = Color(0.65098, 0.65098, 0.65098, 0.666667)
+scale = Vector2(1.48, 1.48)
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1200, 0)
 

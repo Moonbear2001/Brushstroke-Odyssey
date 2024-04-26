@@ -1,7 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://bdhced5wuwde4"]
 
 [ext_resource type="Script" path="res://levels/menu.gd" id="1_2sh28"]
-[ext_resource type="Texture2D" uid="uid://cooa1dqoydgme" path="res://art/menu/layout.png" id="1_mibmc"]
 [ext_resource type="PackedScene" uid="uid://cn5gs4eorpydv" path="res://objects/enter_level.tscn" id="2_a14vu"]
 [ext_resource type="PackedScene" uid="uid://cducn8pjghtlw" path="res://characters/protagonist_big.tscn" id="2_hfs4s"]
 [ext_resource type="Texture2D" uid="uid://ddb180kr0s5my" path="res://art/menu/menu.png" id="2_ihjxb"]
@@ -33,11 +32,27 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(6000, 513), Vector2(1263, 513)]
+"values": [Vector2(8778, 570), Vector2(2108, 543)]
+}
+
+[sub_resource type="Animation" id="Animation_0ffn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanningCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8778, 570)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ikwcm"]
 _data = {
+"RESET": SubResource("Animation_0ffn5"),
 "camera_pan": SubResource("Animation_sdd8a")
 }
 
@@ -82,10 +97,10 @@ script = ExtResource("1_2sh28")
 protagonist = NodePath("ProtagonistBig")
 
 [node name="PanningCamera" type="Camera2D" parent="."]
-position = Vector2(6000, 513)
+position = Vector2(8778, 570)
 limit_left = 0
 limit_top = 0
-limit_right = 6600
+limit_right = 9987
 limit_bottom = 648
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -94,35 +109,32 @@ libraries = {
 }
 
 [node name="Menu" type="Sprite2D" parent="."]
-position = Vector2(3253.91, 351.25)
-scale = Vector2(0.9, 0.9)
+position = Vector2(4998.01, 539.52)
+scale = Vector2(1.3824, 1.3824)
 texture = ExtResource("2_ihjxb")
 
-[node name="Layout" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(3305, 360)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("1_mibmc")
-
 [node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(1049, 460)
-scale = Vector2(0.895522, 0.897059)
+position = Vector2(1611.26, 706.56)
+scale = Vector2(1.37552, 1.37788)
 texture = ExtResource("3_e6vvp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1.536, 1.536)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(3548, 685)
 shape = SubResource("RectangleShape2D_sob0k")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+scale = Vector2(1.536, 1.536)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(0, 370)
 shape = SubResource("RectangleShape2D_vxxs1")
 
 [node name="EnterVanGogh" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(4093, 264)
+position = Vector2(6286.85, 405.504)
+scale = Vector2(1.536, 1.536)
 level_name = "gogh"
 
 [node name="Overlay" type="Sprite2D" parent="EnterVanGogh"]
@@ -134,8 +146,8 @@ texture = ExtResource("3_mahh3")
 position = Vector2(278, 106)
 
 [node name="EnterDali" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(5411, 285)
-scale = Vector2(1.16, 1.16)
+position = Vector2(8311.3, 437.76)
+scale = Vector2(1.78176, 1.78176)
 level_name = "dali"
 
 [node name="Overlay" type="Sprite2D" parent="EnterDali"]
@@ -148,7 +160,8 @@ position = Vector2(262.069, 95.6897)
 scale = Vector2(0.862069, 0.862069)
 
 [node name="EnterEscher" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(2624, 258)
+position = Vector2(4030.47, 396.288)
+scale = Vector2(1.536, 1.536)
 level_name = "escher"
 
 [node name="Overlay" type="Sprite2D" parent="EnterEscher"]
@@ -160,8 +173,8 @@ texture = ExtResource("5_1sded")
 position = Vector2(323, 64)
 
 [node name="EnterTutorial" parent="." instance=ExtResource("2_a14vu")]
-position = Vector2(1050, 461)
-scale = Vector2(0.15, 0.15)
+position = Vector2(1612.8, 708.096)
+scale = Vector2(0.2304, 0.2304)
 level_name = "tutorial"
 
 [node name="Overlay" type="AnimatedSprite2D" parent="EnterTutorial"]
@@ -174,6 +187,7 @@ animation = &"outline"
 position = Vector2(766.667, -1333.33)
 
 [node name="Banners" type="Node2D" parent="."]
+scale = Vector2(1.536, 1.536)
 
 [node name="GoghScoreBanner" parent="Banners" instance=ExtResource("17_dwc86")]
 position = Vector2(3903, -420)
@@ -191,32 +205,34 @@ scale = Vector2(0.4, 0.4)
 level_name = "escher"
 
 [node name="ProtagonistBig" parent="." groups=["big protagonist", "protagonist"] instance=ExtResource("2_hfs4s")]
-position = Vector2(1263, 517)
-scale = Vector2(0.75, 0.75)
+position = Vector2(2108, 798)
 
-[node name="FrontArch1" type="Sprite2D" parent="."]
+[node name="Arches" type="Node2D" parent="."]
+scale = Vector2(1.538, 1.538)
+
+[node name="FrontArch4" type="Sprite2D" parent="Arches"]
+position = Vector2(3565, 327)
+texture = SubResource("CompressedTexture2D_lak8j")
+
+[node name="FrontArch3" type="Sprite2D" parent="Arches"]
+position = Vector2(6393.41, 331.993)
+scale = Vector2(0.938005, 0.938005)
+texture = ExtResource("5_n8e3p")
+
+[node name="FrontArch1" type="Sprite2D" parent="Arches"]
 position = Vector2(2069, 351)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_fqd2f")
 
-[node name="FrontArch2" type="Sprite2D" parent="."]
-position = Vector2(4891, 352)
-scale = Vector2(0.9, 0.9)
+[node name="FrontArch2" type="Sprite2D" parent="Arches"]
+position = Vector2(4884.26, 350.661)
+scale = Vector2(0.903326, 0.903326)
 texture = ExtResource("4_te7xp")
 
-[node name="FrontArch3" type="Sprite2D" parent="."]
-position = Vector2(6399, 331)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("5_n8e3p")
-
-[node name="FrontArch4" type="Sprite2D" parent="."]
-position = Vector2(3565, 327)
-texture = SubResource("CompressedTexture2D_lak8j")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Arches"]
 position = Vector2(-30, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arches/StaticBody2D3"]
 position = Vector2(6520, 353)
 shape = SubResource("RectangleShape2D_vxxs1")
 

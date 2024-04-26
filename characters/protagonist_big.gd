@@ -5,7 +5,7 @@ Simple, big version of the protagonist for walking around the menu.
 """
 
 func _ready():
-	SPEED = 320
+	SPEED = 400
 
 func use_gravity(delta):
 	if not is_on_floor():

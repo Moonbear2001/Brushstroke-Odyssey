@@ -23,6 +23,7 @@ layer = 128
 
 [node name="Node2D" type="Node2D" parent="CanvasLayer"]
 position = Vector2(-1, -5)
+scale = Vector2(1.48, 1.48)
 metadata/_edit_group_ = true
 
 [node name="Group92" type="Sprite2D" parent="CanvasLayer/Node2D"]
