@@ -19,4 +19,5 @@ func _ready():
 	#ResourceLoader.load_threaded_request(scene_name)
 
 func _on_timer_timeout():
+	timer.stop()
 	SceneManager.load_new_scene(Global.LEVELS_PATH + level_name + ".tscn")

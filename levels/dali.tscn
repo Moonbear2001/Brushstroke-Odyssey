@@ -888,7 +888,7 @@ sprite_frames = SubResource("SpriteFrames_ehi3h")
 autoplay = "default"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(10490.1, 394.366)
+position = Vector2(93.6616, 359.859)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -1160,7 +1160,7 @@ bus = &"Music"
 
 [node name="Tick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_l7u7k")
-volume_db = -10.0
+volume_db = -20.0
 pitch_scale = 0.6
 max_polyphony = 20
 bus = &"SFX"

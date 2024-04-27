@@ -874,7 +874,7 @@ color = Color(0, 0, 0.0862745, 1)
 
 [node name="Moonlight" type="DirectionalLight2D" parent="."]
 position = Vector2(6220, -942)
-energy = 0.1
+energy = 0.02
 blend_mode = 2
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.854902)
