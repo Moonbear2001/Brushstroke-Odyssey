@@ -34,6 +34,7 @@ func speed_up():
 			node.increase_speed()
 		for clock in clocks.get_children():
 			clock.anim.play(str(protagonist.health))
+		
 
 func slow_down():
 	var valid = protagonist.take_damage(1, true)

@@ -238,6 +238,21 @@ _data = {
 "move_platform": SubResource("Animation_nufra")
 }
 
+[sub_resource type="Animation" id="Animation_8svuj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../Deaths/Death4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9572, 1341)]
+}
+
 [sub_resource type="Animation" id="Animation_vf5b5"]
 resource_name = "move_platform"
 length = 2.0
@@ -264,21 +279,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(9552, 1341), Vector2(9552, 422)]
-}
-
-[sub_resource type="Animation" id="Animation_8svuj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../../../Deaths/Death4:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(9572, 1341)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rxl5m"]

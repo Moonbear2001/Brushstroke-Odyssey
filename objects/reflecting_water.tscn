@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ythms3a213tx" path="res://art/Dali/character/dali_character_Spriteshet.png" id="10_6y622"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7wr"]
-size = Vector2(2216, 326.531)
+size = Vector2(2216, 355.078)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1sred"]
 atlas = ExtResource("10_6y622")
@@ -66,7 +66,7 @@ scale = Vector2(1, 1.28)
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, -93.7344)
+position = Vector2(-2, -149.023)
 shape = SubResource("RectangleShape2D_yu7wr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -134,7 +134,7 @@ position = Vector2(2010, 292)
 self_modulate = Color(1, 1, 1, 0.392157)
 light_mask = 16
 position = Vector2(-998, 68)
-scale = Vector2(0.25, -0.25)
+scale = Vector2(0.18, -0.18)
 sprite_frames = SubResource("SpriteFrames_pfi7l")
 
 [node name="ScreenDistortion" type="ColorRect" parent="."]
@@ -145,7 +145,7 @@ offset_right = 1050.0
 offset_bottom = 170.0
 
 [node name="Surface" type="Node2D" parent="."]
-position = Vector2(0, -75)
+position = Vector2(0, -2)
 
 [node name="ReflectionThreshold" type="Node2D" parent="."]
 position = Vector2(0, -328)

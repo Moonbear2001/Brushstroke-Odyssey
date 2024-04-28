@@ -11,12 +11,12 @@ Pool with shader ripple effect that reflects the protagonist.
 @onready var reflection_threshold_y = $ReflectionThreshold.global_position.y
 
 var protagonist
-const height = 70
+const height = 200
 @onready var reflection_start = surface_y + (surface_y - reflection_threshold_y)
 
 var free_head_reflections = []
 var used_head_reflections = []
-
+var head_speed = 150
 
 func _ready():
 	set_physics_process(false)
@@ -29,11 +29,11 @@ func _input(_event):
 func _physics_process(delta):
 	protag_reflection.set_global_position(Vector2(protagonist.get_global_position().x, protagonist.get_global_position().y + 80))
 	for head_reflection in used_head_reflections:
-		if head_reflection.global_position.y <= surface_y + 100:
+		if head_reflection.global_position.y <= surface_y + 10:
 			head_reflection.play("splat")
 			#head_reflection.animation_finished.connect(stop_spaz)
 		else:
-			head_reflection.position.y -= 50 * delta
+			head_reflection.position.y -= (head_speed / 5) * delta
 			
 
 #func stop_spaz():
@@ -50,7 +50,8 @@ func _on_area_2d_body_entered(body):
 		face_reflection.set_global_position(Vector2(body.global_position.x, global_position.y + height))
 		face_reflection.set_visible(true)
 		face_reflection.play("default")
-		face_reflection.set_scale(body.scale)
+		face_reflection.scale.x = body.scale.x * 2
+		face_reflection.scale.y = body.scale.y * -2
 		used_head_reflections.append(face_reflection)
 		body.tree_exiting.connect(destroy_reflection)
 
@@ -63,3 +64,9 @@ func destroy_reflection():
 	var last = used_head_reflections.pop_front()
 	last.set_visible(false)
 	free_head_reflections.append(last)
+
+func increase_speed():
+	head_speed += 50
+
+func decrease_speed():
+	head_speed -= 50
