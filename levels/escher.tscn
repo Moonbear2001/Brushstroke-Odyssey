@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://cyjue85li2vvi"]
+[gd_scene load_steps=79 format=3 uid="uid://cyjue85li2vvi"]
 
 [ext_resource type="Script" path="res://levels/escher.gd" id="1_8td2l"]
 [ext_resource type="Texture2D" uid="uid://itloebjy8f4f" path="res://art/Esher/back_arch.png" id="1_a1ib6"]
@@ -253,9 +253,37 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(230, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../Deaths/Death4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(9552, 1341), Vector2(9552, 422)]
+}
+
+[sub_resource type="Animation" id="Animation_8svuj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../Deaths/Death4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9572, 1341)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rxl5m"]
 _data = {
+"RESET": SubResource("Animation_8svuj"),
 "move_platform": SubResource("Animation_vf5b5")
 }
 
@@ -1156,6 +1184,7 @@ color = "green"
 [node name="Door3" parent="Doors" groups=["checkpoint"] instance=ExtResource("55_tvs1l")]
 position = Vector2(4437, 633)
 id = 41
+enter = false
 exit_id = 40
 x_offset = 10
 color = "green"
@@ -1390,7 +1419,7 @@ enter = false
 color = "purple"
 
 [node name="Protagonist" parent="." instance=ExtResource("6_4djpo")]
-position = Vector2(64, 460)
+position = Vector2(87.8378, 460.811)
 
 [node name="SmolGrain" type="Sprite2D" parent="."]
 position = Vector2(856, 548)
@@ -1409,6 +1438,16 @@ scale = Vector2(2.37316, 0.6978)
 
 [node name="Death3" parent="Deaths" instance=ExtResource("17_npv7l")]
 position = Vector2(4886, 556)
+scale = Vector2(0.28, 0.5)
+
+[node name="Death4" parent="Deaths" instance=ExtResource("17_npv7l")]
+position = Vector2(9572, 1341)
+rotation = 1.5708
+scale = Vector2(0.28, 0.5)
+
+[node name="Death5" parent="Deaths" instance=ExtResource("17_npv7l")]
+position = Vector2(12376, 315)
+rotation = 1.5708
 scale = Vector2(0.28, 0.5)
 
 [node name="End" type="Area2D" parent="."]

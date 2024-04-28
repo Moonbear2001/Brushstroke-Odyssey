@@ -60,6 +60,7 @@ func hide_settings_window() -> void:
 
 # Quit the game
 func _on_quit_btn_pressed():
+	print("quitting")
 	get_tree().quit()
 
 # Go to main menu

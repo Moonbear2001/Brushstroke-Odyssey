@@ -759,7 +759,7 @@ rotation = 0.0698132
 scale = Vector2(0.7, 1.3)
 
 [node name="tree4" type="Node2D" parent="Platforms/Trees"]
-position = Vector2(3707, -15)
+position = Vector2(3707, -41.7606)
 metadata/_edit_group_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms/Trees/tree4"]
@@ -888,7 +888,7 @@ sprite_frames = SubResource("SpriteFrames_ehi3h")
 autoplay = "default"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(93.6616, 359.859)
+position = Vector2(110.563, 540.845)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
