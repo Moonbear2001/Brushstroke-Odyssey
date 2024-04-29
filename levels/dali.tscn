@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://8p0fakq7bbha"]
+[gd_scene load_steps=82 format=3 uid="uid://8p0fakq7bbha"]
 
 [ext_resource type="Script" path="res://levels/dali.gd" id="1_hymu2"]
 [ext_resource type="Texture2D" uid="uid://c65vypka2cx3c" path="res://art/Dali/parallax_layers/sky.png" id="2_5v35k"]
@@ -250,6 +250,18 @@ point_count = 2
 [sub_resource type="Curve2D" id="Curve2D_xc0gb"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 17289, 573, 0, 0, 0, 0, 16363, 575)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_msemq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 14146.4, 583.507, 0, 0, 0, 0, 13257.7, 583.507)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_4wn7y"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 10626, 579.986, 0, 0, 0, 0, 9633.76, 576.465)
 }
 point_count = 2
 
@@ -844,7 +856,9 @@ audio_dist = 1400.0
 [node name="HeadCloud2" parent="HeadClouds" groups=["enemy"] instance=ExtResource("37_84h57")]
 position = Vector2(11743, -23)
 scale = Vector2(12, 12)
+interval_high = 0.9
 audio_dist = 1400.0
+head_scale = Vector2(0.02, 0.02)
 
 [node name="ReflectingWater" parent="HeadClouds/HeadCloud2" groups=["enemy"] instance=ExtResource("33_yamjo")]
 z_index = -1
@@ -885,7 +899,7 @@ sprite_frames = SubResource("SpriteFrames_ehi3h")
 autoplay = "default"
 
 [node name="Protagonist" parent="." instance=ExtResource("2_keris")]
-position = Vector2(93.662, 524.648)
+position = Vector2(110.563, 507.042)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-7, -49)
@@ -996,7 +1010,7 @@ scale = Vector2(0.2, 0.2)
 move_speed = 160
 
 [node name="Path2D9" type="Path2D" parent="Enemies"]
-position = Vector2(7, 7)
+position = Vector2(7, -19.0563)
 curve = SubResource("Curve2D_vdqjf")
 
 [node name="SkinBlob3" parent="Enemies/Path2D9" instance=ExtResource("3_png0t")]
@@ -1005,7 +1019,7 @@ scale = Vector2(0.25, 0.25)
 move_speed = 125
 
 [node name="Path2D10" type="Path2D" parent="Enemies"]
-position = Vector2(7, 7)
+position = Vector2(7, -7.78874)
 curve = SubResource("Curve2D_vdqjf")
 
 [node name="SkinBlob3" parent="Enemies/Path2D10" instance=ExtResource("3_png0t")]
@@ -1061,6 +1075,23 @@ curve = SubResource("Curve2D_xc0gb")
 position = Vector2(17289, 573)
 scale = Vector2(0.3, 0.3)
 move_speed = 70
+
+[node name="Path2D20" type="Path2D" parent="Enemies"]
+curve = SubResource("Curve2D_msemq")
+
+[node name="SkinBlob3" parent="Enemies/Path2D20" instance=ExtResource("3_png0t")]
+position = Vector2(14146.4, 583.507)
+scale = Vector2(0.15, 0.15)
+move_speed = 140
+
+[node name="Path2D21" type="Path2D" parent="Enemies"]
+position = Vector2(0, -23.9437)
+curve = SubResource("Curve2D_4wn7y")
+
+[node name="SkinBlob3" parent="Enemies/Path2D21" instance=ExtResource("3_png0t")]
+position = Vector2(10626, 579.986)
+scale = Vector2(0.2, 0.2)
+move_speed = 120
 
 [node name="Foreground Rocks" type="Node2D" parent="."]
 z_index = 1
@@ -1157,7 +1188,7 @@ bus = &"Music"
 
 [node name="Tick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_l7u7k")
-volume_db = -20.0
+volume_db = -25.0
 pitch_scale = 0.6
 max_polyphony = 20
 bus = &"SFX"

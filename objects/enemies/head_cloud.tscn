@@ -16,9 +16,7 @@ shape = SubResource("RectangleShape2D_dr7do")
 
 [node name="storm_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_v71ef")
-volume_db = -5.0
 autoplay = true
-max_distance = 1500.0
 attenuation = 1.56917
 bus = &"SFX"
 

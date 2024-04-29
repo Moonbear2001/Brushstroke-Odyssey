@@ -130,11 +130,83 @@ self_modulate = Color(1, 1, 1, 0.352941)
 z_index = 0
 position = Vector2(2010, 292)
 
+[node name="HeadReflection9" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection10" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection11" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection12" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection13" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection14" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection15" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection16" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection17" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection18" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection19" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
+[node name="HeadReflection20" parent="Reflections" instance=ExtResource("5_d5ov5")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.352941)
+z_index = 0
+position = Vector2(2010, 292)
+
 [node name="ProtagReflection" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.392157)
 light_mask = 16
 position = Vector2(-998, 68)
-scale = Vector2(0.18, -0.18)
+scale = Vector2(0.15, -0.15)
 sprite_frames = SubResource("SpriteFrames_pfi7l")
 
 [node name="ScreenDistortion" type="ColorRect" parent="."]
