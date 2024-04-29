@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bxux1fu5vvjjt"]
+[gd_scene load_steps=28 format=3 uid="uid://bxux1fu5vvjjt"]
 
 [ext_resource type="PackedScene" uid="uid://bqbvdpmlbbk1a" path="res://characters/protagonist_escher.tscn" id="1_3wox7"]
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_21saf"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://vvlmv1ktryup" path="res://art/L0/background_transparent.png" id="18_mr6vo"]
 [ext_resource type="PackedScene" uid="uid://bncbv20j80sq4" path="res://scenes/level_ui.tscn" id="21_n74nv"]
 [ext_resource type="PackedScene" uid="uid://dnjkxkejv3y1a" path="res://interaction/text_box.tscn" id="22_k6tbf"]
+[ext_resource type="AudioStream" uid="uid://c8411lkl21vq" path="res://audio/music/reflected-light-147979.mp3" id="22_tpl25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0doj"]
 size = Vector2(110, 50)
@@ -85,7 +86,7 @@ rotation_smoothing_enabled = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-modulate = Color(0.65098, 0.65098, 0.65098, 0.666667)
+modulate = Color(0.345098, 0.345098, 0.345098, 0.666667)
 scale = Vector2(1.48, 1.48)
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1200, 0)
@@ -105,6 +106,7 @@ position = Vector2(194, 333)
 position = Vector2(2081, 794)
 
 [node name="Platforms" type="Node2D" parent="."]
+modulate = Color(0.72549, 0.72549, 0.72549, 1)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Platforms"]
 position = Vector2(351, 421)
@@ -428,5 +430,10 @@ scale = Vector2(0.5, 0.5)
 layout_direction = 1
 layout_mode = 2
 text_to_display = "[Space] to jump"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_tpl25")
+autoplay = true
+bus = &"Music"
 
 [connection signal="lever_toggled" from="Lever" to="." method="_on_lever_lever_toggled"]
