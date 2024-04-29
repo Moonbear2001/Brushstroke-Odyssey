@@ -8,7 +8,7 @@ Protagonist for the Van Gogh level.
 @onready var glow_anim = $Glow
 
 var windDirection = Vector2(-1, 0)
-var windForce = -450
+var windForce = -470
 var inWind = false
 var glow = false
 var glow_level = "0"
@@ -22,7 +22,7 @@ func _process(delta):
 
 func apply_wind_force(_delta):
 	velocity.x = windForce
-	velocity.y = -70
+	velocity.y = -80
 	
 func get_anim_name(anim_name: String):
 	if glow:

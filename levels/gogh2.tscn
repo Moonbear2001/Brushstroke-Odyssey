@@ -1,4 +1,4 @@
-[gd_scene load_steps=193 format=3 uid="uid://bm27qohdxvayg"]
+[gd_scene load_steps=192 format=3 uid="uid://bm27qohdxvayg"]
 
 [ext_resource type="Script" path="res://levels/gogh2.gd" id="1_se3yh"]
 [ext_resource type="Texture2D" uid="uid://cunk6bh7ewi4w" path="res://art/gogh/house section/houses/IMG_0444.PNG" id="1_v7tai"]
@@ -431,9 +431,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_itasv"]
-radius = 15.8202
-
 [sub_resource type="Animation" id="Animation_85ost"]
 resource_name = "circle"
 length = 6.0
@@ -642,7 +639,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-7619.04, -4727.12), Vector2(-1885, -3827)]
+"values": [Vector2(-7619.04, -4727.12), Vector2(-1925, -5641)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sclcx"]
@@ -1748,10 +1745,10 @@ position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_1b7cd")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sky/Path2D6/AnimatableBody2D"]
-position = Vector2(10, -11)
-scale = Vector2(5, 5)
-shape = SubResource("CircleShape2D_itasv")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sky/Path2D6/AnimatableBody2D"]
+position = Vector2(-0.0280142, 7.14614)
+scale = Vector2(1.07037, 1.07037)
+polygon = PackedVector2Array(-53.7471, -51.2534, -39.5417, -65.9272, -26.6147, -72.7471, 40.3021, -73.5049, 58.5522, -64.4116, 69.1981, -50.0137, 78.3231, -34.1001, 78.9227, -12.3203, 74.8531, 10.3906, 61.8303, 25.8018, 43.1101, 43.646, 9.73914, 47.7017, -21.1901, 44.457, -47.2357, 29.0464, -61.8864, 1.46875, -59.4446, -29.3535)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sky/Path2D6"]
 libraries = {

@@ -905,7 +905,6 @@ bus = &"Music"
 
 [node name="Gust" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("47_u4wk0")
-volume_db = 1.0
 bus = &"SFX"
 
 [node name="Bells" type="AudioStreamPlayer2D" parent="."]

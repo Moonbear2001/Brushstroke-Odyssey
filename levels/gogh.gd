@@ -119,7 +119,7 @@ func spawn_wind():
 	var x_pos = camera.position.x + floori(screen_size.x / 2)
 
 	var newWind = wind.instantiate()
-	newWind.position = Vector2(x_pos - 500, 260)
+	newWind.position = Vector2(x_pos - 500, 200)
 	add_child(newWind)
 	sway_trees()
 	
@@ -130,7 +130,7 @@ func spawn_smallwind():
 
 	var newWind = smallwind.instantiate()
 	newWind.breeze_finished.connect(Callable(self, "spawn_wind"))
-	newWind.global_position = Vector2(x_pos / 1.48, 260 / 1.48)
+	newWind.global_position = Vector2(x_pos - 500, 260)
 	add_child(newWind)
 	sway_trees()
 
