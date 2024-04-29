@@ -28,16 +28,9 @@ func respawn():
 		if node.position.x < old_protagonist.position.x and node.position.x > greatest_x_below_target:
 			greatest_x_below_target = node.position.x
 			checkpoint = node
-	print("protagonist global x pos: ", old_protagonist.global_position.x)
-	print("protagonist global y pos: ", old_protagonist.global_position.y)
-	print("protagonist x pos: ", old_protagonist.position.x)
-	print("protagonist y pos: ", old_protagonist.position.y)
+			
 	for p in get_tree().get_nodes_in_group("protagonist"):
 		p.queue_free()
-	print("checkpoint global x pos: ", checkpoint.global_position.x)
-	print("checkpoint global y pos: ", checkpoint.global_position.y)
-	print("checkpoint x pos: ", checkpoint.position.x)
-	print("checkpoint y pos: ", checkpoint.position.y)
 		
 	# Check if a valid x value was found
 	#if greatest_x_below_target != -INF:

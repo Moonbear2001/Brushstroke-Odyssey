@@ -82,10 +82,10 @@ func teleport(body):
 				body.queue_free()
 				return
 			lock()
-			#body.global_position.x = door.global_position.x + door.x_offset
-			#body.global_position.y = door.global_position.y + door.y_offset
-			body.position.x = door.position.x + door.x_offset
-			body.position.y = door.position.y + door.y_offset
+			body.position.x = (door.global_position.x / 1.48) + door.x_offset
+			body.position.y = (door.global_position.y / 1.48) + door.y_offset
+			#body.position.x = door.position.x + door.x_offset
+			#body.position.y = door.position.y + door.y_offset
 			
 			if Global.waiting_for_duplicate:
 				get_tree().current_scene.add_child(body)	
