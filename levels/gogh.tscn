@@ -144,11 +144,11 @@ size = Vector2(51, 66)
 position = Vector2(3, -62)
 scale = Vector2(1.48, 1.48)
 script = ExtResource("1_rnrkv")
-lantern = NodePath("Protagonist/Lantern")
-refill_stations = NodePath("Layers/1/RefillStations")
+lantern = NodePath("")
+refill_stations = NodePath("")
 level_name = "gogh"
-protagonist = NodePath("Protagonist")
-end = NodePath("End")
+protagonist = NodePath("")
+end = NodePath("")
 metadata/_edit_horizontal_guides_ = [-3391.0]
 
 [node name="LevelUI" parent="." instance=ExtResource("5_1f3ar")]

@@ -132,8 +132,8 @@
 [ext_resource type="Texture2D" uid="uid://cx2jrhl8i13al" path="res://art/VanGogh/misc/opposite arrow.png" id="130_bn41c"]
 [ext_resource type="PackedScene" uid="uid://42qlko5rqj3j" path="res://objects/sky objects/densestar3.tscn" id="131_1igth"]
 [ext_resource type="PackedScene" uid="uid://bmm3fynmlnysh" path="res://objects/sky objects/densestar5.tscn" id="132_wjfu8"]
-[ext_resource type="PackedScene" path="res://objects/sky objects/moon.tscn" id="133_vb8aw"]
-[ext_resource type="PackedScene" path="res://objects/sky objects/densestar4.tscn" id="134_676el"]
+[ext_resource type="PackedScene" uid="uid://d3ojlihu700n3" path="res://objects/sky objects/moon.tscn" id="133_vb8aw"]
+[ext_resource type="PackedScene" uid="uid://cgdrj4spinymj" path="res://objects/sky objects/densestar4.tscn" id="134_676el"]
 [ext_resource type="AudioStream" uid="uid://cscc7jmpc8mgw" path="res://audio/music/separation-185196.mp3" id="135_s3bp0"]
 
 [sub_resource type="Animation" id="Animation_6lejq"]
@@ -690,13 +690,12 @@ size = Vector2(117.5, 7.10229)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifxcy"]
 
-[node name="Gogh2" type="Node2D" node_paths=PackedStringArray("layers", "protagonist", "end")]
+[node name="Gogh2" type="Node2D" node_paths=PackedStringArray("protagonist", "end")]
 scale = Vector2(1.48, 1.48)
 script = ExtResource("1_se3yh")
-layers = [NodePath("Layers/1"), NodePath("Layers/2"), NodePath("Layers/3")]
 level_name = "gogh2"
-protagonist = NodePath("Protagonist")
-end = NodePath("End")
+protagonist = NodePath("")
+end = NodePath("")
 has_prev_stage = true
 prev_stage_name = "gogh"
 
